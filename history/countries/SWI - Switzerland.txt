@@ -1,0 +1,372 @@
+﻿capital = 3
+
+oob = "SWI_1936"
+
+set_research_slots = 3
+
+recruit_character = SWI_federal_council
+recruit_character = SWI_wilhelm_gustlaff
+recruit_character = SWI_rolf_henne
+recruit_character = SWI_fritz_platten
+recruit_character = SWI_leon_nicole
+
+recruit_character = SWI_renzo_lardelli
+recruit_character = SWI_friedrich_prisi
+recruit_character = SWI_rudolf_miescher
+recruit_character = SWI_jakob_labhardt
+recruit_character = SWI_henri_guisan
+recruit_character = SWI_jules_borel
+recruit_character = SWI_ulriche_wille_jr
+
+recruit_character = SWI_jakob_huber
+recruit_character = SWI_ulrich_wille
+recruit_character = SWI_friedrich_rihner
+recruit_character = SWI_hans_bandi
+recruit_character = SWI_nicolas_jaquet
+recruit_character = SWI_heinrich_rengel
+
+recruit_character = SWI_edouard_petitpierre
+recruit_character = SWI_jean_de_muralt
+recruit_character = SWI_alfred_struby
+recruit_character = SWI_etienne_primault
+recruit_character = SWI_august_haefeli
+recruit_character = SWI_oskar_meier
+recruit_character = SWI_hans_oehler
+
+recruit_character = SWI_eugen_bircher
+recruit_character = SWI_henry_pillichody
+recruit_character = SWI_gottlieb_duttweiler
+recruit_character = SWI_paul_scherrer
+
+recruit_character = SWI_dr_max
+recruit_character = SWI_hans_oprecht
+recruit_character = SWI_edgar_woog
+recruit_character = SWI_claude_pasquier
+recruit_character = SWI_giuseppe_motta
+recruit_character = SWI_johannes_baumann
+recruit_character = SWI_ernst_wetter
+recruit_character = SWI_roger_masson
+
+add_ideas = {
+	SWI_swiss_neutral
+	SWI_special_conscription
+	SWI_special_conscription_1
+}
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_mountaineers = 1
+	motorised_infantry = 1
+	
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1	
+	tech_field_hospital = 1
+	
+	gw_artillery = 1
+	interwar_antiair = 1
+	
+	trench_warfare = 1
+		
+	early_fighter = 1
+	CAS1 = 1
+	early_bomber = 1
+	
+	fuel_silos = 1
+	basic_train = 1
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+	}
+}
+
+set_variable = { SWI_manpower_pool = 250000 }
+set_stability = 0.85
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1935.10.27"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	neutrality = 63.1
+	democratic = 31.1
+	fascism = 2
+	communism = 3.8
+}
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	
+	#Focuses
+	complete_national_focus = SWI_geistige #jan 1 - march 11 (1936)
+	complete_national_focus = SWI_burger #march 11 - july 29
+	complete_national_focus = SWI_international #july 29 - oct 7
+	complete_national_focus = SWI_banks #oct 7 - dec 16
+	complete_national_focus = SWI_red_cross #dec 16 - feb 24 (1937)
+	complete_national_focus = SWI_trade #feb 24 - may 5
+	complete_national_focus = SWI_railroads #may 5 - july 14
+	complete_national_focus = SWI_fortifications #july 14 - sep 22
+	complete_national_focus = SWI_pro_company #sep 22 - dec 1
+	complete_national_focus = SWI_continue_neutral #dec 1 - feb 9 (1938)
+	complete_national_focus = SWI_first_line #feb 9 - apr 20
+	complete_national_focus = SWI_go_ger #apr 20 - may 25
+	complete_national_focus = SWI_go_fra #may 25 - june 29		
+	complete_national_focus = SWI_saty_neutral #june 29 - sept 7
+	complete_national_focus = SWI_stay_neutral #sept 7 - nov 16
+	complete_national_focus = SWI_army #nov 16 - jan 25 (1939)
+	complete_national_focus = SWI_extended_army #jan 25 - apr 5
+	complete_national_focus = SWI_update_army #apr 5 - june 14
+	complete_national_focus = SWI_planning #june 14 - aug 23
+	complete_national_focus = SWI_modern_arty #aug 23 - nov 1
+	complete_national_focus = SWI_choose_cons #nov 1 - jan 10 (1940)
+	
+	oob = "SWI_1939"
+	set_technology = {
+		fighter1 = 1
+		tactical_bomber1 = 1
+		scout_plane1 = 1
+		gw_artillery = 1
+		interwar_artillery = 1
+		antiair1 = 1
+		interwar_antitank = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+		tech_signal_company = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_refining = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		set_technology = {
+			improved_light_tank_chassis = 1
+		}
+	}
+
+	if = {
+		limit = {
+			NOT = { has_dlc = "No Step Back" }
+		}
+		set_technology = {
+			improved_light_tank = 1
+		}
+	}
+	
+	kill_ideology_leader = fascism    #Assassinated
+	kill_ideology_leader = communism  #Purged by Stalin
+	
+	set_party_name = { ideology = fascism long_name = "Nationale Front" name = "NF" }
+	set_party_name = { ideology = communism long_name = "Partei der Arbeit der Schweiz" name = "PdL" }
+	
+	set_politics = {#next election october 39
+		ruling_party = neutrality
+		last_election = "1935.10.27"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		neutrality = 58
+		democratic = 28
+		fascism = 7
+		communism = 7
+	}
+	
+	set_country_flag = has_henne
+}
+
+### VARIANTS ###
+# 1936 Start #
+if = {
+	limit = { not = { has_dlc = "No Step Back" } }
+	### Tank Variants ###
+}
+if = {
+	limit = { has_dlc = "No Step Back" }
+	
+	create_equipment_variant = {
+		name = "MFT-17 Moskito"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 1
+			tank_nsb_armor_upgrade = 2
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Panzer 34/35"
+		type = light_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+			special_type_slot_2 = smoke_launchers
+		}
+		icon = "GFX_ENG_basic_light_tank_medium"
+		upgrades = {
+			tank_nsb_engine_upgrade = 2
+			tank_nsb_armor_upgrade = 2
+		}
+		obsolete = yes
+	}
+}
+# 1939 Start #
+1939.1.1 = {
+	if = {
+		limit = { not = { has_dlc = "No Step Back" } }
+		### Tank Variants ###
+	}
+	if = {
+		limit = { has_dlc = "No Step Back" }
+		create_equipment_variant = {
+			name = "Stridsvagn L-60"
+			type = light_tank_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_small_cannon
+				turret_type_slot = tank_light_two_man_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = additional_machine_guns
+				special_type_slot_2 = sloped_armor
+				special_type_slot_3 = tank_radio_1
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 2
+				tank_nsb_engine_upgrade = 2
+			}
+		}
+		create_equipment_variant = {
+			name = "Panzer 39"
+			type = light_tank_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_auto_cannon
+				turret_type_slot = tank_light_two_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = secondary_turret_hmg
+				special_type_slot_2 = tank_radio_1
+			}
+			upgrades = {
+				tank_nsb_armor_upgrade = 1
+				tank_nsb_engine_upgrade = 3
+			}
+		}
+	}
+}
+
+### STARTING EQUIPMENT ###
+#1936
+	if = {
+		limit = { has_dlc = "No Step Back" }
+			add_equipment_to_stockpile = { 
+				type = light_tank_chassis_0
+				producer = "SWI"
+				variant_name = "MFT-17 Moskito"
+				amount = 5
+			}
+			add_equipment_to_stockpile = { 
+				type = light_tank_chassis_1
+				producer = "SWI"
+				variant_name = "Panzer 34/35"
+				amount = 8
+			}
+			
+		else = {
+			add_equipment_to_stockpile = { 
+				type = light_tank_chassis_0
+				producer = "SWI"
+				amount = 5
+			}
+			add_equipment_to_stockpile = { 
+				type = light_tank_chassis_1
+				producer = "SWI"
+				amount = 8
+			}
+		}
+	}
+1939.1.1 = {
+	if = {
+		limit = { has_dlc = "No Step Back" }
+			add_equipment_to_stockpile = {
+				type = light_tank_chassis_2
+				producer = "SWI"
+				variant_name = "Stridsvagn L-60"
+				amount = 1
+			}
+			add_equipment_to_stockpile = {
+				type = light_tank_chassis_2
+				producer = "SWI"
+				variant_name = "Panzer 39"
+				amount = 24
+			}
+			
+		else = {
+			add_equipment_to_stockpile = { 
+				type = light_tank_chassis_2
+				producer = "SWI"
+				amount = 25
+			}
+		}
+	}
+}

@@ -1,0 +1,107 @@
+leader_traits = {
+	
+	#AI Attitudes
+	likes_germany = { # FROM SCA
+		random = no
+		ai_strategy = {
+			type = befriend
+			id = "GER"			
+			value = 100
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Leader Traits
+	
+	#Cabinet Traits
+	neutrality_advocate = { #FROM SCA
+		random = no
+		#Boosts non-aligned
+		sprite = 13
+		neutrality_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	staunch_pacifist = { #FROM SCA
+		random = no
+		#Boosts non-aligned
+		sprite = 13
+		neutrality_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	head_of_intelligence_female = { #FROM EYE
+		random = no		
+		sprite = 15
+		
+		operative_slot = 1
+		agency_upgrade_time = -0.15
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	#Manufacturer Traits
+	assault_gun_manufacturer = { #FROM SCA
+		random = no
+		
+		equipment_bonus = {
+			armor = { soft_attack = 0.05 hard_attack = 0.05 }
+			light_tank_artillery_equipment = {
+				build_cost_ic = -0.1 instant = yes
+			}
+			medium_tank_artillery_equipment = {
+				build_cost_ic = -0.1 instant = yes
+			}
+			heavy_tank_artillery_equipment = {
+				build_cost_ic = -0.1 instant = yes
+			}
+		}
+			
+		equipment_conversion_speed = 0.2
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	blank_tank_manufacturer = { # FROM SCA
+		random = no		
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rubber_manufacturer = { # From EYE
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	convoy_escort_naval_manufacturer2 = { #From EYE
+		random = no
+		
+		equipment_bonus = {
+			screen_ship = {
+				naval_range = 0.3 sub_detection = 0.1 naval_speed = 0.1 
+				#build_cost_ic = 0.1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

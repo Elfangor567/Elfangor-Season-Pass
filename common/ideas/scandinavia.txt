@@ -1,0 +1,391 @@
+ideas = {
+	country = {
+		drsrn_signatory = {		
+
+			picture = HUN_treaty_of_triannon
+		
+			cancel = {
+				has_war = yes
+			}
+			
+			modifier = {
+				ai_badass_factor = 0.01
+				neutrality_drift = 0.02
+				opinion_gain_monthly_same_ideology_factor = 0.50
+				trade_opinion_factor = 0.05
+				foreign_subversive_activites = -0.25
+				enemy_justify_war_goal_time = 0.25
+				justify_war_goal_time = 0.25
+			}			
+		}
+
+		SCA_league_neutrality = {		
+
+			picture = HUN_treaty_of_triannon
+
+			allowed = {
+				is_in_faction_with = SWE
+				SWE = { is_faction_leader = yes }
+			}
+			
+			cancel = {
+				is_in_faction = no
+			}
+
+			allowed_civil_war = {
+				is_in_faction_with = SWE
+			}			
+			
+			modifier = {
+				ai_badass_factor = 0.01				
+				neutrality_drift = 0.02
+				opinion_gain_monthly_same_ideology_factor = 0.50
+				trade_opinion_factor = 0.05
+				foreign_subversive_activites = -0.33
+				enemy_justify_war_goal_time = 0.33
+				justify_war_goal_time = 1.5
+			}			
+		}
+		SCA_league_neutrality2 = {	# No neutrality drift	
+
+			picture = HUN_treaty_of_triannon
+
+			allowed = {
+				is_in_faction_with = SWE
+				SWE = { is_faction_leader = yes }
+			}
+			
+			cancel = {
+				is_in_faction = no
+			}
+
+			allowed_civil_war = {
+				is_in_faction_with = SWE
+			}			
+			
+			modifier = {
+				ai_badass_factor = 0.01	
+				opinion_gain_monthly_same_ideology_factor = 0.50
+				trade_opinion_factor = 0.05
+				foreign_subversive_activites = -0.33
+				enemy_justify_war_goal_time = 0.33
+				justify_war_goal_time = 1.5
+			}			
+		}
+		
+		permanent_revolution = {
+		
+			picture = fourth_international
+			
+			modifier = {
+				political_power_factor = -0.15
+				justify_war_goal_time = 0.15
+				subversive_activites_upkeep = -0.3
+				drift_defence_factor = 0.15
+			}
+		}
+		permanent_revolution2 = {
+		
+			picture = fourth_international
+			
+			modifier = {
+				political_power_factor = 0.15				
+				justify_war_goal_time = 0.15
+				subversive_activites_upkeep = -0.5
+				drift_defence_factor = 0.15				
+				communism_drift = 0.1
+			}
+		}
+		permanent_revolution3 = { #For La Resistance Owners
+		
+			picture = fourth_international
+			
+			modifier = {
+				political_power_factor = 0.15				
+				justify_war_goal_time = 0.15
+				subversive_activites_upkeep = -0.5
+				drift_defence_factor = 0.15				
+				communism_drift = 0.1
+				
+				research_speed_factor = 0.05
+			}
+		}
+		
+		partisan_activities = {
+			
+			picture = chi_war_of_resistance3
+			
+			modifier = {
+				local_supplies = -1
+				local_intel_to_enemies = 5
+				local_factory_sabotage = 1.5
+				attrition = 0.1
+				production_speed_buildings_factor = -0.25
+			}
+		}
+		partisan_activities2 = {
+			
+			picture = chi_war_of_resistance1
+			
+			modifier = {
+				local_supplies = -0.5
+				local_intel_to_enemies = 2.5
+				local_factory_sabotage = 0.75
+				attrition = 0.05
+				production_speed_buildings_factor = -0.05
+			}
+		}
+	}
+	
+	#Removes Generic Manufacturers
+	tank_manufacturer = { 
+	
+		designer = yes
+		
+		SCA_generic_tank_manufacturer = {
+
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				OR = { original_tag = DEN original_tag = FIN original_tag = ICE original_tag = NOR original_tag = SWE }
+			}
+			visible = {
+				always = no
+			}
+			
+			cost = 2001
+			removal_cost = 0
+			
+			research_bonus = {
+				armor = 0.10
+			}
+			
+			traits = { tank_manufacturer }
+		}
+	}
+	naval_manufacturer = { 
+	
+		designer = yes
+	
+		SCA_generic_naval_manufacturer = {
+			
+			picture = generic_naval_manufacturer_1
+
+			allowed = {
+				OR = { original_tag = DEN original_tag = FIN original_tag = ICE original_tag = NOR original_tag = SWE }
+			}
+			visible = {
+				always = no
+			}
+			
+			cost = 2001
+			removal_cost = 10
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { naval_manufacturer }
+		}
+	}
+	aircraft_manufacturer = { 
+	
+		designer = yes
+	
+		SCA_generic_light_aircraft_manufacturer = {
+			
+			picture = generic_air_manufacturer_1
+
+			allowed = {
+				OR = { original_tag = DEN original_tag = FIN original_tag = ICE original_tag = NOR original_tag = SWE }
+			}
+			visible = {
+				always = no
+			}
+			
+			cost = 2001
+			removal_cost = 10
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
+		}
+		
+		SCA_generic_medium_aircraft_manufacturer = {
+			
+			picture = generic_air_manufacturer_3
+
+			allowed = {
+				OR = { original_tag = DEN original_tag = FIN original_tag = ICE original_tag = NOR original_tag = SWE }
+			}
+			visible = {
+				always = no
+			}
+			
+			cost = 2001
+			removal_cost = 10
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+		}
+		
+		SCA_generic_heavy_aircraft_manufacturer = {
+
+			picture = generic_air_manufacturer_2
+			
+			allowed = {
+				OR = { original_tag = DEN original_tag = FIN original_tag = ICE original_tag = NOR original_tag = SWE }
+			}
+			visible = {
+				always = no
+			}
+			
+			cost = 2001
+			removal_cost = 10
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+		}
+		
+		SCA_generic_naval_aircraft_manufacturer = {
+			
+			picture = generic_naval_manufacturer_2
+
+			allowed = {
+				OR = { original_tag = DEN original_tag = FIN original_tag = ICE original_tag = NOR original_tag = SWE }
+			}
+			visible = {
+				always = no
+			}
+			
+			cost = 2001
+			removal_cost = 10
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { naval_aircraft_manufacturer }
+		}
+	}
+	industrial_concern = {
+	
+		SCA_generic_industrial_concern = {
+			
+			picture = generic_industrial_concern_1
+
+			allowed = {
+				OR = { original_tag = DEN original_tag = FIN original_tag = ICE original_tag = NOR original_tag = SWE }
+			}
+			visible = {
+				always = no
+			}
+			
+			cost = 2001
+			removal_cost = 10
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}
+
+		SCA_generic_electronics_concern = {
+			
+			picture = generic_electronics_concern_1
+
+			allowed = {
+				OR = { original_tag = DEN original_tag = FIN original_tag = ICE original_tag = NOR original_tag = SWE }
+			}
+			visible = {
+				always = no
+			}
+			
+			cost = 2001
+			removal_cost = 10
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
+	}
+
+	materiel_manufacturer = {
+	
+		designer = yes
+	
+		SCA_generic_motorized_equipment_manufacturer = {
+			
+			picture = generic_motorized_equipment_manufacturer_3
+
+			allowed = {
+				OR = { original_tag = DEN original_tag = FIN original_tag = ICE original_tag = NOR original_tag = SWE }
+			}
+			visible = {
+				always = no
+			}
+			
+			cost = 2001
+			removal_cost = 10
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+		SCA_generic_infantry_equipment_manufacturer = {
+			
+			picture = generic_infantry_equipment_manufacturer_2
+
+			allowed = {
+				OR = { original_tag = DEN original_tag = FIN original_tag = ICE original_tag = NOR original_tag = SWE }
+			}
+			visible = {
+				always = no
+			}
+			
+			cost = 2001
+			removal_cost = 10
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+		
+		SCA_generic_artillery_manufacturer = {
+			
+			picture = generic_artillery_manufacturer_2
+
+			allowed = {
+				OR = { original_tag = DEN original_tag = FIN original_tag = ICE original_tag = NOR original_tag = SWE }
+			}
+			visible = {
+				always = no
+			}
+			
+			cost = 2001
+			removal_cost = 10
+			
+			research_bonus = {
+				artillery = 0.15
+			}
+			
+			traits = { artillery_manufacturer }
+		}
+	}
+}

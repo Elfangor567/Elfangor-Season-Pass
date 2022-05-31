@@ -1,0 +1,833 @@
+ideas = {
+
+	country = {
+	
+		DEN_defenceless_neutrality = {
+			
+			picture = hol_aloof_neutrality
+			
+			available = {
+				has_war = no
+				has_government = neutrality
+				is_in_faction = no
+			}
+			cancel = {
+				has_war = yes
+				is_in_faction = yes
+			}
+			
+			modifier = {
+				economy_cost_factor = 15
+				mobilization_laws_cost_factor = 15
+				join_faction_tension = 1.50
+				send_volunteers_tension = 0.50
+				guarantee_tension = 1.00
+				justify_war_goal_time = 1
+				ai_badass_factor = 0.01
+				ai_get_ally_desire_factor = -200
+				production_speed_arms_factory_factor = -0.33
+			}
+			
+		}
+		DEN_defenceless_neutrality2 = {
+		
+			picture = hol_aloof_neutrality
+			
+			available = {
+				has_war = no
+				has_government = neutrality
+				is_in_faction = no
+			}
+			cancel = {
+				has_war = yes
+				is_in_faction = yes
+			}
+			
+			modifier = {
+				economy_cost_factor = 15
+				mobilization_laws_cost_factor = 15
+				join_faction_tension = 1.00
+				send_volunteers_tension = 0.50
+				guarantee_tension = 1.00
+				justify_war_goal_time = 0.5
+				ai_badass_factor = 0.01
+				ai_get_ally_desire_factor = -150
+			}
+			
+		}
+		
+		DEN_no_mil = {
+		
+			picture = generic_army_problems
+			
+			available = {
+				has_war = no
+				
+				NOT = { has_government = fascism }
+				NOT = { has_government = communism }
+			}
+			
+			cancel = {
+				has_war = yes
+			}
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.2
+				production_speed_infrastructure_factor = 0.2
+				production_speed_supply_node_factor = 0.2
+				production_speed_rail_way_factor = 0.2
+				production_speed_fuel_silo_factor = 0.2
+				production_speed_synthetic_refinery_factor = 0.2
+				production_speed_arms_factory_factor = -0.2
+				neutrality_drift = 0.02
+			}
+		}
+		DEN_no_mil2 = {
+		
+			picture = generic_army_problems
+			
+			available = {
+				has_war = no
+				
+				NOT = { has_government = fascism }
+				NOT = { has_government = communism }
+			}
+			
+			cancel = {
+				has_war = yes
+			}
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.33
+				production_speed_infrastructure_factor = 0.33
+				production_speed_supply_node_factor = 0.33
+				production_speed_rail_way_factor = 0.33
+				production_speed_fuel_silo_factor = 0.33
+				production_speed_synthetic_refinery_factor = 0.33
+				production_speed_arms_factory_factor = -0.2
+				trade_opinion_factor = 0.05
+				neutrality_drift = 0.025
+			}
+		}
+		
+		DEN_idea_arbitration = {
+			
+			picture = SOV_scientist_defect
+			
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = neutrality
+				}
+			}
+			
+			modifier = {
+				trade_opinion_factor = 0.2
+			}
+	
+		}
+		
+		DEN_christian_x = {
+		
+			picture = christian_x
+			
+			allowed_civil_war = {
+				NOT = { DEN = { has_country_flag = dead_king } }
+			}
+			
+			modifier = {
+				stability_factor = -0.1
+				drift_defence_factor = 0.05
+			}
+		}
+		DEN_christian_x_unity = {
+		
+			allowed_civil_war = {
+				NOT = { DEN = { has_country_flag = dead_king } }
+			}
+		
+			picture = christian_x
+			
+			modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.10
+				drift_defence_factor = 0.20
+			}
+		}
+		DEN_christian_x_fascist = {
+		
+			allowed_civil_war = {
+				NOT = { DEN = { has_country_flag = dead_king } }
+				has_government = fascism
+			}
+		
+			picture = christian_x
+			
+			modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.05
+				fascism_drift = 0.05
+			}
+		}
+		
+		DEN_rearmament_idea = {
+		
+			picture = HUN_secret_rearmament
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				democratic_drift = 0.05
+				training_time_army_factor = -0.1
+			}
+		}
+		DEN_rearmament_idea_2 = {
+		
+			picture = generic_war_preparation
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				democratic_drift = 0.1
+				conscription = 0.01
+				training_time_army_factor = -0.15
+				industrial_capacity_factory = 0.025
+				industrial_capacity_dockyard = 0.025
+			}
+		}
+		
+		DEN_labour_councils = {
+		
+			picture = generic_goods_red_bonus
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {			
+				consumer_goods_factor = -0.05
+				political_power_factor = 0.1
+			}
+		}
+		
+		DEN_militia = {
+		
+			picture = generic_communist_army
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				army_core_defence_factor = 0.2
+				conscription = 0.02
+				training_time_army_factor = -0.2
+			}
+		}
+		
+		DEN_nationalism1 = {
+			
+			picture = generic_infantry_bonus
+			
+			allowed_civil_war = {
+				has_government = fascism
+			}
+			
+			modifier = {
+				fascism_drift = 0.1
+				war_support_factor = 0.05
+				conscription = 0.025
+			}
+		}
+		DEN_nationalism2 = {
+			
+			picture = generic_fascism_drift_2
+			
+			allowed_civil_war = {
+				has_government = fascism
+			}
+			
+			modifier = {
+				fascism_drift = 0.1
+				war_support_factor = 0.05
+				justify_war_goal_time = -0.25
+			}
+		}
+		DEN_nationalism3 = {
+			
+			picture = generic_fascism_drift_2
+			
+			allowed_civil_war = {
+				has_government = fascism
+			}
+			
+			modifier = {
+				fascism_drift = 0.15
+				war_support_factor = 0.1
+				conscription = 0.025
+				justify_war_goal_time = -0.33
+			}
+			
+		}
+		
+		DEN_german_advisors = {
+			
+			picture = german_advisors
+			
+			allowed = {
+				NOT = { has_war_with = GER }
+			}
+			allowed_civil_war = {
+				OR = {
+					has_government = fascism
+					is_subject_of = GER
+				}
+			}
+			
+			modifier = {
+				land_doctrine_cost_factor = -0.2
+				air_doctrine_cost_factor = -0.2
+			}
+		}
+		
+		DEN_license_production = {
+			
+			picture = generic_license_production
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				license_armor_purchase_cost = -0.5
+				license_light_tank_eq_production_speed_factor = 0.2 #Alright, who decided this modifier only works on LIGHT tanks!? :<
+			}
+		}
+		
+		DEN_coast_defence = {
+			
+			picture = generic_coastal_navy
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			equipment_bonus = {
+				screen_ship = {
+					sub_detection = 0.1 build_cost_ic = -0.1
+				}
+				submarine = {
+					sub_visibility = -0.1
+				}
+			}
+			
+			modifier = {
+				navy_capital_ship_attack_factor = 0.1
+				naval_mines_damage_factor = 0.1
+			}
+		}
+		
+		DEN_com_welfare = {
+			
+			picture = generic_soviet_politics
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				stability_factor = 0.1
+				drift_defence_factor = 0.25
+				production_speed_arms_factory_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+		DEN_cream_front = {
+			
+			picture = generic_goods_red_bonus
+			
+			available = {
+				OR = {
+					DEN = { is_subject_of = GER }
+					any_other_country = {
+						is_subject_of = GER
+						37 = { is_controlled_by = THIS }
+						99 = { is_controlled_by = THIS }
+					}
+				}
+			}
+			cancel_if_invalid = yes
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		DEN_cracked_down = {
+			
+			picture = generic_oppression
+			
+			modifier = {
+				conscription = -0.01
+				fascism_drift = 0.1
+			}
+		}
+	}
+	hidden_ideas = {
+		DEN_hidden_taken = {
+			
+			available = {
+				OR = {
+					NOT = { has_government = fascism }
+					is_subject_of = GER
+				}
+			}
+			
+			modifier = {
+				ai_focus_defense_factor = 0.75
+			}
+		}
+	}
+	
+	aircraft_manufacturer = { 
+			
+		designer = yes
+		
+		orlogsvaerftet_flyvemaskinevaerksted = {
+			
+			picture = generic_air_manufacturer_3
+
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { naval_aircraft_manufacturer }
+			
+			# flying boats
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		DEN_fokker = {
+		
+			picture = fokker
+
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			available = {
+				DEN = { has_completed_focus = DEN_inv_fokker }
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { fokker_manufacturer }
+			
+			equipment_bonus = {
+				fighter_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1
+				}
+				CAS_equipment = {
+					air_ground_attack = 0.1 maximum_speed = 0.1
+				}
+				heavy_fighter_equipment = {
+					maximum_speed = 0.1 reliability = -0.1
+				}
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	naval_manufacturer = { 
+		
+		designer = yes
+		
+		burmeister_wain = {
+			
+			picture = burmeister_wain
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { atlantic_fleet_naval_manufacturer }
+		}
+		
+		orlogsvaerftet = {
+			
+			picture = generic_naval_manufacturer_2
+			
+			allowed = {
+				original_tag = DEN
+			}	
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		aalborg_vaerft = {
+			
+			picture = aalborg_vaerft
+			
+			allowed = {
+				original_tag = DEN
+			}	
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	tank_manufacturer = {
+	
+		designer = yes
+		
+		DEN_scandia = {
+		
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { tank_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		DEN_porsche = {
+		
+			picture = porsche
+			
+			allowed = {
+				original_tag = DEN				
+			}
+			
+			cost = 50
+			
+			available = {
+				OR = {
+					NOT = { has_war_with = GER }
+					any_other_country = {
+						original_tag = GER
+						is_in_faction_with = ROOT
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = DEN_tank_designers_tt
+					GER = { has_country_flag = DEN_tank_won_flag }
+				}
+			}
+			cancel_if_invalid = yes
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { heavy_tank_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		DEN_FCM = {
+		
+			picture = fcm
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			cost = 50
+			
+			available = {
+				OR = {
+					NOT = { has_war_with = FRA }
+					any_other_country = {
+						original_tag = FRA
+						is_in_faction_with = ROOT
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = DEN_tank_designers_tt
+					FRA = { has_country_flag = DEN_tank_won_flag }
+				}				
+			}
+			cancel_if_invalid = yes
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			equipment_bonus = {
+				armor = { soft_attack = 0.05 hard_attack = 0.05 }
+			}
+			
+			traits = { blank_tank_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		DEN_vickers_armstrong = {
+		
+			picture = vickers_armstrong_eng
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			cost = 50
+		
+			available = {
+				OR = {
+					NOT = { has_war_with = ENG }
+					any_other_country = {
+						original_tag = ENG
+						is_in_faction_with = ROOT
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = DEN_tank_designers_tt
+					ENG = { has_country_flag = DEN_tank_won_flag }
+				}				
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { fast_tank_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		DEN_chrysler = {
+		
+			picture = chrysler
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			cost = 50
+		
+			available = {
+				OR = {
+					NOT = { has_war_with = USA }
+					any_other_country = {
+						original_tag = USA
+						is_in_faction_with = ROOT
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = DEN_tank_designers_tt
+					USA = { has_country_flag = DEN_tank_won_flag }
+				}				
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { medium_tank_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		DEN_fiat = {
+		
+			picture = fiat
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			cost = 50
+			
+			available = {
+				OR = {
+					NOT = { has_war_with = ITA }
+					any_other_country = {
+						original_tag = ITA
+						is_in_faction_with = ROOT
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = DEN_tank_designers_tt
+					ITA = { has_country_flag = DEN_tank_won_flag }
+				}				
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			equipment_bonus = {
+				armor = { maximum_speed = 0.1 armor_value = -0.05 }
+			}
+			
+			traits = { blank_tank_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		disa = {
+			
+			picture = disa
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+
+		}
+		
+		DEN_ama = { #Ammunitionsarsenalet
+			
+			picture = generic_artillery_manufacturer_2
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			research_bonus = {
+				artillery = 0.15
+			}
+			
+			traits = { artillery_manufacturer }
+		}
+		
+		de_forenede_automobilfabriker = {
+			
+			picture = de_forenede_automobilfabriker
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+
+		}
+	}
+	
+	industrial_concern = {
+	
+		DEN_flsmidth = {
+			
+			picture = generic_industrial_concern_1
+
+			allowed = {
+				original_tag = DEN
+			}
+			
+			cost = 150
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}
+		DEN_bang_olufsen = {
+			
+			picture = bang_olufsen
+
+			allowed = {
+				original_tag = DEN
+			}
+			
+			cost = 150
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
+		DEN_moller_maersk = {
+		
+			picture = generic_refining_concern_1
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.15
+			}
+			
+			traits = { refinery_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}		
+}

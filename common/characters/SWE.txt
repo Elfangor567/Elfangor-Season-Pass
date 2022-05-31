@@ -1,0 +1,893 @@
+characters={
+#Leaders
+	SWE_per_albin_hansson={
+		name=SWE_per_albin_hansson
+		portraits={
+			civilian={
+				large="gfx/leaders/SWE/Portrait_Sweden_Per_Albin_Hansson.dds"
+			}
+		}
+		country_leader={
+			ideology=neutral_socialism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	SWE_sven_olov_lindholm={
+		name=SWE_sven_olov_lindholm
+		portraits={
+			civilian={
+				large="gfx/leaders/ROM/Portrait_romania_michael_i.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=13000
+		}
+	}
+	SWE_sven_linderot={
+		name=SWE_sven_linderot
+		portraits={
+			civilian={
+				large="gfx/leaders/SCA/Portrait_SCA_Sven_Linderot.dds"
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	SWE_gosta_adolfsson_bagge={
+		name=SWE_gosta_adolfsson_bagge
+		portraits={
+			civilian={
+				large="gfx/leaders/NOR/Portrait_Norway_Vidkun_Quisling.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	SWE_axel_pehrsson={
+		name=SWE_axel_pehrsson
+		portraits={
+			civilian={
+				large="gfx/leaders/SCA/Portrait_SCA_Axel_Pehrsson.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			traits = { farmer }
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	SWE_birger_furugard={
+		name=SWE_birger_furugard
+		portraits={
+			civilian={
+				large="gfx/leaders/POL/Portrait_Poland_Wladyslaw_Gomulka.dds"
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = { likes_germany }
+			expire="1965.1.1"
+			id = 13001
+		}
+	}
+	SWE_martin_ekstrom={
+		name=SWE_martin_ekstrom
+		portraits={
+			civilian={
+				large="gfx/leaders/HUN/Portrait_Hungary_Miklos_Horthy.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = { army_veteran }
+			expire="1965.1.1"
+			id = 13002
+		}
+	}
+	SWE_gustaf_v={
+		name=SWE_gustaf_v
+		portraits={
+			civilian={
+				large="gfx/leaders/SCA/Portrait_SCA_Gustaf_V.dds"
+			}
+		}
+		country_leader={
+			ideology=rexism
+			traits = { }
+			expire="1965.1.1"
+			id = 13003
+		}
+	}
+	
+#Generals and Admirals
+	SWE_olof_thornell={
+		name=SWE_olof_thornell
+		portraits={
+			army={
+				large="gfx/leaders/SCA/Portrait_SCA_Olof_Thornell.dds"
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		field_marshal={
+			traits = { old_guard harsh_leader trait_cautious infantry_officer expert_delegator }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id=-1
+		}
+		
+		advisor={
+			slot = army_chief
+			idea_token = SWE_olof_thornell
+			allowed = {
+				original_tag = SWE
+			}
+			
+			modifier = {
+				max_dig_in = 1
+			}
+			
+			traits = { army_chief_old_guard }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	SWE_folke_hogberg={
+		name=SWE_folke_hogberg
+		portraits={
+			army={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_2.dds"
+			}
+		}
+		corps_commander={
+			traits = { infantry_leader }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id=-1
+		}
+	}
+	SWE_erik_af_edholm={
+		name=SWE_erik_af_edholm
+		portraits={
+			army={
+				large="gfx/leaders/SCA/Portrait_SCA_Erik_Edholm.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_3.dds"
+			}
+		}
+		corps_commander={
+			traits = { career_officer adaptable hill_fighter }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id=-1
+		}
+	}
+	SWE_claes_lindstrom={
+		name=SWE_claes_lindstrom
+		portraits={
+			army={
+				large="gfx/leaders/SCA/Portrait_SCA_Claes_Lindstrom.dds"
+				small="gfx/interface/ideas/idea_europe_generic_navy_2.dds"
+			}
+		}
+		navy_leader={
+			traits = { blockade_runner }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 3
+			legacy_id=-1
+		}
+	}
+#Chiefs of Staff
+	#SWE_olof_thornell, Defined under Generals
+	SWE_ivar_holmquist={
+		name=SWE_ivar_holmquist
+		advisor={
+			slot = army_chief
+			idea_token = SWE_ivar_holmquist
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { army_chief_organizational_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_ivar_holmquist"
+			}
+		}
+	}
+	SWE_per_sylvan={
+		name=SWE_per_sylvan
+		advisor={
+			slot = army_chief
+			idea_token = SWE_per_sylvan
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { army_chief_defensive_1 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_per_sylvan"
+			}
+		}
+	}
+	SWE_oscar_nygren={
+		name=SWE_oscar_nygren
+		advisor={
+			slot = army_chief
+			idea_token = SWE_oscar_nygren
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { army_chief_drill_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_oscar_nygren"
+			}
+		}
+	}
+	
+	SWE_bengt_nordenskiold={
+		name=SWE_bengt_nordenskiold
+		advisor={
+			slot = air_chief
+			idea_token = SWE_bengt_nordenskiold
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { air_chief_ground_support_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_bengt_nordenskiold"
+			}
+		}
+	}
+	SWE_torsten_friis={
+		name=SWE_torsten_friis
+		advisor={
+			slot = air_chief
+			idea_token = SWE_torsten_friis
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { air_chief_all_weather_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+	}
+	
+	SWE_gosta_ehrensvard={
+		name=SWE_gosta_ehrensvard
+		advisor={
+			slot = navy_chief
+			idea_token = SWE_gosta_ehrensvard
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { navy_chief_commerce_raiding_2 }
+	
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_gosta_ehrensvard"
+			}
+		}
+	}
+	SWE_fabian_tamm={
+		name=SWE_fabian_tamm
+		advisor={
+			slot = navy_chief
+			idea_token = SWE_fabian_tamm
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { navy_chief_reform_2 }
+	
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_fabian_tamm"
+			}
+		}
+	}
+	SWE_charles_de_champs={
+		name=SWE_charles_de_champs
+		advisor={
+			slot = navy_chief
+			idea_token = SWE_charles_de_champs
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { navy_chief_decisive_battle_2 }
+	
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_charles_de_champs"
+			}
+		}
+	}
+#High Command
+	SWE_axel_rappe={
+		name=SWE_axel_rappe
+		advisor={
+			slot = high_command
+			ledger = army
+			idea_token = SWE_axel_rappe
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { army_artillery_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_1"
+			}
+		}
+	}
+	SWE_archibald_douglas={
+		name=SWE_archibald_douglas
+		advisor={
+			slot = high_command
+			ledger = army
+			idea_token = SWE_archibald_douglas
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { army_cavalry_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_archibald_douglas"
+			}
+		}
+	}
+	SWE_fale_burman={
+		name=SWE_fale_burman
+		advisor={
+			slot = high_command
+			ledger = army
+			idea_token = SWE_fale_burman
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { army_logistics_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_3"
+			}
+		}
+	}
+	SWE_ernst_klercker={
+		name=SWE_ernst_klercker
+		advisor={
+			slot = high_command
+			ledger = army
+			idea_token = SWE_ernst_klercker
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { army_chief_morale_3 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_ernst_klercker"
+			}
+		}
+	}
+	SWE_axel_ljungdahl={
+		name=SWE_axel_ljungdahl
+		advisor={
+			slot = high_command
+			ledger = air
+			idea_token = SWE_axel_ljungdahl
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { air_bomber_interception_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+	}
+	SWE_helge_stromback={
+		name=SWE_helge_stromback
+		advisor={
+			slot = high_command
+			ledger = navy
+			idea_token = SWE_helge_stromback
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { navy_fleet_logistics_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+	}
+	SWE_yngve_ekstrand={
+		name=SWE_yngve_ekstrand
+		advisor={
+			slot = high_command
+			ledger = navy
+			idea_token = SWE_yngve_ekstrand
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { navy_naval_air_defense_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+	}
+	SWE_erik_anderberg={
+		name=SWE_erik_anderberg
+		advisor={
+			slot = high_command
+			ledger = navy
+			idea_token = SWE_erik_anderberg
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { navy_chief_maneuver_3 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_erik_anderberg"
+			}
+		}
+	}
+
+#Theorists
+	SWE_helge_jung={
+		name=SWE_helge_jung
+		advisor={
+			slot = theorist
+			idea_token = SWE_helge_jung
+			ledger = army
+			allowed = {
+				original_tag = SWE
+			}
+			traits = { military_theorist }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		portraits={
+			army={
+				small="GFX_idea_helge_jung"
+			}
+		}
+	}
+	SWE_erik_palmstierna={
+		name=SWE_erik_palmstierna
+		advisor={
+			slot = theorist
+			idea_token = SWE_erik_palmstierna
+			ledger = navy
+			allowed = {
+				original_tag = SWE
+			}
+			traits = { naval_theorist }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+	}
+	SWE_eric_virgin={
+		name=SWE_eric_virgin
+		advisor={
+			slot = theorist
+			idea_token = SWE_eric_virgin
+			ledger = air
+			allowed = {
+				original_tag = SWE
+			}
+			traits = { air_warfare_theorist }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+	}
+#Advisors
+	SWE_gustav_moller={
+		name=SWE_gustav_moller
+		advisor={
+			slot = political_advisor
+			idea_token = SWE_gustav_moller
+			allowed = {
+				original_tag = SWE
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { neutrality_advocate }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+	}
+	SWE_per_engdahl={
+		name=SWE_per_engdahl
+		advisor={
+			slot = political_advisor
+			idea_token = SWE_per_engdahl
+			allowed = {
+				original_tag = SWE
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					has_completed_focus = SWE_nsp
+				}
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_western_european_2d"
+			}
+		}
+	}
+	SWE_tage_erlander={
+		name=SWE_tage_erlander
+		advisor={
+			slot = political_advisor
+			idea_token = SWE_tage_erlander
+			allowed = {
+				original_tag = SWE
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_western_european_2d"
+			}
+		}
+	}
+	SWE_hilding_hagberg={
+		name=SWE_hilding_hagberg
+		advisor={
+			slot = political_advisor
+			idea_token = SWE_hilding_hagberg
+			allowed = {
+				original_tag = SWE
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					has_completed_focus = SWE_inernational_com #Yeah it's misspelled internally, what are you going to do about it?
+				}
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_western_european_2d"
+			}
+		}
+	}
+	SWE_thorwald_bergquist={
+		name=SWE_thorwald_bergquist
+		advisor={
+			slot = political_advisor
+			idea_token = SWE_thorwald_bergquist
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { smooth_talking_charmer }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+	}
+	SWE_folke_bernadotte={
+		name=SWE_folke_bernadotte
+		advisor={
+			slot = political_advisor
+			idea_token = SWE_folke_bernadotte
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { compassionate_gentleman }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_folke_bernadotte"
+			}
+		}
+	}
+	SWE_osten_unden={
+		name=SWE_osten_unden
+		advisor={
+			slot = political_advisor
+			idea_token = SWE_osten_unden
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { silent_workhorse }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+	}
+	SWE_ernst_wigforss={
+		name=SWE_ernst_wigforss
+		advisor={
+			slot = political_advisor
+			idea_token = SWE_ernst_wigforss
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { captain_of_industry }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+	}
+	SWE_carlos_adlercreutz={
+		name=SWE_carlos_adlercreutz
+		advisor={
+			slot = political_advisor
+			idea_token = SWE_carlos_adlercreutz
+			allowed = {
+				original_tag = SWE
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_carlo_bergamini"
+			}
+		}
+	}
+}

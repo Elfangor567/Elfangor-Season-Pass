@@ -1,0 +1,76 @@
+﻿units = {
+	fleet = {
+		name = "Re-Fitted Danish Flotilla"			
+		naval_base = 6287  # Copenhagen
+		task_force = {
+			name = "Re-Fitted Danish Flotilla"
+			location = 6287
+			
+			ship = { name = "Nordland" definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = GER version_name = "Niels Iuel Class" } } }
+			
+			ship = { name = "Adler" definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = GER version_name = "Herluf Trolle Class" } } }
+			
+			ship = { name = "Beskytteren" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Beskytteren Class" } } }
+			
+			ship = { name = "Dorsch" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Hvidbjørnen Class" } } }
+			
+			ship = { name = "Sleipner" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Ingolf Class" } } }
+			
+			ship = { name = "HDMS Hvalrossen" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Hvalrossen Class" } } }
+			
+			ship = { name = "Südpol" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Freja Class" } } }
+			
+			ship = { name = "Springeren" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat  = { amount = 1 owner = GER version_name = "Springeren II Class" } } }
+			ship = { name = "Hajen" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat  = { amount = 1 owner = GER version_name = "Springeren II Class" } } }
+			ship = { name = "Narhvalen" definition = SCA_gunboat  equipment = { SCA_ship_hull_gunboat  = { amount = 1 owner = GER version_name = "Springeren II Class" } } }
+			
+			ship = { name = "Havkatten" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Springeren Class" } } }
+			
+			ship = { name = "TFA3" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Dragen Class" } } }
+			ship = { name = "TFA5" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Dragen Class" } } }
+			ship = { name = "TFA6" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Dragen Class" } } }
+			
+			ship = { name = "TFA4" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Glenten Class" } } }
+			ship = { name = "TFA1" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Glenten Class" } } }
+			ship = { name = "TFA2" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Glenten Class" } } }
+			
+			ship = { name = "Nymfen" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Huitfeldt Class" } } }
+			ship = { name = "Najaden" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Huitfeldt Class" } } }
+		
+			ship = { name = "Lossen" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Lossen Class" } } }
+		
+			ship = { name = "Fürstenberg" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = GER version_name = "Minekran Class" } } }
+			ship = { name = "Prenzlau" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = GER version_name = "Minekran Class" } } }
+			
+			ship = { name = "Prenzlau II" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = GER version_name = "Henrik Gerner Class" } } }
+			
+			ship = { name = "VS1401" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "Lindormen Class" } } }
+			
+			ship = { name = "HDMS Nerger" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Hejmdal Class" } } }
+			
+			ship = { name = "Lougen" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = GER version_name = "Lougen Class" } } }					
+			ship = { name = "Laaland" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = GER version_name = "Lougen Class" } } }					
+			
+			ship = { name = "MA6" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = GER version_name = "Søløven Class" } } }					
+			ship = { name = "MA5" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = GER version_name = "Søløven Class" } } }					
+			ship = { name = "MA1" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = GER version_name = "Søløven Class" } } }					
+			ship = { name = "MA4" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = GER version_name = "Søløven Class" } } }					
+			
+			ship = { name = "MS2" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "MS Class" } } }					
+			ship = { name = "MS3" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "MS Class" } } }					
+			ship = { name = "MS4" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "MS Class" } } }					
+			ship = { name = "MS6" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "MS Class" } } }					
+			ship = { name = "MS8" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "MS Class" } } }					
+			ship = { name = "MS10" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = GER version_name = "MS Class" } } }					
+			
+			ship = { name = "Varmebåd 1" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = GER version_name = "Grønsund Class" } } }					
+		
+			ship = { name = "Havmanden" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "H Class" } } }
+			ship = { name = "Havfruen" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "H Class" } } }
+			ship = { name = "Havkalen" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "H Class" } } }					
+			ship = { name = "Havhesten" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = GER version_name = "H Class" } } }					
+		
+		}
+	}
+}
+		

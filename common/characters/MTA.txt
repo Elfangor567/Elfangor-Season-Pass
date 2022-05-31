@@ -1,0 +1,712 @@
+characters={
+#Country Leaders
+	MTA_heinrich_albert_schnee={
+		name=MTA_heinrich_albert_schnee
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_15.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	MTA_franz_ritter_von_epp={
+		name=MTA_franz_ritter_von_epp
+		portraits={
+			civilian={
+				large="gfx/leaders/DARK/Portrait_DARK_Franz_Ritter_von_Epp.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	MTA_rudolf_asmis={
+		name=MTA_rudolf_asmis
+		portraits={
+			civilian={
+				large="gfx/leaders/DARK/Portrait_DARK_Rudolf_Asmis.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	MTA_erich_mielke={
+		name=MTA_erich_mielke
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_10.dds"
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+#Generals and Admirals
+	MTA_theodor_von_hippel={
+		name=MTA_theodor_von_hippel
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Generic_land_5.dds"
+			}
+		}
+		field_marshal={
+			traits = { brilliant_strategist thorough_planner commando trait_engineer fortress_buster }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 3
+			legacy_id=-1
+		}
+	}
+	MTA_hermann_detzner={
+		name=MTA_hermann_detzner
+		portraits={
+			army={
+				large="gfx/leaders/DARK/Portrait_DARK_Hermann_Detzner.dds"
+			}
+		}
+		corps_commander={
+			traits = { media_personality infantry_officer trickster commando jungle_rat hill_fighter }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
+			legacy_id=-1
+		}
+	}
+	MTA_richard_wenig={
+		name=MTA_richard_wenig
+		portraits={
+			navy={
+				large="gfx/leaders/DARK/Portrait_DARK_Richard_Wenig.dds"
+			}
+		}
+		navy_leader={
+			traits = { gunnery_expert blockade_runner blue_water_expert }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 3
+			legacy_id=-1
+		}
+	}
+
+#Chiefs of Staff
+	MTA_ernst_junger={ #WWI Veteran and writer
+		name=MTA_ernst_junger
+		portraits={
+			army={
+				small="GFX_idea_ernst_junger"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = MTA_ernst_junger
+			allowed = {
+				original_tag = MTA
+			}
+			traits = { army_chief_morale_1 }
+			cost = 75
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MTA_julian_scherner={ #WWI Veteran, SS Officer
+		name=MTA_julian_scherner
+		portraits={
+			army={
+				small="GFX_idea_julian_scherner"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = MTA_julian_scherner
+			allowed = {
+				original_tag = MTA
+			}
+			traits = { army_chief_offensive_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	MTA_wilhelm_rumann={ #Admiral, SS member and CEO/Chief of Staff of the Reichskolonialbund from 1936-1939
+		name=MTA_wilhelm_rumann
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = MTA_wilhelm_rumann
+			allowed = {
+				original_tag = MTA
+			}
+			traits = { navy_submarine_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	MTA_kammhuber={ #General of the Night Flyers of the Luftwaffe
+		name=MTA_kammhuber
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = MTA_kammhuber
+			allowed = {
+				original_tag = MTA
+			}
+			traits = { air_chief_night_operations_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#High Command
+	MTA_wilhelm_reinhard={ #General of the infantry and Reich leader of the Nazi Warriors Federal
+		name=MTA_wilhelm_reinhard
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MTA_wilhelm_reinhard
+			ledger = army
+			allowed = {
+				original_tag = MTA
+			}
+			traits = { army_infantry_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MTA_ernst_klingelhage={ #Leader of the Bund deutscher Kolonialpfadfinder (League of Colonial Scouts)
+		name=MTA_ernst_klingelhage
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MTA_ernst_klingelhage
+			ledger = army
+			allowed = {
+				original_tag = MTA
+			}
+			traits = { army_logistics_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MTA_erhard_porschmann={ #Deputy of the Deutschen Kolonial-Pfadfinderbundes
+		name=MTA_erhard_porschmann
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MTA_erhard_porschmann
+			ledger = army
+			allowed = {
+				original_tag = MTA
+			}
+			traits = { army_chief_organizational_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}	
+	MTA_karl_atangana={ #African chief who supported Germany in WW1
+		name=MTA_karl_atangana
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MTA_karl_atangana
+			ledger = army
+			allowed = {
+				original_tag = MTA
+			}
+			available = {
+				NOT = { has_government = fascism }
+			}
+			traits = { army_chief_maneuver_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	MTA_werner_fuchs={ #Rear Admiral Fuchs
+		name=MTA_werner_fuchs
+		portraits={
+			navy={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MTA_werner_fuchs
+			ledger = navy
+			allowed = {
+				original_tag = MTA
+			}
+			traits = { navy_capital_ship_2 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MTA_harry_ward={ #Fought in WW1 at Tsingtao
+		name=MTA_harry_ward
+		portraits={
+			navy={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MTA_harry_ward
+			ledger = navy
+			allowed = {
+				original_tag = MTA
+			}
+			traits = { navy_fleet_logistics_3 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MTA_gustav_zimmer={ #Leader of the Lake Tanganyika naval forces in WW1
+		name=MTA_gustav_zimmer
+		portraits={
+			navy={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MTA_gustav_zimmer
+			ledger = navy
+			allowed = {
+				original_tag = MTA
+			}
+			traits = { navy_screen_3 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	MTA_gerhard_bassenge={ #Chief of Staff for the Luftflotte 2, Paratrooper trainer and Fighter in the North African Campaign
+		name = MTA_gerhard_bassenge
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MTA_gerhard_bassenge
+			ledger = air
+				allowed = {
+					original_tag = MTA
+				}
+				traits = { air_airborne_3 }
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	MTA_otto_waldau={ #Generlmajor of the Fliegerführer Afrika (1942)
+		name = MTA_otto_waldau
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MTA_otto_waldau
+			ledger = air
+			allowed = {
+				original_tag = MTA
+			}
+			traits = { air_bomber_interception_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MTA_hans_seidemann={ #Generlmajor of the Fliegerführer Afrika (1942-1943)
+		name = MTA_hans_seidemann
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MTA_hans_seidemann
+			ledger = air
+			allowed = {
+				original_tag = MTA
+			}
+			traits = { air_chief_ground_support_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MTA_walter_hagen={ #Generlmajor of the Fliegerführer Afrika (1943)
+		name = MTA_walter_hagen
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MTA_walter_hagen
+			ledger = air
+			allowed = {
+				original_tag = MTA
+			}
+			traits = { air_air_superiority_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+#Theorists
+	MTA_august_doring={ #Leader of the Kolonialbund Deutscher Pfadfinder
+		name = MTA_august_doring
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = MTA_august_doring
+			ledger = army
+			allowed = {
+				original_tag = MTA
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MTA_max_looff={ #Former naval officer in WW1 (East Africa)
+		name = MTA_max_looff
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = MTA_max_looff
+			ledger = navy
+			allowed = {
+				original_tag = MTA
+			}				
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+		}
+	}
+	MTA_theo_osterkamp={ #Generlmajor of Fliegerführer Afrika (1942)
+		name = MTA_theo_osterkamp
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_3"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = MTA_theo_osterkamp
+			ledger = air
+			allowed = {
+				original_tag = MTA
+			}				
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+		}
+	}
+	
+#Advisors
+	MTA_reinhard_heydrich={ #One of the main architects of the Holocaust and General of the Police
+		name=MTA_reinhard_heydrich
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MTA_reinhard_heydrich
+			allowed = {
+				original_tag = MTA
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	MTA_kai_hassel={ #Attended the German Colonial School of Agriculture, Commerce and Industry, became a plant merchant in Tanganyika, later became Minister of Defence
+		name=MTA_kai_hassel
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MTA_kai_hassel
+			allowed = {
+				original_tag = MTA
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	MTA_john_heartfield={ #Communist visual artist, wanted by the Gestapo
+		name=MTA_john_heartfield
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MTA_john_heartfield
+			allowed = {
+				original_tag = MTA
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	MTA_theodore_seitz={ #Former governor of Namibia, 1920 president of the German Colonial Society
+		name=MTA_theodore_seitz
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MTA_theodore_seitz
+			allowed = {
+				original_tag = MTA
+			}			
+			available = {
+				GER = {
+					has_subject = ROOT
+					has_government = neutrality
+				}
+			}
+			
+			traits = { staunch_monarchist }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	
+	MTA_eugen_fischer={ #Eugenicist, involved in the Herero and Namaqua genocide in German Namibia
+		name=MTA_eugen_fischer
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MTA_eugen_fischer
+			allowed = {
+				original_tag = MTA
+			}
+			
+			traits = { prince_of_terror }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	MTA_friedrich_lindequist={ #1907-1910 Governor of German SW Africa, introduced Karakul breeding to the area
+		name=MTA_friedrich_lindequist
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MTA_friedrich_lindequist
+			allowed = {
+				original_tag = MTA
+			}
+			
+			traits = { captain_of_industry }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	MTA_alf_bayrle={ #Painter/Graphic designer for the Reichskolonialbund
+		name=MTA_alf_bayrle
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MTA_alf_bayrle
+			allowed = {
+				original_tag = MTA
+			}
+			
+			traits = { propaganda_expert }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	MTA_werner_rohr={ #Leader after the merger between Deutschen Kolonial-Pfadfinderbundes and Bund deutscher Kolonialpfadfinder
+		name=MTA_werner_rohr
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_western_european_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MTA_werner_rohr
+			allowed = {
+				original_tag = MTA
+			}
+			
+			traits = { quartermaster_general }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	MTA_oswald_pirow={ #South African who was extremely pro-nazi and tried to start his own South African style Nazi party
+		name=MTA_oswald_pirow
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MTA_oswald_pirow
+			allowed = {
+				original_tag = MTA
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+}

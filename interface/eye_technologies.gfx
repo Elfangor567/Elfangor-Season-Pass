@@ -1,0 +1,166 @@
+SpriteTypes = {
+
+#Switzerland
+	SpriteType = {
+		name = "GFX_SWI_red_cross_tech_medium"
+		texturefile = "gfx/interface/technologies/support_equipment_1.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_SWI_infantry_weapons0_medium"
+		texturefile = "gfx/interface/technologies/fra_basic_equipment.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/ENG_infantry_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_infantry_weapons3_medium"
+		texturefile = "gfx/interface/technologies/CAN_infantry_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_infantry_weapons5_medium"
+		texturefile = "gfx/interface/technologies/ita_advanced_infantry_weapons.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_antiair2_medium"
+		texturefile = "gfx/interface/technologies/AA_2_axis.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_antitank2_medium"
+		texturefile = "gfx/interface/technologies/AT_2_axis.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_antitank5_medium"
+		texturefile = "gfx/interface/technologies/AT_3_axis.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_basic_light_tank_medium"
+		texturefile = "gfx/interface/technologies/rom_basic_light_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_improved_light_tank_medium"
+		texturefile = "gfx/interface/technologies/cze_basic_main_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_improved_light_tank_destroyer_medium"
+		texturefile = "gfx/interface/technologies/cze_basic_medium_td.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_basic_heavy_tank_medium"
+		texturefile = "gfx/interface/technologies/FRA_basic_heavy_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_fighter1_medium"
+		texturefile = "gfx/interface/technologies/GER_fighter1.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_fighter2_medium"
+		texturefile = "gfx/interface/technologies/FRA_fighter1.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_naval_bomber2_medium"
+		texturefile = "gfx/interface/technologies/ENG_naval_bomber2.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_naval_bomber3_medium"
+		texturefile = "gfx/interface/technologies/ENG_naval_bomber3.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_cv_naval_bomber3_medium"
+		texturefile = "gfx/interface/technologies/USA_CAS2.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_tactical_bomber1_medium"
+		texturefile = "gfx/interface/technologies/FRA_heavy_fighter1.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_tactical_bomber2_medium"
+		texturefile = "gfx/interface/technologies/GER_tactical_bomber1.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_tactical_bomber3_medium"
+		texturefile = "gfx/interface/technologies/ENG_tactical_bomber3.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_heavy_fighter3_medium"
+		texturefile = "gfx/interface/technologies/USA_heavy_fighter3.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_strategic_bomber2_medium"
+		texturefile = "gfx/interface/technologies/ITA_strategic_bomber2.dds"
+	}
+	SpriteType = {
+		name = "GFX_SWI_strategic_bomber3_medium"
+		texturefile = "gfx/interface/technologies/ENG_tactical_bomber3.dds"
+	}
+	
+#Austria
+	SpriteType = {
+		name = "GFX_AUS_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/ENG_infantry_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_infantry_weapons5_medium"
+		texturefile = "gfx/interface/technologies/GER_infantry_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_mechanised_infantry_medium"
+		texturefile = "gfx/interface/technologies/tfv_shared2_mechanized_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_mechanised_infantry2_medium"
+		texturefile = "gfx/interface/technologies/CAN_mechanized_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_mechanised_infantry3_medium"
+		texturefile = "gfx/interface/technologies/CAN_mechanized_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_antiair2_medium"
+		texturefile = "gfx/interface/technologies/AA_2_axis.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_antitank2_medium"
+		texturefile = "gfx/interface/technologies/AT_2_axis.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_antitank5_medium"
+		texturefile = "gfx/interface/technologies/AT_3_axis.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_basic_light_tank_medium"
+		texturefile = "gfx/interface/technologies/ITA_basic_light_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_advanced_light_tank_medium"
+		texturefile = "gfx/interface/technologies/ITA_imp_light_tank.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_early_fighter_medium"
+		texturefile = "gfx/interface/technologies/ITA_early_fighter.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_early_bomber_medium"
+		texturefile = "gfx/interface/technologies/ITA_early_bomber.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_tactical_bomber1_medium"
+		texturefile = "gfx/interface/technologies/ITA_tactical_bomber1.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_strategic_bomber1_medium"
+		texturefile = "gfx/interface/technologies/FRA_strategic_bomber1.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_strategic_bomber2_medium"
+		texturefile = "gfx/interface/technologies/FRA_strategic_bomber2.dds"
+	}
+	SpriteType = {
+		name = "GFX_AUS_strategic_bomber3_medium"
+		texturefile = "gfx/interface/technologies/GER_strategic_bomber3.dds"
+	}
+}
+	
+	
+	

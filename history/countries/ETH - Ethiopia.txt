@@ -1,0 +1,225 @@
+﻿capital = 271
+
+oob = "ETH_1936"
+
+recruit_character = ETH_haile_selassie
+recruit_character = ETH_makonnen_endelkachew
+recruit_character = ETH_takele_wolde_hawariat
+recruit_character = ETH_haile_selassie_gugsa
+recruit_character = ETH_hailu_tekle_haimonot
+
+recruit_character = ETH_mulugeta_yeggazu
+recruit_character = ETH_kassa_haile_darge
+recruit_character = ETH_imru_haile_selassie
+recruit_character = ETH_birru_wolde_gabriel
+recruit_character = ETH_nasibu_zeamanuel
+recruit_character = ETH_kifle_nasibu
+
+recruit_character = ETH_desta_damtew
+recruit_character = ETH_viking_tamm
+recruit_character = ETH_abebe_aregai
+recruit_character = ETH_adafrisau_yenadu
+recruit_character = ETH_mangasha_yilma
+recruit_character = ETH_lij_johannes
+recruit_character = ETH_paul_corriger
+recruit_character = ETH_mischa_babitchev
+recruit_character = ETH_asfaw_ali
+
+recruit_character = ETH_dothee
+recruit_character = ETH_theodore_konovaloff
+recruit_character = ETH_balcha_safo
+recruit_character = ETH_haile_kebbede
+recruit_character = ETH_seyum_mangasha
+recruit_character = ETH_wondossen_kassa
+recruit_character = ETH_aberra_kassa
+recruit_character = ETH_asfawossen_kassa
+recruit_character = ETH_hubert_julian
+recruit_character = ETH_bahru_kaba
+recruit_character = ETH_ludwig_weber
+
+recruit_character = ETH_mesfin_sileshi
+recruit_character = ETH_abiye_abebe
+recruit_character = ETH_john_robinson
+
+recruit_character = ETH_afevork_jesus
+recruit_character = ETH_abebe_damtew
+recruit_character = ETH_wubneh_amoraw
+recruit_character = ETH_tekle_hawariat
+recruit_character = ETH_herouy_wolde_selassie
+recruit_character = ETH_lorenzo_taezez
+recruit_character = ETH_yilma_deressa
+recruit_character = ETH_tafere_worq
+recruit_character = ETH_wehib_pasha
+recruit_character = ETH_makonnen_haptewold
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	motorised_infantry = 1
+	tech_mountaineers = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	interwar_antitank = 1
+	mass_assault = 1
+	early_fighter = 1
+	early_bomber = 1
+	fuel_silos = 1
+	armored_car1 = 1
+	basic_train = 1
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+	}
+}
+
+set_convoys = 5
+add_command_power = 100
+add_ideas = war_economy
+add_ideas = limited_conscription
+add_ideas = ETH_african_expertise
+add_ideas = ETH_gas_attacks
+add_ideas = ETH_medieval_warfare1
+add_ideas = ETH_bad_encryption
+ITA = { 
+	add_command_power = 100
+	set_province_controller = 2072
+	set_province_controller = 13240
+}
+
+set_variable = { ROOT.ETH_noble_influence_value = 75 }
+set_variable = { global.ETH_seized_weapon_stockpile = 10000 }
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 6
+	fascism = 1
+	communism = 4
+	neutrality = 89
+}
+
+#Now a colony of Italy  However, if independent it would have
+1939.1.1 = {
+	add_political_power = 1200
+	army_experience = 25
+
+	#generic focuses
+	complete_national_focus = ETH_gas_reform
+	complete_national_focus = ETH_improve_encryption
+	complete_national_focus = ETH_extend_line
+	complete_national_focus = ETH_break_arms_embargo
+	complete_national_focus = ETH_eng_support
+	complete_national_focus = ETH_fra_support
+	complete_national_focus = ETH_ger_support
+	complete_national_focus = ETH_jap_support
+	
+	set_technology = {
+		
+		scout_plane1 = 1
+		
+		#doctrines
+		pocket_defence = 1
+		defence_in_depth = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+	
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		democratic = 0
+		fascism = 0
+		communism = 0
+		neutrality = 100
+	}
+}
+
+### VARIANTS ###
+# 1936 Start #
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		create_equipment_variant = {
+			name = "Fiat 3000"
+			type = light_tank_chassis_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_heavy_machine_gun
+				turret_type_slot = tank_light_one_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 1
+				tank_nsb_armor_upgrade = 1
+			}
+			icon = "GFX_ITA_gwtank_medium"
+		}
+	}
+
+### STARTING EQUIPMENT ###
+#1936
+	add_equipment_to_stockpile = {
+		type = gw_armored_car_equipment
+		producer = ETH 
+		amount = 7
+	}
+	if = {
+		limit = { has_dlc = "No Step Back" }
+			add_equipment_to_stockpile = { 
+				type = light_tank_chassis_0
+				producer = "ETH"
+				variant_name = "Fiat 3000"
+				amount = 4
+			}
+		
+		else = {
+			add_equipment_to_stockpile = { 
+				type = light_tank_chassis_0
+				producer = "ETH"
+				amount = 4
+			}
+		}
+	}

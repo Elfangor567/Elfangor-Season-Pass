@@ -1,0 +1,24 @@
+#For Ideas that end getting used in more than 1 mod
+ideas = {
+	country = {
+		
+		neutral_influence= { #Originally from SCA
+			
+			picture = generic_neutrality_drift_bonus
+			
+			modifier = {
+				neutrality_drift = 0.1
+				neutrality_acceptance = 85
+			}
+		}
+
+		neutral_leanings = { #Originally from EYE
+			
+			picture = generic_neutrality_drift_bonus
+			
+			modifier = {
+				neutrality_acceptance = 85
+			}
+		}
+	}
+}

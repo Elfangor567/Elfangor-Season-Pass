@@ -1,0 +1,636 @@
+﻿capital = 110
+
+oob = "NOR_1936"
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "NOR_1936_naval_mtg"
+	else = {
+		set_naval_oob = "NOR_1936_naval_legacy"
+	}
+}
+
+set_research_slots = 2
+
+recruit_character = NOR_vidkun_quisling
+recruit_character = NOR_johan_l_mowinckel
+recruit_character = NOR_johan_nygaardsvold
+recruit_character = NOR_adam_egede_nissen
+recruit_character = NOR_martin_tranmael
+recruit_character = NOR_alf_mjoen
+recruit_character = NOR_haakon_vii
+
+recruit_character = NOR_otto_ruge
+recruit_character = NOR_carl_johan_erichsen
+recruit_character = NOR_jacob_hvinden_haug
+recruit_character = NOR_einar_liljedahl
+recruit_character = NOR_william_steffens
+recruit_character = NOR_jacob_ager_laurantzon
+recruit_character = NOR_carl_gustav_fleischer
+recruit_character = NOR_elias_corneliussen
+
+recruit_character = NOR_olav_v
+recruit_character = NOR_wilhelm_von_tangen_hansteen
+recruit_character = NOR_kristian_laake
+recruit_character = NOR_bjarne_oen
+recruit_character = NOR_ole_reistad
+recruit_character = NOR_hjalmar_riiser_larsen
+recruit_character = NOR_carsten_tank_nielsen
+recruit_character = NOR_henry_diesen
+
+recruit_character = NOR_birger_ljungberg
+recruit_character = NOR_alfred_roscher_lund
+recruit_character = NOR_olaf_helset
+recruit_character = NOR_hans_holtermann
+recruit_character = NOR_jacob_von_der_lippe
+recruit_character = NOR_edgar_otto
+recruit_character = NOR_bernt_balchen
+
+recruit_character = NOR_oscar_sigvald_strugstad
+recruit_character = NOR_tryggve_gran
+recruit_character = NOR_skule_storheil
+recruit_character = NOR_axel_aubert
+
+recruit_character = NOR_oscar_torp
+recruit_character = NOR_haakon_lie
+recruit_character = NOR_henry_kristiansen
+recruit_character = NOR_rolf_fuglesang
+recruit_character = NOR_johan_hjort
+recruit_character = NOR_laura_johannessen
+recruit_character = NOR_halvdan_koht
+recruit_character = NOR_adolf_indrebo
+recruit_character = NOR_trygve_halvdan_lie
+recruit_character = NOR_ragnvald_lund
+
+#NS
+recruit_character = NS_arthur_qvist
+recruit_character = NS_henry_rinnan
+recruit_character = NS_konrad_sundlo
+
+recruit_character = NS_ragnvald_hvoslef
+recruit_character = NS_jonas_lie
+recruit_character = NS_tryggve_gran
+recruit_character = NS_rudolf_bratteng
+recruit_character = NS_kjeld_irgens
+
+recruit_character = NS_oliver_moystad
+recruit_character = NS_carl_hanssen
+recruit_character = NS_axel_stang
+recruit_character = NS_alf_whist
+recruit_character = NS_finn_kjelstrup
+recruit_character = NS_christen_knudsen
+recruit_character = NS_hans_haereid
+
+recruit_character = NS_axle_rod
+recruit_character = NS_jens_bache_wiig
+recruit_character = NS_reidar_aagaard
+recruit_character = NS_bjarne_eriksen
+
+recruit_character = NS_radet_council
+recruit_character = NS_lauritz_sand
+recruit_character = NS_abjorn_sunde
+recruit_character = NS_gustav_jaeger
+recruit_character = NS_eivind_blehr
+recruit_character = NS_tormod_hustad
+recruit_character = NS_karl_marthinsen
+
+add_ideas = {
+	volunteer_only
+	NOR_no_mobilization
+}
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_mountaineers = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1
+	early_fighter = 1
+	cv_early_fighter = 1
+	early_bomber = 1
+	naval_bomber1 = 1
+	
+	trench_warfare = 1
+	trade_interdiction = 1
+	
+	fuel_silos = 1
+	basic_train = 1
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_destroyer = 1
+		basic_destroyer = 1
+		early_light_cruiser = 1
+		early_battlecruiser = 1
+		early_submarine = 1
+		early_heavy_cruiser = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		coastal_defense_ships = 1
+		SCA_gunboats = 1
+		DEN_fishery_protection_ships = 1
+		
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+			basic_depth_charges = 1
+			smoke_generator = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_cruiser_armor_scheme = 1
+		early_ship_hull_heavy = 1
+		early_ship_hull_submarine = 1
+		
+		basic_battery = 1
+			basic_light_battery = 1
+			basic_medium_battery = 1
+			basic_heavy_battery = 1
+		basic_secondary_battery = 1
+		basic_torpedo = 1
+			improved_ship_torpedo_launcher = 1
+		mtg_transport = 1
+	}
+}
+
+add_ideas = {	
+	NOR_neutrality_idea
+	NOR_haakon_vii
+}
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	
+	#generic focuses
+	complete_national_focus = NOR_flight #jan 1 - march 11 (1936)
+	complete_national_focus = NOR_establish_economic_uni #march 11 - july 29
+	complete_national_focus = NOR_go_neutral #july 29 - oct 7
+	complete_national_focus = NOR_balance_budget #oct 7 - dec 16
+	complete_national_focus = NOR_infr #dec 16 - feb 24 (1937)
+	complete_national_focus = NOR_exp_narvik #feb 24 - may 5
+	complete_national_focus = NOR_ind_tech #may 5 - july 14
+	complete_national_focus = NOR_central_ind #july 14 - sep 22
+	complete_national_focus = NOR_rehabilitate_navy #sep 22 - dec 1
+	complete_national_focus = NOR_dockyards #dec 1 - feb 9 (1938)
+	complete_national_focus = NOR_rehabilitate_mil #feb 9 - apr 20
+	complete_national_focus = NOR_drsrn #apr 20 - june 29		
+	complete_national_focus = NOR_ind_tech2 #june 29 - sept 7
+	complete_national_focus = NOR_civ_fac #sept 7 - nov 16
+	
+	if = {
+		limit = { has_dlc = "No Step Back" }
+			set_technology = {
+				gwtank_chassis = 1
+				basic_light_tank_chassis = 1
+			}
+		else = {
+			set_technology = {
+				gwtank = 1
+				basic_light_tank = 1
+			}
+		}
+	}
+	set_technology = {
+		gw_artillery = 1
+		interwar_artillery = 1
+		artillery1 = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+		armored_car1 = 1
+		scout_plane1 = 1
+		
+
+		#doctrines
+		formation_flying = 1
+		dive_bombing = 1
+		grand_battle_plan = 1
+		prepared_defense = 1
+		raider_patrols = 1
+		carrier_operations = 1
+		convoy_sailing_ti = 1
+		convoy_interdiction_ti = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_refining = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		excavation1 = 1
+	}
+	
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			set_technology = {
+				sonar = 1
+				improved_depth_charges = 1
+				improved_airplane_launcher = 1
+				basic_ship_hull_heavy = 1
+				basic_heavy_armor_scheme = 1			
+				magnetic_detonator = 1
+				improved_secondary_battery = 1
+				damage_control_1 = 1
+				fire_control_methods_1 = 1
+				improved_naval_mines = 1
+			}
+			set_naval_oob = "NOR_1939_naval_mtg"
+		else = {
+			set_technology = {
+				basic_light_cruiser = 1
+			}
+			set_naval_oob = "NOR_1939_naval_legacy"
+		}
+	}
+	
+	oob = "NOR_1939"
+	
+	add_ideas = drsrn_signatory
+}
+
+set_convoys = 80		# biggest merchant marine in the world
+set_stability = 0.7
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1933.10.16"
+	election_frequency = 36
+	elections_allowed = yes
+}
+set_popularities = {
+	neutrality = 75.8
+	democratic = 20.2
+	fascism = 2.2
+	communism = 1.8
+}
+
+1939.1.1 = {
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1936.10.19"
+		election_frequency = 36
+		elections_allowed = yes
+	}
+	set_popularities = {
+		neutrality = 76.6
+		democratic = 21.3
+		fascism = 1.8
+		communism = 0.3
+	}
+}
+
+### VARIANTS ###
+# 1936 Start #
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+		### Tank Variants
+	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	### Ship Variants ###
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	# Submarines #
+	create_equipment_variant = {
+		name = "A Class"						
+		type = ship_hull_submarine_1
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+		
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "B Class"						
+		type = ship_hull_submarine_1
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_2
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+	}
+	
+	#Gunboats#
+	create_equipment_variant = {
+		name = "Vale Class"							
+		type = SCA_ship_hull_gunboat
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			front_1_custom_slot = ship_light_battery_1
+			rear_1_custom_slot = ship_mine_layer_1
+			fixed_ship_engine_slot = light_ship_engine_1
+		}
+		
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Gor Class"							
+		type = SCA_ship_hull_gunboat
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			front_1_custom_slot = ship_light_battery_1
+			rear_1_custom_slot = ship_mine_layer_1
+			fixed_ship_engine_slot = light_ship_engine_1
+		}
+		
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Glommen Class"							
+		type = SCA_ship_hull_gunboat
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			front_1_custom_slot = ship_anti_air_2
+			rear_1_custom_slot = ship_mine_layer_1
+			fixed_ship_engine_slot = light_ship_engine_1
+		}
+		
+		obsolete = yes
+	}
+	
+	#Fishery Protection (Based on Danish Designs, namely the Ingolf)
+	create_equipment_variant = {
+		name = "Fridtjof Nansen Class"							
+		type = DEN_ship_hull_fishery_protection_ship
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			front_1_custom_slot = ship_light_battery_2
+			mid_1_custom_slot = ship_anti_air_1
+			rear_1_custom_slot = ship_airplane_launcher_1
+			fixed_ship_engine_slot = light_ship_engine_1
+		}
+		
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Heimdel Class"							
+		type = DEN_ship_hull_fishery_protection_ship
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			front_1_custom_slot = ship_light_battery_2
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = ship_anti_air_2
+			fixed_ship_engine_slot = light_ship_engine_2
+		}
+		
+		obsolete = yes
+	}
+	
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Trygg Class"							
+		type = ship_hull_light_1
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Draug Class"							
+		type = ship_hull_light_1
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_2
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Sleipner Class"	#Began being built in 1936						
+		type = ship_hull_light_2
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_2
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+	}	
+	create_equipment_variant = {
+		name = "Frøya Class"								# minelayer		
+		type = ship_hull_light_1
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_2
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_mine_layer_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Olaf Tryggvason Class"							# minelayer		
+		type = ship_hull_light_2
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_2
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_2
+			fixed_ship_torpedo_slot = ship_torpedo_2
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_mine_layer_1
+		}
+	}
+	# Heavy Cruisers #
+	create_equipment_variant = {
+		name = "Tordenskjold Class"				
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = NOR_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = ship_torpedo_1
+		}
+		
+		obsolete = yes
+	}	
+	create_equipment_variant = {
+		name = "Eidsvold Class"				
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = NOR_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			front_1_custom_slot = ship_anti_air_1
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = ship_secondaries_1
+			rear_1_custom_slot = ship_torpedo_1
+		}
+		
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Bjørgvin Class"	#Ordered but never delivered due to WW1			
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = NOR_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_2
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = ship_secondaries_1
+			rear_1_custom_slot = ship_torpedo_1
+		}
+	}
+}
+
+# 1939 Start #
+1939.1.1 = {
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+			### Tank Variants
+		}
+		create_equipment_variant = {
+			name = "Rikstanken"
+			type = light_tank_chassis_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_heavy_machine_gun
+				turret_type_slot = tank_light_one_man_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = sloped_armor
+			}
+			upgrades = {
+			}
+		}
+	}
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		# Ship variants #
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		# Gunboats #
+		create_equipment_variant = {
+			name = "Otra Class"
+			type = SCA_ship_hull_gunboat
+			name_group = NOR_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				front_1_custom_slot = ship_anti_air_2
+				rear_1_custom_slot = ship_mine_layer_1
+				fixed_ship_engine_slot = light_ship_engine_2
+			}
+		}
+		#Fishery Protection
+		create_equipment_variant = {
+			name = "Nordkapp Class"							
+			type = DEN_ship_hull_fishery_protection_ship
+			name_group = NOR_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				front_1_custom_slot = ship_light_battery_1
+				mid_1_custom_slot = empty
+				rear_1_custom_slot = ship_mine_sweeper_1
+				fixed_ship_engine_slot = light_ship_engine_1
+			}
+			
+			obsolete = yes
+		}
+	}
+}
+
+### STARTING EQUIPMENT ###
+#1936
+
+1939.1.1 = {
+	if = {
+		limit = { has_dlc = "No Step Back" }
+			add_equipment_to_stockpile = { 
+				type = light_tank_chassis_1
+				producer = "NOR"
+				variant_name = "Rikstanken"
+				amount = 1
+			}
+		else = {
+			add_equipment_to_stockpile = { 
+				type = light_tank_chassis_1
+				producer = "NOR"
+				amount = 1
+			}
+		}
+	}
+}

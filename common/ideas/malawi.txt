@@ -1,0 +1,344 @@
+ideas = {
+	country = {
+		MLW_warm_heart = {
+			
+			picture = usa_desegregation_2
+			
+			allowed = {
+				original_tag = MLW
+			}
+			
+			modifier = {
+				join_faction_tension = -1
+				opinion_gain_monthly_factor = 1
+				civil_war_involvement_tension = -1
+				request_lease_tension = -1
+				trade_opinion_factor = 0.5
+			}
+		}
+	}
+
+	# MILITARY
+
+
+	political_advisor = {
+	
+		MLW_george_mwase = { #Old guard of the NAC, author of "Strike a blow and die"
+			
+			picture = generic_air_african_2
+
+			allowed = {
+				original_tag = MLW
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			cancel_if_invalid = yes 
+			
+			traits = { democratic_reformer }
+		}
+		
+		MLW_gilbert_pondeponde = { #Supporter of TDT Banda
+			
+			picture = generic_communist_revolutionary_african_2d
+
+			allowed = {
+				original_tag = MLW
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			cancel_if_invalid = yes 
+			
+			traits = { communist_revolutionary }
+		}
+		
+		MLW_richard_kettlewell = { #White emigree to Nyasaland, KAR officer, worked in agriculture post-war and promoted controcersial agricultural and land-use policies
+			
+			picture = generic_fascist_demagogue_western_european_2d
+
+			allowed = {
+				original_tag = MLW
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			cancel_if_invalid = yes 
+			
+			traits = { fascist_demagogue }
+		}
+
+		MLW_levi_mumba = { #First president of the NAC and early independence fighter
+
+			picture = generic_political_advisor_african_2
+
+			allowed = {
+				original_tag = MLW
+			}
+			
+			traits = { popular_figurehead }
+		}
+		
+		MLW_charles_mlanga = { #Editor of the Zo-Ona and first Secretary-General of the NAC
+			
+			picture = generic_air_african_3
+
+			allowed = {
+				original_tag = MLW
+			}
+			
+			traits = { editor }
+		}
+		
+		MLW_james_sangala = { #Early NAC leader known for his intensive behind the scenes work
+		
+			picture = generic_air_african_1
+
+			allowed = {
+				original_tag = MLW
+			}
+			
+			traits = { silent_workhorse }
+		}
+		
+		MLW_charles_matinga = { #Early NAC leader, known for his somewhat shady dealings
+		
+			picture = generic_army_african_4
+
+			allowed = {
+				original_tag = MLW
+			}
+			
+			traits = { backroom_backstabber }
+		}
+		
+		MLW_hastings_banda = { #He set up and ran a lot of intelligence related things, notably the Malawi Young Pioneers
+		
+			picture = hastings_banda
+
+			allowed = {
+				original_tag = MLW
+			}
+			
+			traits = { head_of_intelligence }
+		}
+	}
+	
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		MLW_nyasa_railways = { #Railway company for Nyasaland
+			
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				original_tag = MLW
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { heavy_tank_manufacturer }
+		}
+		
+		MLW_ALC = { #African Lakes Corporation, large corporation that had a hand in almost everything in Nyasaland, but especially automative
+			
+			picture = generic_tank_manufacturer_3
+			
+			allowed = {
+				original_tag = MLW
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { medium_tank_manufacturer }
+		}
+	}
+	
+	naval_manufacturer = {
+		
+		designer = yes
+		
+		MLW_trans = { #Trans-Zambezi Railway, purchased steamboat operation from the African Lakes Corporation in 1923 and used them to transport goods and people.
+			
+			picture = generic_naval_manufacturer_1
+			
+			allowed = {
+				original_tag = MLW
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+		}
+		
+		MLW_johnston = { #Fort Johnston (Now Mangochi), location where the Gunboat 'Gwendolen' was built to patrol Lake Malawi
+			
+			picture = generic_naval_manufacturer_2
+			
+			allowed = {
+				original_tag = MLW
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { atlantic_fleet_naval_manufacturer }
+		}
+		
+		MLW_malawi = { #Malawi Shipping Company, the ones who own the mv Ilala which launched in 1949 on Lake Malawi
+			
+			picture = generic_naval_manufacturer_3
+			
+			allowed = {
+				original_tag = MLW
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { raiding_fleet_naval_manufacturer }
+		}
+	}
+	
+	aircraft_manufacturer = {
+			
+		designer = yes
+		
+		MLW_IA = { #Imperial Airways
+			
+			picture = generic_air_manufacturer_1
+			
+			allowed = {
+				original_tag = MLW
+			}
+			
+			available = {
+				OR = {
+					NOT = { country_exists = ENG }
+					is_in_faction_with = ENG
+					is_subject_of = ENG
+					has_subject = ENG
+				}
+			}
+			cancel_if_invalid = yes
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer_2 }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		MLW_rana = { #Rhodesia & Nyasaland Airways
+			
+			picture = generic_air_manufacturer_3
+			
+			allowed = {
+				original_tag = MLW
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes
+		
+		MLW_bcac = { #British Central Africa Company, one of the largest companies in Malawi
+			
+			picture = generic_infantry_equipment_manufacturer_1
+			
+			allowed = {
+				original_tag = MLW
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+		
+		MLW_mandala = { #Mandala Motors, subsidiary of African Lakes Corporation, founded in 1924
+			
+			picture = generic_motorized_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = MLW
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+	}
+	
+	industrial_concern = {
+
+		MLW_CABS = { #Central African Broadcasting System
+					
+			picture = generic_electronics_concern_2
+				
+			allowed = {
+				original_tag = MLW
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
+		
+		MLW_shrc = { #Shire Highlands Railway Company, one of the earliest companies in Nyasaland
+		
+			picture =  generic_industrial_concern_1
+
+			allowed = {
+				original_tag = MLW
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}
+	}
+}

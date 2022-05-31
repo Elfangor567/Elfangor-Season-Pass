@@ -1,0 +1,672 @@
+#Alammania
+EYE_form_alamannia_category = {
+	SWI_form_alamannia = {
+		
+		icon = generic_form_nation
+		
+		allowed = {
+			original_tag = SWI
+			has_dlc = "Waking the Tiger"
+		}
+		
+		highlight_states = {
+			state = 153
+			state = 28
+			state = 42
+			state = 50
+			state = 52
+			state = 53
+			state = 54
+		}
+		
+		available = {
+			is_subject = no
+			controls_state = 153
+			controls_state = 28
+			controls_state = 42
+			controls_state = 50
+			controls_state = 52
+			controls_state = 53
+			controls_state = 54
+		}
+		
+		visible = {
+			OR = {
+				has_completed_focus = SWI_irredentism
+				controls_state = 153
+				controls_state = 28
+				controls_state = 42
+				controls_state = 50
+				controls_state = 52
+				controls_state = 53
+				controls_state = 54
+			}
+			NOT = { has_global_flag = SWI_formed_alamannia }
+		}
+		
+		complete_effect = {
+			set_cosmetic_tag = SWI_alamannia
+			add_state_core = 153
+			add_state_core = 28
+			add_state_core = 42
+			add_state_core = 50
+			add_state_core = 52
+			add_state_core = 53
+			add_state_core = 54
+			hidden_effect = {
+				set_global_flag = SWI_formed_alamannia
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}
+
+#Greater Germany
+AUS_form_greater_germany_category= {
+
+	AUS_form_greater_germany_decision = {
+
+		icon = generic_form_nation
+		
+		allowed = {
+			original_tag = AUS
+			has_dlc = "Waking the Tiger"
+		}
+		
+		highlight_states = {
+			state = 5
+			state = 42
+			state = 50
+			state = 51
+			state = 52
+			state = 53
+			state = 54
+			state = 55
+			state = 56
+			state = 57
+			state = 58
+			state = 59
+			state = 60
+			state = 61
+			state = 62
+			state = 63
+			state = 64
+			state = 65
+			state = 66
+			state = 67
+			state = 68
+			state = 69
+			state = 8
+			state = 28
+			state = 188
+		}
+		
+		available = {
+			NOT = { country_exists = GER }
+			is_subject = no			
+			#German States
+				controls_state = 5
+				controls_state = 42
+				controls_state = 50
+				controls_state = 51
+				controls_state = 52
+				controls_state = 53
+				controls_state = 54
+				controls_state = 55
+				controls_state = 56
+				controls_state = 57
+				controls_state = 58
+				controls_state = 59
+				controls_state = 60
+				controls_state = 61
+				controls_state = 62
+				controls_state = 63
+				controls_state = 64
+				controls_state = 65
+				controls_state = 66
+				controls_state = 67
+				controls_state = 68
+				controls_state = 69
+				controls_state = 763
+			#Expatriate States
+				controls_state = 8 #Luxemberg
+				controls_state = 28 #Alsace-Lorraine
+				controls_state = 188 #Memel
+		}
+		
+		fire_only_once = yes
+		
+		visible = {			
+			has_completed_focus = AUS_greater_germany_focus
+			OR = {
+				NOT = { has_global_flag = EYE_austria_formed_greater_germany }
+				AND = {
+					has_cosmetic_tag = HUN_EMPIRE
+					has_global_flag = reintegrate_the_empire_flag
+				}
+			}
+		}
+		
+		complete_effect = {
+			set_cosmetic_tag = AUS_greater_germany
+			add_state_core = 8
+			add_state_core = 28
+			add_state_core = 188
+			
+			if = {
+				limit = { controls_state = 151 }
+				add_state_core = 151
+			}
+			if = {
+				limit = { controls_state = 3 }
+				add_state_core = 3
+			}
+			hidden_effect = {
+				set_global_flag = EYE_austria_formed_greater_germany
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+}
+
+#Alexander's Legacy
+MAC_restore_alexanders_empire = {
+	
+	MAC_retake_greece = {
+		
+		icon = generic_form_nation
+		
+		allowed = {
+			original_tag = MAC
+		}
+		
+		highlight_states = {
+			state = 187
+			state = 731
+			state = 182
+			state = 185
+			state = 186
+			state = 47
+			state = 184
+		}
+		
+		available = {
+			NOT = { country_exists = GRE }
+			is_subject = no	
+			
+			controls_state = 187
+			controls_state = 731
+			controls_state = 182
+			controls_state = 185
+			controls_state = 186
+			controls_state = 47
+			controls_state = 184
+		}
+		
+		fire_only_once = yes
+		
+		visible = {
+			original_tag = MAC
+			NOT = { has_global_flag = EYE_restored_alexanders_empire1 }
+		}
+		
+		complete_effect = {
+			every_state = {
+				limit = { 
+					OR = {
+						is_core_of = GRE
+						state = 187
+						state = 731
+						state = 182
+						state = 185
+						state = 186
+						state = 47
+						state = 184
+					}
+				}
+				add_core_of = ROOT
+			}
+			731 = {
+				set_state_name = "Southern Macedonia"
+			}
+			add_state_claim = 805 #Northern Epirus
+			add_state_claim = 211 #Burgas
+			add_state_claim = 797 #Western Anatolia
+			add_state_claim = 340
+			add_state_claim = 339
+			add_state_claim = 342			
+			
+			hidden_effect = {
+				set_global_flag = EYE_restored_alexanders_empire1
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	MAC_restore_alexanders_empire_actual = {
+	
+		icon = generic_form_nation
+		
+		allowed = {
+			original_tag = MAC
+		}
+		
+		highlight_states = {
+			state = 106
+			#Alexandrian Greece
+			state = 731
+			state = 47
+			state = 184
+			#Bulgarian land
+			state = 211
+			#Turkey
+			state = 341			
+			state = 347
+			state = 340
+			state = 339
+			state = 342
+			state = 343
+			state = 49
+			state = 356
+			state = 355
+			state = 348
+			state = 346
+			state = 345
+			state = 344
+			state = 349
+			state = 354
+			state = 353
+			state = 352
+			state = 350
+			#Middle East/Egypt
+			state = 677
+			state = 680
+			state = 553
+			state = 554
+			state = 454
+			state = 455
+			state = 453
+			state = 447
+			state = 446
+			state = 456
+			state = 457
+			state = 675
+			state = 656
+			state = 676			
+			state = 419
+			state = 420
+			state = 421
+			state = 291
+			state = 413
+			state = 417
+			state = 420
+			state = 266
+			state = 418
+			state = 411
+			state = 412
+			state = 414
+			state = 416
+			state = 415
+			state = 267
+			state = 444
+			state = 445
+			state = 442
+			state = 410
+		}
+		
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = MAC_has_retaken_greece_tt
+				has_global_flag = EYE_restored_alexanders_empire1
+			}
+			
+			#Macedonia
+			controls_state = 106
+			#Alexandrian Greece
+			controls_state = 731
+			controls_state = 47
+			controls_state = 184
+			#Bulgarian land
+			controls_state = 211
+			#Turkey
+			custom_trigger_tooltip = {
+				tooltip = MAC_has_taken_turkey_tt				
+				controls_state = 341			
+				controls_state = 347
+				controls_state = 340
+				controls_state = 339
+				controls_state = 342
+				controls_state = 343
+				controls_state = 49
+				controls_state = 356
+				controls_state = 355
+				controls_state = 348
+				controls_state = 346
+				controls_state = 345
+				controls_state = 344
+				controls_state = 349
+				controls_state = 354
+				controls_state = 353
+				controls_state = 352
+				controls_state = 350
+			}
+			#Middle East/Egypt
+			custom_trigger_tooltip = {
+				tooltip = MAC_has_taken_syria_tt
+				controls_state = 677
+				controls_state = 680
+				controls_state = 553
+				controls_state = 554
+			}
+			custom_trigger_tooltip = {
+				tooltip = MAC_has_taken_iraq_tt
+				controls_state = 676
+				controls_state = 675
+				controls_state = 291
+				controls_state = 656
+			}
+			custom_trigger_tooltip = {
+				tooltip = MAC_has_taken_iran_tt
+				controls_state = 420
+				controls_state = 419
+				controls_state = 421
+				controls_state = 413
+				controls_state = 266
+				controls_state = 416
+				controls_state = 418
+				controls_state = 417
+				controls_state = 411
+				controls_state = 412
+				controls_state = 414
+				controls_state = 410
+			}
+			custom_trigger_tooltip = {
+				tooltip = MAC_has_taken_afghanistan_tt
+				controls_state = 415
+				controls_state = 267
+			}
+			#Egypt Etc.
+			controls_state = 454
+			controls_state = 455
+			controls_state = 453
+			controls_state = 447
+			controls_state = 446
+			controls_state = 456
+			controls_state = 457
+			#India	
+			controls_state = 444
+			controls_state = 445
+			controls_state = 442
+		}
+		
+		fire_only_once = yes
+		
+		visible = {
+			original_tag = MAC
+			NOT = { has_global_flag = EYE_restored_alexanders_empire2 }
+		}
+		
+		complete_effect = {
+			set_cosmetic_tag = MAC_ALEX_EMPIRE
+			
+			ROOT = {
+				#Bulgarian land
+				add_state_core = 48
+				add_state_core = 212
+				add_state_core = 211
+				add_state_core = 77
+				#Albania
+				add_state_core = 44
+				#Turkey
+				add_state_core = 341			
+				add_state_core = 347
+				add_state_core = 340
+				add_state_core = 339
+				add_state_core = 342
+				add_state_core = 343
+				add_state_core = 49
+				add_state_core = 356
+				add_state_core = 355
+				add_state_core = 348
+				add_state_core = 346
+				add_state_core = 345
+				add_state_core = 344
+				add_state_core = 349
+				add_state_core = 354
+				add_state_core = 353
+				add_state_core = 352
+				add_state_core = 350
+				#Islands
+				add_state_core = 182
+				add_state_core = 164
+				add_state_core = 187
+				add_state_core = 183
+				#Middle East/Egypt
+				add_state_core = 677
+				add_state_core = 680
+				add_state_core = 553
+				add_state_core = 554
+				add_state_core = 454
+				add_state_core = 455
+				add_state_core = 453
+				add_state_core = 447
+				add_state_core = 446
+				add_state_core = 456
+				add_state_core = 457
+				add_state_core = 675
+				add_state_core = 656
+				add_state_core = 676			
+				add_state_core = 419
+				add_state_core = 420
+				add_state_core = 421
+				add_state_core = 291
+				add_state_core = 413
+				add_state_core = 417
+				add_state_core = 420
+				add_state_core = 266
+				add_state_core = 418
+				add_state_core = 411
+				add_state_core = 412
+				add_state_core = 414
+				add_state_core = 416
+				add_state_core = 415
+				add_state_core = 267
+				add_state_core = 445
+				add_state_core = 442
+				add_state_core = 410
+				#Extra Egypt
+				add_state_core = 452
+				add_state_core = 552
+				add_state_core = 551
+				add_state_core = 549
+				#Real Iberia
+				add_state_core = 233
+				add_state_core = 232
+				add_state_core = 231
+				add_state_core = 229
+				add_state_core = 230
+				#India
+				add_state_core = 440
+				add_state_core = 441
+				add_state_core = 787
+				add_state_core = 444
+				add_state_core = 443
+				#Sogdian/Khiva
+				add_state_core = 742
+				add_state_core = 405
+				add_state_core = 584
+				add_state_core = 586
+				add_state_core = 732
+				
+			}
+			
+			hidden_effect = {
+				set_global_flag = EYE_restored_alexanders_empire2
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}		
+}
+
+## Bosnia i Herzegovina
+EYE_form_bosnia_category = {
+
+	EYE_form_bosnia_decision = {
+	
+		icon = generic_form_nation
+		
+		highlight_states = {
+			state = 104
+			state = 804
+		}
+		
+		available = {
+			controls_state = 104
+			controls_state = 804
+		}
+		
+		complete_effect = {
+		
+			hidden_effect = {
+				every_possible_country = {
+					limit = { 
+						has_cosmetic_tag = BOS_UNITED
+					}
+					drop_cosmetic_tag = yes
+					remove_state_claim = 103
+					remove_state_claim = 105
+					remove_state_claim = 163
+					if = {
+						limit = { original_tag = HRZ }
+						remove_state_core = 104
+					}
+				}
+			}
+			add_state_core = 104
+			add_state_core = 804
+			add_state_claim = 103
+			add_state_claim = 105
+			add_state_claim = 163
+			
+			set_cosmetic_tag = BOS_UNITED		
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+}
+
+### Yugoslavia
+EYE_form_yugoslavia_category = {
+	
+	EYE_form_yugoslavia_decision = {
+		
+		icon = generic_form_nation
+		
+		highlight_states = {
+			state = 104
+			state = 109
+			state = 103
+			state = 106
+			state = 105
+			state = 108
+			state = 107
+			state = 102
+			state = 45
+			state = 764
+		}
+		
+		available = {
+			controls_state = 104
+			controls_state = 109
+			controls_state = 103
+			controls_state = 106
+			controls_state = 105
+			controls_state = 108
+			controls_state = 107
+			controls_state = 102
+			controls_state = 45
+			controls_state = 764
+		}
+		
+		visible = {
+			NOT = { has_global_flag = EYE_new_yugoslavia_formed }
+		}
+		
+		complete_effect = {
+			if = {
+				limit = { is_subject = yes }
+				add_autonomy_score = {
+					value = 1000
+					localization = EYE_form_yugoslavia_decision
+				}
+			}
+			every_state = {
+				limit = { 
+					is_core_of = YUG
+				}
+				remove_core_of = YUG
+				add_core_of = ROOT
+			}
+			every_state = {
+				limit = { is_claimed_by = YUG }
+				remove_core_of = YUG
+				add_claim_by = ROOT
+			}
+			set_cosmetic_tag = EYE_new_YUG
+			
+			#Base
+			add_state_core = 104
+			add_state_core = 109
+			add_state_core = 103
+			add_state_core = 106
+			add_state_core = 105
+			add_state_core = 108
+			add_state_core = 107
+			add_state_core = 102
+			add_state_core = 45
+			add_state_core = 764
+			#Owned By Other Countries 1
+			add_state_core = 736 #Istria, Italy
+			add_state_core = 163 #Zara, Italy
+			#Albania
+			add_state_claim = 44
+			add_state_claim = 805
+			#Bulgaria
+			add_state_claim = 211
+			add_state_claim = 212
+			add_state_claim = 48
+			add_state_claim = 801
+			#Greece
+			add_state_claim = 731
+			add_state_claim = 184
+			#Owned by other countries 2
+			add_state_claim = 77 #Dobrujia, Romania
+			
+			hidden_effect = {
+				set_global_flag = EYE_new_yugoslavia_formed #I Really, REALLY wish you could target non-existant nations
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+}
+
+

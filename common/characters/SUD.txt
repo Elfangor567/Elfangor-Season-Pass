@@ -1,0 +1,637 @@
+characters={
+#Country Leaders
+	SUD_abdullah_khalil={
+		name=SUD_abdullah_khalil
+		portraits={
+			civilian={
+				large="gfx/leaders/DARK/Portrait_DARK_Marcus_Garvey.dds" #They look similar
+			}
+		}
+		country_leader={
+			ideology=centrism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	SUD_abd_al_rahman_al_mahdi={ #Neo-Mahdist leader, tried to become King of the Sudan
+		name=SUD_abd_al_rahman_al_mahdi
+		portraits={
+			civilian={
+				large="gfx/leaders/DARK/Portrait_DARK_Abd_Mahdi.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			traits = { DARK_neo_mahdist2 }
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SUD_abd_al_rahman_al_mahdi
+			allowed = {
+				original_tag = SUD
+			}			
+			available = {
+				NOT = { has_country_leader = { ruling_only = no character = SUD_abd_al_rahman_al_mahdi } }
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}	
+			traits = { DARK_neo_mahdist }
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}	
+	SUD_ismail_al_azhari={
+		name=SUD_ismail_al_azhari
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/portrait_africa_generic_land_7.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	SUD_abd_al_wahhab_zain_al_abidin={
+		name=SUD_abd_al_wahhab_zain_al_abidin
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_4.dds"
+			}
+		}
+		country_leader={
+			ideology=marxism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	SUD_ali_al_mirghani={ #The one who died in 1968, not the one who was born in 1961 (that would be his son)
+		name=SUD_ali_al_mirghani
+		portraits={
+			civilian={
+				large="gfx/leaders/DARK/Portrait_DARK_generic_african_1.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	
+#Generals and Admirals
+	SUD_ibrahim_abboud={
+		name=SUD_ibrahim_abboud
+		portraits={
+			army={
+				large="gfx/leaders/DARK/Portrait_DARK_Ibrahim_Abboud.dds"
+			}
+		}
+		field_marshal = {
+			traits = { war_hero career_officer harsh_leader offensive_doctrine aggressive_assaulter desert_fox }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+	SUD_ali_abd_al_latif={
+		name=SUD_ali_abd_al_latif
+		portraits={
+			army={
+				large="gfx/leaders/DARK/Portrait_DARK_Ali_Latif.dds"
+			}
+		}
+		field_marshal = {
+			traits = { war_hero trait_reckless desert_fox }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+#Chiefs of Staff
+	SUD_ahmed_mohammed={ #First General of an independant Sudan
+		name=SUD_ahmed_mohammed
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_6"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SUD_ahmed_mohammed
+			allowed = {
+				original_tag = SUD
+			}
+			traits = { army_chief_planning_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SUD_ahmed_wahab={ #Other Armed Forces commander with Ibrahim Abboud who seized power in the 1958 coup
+		name=SUD_ahmed_wahab
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_5"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SUD_ahmed_wahab
+			allowed = {
+				original_tag = SUD
+			}
+			traits = { army_chief_offensive_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	SUD_sulayman_kisha={ #Merchant, writer and intellectual
+		name=SUD_sulayman_kisha
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_1"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = SUD_sulayman_kisha
+			allowed = {
+				original_tag = SUD
+			}
+			traits = { navy_screen_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	SUD_zayn_tam={ #Leader of the White Flag League
+		name=SUD_zayn_tam
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_2"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = SUD_zayn_tam
+			allowed = {
+				original_tag = SUD
+			}
+			traits = { air_chief_ground_support_1 }
+			cost = 75
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#High Command
+	SUD_wilfred_thesiger={ #English Explorer who joined the Sudanese Defence Force, Friend of Haile Selassie
+		name=SUD_wilfred_thesiger
+		portraits={
+			army={
+				small="GFX_idea_generic_army_arab_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SUD_wilfred_thesiger
+			ledger = army
+			allowed = {
+				original_tag = SUD
+			}
+			available = {
+				OR = {
+					is_in_faction_with = ENG
+					is_subject_of = ENG
+					has_subject = ENG
+					NOT = { country_exists = ENG }
+				}
+			}
+			traits = { army_chief_maneuver_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SUD_harold_malik={ #Sudanese Colonel who participated in the 1948 Arab-Israeli war
+		name=SUD_harold_malik
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SUD_harold_malik
+			ledger = army
+			allowed = {
+				original_tag = SUD
+			}
+			traits = { army_infantry_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SUD_abdel_sule={ #Sudanese politician, son of a village chief and arms smuggler
+		name=SUD_abdel_sule
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SUD_abdel_sule
+			ledger = army
+			allowed = {
+				original_tag = SUD
+			}		
+			traits = { army_logistics_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SUD_fumu_jama={ #Soldier of the White Flag League
+		name=SUD_fumu_jama
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SUD_fumu_jama
+			ledger = army
+			allowed = {
+				original_tag = SUD
+			}		
+			traits = { army_regrouping_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	SUD_sayyid_farah={ #Officer of the White Flag League
+		name=SUD_sayyid_farah
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SUD_sayyid_farah
+			ledger = navy
+			allowed = {
+				original_tag = SUD
+			}	
+			traits = { navy_chief_decisive_battle_2 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SUD_sabri_zayd={ #Member of the White Flag League in Port Sudan
+		name=SUD_sabri_zayd
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_arab_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SUD_sabri_zayd
+			ledger = navy
+			allowed = {
+				original_tag = SUD
+			}	
+			traits = { navy_chief_commerce_raiding_2 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SUD_hasan_mahlawi={ #Leading Merchant in Swakin and Kassala, later a prominent Socialist
+		name=SUD_hasan_mahlawi
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SUD_hasan_mahlawi
+			ledger = navy
+			allowed = {
+				original_tag = SUD
+			}	
+			traits = { navy_fleet_logistics_2 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	SUD_dardiri_ismail={ #Member of the White Flag League and the first Sudanese parliament
+		name=SUD_dardiri_ismail
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SUD_dardiri_ismail
+			ledger = air
+				allowed = {
+					original_tag = SUD
+				}
+				traits = { air_air_combat_training_1 }
+				cost =  75
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	SUD_bilal_riziq={ #Member of the White Flag League and a Yuzbashi (Captain)
+		name=SUD_bilal_riziq
+		portraits={
+			army={
+				small="GFX_idea_generic_air_arab_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SUD_bilal_riziq
+			ledger = air
+				allowed = {
+					original_tag = SUD
+				}
+				traits = { air_air_superiority_2 }
+				cost =  100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	
+#Theorists
+	SUD_ubayd_amin={ #Vice-President of the White Flag League
+		name = SUD_ubayd_amin
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_4"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = SUD_ubayd_amin
+			ledger = army
+			allowed = {
+				original_tag = SUD
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	SUD_nafisa_surur={ #Member of the White Flag League, and sewer of its flag
+		name = SUD_nafisa_surur
+		gender=female
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_female_africa"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = SUD_nafisa_surur
+			ledger = navy
+			allowed = {
+				original_tag = SUD
+			}				
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SUD_utham_hashim={ #Member of the White Flag League and intellectual
+		name = SUD_utham_hashim
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_1"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = SUD_utham_hashim
+			ledger = air
+			allowed = {
+				original_tag = SUD
+			}		
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+#Advisors
+	SUD_hassan_zarouq={ #President of the Anti-Imperialist Front, a group backed by the SMNL
+		name=SUD_hassan_zarouq
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SUD_hassan_zarouq
+			allowed = {
+				original_tag = SUD
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			traits = { communist_revolutionary }
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	SUD_babiker_awadella={ #8th Prime Minister of Sudan and a Supreme Court Justice
+		name=SUD_babiker_awadella
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SUD_babiker_awadella
+			allowed = {
+				original_tag = SUD
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}	
+			traits = { democratic_reformer }
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	SUD_yusif_hindi={ #Leader of the Tariqa Hindiyya, a smaller Sufi organization similar to the Khatimiyya
+		name=SUD_yusif_hindi
+		gender=female
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SUD_yusif_hindi
+			allowed = {
+				original_tag = SUD
+			}
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			traits = { fascist_demagogue }
+			ai_will_do = {
+				base = 0
+			}		
+		}
+	}
+	
+	SUD_siddiq_mahdi={ #Eldest Son of Abd al-Rahman al-Mahdi, not to be confused with his own son of the same name
+		name=SUD_siddiq_mahdi
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SUD_siddiq_mahdi
+			allowed = {
+				original_tag = SUD
+			}	
+			traits = { backroom_backstabber }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	SUD_muhammad_maghoub={ #Foreign Minister and 6th Prime Minister of Sudan
+		name=SUD_muhammad_maghoub
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SUD_muhammad_maghoub
+			allowed = {
+				original_tag = SUD
+			}	
+			traits = { smooth_talking_charmer }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	SUD_arafat_abdallah={ #Member of the White Flag League and later editor of the al-Fajr Literary Journal
+		name=SUD_arafat_abdallah
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SUD_arafat_abdallah
+			allowed = {
+				original_tag = SUD
+			}	
+			traits = { editor }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	SUD_hadi_mahdi={ #Leader of the Ansar order and uncle of Sadiq al-Mahdi
+		name=SUD_hadi_mahdi
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SUD_hadi_mahdi
+			allowed = {
+				original_tag = SUD
+			}	
+			traits = { head_of_intelligence }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+}

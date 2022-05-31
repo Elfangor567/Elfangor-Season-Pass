@@ -1,0 +1,181 @@
+form_austria_hungary_category = {
+
+	form_austria_hungary = {
+
+		icon = generic_form_nation
+
+		allowed = {
+			OR = {
+				original_tag = AUS
+				original_tag = CZE
+				original_tag = CRO
+			}
+		}
+
+		available = {
+			is_subject = no
+			controls_state = 153
+			controls_state = 152
+			controls_state = 4
+			controls_state = 155
+			controls_state = 43
+			controls_state = 154
+		}
+
+		visible = {
+			OR = {
+				original_tag = AUS
+				original_tag = CZE
+				original_tag = CRO
+			}
+			NOT = { has_global_flag = form_austria_hungary_flag }
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = HUN_EMPIRE
+			if = {
+				limit = {
+					NOT = { tag = AUS }
+				}
+				AUS = { set_cosmetic_tag = AUS_NOT_WHITE }
+			}
+			# Austria
+			custom_effect_tooltip = form_country_austria_coring_states_tt
+			hidden_effect = {
+				every_state = {
+					limit = { is_core_of = AUS }
+					add_core_of = ROOT
+				}
+			}
+			# Hungary
+			custom_effect_tooltip = form_country_hungary_coring_states_tt
+			hidden_effect = {
+				every_state = {
+					limit = { is_core_of = HUN }
+					add_core_of = ROOT
+				}
+			}
+			
+			##CZE Bonus
+			if = {
+				limit = { original_tag = CZE }
+				102 = { add_claim_by = ROOT }
+				103 = { add_claim_by = ROOT }
+				104 = { add_claim_by = ROOT }
+				109 = { add_claim_by = ROOT }
+				45 = { add_claim_by = ROOT }
+				83 = { add_claim_by = ROOT }
+				76 = { add_claim_by = ROOT }
+				84 = { add_claim_by = ROOT }
+				39 = { add_claim_by = ROOT }
+				163 = { add_claim_by = ROOT }
+				736 = { add_claim_by = ROOT }
+				764 = { add_claim_by = ROOT }
+				82 = { add_claim_by = ROOT }
+			}
+			hidden_effect = {
+				if = {
+					limit = { original_tag = AUS }
+					news_event = { id = EYE_aus.100 hours = 6 }
+				}
+				else = {
+					news_event = { id = wtt_news.56 hours = 6 }
+				}
+				set_global_flag = form_austria_hungary_flag
+			}
+		}
+
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+
+	reintegrate_austro_hungarian_empire = {
+
+		icon = generic_form_nation
+
+		allowed = {
+			OR = {
+				original_tag = HUN
+				original_tag = CZE
+			}
+			has_dlc = "Waking the Tiger"
+		}
+
+		available = {
+			is_subject = no
+			#Hungary
+			controls_state = 155
+			controls_state = 43
+			controls_state = 154
+			#Balkans
+			controls_state = 102
+			controls_state = 103
+			controls_state = 104
+			controls_state = 109
+			controls_state = 45
+			controls_state = 83
+			controls_state = 76
+			controls_state = 84
+			controls_state = 764
+			#CZE
+			controls_state = 69
+			controls_state = 9
+			controls_state = 75
+			controls_state = 74
+			controls_state = 70
+			controls_state = 664
+			controls_state = 71
+			controls_state = 73
+		}
+
+		visible = {
+			OR = {
+				original_tag = HUN
+				original_tag = CZE
+			}
+			has_cosmetic_tag = HUN_EMPIRE
+			NOT = { has_global_flag = reintegrate_the_empire_flag }
+		}
+
+		complete_effect = {
+			155 = { add_core_of = ROOT }
+			43 = { add_core_of = ROOT }
+			154 = { add_core_of = ROOT }
+			102 = { add_core_of = ROOT }
+			103 = { add_core_of = ROOT }
+			104 = { add_core_of = ROOT }
+			109 = { add_core_of = ROOT }
+			45 = { add_core_of = ROOT }
+			83 = { add_core_of = ROOT }
+			76 = { add_core_of = ROOT }
+			84 = { add_core_of = ROOT }
+			764 = { add_core_of = ROOT }
+			39 = { add_core_of = ROOT }
+			163 = { add_core_of = ROOT }
+			736 = { add_core_of = ROOT }
+			69 = { add_core_of = ROOT }
+			9 = { add_core_of = ROOT }
+			75 = { add_core_of = ROOT }
+			74 = { add_core_of = ROOT }
+			72 = { add_core_of = ROOT }
+			70 = { add_core_of = ROOT }
+			664 = { add_core_of = ROOT }
+			71 = { add_core_of = ROOT }
+			73 = { add_core_of = ROOT }
+			set_global_flag = reintegrate_the_empire_flag
+		}
+
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}

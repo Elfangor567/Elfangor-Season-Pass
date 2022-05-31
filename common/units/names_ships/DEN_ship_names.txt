@@ -1,0 +1,127 @@
+﻿##### DENMARK NAME LISTS #####
+### REGULAR DESTROYER NAMES###
+DEN_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+
+	for_countries = { DEN }
+
+	type = ship
+	ship_types = { ship_hull_light destroyer DEN_ship_hull_fishery_protection SCA_ship_hull_gunboats  }			
+
+	prefix = "HDMS "
+	fallback_name = "Destroyer %d"
+	
+	unique = {
+		"Nymfen" "Najaden" "Huitfeldt" "Willemoes" "Søridderen" "Flyvefisken" "Søulven" "Hvalrossen" 
+		"Delfinen" "Sværdfisken" "Søløven" "Søhunden" "Havhesten" "Narhvalen" "Oldenburg"
+		"Makrelen" "Nordkaperen" "Havkatten" "Dragen" "Hvalen" "Laxen" "Glenten" "Høgen" 
+		"Ørnen" "Grønsund" "Hvidbjørne" "Hunt" "Huitfeldt"
+	}
+}
+### LIGHT CRUISER NAMES###
+DEN_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+
+	for_countries = { DEN }
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	
+	prefix = "HDMS "
+	fallback_name = "Lys Cruiseren %d"
+	
+	unique = {
+		"Flynderen" "Mågen" "Ørnen" "Falken" "Ulken" "Fyen" "Hekla" "Esjufjöll"
+		"Katla" "Hveravellir"
+	}
+}
+### HEAVY CRUISER NAMES###
+DEN_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+
+	for_countries = { DEN }
+
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	prefix = "HDMS "
+	fallback_name = "Tung Cruiseren %d"
+	
+	unique = {
+		"Vitus Bering" "Sælen" "Hvalrossen" "Isbjørn" "Herluf Trolle"
+		"Corfits Ulfeldt" "Steen Bille" "Amdrup"
+	}
+}
+### BATTLESHIP NAMES ###
+DEN_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+
+	for_countries = { DEN }
+
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	
+	prefix = "HDMS "
+	fallback_name = "Slagskib %d"
+	
+	unique = {
+		"Drzki" "Zheleznjakov" "Niels Juel" "Peder Skram" "Olfert Fischer" "Tordenskjold" "Konow"
+		"Peter Willemoes"
+		"Christian IV" "Christian X" "Kraken" "Lindormen" #Previously SHBB names
+	}
+}
+
+### BATTLECRUISER NAMES ###
+DEN_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { DEN }
+
+	type = ship
+	ship_types = { ship_hull_heavy battle_cruiser }
+	
+	prefix = "HDMS "
+	fallback_name = "Slagkrydseren %d"		
+
+	unique = {
+		"Tordenskiold" "Ivar Huitfeldt" "Ulrik Gyldenløve" "Markor Rodsteen" "Prince George"
+		"Søren"
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+DEN_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+
+	for_countries = { DEN }
+
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	
+	prefix = "HDMS "
+	fallback_name = "Hangarskib %d"	
+
+	unique = {
+		"Horik" "Danske Løve" "Peder Marsvin" "Dannebrog" "Rolf Krake" "Gorm" "Odin" "Sigurd" 
+		"Frōði" "Haraldr" 
+	}
+}
+
+### SUBMARINES ###
+DEN_SS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SUBMARINES
+
+	for_countries = { DEN }
+
+	type = ship
+	ship_types = { ship_hull_submarine submarine SCA_ship_hull_gunboats }
+	
+	prefix = "HDMS "
+	fallback_name = "Ubåd %d"
+	
+	unique = {
+		"Rota" "Bellona" "Flora" "Daphne" "Dryaden" "Havmanden" "Havfruen" "Havkalen" "Havhesten" 
+		"Springeren" "Støren" "Delfinen" "Spækhuggeren" "Tumleren" "Springeren" "Dykkeren" "Thetis" 
+		"2den April" "Najaden" "Nymfen" "Ægir" "Ran" "Triton" "Neptun" "Galathea" "Sirene"
+	}
+}

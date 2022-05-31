@@ -1,0 +1,20 @@
+﻿l_english:
+ 
+ farmer:0 "Farmer"
+ likes_germany:0 "Likes Germany"
+ german_prince:0 "German Prince"
+ army_veteran:0 "Veteran"
+ SCA_indefatigable_king:0 "Indefatigable King"
+ 
+ staunch_pacifist:0 "Staunch Pacifist"
+ staunch_pacifist_desc:0 "This politician strongly believes in the way of non-violence and peaceful arbitration."
+ neutrality_advocate:0 "Neutrality Advocate"
+ neutrality_advocate_desc:0 "This politician strongly believes in avoiding entangling alliances unless strictly necessary."
+ SCA_does_everything:0 "Master Multi-Tasker"
+ SCA_does_everything_desc:0 "An indefatiguable examplar of mankind. They have mastered multiple crafts and are in charge of several at once."
+ 
+ nuclear_developer:0 "Nuclear Concern"
+ 
+ assault_gun_manufacturer:0 "Assault Gun Designer"
+ blank_tank_manufacturer:0 "Tank Designer"
+ fokker_manufacturer:0 "Legacy Designer"

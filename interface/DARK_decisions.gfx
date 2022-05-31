@@ -1,0 +1,29 @@
+spriteTypes = {
+	
+	### Categories
+	
+	spriteType = {
+		name = "GFX_decision_cat_generic_LIB_hinterland"
+		texturefile = "gfx/interface/decisions/decision_cat_generic_LIB_hinterland.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_liberian_politics"
+		texturefile = "gfx/interface/decisions/decision_cat_generic_liberian_politics.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_lib_usa_influence"
+		texturefile = "gfx/interface/decisions/decision_cat_generic_lib_usa_influence.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_ethiopian_nobility"
+		texturefile = "gfx/interface/decisions/decision_cat_generic_ethiopian_nobility.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_unite_nile_peoples"
+		texturefile = "gfx/interface/decisions/decision_cat_generic_unite_nile_peoples.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_generic_unite_rhodesia"
+		texturefile = "gfx/interface/decisions/decision_cat_generic_unite_rhodesia.dds"
+	}
+}

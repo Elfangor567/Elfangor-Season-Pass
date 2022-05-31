@@ -1,0 +1,773 @@
+ideas = {
+	hidden_ideas = { #Done because the flag was not getting removed for some reason
+	
+		ETH_recent_noble_activity_idea = {
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				tag = ETH
+			}
+			
+			modifier = { }
+		}
+	}
+	
+	country = {
+		
+		ETH_lose_war_idea = {
+			
+			picture = generic_spy_coup
+			
+			cancel = {
+				OR = {
+					has_war = no
+					is_subject = yes
+					has_global_flag = DARK_end_of_ita_eth_war
+					has_global_flag = war_over_ETH
+					ITA = { has_completed_focus = ITA_victoryinETH }
+				}
+			}
+			
+			modifier = {
+				army_attack_factor = -0.2
+				army_defence_factor = -0.2
+			}
+		}
+		
+		ETH_win_war_idea = {
+			
+			picture = generic_victors_of_ww1
+			
+			cancel = {
+				OR = {
+					has_war = no
+					is_subject = yes
+					has_global_flag = DARK_end_of_ita_eth_war
+					has_global_flag = war_over_ETH
+					ITA = { has_completed_focus = ITA_victoryinETH }
+				}
+			}
+			
+			modifier = {
+				army_attack_factor = 0.2
+				army_defence_factor = 0.2
+			}
+		}
+		
+		ETH_african_expertise = {
+			
+			picture = FRA_scw_intervention_nationalists_focus
+			
+			modifier = {
+				terrain_penalty_reduction = 0.1
+				heat_attrition_factor = -0.5
+				acclimatization_hot_climate_gain_factor = 0.1
+				army_speed_factor = 0.05
+			}
+		}
+		
+		ETH_gas_attacks = {
+			
+			picture = strategic_bombing_focus
+			
+			targeted_modifier = {
+				tag = ITA
+				attack_bonus_against = -0.1
+				defense_bonus_against = -0.05
+			}
+		}
+		
+		ETH_medieval_warfare1 = {
+			
+			picture = chi_forced_conscription
+			
+			cancel = {
+				has_government = communism
+			}
+			
+			modifier = {
+				command_power_gain_mult = -0.25
+				mobilization_speed = -0.5
+			}
+		}
+		ETH_medieval_warfare2 = {
+			
+			picture = chi_forced_conscription
+			
+			cancel = {
+				has_government = communism
+			}
+			
+			modifier = {
+				command_power_gain_mult = -0.1
+				mobilization_speed = -0.25
+			}
+		}
+		
+		ETH_bad_encryption = {
+			
+			picture = DARK_bad_electronics
+			
+			modifier = {
+				crypto_strength = -1
+			}
+		}
+		
+		ETH_belgian_mission = {
+			
+			picture = generic_infantry_bonus
+			
+			cancel = {
+				has_war_with = BEL
+			}
+			
+			modifier = {
+				training_time_factor = -0.1
+			}
+		}
+		ETH_belgian_mission2 = {
+			
+			picture = generic_infantry_bonus
+			
+			cancel = {
+				has_war_with = BEL
+			}
+			
+			modifier = {
+				army_org_factor = 0.1
+				training_time_factor = -0.1
+				experience_gain_army_factor = 0.1
+			}
+		}
+		ETH_swedish_mission = {
+			
+			picture = generic_spy_intel
+			
+			cancel = {
+				has_war_with = SWE
+			}
+			
+			modifier = {
+				planning_speed = 0.1
+			}
+		}
+		ETH_swedish_mission2 = {
+			
+			picture = generic_spy_intel
+			
+			cancel = {
+				has_war_with = SWE
+			}
+			
+			modifier = {
+				planning_speed = 0.1
+				air_accidents_factor = -0.1
+				air_weather_penalty = -0.1
+			}
+		}
+		ETH_turkish_mission = {
+			
+			picture = generic_wall_line
+			
+			cancel = {
+				has_war_with = TUR
+			}
+			
+			modifier = {
+				dig_in_speed_factor = 0.25
+				production_speed_bunker_factor = 0.25
+				production_speed_coastal_bunker_factor = 0.25
+			}
+		}
+		
+		ETH_internationalism = {
+			
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {				
+				trade_opinion_factor = 0.25
+				improve_relations_maintain_cost_factor = -0.5
+			}
+		}
+		
+		ETH_nationalist_idea = {
+			
+			picture = generic_intel_bonus
+			
+			modifier = {
+				offensive_war_stability_factor = 0.2
+				join_faction_tension = -1
+			}
+		}
+		ETH_nationalist_idea2 = {
+		
+			picture = generic_intel_bonus
+			
+			modifier = {
+				offensive_war_stability_factor = 0.2
+				join_faction_tension = -1
+				generate_wargoal_tension = -1
+				justify_war_goal_time = -0.5
+			}
+		}
+		
+		ETH_expanded_army = {
+			
+			picture = generic_manpower_bonus
+			
+			modifier = {
+				conscription = 0.05
+			}
+		}
+		ETH_expanded_army_rases = {
+			
+			picture = generic_manpower_bonus
+			
+			cancel = {
+				has_government = communism
+			}
+			
+			modifier = {
+				conscription = 0.075
+			}
+		}
+		ETH_imperial_army_idea = {
+			
+			picture = generic_manpower_bonus
+			
+			modifier = {
+				conscription = 0.05
+				command_power_gain_mult = 0.25
+			}
+		}
+		
+		ETH_oletta_school_idea = {
+			
+			picture = generic_army_war_college
+			
+			modifier = {
+				max_command_power = 25
+				army_leader_start_level = 1
+			}
+		}
+		
+		ETH_beacon_of_hope = {
+			
+			picture = generic_morale_bonus
+			
+			rule = {
+				can_create_factions = yes
+				can_send_volunteers = yes
+			}
+			
+			modifier = {
+				democratic_acceptance = 50
+				democratic_drift = 0.1
+				send_volunteers_tension = -0.75
+				send_volunteer_divisions_required = -0.75
+				defensive_war_stability_factor = 0.2
+			}
+		}
+		
+		ETH_meiji_example = {
+			
+			picture = state_shintoism
+			
+			modifier = {
+				industry_air_damage_factor = -0.05
+				army_morale_factor = 0.05
+				war_support_factor = 0.1
+			}
+		}
+		
+		ETH_the_darkness = {
+			
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				fascism_acceptance = 50
+				fascism_drift = 0.1
+				justify_war_goal_time = -0.25
+				military_leader_cost_factor = -0.5
+				high_command_cost_factor = -0.5
+				army_chief_cost_factor =-0.5
+				navy_chief_cost_factor =-0.5				
+			}
+		}
+		
+		ETH_peoples_voice = {
+			
+			picture = generic_communism_drift_bonus
+			
+			modifier = {
+				communism_acceptance = 50
+				communism_drift = 0.1
+				foreign_subversive_activites = -0.5
+				economy_cost_factor = -0.5
+			}
+		}
+		
+		ETH_militias = {
+			
+			picture = generic_communist_army
+			
+			cancel = {
+				NOT = { has_idea = ETH_peoples_voice }
+			}
+			
+			modifier = {
+				communism_drift = 0.05
+				conscription = 0.025
+			}
+		}
+		
+		ETH_restricted_nobles = { #Shuttered until on_monthly_pulse becomes a thing :(
+			
+			picture = generic_central_management
+			
+			modifier = {
+			}
+		}
+		
+		ETH_abolished_gedar = {
+			
+			picture = generic_agrarian_reform
+			
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				war_support_factor = 0.1
+			}
+		}
+		ETH_gradual_reform = {
+			
+			picture = generic_agrarian_society
+			
+			modifier = {
+				local_resources_factor = 0.1
+				stability_factor = 0.1
+			}
+		}
+		
+		ETH_democratic_ideal = {
+			
+			picture = generic_victors_of_ww1
+			
+			modifier = {
+				industry_air_damage_factor = -0.05
+				army_morale_factor = 0.05
+				stability_factor = 0.2
+				war_support_factor = 0.1				
+				consumer_goods_factor = -0.1
+			}
+		}
+		ETH_solomonic_restoration = {
+			
+			picture = HUN_hungarian_monarchy
+			
+			modifier = {
+				industry_air_damage_factor = -0.1
+				army_morale_factor = 0.1
+				army_attack_factor = 0.1
+				war_support_factor = 0.2				
+			}
+		}
+		
+		ETH_eritrean_nationalism = {
+			
+			picture = chi_war_of_resistance3
+			
+			cancel = {
+				ERI = { is_subject_of = ROOT }
+			}
+			  
+			modifier = {
+				industrial_capacity_dockyard = -0.1
+				production_speed_buildings_factor = -0.1
+			}
+		}
+		ETH_eritrean_nationalism_crushed = {
+			
+			picture = generic_secret_police
+			
+			cancel = {
+				ERI = { is_subject_of = ROOT }
+			}
+			
+			modifier = {
+				industrial_capacity_dockyard = -0.05
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		ETH_somali_nationalism = {
+			
+			picture = generic_purge
+			
+			cancel = {
+				SOM = { is_subject_of = ROOT }
+			}
+			
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.1
+				resistance_target = 0.1
+				foreign_subversive_activites = 0.1
+				army_core_defence_factor = -0.05
+			}
+		}
+		ETH_somali_nationalism_crushed = {
+			
+			picture = generic_oppression
+			
+			cancel = {
+				SOM = { is_subject_of = ROOT }
+			}
+			
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.05
+				resistance_target = 0.05
+				foreign_subversive_activites = 0.05
+			}
+		}
+		ETH_somali_and_eritrean_nationalism_crushed = {
+			
+			picture = generic_oppression
+			
+			cancel = {
+				ERI = { is_subject_of = ROOT }
+				SOM = { is_subject_of = ROOT }
+			}
+			
+			modifier = {
+				industrial_capacity_dockyard = -0.05
+				production_speed_buildings_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.05
+				resistance_target = 0.05
+				foreign_subversive_activites = 0.05
+			}
+		}
+		
+		ETH_the_flagship_idea = {
+			
+			picture = generic_navy_bonus
+			
+			cancel = { 
+				OR = {
+					#has_equipment = { SH_battleship > 0 }
+					#has_equipment = { carrier > 0 } THIS CAUSES A CTD ERROR (FOR SOME REASON)
+					#has_equipment = { battleship > 10 }
+				}
+			}
+			
+			equipment_bonus = {
+				battleship = {
+					build_cost_ic = -0.5
+				}
+				carrier = {
+					build_cost_ic = -0.5
+				}
+			}
+		}
+		
+		ETH_air_payment = {
+			
+			picture = generic_fighter_production_diverted
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		ETH_ethiopian_gold = {
+			
+			picture = ast_all_in
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		ETH_haile_selassie_idea = {
+			
+			picture = DARK_Haile_Selassie
+			
+			cancel = {
+				has_government = communism
+			}
+			
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.1
+			}
+		}
+		
+		ETH_good_encryption = {
+			
+			picture = DARK_good_electronics
+			
+			modifier = {
+				crypto_strength = 1
+			}
+		}
+	}
+	
+	# TECHNOLOGY
+	
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		ETH_anbessa = { #Bus company established in 1943 by Haile Selassie I himself
+		
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				original_tag = ETH
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { medium_tank_manufacturer  }
+		}
+	}
+
+	naval_manufacturer = { 
+		
+		designer = yes
+		
+		ETH_massawa_docks = { #Massawa was home to quite a few dockyards
+			
+			picture = generic_naval_manufacturer_2
+			
+			allowed = {
+				original_tag = ETH
+			}
+			
+			available = {
+				OR = {
+					550 = { CONTROLLER = { tag = ROOT } }
+					550 = { OWNER = { tag = ROOT } }
+				}
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+			
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					owns_state = 550
+				}
+			}
+		}
+		
+		ETH_assab_yards = { #Assab was home to quite a few dockyards
+			
+			picture = generic_naval_manufacturer_1
+			
+			allowed = {
+				original_tag = ETH
+			}
+			
+			available = {
+				OR = {
+					550 = { CONTROLLER = { tag = ROOT } }
+					550 = { OWNER = { tag = ROOT } }
+				}
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { pacific_fleet_naval_manufacturer }
+			
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					owns_state = 550
+				}
+			}
+		}
+		
+		ETH_mogadishu = { #Mogadishu had a huge port even before Europe arrived (Previously, Sarapion)
+			
+			picture = generic_naval_manufacturer_3
+			
+			allowed = {
+				original_tag = ETH
+			}
+			
+			available = {
+				OR = {
+					559 = { CONTROLLER = { tag = ROOT } }
+					559 = { OWNER = { tag = ROOT } }
+				}
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+			
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					owns_state = 559
+				}
+			}
+		}
+	}
+	
+	aircraft_manufacturer = { 
+			
+		designer = yes
+		
+		ETH_weber_junkers = { #Webers was sent as a representative from Junkers, this is just a logical extension where Webers would establish a subsidiary branch of some sort
+			
+			picture = junkers
+			
+			allowed = {
+				original_tag = ETH
+			}
+			
+			available = {
+				NOT = { has_war_with = GER }
+			}
+			
+			cost = 100
+						
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { CAS_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		ETH_EAL = { #Ethiopian Air Lines
+			
+			picture = generic_air_manufacturer_3
+			
+			allowed = {
+				original_tag = ETH
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	industrial_concern = {
+	
+		designer = yes
+		
+		ETH_IBTE = { #Imperial Board of Telecommunications of Ethiopia
+			
+			picture = generic_electronics_concern_1
+			
+			allowed = {
+				original_tag = ETH
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		ETH_CFE = { #Compagnie du Chemin de Fer Franco-Éthiopien, the company who made the Ethio-Djibouti Railway
+			
+			picture = generic_industrial_concern_1
+			
+			allowed = {
+				original_tag = ETH
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes	
+		
+		ETH_officine_gondar = { #Officine Monti di Gondar, had workshops. Would actually donate tractor chassis to AOI in WW2, leading to the creation of the Uolchefit and Culqualber tanks which were similar to the Bob Semple
+		
+			picture = generic_motorized_equipment_manufacturer_2
+			
+			allowed = {
+				original_tag = ETH
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+		ETH_tiyet_fabrica = { #Established in concert with Czechoslovakia in the 1920's
+		
+			picture = generic_infantry_equipment_manufacturer_2
+			
+			allowed = {
+				original_tag = ETH
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+		
+		ETH_gafat_artillery = { #Gafat was the site where the massive Sebastopol mortar was built
+			
+			picture = generic_artillery_manufacturer_1
+			
+			allowed = {
+				original_tag = ETH
+			}
+			
+			research_bonus = {
+				artillery = 0.15
+			}
+			
+			traits = { artillery_manufacturer }
+		}	
+	}
+}

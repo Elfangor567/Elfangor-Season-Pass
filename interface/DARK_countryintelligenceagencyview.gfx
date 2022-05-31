@@ -1,0 +1,20 @@
+spriteTypes = {
+
+	#------------------- AGENCY LOGOS -------------------------------
+		
+	spriteType = {
+		name = "GFX_intelligence_agency_logo_aoi"
+		texturefile = "gfx/interface/operatives/agencies/agency_logo_aoi.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_intelligence_agency_logo_lib"
+		texturefile = "gfx/interface/operatives/agencies/agency_logo_lib.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_intelligence_agency_logo_eth"
+		texturefile = "gfx/interface/operatives/agencies/agency_logo_eth.dds"
+		noOfFrames = 2
+	}
+}

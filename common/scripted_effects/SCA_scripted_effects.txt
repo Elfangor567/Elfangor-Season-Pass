@@ -1,0 +1,25 @@
+d_set_color1 = { 
+	add_to_temp_array = {
+		array = args
+		value = "SMI"
+		index = 0
+	}
+	add_to_temp_array = {
+		array = args
+		value = 252
+		index = 1
+	}
+	add_to_temp_array = {
+		array = args
+		value = 209
+		index = 2
+	}
+	add_to_temp_array = {
+		array = args
+		value = 22
+		index = 3
+	}
+	log = "tag_color SMI [?args^1] [?args^2] [?args^3]"
+}
+
+#d_tag_color = { }

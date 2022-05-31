@@ -1,0 +1,168 @@
+opinion_modifiers = {
+	DEN_scandinavianism = {
+		value = 15
+	}
+	DEN_nordic_brotherhood = {
+		value = 20
+	}
+	DEN_went_britain = {
+		value = 110
+	}
+	DEN_chose_neither = {
+		value = 50
+	}
+	DEN_snubbed_germany = {
+		value = -90
+	}
+	DEN_went_germany = {
+		value = 110
+	}
+	DEN_snubbed_britain = {
+		value = -90
+	}
+	DEN_ICE_impr = {
+		value = 75
+	}
+	DEN_refused_demands = {
+		value = -100
+	}
+	DEN_outrageous_demands = {
+		value = -100
+	}
+	DEN_acquiesed = {
+		value = 100
+	}	
+	
+	DEN_trade_partner = {
+		trade = yes
+		value = 100
+	}	
+	DEN_neutral_trade = {
+		trade = yes
+		value = 50
+	}
+	DEN_tank_won = {
+		trade = yes
+		value = 25
+	}
+	
+	
+	ICE_loyal_subject = {
+		value = 50
+	}
+	ICE_like_brits = {
+		value = 25
+	}
+	ICE_like_us = {
+		value = 25
+	}
+	
+	ICE_loyal_subject2 = {
+		trade = yes
+		value = 25
+	}
+	ICE_like_brits2 = {
+		trade = yes
+		value = 25
+	}
+	ICE_like_us2 = {
+		trade = yes
+		value = 25
+	}
+
+
+	NOR_chose_axis = {
+		trade = yes
+		value = 100
+	}
+	NOR_chose_axis2 = {
+		value = 85
+	}
+	NOR_chose_ally = {
+		trade = yes
+		value = 100
+	}
+	NOR_chose_ally2 = {
+		value = 85
+	}
+	NOR_moscow_broken = {
+		value = -85
+	}
+	
+	
+	SWE_look_sov = {
+		value = 50
+	}
+	SWE_no_sov = {
+		value = -100
+	}
+	SWE_uk_trade1 = {
+		value = 25
+	}
+	SWE_uk_trade2 = {
+		trade = yes
+		value = 25
+	}
+	SWE_allied_trade1 = {
+		value = 35
+	}
+	SWE_allied_trade2 = {
+		trade = yes
+		value = 75
+	}
+	SWE_GER_trade1 = {
+		value = 25
+	}
+	SWE_GER_trade2 = {
+		trade = yes
+		value = 50
+	}
+	SWE_sold_planes = {
+		value = 25
+	}
+	SWE_peace_for_tungsten = {
+		trade = yes
+		value = 100
+	}
+	SWE_refused_permit = {
+		value = -35
+	}
+	
+	FIN_est_hate = {
+		value = -100
+	}
+	FIN_swe_trade = {
+		value = 15
+	}
+	FIN_swe_trade2 = {
+		trade = yes
+		value = 25
+	}
+	FIN_sold_equipment = {
+		value = 25
+	}
+	FIN_attractive = {
+		value = 25
+	}
+	FIN_no_help = {
+		value = -50
+	}
+	FIN_enemy_sov = {
+		value = -50
+	}
+	FIN_ger_friend = {
+		value = 35
+	}
+	FIN_jap_friend = {
+		value = 35
+	}
+	FIN_refused_alliance = {
+		value = -100
+	}
+	FIN_est_guaranteed = {
+		value = 50
+	}
+	FIN_baltic_friend = {
+		value = 50
+	}
+}

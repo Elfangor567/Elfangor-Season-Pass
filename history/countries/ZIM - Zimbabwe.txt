@@ -1,0 +1,113 @@
+﻿capital = 545
+
+oob = "ENG_colonial_1936"
+
+add_ideas = ZIM_final_empire
+
+recruit_character = ZIM_godfrey_huggins
+recruit_character = ZIM_garfield_todd
+recruit_character = ZIM_edgar_whitehead
+recruit_character = ZIM_joshua_nkomo
+
+recruit_character = ZIM_john_morris
+
+recruit_character = ZIM_rekayi_tangwena
+recruit_character = ZIM_storr_garlake
+recruit_character = ZIM_s_burn
+recruit_character = ZIM_charles_meredith
+recruit_character = ZIM_ted_jacklin
+
+recruit_character = ZIM_george_parson
+recruit_character = ZIM_henry_everard
+recruit_character = ZIM_constantine_kar
+recruit_character = ZIM_albert_khumalo
+recruit_character = ZIM_jairos_jiri
+recruit_character = ZIM_d_l_woods
+recruit_character = ZIM_ray_hignell
+recruit_character = ZIM_ian_smith
+recruit_character = ZIM_j_s_morris
+recruit_character = ZIM_ernest_guest
+recruit_character = ZIM_jwa_hunnard
+recruit_character = ZIM_john_nettleton
+
+recruit_character = ZIM_f_j_wane
+recruit_character = ZIM_george_thomas
+recruit_character = ZIM_scott_robertson
+
+recruit_character = ZIM_gerald_clarke
+recruit_character = ZIM_masotsha_ndlovu
+recruit_character = ZIM_robert_tredgold
+recruit_character = ZIM_humphrey_briggs
+recruit_character = ZIM_n_h_wilson
+recruit_character = ZIM_ken_flowers
+recruit_character = ZIM_howard_moffat
+recruit_character = ZIM_desmond_burke
+recruit_character = ZIM_benjamin_burombe
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	motorised_infantry = 1
+	tech_mountaineers = 1
+	grand_battle_plan = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1	
+	gwtank = 1
+	early_fighter = 1
+	early_bomber = 1
+	armored_car1 = 1
+}
+
+set_convoys = 5
+
+set_politics = {
+	ruling_party = fascism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	fascism = 54
+	neutrality = 43
+	democratic = 2
+	communism = 1
+}
+
+1939.1.1 = {
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	set_technology = {
+		
+		infantry_weapons1 = 1
+		scout_plane1 = 1		
+
+		#doctrines		
+		trench_warfare = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}

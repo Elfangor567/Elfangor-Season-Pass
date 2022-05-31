@@ -1,0 +1,2990 @@
+ETH_end_of_war_category = {
+	ETH_end_of_war_mission_eth = {
+		
+		icon = generic_nationalism
+		visible = {
+			tag = ETH
+			has_war_with = ITA
+		}	
+
+		available = {
+			OR = {
+				NOT = { has_full_control_of_state = 271 }
+				NOT = { has_full_control_of_state = 550 }
+				NOT = { has_full_control_of_state = 559 }
+			}
+		}
+		
+		activation = {
+			original_tag = ETH
+			has_war = yes
+			NOT = { has_global_flag = DARK_end_of_ita_eth_war }
+			NOT = { has_global_flag = war_over_ETH }
+			has_full_control_of_state = 271
+			has_full_control_of_state = 550
+			has_full_control_of_state = 559
+		}
+		
+		Is_good = yes
+		
+		days_mission_timeout = 90
+		
+		timeout_effect = {
+			effect_tooltip = {
+				ITA = { country_event = DARK_eth.1 }
+			}
+			hidden_effect = {
+				set_global_flag = DARK_end_of_ita_eth_war
+			}
+		}
+	}
+	ETH_end_of_war_mission_ita = {
+		
+		icon = generic_nationalism
+		visible = {
+			tag = ITA
+			has_war_with = ETH
+		}	
+
+		available = {
+			ETH = {
+				OR = {
+					NOT = { has_full_control_of_state = 271 }
+					NOT = { has_full_control_of_state = 550 }
+					NOT = { has_full_control_of_state = 559 }
+				}
+			}
+		}
+		
+		activation = {
+			original_tag = ITA
+			has_war = yes
+			NOT = { has_global_flag = DARK_end_of_ita_eth_war }
+			NOT = { has_global_flag = war_over_ETH }
+			ETH = {
+				has_full_control_of_state = 271
+				has_full_control_of_state = 550
+				has_full_control_of_state = 559
+			}
+		}
+		
+		Is_good = no
+		
+		days_mission_timeout = 90
+		
+		timeout_effect = {
+			country_event = DARK_eth.1
+			hidden_effect = {
+				set_global_flag = DARK_end_of_ita_eth_war
+			}
+		}
+	}
+}
+
+ETH_join_ita_eth_war_category = {
+	ETH_join_ita_decision = {
+		
+		icon = generic_ignite_civil_war
+		visible = {
+			ITA = { has_war_with = ETH }
+			is_subject = no
+			NOT = { is_in_faction_with = ETH }
+			NOT = { has_war_with = ITA }
+		}
+		
+		fire_only_once = yes
+		war_with_on_complete = ETH
+		
+		available = {
+			has_war = no
+			OR = {
+				has_opinion = {
+					target = ITA
+					value > 50
+				}
+				has_opinion = {
+					target = ETH
+					value < -25
+				}
+			
+			}
+			NOT = { has_idea = neutrality_idea }
+		}
+			
+		complete_effect = {
+			if = {
+				limit = {
+					is_faction_leader = no
+					is_in_faction = no
+					OR = {
+						ITA = { is_faction_leader = yes }
+						ITA = { is_in_faction = yes }
+					}
+				}
+				every_other_country = {
+					limit = {
+						is_faction_leader = yes
+						OR = {
+							tag = ITA
+							is_in_faction_with = ITA
+						}
+					}
+					country_event = generic.2
+				}
+			}
+			declare_war_on = {
+				type = puppet_wargoal_focus
+				target = ETH
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				OR = {
+					is_in_faction_with = ITA
+					AND = {
+						tag = CZE
+						GER = { has_war_with = ITA } #Chance at containment!
+					}
+					AND = {
+						tag = AUS
+						OR = {
+							AND = {
+								GER = { has_war_with = ITA } #Chance at containment!
+								fascism < 0.36
+							}
+							AND = {
+								has_government = fascism
+								GER = { has_war_with = ETH }
+							}
+							#has_completed_focus = AUS_no_ger USE FOR SEASON PASS
+						}
+					}
+					AND = {
+						tag = POL
+						GER = { has_war_with = ITA } #Chance at containment!
+					}
+					AND = {
+						has_government = fascism
+						ITA = { is_in_faction_with = GER } #We want in on this powerhouse combo
+						any_owned_state = {
+							is_capital = yes
+							OR = {
+								is_on_continent = europe
+								is_on_continent = africa
+							}
+						}
+					}
+					AND = {
+						tag = HUN
+						OR = {
+							has_completed_focus = HUN_renew_the_rome_protocols
+							AUS = { is_in_faction_with = ITA }
+						}
+					}
+					AND = {
+						tag = GER
+						has_completed_focus = GER_italy_ally
+					}
+					AND = {
+						original_tag = SPR
+						GER = { has_war_with = ETH }
+						GER = { has_completed_focus = GER_nationalist_spain_ally }
+					}
+					AND = {
+						tag = IRQ
+						ENG = { has_war_with = ITA }
+						ENG = { has_completed_focus = uk_iraq_focus }
+					}
+					AND = {
+						tag = PER
+						ENG = { has_war_with = ITA }
+						ENG = { has_completed_focus = uk_iran_focus }
+					}
+					AND = {
+						tag = NOR
+						ENG = { has_war_with = ITA }
+						ENG = { has_completed_focus = ENG_norwegian_intervention }
+					}
+					AND = {
+						tag = DEN
+						ENG = { has_war_with = ITA }
+						ENG = { has_completed_focus = ENG_danish_intervention }
+					}
+					AND = {
+						tag = HOL
+						ENG = { has_war_with = ITA }
+						ENG = { has_completed_focus = ENG_dutch_security }
+					}
+				}
+			}
+			modifier = {
+				add = -1
+				tag = YUG #YUG hates ITA, period
+			}
+		}
+	}
+	ETH_join_eth_decision = {
+		
+		icon = generic_ignite_civil_war
+		visible = {
+			ITA = { has_war_with = ETH }
+			is_subject = no
+			NOT = { is_in_faction_with = ITA }
+			NOT = { has_war_with = ETH }
+		}
+		
+		fire_only_once = yes
+		war_with_on_complete = ITA
+		
+		available = {
+			has_war = no
+			OR = {
+				has_opinion = {
+					target = ITA
+					value < 51
+				}
+				has_opinion = {
+					target = ETH
+					value > 50
+				}
+			}	
+			NOT = { has_idea = neutrality_idea }
+		}
+		
+		complete_effect = {
+			if = {
+				limit = {
+					is_faction_leader = no
+					is_in_faction = no
+					OR = {
+						ETH = { is_faction_leader = yes }
+						ETH = { is_in_faction = yes }
+					}
+				}
+				every_other_country = {
+					limit = {
+						is_faction_leader = yes
+						OR = {
+							tag = ETH
+							is_in_faction_with = ETH
+						}
+					}
+					country_event = generic.2
+				}
+			}
+			declare_war_on = {
+				type = puppet_wargoal_focus
+				target = ITA
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				OR = {
+					is_in_faction_with = ETH
+					AND = {
+						tag = GER
+						NOT = { has_completed_focus = GER_italy_ally }
+					}
+					AND = {
+						tag = CZE
+						GER = { has_war_with = ETH } #Chance at containment!
+					}
+					AND = {
+						tag = YUG
+						OR = {
+							has_completed_focus = YUG_crush_the_ustasa #Has dealt with internal problems
+							has_completed_focus = YUG_establish_the_banovina_of_croatia
+						}
+					}
+					AND = {
+						tag = AUS
+						OR = {
+							AND = {
+								GER = { has_war_with = ETH } #Chance at containment!
+								fascism < 0.36
+							}
+							AND = {
+								has_government = fascism
+								GER = { has_war_with = ITA }
+							}
+							#has_completed_focus = AUS_no_ger USE FOR SEASON PASS
+						}
+					}
+					AND = {
+						tag = POL
+						GER = { has_war_with = ETH } #Chance at containment!
+					}
+					AND = {
+						tag = SWE
+						OR = {
+							NOT = { ENG = { has_war_with = ETH } }
+							ENG = { has_completed_focus = uk_scandinavian_focus }
+							has_completed_focus = foreign_expeditions
+						}
+					}
+					AND = {
+						tag = BEL
+						OR = {
+							AND = {
+								FRA = { is_in_faction_with = ETH }
+								OR = {
+									GER = { has_war = no }
+									GER = { is_in_faction_with = FRA }
+								}
+							}
+							AND = {
+								ENG = { has_war_with = ETH }
+								has_completed_focus = ENG_belgium_security
+							}
+						}
+					}
+					AND = {
+						original_tag = SPR
+						GER = { has_war_with = ITA }
+						GER = { has_completed_focus = GER_nationalist_spain_ally }
+					}
+					AND = {
+						original_tag = TUR
+						has_government = fascism
+					}
+					AND = {
+						tag = IRQ
+						ENG = { has_war_with = ETH }
+						ENG = { has_completed_focus = uk_iraq_focus }
+					}
+					AND = {
+						tag = PER
+						ENG = { has_war_with = ETH }
+						ENG = { has_completed_focus = uk_iran_focus }
+					}
+					AND = {
+						tag = NOR
+						ENG = { has_war_with = ETH }
+						ENG = { has_completed_focus = ENG_norwegian_intervention }
+					}
+					AND = {
+						tag = DEN
+						ENG = { has_war_with = ETH }
+						ENG = { has_completed_focus = ENG_danish_intervention }
+					}
+					AND = {
+						tag = HOL
+						ENG = { has_war_with = ETH }
+						ENG = { has_completed_focus = ENG_dutch_security }
+					}
+					AND = {
+						tag = LIB #We must side with the other free African Nation!
+						has_completed_focus = LIB_trade_concessions
+						NOT = { has_idea = LIB_corrupt_army1 }
+						NOT = { has_idea = LIB_corrupt_army2 }
+					}
+				}
+			}
+		}
+	}
+}
+
+ETH_supporting_the_war_category = {
+	
+	ETH_close_the_suez_decision = {
+		
+		icon = generic_naval
+		
+		visible = {
+			is_subject = no
+			OR = {
+				has_full_control_of_state = 446
+				has_full_control_of_state = 453
+				any_other_country = {
+					is_subject_of = ROOT
+					OR = {
+						has_full_control_of_state = 446
+						has_full_control_of_state = 453
+					}
+				}
+			}
+			NOT = { has_global_flag = SUEZ_CANAL_BLOCKED }
+		}
+		
+		available = {
+			NOT = { has_government = fascism }
+			OR = {
+				has_full_control_of_state = 446
+				has_full_control_of_state = 453
+				any_other_country = {
+					is_subject_of = ROOT
+					OR = {
+						has_full_control_of_state = 446
+						has_full_control_of_state = 453
+					}
+				}
+			}
+		}
+		
+		complete_effect = {
+			add_political_power = -200
+			add_stability = -0.1
+			add_war_support = 0.05
+			if = {
+				limit = { has_government = democratic }
+				add_popularity = { ideology = democratic popularity = -0.15 }
+			}
+			else_if = {
+				limit = { has_government = neutrality }
+				add_popularity = { ideology = neutrality popularity = -0.15 }
+			}
+			custom_effect_tooltip = ETH_close_the_suez_tt
+			hidden_effect = {
+				set_global_flag = SUEZ_CANAL_BLOCKED
+				set_global_flag = DARK_SUEZ_CLOSED
+				news_event = {id = DARK_eth.109 hours = 24 }
+			}
+			add_ideas = DARK_closed_suez
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				OR = {
+					has_government = communism
+					has_country_leader = { ruling_only = yes character = ENG_winston_churchill }
+				}
+			}
+		}
+	}
+	
+	ETH_send_weapons_hidden_decision = {
+		
+		icon = generic_industry
+		
+		visible = {
+			OR = {
+				original_tag = SWE
+				original_tag = BEL
+				original_tag = TUR
+				AND = {
+					any_other_country ={
+						original_tag = SWE
+						has_subject = ROOT
+						ROOT = { is_subject_of = PREV }
+					}
+				}
+				AND = {
+					any_other_country ={
+						original_tag = BEL
+						has_subject = ROOT
+						ROOT = { is_subject_of = PREV }
+					}
+				}
+				AND = {
+					original_tag = SOV
+					has_government = neutrality
+				}
+				has_country_flag = ETH_can_send_weapons
+			}
+			NOT = { has_global_flag = ETH_end_of_embargo }
+		}
+		
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = ETH_not_recently_sent_weapons_tt
+				NOT = { has_country_flag = ETH_recently_sent_weapons }
+			}
+			NOT = { is_in_faction_with = ITA }
+			NOT = { is_subject_of = ITA }
+		}
+		
+		cost = 25
+		fixed_random_seed = no
+		
+		complete_effect = {
+			if = {
+				limit = { 
+					has_equipment = {
+						infantry_equipment > 500
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -500
+				}
+			}
+			else = {
+				add_timed_idea = { idea = DARK_weapons_produced days = 90 }
+			}
+			custom_effect_tooltip = ETH_sneak_weapon_attempt_tt
+			effect_tooltip = {
+				ETH = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 500
+					}
+				}
+			}
+			hidden_effect = {
+				set_country_flag = ETH_recently_sent_weapons
+				country_event = { id = DARK_eth.74 days = 90 }
+				random_list = {
+					50 = {
+						country_event = DARK_eth.75
+						ETH = { country_event = DARK_eth.75 }
+					}
+					50 = {
+						country_event = DARK_eth.76
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				date > 1937.1.1
+			}
+		}
+	}
+	
+	ETH_send_weapons_openly_decision = {
+		
+		icon = generic_industry
+		
+		visible = {
+			OR = {
+				original_tag = SWE
+				original_tag = BEL
+				original_tag = TUR
+				AND = {
+					any_other_country ={
+						original_tag = SWE
+						has_subject = ROOT
+						ROOT = { is_subject_of = PREV }
+					}
+				}
+				AND = {
+					any_other_country ={
+						original_tag = BEL
+						has_subject = ROOT
+						ROOT = { is_subject_of = PREV }
+					}
+				}
+				AND = {
+					original_tag = SOV
+					has_government = neutrality
+				}
+				has_country_flag = ETH_can_send_weapons
+			}
+		}
+		
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = ETH_not_recently_sent_weapons_tt
+				NOT = { has_country_flag = ETH_recently_sent_weapons }
+			}
+			NOT = { is_in_faction_with = ITA }
+			NOT = { is_subject_of = ITA }
+		}
+		
+		cost = 25
+		
+		complete_effect = {
+			if = {
+				limit = { 
+					has_equipment = {
+						infantry_equipment > 1000
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -1000
+				}
+			}
+			else = {
+				add_timed_idea = { idea = DARK_weapons_produced days = 180 }
+			}
+			if = {
+				limit = { NOT = { has_global_flag = ETH_end_of_embargo } }
+				custom_effect_tooltip = ETH_open_weapon_attempt_tt
+				ENG = { country_event = { id = DARK_eth.78 hours = 24 } }
+			}
+			else = {
+				ETH = { country_event = { id = DARK_eth.81 hours = 24 } }
+			}
+			effect_tooltip = {
+				ETH = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 1000
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						ITA = { has_opinion_modifier = ETH_helped_enemies }
+					}
+				}
+				ITA = {
+					add_opinion_modifier = {
+						target = ROOT
+						modifier = ETH_helped_enemies
+					}
+				}
+			}
+			hidden_effect = {
+				set_country_flag = ETH_recently_sent_weapons
+				country_event = { id = DARK_eth.74 days = 180 }
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_global_flag = ETH_end_of_embargo
+			}
+			modifier = {
+				add = 1
+				original_tag = GER
+				NOT = { has_completed_focus = GER_italy_ally }
+			}
+		}
+	}
+	
+	ETH_end_the_arms_embargo_decision = {
+		
+		icon = ger_military_buildup
+		
+		visible = {
+			NOT = { has_global_flag = ETH_end_of_embargo }
+			tag = ENG
+			NOT = { is_in_faction_with = ITA }
+			NOT = { is_subject_of = ITA }
+		}
+		
+		available = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			custom_effect_tooltip = DARK_end_the_embargo_tt
+			hidden_effect = {
+				set_global_flag = ETH_end_of_embargo
+			}
+			if = {
+				limit = { 
+					OR = {
+						NOT = { has_government = communism } 
+						has_war = yes
+					}
+				}
+				add_political_power = -100
+			}
+			add_popularity = { ideology = communism popularity = 0.05 }
+			news_event = DARK_eth.111
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_war = yes
+			}
+			modifier = {
+				add = 1
+				has_country_leader = { ruling_only = yes character = ENG_winston_churchill }
+			}
+			modifier = {
+				add = 10
+				has_government = communism
+			}
+			modifier = {
+				add = 1000
+				is_in_faction_with = ETH
+			}
+		}
+	}
+	
+	ETH_force_britain_to_end_embargo_decision = {
+		
+		icon = ger_military_buildup
+		
+		visible = {
+			NOT = { has_global_flag = ETH_end_of_embargo }
+			tag = FRA
+			NOT = { is_in_faction_with = ITA }
+			NOT = { is_subject_of = ITA }
+		}
+		
+		available = {
+			has_war = no
+		}
+		
+		fire_only_once = yes
+		cost = 100
+		
+		complete_effect = {
+			ENG = { country_event = DARK_eth.82 }
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				date > 1938.1.1
+			}
+			modifier = {
+				add = 5
+				GER = { has_completed_focus = GER_italy_ally }
+			}
+			modifier = {
+				add = 10
+				has_government = communism
+			}
+			modifier = {
+				add = 1000
+				is_in_faction_with = ETH
+			}
+		}
+	}
+}
+
+ETH_noble_influence_category = {
+
+	ETH_limit_noble_influence_decision = {
+		
+		icon = generic_break_treaty
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ETH_not_recently_affected_nobles_tt
+				#NOT = { has_country_flag = ETH_recently_affected_nobles }
+				NOT = { has_idea = ETH_recent_noble_activity_idea }
+			}
+		}
+		
+		cost = 100
+		
+		complete_effect = {
+			custom_effect_tooltip = ETH_remove_noble_influence_10
+			hidden_effect = {
+				subtract_from_variable = { ETH_noble_influence_value = 10 }
+				clamp_variable = {
+					max = 200
+					min = 0
+				}
+				#set_country_flag = ETH_recently_affected_nobles
+				#country_event = { id = DARK_eth.232 days = 360 }
+				add_timed_idea = { idea = ETH_recent_noble_activity_idea days = 360 }				
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	ETH_expand_noble_influence_decision = {
+		
+		icon = generic_decision
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ETH_not_recently_affected_nobles_tt
+				#NOT = { has_country_flag = ETH_recently_affected_nobles }
+				NOT = { has_idea = ETH_recent_noble_activity_idea }
+			}
+		}
+		
+		cost = 0
+		
+		complete_effect = {
+			custom_effect_tooltip = ETH_add_noble_influence_10
+			add_political_power = 100
+			hidden_effect = {
+				add_to_variable = { ETH_noble_influence_value = 10 }
+				clamp_variable = {
+					max = 200
+					min = 0
+				}
+				#set_country_flag = ETH_recently_affected_nobles
+				#country_event = { id = DARK_eth.232 days = 360 }
+				add_timed_idea = { idea = ETH_recent_noble_activity_idea days = 360 }	
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_manpower < 1000
+				NOT = { has_idea = scraping_the_barrel }
+			}
+		}
+	}
+	
+	ETH_ask_for_noble_support_decision = {
+		
+		icon = generic_civil_support
+		
+		visible = {
+			has_government = neutrality
+		}
+		
+		cost = 5
+		days_re_enable = 180
+		
+		complete_effect = {
+			custom_effect_tooltip = ETH_add_noble_influence_10
+			add_popularity = { ideology = neutrality popularity = 0.1 }
+			
+			hidden_effect = {
+				add_to_variable = { ETH_noble_influence_value = 10 }
+				clamp_variable = {
+					max = 200
+					min = 0
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				neutrality < 0.5
+				OR = {
+					NOT = { has_idea = ETH_peoples_voice }
+					has_idea = ETH_solomonic_restoration
+				}
+				OR = {
+					NOT = { has_idea = ETH_the_darkness }
+					has_idea = ETH_solomonic_restoration
+				}
+				OR = {
+					NOT = { has_idea = ETH_beacon_of_hope }
+					has_idea = ETH_solomonic_restoration
+				}
+			}
+		}
+	}
+	
+	ETH_noble_war_support_decision = {
+		
+		icon = generic_nationalism
+		
+		available = {
+			has_war = yes
+		}
+		
+		cost = 5
+		days_re_enable = 180
+		
+		complete_effect = {
+			custom_effect_tooltip = ETH_add_noble_influence_5
+			add_war_support = 0.05
+			
+			hidden_effect = {
+				add_to_variable = { ETH_noble_influence_value = 5 }
+				clamp_variable = {
+					max = 200
+					min = 0
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_support < 0.55
+			}
+		}
+	}
+	
+	ETH_noble_raise_levies_decision = {
+		
+		icon = generic_prepare_civil_war
+		
+		available = {
+			has_war = yes
+		}
+		
+		cost = 5
+		days_re_enable = 540
+		
+		complete_effect = {
+			custom_effect_tooltip = ETH_add_noble_influence_15
+			add_manpower = 15000
+			
+			hidden_effect = {
+				add_to_variable = { ETH_noble_influence_value = 15 }
+				clamp_variable = {
+					max = 200
+					min = 0
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_manpower < 25000
+			}
+		}
+	}
+	
+	ETH_imprison_balcha_decision = {
+		
+		icon = generic_independence
+		
+		visible = {
+			NOT = { has_country_flag = ETH_balcha_dealt_with }
+		}
+		
+		available = {
+			has_war = no
+			has_army_experience > 25
+		}
+		
+		fire_only_once = yes
+		cost = 25
+		
+		complete_effect = {
+			army_experience = -25
+			custom_effect_tooltip = ETH_remove_noble_influence_10
+			custom_effect_tooltip = ETH_removed_balcha_tt
+			
+			hidden_effect = {
+				subtract_from_variable = { ETH_noble_influence_value = 10 }
+				clamp_variable = {
+					max = 200
+					min = 0
+				}
+				set_country_flag = ETH_balcha_dealt_with
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	ETH_noble_pro_democracy_decision = {
+		
+		icon = generic_prepare_civil_war
+		
+		available = {
+			has_completed_focus = ETH_more_congress
+		}
+		
+		cost = 25
+		days_re_enable = 360
+		
+		complete_effect = {
+			custom_effect_tooltip = ETH_remove_noble_influence_10
+			add_popularity = { ideology = democratic popularity = 0.1 }
+			
+			hidden_effect = {
+				subtract_from_variable = { ETH_noble_influence_value = 10 }
+				clamp_variable = {
+					max = 200
+					min = 0
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+}
+
+ETH_governmental_reform_category = {
+	
+	ETH_swap_to_nothing_idea_decision = {
+		
+		icon = generic_decision
+		
+		visible = {
+			OR = {
+				has_idea = ETH_the_darkness
+				has_idea = ETH_peoples_voice
+				has_idea = ETH_beacon_of_hope
+			}
+		}
+		
+		available = {
+			NOT = { has_government = fascism }
+		}
+		
+		cost = 25
+		
+		complete_effect = {
+			remove_ideas = ETH_the_darkness
+			remove_ideas = ETH_peoples_voice
+			remove_ideas = ETH_beacon_of_hope
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_government = neutrality
+				has_completed_focus = ETH_restoration
+			}
+		}
+	}
+	ETH_swap_to_democratic_idea_decision = {
+		
+		icon = generic_decision
+		
+		visible = {
+			has_completed_focus = ETH_stand_against_expansionism
+			NOT = { has_completed_focus = ETH_ethiopian_revolution }
+		}
+		
+		available = {
+			NOT = { has_idea = ETH_beacon_of_hope }
+			NOT = { has_government = fascism }
+		}
+		
+		cost = 75
+		
+		complete_effect = {
+			remove_ideas = ETH_the_darkness
+			remove_ideas = ETH_peoples_voice
+			add_ideas = ETH_beacon_of_hope
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_government = democratic
+				NOT = { has_idea = ETH_beacon_of_hope }
+			}
+		}
+	}
+	ETH_swap_to_fascism_idea_decision = {
+		
+		icon = generic_decision
+		
+		visible = {
+			has_completed_focus = ETH_turn_evil
+			NOT = { has_completed_focus = ETH_ethiopian_revolution }
+			NOT = { has_completed_focus = ETH_another_light }
+		}
+		
+		available = {
+			NOT = { has_idea = ETH_the_darkness }
+		}
+		
+		cost = 75
+		
+		complete_effect = {
+			remove_ideas = ETH_beacon_of_hope
+			remove_ideas = ETH_peoples_voice
+			add_ideas = ETH_the_darkness
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_government = fascism
+				NOT = { has_idea = ETH_the_darkness }
+			}
+		}
+	}
+	ETH_swap_to_communism_idea_decision = {
+		
+		icon = generic_decision
+		
+		visible = {
+			has_completed_focus = ETH_go_communist
+			NOT = { has_completed_focus = ETH_another_light }
+		}
+		
+		available = {
+			NOT = { has_idea = ETH_peoples_voice }
+			NOT = { has_government = fascism }
+		}
+		
+		cost = 75
+		
+		complete_effect = {
+			remove_ideas = ETH_the_darkness
+			remove_ideas = ETH_beacon_of_hope
+			add_ideas = ETH_peoples_voice
+			if = {
+				limit = { 
+					has_completed_focus = ETH_com_militias 
+					NOT = { has_idea = ETH_militias }
+				}
+				add_ideas = ETH_militias
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_government = communism
+				NOT = { has_idea = ETH_peoples_voice }
+			}
+		}
+	}
+	
+	ETH_neutrality_reform_decision = {
+		
+		icon = generic_nationalism
+		
+		visible = {
+			NOT = { has_government = neutrality }
+		}
+		
+		available = {
+			has_idea = ETH_wubneh_amoraw
+			neutrality > 0.4
+		}
+		
+		complete_effect = {
+			add_popularity = { ideology = neutrality popularity = 0.2 }
+			if = {
+				limit = {
+					NOT = { has_completed_focus = ETH_election_prep }
+				}
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+			}
+			else = {
+				set_politics = {
+					ruling_party = neutrality
+					#last_election = date
+					election_frequency = 48
+					elections_allowed = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				NOT = { has_idea = ETH_beacon_of_hope }
+				NOT = { has_idea = ETH_the_darkness }
+				NOT = { has_idea = ETH_peoples_voice }
+			}
+		}
+	}
+	
+	ETH_democratic_reform_decision = {
+	
+		icon = generic_political_discourse
+		
+		visible = {
+			NOT = { has_government = democratic }
+		}
+		
+		available = {
+			has_idea = ETH_beacon_of_hope
+			democratic > 0.4
+		}
+		
+		complete_effect = {
+			add_popularity = { ideology = democratic popularity = 0.2 }
+			set_politics = {
+				ruling_party = democratic
+				election_frequency = 48
+				elections_allowed = yes
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	ETH_communism_reform_decision = {
+		
+		icon = generic_civil_support
+		
+		visible = {
+			NOT = { has_government = communism }
+		}
+		
+		available = {
+			has_idea = ETH_peoples_voice
+			communism > 0.4
+		}
+		
+		complete_effect = {
+			add_popularity = { ideology = communism popularity = 0.2 }
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	ETH_fascism_reform_decision = {
+		
+		icon = ger_reichskommissariats
+		
+		visible = {
+			NOT = { has_government = fascism }
+		}
+		
+		available = {
+			has_idea = ETH_the_darkness
+			fascism > 0.4
+			custom_trigger_tooltip = {
+				tooltip = ETH_no_dead_haile_tt
+				NOT = { has_country_flag = ETH_dead_haile }
+			}
+		}
+		
+		complete_effect = {
+			add_popularity = { ideology = fascism popularity = 0.2 }
+			set_party_name = { ideology = fascism long_name = "Solomonic Dynasty" name = "Solomonic Dynasty" }
+			set_party_name = { ideology = neutrality long_name = "Noble Houses" name = "Noble Houses" }
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			hidden_effect = {
+				set_cosmetic_tag = DARK_evil_ethiopia
+			}
+			add_country_leader_role = {
+				character = ETH_haile_selassie
+				promote_leader = yes
+				country_leader = {
+					ideology = rexism
+					expire = "1965.1.1.1"
+					traits = { DARK_lion_of_judah }
+					id=30103
+				 }
+			}
+			promote_character = {
+				character = ETH_hailu_tekle_haimonot
+				ideology = oligarchism
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+}
+
+
+ETH_anti_colonialist_crusade_category = {	
+	
+	ETH_cause_civil_war_country_decision = {
+		
+		icon = generic_independence
+		
+		target_trigger = {
+			FROM = {
+				NOT = { has_government = communism }
+				NOT = {
+					any_state = {
+						is_core_of = FROM
+						NOT = { is_on_continent = africa }
+					}
+				}
+				ROOT = {
+					any_state = {
+						NOT = { is_core_of = ROOT }
+						is_core_of = FROM
+						NOT = { state = 559 }
+						NOT = { state = 269 }
+						NOT = { state = 268 }
+					}
+				}
+			}
+		}
+		
+		available = {
+			is_faction_leader = yes
+			any_state = {
+				NOT = { is_core_of = ROOT }
+				is_core_of = FROM
+				CONTROLLER = { tag = ROOT }
+			}
+			FROM = { has_civil_war = no }
+		}
+		
+		complete_effect = {
+			effect_tooltip = {
+				FROM = {
+					start_civil_war = {
+						ideology = communism
+						size = 0
+					}
+				}
+			}
+			hidden_effect = {
+				FROM = {
+					every_state = {
+						limit = {
+							NOT = { is_controlled_by = ROOT }
+							is_core_of = FROM
+						}
+						set_state_flag = ETH_civil_flag
+					}
+					if = {
+						limit = {
+							NOT = {
+								any_state = {
+									is_core_of = FROM
+									has_state_flag = ETH_civil_flag
+								}
+							}
+						}
+						every_state = {
+							limit = {
+								is_core_of = FROM
+							}
+							FROM = { set_state_controller = PREV }
+						}
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0
+						#only_own_territory = yes
+					}					
+				}
+				random_other_country = {
+					limit = {
+						original_tag = FROM
+						NOT = { tag = FROM }
+					}
+					ROOT = { add_to_faction = PREV }
+					save_event_target_as = ETH_caused_civil_war
+					if = {
+						limit = {
+							NOT = {
+								any_state = {
+									is_core_of = FROM
+									has_state_flag = ETH_civil_flag
+								}
+							}
+						}
+						every_state = {
+							limit = {
+								is_core_of = FROM
+							}
+							event_target:ETH_caused_civil_war = { set_state_controller = PREV }
+						}
+					}
+					else = {
+						every_state = {
+							limit = {
+								is_controlled_by = ROOT
+								is_core_of = FROM
+							}
+							event_target:ETH_caused_civil_war = { transfer_state = PREV }
+						}
+					}
+					every_state = {
+						limit = {
+							is_core_of = FROM
+						}
+						event_target:ETH_caused_civil_war = { add_state_core = PREV }
+					}
+				}
+				FROM = {
+					every_state = {
+						limit = { has_state_flag = ETH_civil_flag }
+						FROM = { transfer_state = PREV }
+						clr_state_flag = ETH_civil_flag
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	ETH_liberate_angola = {
+
+		icon = generic_independence
+
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 540
+				}
+				ANG = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		days_remove = 180
+		ai_will_do = {
+			factor = 200
+		}
+		
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.60 }
+		}
+		
+	}
+
+	ETH_liberate_mozambique = {
+
+		icon = generic_independence
+
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 544
+				}
+				MZB = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		days_remove = 180
+		ai_will_do = {
+			factor = 200
+		}
+		
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.61 }
+		}
+		
+	}
+
+	ETH_liberate_congo = {
+
+		icon = generic_independence
+
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 295
+					controls_state = 718
+					controls_state = 538
+				}
+				COG = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		days_remove = 180
+		ai_will_do = {
+			factor = 200
+		}
+		
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.62 }
+		}
+		
+	}
+
+	ETH_liberate_zimbabwe = {
+
+		icon = generic_independence
+
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 545
+				}
+				ZIM = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		days_remove = 180
+		ai_will_do = {
+			factor = 200
+		}
+		
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.63 }
+		}
+		
+	}
+
+	ETH_liberate_kenya = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 547
+				}
+				KEN = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.64 }
+		}
+		
+	}
+
+	ETH_liberate_madagascar = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 543
+					controls_state = 706
+					controls_state = 708
+				}
+				MAD = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.65 }
+		}
+		
+	}
+
+	ETH_liberate_botswana = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 542
+				}
+				BOT = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.66 }
+		}
+		
+	}
+
+	ETH_liberate_zambia = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 771
+				}
+				ZAM = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.67 }
+		}
+		
+	}
+
+	ETH_liberate_malawi = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 770
+				}
+				MLW = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.68 }
+		}
+		
+	}
+
+	ETH_liberate_tanzania = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 546
+				}
+				TZN = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.69 }
+		}
+		
+	}
+
+	ETH_liberate_uganda = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 548
+				}
+				UGA = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.70 }
+		}
+		
+	}
+
+	ETH_liberate_sudan = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 549
+					controls_state = 551
+					controls_state = 767
+				}
+				SUD = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.71 }
+		}
+		
+	}
+
+	ETH_liberate_egypt = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 552
+					controls_state = 456
+					controls_state = 457
+					controls_state = 447
+					controls_state = 452
+					controls_state = 446
+					controls_state = 453
+				}
+				EGY = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.72 }
+		}
+		
+	}
+
+	ETH_liberate_rwanda = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 768
+				}
+				RWA = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.77 }
+		}
+		
+	}
+
+	ETH_liberate_burundi = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 769
+				}
+				BRD = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.78 }
+		}
+		
+	}
+
+	ETH_liberate_congo_brazzaville = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 772
+				}
+				RCG = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.79 }
+		}
+		
+	}
+
+	ETH_liberate_gabon = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 539
+				}
+				GAB = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.80 }
+		}
+		
+	}
+
+	ETH_liberate_equatorial_guinea = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 297
+				}
+				EQG = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.81 }
+		}
+		
+	}
+
+	ETH_liberate_cameroon = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 773
+				}
+				CMR = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.82 }
+		}
+		
+	}
+
+	ETH_liberate_central_african_republic = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 660
+				}
+				CAR = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.83 }
+		}
+		
+	}
+
+	ETH_liberate_chad = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 774
+					controls_state = 775
+				}
+				CHA = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.84 }
+		}
+		
+	}
+
+	ETH_liberate_nigeria = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 558
+				}
+				NGA = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.85 }
+		}
+		
+	}
+
+	ETH_liberate_niger = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 781
+					controls_state = 515
+				}
+				NGR = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.86 }
+		}
+		
+	}
+
+	ETH_liberate_dahomey = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 776
+				}
+				DAH = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.87 }
+		}
+		
+	}
+
+	ETH_liberate_togo = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 777
+				}
+				TOG = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.88 }
+		}
+		
+	}
+
+	ETH_liberate_ghana = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 274
+				}
+				GHA = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.89 }
+		}
+		
+	}
+
+	ETH_liberate_ivory_coast = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 779
+				}
+				IVO = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.90 }
+		}
+		
+	}
+
+	ETH_liberate_upper_volta = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 778
+				}
+				VOL = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.91 }
+		}
+		
+	}
+
+	ETH_liberate_mali = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 556
+					controls_state = 782
+				}
+				MLI = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.92 }
+		}
+		
+	}
+
+	ETH_liberate_sierra_leone = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 700
+				}
+				SIE = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.93 }
+		}
+		
+	}
+
+	ETH_liberate_guinea = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 780
+				}
+				GNA = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.94 }
+		}
+		
+	}
+
+	ETH_liberate_guinea_bissau = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 296
+				}
+				GNB = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.95 }
+		}
+		
+	}
+
+	ETH_liberate_senegal = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 272
+				}
+				SEN = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.96 }
+		}
+		
+	}
+
+	ETH_liberate_the_gambia = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 701
+				}
+				GAM = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.97 }
+		}
+		
+	}
+
+	ETH_liberate_liberia = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 298
+				}
+				LIB = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.98 }
+		}
+		
+	}
+
+	ETH_liberate_mauritania = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 557
+					controls_state = 786
+				}
+				MRT = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.99 }
+		}
+		
+	}
+
+	ETH_liberate_western_sahara = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 699
+				}
+				WES = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.100 }
+		}
+		
+	}
+
+	ETH_liberate_algeria = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 459
+					controls_state = 460
+					controls_state = 513
+					controls_state = 514
+				}
+				ALG = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.101 }
+		}
+		
+	}
+
+	ETH_liberate_morocco = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 290
+					controls_state = 461
+					controls_state = 462
+					controls_state = 783
+				}
+				MOR = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.102 }
+		}
+		
+	}
+
+	ETH_liberate_tunisia = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 458
+					controls_state = 665
+				}
+				TUN = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.103 }
+		}
+		
+	}
+
+	ETH_liberate_libya = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 448
+					controls_state = 449
+					controls_state = 450
+					controls_state = 451
+					controls_state = 661
+					controls_state = 662
+					controls_state = 663
+					controls_state = 273
+				}
+				LBA = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.104 }
+		}
+		
+	}
+	ETH_liberate_namibia = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 541
+				}
+				LBA = { exists = no }
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 180
+		visible = {
+			has_completed_focus = ETH_pan_african_congress
+		}
+		remove_effect = {
+			country_event = { id = DARK_dark.14 }
+		}
+		
+	}
+	ETH_liberate_south_africa = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 681
+					controls_state = 275
+					controls_state = 719
+				}		
+			}
+			SAF = { exists = no }
+		}
+		
+		visible = {
+			SAF = { exists = no }
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		days_remove = 180
+		
+		remove_effect = {
+			country_event = { id = DARK_dark.9 }
+		}	
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	ETH_liberate_israel = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 454
+				}		
+			}
+			ISR = { exists = no }
+		}
+		
+		visible = {
+			ISR = { exists = no }
+			PAL = { exists = no }
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		complete_effect = {
+			country_event = { id = DARK_dark.4 }
+		}	
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	ETH_liberate_palestine = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 454
+				}		
+			}
+			PAL = { exists = no }
+		}
+		
+		visible = {
+			ISR = { exists = no }
+			PAL = { exists = no }
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		complete_effect = {
+			country_event = { id = DARK_dark.5 }
+		}	
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ETH_liberate_jordan = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 455
+				}		
+			}
+			JOR = { exists = no }
+		}
+		
+		visible = {
+			JOR = { exists = no }
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		days_remove = 180
+		
+		remove_effect = {
+			country_event = { id = DARK_dark.6 }
+		}	
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	ETH_liberate_lebanon = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 553
+				}		
+			}
+			LEB = { exists = no }
+		}
+		
+		visible = {
+			LEB = { exists = no }
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		days_remove = 180
+		
+		remove_effect = {
+			country_event = { id = DARK_dark.7 }
+		}	
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	ETH_liberate_syria = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 554
+					controls_state = 677
+					controls_state = 680
+				}		
+			}
+			SYR = { exists = no }
+		}
+		
+		visible = {
+			SYR = { exists = no }
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		days_remove = 180
+		
+		remove_effect = {
+			country_event = { id = DARK_dark.8 }
+		}	
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	ETH_liberate_cyprus = {
+
+		icon = generic_independence
+	
+		available = {
+			tag = ETH
+			has_completed_focus = ETH_pan_african_congress
+			AND = {
+				ETH = {
+					controls_state = 183
+				}		
+			}
+			CYP = { exists = no }
+		}
+		
+		visible = {
+			CYP = { exists = no }
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		days_remove = 180
+		
+		remove_effect = {
+			country_event = { id = DARK_dark.15 }
+		}	
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}
+	
+	
+	
+	
+	

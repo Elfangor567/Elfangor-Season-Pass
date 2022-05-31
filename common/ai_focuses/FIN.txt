@@ -1,0 +1,30 @@
+ai_historical_focus_list_FIN = {
+	ai_national_focuses = {
+		FIN_diverse_econ #jan 1 - march 11 (1936)
+		FIN_government #march 11 - july 29
+		FIN_neutral_focus #july 29 - oct 7
+		FIN_sca_assurance #oct 7 - dec 16
+		FIN_mil #dec 16 - feb 24 (1937)
+		FIN_mann_line #feb 24 - may 5
+		FIN_ski #may 5 - july 14
+		FIN_af #july 14 - sep 22
+		FIN_lean_axis #sep 22 - dec 1
+		FIN_foreign_leases #dec 1 - feb 9 (1938)
+		FIN_lean_jap #feb 9 - apr 20
+		FIN_renew_drsrn #apr 20 - june 29		
+		FIN_mills #june 29 - sept 7
+		FIN_war_econ_prep #sept 7 - nov 16
+		FIN_modern_facs #nov 16 - jan 25 (1939)
+		FIN_large_facs #jan 25 - apr 5
+		FIN_other_arms #apr 5 - june 14
+		FIN_swe_guns #june 14 - aug 23
+		FIN_swe_ally #aug 23 - nov 1
+		FIN_german_arms #nov 1 - jan 10 (1940)
+		FIN_ger_mil_mission #jan 10 - mar 20
+		FIN_ger_focus #mar 20 - may 29
+		FIN_german_air #may 29 - aug 7
+		FIN_jagers
+		FIN_begin_salpa
+		FIN_reinforce_salpa
+	}
+}

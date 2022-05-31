@@ -1,0 +1,14 @@
+  #################
+#### Scandinavia ####
+  #################
+  
+ SCA_form_scandinavia_category = {
+ 
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_nordic_league
+
+	allowed = {
+		has_dlc = "Waking the Tiger"
+	}
+ }

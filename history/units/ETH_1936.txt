@@ -1,0 +1,407 @@
+﻿division_template = {
+	name = "Kebur Zabagna"				# Imperial Bodyguard
+	division_names_group = ETH_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+	priority = 2
+}
+
+division_template = {
+	name = "Levy" #Essentially a militia, based upon the feudal system	
+	division_names_group = ETH_GAR_01
+	
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Sefari"		
+	division_names_group = ETH_INF_01
+
+	# The more professional soldiers, less in number but more experienced/disciplined, usually better armed
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Modern Sefari"		
+	division_names_group = ETH_INF_01
+
+	# Note: Represents the most modern forces of Ethiopia
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		anti_air = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Mountain Division"		
+	division_names_group = ETH_MNT_01
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }	
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+	}
+}
+
+
+units = {
+	##### Imperial Army/Reinforcments #####
+		#Kebur Zabagna, the well-armed/trained Imperial Guard, Led by Haile Selassie himself
+		division = { 
+			division_name = {
+				is_name_ordered = yes
+				name_order = 1
+			}
+			location = 5010
+			division_template = "Kebur Zabagna"
+			start_experience_factor = 0.6
+			start_equipment_factor = 1
+		}
+		#Welega-Ardjo Sefari, Among the best armed in Ethiopa, Led by Bitwoded Makonnen Demissie
+		division = { 
+			division_name = {
+				is_name_ordered = yes
+				name_order = 5
+			}
+			location = 13244
+			division_template = "Modern Sefari"
+			start_experience_factor = 0.2
+			start_equipment_factor = 0.7
+		}
+		#Kaffa Sefari, Led by Ras Getachew Abate, last fresh troops to enter the war
+		division = { 
+			division_name = {
+				is_name_ordered = yes
+				name_order = 5
+			}
+			location = 7912
+			division_template = "Levy"
+			start_experience_factor = 0.1
+			start_equipment_factor = 0.5
+		}
+
+	### Northern Front ###	
+		##Army of the Left
+			#Gojjam Provincial Armed Forces, Led By Ras Imru Haile Selassie #
+			division = { # "1st Gojjam Levies"
+				division_name = {
+					is_name_ordered = yes
+					name_order = 2
+				}
+				location = 13239
+				division_template = "Levy"
+				start_experience_factor = 0.25 #Just had battle in December
+				start_equipment_factor = 0.75 #Had extra supplies from the capture of Enda Selassie
+			}
+			division = { # "2nd Gojjam Levies"
+				division_name = {
+					is_name_ordered = yes
+					name_order = 3
+				}
+				location = 13239
+				division_template = "Levy"
+				start_experience_factor = 0.25 #Just had battle in December
+				start_equipment_factor = 0.75 #Had extra supplies from the capture of Enda Selassie
+			}
+			#Wolqayt, Semien and Welega-Ardjo Provincial Armed Forces, Led by Dejaz Ayalew Birru #
+			division = { # "Wolqayt-Semien Sefari"
+				division_name = {
+					is_name_ordered = yes
+					name_order = 4
+				}
+				location = 1984
+				division_template = "Mountain Division"
+				start_experience_factor = 0.25 #Just had battle in December
+				start_equipment_factor = 0.75 #Had extra supplies from the capture of Enda Selassie
+			}
+		##Army of the Center
+			#The Mahel Sefari, Led by Ras Muluguetta Yeggazu, at 70,000+ strong (Most of them regulars)
+			# NOTE - Unsure which Sefaris actually had the good equipment, so I'm just gonna guess here
+			#Some combination of Amino, Gubba, Gurage, Jimma, Mui, Om Hajer, Sela, Sodo and Welega Sefaris
+			division = {
+				division_name = {
+					is_name_ordered = yes
+					name_order = 16
+				}
+				location = 5041
+				division_template = "Modern Sefari"
+				start_experience_factor = 0.2
+				start_equipment_factor = 0.75
+			}
+			division = {
+				division_name = {
+					is_name_ordered = yes
+					name_order = 17
+				}
+				location = 5041
+				division_template = "Sefari"
+				start_experience_factor = 0.15
+				start_equipment_factor = 0.5
+			}
+			division = {
+				division_name = {
+					is_name_ordered = yes
+					name_order = 18
+				}
+				location = 5041
+				division_template = "Sefari"
+				start_experience_factor = 0.15
+				start_equipment_factor = 0.5
+			}
+			division = {
+				division_name = {
+					is_name_ordered = yes
+					name_order = 19
+				}
+				location = 5041
+				division_template = "Sefari"
+				start_experience_factor = 0.15
+				start_equipment_factor = 0.5
+			}
+			division = {
+				division_name = {
+					is_name_ordered = yes
+					name_order = 20
+				}
+				location = 5041
+				division_template = "Sefari"
+				start_experience_factor = 0.15
+				start_equipment_factor = 0.5
+			}		
+		##Army of the Right			
+			#Tigray Sefari, Led by Ras Seyum Mangasha
+			division = { # "1st Tigray Sefari"
+				division_name = {
+					is_name_ordered = yes
+					name_order = 6
+				}
+				location = 7944
+				division_template = "Sefari"
+				start_experience_factor = 0.15
+				start_equipment_factor = 0.5
+			}
+			division = { # "2nd Tigray Sefari"
+				division_name = {
+					is_name_ordered = yes
+					name_order = 7
+				}
+				location = 7944
+				division_template = "Sefari"
+				start_experience_factor = 0.15
+				start_equipment_factor = 0.5
+			}
+			#Wag Sefari, led by Dejazmatch Haile Kebbede
+			division = { # "Wag Sefari"
+				division_name = {
+					is_name_ordered = yes
+					name_order = 10
+				}
+				location = 7944
+				division_template = "Sefari"
+				start_experience_factor = 0.15
+				start_equipment_factor = 0.17 #~1/6 of men had rifles
+			}
+			#The Begemender Sefari, led by Ras Kassa Haile Darge, at 53,000 men the second strongest army
+			division = { # "1st Begemder Sefari"
+				division_name = {
+					is_name_ordered = yes
+					name_order = 8
+				}
+				location = 7944
+				division_template = "Sefari"
+				start_experience_factor = 0.15
+				start_equipment_factor = 0.5
+			}
+			division = { # "2nd Begemder Sefari"
+				division_name = {
+					is_name_ordered = yes
+					name_order = 9
+				}
+				location = 7944
+				division_template = "Sefari"
+				start_experience_factor = 0.15
+				start_equipment_factor = 0.5
+			}
+			division = { # "1st Begemder Levies"
+				division_name = {
+					is_name_ordered = yes
+					name_order = 100
+				}
+				location = 7944
+				division_template = "Levy"
+				start_experience_factor = 0.1
+				start_equipment_factor = 0.25
+			}
+			division = { # "2nd Begemder Levies"
+				division_name = {
+					is_name_ordered = yes
+					name_order = 101
+				}
+				location = 7944
+				division_template = "Levy"
+				start_experience_factor = 0.1
+				start_equipment_factor = 0.25
+			}
+			division = { # Other troops, partially Begemnder/partially small Lasta Sefari
+				division_name = {
+					is_name_ordered = yes
+					name_order = 34
+				}
+				location = 7944
+				division_template = "Levy"
+				start_experience_factor = 0.1
+				start_equipment_factor = 0.25
+			}
+			division = { # Other troops, partially Begemnder/partially small Yejju Sefari
+				division_name = {
+					is_name_ordered = yes
+					name_order = 24
+				}
+				location = 7944
+				division_template = "Levy"
+				start_experience_factor = 0.1
+				start_equipment_factor = 0.25
+			}
+	###Southern Front
+		#Ogaden/Hararghe Sefari, Led by Dejazmatch Nasibu Emmanual
+		division = { #Ogaden Sefari
+			division_name = {
+				is_name_ordered = yes
+				name_order = 11
+			}
+			location = 12812
+			division_template = "Sefari"
+			start_experience_factor = 0.1
+			start_equipment_factor = 1
+		}
+		division = { #Hararghe Sefari
+			division_name = {
+				is_name_ordered = yes
+				name_order = 29
+			}
+			location = 12812
+			division_template = "Sefari"
+			start_experience_factor = 0.1
+			start_equipment_factor = 0.8
+		}
+		division = { #Illubabor Sefari
+			division_name = {
+				is_name_ordered = yes
+				name_order = 13
+			}
+			location = 12812
+			division_template = "Sefari"
+			start_experience_factor = 0.1
+			start_equipment_factor = 0.8
+		}
+		division = { #Various others, Somali Rebels, Gemu Gofa Sefari, Arusi Sefari, etc.
+			division_name = {
+				is_name_ordered = yes
+				name_order = 30
+			}
+			location = 12812
+			division_template = "Levy"
+			start_experience_factor = 0.5 #Unlike most reinforcements, almost all of these were seasoned warriors
+			start_equipment_factor = 0.3 #Still low on equipment though
+		}
+		#Bale Sefari, Led by Dejazmatch Beine Merid
+		division = {
+			division_name = {
+				is_name_ordered = yes
+				name_order = 32
+			}
+			location = 4995
+			division_template = "Sefari"
+			start_experience_factor = 0.1
+			start_equipment_factor = 0.5
+		}
+		#Sidamo Sefari, Led by Ras Desta Damtew
+		division = { # "1st Sidamo Sefari"
+			division_name = {
+				is_name_ordered = yes
+				name_order = 14
+			}
+			location = 13241
+			division_template = "Modern Sefari"
+			start_experience_factor = 0.2
+			start_equipment_factor = 0.8
+		}
+		division = { # "3rd Sidamo Sefari"
+			division_name = {
+				is_name_ordered = yes
+				name_order = 100
+			}
+			location = 13241
+			division_template = "Modern Sefari"
+			start_experience_factor = 0.2
+			start_equipment_factor = 0.8
+		}
+}
+
+
+### Air Force (Small handful of various aircraft in 1935, mainly used for message-running) ###
+air_wings = {
+	271 = {
+		fighter_equipment_0 = { 
+			amount = 10 #10 assorted aircraft
+			owner = "ETH"
+		} 
+		tac_bomber_equipment_0 = { 
+			amount = 3 #3 Potez 25 
+			owner = "ETH"
+		}
+	} 
+}
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "ETH"
+		}
+		requested_factories = 2
+		progress = 0.1
+		efficiency = 50
+	}
+
+}
+
+#################################

@@ -1,0 +1,33 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Den Danske Flåde"			
+		naval_base = 6287  # Copenhagen
+		task_force = {
+			name = "Den Danske Flåde"
+			location = 6287  # Copenhagen			
+			ship = { name = "HDMS Niels Iuel" pride_of_the_fleet = yes definition = battleship equipment = { battleship_1 = { amount = 1 owner = DEN } } }
+			
+			ship = { name = "HDMS Peder Skram" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = DEN } } }
+			ship = { name = "HDMS Olfert Fischer" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = DEN } } }
+			
+			ship = { name = "HDMS Hvidbjørnen" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = DEN } } }
+			ship = { name = "HDMS Ingolf" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = DEN } } }
+			ship = { name = "HDMS Hejmdal" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = DEN } } }
+			ship = { name = "HDMS Lossen" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = DEN } } }
+			
+			ship = { name = "HDMS Hekla" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = DEN } } }
+			
+			ship = { name = "HDMS Rota" definition = submarine equipment = { submarine_1 = { amount = 1 owner = DEN } } }			
+			ship = { name = "HDMS Bellona" definition = submarine equipment = { submarine_1 = { amount = 1 owner = DEN } } }		
+			ship = { name = "HDMS Flora" definition = submarine equipment = { submarine_1 = { amount = 1 owner = DEN } } }
+			ship = { name = "HDMS Daphne" definition = submarine equipment = { submarine_1 = { amount = 1 owner = DEN } } }
+			ship = { name = "HDMS Dryaden" definition = submarine equipment = { submarine_1 = { amount = 1 owner = DEN } } }
+			
+			ship = { name = "HDMS Ran" definition = submarine equipment = { submarine_1 = { amount = 1 owner = DEN } } }
+			ship = { name = "HDMS Triton" definition = submarine equipment = { submarine_1 = { amount = 1 owner = DEN } } }
+			ship = { name = "HDMS Galathea" definition = submarine equipment = { submarine_1 = { amount = 1 owner = DEN } } }
+		}
+	}
+}

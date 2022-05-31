@@ -1,0 +1,27 @@
+technology_sharing_group = {
+	id = LIB_USA_cooperation
+	name = LIB_USA_cooperation
+	desc = LIB_USA_cooperation_desc
+	picture = GFX_technology_sharing_default
+	
+	research_sharing_per_country_bonus = 0.1
+	
+	available = {
+		DARK_will_dem_USA_support = yes
+	}
+}
+technology_sharing_group = {
+	id = NEW_ITA_tech_sharing_group
+	name = NEW_ITA_tech_sharing_group
+	desc = NEW_ITA_tech_sharing_group_desc
+	picture = GFX_technology_sharing_default
+	
+	research_sharing_per_country_bonus = 0.1
+	
+	available = {
+		OR = {
+			tag = ITA
+			is_in_faction_with = ITA
+		}
+	}
+}

@@ -1,0 +1,98 @@
+spriteTypes = {
+
+###Liberia
+	
+	spriteType = {
+		name = "GFX_Portrait_DARK_Marcus_Garvey"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_Marcus_Garvey.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_DARK_Alford_Russ"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_Alford_Russ.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_DARK_James_Cooper"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_James_Cooper.dds"
+	}
+	spriteType = {
+		name = "GFX_Portrait_DARK_William_Tubman"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_William_Tubman.dds"
+	}
+	
+###Ethiopia
+	spriteType = {
+		name = "GFX_Portrait_DARK_Mulugeta_Yeggazu"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_Mulugeta_Yeggazu.dds"
+	}
+
+###Eritrea
+	spriteType = {
+		name = "GFX_Portrait_DARK_Ibrahim_Sultan_Ali"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_Ibrahim_Sultan_Ali.dds"
+	}
+
+###Somalia
+	spriteType = {
+		name = "GFX_portrait_Portrait_DARK_Osman_Mahamuud"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_Osman_Mahamuud.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_Portrait_DARK_Siad_Barre"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_Siad_Barre.dds"
+	}
+	
+###Sudan
+	spriteType = {
+		name = "GFX_portrait_Portrait_DARK_Abd_Mahdi"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_Abd_Mahdi.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_Portrait_DARK_Ibraham_Abboud"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_Ibraham_Abboud.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_Portrait_DARK_Abd_Mahdi"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_Ali_Latif.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_Portrait_DARK_generic_african_1"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_generic_african_1.dds"
+	}
+	
+#Mittelafrika
+	spriteType = {
+		name = "GFX_portrait_Portrait_DARK_Franz_Ritter_von_Epp"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_Franz_Ritter_von_Epp.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_Portrait_DARK_Hermann_Detzner"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_Hermann_Detzner.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_Portrait_DARK_Richard_Wenig"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_Richard_Wenig.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_Portrait_DARK_Rudolf_Asmis"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_Rudolf_Asmis.dds"
+	}
+	
+#Kenya
+	spriteType = {
+		name = "GFX_portrait_Portrait_DARK_generic_african_2"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_generic_african_2.dds"
+	}
+	
+#Malawi
+	spriteType = {
+		name = "GFX_portrait_Portrait_DARK_Banda"
+		textureFile = "gfx//leaders//DARK//Portrait_DARK_Banda.dds"
+	}
+	
+#Zimbabwe
+	spriteType = {
+		name = "GFX_portrait_portrait_europe_generic_operative_leader_male_18"
+		textureFile = "gfx//leaders//Europe//portrait_europe_generic_operative_leader_male_18.dds"
+	}
+	
+}

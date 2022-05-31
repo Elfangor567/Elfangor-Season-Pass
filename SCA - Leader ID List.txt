@@ -1,0 +1,29 @@
+#Denmark
+10000 - Frits Clausen
+10001 - Aksel Larsen
+10002 - Thorvald Stauning
+10006 - Erik Scavenius
+10007 - Kai Moltke
+10008 - Peter Munch
+
+#Sweden
+13000 - Sven Olov Lindholm
+13001 - Birger Furugard
+13002 - Martin Eugen Ekström
+13003 - Gustaf V
+
+#Finland
+15000 - Risto Heikki Ryti
+15001 - Kyösti Kallio
+15002 - Pehr Evind Svinhufvud
+15003 - Carl Gustaf Mannerheim
+15004 - Vaino II
+
+#Norway
+16000 - Jacob Ager Laurentzon
+
+
+
+
+
+

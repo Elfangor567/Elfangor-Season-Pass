@@ -1,0 +1,264 @@
+DEN_reintegrate_schleswig_category = {
+	DEN_reintegrate_schleswig_decision = {
+	
+		icon = generic_operation
+		
+		allowed = {
+			original_tag = DEN
+		}
+		
+		cost = 25
+		fire_only_once = yes
+		
+		available = {
+			58 = { 
+				CONTROLLER = { original_tag = ROOT }				
+			}
+		}
+		
+		visible = {
+			58 = { 
+				CONTROLLER = { original_tag = ROOT }	
+				NOT = { is_core_of = ROOT }
+			}
+		}
+		
+		complete_effect = {
+			ROOT = { add_state_core = 58 }
+		}
+	}
+}
+		
+DEN_spanish_intervention_category = {
+	
+	DEN_send_arms = {
+		
+		icon = generic_industry
+		
+		allowed = {
+			original_tag = DEN
+		}
+		
+		available = { 
+			has_equipment = { infantry_equipment > 999 }
+		}
+		
+		cost = 15
+		
+		visible = {
+			NOT = { has_global_flag = scw_over }
+			has_war = no
+		}
+		
+		complete_effect = { 
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 1000
+				target = SPC
+			}
+			hidden_effect = {
+				set_country_flag = FRA_arms_purchases_allowed
+			}
+		}
+	}
+	
+	DEN_send_volunteers = {
+		
+		icon = ENG_blackshirt_march
+		
+		available = { has_war_support > 0.2 }
+		
+		visible = { has_war = no }
+		
+		cancel_trigger = { 
+			OR = {
+				has_global_flag = scw_over
+				has_war = yes
+			}
+		}
+		
+		cost = 25
+		
+		days_remove = -1
+		
+		complete_effect = {
+			set_rule = { can_send_volunteers = yes }
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = SPC
+				value = 200
+			}
+		}
+		
+		modifier = {
+			war_support_factor = 0.125
+			send_volunteers_tension = -1
+			send_volunteer_divisions_required = -1
+			send_volunteer_size = 1			
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_stability < 0.45
+				factor = 0
+			}
+			modifier = {
+				has_stability < 0.7
+				factor = 0.5
+			}
+		}
+	}
+	
+	DEN_intervene_directly = {
+		
+		icon = infiltrate_state
+		
+		available = { 
+			has_war = no
+			has_war_support > 0.25
+		}
+		
+		visible = {
+			NOT = { has_global_flag = scw_over }
+			has_war = no
+		}
+		
+		targets = { SPC }
+		
+		cost = 30
+		
+		complete_effect = {
+			if = {
+				limit = { country_exists = SPA }
+				add_to_war = { targeted_alliance = SPC enemy = SPA hostility_reason = asked_to_join }
+			}
+			if = {
+				limit = { country_exists = SPD }
+				add_to_war = { targeted_alliance = SPC enemy = SPD hostility_reason = asked_to_join }
+			}
+			if = {
+				limit = { country_exists = SPB }
+				add_to_war = { targeted_alliance = SPC enemy = SPB hostility_reason = asked_to_join }
+			}
+			
+			effect_tooltip = {
+				give_military_access = FROM
+				FROM = { give_military_access = ROOT }
+			}			
+			hidden_effect = {
+				diplomatic_relation = {
+					country = FROM
+					relation = military_access
+					active = yes
+				}
+				FROM = {
+					diplomatic_relation = {
+						country = ROOT
+						relation = military_access
+						active = yes
+					}
+					add_ai_strategy = {
+						type = alliance
+						id = ROOT
+						value = 200
+					}
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = FROM
+					value = 200
+				}
+			}
+			
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = FROM
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_war_support < 0.4
+			}
+		}
+	}
+}
+	
+DEN_spanish_friends_category = {
+	
+	DEN_spanish_friends_decision = {
+		
+		icon = hol_exchange_intelligence_data
+		
+		available = {		
+			has_government = communism
+			OR = {
+				is_in_faction = no
+				is_faction_leader = yes
+			}
+			SPC = {
+				exists = yes
+				is_subject = no
+				has_government = neutrality
+				OR = {
+					is_in_faction = no
+					is_faction_leader = yes
+				}
+			}
+		}
+		
+		visible = {
+			is_subject = no
+		}
+		
+		cost = 5
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			hidden_effect = {
+				add_ai_strategy = {
+					type = alliance
+					id = SPC
+					value = 200
+				}
+			}
+			if = {
+				limit = {
+					is_in_faction = no
+					SPC = { is_faction_leader = yes }
+				}
+				SPC = { country_event = generic.2 }
+			}
+			else_if = {
+				limit = {
+					is_faction_leader = yes
+					SPC = { is_in_faction = no }
+				}
+				SPC = { country_event = generic.5 }
+			}
+			else_if = {
+				limit = { 
+					is_in_faction = no
+					SPC = { is_in_faction = no }
+				}
+				create_faction = DEN_anarchist_faction
+				SPC = { country_event = generic.5 }
+			}
+			else_if = {
+				limit = {
+					is_faction_leader = yes
+					SPC = { is_faction_leader = yes }
+				}
+				SPC = { country_event = SCA_denmark.34 }
+			}
+		}
+	}
+}
+	
+	

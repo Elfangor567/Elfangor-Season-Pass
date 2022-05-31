@@ -1,0 +1,2286 @@
+﻿add_namespace = SCA_norway
+
+#Give Norway 2000 Manpower to start (So they can man their new boat!) ## Outdated by discovery of on_startup in on_actions
+#country_event = {
+#	id = SCA_norway.0
+#	hidden = yes
+#	
+#	fire_only_once = yes
+#	
+#	trigger = {
+#		date > 1936.1.1
+#	}
+#	mean_time_to_happen = {
+#		days = 0.01
+#	}
+#	
+#	option = {
+#		name = SCA_norway.0.a
+#		add_manpower = 2000
+#	}
+#}
+
+#Norwegian Civil War/Coup
+country_event = {
+	id = SCA_norway.1
+	title = SCA_norway.1.t
+	desc = SCA_norway.1.desc
+	picture = GFX_report_event_fascists_posing
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = NOR
+		OR = {
+			has_completed_focus = NOR_choose_hjort
+			has_completed_focus = NOR_back_fuglesang
+		}
+		fascism > 0.33
+		NOT = { has_government = fascism }
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+		modifier = {
+			factor = 0.001
+			fascism > 50
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				50 = {
+					set_country_flag = coup_succeeds
+				}
+				50 = {
+					set_country_flag = king_revolt
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = SCA_norway.1.a
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = 100
+		add_popularity = { ideology = fascism popularity = 0.05 }
+	}
+	option = {
+		name = SCA_norway.1.b
+		ai_chance = {
+			factor = 2
+		}
+		add_popularity = { ideology = fascism popularity = -0.15 }
+		custom_effect_tooltip = SCA_norway.1.b.tt
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = coup_succeeds }
+				news_event = { hours = 24 id = SCA_norway.2 }
+			}
+			if = {
+				limit = { NOT = { has_country_flag = coup_succeeds } }
+				news_event = { hours = 24 id = SCA_norway.3 }
+			}
+		}
+	}
+}
+	news_event = {
+		id = SCA_norway.2
+		title = SCA_norway.2.t
+		desc = SCA_norway.2.desc
+		picture = GFX_news_event_fascist_gathering
+		
+		is_triggered_only = yes
+		
+		major = yes
+		
+		option = {
+			name = SCA_norway.2.a
+			trigger = { 
+				NOT = { tag = NOR }
+				has_government = democratic
+			}
+		}
+		option = {
+			name = SCA_norway.2.b
+			trigger = { 
+				NOT = { tag = NOR }
+				has_government = communism
+			}
+		}
+		option = {
+			name = SCA_norway.2.c
+			trigger = { 
+				NOT = { tag = NOR }
+				has_government = fascism
+			}
+		}
+		option = {
+			name = SCA_norway.2.d
+			trigger = { 
+				NOT = { tag = NOR }
+				has_government = neutrality
+			}
+		}
+		option = {
+			name = SCA_norway.2.e
+			trigger = { 
+				tag = NOR
+			}
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_timed_idea = { idea = reign_of_terror days = 720 }
+		}
+	}
+	news_event = {
+		id = SCA_norway.3
+		title = SCA_norway.3.t
+		desc = SCA_norway.3.desc
+		picture = GFX_news_event_038
+		
+		is_triggered_only = yes
+		
+		major = yes
+		
+		option = {
+			name = SCA_norway.3.a
+			trigger = { 
+				NOT = { tag = NOR }
+				has_government = democratic
+			}
+		}
+		option = {
+			name = SCA_norway.3.b
+			trigger = { 
+				NOT = { tag = NOR }
+				has_government = communism
+			}
+		}
+		option = {
+			name = SCA_norway.3.c
+			trigger = { 
+				NOT = { tag = NOR }
+				has_government = fascism
+			}
+		}
+		option = {
+			name = SCA_norway.3.d
+			trigger = { 
+				NOT = { tag = NOR }
+				has_government = neutrality
+			}
+		}
+		option = {
+			name = SCA_norway.3.e
+			trigger = { 
+				tag = NOR
+			}
+			if = {
+				limit = {
+					has_government = democratic
+				}
+				if = {
+					limit = { fascism > 0.4 }
+					start_civil_war = {
+						ruling_party = fascism
+						ideology = democratic
+						size = 0.6
+					}
+				}
+				if = {
+					limit = { NOT = { fascism > 0.4 } }
+					start_civil_war = {
+						ruling_party = fascism
+						ideology = democratic
+						size = 0.7
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				if = {
+					limit = { fascism > 0.4 }
+					start_civil_war = {
+						ruling_party = fascism
+						ideology = communism
+						size = 0.6
+					}
+				}
+				if = {
+					limit = { NOT = { fascism > 0.4 } }
+					start_civil_war = {
+						ruling_party = fascism
+						ideology = communism
+						size = 0.7
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_government = neutrality
+				}
+				if = {
+					limit = { fascism > 0.4 }
+					start_civil_war = {
+						ruling_party = fascism
+						ideology = neutrality
+						size = 0.6
+					}
+				}
+				if = {
+					limit = { NOT = { fascism > 0.4 } }
+					start_civil_war = {
+						ruling_party = fascism
+						ideology = neutrality
+						size = 0.7
+					}
+				}
+			}
+			add_timed_idea = { idea = reign_of_terror days = 730 }
+		}
+	}
+	
+	
+	
+#The Question of the Fører
+country_event = {
+	id = SCA_norway.4
+	title = SCA_norway.4.t
+	desc = SCA_norway.4.desc
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #Quisling IS Nasjonal Samling
+		name = SCA_norway.4.a
+		trigger = {
+			has_character = NOR_vidkun_quisling
+		}
+		ai_chance = {
+			factor = 75
+		}
+		add_political_power = 150
+		
+		add_corps_commander_role = {
+			character = NOR_johan_hjort
+			traits = { media_personality politically_connected urban_assault_specialist winter_specialist }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	option = { #Quisling should be a figurehead
+		name = SCA_norway.4.b
+		trigger = {
+			has_character = NOR_vidkun_quisling
+		}
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_ideas = NOR_quisling_figurehead
+		}
+		else = {
+			custom_effect_tooltip = NOR_will_get_figurehead_tt
+		}
+		hidden_effect = {
+			set_country_flag = NOR_figurehead_primed
+		}
+		
+		add_field_marshal_role = {
+			character = NOR_johan_hjort
+			traits = { media_personality politically_connected urban_assault_specialist winter_specialist }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	option = { #Quisling should have an... accident
+		name = SCA_norway.4.c
+		ai_chance = {
+			factor = 25
+		}
+		add_popularity = { ideology = fascism popularity = -0.05 }
+		#custom_effect_tooltip = NOR_death_quisling
+		if = {
+			limit = { has_character = NOR_vidkun_quisling }
+			kill_ideology_leader = fascism
+		}
+		promote_character = NOR_johan_hjort
+		hidden_effect = {
+			set_country_flag = NOR_hjort
+		}
+	}
+}
+
+#Norge-Dansk Ordning
+country_event = {
+	id = SCA_norway.5
+	title = SCA_norway.5.t
+	desc = SCA_norway.5.desc
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = { # Agree
+		name = SCA_norway.5.a
+		ai_chance = {	
+			factor = 2
+			modifier = {
+				factor = 0 # Its literally all we have, skrew off
+				has_global_flag = fall_of_denmark
+				NOT = { 37 = { CONTROLLER = { tag = DEN } } }
+				NOT = { 99 = { CONTROLLER = { tag = DEN } } }
+			}
+			modifier = {
+				factor = 10
+				GER = { focus_progress = { focus = GER_weserubung progress > 0 } } #Ah crap
+			}
+		}
+		NOR = { country_event = SCA_norway.6 }
+	}
+	option = { # Refuse
+		name = SCA_norway.5.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.1
+				DEN = { has_war = yes }
+			}
+			modifier = {
+				factor = 2
+				has_government = fascism
+			}
+		}
+		NOR = { country_event = SCA_norway.7 }
+	}
+}
+	country_event = { # Denmark Agrees
+		id = SCA_norway.6
+		title = SCA_norway.6.t
+		desc = SCA_norway.6.desc
+		picture = GFX_report_event_generic_sign_treaty3
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			news_event = { hours = 12 id = SCA_norway.11 }
+		}
+		
+		option = { 
+			name = SCA_norway.6.a
+			NOR = {
+				add_state_core = 101
+				add_state_core = 337
+				transfer_state = 101
+				transfer_state = 337			
+			}
+		}	
+	}
+	country_event = { # Denmark Refuses
+		id = SCA_norway.7
+		title = SCA_norway.7.t
+		desc = SCA_norway.7.desc
+		picture = GFX_report_event_lithuania_army
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.7.a
+			NOR = {
+				add_state_core = 101
+				add_state_core = 337
+				create_wargoal = {
+					type = take_state_focus
+					target = DEN
+					generator = { 101 337 }
+				}
+			}
+		}
+	}
+	
+country_event = {
+	id = SCA_norway.8
+	title = SCA_norway.8.t
+	desc = SCA_norway.8.desc
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+	
+	option = { # Agree
+		name = SCA_norway.8.a
+		ai_chance = {	
+			factor = 1
+		}
+		NOR = { country_event = SCA_norway.9 }
+	}
+	option = { # Refuse
+		name = SCA_norway.8.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.1
+				SWE = { has_war = yes }
+			}
+			modifier = {
+				factor = 10
+				has_government = fascism
+			}
+		}
+		NOR = { country_event = SCA_norway.10 }
+	}
+}
+	country_event = { # Sweden Accepts
+		id = SCA_norway.9
+		title = SCA_norway.9.t
+		desc = SCA_norway.9.desc
+		picture = GFX_report_event_lithuania_army
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			news_event = { hours = 12 id = SCA_norway.12 }
+		}
+		
+		option = {
+			name = SCA_norway.9.a
+			NOR = {
+				add_state_core = 140
+				add_state_core = 138
+				transfer_state = 140
+				transfer_state = 138
+			}
+		}
+	}
+	country_event = { # Sweden Refuses
+		id = SCA_norway.10
+		title = SCA_norway.10.t
+		desc = SCA_norway.10.desc
+		picture = GFX_report_event_lithuania_army
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.10.a
+			NOR = {
+				add_state_core = 140
+				add_state_core = 138
+				create_wargoal = {
+					type = take_state_focus
+					target = SWE
+					generator = { 140 139 }
+				}
+			}
+		}
+	}
+	
+	
+news_event = { # News of Denmark caving to Norway
+	id = SCA_norway.11
+	title = SCA_norway.11.t
+	desc = SCA_norway.11.desc
+	picture = GFX_news_event_016
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = SCA_norway.11.a
+		trigger = {
+			tag = NOR
+		}
+	}
+	option = {
+		name = SCA_norway.11.b
+		trigger = {
+			tag = DEN
+		}
+	}
+	option = {
+		name = SCA_norway.11.c
+		trigger = {
+			NOT = { tag = DEN }
+			NOT = { tag = NOR }
+		}
+	}
+}
+news_event = { # News of Sweden caving to Norway
+	id = SCA_norway.12
+	title = SCA_norway.12.t
+	desc = SCA_norway.12.desc
+	picture = GFX_news_event_016
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = SCA_norway.12.a
+		trigger = {
+			tag = NOR
+		}
+	}
+	option = {
+		name = SCA_norway.12.b
+		trigger = {
+			tag = SWE
+		}
+	}
+	option = {
+		name = SCA_norway.12.c
+		trigger = {
+			NOT = { tag = SWE }
+			NOT = { tag = NOR }
+		}
+	}
+}
+
+
+# Norway Asks For German Protection
+country_event = {
+	id = SCA_norway.13
+	title = SCA_norway.13.t
+	desc = SCA_norway.13.desc
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = { #Accept
+		name = SCA_norway.13.a
+		ai_chance = {
+			factor = 10
+		}
+		give_guarantee = NOR
+		diplomatic_relation = { country = NOR relation = non_aggression_pact }
+		NOR = { country_event = SCA_norway.14 }
+	}
+	
+	option = { #Decline
+		name = SCA_norway.13.b
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0.5
+				focus_progress = { focus = GER_weserubung progress > 0 } # That's one way to secure Norway
+			}
+		}
+		NOR = { country_event = SCA_norway.15 }
+	}
+}
+	country_event = {
+		id = SCA_norway.14
+		title = SCA_norway.14.t
+		desc = SCA_norway.14.desc
+		picture = GFX_report_event_hitler_handshake
+	
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.14.a
+			
+			effect_tooltip = {
+				GER = { 
+					give_guarantee = NOR
+					diplomatic_relation = { country = NOR relation = non_aggression_pact }
+				}
+			}
+		}
+	}
+	country_event = {
+		id = SCA_norway.15
+		title = SCA_norway.15.t
+		desc = SCA_norway.15.desc
+		picture = GFX_report_event_hitler_handshake
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.15.a
+		}
+	}
+	
+	
+#English Protection
+country_event = {
+	id = SCA_norway.16
+	title = SCA_norway.16.t
+	desc = SCA_norway.16.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #Yes, not in faction
+		name = SCA_norway.16.a
+		trigger = {
+			NOT = { is_in_faction_with = NOR }
+		}
+		ai_chance = {
+			factor = 10
+		}
+		give_guarantee = NOR
+		diplomatic_relation = { country = NOR relation = non_aggression_pact }
+		NOR = { country_event = SCA_norway.17 }
+	}
+	option = { #No, not in faction
+		name = SCA_norway.16.b
+		trigger = {
+			NOT = { is_in_faction_with = NOR }
+		}
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0.5
+				focus_progress = { focus = ENG_norwegian_intervention progress > 0 } # That's one way to secure Norway
+			}
+		}
+		NOR = { country_event = SCA_norway.18 }
+	}
+	
+	option = { #Yes, in faction
+		name = SCA_norway.16.c
+		trigger = {
+			is_in_faction_with = NOR
+		}
+		add_timed_idea = { idea = NOR_helped days = 180 }
+		effect_tooltip = {
+			NOR = {
+				add_political_power = 50
+				add_ideas = NOR_eng_support
+			}
+		}
+		NOR = { country_event = SCA_norway.19 }		
+	}
+	option = { #No, in faction
+		name = SCA_norway.16.d
+		trigger = {
+			is_in_faction_with = NOR
+		}
+		NOR = { country_event = SCA_norway.20 }
+	}
+}
+	country_event = {
+		id = SCA_norway.17
+		title = SCA_norway.17.t
+		desc = SCA_norway.17.desc
+		picture = GFX_report_event_generic_sign_treaty2
+	
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.17.a
+			
+			effect_tooltip = {
+				ENG = { 
+					give_guarantee = NOR
+					diplomatic_relation = { country = NOR relation = non_aggression_pact }
+				}
+			}
+		}
+	}
+	country_event = {
+		id = SCA_norway.18
+		title = SCA_norway.18.t
+		desc = SCA_norway.18.desc
+		picture = GFX_report_event_generic_read_write
+	
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.18.a
+		}
+	}
+	country_event = {
+		id = SCA_norway.19
+		title = SCA_norway.19.t
+		desc = SCA_norway.19.desc
+		picture = GFX_report_event_generic_sign_treaty3
+	
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.19.a
+			
+			add_political_power = 50
+			add_ideas = NOR_eng_support
+		}
+	}
+	country_event = {
+		id = SCA_norway.20
+		title = SCA_norway.20.t
+		desc = SCA_norway.20.desc
+		picture = GFX_report_event_generic_read_write
+	
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.20.a
+		}
+	}
+	
+	
+#News of Norwegian Propaganda
+news_event = {
+	id = SCA_norway.21
+	title = SCA_norway.21.t
+	desc = SCA_norway.21.desc
+	picture = GFX_news_event_gathering_protest
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = SCA_norway.21.a
+		trigger = {
+			OR = {
+				tag = FIN
+				tag = ICE
+				tag = DEN
+				tag = SWE
+			}
+			NOT = { has_government = democratic }
+		}
+	}
+	option = {
+		name = SCA_norway.21.b
+		trigger = {
+			tag = NOR
+		}
+	}
+	option = {
+		name = SCA_norway.21.c
+		trigger = {
+			NOT = {
+				OR = {
+					tag = FIN
+					tag = ICE
+					tag = DEN
+					tag = SWE
+					tag= NOR
+				}
+			}
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
+		
+	}
+	option = {
+		name = SCA_norway.21.d
+		trigger = {
+			NOT = {
+				OR = {
+					tag = FIN
+					tag = ICE
+					tag = DEN
+					tag = SWE
+					tag= NOR
+				}
+			}
+			has_government = neutrality
+		}
+	}
+	option = {
+		name = SCA_norway.21.e
+		trigger = {
+			NOT = {
+				OR = {
+					tag = FIN
+					tag = ICE
+					tag = DEN
+					tag = SWE
+					tag= NOR
+				}
+			}
+			has_government = democratic
+		}
+	}
+}
+
+
+#Founding of The Winter Concord
+country_event = {
+	id = SCA_norway.22
+	title = SCA_norway.22.t
+	desc = { #Both Democratic or Neutral
+		text = SCA_norway.22.desc
+		trigger = {
+			OR = {
+				has_government = neutrality
+				has_government = democratic
+			}
+		}
+	}
+	desc = { #Finland is fascist/communist
+		text = SCA_norway.22.desc2
+		trigger = {
+			AND = {
+				NOT = { has_government = neutrality }
+				NOT = { has_government = democratic }
+			}
+		}
+	}
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = alliance_applicant
+			FROM = {
+				save_event_target_as = alliance_inviter
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = { #We'll Join
+		name = SCA_norway.22.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0.1
+				OR = {
+					NOR = { has_government = fascism }
+					NOR = { has_government = communism }
+				}
+			}
+			modifier = {
+				factor = 100 #ohshitohshitohshit
+				if = { limit = { tag = DEN } }
+				GER = {
+					focus_progress = { focus = GER_weserubung progress > 0}
+				}
+			}
+		}
+		if = {
+			limit = { NOR = { is_in_faction = no } }
+			NOR = {	create_faction = NOR_FIN_alliance }
+			FROM = { add_to_faction = ROOT }
+			hidden_effect = {
+				set_country_flag = alliance_applicant@ROOT
+				FROM = { set_country_flag = alliance_inviter@ROOT }
+			}
+		}
+		if = {
+			limit = { NOR = { is_in_faction = yes } }
+			FROM = { add_to_faction = ROOT }
+			hidden_effect = {
+				set_country_flag = alliance_applicant@ROOT
+				FROM = { set_country_flag = alliance_inviter@ROOT }
+				news_event = { id = news.289 hours = 12 }
+			}
+		}
+		NOR = { country_event = SCA_norway.23 }
+	}
+	
+	option = { # Bugger Off
+		name = SCA_norway.22.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 3
+				is_historical_focus_on = yes #You will not screw up the timeline!
+			}
+		}
+		NOR = { country_event = SCA_norway.24 }
+	}
+	
+}
+	country_event = { # Joined
+		id = SCA_norway.23
+		title = SCA_norway.23.t
+		desc = SCA_norway.23.desc
+		picture = GFX_report_event_generic_sign_treaty3
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.23.a
+		}
+	}
+	country_event = { # Refused
+		id = SCA_norway.24
+		title = SCA_norway.24.t
+		desc = SCA_norway.24.desc
+		picture = GFX_report_event_generic_sign_treaty3
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.24.a
+		}
+	}
+	
+	
+#Norwegian Revolution in Sweden
+country_event = {
+	id = SCA_norway.25
+	title = SCA_norway.25.t
+	desc = SCA_norway.25.desc
+	picture = GFX_report_event_swedish_soldier
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SCA_norway.25.a
+		custom_effect_tooltip = NOR_swe_volunteers_tt
+		hidden_effect = {
+			load_oob = NOR_swe_volunteers
+		}
+	}
+}
+	country_event = { # Conquest of Sweden
+		id = SCA_norway.26
+		title = SCA_norway.26.t
+		desc = SCA_norway.26.desc
+		picture = GFX_report_event_generic_military_parade
+		
+		fire_only_once = yes
+		
+		trigger = {
+			tag = NOR
+			NOR = { has_completed_focus = NOR_kill_swe }
+			NOR = { has_government = communism }
+			138 = { CONTROLLER = { tag = NOR } }
+			139 = { CONTROLLER = { tag = NOR } }
+			140 = { CONTROLLER = { tag = NOR } }
+			141 = { CONTROLLER = { tag = NOR } }
+			 38 = { CONTROLLER = { tag = NOR } }
+			666 = { CONTROLLER = { tag = NOR } }
+			124 = { CONTROLLER = { tag = NOR } }
+		}
+		
+		mean_time_to_happen = {
+			days = 60
+		}
+		
+		option = {
+			name = SCA_norway.26.a
+			add_state_core = 138
+			add_state_core = 139
+			add_state_core = 141
+			add_state_core = 38
+			add_state_core = 666
+			add_state_core = 124
+		}
+	}
+	
+		
+#Norway Communist King
+country_event = {
+	id = SCA_norway.27
+	title = SCA_norway.27.t
+	desc = {
+		text = SCA_norway.27.desc
+		trigger = { has_completed_focus = NOR_break_moscow }
+	}
+	desc = {
+		text = SCA_norway.27.desc2
+		trigger = { has_completed_focus = NOR_go_with_ussr }
+	}
+	picture = GFX_report_event_royal_parade
+	
+	is_triggered_only = yes
+	
+	option = { # Keep Him
+		name = SCA_norway.27.a
+		trigger = {
+			NOT = { is_in_faction_with = SOV }
+		}
+	}
+	option = { # Remove Him
+		name = SCA_norway.27.b
+		trigger = {
+			NOT = { is_in_faction_with = SOV }
+		}
+		add_political_power = 200
+		remove_ideas = NOR_haakon_vii
+		hidden_effect = {
+			set_country_flag = king_revolt
+			country_event = SCA_norway.28
+		}
+	}
+	option = { #Keep Him Soviet
+		name = SCA_norway.27.c
+		trigger = {
+			is_in_faction_with = SOV
+		}
+		add_political_power = -100
+	}
+	option = { # Remove Him Soviet
+		name = SCA_norway.27.b
+		trigger = {
+			is_in_faction_with = SOV
+		}
+		add_political_power = 200
+		remove_ideas = NOR_haakon_vii
+		hidden_effect = {
+			set_country_flag = king_revolt
+			country_event = SCA_norway.28
+		}
+	}
+}
+	country_event = {
+		id = SCA_norway.28
+		title = SCA_norway.28.t
+		desc = {
+			text = SCA_norway.28.desc
+			trigger = { has_completed_focus = NOR_break_moscow }
+		}
+		desc = {
+			text = SCA_norway.28.desc2
+			trigger = { has_completed_focus = NOR_go_with_ussr }
+		}
+		picture = GFX_report_event_saf_soldiers_2
+		
+		is_triggered_only = yes
+		
+		option = { #Revolt, no Soviet
+			name = SCA_norway.28.a
+			trigger = {
+				has_completed_focus = NOR_break_moscow
+			}
+			custom_effect_tooltip = SCA_norway.28.a_tt
+			hidden_effect = {
+				NOR = {
+					start_civil_war = {
+						ruling_party = communism
+						ideology = neutrality
+						size = 0.5
+					}
+				}
+				news_event = { hours = 24 id = SCA_norway.29 }
+			}
+		}
+		option = { #Revolt, Soviet
+			name = SCA_norway.28.b
+			trigger = {
+				has_completed_focus = NOR_go_with_ussr
+			}
+			custom_effect_tooltip = SCA_norway.28.b_tt
+			hidden_effect = {
+				NOR = {
+					start_civil_war = {
+						ruling_party = communism
+						ideology = democratic
+						size = 0.75
+					}
+				}
+				news_event = { hours = 24 id = SCA_norway.30 }
+			}
+		}
+	}
+	news_event = { # News of Norwegian Civil War, no soviet
+		id = SCA_norway.29
+		title = SCA_norway.29.t
+		desc = SCA_norway.29.desc
+		picture = news_event_saf_soldiers_2
+		
+		is_triggered_only = yes
+		major = yes
+		
+		option = {
+			name = SCA_norway.29.a
+			trigger = {
+				tag = NOR
+			}
+		}
+		option = {
+			name = SCA_norway.29.b
+			trigger = {
+				original_tag = NOR
+				NOT = { tag = NOR }
+			}
+		}
+		option = {
+			name = SCA_norway.29.c
+			trigger = {
+				NOT = { original_tag = NOR }
+				has_government = communism
+			}
+		}
+		option = {
+			name = SCA_norway.29.d
+			trigger = {
+				NOT = { original_tag = NOR }
+				NOT = { has_government = communism }
+			}
+		}
+	}
+	news_event = { # News of Norwegian Civil War, Soviet
+		id = SCA_norway.30
+		title = SCA_norway.30.t
+		desc = SCA_norway.30.desc
+		picture = news_event_saf_soldiers_2
+		
+		is_triggered_only = yes
+		major = yes
+		
+		option = {
+			name = SCA_norway.30.a
+			trigger = {
+				tag = NOR
+			}
+		}
+		option = {
+			name = SCA_norway.30.b
+			trigger = {
+				original_tag = NOR
+				NOT = { tag = NOR }
+			}
+		}
+		option = {
+			name = SCA_norway.30.c
+			trigger = {
+				NOT = { original_tag = NOR }
+				has_government = communism
+			}
+		}
+		option = {
+			name = SCA_norway.30.d
+			trigger = {
+				NOT = { original_tag = NOR }
+				NOT = { has_government = communism }
+			}
+		}
+	}
+	
+	
+#Norway asks to split Finland
+country_event = {
+	id = SCA_norway.31
+	title =  SCA_norway.31.t
+	desc = SCA_norway.31.desc
+	picture = GFX_report_event_molotov_signing_pact
+	
+	is_triggered_only = yes
+	
+	option = { #Yes
+		name = SCA_norway.31.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				surrender_progress > 0.5
+			}
+		}
+		NOR = {
+			add_state_core = 148
+			add_state_core = 722
+			add_state_claim = 147
+			add_state_claim = 145
+			add_state_claim = 149
+			create_wargoal = {
+				target = FIN
+				type = annex_everything
+			}
+			country_event = SCA_norway.32
+		}
+		SOV = {
+			add_state_claim = 146
+			add_state_claim = 150
+			add_state_claim = 111
+			create_wargoal = {
+				target = FIN
+				type = annex_everything
+			}
+		}
+	}
+	option = { #No
+		name = SCA_norway.31.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				add = 1
+				surrender_progress > 0.5
+			}
+		}
+		NOR = { country_event = SCA_norway.33 }
+	}
+}
+	country_event = {
+		id = SCA_norway.32
+		title = SCA_norway.32.t
+		desc = SCA_norway.32.desc
+		picture = GFX_report_event_molotov_signing_pact
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.32.a
+		}
+	
+	}
+	country_event = {
+		id = SCA_norway.33
+		title = SCA_norway.33.t
+		desc = SCA_norway.33.desc
+		picture = GFX_report_event_molotov_signing_pact
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.33.a
+			add_state_core = 148
+			add_state_core = 722
+		}
+	}
+	#Honouring the pact after Finland has fallen
+	country_event = {
+		id = SCA_norway.34
+		title = SCA_norway.34.t
+		desc = SCA_norway.34.desc
+		picture = GFX_report_event_molotov_signing_pact
+		
+		fire_only_once = yes
+		
+		trigger = {
+			tag = SOV
+			SOV = { is_in_faction_with = NOR }
+			OR = {
+				OR = {
+					owns_state = 148
+					owns_state = 722
+					owns_state = 147
+					owns_state = 145
+					owns_state = 150
+					owns_state = 111
+					owns_state = 149
+				}
+				AND = {
+					FIN = { has_capitulated = yes }
+					OR = {
+						controls_state = 148
+						controls_state = 722
+						controls_state = 147
+						controls_state = 145
+						controls_state = 150
+						controls_state = 111
+						controls_state = 149
+					}
+				}
+				OR = {
+					any_other_country = {
+						is_in_faction_with = SOV
+						SOV = { is_faction_leader = yes }
+						OR = {
+							owns_state = 148
+							owns_state = 722
+							owns_state = 147
+							owns_state = 145
+							owns_state = 150
+							owns_state = 111
+							owns_state = 149
+							AND = {
+								FIN = { has_capitulated = yes }
+								OR = {
+									controls_state = 148
+									controls_state = 722
+									controls_state = 147
+									controls_state = 145
+									controls_state = 150
+									controls_state = 111
+									controls_state = 149
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		mean_time_to_happen = {
+			days = 2
+		}
+		
+		option = {
+			name = SCA_norway.34.a
+			if = {
+				limit = {
+					148 = {
+						OR = {
+							is_controlled_by = SOV
+							any_other_country = {
+								controls_state = 148
+								is_in_faction_with = SOV
+								SOV = { is_faction_leader = yes }
+							}
+						}
+					}
+				}
+				NOR = { transfer_state = 148 }
+			}
+			if = {
+				limit = {
+					722 = {
+						OR = {
+							is_controlled_by = SOV
+							any_other_country = {
+								controls_state = 722
+								is_in_faction_with = SOV
+								SOV = { is_faction_leader = yes }
+							}
+						}
+					}
+				}
+				NOR = { transfer_state = 722 }
+			}
+			if = {
+				limit = {
+					147 = {
+						OR = {
+							is_controlled_by = SOV
+							any_other_country = {
+								controls_state = 147
+								is_in_faction_with = SOV
+								SOV = { is_faction_leader = yes }
+							}
+						}
+					}
+				}
+				NOR = { transfer_state = 147 }
+			}
+			if = {
+				limit = {
+					145 = {
+						OR = {
+							is_controlled_by = SOV
+							any_other_country = {
+								controls_state = 145
+								is_in_faction_with = SOV
+								SOV = { is_faction_leader = yes }
+							}
+						}
+					}
+				}
+				NOR = { transfer_state = 145 }
+			}
+			if = {
+				limit = {
+					149 = {
+						OR = {
+							is_controlled_by = SOV
+							any_other_country = {
+								controls_state = 149
+								is_in_faction_with = SOV
+								SOV = { is_faction_leader = yes }
+							}
+						}
+					}
+				}
+				NOR = { transfer_state = 149 }
+			}
+			if = {
+				limit = {
+					150 = {
+						OR = {
+							is_controlled_by = NOR
+							any_other_country = {
+								controls_state = 150
+								is_in_faction_with = NOR
+							}
+						}
+					}
+				}
+				SOV = { transfer_state = 150 }
+			}
+			if = {
+				limit = {
+					146 = {
+						OR = {
+							is_controlled_by = NOR
+							any_other_country = {
+								controls_state = 146
+								is_in_faction_with = NOR
+							}
+						}
+					}
+				}
+				SOV = { transfer_state = 146 }
+			}
+			if = {
+				limit = {
+					111 = {
+						OR = {
+							is_controlled_by = NOR
+							any_other_country = {
+								controls_state = 111
+								is_in_faction_with = NOR
+							}
+						}
+					}
+				}
+				SOV = { transfer_state = 111 }
+			}
+			NOR = { country_event = SCA_norway.35 }
+		}
+	}
+	country_event = {
+		id = SCA_norway.35
+		title = SCA_norway.35.t
+		desc = SCA_norway.35.desc
+		picture = GFX_report_event_molotov_signing_pact
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.35.a
+		}
+	}
+	
+	
+	
+## Occupied Norway Events
+country_event = { # Quisling tries to declare himself Prime Minister
+	id = SCA_norway.100
+	title = SCA_norway.100.t
+	desc = {
+		text = SCA_norway.100.desc
+		trigger = { fascism < 0.1 }
+	}
+	desc = {
+		text = SCA_norway.100.desc2
+		trigger = { NOT = { fascism < 0.1 }	}
+	}
+	picture = GFX_report_event_quisling_speech
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = NOR
+		GER = { has_war_with = NOR }
+		GER = { is_faction_leader = yes }
+		110 = { CONTROLLER = { tag = GER } }
+		NOT = { NOR = { has_government = fascism } }
+		NOT = { NOR = { has_government = communism } }
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = { #Accept Quisling's Proposal
+		name = SCA_norway.100.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 5
+				fascism > 0.10
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		if = {
+			limit = { fascism < 0.1 }
+			remove_ideas = NOR_haakon_vii
+		}
+		add_popularity = { ideology = fascism popularity = 0.15 }
+		add_timed_idea = { idea = nationalism days = 720 }
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = yes
+		}
+		GER = { country_event = SCA_norway.101 }
+	}
+	
+	option = { #Reject Quislin's Proposal
+		name = SCA_norway.100.b
+		ai_chance = {
+			base = 10
+		}
+		GER = { country_event = SCA_norway.102 }
+		hidden_effect = {
+			set_party_name = { ideology = democratic long_name = "Arbeiderpartiet" name = "AP" }
+			set_party_name = { ideology = neutrality long_name = "Radikale Folkeparti" name = "Radikale Folkeparti" }
+			
+			promote_character = {
+				character = NOR_johan_nygaardsvold
+				ideology = socialism
+			}
+			promote_character = NOR_alf_mjoen
+			EXP_set_temporary_party_popularity_variables = yes
+			set_popularities = {
+				neutrality = temp_party_d_pop
+				democratic = temp_party_n_pop
+				fascism = temp_party_f_pop
+				communism = temp_party_c_pop
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}			
+		}
+	}
+}
+	country_event = { # Quisling is declared Prime Minister
+		id = SCA_norway.101
+		title = SCA_norway.101.t
+		desc = SCA_norway.101.desc
+		picture = GFX_report_event_quisling_speech
+		
+		is_triggered_only = yes
+		
+		option = { # An ally
+			name = SCA_norway.101.a
+			ai_chance = {
+				factor = 2
+			}
+			effect_tooltip = {
+				NOR = { 
+					white_peace = {
+						tag = GER
+						message = NOR_agree_peace
+					}
+				}
+				add_to_faction = NOR
+			}
+			NOR = { country_event = { id = SCA_norway.103 hours = 6 } }
+		}
+		option = { #A puppet
+			name = SCA_norway.101.b			
+			ai_chance = {
+				factor = 1
+			}
+			NOR = { country_event = { id = SCA_norway.104 hours = 6 } }
+		}
+		option = { # Norway is OURS
+			name = SCA_norway.101.c
+			ai_chance = {
+				factor = 0
+			}
+			NOR = { country_event = { id = SCA_norway.105 hours = 6 } }
+		}
+	}
+	country_event = { # Quisling appeals for help
+		id = SCA_norway.102
+		title = SCA_norway.102.t
+		desc = SCA_norway.102.desc
+		picture = GFX_report_event_quisling_speech
+		
+		is_triggered_only = yes
+		
+		option = { # Quisling shall recieve support
+			name = SCA_norway.102.a
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0 
+					is_historical_focus_on = yes
+				}
+			}
+			effect_tooltip ={
+				NOR = {
+					start_civil_war = {
+						ideology = fascism
+						size = 0.1
+					}
+				}
+				random_other_country = {
+					limit = { original_tag = NOR has_government = fascism }
+					GER = { add_to_faction = PREV }
+					transfer_state = 110
+				}
+			}
+			NOR = { country_event = SCA_norway.106 }
+		}
+		
+		option = { # NS shall remain in control, but Quisling is not competant enough
+			name = SCA_norway.102.b
+			ai_chance = {
+				factor = 2
+			}
+			effect_tooltip ={
+				NOR = {
+					start_civil_war = {
+						ideology = fascism
+						size = 0.075
+					}
+				}
+				random_other_country = {
+					limit = { original_tag = NOR has_government = fascism }
+					GER = {
+						set_autonomy = { target = PREV autonomy_state = autonomy_reichsprotectorate end_wars = no end_civil_wars = no }
+					}
+					GER = { add_to_faction = PREV }
+					transfer_state = 110
+				}
+			}
+			NOR = { country_event = SCA_norway.107 }
+		}
+		
+		option = { # Norway is OURS
+			name = SCA_norway.102.c
+			ai_chance = {
+				factor = 0
+			}
+			NOR = { country_event = SCA_norway.108 }
+		}
+	}
+	country_event = { # Germany agrees to Alliance with Quisling
+		id = SCA_norway.103
+		title = SCA_norway.103.t
+		desc = SCA_norway.103.desc
+		picture = GFX_report_event_quisling_speech
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.103.a
+			add_popularity = { ideology = fascism popularity = 0.2 }
+			white_peace = {
+				tag = GER
+				message = NOR_agree_peace
+			}
+			GER = { add_to_faction = ROOT }
+			add_timed_idea = { idea = fascist_influence days = 720 }
+		}
+	}
+	country_event = { # Germany Offers to Make Norway a Satellite
+		id = SCA_norway.104
+		title = SCA_norway.104.t
+		desc = SCA_norway.104.desc
+		picture = GFX_report_event_hitler_handshake
+		
+		is_triggered_only = yes
+		
+		option = { # Agree
+			name = SCA_norway.104.a
+			ai_chance = {
+				factor = 10
+			}
+			white_peace = {
+				tag = GER
+				message = NOR_agree_peace
+			}
+			GER = {
+				puppet = NOR
+				set_autonomy = { target = NOR autonomy_state = autonomy_satellite end_wars = no end_civil_wars = no }
+			}
+			add_timed_idea = { idea = fascist_influence days = 720 }
+		}
+		option = { # NEVER
+			name = SCA_norway.104.b
+			ai_chance = {
+				factor = 1
+			}
+			add_political_power = 100
+			add_popularity = { ideology = fascism popularity = 0.25 }
+			GER = { country_event = SCA_norway.110 }
+			hidden_effect = {
+				country_event = SCA_norway.109
+			}
+		}
+	}
+	country_event = { # Germany Insists on Annexing Norway
+		id = SCA_norway.105
+		title = SCA_norway.105.t
+		desc = SCA_norway.105.desc
+		picture = GFX_report_event_hitler_parade
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.105.a
+			set_party_name = { ideology = democratic long_name = "Arbeiderpartiet" name = "AP" }
+			set_party_name = { ideology = neutrality long_name = "Radikale Folkeparti" name = "Radikale Folkeparti" }
+			
+			promote_character = {
+				character = NOR_johan_nygaardsvold
+				ideology = socialism
+			}
+			promote_character = NOR_alf_mjoen
+			
+			EXP_set_temporary_party_popularity_variables = yes
+			set_popularities = {
+				neutrality = temp_party_d_pop
+				democratic = temp_party_n_pop
+				fascism = temp_party_f_pop
+				communism = temp_party_c_pop
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+		}
+	}
+	country_event = { # Quisling Supported
+		id = SCA_norway.106
+		title = SCA_norway.106.t
+		desc = SCA_norway.106.desc
+		picture = GFX_report_event_quisling_speech
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			set_global_flag = NS_Allowed
+		}
+		
+		option = {
+			name = SCA_norway.106.a
+			custom_effect_tooltip = SCA_norway.106.a_tt
+			hidden_effect = {
+				NOR = {
+					retire_character = NS_arthur_qvist
+					start_civil_war = {
+						ideology = fascism
+						size = 0.1
+						capital = 110
+						states = { 110 }
+						states_filter = {
+							owner = { original_tag = NOR }
+						}
+					}
+				}
+				random_other_country = {
+					limit = { original_tag = NOR has_government = fascism }
+					GER = { add_to_faction = PREV }
+					set_capital = { state = 110 }
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = no
+					}
+					set_popularities = {
+						neutrality = 5
+						democratic = 5
+						fascism = 90
+						communism = 0
+					}
+					set_cosmetic_tag = NOR_quisling
+					set_country_flag = SCA_NS_Norway
+					every_unit_leader = {
+						set_nationality = NOR
+					}
+					set_nationality = {
+						character = NOR_laura_johannessen
+						target_country = PREV
+					}
+					PREV = {
+						every_character = {
+							limit = { OR = {
+								AND = {
+									ROOT = { OR = {
+										has_completed_focus = NOR_choose_hjort
+										has_completed_focus = NOR_go_right
+									} }
+									is_character = NOR_rolf_fuglesang
+								}
+								AND = {
+									ROOT = {
+										has_completed_focus = NOR_back_fuglesang
+									}
+									is_character = NOR_johan_hjort
+								}
+								AND = {
+									ROOT = {
+										NOT = { has_completed_focus = NOR_go_right }
+										NOT = { has_completed_focus = NOR_choose_hjort }
+										NOT = { has_completed_focus = NOR_back_fuglesang }
+									}
+									is_character = NOR_johan_hjort
+									is_character = NOR_rolf_fuglesang
+								}
+								is_character = NOR_jacob_ager_laurantzon
+								is_character = NS_henry_rinnan
+								is_character = NS_konrad_sundlo
+								
+								is_character = NS_ragnvald_hvoslef
+								is_character = NS_jonas_lie
+								is_character = NS_tryggve_gran
+								is_character = NS_rudolf_bratteng
+								is_character = NS_kjeld_irgens
+								
+								is_character = NS_oliver_moystad
+								is_character = NS_carl_hanssen
+								is_character = NS_axel_stang
+								is_character = NS_alf_whist
+								is_character = NS_finn_kjelstrup
+								is_character = NS_christen_knudsen
+								is_character = NS_hans_haereid
+								
+								is_character = NS_axle_rod
+								is_character = NS_jens_bache_wiig
+								is_character = NS_reidar_aagaard
+								is_character = NS_bjarne_eriksen
+								
+								is_character = NS_radet_council
+								is_character = NS_lauritz_sand
+								is_character = NS_abjorn_sunde
+								is_character = NS_gustav_jaeger
+								is_character = NS_eivind_blehr
+								is_character = NS_tormod_hustad
+								is_character = NS_karl_marthinsen
+							} }
+							set_nationality = PREV.PREV
+						}
+					}
+					set_party_name = { ideology = communism long_name = "Osvald Group" name = "OG" }
+					set_party_name = { ideology = democratic long_name = "Unknown Undercover" name = "XU" }
+					set_party_name = { ideology = neutrality long_name = "Militær Organisasjon" name = "Milorg" }
+					
+					promote_character = NS_radet_council
+					promote_character = NS_lauritz_sand
+					promote_character = NS_abjorn_sunde
+				}
+				if = {
+					limit = {
+						NOT = { has_character = NOR_rolf_fuglesang }
+						NOT = { has_character = NOR_johan_hjort }
+					}
+					promote_character = NOR_laura_johannessen
+				}
+			}
+		}
+	}
+	
+	country_event = { # NS supported but no Quisling
+		id = SCA_norway.107
+		title = SCA_norway.107.t
+		desc = SCA_norway.107.desc
+		picture = GFX_report_event_hitler_parade
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			set_global_flag = NS_Allowed
+		}
+
+		option = {
+			name = SCA_norway.107.a
+			custom_effect_tooltip = SCA_norway.107.a_tt
+			hidden_effect = {
+				set_country_flag = NOR_no_quisling
+				NOR = {
+					set_capital = { state = 144 }
+					start_civil_war = {
+						ideology = fascism
+						size = 0.075
+						capital = 110
+						states = { 110 }
+						states_filter = {
+							owner = { original_tag = NOR }
+						}
+					}					
+				}
+				random_other_country = {
+					limit = { original_tag = NOR has_government = fascism }
+					GER = {
+						set_autonomy = { target = PREV autonomy_state = autonomy_reichsprotectorate end_wars = no end_civil_wars = no }
+						NS_josef_terboven = {
+							set_nationality = PREV.PREV
+						}
+					}
+					set_country_flag = SCA_NS_Norway
+					set_cosmetic_tag = NOR_reichskommissariat
+					promote_character = NS_josef_terboven
+					GER = { add_to_faction = PREV }
+					set_capital = { state = 110 }
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = no
+					}
+					set_popularities = {
+						neutrality = 5
+						democratic = 5
+						fascism = 90
+						communism = 0
+					}
+					
+					every_unit_leader = {
+						set_nationality = NOR
+					}
+					set_nationality = {
+						character = NOR_laura_johannessen
+						target_country = PREV
+					}
+					PREV = {
+						every_character = {
+							limit = { OR = {
+								AND = {
+									ROOT = { OR = {
+										has_completed_focus = NOR_choose_hjort
+										has_completed_focus = NOR_go_right
+									} }
+									is_character = NOR_rolf_fuglesang
+								}
+								AND = {
+									ROOT = {
+										has_completed_focus = NOR_back_fuglesang
+									}
+									is_character = NOR_johan_hjort
+								}
+								AND = {
+									ROOT = {
+										NOT = { has_completed_focus = NOR_go_right }
+										NOT = { has_completed_focus = NOR_choose_hjort }
+										NOT = { has_completed_focus = NOR_back_fuglesang }
+									}
+									is_character = NOR_johan_hjort
+									is_character = NOR_rolf_fuglesang
+								}
+								is_character = NS_arthur_qvist
+								is_character = NOR_jacob_ager_laurantzon
+								is_character = NS_henry_rinnan
+								is_character = NS_konrad_sundlo
+								
+								is_character = NS_ragnvald_hvoslef
+								is_character = NS_jonas_lie
+								is_character = NS_tryggve_gran
+								is_character = NS_rudolf_bratteng
+								is_character = NS_kjeld_irgens
+								
+								is_character = NS_oliver_moystad
+								is_character = NS_carl_hanssen
+								is_character = NS_axel_stang
+								is_character = NS_alf_whist
+								is_character = NS_finn_kjelstrup
+								is_character = NS_christen_knudsen
+								is_character = NS_hans_haereid
+								
+								is_character = NS_axle_rod
+								is_character = NS_jens_bache_wiig
+								is_character = NS_reidar_aagaard
+								is_character = NS_bjarne_eriksen
+								
+								is_character = NS_radet_council
+								is_character = NS_lauritz_sand
+								is_character = NS_abjorn_sunde
+								is_character = NS_gustav_jaeger
+								is_character = NS_eivind_blehr
+								is_character = NS_tormod_hustad
+								is_character = NS_karl_marthinsen
+							} }
+							set_nationality = PREV.PREV
+						}
+					}
+					set_party_name = { ideology = communism long_name = "Osvald Group" name = "OG" }
+					set_party_name = { ideology = democratic long_name = "Unknown Undercover" name = "XU" }
+					set_party_name = { ideology = neutrality long_name = "Militær Organisasjon" name = "Milorg" }
+					
+					promote_character = NS_radet_council
+					promote_character = NS_lauritz_sand
+					promote_character = NS_abjorn_sunde
+					if = {
+						limit = { NOR = { has_country_flag = NOR_hjort } }
+						promote_character = NOR_johan_hjort
+						set_cosmetic_tag = NOR_country_hjort
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_character = NOR_rolf_fuglesang }
+						NOT = { has_character = NOR_johan_hjort }
+					}
+					promote_character = NOR_laura_johannessen
+				}
+			}
+		}
+	}
+	
+	country_event = { # Germany Refuses NS help
+		id = SCA_norway.108
+		title = SCA_norway.108.t
+		desc = SCA_norway.108.desc
+		picture = GFX_report_event_hitler_parade
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.108.a
+			add_popularity = { ideology = fascism popularity = -1.0 }
+		}
+	}	
+	country_event = { # Return of Haakon
+		id = SCA_norway.109
+		title = SCA_norway.109.t
+		desc = SCA_norway.109.desc
+		picture = GFX_report_event_quisling_speech
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.109.a
+			add_popularity = { ideology = fascism popularity = 0.1 }
+			add_ideas = NOR_haakon_vii
+		}
+	}
+	country_event = { # Germany learns of Norway's Refusal
+		id = SCA_norway.110
+		title = SCA_norway.110.t
+		desc = SCA_norway.110.desc
+		picture = GFX_report_event_hitler_parade
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_norway.110.a
+		}
+	}
+	
+	
+#Norway's government gives authority to the king
+country_event = {
+	id = SCA_norway.111
+	title = SCA_norway.111.t
+	desc = SCA_norway.111.desc
+	picture = GFX_report_event_generic_parliament
+		
+	fire_only_once = yes	
+		
+	trigger = {
+		tag = NOR
+		NOR = { has_war = yes }
+		OR = {
+			NOR = { has_government = democratic }
+			NOR = { has_government = neutrality }
+		}
+		NOR = { surrender_progress > 0.45 }
+	}
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {	
+		name = SCA_norway.111.a
+		
+		promote_character = NOR_haakon_vii
+		promote_character = NOR_alf_mjoen
+		
+		hidden_effect = {
+			if = {
+				limit = { has_government = neutrality }
+				set_party_name = { ideology = democratic long_name = "Arbeiderpartiet" name = "AP" }
+				set_party_name = { ideology = neutrality long_name = "Radikale Folkeparti" name = "Radikale Folkeparti" }		
+				EXP_set_temporary_party_popularity_variables = yes
+				set_popularities = {
+					neutrality = temp_party_d_pop
+					democratic = temp_party_n_pop
+					fascism = temp_party_f_pop
+					communism = temp_party_c_pop
+				}
+			}			
+		}
+		
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+		}
+		
+		hidden_effect = {		
+			set_country_flag = fall_of_norway
+			set_cosmetic_tag = NOR_free
+		}
+	}
+}
+
+news_event = { # Norway Liberated
+	id = SCA_norway.112
+	title = SCA_norway.112.t
+	desc = SCA_norway.112.desc
+	picture = news_event_063
+	
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		tag = NOR
+		has_country_flag = fall_of_norway
+		110 = { CONTROLLER = { tag = NOR } }
+		142 = { CONTROLLER = { tag = NOR } }
+		143 = { CONTROLLER = { tag = NOR } }
+		144 = { CONTROLLER = { tag = NOR } }
+		OR = {
+			NOR = { has_government = democratic }
+			NOR = { has_government = neutrality }
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = SCA_norway.112.a
+		trigger = {
+			tag = NOR
+		}
+		if = {
+			limit = { has_cosmetic_tag = NOR_free }
+			drop_cosmetic_tag = yes
+		}
+		promote_character = {
+			character = NOR_johan_nygaardsvold
+			ideology = democratic
+		}
+		if = {
+			limit = { has_government = democratic }
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+		}
+		else_if = {
+			limit = { has_government = neutrality }
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = yes
+			}
+		}
+	}
+	option = {
+		name = SCA_norway.112.b
+		trigger = {
+			is_in_faction_with = GER
+		}
+		
+	}
+	option = {
+		name = SCA_norway.112.c
+		trigger = {
+			is_in_faction_with = NOR
+			NOT = { tag = NOR }
+		}
+	}
+	option = {
+		name = SCA_norway.112.d
+		trigger = {
+			NOT = { is_in_faction_with = GER }
+			NOT = { is_in_faction_with = NOR }
+			NOT = { tag = NOR }
+		}
+	}
+}
+
+country_event = { # Olav V asks for true Military Command
+	id = SCA_norway.113
+	title = SCA_norway.113.t
+	desc = SCA_norway.113.desc
+	picture = GFX_report_event_military_planning
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = NOR
+		surrender_progress > 0.33
+		has_idea = NOR_haakon_vii
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = { # Accept
+		name = SCA_norway.113.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_field_marshal_role = {
+			character = NOR_olav_v
+			traits = { brilliant_strategist media_personality inspirational_leader organizer logistics_wizard }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 5
+		}
+	}
+	option = { #Decline
+		name = SCA_norway.113.b
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = 150
+		add_stability = 0.05
+		add_war_support = 0.05
+	}
+}
+
+country_event = { # Terboven Trigger
+	id = SCA_norway.1000
+	hidden = yes
+	
+	trigger = { 
+		original_tag = NOR 
+		has_government = fascism
+		OR = {
+			has_country_flag = NOR_no_quisling 
+			AND = {
+				has_civil_war = yes
+				has_cosmetic_tag = NOR_reichskommissariat
+			}
+		}
+		is_subject_of = GER
+	}
+	mean_time_to_happen = {
+		days = 360
+	}
+	
+	option = {
+		name = SCA_norway.1000.a
+		GER = { country_event = SCA_norway.114 }
+	}
+}
+country_event = { # Terboven Overwhelmed
+	id = SCA_norway.114
+	title = SCA_norway.114.t
+	desc = SCA_norway.114.desc
+	picture = GFX_report_event_quisling_speech
+	
+	is_triggered_only = yes
+	option = { #Put in Quisling
+		name = SCA_norway.114.a
+		random_country = {
+			limit = {
+				original_tag = NOR 
+				has_government = fascism
+				OR = {
+					has_country_flag = NOR_no_quisling 
+					AND = {
+						has_civil_war = yes
+						has_cosmetic_tag = NOR_reichskommissariat
+					}
+				}
+				is_subject_of = GER
+			}
+			if = {
+				limit = { NOT = { has_country_flag = NOR_hjort } }
+				NOR = {
+					NOR_vidkun_quisling = {
+						set_nationality = PREV.PREV
+					}
+				}
+				promote_character = NOR_vidkun_quisling
+			}
+			else = {
+				promote_character = NOR_johan_hjort
+			}
+			add_autonomy_ratio = {
+				value = 0.5
+				localization = NOR_ger_quis
+			}		
+			hidden_effect = {
+				set_cosmetic_tag = NOR_quisling
+				clr_country_flag = NOR_no_quisling
+			}
+		}
+	}
+	option = { #Keep Terboven for now
+		name = SCA_norway.114.b
+		add_political_power = -200
+	}
+}

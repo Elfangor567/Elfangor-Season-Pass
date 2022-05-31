@@ -1,0 +1,154 @@
+ideas = {
+	# MILITARY
+	
+	tank_manufacturer = { 
+		
+		designer = yes
+		
+		MAC_railways = { #Macedonian Railways
+
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				original_tag = MAC
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { heavy_tank_manufacturer }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	naval_manufacturer = { 
+		
+		designer = yes
+		
+		MAC_ohrid = { #Lake Ohrid was fairly large
+			
+			picture = generic_naval_manufacturer_1
+			
+			allowed = {
+				original_tag = MAC
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { mediterranean_naval_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}			
+	}
+	
+	aircraft_manufacturer = { 
+			
+		designer = yes
+		
+		MAC_aero = { #The first Aeronautical organizations in Macedonia were founded in 1923, first air show was in 1926
+			
+			picture = generic_air_manufacturer_1
+			
+			allowed = {
+				original_tag = MAC
+			}			
+						
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}	
+	
+	materiel_manufacturer = {
+		
+		designer = yes
+		
+		MAC_sanos = { #1946 company, although the plant itself dates back to 1930
+			
+			picture = generic_motorized_equipment_manufacturer_2
+			
+			allowed = {
+				original_tag = MAC
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+		MAC_iskra = { #Factory in Kranj, actually generally made electronic equipment mostly but I needed a company
+			
+			picture = generic_infantry_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = MAC
+			}
+			
+			research_bonus = {
+				artillery = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+		
+	}
+	
+	industrial_concern = {
+		
+		MAC_radio = { #Radio Skopje successor to 1941 company, but now broadcast in Macedonian instead of Serbian
+		
+			picture = generic_electronics_concern_1
+			
+			allowed = {
+				original_tag = MAC
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		MAC_pabrovo = { #Site of a major chromium mine, expanded by the Germans during WW2 (Thank you random CIA document)
+		
+			picture = generic_industrial_concern_1
+			
+			allowed = {
+				original_tag = MAC
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

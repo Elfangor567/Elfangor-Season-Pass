@@ -1,0 +1,195 @@
+ideas = {
+	country = {
+	
+	}
+	
+	# TECHNOLOGY
+	
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		AOI_sisler = { #OFFICINA ELETTROMECCANICA REMO SISLER, A large pre-WWII firm that built both boats and motor-vehicles
+		
+			picture = generic_tank_manufacturer_2
+			
+			allowed = {
+				original_tag = AOI
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { fast_tank_manufacturer }
+		}
+		AOI_spaa = { #SPA-A was a local thing in Magadiscio that built railcars in 1930, I think, information is scarce
+		
+			picture = generic_tank_manufacturer_3
+			
+			allowed = {
+				original_tag = AOI
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { heavy_tank_manufacturer }
+		}
+	}
+
+	naval_manufacturer = { 
+		
+		designer = yes
+		
+		AOI_massawa_docks = { #Massawa was home to quite a few dockyards
+			
+			picture = generic_naval_manufacturer_2
+			
+			allowed = {
+				original_tag = AOI
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+		}
+		
+		AOI_assab_yards = { #Assab was home to quite a few dockyards
+			
+			picture = generic_naval_manufacturer_1
+			
+			allowed = {
+				original_tag = AOI
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { pacific_fleet_naval_manufacturer }
+		}
+		
+		AOI_mogadishu = { #Mogadishu had a huge port even before Europe arrived (Previously, Sarapion)
+			
+			picture = generic_naval_manufacturer_3
+			
+			allowed = {
+				original_tag = AOI
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+		}
+	}
+	
+	aircraft_manufacturer = { 
+			
+		designer = yes
+		
+		AOI_littoria = {
+			
+			picture = generic_air_manufacturer_2
+			
+			allowed = {
+				original_tag = AOI
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { fuel_efficient_aircraft_manufacturer }
+		}
+	}
+	
+	industrial_concern = {
+	
+		designer = yes
+		
+		AOI_costa = { #COSTRUZIONI MECCANICHE VINCENZO COSTA, An Electromechancial Company in Asmara (Founded 1936)
+			
+			picture = generic_industrial_concern_1
+			
+			allowed = {
+				original_tag = AOI
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}
+		AOI_villabruzzi = {
+			
+			picture = generic_refining_concern_1
+			
+			allowed = {
+				original_tag = AOI
+			}
+			
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.15
+			}
+			
+			traits = { refinery_concern }
+		}
+		AOI_sedao = { #1936 Electrical Company, SOCIETA' ELETTRICA DELL'AFRICA ORIENTALE
+		
+			picture = generic_electronics_concern_1
+			
+			allowed = {
+				original_tag = AOI
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes	
+		
+		AOI_officine_gondar = { #Officine Monti di Gondar, had workshops. Would actually donate tractor chassis to AOI in WW2, leading to the creation of the Uolchefit and Culqualber tanks which were similar to the Bob Semple
+			
+			picture = generic_motorized_equipment_manufacturer_1
+			
+			allowed = {
+				original_tag = AOI
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+		AOI_garessa = { #In 1870 Imam Azzan bin Qais of Oman built a large military fort that would later be bought by Italy, I am not 100% sure if it had Weapon Making materials, but skrew it, it is literally all I have.
+		
+			picture = generic_infantry_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = AOI
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+	}
+}

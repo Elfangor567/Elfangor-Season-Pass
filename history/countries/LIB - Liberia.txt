@@ -1,0 +1,178 @@
+﻿capital = 298
+
+oob = "LIB_1936"
+
+recruit_character = LIB_charles_king
+recruit_character = LIB_edwin_barclay
+recruit_character = LIB_didwho_welleh_twe
+recruit_character = LIB_william_tubman
+recruit_character = LIB_marcus_garvey
+recruit_character = LIB_king_jeh
+recruit_character = LIB_barduway_jallah
+
+recruit_character = LIB_alford_russ
+recruit_character = LIB_thomas_harvey
+recruit_character = LIB_moses_grant
+
+recruit_character = LIB_lemuel_smith
+recruit_character = LIB_alexander_harper
+recruit_character = LIB_henry_cooper
+recruit_character = LIB_fred_syphert
+
+recruit_character = LIB_isaac_moart
+recruit_character = LIB_joseph_dennis
+recruit_character = LIB_jenkins_yancey
+recruit_character = LIB_william_nabors
+recruit_character = LIB_kofi
+recruit_character = LIB_ken_wagner
+recruit_character = LIB_william_a_thomas
+
+recruit_character = LIB_elwood_davis
+recruit_character = LIB_james_cooper
+
+recruit_character = LIB_frederick_johnson
+recruit_character = LIB_nathaniel_massaquoi
+recruit_character = LIB_bellah_beh
+recruit_character = LIB_louis_grimes
+recruit_character = LIB_clarence_simpson
+recruit_character = LIB_frank_tolbert
+recruit_character = LIB_richard_holder
+recruit_character = LIB_edward_stettinius
+recruit_character = LIB_wellington_campbell
+
+set_research_slots = 2
+set_stability = 0.7
+set_war_support = 0.3
+
+LIB = { 
+	set_variable = {
+		var = LIB_USA_influence
+		value = 5
+	}
+}
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1= 1
+	tech_support = 1
+	gw_artillery = 1
+	trench_warfare = 1
+	fuel_silos = 1
+}
+
+add_ideas = { 	
+	LIB_home_of_the_free
+	LIB_hinterland_problems_1
+	LIB_corrupt_army1
+	LIB_firestone_company
+	limited_exports
+}
+
+set_convoys = 10
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1931.1.1"
+	election_frequency = 96
+	elections_allowed = yes
+}
+set_popularities = {
+	neutrality = 10
+	democratic = 88
+	fascism = 1
+	communism = 1
+}
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	
+	USA = { 
+		give_guarantee = ROOT
+		add_opinion_modifier = {
+			target = ROOT
+			modifier = LIB_protecting
+		}
+	}
+	
+	complete_national_focus = LIB_trade_concessions
+	complete_national_focus = LIB_greenback
+	complete_national_focus = LIB_secure_US
+	complete_national_focus = LIB_foreign_tech2
+	complete_national_focus = LIB_neutrality_focus
+	complete_national_focus = LIB_end_negotiations
+	complete_national_focus = LIB_us_mil_coop
+	complete_national_focus = LIB_firestone_invest
+	complete_national_focus = LIB_american_steel
+	complete_national_focus = LIB_expand_rubber
+	complete_national_focus = LIB_us_training
+	complete_national_focus = LIB_officer_schools	
+	complete_national_focus = LIB_us_backed_neutrality
+	complete_national_focus = LIB_anti_fascism
+	complete_national_focus = LIB_modern_guns
+	
+	oob = "LIB_1939"
+	set_technology = {
+		#Infantry/Etc
+		marines = 1
+		support_weapons = 1
+		motorised_infantry = 1
+		
+		#Artillery
+		interwar_artillery = 1
+		interwar_antiair = 1
+		
+		#Air
+		early_fighter = 1
+		early_bomber = 1
+		scout_plane1 = 1
+		
+		#Support
+		tech_engineers = 1
+	
+		#doctrines
+		air_superiority = 1
+		
+		grand_battle_plan = 1
+		prepared_defense = 1
+		grand_assault = 1
+
+		trade_interdiction = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1		
+		concentrated_industry = 1
+		concentrated_industry2 = 1
+		construction1 = 1
+		construction2 = 1
+		excavation1 = 1
+		excavation2 = 1
+		synth_oil_experiments = 1
+		oil_processing = 1
+		rubber_processing = 1
+	}
+	
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1939.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		neutrality = 5
+		democratic = 92
+		fascism = 1
+		communism = 2
+	}
+}
+	
+	
+	

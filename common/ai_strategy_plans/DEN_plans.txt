@@ -1,0 +1,387 @@
+Danish_historical = {
+	name = "Danish Historical Plan"
+	desc = "Essentially the historical behaviour for Denmark."
+
+	enable = {
+		original_tag = DEN
+		OR = {
+			is_historical_focus_on = yes
+			has_game_rule = {
+				rule = SCA_denmark_ai_behavior
+				option = DEFENCELESS_HISTORICAL
+			}
+			has_country_flag = DEN_AI_RANDOM_DEFENCELESS_HISTORICAL			
+		}
+	}
+	abort = {
+		has_war = yes
+	}
+
+	ai_national_focuses = {
+		DEN_look_inwards #jan 1 - march 11 (1936)
+		DEN_kanslergade #march 11 - july 29
+		DEN_danish_neutrality #july 29 - oct 7
+		DEN_defenceless_neutrality #oct 7 - dec 16
+		DEN_arbitration #dec 16 - feb 24 (1937)
+		DEN_danish_scandinavianism #feb 24 - may 5
+		DEN_look_nowhere #may 5 - july 14
+		DEN_storstrom #july 14 - sep 22
+		DEN_civ #sep 22 - dec 1
+		DEN_close_scandinavia #dec 1 - feb 9 (1938)
+		DEN_empire #feb 9 - apr 20
+		DEN_renew_drsrn #apr 20 - may 25
+		DEN_mutual_protection #may 25 - june 29		
+		DEN_inf_jut #june 29 - sept 7
+		DEN_uni #sept 7 - nov 16
+		DEN_remain_neutrality #nov 16 - jan 25 (1939)
+		DEN_final_build_sjae #jan 25 - apr 5
+		DEN_mil_fac #apr 5 - june 14
+		DEN_final_build_jut #june 14 - aug 23
+		DEN_imp_faroe #aug 23 - nov 1
+		DEN_greenl_inf #nov 1 - jan 10 (1940)
+		DEN_cryolite #jan 10 - mar 20
+		DEN_defend_green #mar 20 - may 29
+		DEN_greenland_def2 #may 29 - aug 7
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		DEN_look_inwards = 1.0
+	}
+
+}
+Danish_neutral_alternate = {
+	name = "Danish Alliance Plan"
+	desc = "Surely the other Scandinavian countries wouldn't leave us high and dry?"
+
+	enable = {
+		original_tag = DEN
+		OR = {
+			has_game_rule = {
+				rule = SCA_denmark_ai_behavior
+				option = DEFENCELESS_ALTERNATE
+			}
+			has_country_flag = DEN_AI_RANDOM_DEFENCELESS_ALTERNATE
+		}
+	}
+	abort = {
+		OR = {
+			OVERLORD = { 
+				OR = { 
+					has_government = fascism 
+					has_government = communism 
+				}
+			}
+			has_war_with = NOR
+			has_war_with = SWE
+		}
+	}
+
+	ai_national_focuses = {
+		DEN_look_inwards #jan 1 - march 11 (1936)
+		DEN_kanslergade #march 11 - july 29
+		DEN_danish_neutrality #july 29 - oct 7
+		DEN_defenceless_neutrality #oct 7 - dec 16
+		DEN_arbitration #dec 16 - feb 24 (1937)
+		DEN_danish_scandinavianism #feb 24 - may 5
+		DEN_look_nowhere #may 5 - july 14
+		DEN_storstrom #july 14 - sep 22
+		DEN_civ #sep 22 - dec 1
+		DEN_close_scandinavia #dec 1 - feb 9 (1938)
+		DEN_empire #feb 9 - apr 20
+		DEN_renew_drsrn #apr 20 - may 25
+		DEN_mutual_protection #may 25 - june 29		
+		DEN_inf_jut #june 29 - sept 7
+		DEN_uni #sept 7 - nov 16
+		DEN_invite_nor #nov 16 - jan 25 (1939)
+		DEN_ally_swe 
+		DEN_ally_fin 
+		DEN_ally_ice
+		DEN_final_build_sjae
+		DEN_mil_fac
+		DEN_final_build_jut
+		DEN_imp_faroe
+		DEN_greenl_inf
+		DEN_cryolite
+		DEN_defend_green
+		DEN_greenland_def2
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		DEN_look_inwards = 1.0		
+	}
+}
+Danish_democratic = {
+	name = "Danish Re-Armament Plan"
+	desc = "We must protect our fine Danish homes!"
+
+	enable = {
+		original_tag = DEN
+		OR = {
+			has_game_rule = {
+				rule = SCA_denmark_ai_behavior
+				option = DEMOCRATIC
+			}
+			has_country_flag = DEN_AI_RANDOM_DEFENCELESS_DEMOCRATIC
+		}
+	}
+
+	ai_national_focuses = {
+		DEN_look_inwards #jan 1 - march 11 (1936)
+		DEN_kanslergade #march 11 - july 29
+		DEN_danish_neutrality #july 29 - oct 7
+		DEN_defend_danish_home #oct 7 - dec 16
+		DEN_arbitration #dec 16 - feb 24 (1937)
+		DEN_danish_scandinavianism #feb 24 - may 5
+		DEN_storstrom #may 5 - july 14
+		DEN_civ #july 14 - sep 22
+		DEN_fund_mil #sep 22 - dec 1
+		DEN_renew_drsrn #dec 1 - feb 9 (1938)
+		DEN_empire #feb 9 - apr 20
+		DEN_close_scandinavia #apr 20 - may 25
+		DEN_mutual_protection #may 25 - june 29		
+		DEN_inf_jut #june 29 - sept 7
+		DEN_uni #sept 7 - nov 16
+		DEN_rearmament #nov 16 - jan 25 (1939)
+		DEN_remove_neutral #jan 25 - apr 5
+		DEN_mil_fac #apr 5 - june 14
+		DEN_expand_navy #june 14 - aug 23
+		DEN_motorization #aug 23 - nov 1
+		DEN_modernize_af #nov 1 - jan 10 (1940)
+		DEN_inv_fokker #jan 10 - mar 20
+		DEN_defend_coastline #mar 20 - may 29
+		DEN_naval_forts #may 29 - aug 7
+		DEN_naval_doc
+		DEN_naval_tech
+	}
+	
+	ideas = {
+		DEN_vilhelm_fibiger = 10
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		DEN_look_inwards = 1.0
+		DEN_defend_danish_home = 1.0
+		DEN_rearmament = 1.0
+	}
+}
+Danish_comintern = {
+	name = "Danish Comintern Membership"
+	desc = "Together we stand against the tyranny of the capitalists and the fascists!"
+
+	enable = {
+		original_tag = DEN
+		OR = {
+			has_game_rule = {
+				rule = SCA_denmark_ai_behavior
+				option = COMINTERN
+			}
+			has_country_flag = DEN_AI_RANDOM_COMINTERN
+		}
+	}
+	
+	abort = {
+		OR = {
+			AND = {
+				is_subject = yes
+				NOT = { is_subject_of = SOV }
+			}
+			SOV = { NOT = { has_government = communism } }
+			SOV = { is_faction_leader = no }
+		}
+	}
+
+	ai_national_focuses = {
+		DEN_look_outwards #jan 1 - march 11 (1936)
+		DEN_go_com #march 11 - july 29
+		DEN_com_oust_syn #july 29 - oct 7
+		DEN_reorganize #oct 7 - dec 16
+		DEN_form_com_militias #dec 16 - feb 24 (1937)
+		DEN_end_neutral_left_right #feb 24 - may 5
+		DEN_kanslergade #may 5 - july 14
+		DEN_storstrom #july 14 - sep 22
+		DEN_civ #sep 22 - dec 1
+		DEN_mil_fac #dec 1 - feb 9 (1938)
+		DEN_inf_jut #feb 9 - apr 20
+		DEN_uni #apr 20 - may 25
+		DEN_end_mon #may 25 - june 29		
+		DEN_fund_mil #june 29 - sept 7
+		DEN_final_build_sjae #sept 7 - nov 16
+		DEN_final_build_jut #nov 16 - jan 25 (1939)
+		DEN_modernize_af #jan 25 - apr 5
+		DEN_inv_fokker #apr 5 - june 14
+		DEN_expand_navy #june 14 - aug 23
+		DEN_join_com
+	}
+	
+	ideas = {
+		DEN_thoger_thogersen = 10
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		DEN_look_outwards = 1.0
+		DEN_go_com = 1.0
+		DEN_com_oust_syn = 1.0
+	}
+}
+Danish_anarchism = {
+	name = "Danish Anarcho-Communism"
+	desc = "There will be no dictatorship of the state!"
+
+	enable = {
+		original_tag = DEN
+		OR = {
+			has_game_rule = {
+				rule = SCA_denmark_ai_behavior
+				option = ANARCHO_COMMUNIST
+			}
+			has_country_flag = DEN_AI_ANARCHO_COMMUNIST
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+
+	ai_national_focuses = {
+		DEN_look_outwards #jan 1 - march 11 (1936)
+		DEN_go_com #march 11 - july 29
+		DEN_com_oust_sov #july 29 - oct 7
+		DEN_fuel_rev #oct 7 - dec 16
+		DEN_kanslergade #dec 16 - feb 24 (1937)
+		DEN_storstrom #feb 24 - may 5
+		DEN_mil_fac #may 5 - july 14
+		DEN_inf_jut #july 14 - sep 22
+		DEN_uni #sep 22 - dec 1
+		DEN_fund_mil #dec 1 - feb 9 (1938)
+		DEN_expand_navy #feb 9 - apr 20
+		DEN_end_mon #apr 20 - may 25
+		DEN_abolish_state #may 25 - june 29		
+		DEN_com_inf_scan #june 29 - sept 7
+		DEN_final_build_sjae #sept 7 - nov 16
+		DEN_final_build_jut #nov 16 - jan 25 (1939)
+		DEN_modernize_af #jan 25 - apr 5
+		DEN_inv_fokker #apr 5 - june 14
+		DEN_naval_doc #june 14 - aug 23
+		DEN_naval_tech #aug 23 - nov 1
+		DEN_modernize_af #nov 1 - jan 10 (1940)
+		DEN_defend_coastline #jan 10 - mar 20
+		DEN_motorization #mar 20 - may 29
+	}
+	
+	ideas = {
+		DEN_thoger_thogersen = 10
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		DEN_look_outwards = 1.0
+		DEN_go_com = 1.0
+		DEN_com_oust_sov = 1.0
+	}
+}
+Danish_fascism = {
+	name = "Danish Fascism"
+	desc = "Schlezwig-Holstein has always been Danish and always will be!"
+
+	enable = {
+		original_tag = DEN
+		OR = {
+			has_game_rule = {
+				rule = SCA_denmark_ai_behavior
+				option = FASCIST
+			}
+			has_country_flag = DEN_AI_FASCIST
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+
+	ai_national_focuses = {
+		DEN_look_outwards #jan 1 - march 11 (1936)
+		DEN_go_fas #march 11 - july 29
+		DEN_nazi_youth #july 29 - oct 7
+		DEN_king_1 #oct 7 - dec 16
+		DEN_kanslergade #dec 16 - feb 24 (1937)
+		DEN_storstrom #feb 24 - may 5
+		DEN_civ #may 5 - july 14
+		DEN_inf_jut #july 14 - sep 22
+		DEN_uni #sep 22 - dec 1
+		DEN_ejder #dec 1 - feb 9 (1938)
+		DEN_end_neutral_left_right #feb 9 - apr 20
+		DEN_fund_mil #apr 20 - may 25
+		DEN_expand_navy #may 25 - june 29	
+		DEN_mil_fac #june 29 - sept 7
+		DEN_modernize_af #sept 7 - nov 16
+		DEN_inv_fokker #nov 16 - jan 25 (1939)
+		DEN_motorization #jan 25 - apr 5
+		DEN_tank_comp #apr 5 - june 14
+		DEN_naval_doc #june 14 - aug 23
+		DEN_naval_tech #aug 23 - nov 1
+		DEN_deal_ger_strong #nov 1 - jan 10 (1940)
+	}
+	
+	ideas = {
+		DEN_carl_vaernet = 2
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		DEN_look_outwards = 1.0
+		DEN_go_fas = 1.0
+		DEN_king_1 = 1.0
+	}
+}

@@ -1,0 +1,25 @@
+equipment_modules = {
+	tank_small_howitzer = {
+		abbreviation = "sh1"
+		category = tank_small_main_armament
+		sfx = sfx_ui_sd_module_turret
+		allow_equipment_type = artillery
+
+		add_stats = {
+			soft_attack = 32.5
+			hard_attack = 5
+			ap_attack = 15
+			build_cost_ic = 6
+			maximum_speed = -2
+			reliability = -0.65
+		}
+		xp_cost = 1
+		can_convert_from = {
+			module_category = tank_small_main_armament
+			convert_cost_ic = 6
+		}
+		build_cost_resources = {
+			tungsten = 1
+		}
+	}
+}

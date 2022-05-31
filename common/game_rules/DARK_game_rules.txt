@@ -1,0 +1,140 @@
+DARK_ethiopia_win_lose_behavior = {
+	name = "DARK_ETH_WIN_LOSE_BEHAVIOR"
+	group = "RULE_GROUP_HEART_OF_DARKNESS"
+	
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_ETH_WIN_LOSE_DESC"
+	}
+	option = {
+		name = LOSE_WAR
+		text = "RULE_OPTION_DARK_ETH_LOSE_WAR"
+		desc = "RULE_OPTION_DARK_ETH_LOSE_WAR_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = WIN_WAR
+		text = "RULE_OPTION_DARK_ETH_WIN_WAR"
+		desc = "RULE_OPTION_DARK_ETH_WIN_WAR_AI_DESC"
+	}
+}
+
+DARK_liberia_ai_behavior = {
+	name = "DARK_LIB_AI_BEHAVIOR"
+	group = "RULE_GROUP_HEART_OF_DARKNESS"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = DEMOCRATIC
+		text = "RULE_OPTION_DEMOCRATIC"
+		desc = "RULE_OPTION_DARK_LIB_DEMOCRATIC_AI_DESC"
+		allow_achievements = yes #Entirely for the aesthetics of the historical one not having the X'd trophy
+	}
+	option = {
+		name = ALONE_FASCIST
+		text = "RULE_OPTION_DARK_LIB_ALONE_FASCIST"
+		desc = "RULE_OPTION_DARK_LIB_ALONE_FASCIST_AI_DESC"
+	}
+	option = {
+		name = RECONNECT_FASCIST
+		text = "RULE_OPTION_DARK_LIB_RECONNECT_FASCIST"
+		desc = "RULE_OPTION_DARK_LIB_RECONNECT_FASCIST_AI_DESC"
+	}
+	option = {
+		name = ALONE_COMMUNIST
+		text = "RULE_OPTION_DARK_LIB_ALONE_COMMUNIST"
+		desc = "RULE_OPTION_DARK_LIB_ALONE_COMMUNIST_AI_DESC"
+	}
+	option = {
+		name = RECONNECT_COMMUNIST
+		text = "RULE_OPTION_DARK_LIB_RECONNECT_COMMUNIST"
+		desc = "RULE_OPTION_DARK_LIB_RECONNECT_COMMUNIST_AI_DESC"
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+	}
+}
+DARK_ethiopia_ai_behavior = {
+	name = "DARK_ETH_AI_BEHAVIOR"
+	group = "RULE_GROUP_HEART_OF_DARKNESS"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = NONALIGNED
+		text = "RULE_OPTION_DARK_ETH_NONALIGNED"
+		desc = "RULE_OPTION_DARK_ETH_NONALIGNED_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = DEMOCRATIC
+		text = "RULE_OPTION_DEMOCRATIC"
+		desc = "RULE_OPTION_DARK_ETH_DEMOCRATIC_AI_DESC"
+	}
+	option = {
+		name = COMMUNIST
+		text = "RULE_OPTION_COMMUNIST"
+		desc = "RULE_OPTION_DARK_ETH_COMMUNIST_AI_DESC"
+	}
+	option = {
+		name = FASCIST_SURRENDER
+		text = "RULE_OPTION_FASCIST_SURRENDER"
+		desc = "RULE_OPTION_DARK_ETH_FASCIST_SURRENDER_AI_DESC"
+	}
+	option = {
+		name = FASCIST_AFTER
+		text = "RULE_OPTION_FASCIST_AFTER"
+		desc = "RULE_OPTION_DARK_ETH_FASCIST_AFTER_AI_DESC"
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+	}
+}
+DARK_new_italy_ai_behavior = {
+	name = "DARK_NEW_ITALY_AI_BEHAVIOR"
+	group = "RULE_GROUP_HEART_OF_DARKNESS"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = FASCIST
+		text = "RULE_OPTION_FASCIST"
+		desc = "RULE_OPTION_DARK_NEW_ITALY_FASCIST_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = NONALIGNED
+		text = "RULE_OPTION_DARK_NEW_ITALY_NONALIGNED"
+		desc = "RULE_OPTION_DARK_NEW_ITALY_NONALIGNED_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = DEMOCRATIC
+		text = "RULE_OPTION_DEMOCRATIC"
+		desc = "RULE_OPTION_DARK_NEW_ITALY_DEMOCRATIC_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = COMMUNIST
+		text = "RULE_OPTION_COMMUNIST"
+		desc = "RULE_OPTION_DARK_NEW_ITALY_COMMUNIST_AI_DESC"
+		allow_achievements = yes
+	}	
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+	}
+}

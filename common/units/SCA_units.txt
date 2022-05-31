@@ -1,0 +1,105 @@
+sub_units = {
+
+	DEN_fishery_protection_ship = {
+		sprite = fishery_protection
+		map_icon_category = ship
+		priority = 1
+		active = yes
+		type = { screen_ship }
+		need = { DEN_ship_hull_fishery_protection = 1 }
+		
+		max_organisation = 40
+		
+		supply_consumption = 0.01
+		
+		critical_parts = { rudder_jammed destroyed_ammo_storage broken_propeller on_fire }
+		critical_part_damage_chance_mult = 1
+		
+		hit_profile_mult = 1.0
+	}
+	SCA_gunboat = {
+		sprite = gunboat
+		map_icon_category = ship
+		priority = 1
+		active = yes
+		type = { screen_ship }
+		need = { SCA_ship_hull_gunboat = 1 }
+		
+		max_organisation = 40
+		
+		supply_consumption = 0.01
+		
+		critical_parts = { rudder_jammed destroyed_ammo_storage broken_propeller on_fire }
+		critical_part_damage_chance_mult = 1
+		
+		hit_profile_mult = 1.0
+	}
+	
+	ICE_elite_infantry = {
+		sprite = infantry
+		map_icon_category = infantry
+		special_forces = yes
+		mountaineers = yes
+		marines = yes
+		
+		priority = 601
+		ai_priority = 1000
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+			category_special_forces
+		}
+		
+		combat_width = 2
+		
+		#Size Definitions
+		max_strength = 25
+		max_organisation = 70
+		default_morale = 0.4
+		maximum_speed = 0.25
+		manpower = 1000
+
+		#Misc Abilities
+		training_time = 100
+		suppression = 2
+		weight = 0.5
+		supply_consumption = 0.06
+		breakthrough = 0.3
+		
+		can_be_parachuted = yes
+	
+		need = {
+			infantry_equipment = 110
+		}
+
+		hills = {
+			attack = 0.2
+			defence = 0.05
+			movement = 0.1
+		}
+		mountain = {
+			attack = 0.35
+			defence = 0.1
+			movement = 0.2
+		}
+		marsh = {
+			attack = 0.3
+		}
+		river = {
+			attack = 0.4
+		}
+		amphibious = {
+			attack = 0.5
+		}
+	}
+}

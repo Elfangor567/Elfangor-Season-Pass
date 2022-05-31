@@ -1,0 +1,16 @@
+#################
+####  Norway  ####
+#################
+
+NOR_mobilization_category = {
+
+	icon = infiltration
+
+	picture = GFX_decision_cat_picture_nor_conscripts
+
+	priority = { base = 10 }
+
+	allowed = {
+		original_tag = NOR
+	}
+}

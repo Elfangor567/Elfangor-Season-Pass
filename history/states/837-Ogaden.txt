@@ -1,0 +1,40 @@
+state=
+{
+	id=837
+	name="STATE_837"
+	manpower = 3500000
+	resources={
+		rubber=2 # was: 2
+		steel = 2
+	}
+	
+	state_category = pastoral
+
+	history=
+	{
+		owner = ETH
+		buildings = {
+			infrastructure = 2
+			12757 = {
+				bunker = 3 #Ethiopian "Maginot Line" protecting Deghabur
+			}
+		}
+		victory_points = { 
+			12757 1
+		}
+		add_core_of = ETH
+		add_core_of = SOM
+
+		1936.6.1 = {
+			owner = ITA
+			controller = ITA
+		}
+	}
+
+	provinces=
+	{
+		12812 12757 10775 8062 4995 
+		13241
+	}
+	local_supplies=0.0
+}

@@ -1,0 +1,211 @@
+DARK_create_aoi_category = {	
+	allowed = {
+		tag = ITA
+	}
+	
+	icon = generic_monarchism
+	
+	visible = {
+		550 = { 
+			is_controlled_by_ROOT_or_subject = yes
+			OWNER = {
+				OR = {
+					tag = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}
+		OR = {
+			836 = {
+				is_controlled_by_ROOT_or_subject = yes
+				OWNER = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+			271 = {
+				is_controlled_by_ROOT_or_subject = yes
+				OWNER = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+			837 = { 
+				is_controlled_by_ROOT_or_subject = yes
+				OWNER = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		559 = { 
+			is_controlled_by_ROOT_or_subject = yes
+			OWNER = {
+				OR = {
+					tag = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}
+		NOT = { #DON'T ANNEX PLAYERS!
+			OR = {
+				550 = {
+					OWNER = {
+						is_subject_of = ROOT
+						is_ai = no
+					}
+				}
+				836 = {
+					OWNER = {
+						is_subject_of = ROOT
+						is_ai = no
+					}
+				}
+				271 = {
+					OWNER = {
+						is_subject_of = ROOT
+						is_ai = no
+					}
+				}
+				837 = {
+					OWNER = {
+						is_subject_of = ROOT
+						is_ai = no
+					}
+				}
+				559 = {
+					OWNER = {
+						is_subject_of = ROOT
+						is_ai = no
+					}
+				}
+			}
+		}
+	}
+}
+
+DARK_revive_ethiopia_category = {
+	
+	icon = generic_democracy
+	
+	allowed = {
+		NOT = { original_tag = ITA }
+		NOT = { original_tag = ETH }
+	}
+	
+	visible = {
+		has_global_flag = ETH_eth_lost_war
+		OR = {
+			NOT = { country_exists = ETH }
+			AND = {
+				ETH = { is_subject = yes }
+				ETH = { NOT = { has_government = neutrality } }
+			}
+		}
+	}
+}
+
+DARK_replace_graziani_category = {
+	
+	icon = generic_crisis
+	
+	allowed = {
+		tag = ITA
+	}
+	
+	visible = {
+		AOI = { has_country_leader = { ruling_only = yes character = ITA_rodolfo_graziani } }
+	}
+}
+
+DARK_drop_superfluous_cosmetics_category = {
+	
+	icon = generic_independence
+	
+	allowed = {
+		
+	}
+	
+	visible = {
+		has_cosmetic_tag = yes
+	}
+}
+
+DARK_restore_sultan_category = {
+	
+	icon = generic_monarchism
+	
+	allowed = {
+		tag = SOM
+	}
+}
+
+DARK_join_somalia_category = {
+	
+	icon = generic_foreign_policy
+	
+	allowed = {
+		OR = {
+			original_tag = DJI
+			original_tag = SOM
+		}
+	}
+}
+	
+DARK_install_sudanese_monarchy_category = {
+	
+	icon = generic_monarchism
+	
+	allowed = {
+		original_tag = SUD
+	}
+}
+
+DARK_unite_egypt_sudan_category = {
+	
+	picture = GFX_decision_cat_generic_unite_nile_peoples
+	
+	icon = generic_formable_nations
+	
+	allowed = {
+		OR = {
+			original_tag = SUD
+			original_tag = EGY
+		}
+	}
+}
+
+DARK_unite_rhodesia_category = {
+	
+	picture = GFX_decision_cat_generic_unite_rhodesia
+	
+	icon = generic_formable_nations
+	
+	allowed = {
+		OR = {
+			original_tag = ZIM
+			original_tag = ZAM
+			original_tag = MLW
+		}
+	}
+}
+
+DARK_create_mittelafrika_category = {
+	
+	icon = ger_reichskommissariats
+	
+	allowed = {
+		OR = {
+			original_tag = GER
+			original_tag = WGR
+			original_tag = DDR
+		}
+	}	
+}
+	

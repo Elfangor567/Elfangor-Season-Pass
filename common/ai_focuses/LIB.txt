@@ -1,0 +1,32 @@
+﻿ai_historical_focus_list_LIB = {
+    ai_national_focuses = { #Ignore the dates, they are off due to a mistake (There really only there for reference anyway)
+        LIB_trade_concessions #jan 1 - march 11 (1936)
+        LIB_greenback #july 29 - oct 7
+        LIB_secure_US #oct 7 - dec 16
+        LIB_foreign_tech2 #dec 16 - feb 24 (1937)
+        LIB_neutrality_focus #feb 24 - may 5
+        LIB_end_negotiations #may 5 - july 14
+        LIB_us_mil_coop #july 14 - sep 22
+        LIB_firestone_invest #sep 22 - dec 1
+        LIB_american_steel #dec 1 - feb 9 (1938)
+        LIB_expand_rubber #feb 9 - apr 20
+        LIB_us_training #apr 20 - may 25
+        LIB_officer_schools #may 25 - june 29		
+        LIB_us_backed_neutrality #june 29 - sept 7
+        LIB_anti_fascism #sept 7 - nov 16
+        LIB_modern_guns #nov 16 - jan 25 (1939)
+        LIB_auto_tech #jan 25 - apr 5
+        LIB_air_nav #apr 5 - june 14
+        LIB_military_infra #june 14 - aug 23
+        LIB_focus_mil #aug 23 - nov 1
+        LIB_us_roads #nov 1 - jan 10 (1940)
+        LIB_us_tech #jan 10 - feb 14
+        LIB_pay_on_time
+        LIB_mil_doc
+        LIB_us_firestone	
+        LIB_mil_sup
+        LIB_areas_defense
+        LIB_us_construction
+        LIB_port
+    }
+}

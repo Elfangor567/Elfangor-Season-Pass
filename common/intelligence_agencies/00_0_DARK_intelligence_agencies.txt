@@ -1,0 +1,43 @@
+# List of names and logos for intelligence agencies
+# available trigger will determine if the logo is in the list of available logos or not
+# names is a list of names. Can be a localization entry, or the name directly. A random name will be picked from them.
+
+
+intelligence_agency = {
+
+	picture = GFX_intelligence_agency_logo_aoi
+	names = { "PAI" }
+	
+	default = { tag = AOI }
+	available = {
+		OR = {
+			original_tag = AOI
+			AND = {
+				is_subject_of = ITA
+				any_owned_state = {
+					is_capital = yes
+					is_core_of = ROOT
+					is_on_continent = africa
+				}
+			}
+		}
+	}
+}
+
+intelligence_agency = {
+
+	picture = GFX_intelligence_agency_logo_lib
+	names = { "NISS" }
+	
+	default = { tag = LIB }
+	available = { original_tag = LIB }
+}
+
+intelligence_agency = {
+
+	picture = GFX_intelligence_agency_logo_eth
+	names = { "DPS" }
+	
+	default = { tag = ETH }
+	available = { original_tag = ETH }
+}

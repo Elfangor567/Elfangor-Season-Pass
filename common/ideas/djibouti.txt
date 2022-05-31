@@ -1,0 +1,173 @@
+ideas = {
+	country = {
+		DJI_pearl_of_the_gulf = {
+			
+			picture = escort_effort_focus
+			
+			allowed = {
+				original_tag = DJI
+			}
+			
+			modifier = {
+				ai_focus_naval_factor = 0.5
+				
+				experience_gain_navy = 0.02
+				naval_coordination = 0.2
+				naval_detection = 0.2
+			}
+		}
+	}
+
+	# TECHNOLOGY
+	
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		DJI_ali_sabieh = { #Second largest city of Djibouti. Built around an old military fortress
+			
+			picture = generic_tank_manufacturer_2
+			
+			allowed = {
+				original_tag = DJI
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { heavy_tank_manufacturer }
+		}
+	}
+
+	naval_manufacturer = {
+		
+		designer = yes
+		
+		DJI_port_of = { #Port of Djibuti
+			
+			picture = generic_naval_manufacturer_1
+
+			
+			allowed = {
+				original_tag = DJI
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { pacific_fleet_naval_manufacturer }
+		}
+		
+		DJI_obock = { #Port town where Henry de Monfreid lived, had a shipyard
+			
+			picture = generic_naval_manufacturer_3
+
+			
+			allowed = {
+				original_tag = DJI
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { raiding_fleet_naval_manufacturer }
+		}
+	}
+	
+	aircraft_manufacturer = {
+			
+		designer = yes		
+		
+		DJI_air = { #Air Djibouti
+			
+			picture = generic_air_manufacturer_3
+			
+			allowed = {
+				original_tag = DJI
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes
+		
+		DJI_bus = { #Djibouti City Bus Service Enterprise
+		
+			picture = generic_motorized_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = DJI
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+		DJI_dikhil = { #Built around an "impregnable" fort that likely predated the French
+			
+			picture = generic_infantry_equipment_manufacturer_2
+			
+			allowed = {
+				original_tag = DJI
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+	}
+	
+	industrial_concern = {
+	
+		DJI_RTD = { #Radiodiffusion Télévision de Djibouti
+		
+			picture = generic_electronics_concern_1
+
+			allowed = {
+				original_tag = DJI
+			}
+			
+			cost = 150
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
+		
+		DJI_CFE = { #Compagnie du Chemin de Fer Franco-Éthiopien, the company who made the Ethio-Djibouti Railway
+		
+			picture =  generic_industrial_concern_1
+
+			allowed = {
+				original_tag = DJI
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}
+	}
+}

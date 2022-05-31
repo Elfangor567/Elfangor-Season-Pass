@@ -1,0 +1,566 @@
+characters={
+#Country Leaders
+	ZAM_john_moffat={
+		name=ZAM_john_moffat
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/portrait_europe_generic_8.dds"
+			}
+		}
+		country_leader={
+			ideology=moderatism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	ZAM_harry_nkumbula={
+		name=ZAM_harry_nkumbula
+		portraits={
+			civilian={
+				large="gfx/leaders/DARK/Portrait_DARK_Marcus_Garvey.dds" #Looks closer than any of the generic African portraits
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	ZAM_john_roberts={
+		name=ZAM_john_roberts
+		portraits={
+			civilian={
+				large="gfx/leaders/ENG/Portrait_Britain_Generic_3.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	ZAM_kenneth_kaunda={
+		name=ZAM_kenneth_kaunda
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_land_3.dds"
+			}
+		}
+		country_leader={
+			ideology=anti_revisionism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+
+#Generals and Admirals
+	ZAM_michael_grigg={
+		name=ZAM_michael_grigg
+		portraits={
+			civilian={
+				large="gfx/leaders/CZE/portrait_vojtech_luza.dds"
+			}
+		}
+		field_marshal={
+			traits = { career_officer trait_reckless offensive_doctrine trait_mountaineer naval_invader }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id=-1
+		}
+	}
+
+#Chiefs of Staff
+	ZAM_reids={ #T.S Reids, second General of the Zambian Army, White
+		name=ZAM_reids
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = ZAM_reids
+			allowed = {
+				original_tag = ZAM
+			}
+			traits = { army_chief_organizational_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZAM_arthur_stephenson={ #Leader of the Northern Rhodesian Police force, commanded Northern Rhodesian Area in WW2
+		name=ZAM_arthur_stephenson
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = ZAM_arthur_stephenson
+			allowed = {
+				original_tag = ZAM
+			}
+			traits = { army_chief_defensive_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ZAM_venning={ #J.H. Venning, Provincial Commissioner in Abercorn (Mbala), main man behind making Mpulungu a major port
+		name=ZAM_venning
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = ZAM_venning
+			allowed = {
+				original_tag = ZAM
+			}
+			traits = { navy_fleet_logistics_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ZAM_ted_cunnison={ #Took over the Northern Rhodesian Air Wing in 1963, leaving the Rhodesian Air Force
+		name=ZAM_ted_cunnison
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = ZAM_ted_cunnison
+			allowed = {
+				original_tag = ZAM
+			}
+			traits = { air_chief_ground_support_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#High Command
+	ZAM_william_sarkata={ #Leader of the Mufulira Mine strike of 1935
+		name=ZAM_william_sarkata
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZAM_william_sarkata
+			ledger = army
+			allowed = {
+				original_tag = ZAM
+			}
+			traits = { army_chief_offensive_1 }
+			cost = 75
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZAM_julia_chikamoneka={ #Female freedom fighter and founder of the Zambian Women's Brigade
+		name=ZAM_julia_chikamoneka
+		gender=female
+		portraits={
+			army={
+				small="GFX_idea_generic_army_female_africa"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZAM_julia_chikamoneka
+			ledger = army
+			allowed = {
+				original_tag = ZAM
+			}
+			traits = { army_concealment_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZAM_michael_mataka={ #First African Commissioner of the Zambian Police
+		name=ZAM_michael_mataka
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZAM_michael_mataka
+			ledger = army
+			allowed = {
+				original_tag = ZAM
+			}
+			traits = { army_infantry_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZAM_mulenga={ #Mulenga, an African Serviceman who fought in WW2
+		name=ZAM_mulenga
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZAM_mulenga
+			ledger = army
+			allowed = {
+				original_tag = ZAM
+			}
+			traits = { army_chief_maneuver_1 }
+			cost = 75
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ZAM_tenson_mizinga={ #Not real, self-indulgent insert of my Counterpart Headteacher from my time in Peace Corps
+		name=ZAM_tenson_mizinga
+		portraits={
+			navy={
+				small="GFX_idea_generic_navy_african_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZAM_tenson_mizinga
+			ledger = navy
+			allowed = {
+				original_tag = ZAM
+			}
+			traits = { navy_chief_reform_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ZAM_lazaro={ #Edmond Lazaro, Early African Pilot of Zambia/Northern Rhodesia
+		name = ZAM_lazaro
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZAM_lazaro
+			ledger = air
+				allowed = {
+					original_tag = ZAM
+				}
+				traits = { air_strategic_bombing_2 }
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	ZAM_blondie={ #Eddie "Blondie" Holden, White Zambian/Northern Rhodesian Pilot, later moved to Lesotho
+		name = ZAM_blondie
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZAM_blondie
+			ledger = air
+			allowed = {
+				original_tag = ZAM
+			}
+			traits = { air_air_superiority_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+#Theorists
+	ZAM_yeta_3={ #King Yeta III of the Lozi people
+		name = ZAM_yeta_3
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_3"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = ZAM_yeta_3
+			ledger = army
+			allowed = {
+				original_tag = ZAM
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZAM_louis_maambo={ #Not real, self-indulgent insert of my Host Father from my time in Peace Corps
+		name = ZAM_louis_maambo
+		portraits={
+			navy={
+				small="GFX_idea_generic_political_advisor_african_3"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = ZAM_louis_maambo
+			ledger = navy
+			allowed = {
+				original_tag = ZAM
+			}				
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+		}
+	}
+	ZAM_vic_brown={ #Fighter pilot and flying instructor in Zambia
+		name = ZAM_vic_brown
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = ZAM_vic_brown
+			ledger = air
+			allowed = {
+				original_tag = ZAM
+			}				
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+		}
+	}
+	
+#Advisors
+	ZAM_godwin_lewanika={ #Original founder of the Northern Rhodesian Congress
+		name=ZAM_godwin_lewanika
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZAM_godwin_lewanika
+			allowed = {
+				original_tag = ZAM
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	ZAM_matthew_mwendapole={ #Militant Trade Union Leader
+		name=ZAM_matthew_mwendapole
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZAM_matthew_mwendapole
+			allowed = {
+				original_tag = ZAM
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	ZAM_jerry_steyn={ #Member of the NPP
+		name=ZAM_jerry_steyn
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZAM_jerry_steyn
+			allowed = {
+				original_tag = ZAM
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	
+	ZAM_lawrence_katilungu={ #Trade Union Leader and first president of the African Mineworkers Union
+		name=ZAM_lawrence_katilungu
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZAM_lawrence_katilungu
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			traits = { connected_citizen }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ZAM_stewart_gore_browne={ #White Pro-African Zambian. Owner of the Shiwa Nganda. Only White man to be given a state funeral to date
+		name=ZAM_stewart_gore_browne
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZAM_stewart_gore_browne
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			traits = { popular_figurehead }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ZAM_simon_kapwepwe={ #VP 1967-1970, founding member of ZANC, later UNIP
+		name=ZAM_simon_kapwepwe
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZAM_simon_kapwepwe
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			traits = { ideological_crusader }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ZAM_roy_welenski={ #Director of Manpower for Northern Rhodesia in WW2
+		name=ZAM_roy_welenski
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZAM_roy_welenski
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			traits = { prince_of_terror }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ZAM_frank_maybank={ #General Scretary of NRMWU, organized the general strikes in 1940 that also spread to the African workers
+		name=ZAM_frank_maybank
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZAM_frank_maybank
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	
+}

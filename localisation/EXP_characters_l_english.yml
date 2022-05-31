@@ -1,0 +1,41 @@
+﻿l_english:
+
+ #Sami
+ SMI_johan_roska:0 "Johan Roska"
+ SMI_gustav_park:0 "Gustav Park"
+ SMI_per_fokstad:0 "Per Fokstad"
+ SMI_vasiliy_alymov:0 "Vasiliy Alymov"
+ 
+ 
+ #Reichskommissariats
+ #Norwegen (Norway)
+ NS_josef_terboven:0 "Josef Terboven"
+ #Caucuses (Georgia)
+ GEO_arno_schichedanz:0 "Arno Schickedanz"
+ GEO_akaki_chkhenkeli:0 "Akaki Chkhenkeli"
+ GEO_vasily_kharlamov:0 "Vasily Kharlamov"
+ GEO_mikhail_tskhakaya:0 "Mikhail Tskhakaya"
+ #Moskowien (Russia/Soviets)
+ SOV_siegfried_kasche:0 "Siegfried Kasche"
+ #Turkestan (Turkmenistan)
+ TMS_veli_kayyum_han:0 "Veli Kayyum Han"
+ TMS_sayyid_mir_khan:0 "Sayyid Alim Khan"
+ TMS_mikhail_fonin:0 "Mikhail Fonin"
+ #Don-Wolga (Volga Germany)
+ VGE_dietrich_klagges:0 "Dietrich Klagges"
+ VGE_alexander_filimonov:0 "Aleksandr Filimonov"
+ #Ural (Ostyak-Vogul)
+ OVO_richard_darre:0 "Richard Darré"
+ OVO_howie_ting:0 "Howie Ting"
+ OVO_yankow_iki:0 "Yänkow-iki"
+ OVO_prokopi_spiridonov:0 "Prokopi Spiridonov"
+ #Siberien (Tannu-Tuva)
+ TAN_fritz_sauckel:0 "Fritz Sauckel"
+ TAN_nikolay_matveyev:0 "Nikolay Matveyev"
+ #Schweden (Sweden)
+ SWE_nikolaus_falkenhorst:0 "Nikolaus von Falkenhorst"
+ #Danemark (Denmark)
+ DEN_hermann_hanneken:0 "Hermann von Hanneken"
+ #Skandinavien (Iceland/Scandinavia)
+ ICE_wolfram_sievers:0 "Wolfram Sievers"
+ 

@@ -1,0 +1,46 @@
+EYE_free_serbia_effect = {
+	set_country_flag = SER_has_yugoslavian_assets
+	YUG = {
+		every_character = {
+			limit = {
+				is_country_leader = no
+				OR = {
+					is_character = YUG_draza_mihailovic
+					is_character = YUG_milan_nedic
+				}
+			}
+			set_nationality = SER
+		}
+	}
+	add_country_leader_role = {
+		character = YUG_draza_mihailovic
+		promote_leader = yes
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1"
+			traits = { }
+		}
+	}
+	add_field_marshal_role = {
+		character = YUG_draza_mihailovic
+		traits = { brilliant_strategist infantry_officer commando trait_mountaineer }
+		skill = 5
+		attack_skill = 5
+		defense_skill = 5
+		planning_skill = 5
+		logistics_skill = 5
+	}
+	set_portraits = {
+		character = YUG_draza_mihailovic
+		civilian = { large ="gfx/leaders/EYE/Portrait_EYE_Draza_Mihailovic.dds" }
+	}
+	add_country_leader_role = {
+		character = YUG_milan_nedic
+		promote_leader = yes
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "1965.1.1"
+			traits = { }
+		}
+	}
+}

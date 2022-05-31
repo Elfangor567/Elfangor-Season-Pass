@@ -1,0 +1,33 @@
+﻿division_template = {
+	name = "Liberian Militia"
+	division_names_group = LIB_GAR_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 1 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7959
+		division_template = "Infantry Brigade"
+		start_experience_factor = 0.05
+		start_equipment_factor = 0.25
+
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 7959
+		division_template = "Infantry Brigade"
+		start_experience_factor = 0.05
+		start_equipment_factor = 0.25
+
+	}
+}

@@ -1,0 +1,130 @@
+characters={
+#Country Leaders
+	#Bavaria
+	BAY_rupprecht={ #Heir of King Ludwig III
+		name=BAY_rupprecht
+		portraits={
+			civilian={
+				large="gfx/leaders/POL/portrait_POL_marian_kukiel.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	#Bohemia/Czechs
+	CZE_adolph_schwarzenberg={ #Duke of Krumlov (1938-1950)
+		name=CZE_adolph_schwarzenberg
+		portraits={
+			civilian={
+				large="gfx/leaders/HUN/Portrait_bela_kun.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	#Hanover
+	HAN_ernest_augustus={ #Pretender to the Hanoverian throne
+		name=HAN_ernest_augustus
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/portrait_europe_generic_8.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	#Mecklenburg
+	MEK_frederick_francis_iv={ #Last Duke of Meklenburg-Schwerin
+		name=MEK_frederick_francis_iv
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/portrait_europe_generic_5.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	#Prussia
+	PRE_adalbart={ #3rd son of Wilhelm II
+		name=PRE_adalbart
+		portraits={
+			civilian={
+				large="gfx/leaders/GER/portrait_ger_wilhelm_iii.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	#Saxony
+	SAX_ernst_heinrich={ #Third son of Frederick Augustus III (Chosen to avoid conflict with Polish tree)
+		name=SAX_ernst_heinrich
+		portraits={
+			civilian={
+				large="gfx/leaders/POL/portrait_POL_friedrich_christian.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	#Schleswig-Holstein
+	SHL_wilhelm_friedrich={ #Duke of Holstein 1934-1965
+		name=SHL_wilhelm_friedrich
+		portraits={
+			civilian={
+				large="gfx/leaders/AST/Portrait_Australia_Richard_Dixon.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	#Westphalia 
+	WST_jerome_bonaparte={ #Bonapartist pretender to Westphalia
+		name=WST_jerome_bonaparte
+		portraits={
+			civilian={
+				large="gfx/leaders/USA/portrait_USA_thomas_dewey.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	#Württemberg 
+	WUR_pauline={ #Only surviving child of William II of Württemberg
+		name=WUR_pauline
+		gender = female
+		portraits={
+			civilian={
+				large="gfx/leaders/POL/portrait_POL_anna_anderson.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+}

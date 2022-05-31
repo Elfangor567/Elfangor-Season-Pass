@@ -1,0 +1,646 @@
+characters={
+#Country Leaders
+	ALG_mohamed_ibrahimi={ #Leader of the AOMA after the death of Abdelhamid Ben Badis in 1940, was prominent even before then
+		name=ALG_mohamed_ibrahimi
+		portraits={
+			civilian={
+				large="gfx/leaders/JOR/Portrait_Arabia_Generic_land_2.dds"
+			}
+		}
+		country_leader={
+			ideology=moderatism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	ALG_messali_hadj={ #Leader of the PPA
+		name=ALG_messali_hadj
+		portraits={
+			civilian={
+				large="gfx/leaders/TUR/portrait_tur_abdulmejid_ii.dds"
+			}
+		}
+		country_leader={
+			ideology=anarchist_communism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	ALG_ferhat_abbas={ #President of the Provisional Government of Algeria
+		name=ALG_ferhat_abbas
+		portraits={
+			civilian={
+				large="gfx/leaders/TUR/Portrait_Turkey_Sefik_Husnu.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	ALG_mohamed_taleb={ #Leader of CARNA (Comité d'action révolutionnaire nord-africain), a Nazi collaborationist group set up in Algeria
+		name=ALG_mohamed_taleb
+		portraits={
+			civilian={
+				large="gfx/leaders/TUR/portrait_tur_abdulmejid_ii.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+#Generals and Admirals
+	ALG_mahmoud_cherif={ #Fought in WW2, later Colonel and Minister of Armaments and Provisions in Algeria
+		name=ALG_mahmoud_cherif
+		portraits={
+			army={
+				large="gfx/leaders/RAJ/Portrait_The_Raj_j_n_chaudhuri.dds"
+				small="GFX_portrait_RAJ_jayanto_nath_chaudhuri_small"
+			}
+		}
+		corps_commander={
+			traits = { infantry_officer desert_fox }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id=-1
+		}
+	}
+	
+#Chiefs of Staff
+	ALG_said_boualam={ #Pro-French French-Algerian, founder of FAF, Colonel
+		name=ALG_said_boualam
+		portraits={
+			army={
+				small="GFX_idea_generic_army_arab_3"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = ALG_said_boualam
+			allowed = {
+				original_tag = ALG
+			}
+			traits = { army_chief_morale_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ALG_amar_ouzegane={ #Militant communist/nationalist
+		name=ALG_amar_ouzegane
+		portraits={
+			army={
+				small="GFX_idea_generic_army_arab_1"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = ALG_amar_ouzegane
+			allowed = {
+				original_tag = ALG
+			}
+			traits = { army_chief_offensive_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ALG_mohamed_larbi={ #Militant before WW2, not navy, but I need a body
+		name=ALG_mohamed_larbi
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_arab_2"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = ALG_mohamed_larbi
+			allowed = {
+				original_tag = ALG
+			}
+			traits = { navy_chief_commerce_raiding_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ALG_edmond_jouhaud={ #Pied-noir, Inspector-General of the Air Force in North Africa
+		name=ALG_edmond_jouhaud
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = ALG_edmond_jouhaud
+			allowed = {
+				original_tag = ALG
+			}
+			traits = { air_chief_safety_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#High Command
+	ALG_ahmed_ben_bella={ #Algerian soldier in WW2, later Dictator of Algeria
+		name=ALG_ahmed_ben_bella
+		portraits={
+			army={
+				small="GFX_idea_generic_army_arab_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ALG_ahmed_ben_bella
+			ledger = army
+			allowed = {
+				original_tag = ALG
+			}
+			traits = { army_regrouping_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ALG_said_mohammedi={ #Algerian WW2 soldier, collaborationist who fought with the Nazis, later leader in the Algerian War of Independence
+		name=ALG_said_mohammedi
+		portraits={
+			army={
+				small="GFX_idea_carl_mannerheim"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ALG_said_mohammedi
+			ledger = army
+			allowed = {
+				original_tag = ALG
+			}
+			traits = { army_infantry_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ALG_roger_carcassonne={ #Jewish-Algerian resistence fighter in WW2
+		name=ALG_roger_carcassonne
+		portraits={
+			army={
+				small="GFX_idea_carl_spaatz"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ALG_roger_carcassonne
+			ledger = army
+			allowed = {
+				original_tag = ALG
+			}
+			available = {
+				NOT = { is_subject_of = GER }
+			}		
+			traits = { army_concealment_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ALG_saidi_sadok={ #Captain during the 1940 Berber crisis, it doesn't say ship captain, but I can't find anymore information so I'm rolling with it
+		name=ALG_saidi_sadok
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_arab_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ALG_saidi_sadok
+			ledger = navy
+			allowed = {
+				original_tag = ALG
+			}	
+			traits = { navy_chief_decisive_battle_1 }
+			cost =  50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ALG_mouloud={ #Algerian writer who fought in WW2, using him for navy because I need a body
+		name=ALG_mouloud
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_arab_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ALG_mouloud
+			ledger = navy
+			allowed = {
+				original_tag = ALG
+			}	
+			traits = { navy_chief_reform_1 }
+			cost =  50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ALG_abdelkader_ali={  #WW1 veteran and freedom fighter
+		name=ALG_abdelkader_ali
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_arab_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ALG_abdelkader_ali
+			ledger = navy
+			allowed = {
+				original_tag = ALG
+			}	
+			traits = { navy_submarine_1 }
+			cost =  50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ALG_si_djilani={ #Independence fighter, collaborationist, put here due to his history of working with logistics/travel
+		name=ALG_si_djilani
+		portraits={
+			army={
+				small="GFX_idea_generic_air_arab_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ALG_si_djilani
+			ledger = air
+				allowed = {
+					original_tag = ALG
+				}
+				traits = { air_chief_night_operations_1 }
+				cost =  75
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	ALG_jules_roy={ #Pilot for French Algeria in WW2
+		name=ALG_jules_roy
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ALG_jules_roy
+			ledger = air
+				allowed = {
+					original_tag = ALG
+				}
+				traits = { air_air_superiority_2 }
+				cost =  100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	ALG_serri_abderahmen={ #One of the first Algerian Pilots
+		name=ALG_serri_abderahmen
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_arab_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ALG_serri_abderahmen
+			ledger = air
+				allowed = {
+					original_tag = ALG
+				}
+				traits = { air_close_air_support_1 }
+				cost =  75
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	
+#Theorists
+	ALG_maurice_laban={ #A Pied-Noir who fought in the Spanish Civil War and later the Algerian War for Independence
+		name = ALG_maurice_laban
+		portraits={
+			army={
+				small="GFX_idea_frederic_irene_joliot_curie"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = ALG_maurice_laban
+			ledger = army
+			allowed = {
+				original_tag = ALG
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+	}
+	ALG_jean_de_maisonseul={ #A painter/planner, but came from a famous naval family, his grandfather having been an admiral
+		name = ALG_jean_de_maisonseul
+		portraits={
+			army={
+				small="GFX_idea_james_chadwick"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = ALG_jean_de_maisonseul
+			ledger = navy
+			allowed = {
+				original_tag = ALG
+			}				
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	ALG_laroussi_khelifa={ #First Director of Air Algeria
+		name = ALG_laroussi_khelifa
+		portraits={
+			army={
+				small="GFX_idea_MEX_manuel_perez_trevino"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = ALG_laroussi_khelifa
+			ledger = air
+			allowed = {
+				original_tag = ALG
+			}		
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+#Advisors
+	ALG_ahmed_taoufik={ #Helped found and run AOMA
+		name=ALG_ahmed_taoufik
+		portraits={
+			army={
+				small="GFX_idea_tur_celal_bayar"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ALG_ahmed_taoufik
+			allowed = {
+				original_tag = ALG
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			traits = { neutrality_advocate }
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	ALG_mohammed_saleh_bendjelloul={
+		name=ALG_mohammed_saleh_bendjelloul
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ALG_mohammed_saleh_bendjelloul
+			allowed = {
+				original_tag = ALG
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}	
+			traits = { democratic_reformer }
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	ALG_emilie_busquant={ #Anarcho-Syndicalist, wife of Messali Hadj, designer of the Algerian Flag
+		name=ALG_emilie_busquant
+		gender=female
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_female_europe"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ALG_emilie_busquant
+			allowed = {
+				original_tag = ALG
+			}
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			traits = { communist_revolutionary }
+			ai_will_do = {
+				base = 0
+			}		
+		}
+	}	
+	ALG_rachid_ouamara={ #One of the leading figures of the collaborationist CARNA group
+		name=ALG_rachid_ouamara
+		portraits={
+			army={
+				small="GFX_idea_MEX_bartolome_garcia_correa"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ALG_rachid_ouamara
+			allowed = {
+				original_tag = ALG
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}	
+			traits = { fascist_demagogue }
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	
+	ALG_belkacem_radjef={ #Treasurer of the ENA, PPA and MPTLD, Later Minister of Labor and Social Affairs
+		name=ALG_belkacem_radjef
+		portraits={
+			army={
+				small="GFX_idea_bul_georgi_petsov"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ALG_belkacem_radjef
+			allowed = {
+				original_tag = ALG
+			}	
+			traits = { financial_expert }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ALG_mohamed_khider={ #Represented the FLN externally, briefly Secretary-General of FLN
+		name=ALG_mohamed_khider
+		portraits={
+			army={
+				small="GFX_idea_marcel_bucard"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ALG_mohamed_khider
+			allowed = {
+				original_tag = ALG
+			}	
+			traits = { compassionate_gentleman }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ALG_amar_imache={ #Secretary-General of the ENA and editor-in-chief of its newspaper
+		name=ALG_amar_imache
+		portraits={
+			army={
+				small="GFX_idea_MEX_jose_vasconcelos"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ALG_amar_imache
+			allowed = {
+				original_tag = ALG
+			}	
+			traits = { editor }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ALG_saad_dahlab={ #Noted propogandist for FLN
+		name=ALG_saad_dahlab
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ALG_saad_dahlab
+			allowed = {
+				original_tag = ALG
+			}	
+			traits = { propaganda_expert }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ALG_mohand_lechani={ #Algerian teacher and political and union activist
+		name=ALG_mohand_lechani
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ALG_mohand_lechani
+			allowed = {
+				original_tag = ALG
+			}
+			traits = { popular_figurehead }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ALG_mohamed_boudiaf={ #Influential member of the Organisation Spéciale, a secret paramilitary group
+		name=ALG_mohamed_boudiaf
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ALG_mohamed_boudiaf
+			allowed = {
+				original_tag = ALG
+			}
+			traits = { head_of_intelligence }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+}

@@ -1,0 +1,16 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Landhelgisgæslan"			
+		naval_base = 12674  # Iceland
+		task_force = {
+			name = "Landhelgisgæslan"
+			location = 12674 # Iceland
+			ship = { name = "ICGV Óðinn II" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = ICE } } }
+			ship = { name = "ICGV Ægir" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ICE } } }
+			ship = { name = "ICGV Islands Falk" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = ICE } } }
+			ship = { name = "ICGV Þór II" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ICE } } }
+		}
+	}
+}

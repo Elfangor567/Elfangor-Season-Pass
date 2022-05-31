@@ -1,0 +1,108 @@
+﻿capital = 770
+
+oob = "ENG_colonial_1936"
+
+add_ideas = MLW_warm_heart
+
+recruit_character = MLW_hastings_banda
+recruit_character = MLW_james_chinyama
+recruit_character = MLW_michael_blackwood
+recruit_character = MLW_thamar_dillon_thomas_banda
+
+recruit_character = MLW_timothy_lewis
+
+recruit_character = MLW_flax_musopole
+recruit_character = MLW_juma_chimwere
+recruit_character = MLW_john_brock
+recruit_character = MLW_mansel_bartlet
+recruit_character = MLW_george_hodgson
+
+recruit_character = MLW_peter_moxon
+recruit_character = MLW_orton_chirwa
+recruit_character = MLW_james_phiri
+recruit_character = MLW_frank_thorne
+recruit_character = MLW_reg_bourley
+recruit_character = MLW_dennis_markwick
+recruit_character = MLW_peter_little
+recruit_character = MLW_keith_waddhams
+
+recruit_character = MLW_kaluli_chisiza
+recruit_character = MLW_edmund_rhoades
+recruit_character = MLW_c_j_christowitz
+
+recruit_character = MLW_george_mwase
+recruit_character = MLW_gilbert_pondeponde
+recruit_character = MLW_richard_kettlewell
+recruit_character = MLW_levi_mumba
+recruit_character = MLW_charles_mlanga
+recruit_character = MLW_james_sangala
+recruit_character = MLW_charles_matinga
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	motorised_infantry = 1
+	tech_mountaineers = 1
+	grand_battle_plan = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1	
+	gwtank = 1
+	early_fighter = 1
+	early_bomber = 1
+	armored_car1 = 1
+}
+
+set_convoys = 5
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 2
+	fascism = 1
+	communism = 1
+	neutrality = 96
+}
+
+1939.1.1 = {
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	set_technology = {
+		
+		infantry_weapons1 = 1
+		scout_plane1 = 1
+
+		#doctrines		
+		trench_warfare = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}

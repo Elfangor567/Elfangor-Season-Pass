@@ -1,0 +1,111 @@
+﻿capital = 771
+
+oob = "ENG_colonial_1936"
+
+recruit_character = ZAM_john_moffat
+recruit_character = ZAM_harry_nkumbula
+recruit_character = ZAM_john_roberts
+recruit_character = ZAM_kenneth_kaunda
+
+recruit_character = ZAM_michael_grigg
+
+recruit_character = ZAM_reids
+recruit_character = ZAM_arthur_stephenson
+recruit_character = ZAM_venning
+recruit_character = ZAM_ted_cunnison
+
+recruit_character = ZAM_william_sarkata
+recruit_character = ZAM_julia_chikamoneka
+recruit_character = ZAM_michael_mataka
+recruit_character = ZAM_mulenga
+recruit_character = ZAM_tenson_mizinga
+recruit_character = ZAM_lazaro
+recruit_character = ZAM_blondie
+
+recruit_character = ZAM_yeta_3
+recruit_character = ZAM_louis_maambo
+recruit_character = ZAM_vic_brown
+
+recruit_character = ZAM_godwin_lewanika
+recruit_character = ZAM_matthew_mwendapole
+recruit_character = ZAM_jerry_steyn
+recruit_character = ZAM_lawrence_katilungu
+recruit_character = ZAM_stewart_gore_browne
+recruit_character = ZAM_simon_kapwepwe
+recruit_character = ZAM_roy_welenski
+recruit_character = ZAM_frank_maybank
+
+add_ideas = ZAM_neutral_interventionist
+add_ideas = neutrality_idea
+if = {
+	limit = { has_dlc = "La Resistance" }	
+	create_intelligence_agency = yes	
+}
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	motorised_infantry = 1
+	tech_mountaineers = 1
+	grand_battle_plan = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1	
+	gwtank = 1
+	early_fighter = 1
+	early_bomber = 1
+	armored_car1 = 1
+}
+
+set_convoys = 5
+
+set_politics = {
+	ruling_party = communism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes #At first anyway...
+}
+set_popularities = {
+	democratic = 21
+	fascism = 1
+	communism = 76
+	neutrality = 2
+}
+
+1939.1.1 = {
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	set_technology = {
+		
+		infantry_weapons1 = 1
+		scout_plane1 = 1
+
+		#doctrines		
+		trench_warfare = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}

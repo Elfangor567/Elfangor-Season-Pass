@@ -1,0 +1,21 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_ship_DEN_fishery_protection_ship_icon_small"
+		texturefile = "gfx/texticons/ship_fishery_protection_icon_small.dds"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_ship_SCA_gunboat_icon_small"
+		texturefile = "gfx/texticons/ship_gunboat_icon_small.dds"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_unit_ICE_elite_infantry_icon_small"
+		texturefile = "gfx/texticons/unit_ICE_elite_infantry_icon_small.dds"
+		legacy_lazy_load = no
+	}
+	
+}

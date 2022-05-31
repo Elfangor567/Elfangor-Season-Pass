@@ -1,0 +1,2499 @@
+#Monarchy
+
+EXP_monarchism_on_the_rise = {
+
+	prepare_for_monarchist_civil_war = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			neutrality > 0.1
+		}
+
+		visible = {
+			NOT = { has_country_flag = preparation_for_monarchist_civil_war }
+			has_idea_with_trait = staunch_monarchist
+			NOT = { has_government = neutrality }
+		}
+		
+		fire_only_once = yes
+		
+		cost = 50
+		
+		complete_effect = {
+			set_country_flag = preparation_for_monarchist_civil_war
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	expand_civil_monarchist_support = {
+
+		icon = generic_civil_support
+
+		visible = {
+			OR = {
+				has_country_flag = preparation_for_monarchist_civil_war
+				has_country_flag = open_up_political_discourse_monarchist
+			}
+			has_idea_with_trait = staunch_monarchist
+			NOT = { has_government = neutrality }
+		}
+
+		cancel_trigger = {
+			hidden_trigger = {
+				has_civil_war = yes
+			}
+		}
+		
+		fire_only_once = no
+		
+		cost = 25
+
+		days_remove = 30
+
+		modifier = {
+			neutrality_drift = 0.02
+			stability_weekly = -0.03
+ 			political_power_gain = -0.2
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_support_for_monarchist_civil_war = {
+
+		icon = generic_army_support
+
+		visible = {
+			has_country_flag = preparation_for_monarchist_civil_war
+			has_idea_with_trait = staunch_monarchist
+			NOT = { has_government = neutrality }
+		}
+
+		cancel_trigger = {
+			hidden_trigger = {
+				has_civil_war = yes
+			}
+		}
+	
+		fire_only_once = no
+	
+		cost = 50
+
+		days_remove = 30
+
+		modifier = {
+			command_power_gain = -0.2
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					check_variable = { var = army_support_var value = 0.1 compare = less_than }
+				}
+				set_variable = { var = army_support_var value = 0.1 } 
+			}
+			if = {
+				limit = {
+					check_variable = { var = army_support_var value = 0.1 compare = greater_than_or_equals }
+				}
+				add_to_variable = { var = army_support_var value = 0.1 } 
+			}
+			set_country_flag = military_support_for_monarchist_civil_war
+		}
+		
+		complete_effect = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ensure_general_loyalty_for_monarchist_civil_war = {
+
+		icon = generic_army_support
+
+		available = {
+			has_country_flag = military_support_for_monarchist_civil_war
+			command_power > 2
+		}
+
+		visible = {
+			has_country_flag = preparation_for_monarchist_civil_war
+			has_idea_with_trait = staunch_monarchist
+			any_army_leader = {
+				is_field_marshal = no
+				NOT = { has_trait = hidden_sympathies }
+			}
+			NOT = { has_government = neutrality }
+		}
+	
+		fire_only_once = yes
+	
+		cost = 50
+		
+		complete_effect = {
+			country_event = { id = decisions.1 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ensure_marshal_loyalty_for_monarchist_civil_war = {
+
+		icon = generic_army_support
+
+		available = {
+			has_country_flag = military_support_for_monarchist_civil_war
+			command_power > 2
+		}
+
+		visible = {
+			has_country_flag = preparation_for_monarchist_civil_war
+			has_idea_with_trait = staunch_monarchist
+			any_army_leader = {
+				NOT = { has_trait = hidden_sympathies }
+			}
+			NOT = { has_government = neutrality }
+			any_army_leader = {
+				is_field_marshal = yes
+				NOT = { has_unit_leader_flag = hidden_sympathies_marshal }
+			}
+		}
+	
+		fire_only_once = yes
+	
+		cost = 50
+		
+		complete_effect = {
+			country_event = { id = decisions.2 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	siphon_equipment_stockpiles_for_monarchist_civil_war = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_country_flag = military_support_for_monarchist_civil_war
+			has_equipment = { infantry_equipment > 1000 }
+			command_power > 2
+		}
+
+		visible = {
+			has_country_flag = preparation_for_monarchist_civil_war
+			has_country_flag = military_support_for_monarchist_civil_war
+			has_idea_with_trait = staunch_monarchist
+			NOT = { has_government = neutrality }
+		}
+	
+		fire_only_once = no
+	
+		cost = 50
+		
+		complete_effect = {
+			add_command_power = -2
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1000
+			}
+			set_country_flag = siphoned_equipment_stockpiles_for_civil_war
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	formulate_surprise_attack_plan_for_monarchist_civil_war = {
+
+		icon = generic_army_support
+
+		available = {
+			has_country_flag = military_support_for_monarchist_civil_war
+			command_power > 2
+		}
+
+		visible = {
+			has_country_flag = preparation_for_monarchist_civil_war
+			has_idea_with_trait = staunch_monarchist
+			NOT = { has_government = neutrality }
+		}
+	
+		fire_only_once = yes
+	
+		cost = 50
+		
+		complete_effect = {
+			add_command_power = -2
+			custom_effect_tooltip = formulate_surprise_attack_plan_for_civil_war_tt
+			set_country_flag = formulated_surprise_attack_plan_for_civil_war
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	ignite_the_monarchist_civil_war = {
+
+		icon = generic_ignite_civil_war
+
+		available = {
+			has_stability < 0.5
+		}
+
+		visible = {
+			has_country_flag = preparation_for_monarchist_civil_war
+			has_idea_with_trait = staunch_monarchist
+			NOT = { has_government = neutrality }
+		}
+	
+		fire_only_once = yes
+	
+		cost = 50
+		
+		complete_effect = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				set_variable = {
+					var = civil_war_size_var
+					value = party_popularity@fascism
+				}
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				set_variable = {
+					var = civil_war_size_var
+					value = party_popularity@communism
+				}
+			}
+			if = {
+				limit = {
+					has_government = democratic
+				}
+				set_variable = {
+					var = civil_war_size_var
+					value = party_popularity@democratic
+				}
+			}
+			subtract_from_variable = {
+				var = civil_war_size_var
+				value = army_support_var
+			}
+			if = {
+				limit = {
+					check_variable = {
+						var = civil_war_size_var
+						value = 0.3
+						compare = less_than
+					}
+				}
+				set_variable = {
+					var = civil_war_size_var
+					value = 0.3
+				}
+			}
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = ROOT
+				size = civil_war_size_var
+				keep_unit_leaders_trigger = {
+					has_trait = hidden_sympathies
+				}
+			}
+			clr_country_flag = preparation_for_monarchist_civil_war
+			clr_country_flag = military_support_for_monarchist_civil_war
+			clr_country_flag = civil_support_for_monarchist_civil_war
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	rebuild_the_nation_monarchist = {
+
+		icon = generic_construction
+
+		visible = {
+			has_country_flag = won_ideology_civil_war
+		}
+
+		fire_only_once = yes
+	
+		cost = 25
+
+		days_remove = 365
+
+		modifier = {
+			political_power_gain = -1
+			industry_repair_factor = 0.20
+			production_speed_industrial_complex_factor = 0.1
+			production_speed_infrastructure_factor = 0.1
+			industrial_capacity_factory = 0.1
+			industrial_capacity_dockyard = 0.1
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	open_up_political_discourse_monarchist = {
+
+		icon = generic_political_discourse
+
+		available = {
+			fascism < 0.9
+			democratic < 0.9
+			communism < 0.9
+			neutrality < 0.9
+		}
+
+		visible = {
+			has_idea_with_trait = staunch_monarchist
+			NOT = { has_government = neutrality }
+		}
+		
+		remove_trigger = {
+			has_government = neutrality
+		}
+		
+		fire_only_once = yes
+		
+		cost = 75
+		
+		complete_effect = {
+			set_country_flag = open_up_political_discourse_monarchist
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	discredit_government_monarchist = {
+
+		icon = generic_political_discourse
+
+		available = {
+			fascism < 0.8
+			democratic < 0.8
+			communism < 0.8
+			neutrality < 0.8
+			has_idea_with_trait = staunch_monarchist
+		}
+
+		visible = {
+			has_country_flag = open_up_political_discourse_monarchist
+			NOT = { has_government = neutrality }
+		}
+		
+		remove_trigger = {
+			has_government = neutrality
+		}
+		
+		fire_only_once = yes
+		
+		cost = 50
+		
+		complete_effect = {
+			add_stability = -0.010
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = -0.1
+				}
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = -0.1
+				}
+			}
+			if = {
+				limit = {
+					has_government = democratic
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.1
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	hold_the_monarchist_national_referendum = {
+
+		icon = generic_political_discourse
+
+		available = {
+			neutrality > 0.5
+		}
+
+		visible = {
+			NOT = { has_government = neutrality }
+			has_idea_with_trait = staunch_monarchist
+			OR = {
+				neutrality > 0.6
+				has_country_flag = open_up_political_discourse_monarchist
+			}
+		}
+		
+		remove_trigger = {
+			has_government = neutrality
+		}
+		
+		fire_only_once = yes
+		
+		cost = 100
+		
+		complete_effect = {
+			country_event = { id = EXP_events.1 }
+		}
+		
+		ai_will_do = {
+			factor = 210
+			modifier = {
+				neutrality > 0.6
+				factor = 10
+			}
+		}
+	}
+}
+
+#Social Democracy
+EXP_socialism_on_the_rise = {
+
+	prepare_for_socialist_civil_war = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			neutrality > 0.1
+		}
+
+		visible = {
+			NOT = { has_country_flag = preparation_for_socialist_civil_war }
+			has_idea_with_trait = neutrality_advocate
+			NOT = { has_government = neutrality }
+		}
+		
+		fire_only_once = yes
+		
+		cost = 50
+		
+		complete_effect = {
+			set_country_flag = preparation_for_socialist_civil_war
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	expand_civil_socialist_support = {
+
+		icon = generic_civil_support
+
+		visible = {
+			OR = {
+				has_country_flag = preparation_for_socialist_civil_war
+				has_country_flag = open_up_political_discourse_socialist
+			}
+			OR = {
+				has_idea_with_trait = neutrality_advocate
+				has_idea_with_trait = staunch_pacifist
+			}
+			NOT = { has_government = neutrality }
+		}
+
+		cancel_trigger = {
+			hidden_trigger = {
+				has_civil_war = yes
+			}
+		}
+		
+		fire_only_once = no
+		
+		cost = 25
+
+		days_remove = 30
+
+		modifier = {
+			neutrality_drift = 0.02
+			stability_weekly = -0.03
+ 			political_power_gain = -0.2
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	army_support_for_socialist_civil_war = {
+
+		icon = generic_army_support
+
+		visible = {
+			has_country_flag = preparation_for_socialist_civil_war
+			has_idea_with_trait = neutrality_advocate
+			NOT = { has_government = neutrality }
+		}
+
+		cancel_trigger = {
+			hidden_trigger = {
+				has_civil_war = yes
+			}
+		}
+	
+		fire_only_once = no
+	
+		cost = 50
+
+		days_remove = 30
+
+		modifier = {
+			command_power_gain = -0.2
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					check_variable = { var = army_support_var value = 0.1 compare = less_than }
+				}
+				set_variable = { var = army_support_var value = 0.1 } 
+			}
+			if = {
+				limit = {
+					check_variable = { var = army_support_var value = 0.1 compare = greater_than_or_equals }
+				}
+				add_to_variable = { var = army_support_var value = 0.1 } 
+			}
+			set_country_flag = military_support_for_socialist_civil_war
+		}
+		
+		complete_effect = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ensure_general_loyalty_for_socialist_civil_war = {
+
+		icon = generic_army_support
+
+		available = {
+			has_country_flag = military_support_for_socialist_civil_war
+			command_power > 2
+		}
+
+		visible = {
+			has_country_flag = preparation_for_socialist_civil_war
+			has_idea_with_trait = neutrality_advocate
+			any_army_leader = {
+				is_field_marshal = no
+				NOT = { has_trait = hidden_sympathies }
+			}
+			NOT = { has_government = neutrality }
+		}
+	
+		fire_only_once = yes
+	
+		cost = 50
+		
+		complete_effect = {
+			country_event = { id = decisions.1 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ensure_marshal_loyalty_for_socialist_civil_war = {
+
+		icon = generic_army_support
+
+		available = {
+			has_country_flag = military_support_for_socialist_civil_war
+			command_power > 2
+		}
+
+		visible = {
+			has_country_flag = preparation_for_socialist_civil_war
+			has_idea_with_trait = neutrality_advocate
+			any_army_leader = {
+				NOT = { has_trait = hidden_sympathies }
+			}
+			NOT = { has_government = neutrality }
+			any_army_leader = {
+				is_field_marshal = yes
+				NOT = { has_unit_leader_flag = hidden_sympathies_marshal }
+			}
+		}
+	
+		fire_only_once = yes
+	
+		cost = 50
+		
+		complete_effect = {
+			country_event = { id = decisions.2 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	siphon_equipment_stockpiles_for_socialist_civil_war = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			has_country_flag = military_support_for_socialist_civil_war
+			has_equipment = { infantry_equipment > 1000 }
+			command_power > 2
+		}
+
+		visible = {
+			has_country_flag = preparation_for_socialist_civil_war
+			has_country_flag = military_support_for_socialist_civil_war
+			has_idea_with_trait = neutrality_advocate
+			NOT = { has_government = neutrality }
+		}
+	
+		fire_only_once = no
+	
+		cost = 50
+		
+		complete_effect = {
+			add_command_power = -2
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1000
+			}
+			set_country_flag = siphoned_equipment_stockpiles_for_civil_war
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	formulate_surprise_attack_plan_for_socialist_civil_war = {
+
+		icon = generic_army_support
+
+		available = {
+			has_country_flag = military_support_for_socialist_civil_war
+			command_power > 2
+		}
+
+		visible = {
+			has_country_flag = preparation_for_socialist_civil_war
+			has_idea_with_trait = neutrality_advocate
+			NOT = { has_government = neutrality }
+		}
+	
+		fire_only_once = yes
+	
+		cost = 50
+		
+		complete_effect = {
+			add_command_power = -2
+			custom_effect_tooltip = formulate_surprise_attack_plan_for_civil_war_tt
+			set_country_flag = formulated_surprise_attack_plan_for_civil_war
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	ignite_the_socialist_civil_war = {
+
+		icon = generic_ignite_civil_war
+
+		available = {
+			has_stability < 0.5
+		}
+
+		visible = {
+			has_country_flag = preparation_for_socialist_civil_war
+			has_idea_with_trait = neutrality_advocate
+			NOT = { has_government = neutrality }
+		}
+	
+		fire_only_once = yes
+	
+		cost = 50
+		
+		complete_effect = {
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				set_variable = {
+					var = civil_war_size_var
+					value = party_popularity@fascism
+				}
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				set_variable = {
+					var = civil_war_size_var
+					value = party_popularity@communism
+				}
+			}
+			if = {
+				limit = {
+					has_government = democratic
+				}
+				set_variable = {
+					var = civil_war_size_var
+					value = party_popularity@democratic
+				}
+			}
+			subtract_from_variable = {
+				var = civil_war_size_var
+				value = army_support_var
+			}
+			if = {
+				limit = {
+					check_variable = {
+						var = civil_war_size_var
+						value = 0.3
+						compare = less_than
+					}
+				}
+				set_variable = {
+					var = civil_war_size_var
+					value = 0.3
+				}
+			}
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = ROOT
+				size = civil_war_size_var
+				keep_unit_leaders_trigger = {
+					has_trait = hidden_sympathies
+				}
+			}
+			clr_country_flag = preparation_for_socialist_civil_war
+			clr_country_flag = military_support_for_socialist_civil_war
+			clr_country_flag = civil_support_for_socialist_civil_war
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	rebuild_the_nation_socialist = {
+
+		icon = generic_construction
+
+		visible = {
+			has_country_flag = won_ideology_civil_war
+		}
+
+		fire_only_once = yes
+	
+		cost = 25
+
+		days_remove = 365
+
+		modifier = {
+			political_power_gain = -1
+			industry_repair_factor = 0.20
+			production_speed_industrial_complex_factor = 0.1
+			production_speed_infrastructure_factor = 0.1
+			industrial_capacity_factory = 0.1
+			industrial_capacity_dockyard = 0.1
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	open_up_political_discourse_socialist = {
+
+		icon = generic_political_discourse
+
+		available = {
+			fascism < 0.9
+			democratic < 0.9
+			communism < 0.9
+			neutrality < 0.9
+		}
+
+		visible = {
+			OR = {
+				has_idea_with_trait = neutrality_advocate
+				has_idea_with_trait = staunch_pacifist
+			}
+			NOT = { has_government = neutrality }
+		}
+		
+		remove_trigger = {
+			has_government = neutrality
+		}
+		
+		fire_only_once = yes
+		
+		cost = 75
+		
+		complete_effect = {
+			set_country_flag = open_up_political_discourse_socialist
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	discredit_government_socialist = {
+
+		icon = generic_political_discourse
+
+		available = {
+			fascism < 0.8
+			democratic < 0.8
+			communism < 0.8
+			neutrality < 0.8
+			OR = {
+				has_idea_with_trait = neutrality_advocate
+				has_idea_with_trait = staunch_pacifist
+			}
+		}
+
+		visible = {
+			has_country_flag = open_up_political_discourse_socialist
+			NOT = { has_government = neutrality }
+		}
+		
+		remove_trigger = {
+			has_government = neutrality
+		}
+		
+		fire_only_once = yes
+		
+		cost = 50
+		
+		complete_effect = {
+			add_stability = -0.010
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = -0.1
+				}
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = -0.1
+				}
+			}
+			if = {
+				limit = {
+					has_government = democratic
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.1
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	hold_the_socialist_national_referendum = {
+
+		icon = generic_political_discourse
+
+		available = {
+			neutrality > 0.5
+		}
+
+		visible = {
+			OR = {
+				has_idea_with_trait = neutrality_advocate
+				has_idea_with_trait = staunch_pacifist
+			}
+			NOT = { has_government = neutrality }
+			OR = {
+				neutrality > 0.6
+				has_country_flag = open_up_political_discourse_socialist
+			}
+		}
+		
+		remove_trigger = {
+			has_government = neutrality
+		}
+		
+		fire_only_once = yes
+		
+		cost = 100
+		
+		complete_effect = {
+			country_event = { id = EXP_events.2 }
+		}
+		
+		ai_will_do = {
+			factor = 210
+			modifier = {
+				neutrality > 0.6
+				factor = 10
+			}
+		}
+	}
+}
+
+
+##Re-Unite Germany
+EXP_unite_germany_category = {
+	
+	EXP_unite_germany_decision = {
+		
+		icon = generic_form_nation
+
+		available = {
+			has_civil_war = no
+			NOT = { country_exists = GER }			
+			if = {
+				limit = {
+					original_tag = DDR
+				}
+				NOT = { country_exists = WGR }
+			}
+			else_if = {
+				limit = {
+					original_tag = WGR
+				}
+				NOT = { country_exists = DDR }
+			}
+			51 = { is_owned_and_controlled_by = ROOT }
+			42 = { is_owned_and_controlled_by = ROOT }
+			50 = { is_owned_and_controlled_by = ROOT }
+			52 = { is_owned_and_controlled_by = ROOT }
+			53 = { is_owned_and_controlled_by = ROOT }
+			54 = { is_owned_and_controlled_by = ROOT }
+			55 = { is_owned_and_controlled_by = ROOT }
+			56 = { is_owned_and_controlled_by = ROOT }
+			57 = { is_owned_and_controlled_by = ROOT }
+			58 = { is_owned_and_controlled_by = ROOT }
+			59 = { is_owned_and_controlled_by = ROOT }
+			60 = { is_owned_and_controlled_by = ROOT }
+			61 = { is_owned_and_controlled_by = ROOT }
+			62 = { is_owned_and_controlled_by = ROOT }
+			63 = { is_owned_and_controlled_by = ROOT }
+			64 = { is_owned_and_controlled_by = ROOT }
+			65 = { is_owned_and_controlled_by = ROOT }
+			66 = { is_owned_and_controlled_by = ROOT }
+			67 = { is_owned_and_controlled_by = ROOT }
+			68 = { is_owned_and_controlled_by = ROOT }
+			
+			
+			
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_cosmetic_tag = EXP_united_germany
+			if = {
+				limit = {
+					original_tag = DDR
+				}
+				every_state = {
+					limit = {
+						NOT = { is_core_of = ROOT }
+						OR = {
+							is_core_of = GER
+							is_core_of = DDR
+						}
+					}
+					add_core_of = ROOT
+					remove_core_of = GER
+					remove_core_of = WGR
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = WGR
+				}
+				every_state = {
+					limit = {
+						NOT = { is_core_of = ROOT }
+						OR = {
+							is_core_of = GER
+							is_core_of = WGR
+						}
+					}
+					add_core_of = ROOT
+					remove_core_of = GER
+					remove_core_of = DDR
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}
+
+##Extending the Reichskommissariats
+GER_reichskommissariats = {
+	EXP_reichskommissariat_krim = {
+		
+		icon = ger_reichskommissariats
+		
+		available = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			controls_state = 137
+			any_other_country = {
+				original_tag = UKR
+				is_subject_of = ROOT
+			}
+		}
+		
+		cost = 0
+		ai_will_do = {
+			base = 200
+		}
+		
+		visible = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+		}
+		
+		complete_effect = {
+			UKR = {
+				add_state_core = 137
+				transfer_state = 137
+			}
+		}
+	}
+	EXP_reichskommissariat_ostland_2 = {
+		
+		icon = ger_reichskommissariats
+		
+		available = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			controls_state = 210
+			controls_state = 209
+			controls_state = 208
+			any_other_country = {
+				original_tag = BLR
+				is_subject_of = ROOT
+			}
+		}
+		
+		cost = 0
+		ai_will_do = {
+			base = 200
+		}
+		
+		visible = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+		}
+		
+		complete_effect = {
+			BLR = {
+				add_state_core = 208
+				transfer_state = 208
+				add_state_core = 209
+				transfer_state = 209
+				add_state_core = 210
+				transfer_state = 210
+			}
+		}
+	}
+
+	EXP_reichskommissariat_kaukasus = {
+		
+		icon = ger_reichskommissariats
+
+		available = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			controls_state = 234
+			controls_state = 238
+			controls_state = 237
+			controls_state = 236
+			controls_state = 233
+			controls_state = 235
+			controls_state = 232
+			controls_state = 231
+			controls_state = 230
+			controls_state = 229
+			controls_state = 821
+			controls_state = 826
+			controls_state = 827
+			controls_state = 828
+		}
+
+		cost = 0
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				OR = {
+					ENG = { has_capitulated = yes }
+					has_subject = ENG
+					NOT = { country_exists = ENG }
+				}
+			}
+		}
+
+		visible = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					country_exists = GEO
+				}
+				hidden_effect = {
+					GEO = {
+						set_state_controller = 234
+						set_state_controller = 238
+						set_state_controller = 237
+						set_state_controller = 236
+						set_state_controller = 233
+						set_state_controller = 235
+						set_state_controller = 232
+						set_state_controller = 231
+						set_state_controller = 230
+						set_state_controller = 229
+						set_state_controller = 821
+						set_state_controller = 826
+						set_state_controller = 827
+						set_state_controller = 828
+					}
+				}
+				GEO = {
+					start_civil_war = { ideology = fascism size = 1 }
+				}					
+				random_country = {
+					limit= {
+						original_tag = GEO
+						NOT = { tag = GEO }
+						has_government = fascism
+					}
+					transfer_state = 234
+					transfer_state = 238
+					transfer_state = 237
+					transfer_state = 236
+					transfer_state = 233
+					transfer_state = 235
+					transfer_state = 232
+					transfer_state = 231
+					transfer_state = 230
+					transfer_state = 229
+					transfer_state = 821
+					transfer_state = 826
+					transfer_state = 827
+					transfer_state = 828
+					ROOT = {
+						puppet = PREV
+						set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+						GEO_arno_schichedanz = {
+							set_nationality = PREV.PREV
+						}
+					}
+					set_cosmetic_tag = GEO_reichskommissariat					
+					promote_character = GEO_arno_schichedanz
+				}
+			}
+			else = {
+				release_on_controlled = GEO
+				GEO = {
+					transfer_state = 234
+					transfer_state = 238
+					transfer_state = 237
+					transfer_state = 236
+					transfer_state = 233
+					transfer_state = 235
+					transfer_state = 232
+					transfer_state = 231
+					transfer_state = 230
+					transfer_state = 229
+					transfer_state = 821
+					transfer_state = 826
+					transfer_state = 827
+					transfer_state = 828
+					set_cosmetic_tag = GEO_reichskommissariat
+					
+					ROOT = {
+						GEO_arno_schichedanz = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = GEO_arno_schichedanz
+				}
+				set_autonomy = { target = GEO autonomy_state = autonomy_integrated_puppet }
+			}
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_global_flag = form_transcaucasia_flag } }
+					set_global_flag = form_transcaucasia_flag
+				}
+				random_country = {
+					limit= {
+						original_tag = GEO
+						is_subject_of = GER
+					}
+					add_state_core = 234
+					add_state_core = 238
+					add_state_core = 237
+					add_state_core = 236
+					add_state_core = 233
+					add_state_core = 235
+					add_state_core = 232
+					add_state_core = 231
+					add_state_core = 230
+					add_state_core = 229
+					
+					#Diaspora Extras
+					add_state_core = 354
+					add_state_core = 800
+					add_state_core = 419
+					add_state_core = 420
+					every_state = {
+						limit = {
+							is_controlled_by_ROOT_or_subject = yes
+							is_core_of = PREV
+						}
+						transfer_state_to = PREV
+					}
+					
+					set_party_name = { ideology = fascism long_name = "Nationalsozialistische Deutsche Arbeiterpartei" name = NSDAP }
+					set_party_name = { ideology = democratic long_name = "Sakartvelos Sotsial-Demok'rat'iuli P'art'ia " name = SSDP  }
+					set_party_name = { ideology = neutrality long_name = "Osobyi Zakavkazskii Komitet" name = OZAKOM  }
+					set_party_name = { ideology = communism long_name = "All-Union Communist Party" name = AUCP }
+					
+					ROOT = {
+						GEO_akaki_chkhenkeli = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = GEO_akaki_chkhenkeli				
+					
+					ROOT = {
+						GEO_vasily_kharlamov = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = GEO_vasily_kharlamov
+					
+					ROOT = {
+						GEO_mikhail_tskhakaya = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = GEO_mikhail_tskhakaya
+				}
+			}
+		}
+	}
+	EXP_reichskommissariat_moskowien = {
+		
+		icon = ger_reichskommissariats
+
+		available = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			controls_state = 263
+			controls_state = 246
+			controls_state = 243
+			controls_state = 242
+			controls_state = 224
+			controls_state = 222
+			controls_state = 220
+			controls_state = 260
+			controls_state = 222
+			controls_state = 258
+			controls_state = 205
+			controls_state = 263
+			controls_state = 247
+			controls_state = 264
+			controls_state = 248
+			controls_state = 253
+			controls_state = 254
+			controls_state = 257
+			controls_state = 244
+			controls_state = 219
+			controls_state = 223
+			controls_state = 240
+			controls_state = 351
+			controls_state = 400
+			controls_state = 399
+			controls_state = 398
+			controls_state = 252
+			controls_state = 256
+			controls_state = 833
+		}
+
+		cost = 0
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				OR = {
+					ENG = { has_capitulated = yes }
+					has_subject = ENG
+					NOT = { country_exists = ENG }
+				}
+			}
+		}
+
+		visible = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					country_exists = SOV
+				}
+				hidden_effect = {
+					SOV = {
+						set_state_controller = 263
+						set_state_controller = 246
+						set_state_controller = 243
+						set_state_controller = 242
+						set_state_controller = 224
+						set_state_controller = 222
+						set_state_controller = 220
+						set_state_controller = 260
+						set_state_controller = 222
+						set_state_controller = 258
+						set_state_controller = 205
+						set_state_controller = 263
+						set_state_controller = 247
+						set_state_controller = 264
+						set_state_controller = 248
+						set_state_controller = 253
+						set_state_controller = 254
+						set_state_controller = 257
+						set_state_controller = 244
+						set_state_controller = 219
+						set_state_controller = 223
+						set_state_controller = 240
+						set_state_controller = 351
+						set_state_controller = 400
+						set_state_controller = 399
+						set_state_controller = 398
+						set_state_controller = 252
+						set_state_controller = 256
+						set_state_controller = 833
+					}
+				}
+				SOV = {
+					start_civil_war = { ideology = fascism size = 1 }
+				}
+				random_country = {
+					limit= {
+						original_tag = SOV
+						NOT = { tag = SOV }
+						has_government = fascism
+					}
+					transfer_state = 263
+					transfer_state = 246
+					transfer_state = 243
+					transfer_state = 242
+					transfer_state = 224
+					transfer_state = 222
+					transfer_state = 220
+					transfer_state = 260
+					transfer_state = 222
+					transfer_state = 258
+					transfer_state = 205
+					transfer_state = 263
+					transfer_state = 247
+					transfer_state = 264
+					transfer_state = 248
+					transfer_state = 253
+					transfer_state = 254
+					transfer_state = 257
+					transfer_state = 244
+					transfer_state = 219
+					transfer_state = 223
+					transfer_state = 240
+					transfer_state = 351
+					transfer_state = 400
+					transfer_state = 399
+					transfer_state = 398
+					transfer_state = 252
+					transfer_state = 256
+					transfer_state = 833
+					
+					ROOT = {
+						puppet = PREV
+						set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+						SOV_siegfried_kasche = {
+							set_nationality = PREV.PREV
+						}
+					}
+					set_cosmetic_tag = SOV_reichskommissariat					
+					promote_character = SOV_siegfried_kasche
+				}
+			}
+			else = {
+				SOV = {
+					transfer_state = 263
+					transfer_state = 246
+					transfer_state = 243
+					transfer_state = 242
+					transfer_state = 224
+					transfer_state = 222
+					transfer_state = 220
+					transfer_state = 260
+					transfer_state = 222
+					transfer_state = 258
+					transfer_state = 205
+					transfer_state = 263
+					transfer_state = 247
+					transfer_state = 264
+					transfer_state = 248
+					transfer_state = 253
+					transfer_state = 254
+					transfer_state = 257
+					transfer_state = 244
+					transfer_state = 219
+					transfer_state = 223
+					transfer_state = 240
+					transfer_state = 351
+					transfer_state = 400
+					transfer_state = 399
+					transfer_state = 398
+					transfer_state = 252
+					transfer_state = 256
+					transfer_state = 833
+					set_cosmetic_tag = SOV_reichskommissariat
+					
+					ROOT = {
+						SOV_siegfried_kasche = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = SOV_siegfried_kasche
+				}
+				set_autonomy = { target = SOV autonomy_state = autonomy_integrated_puppet }
+			}
+			hidden_effect = {				
+				random_country = {
+					limit= {
+						original_tag = SOV
+						is_subject_of = GER
+					}
+					set_party_name = { ideology = fascism long_name = "Nationalsozialistische Deutsche Arbeiterpartei" name = NSDAP }
+				}
+			}
+		}
+	}
+	EXP_reichskommissariat_turkestan = {
+		
+		icon = ger_reichskommissariats
+
+		available = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			controls_state = 407
+			controls_state = 406
+			controls_state = 587
+			controls_state = 585
+			controls_state = 402
+			controls_state = 404
+			controls_state = 589
+			controls_state = 586
+			controls_state = 732
+			controls_state = 742
+			controls_state = 405
+			controls_state = 584
+			controls_state = 583
+			controls_state = 590
+			controls_state = 588
+			controls_state = 654
+			controls_state = 823
+			controls_state = 830
+			controls_state = 831
+			controls_state = 832
+		}
+
+		cost = 0
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				OR = {
+					ENG = { has_capitulated = yes }
+					has_subject = ENG
+					NOT = { country_exists = ENG }
+				}
+			}
+		}
+
+		visible = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					country_exists = TMS
+				}
+				hidden_effect = {
+					TMS = {
+						set_state_controller = 407
+						set_state_controller = 406
+						set_state_controller = 587
+						set_state_controller = 585
+						set_state_controller = 402
+						set_state_controller = 404
+						set_state_controller = 589
+						set_state_controller = 586
+						set_state_controller = 732
+						set_state_controller = 742
+						set_state_controller = 405
+						set_state_controller = 584
+						set_state_controller = 583
+						set_state_controller = 590
+						set_state_controller = 588
+						set_state_controller = 654
+						set_state_controller = 823
+						set_state_controller = 830
+						set_state_controller = 831
+						set_state_controller = 832
+					}
+				}
+				TMS = {
+					start_civil_war = { ideology = fascism size = 1 }
+				}
+				random_country = {
+					limit= {
+						original_tag = TMS
+						NOT = { tag = TMS }
+						has_government = fascism
+					}
+					transfer_state = 407
+					transfer_state = 406
+					transfer_state = 587
+					transfer_state = 585
+					transfer_state = 402
+					transfer_state = 404
+					transfer_state = 589
+					transfer_state = 586
+					transfer_state = 732
+					transfer_state = 742
+					transfer_state = 405
+					transfer_state = 584
+					transfer_state = 583
+					transfer_state = 590
+					transfer_state = 588
+					transfer_state = 654
+					transfer_state = 823
+					transfer_state = 830
+					transfer_state = 831
+					transfer_state = 832
+					ROOT = {
+						puppet = PREV
+						set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+						TMS_veli_kayyum_han = {
+							set_nationality = PREV.PREV
+						}
+					}
+					set_cosmetic_tag = TMS_reichskommissariat
+					promote_character = TMS_veli_kayyum_han
+				}
+			}
+			else = {
+				TMS = {
+					transfer_state = 407
+					transfer_state = 406
+					transfer_state = 587
+					transfer_state = 585
+					transfer_state = 402
+					transfer_state = 404
+					transfer_state = 589
+					transfer_state = 586
+					transfer_state = 732
+					transfer_state = 742
+					transfer_state = 405
+					transfer_state = 584
+					transfer_state = 583
+					transfer_state = 590
+					transfer_state = 588
+					transfer_state = 654
+					transfer_state = 823
+					transfer_state = 830
+					transfer_state = 831
+					transfer_state = 832
+					set_cosmetic_tag = TMS_reichskommissariat
+					
+					ROOT = {
+						TMS_veli_kayyum_han = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = TMS_veli_kayyum_han
+				}
+				set_autonomy = { target = TMS autonomy_state = autonomy_integrated_puppet }
+			}
+			hidden_effect = {				
+				random_country = {
+					limit= {
+						original_tag = TMS
+						is_subject_of = GER
+					}
+					set_party_name = { ideology = fascism long_name = "National Turkistanischen Einheitskomitee" name = NTEK }
+					set_party_name = { ideology = democratic long_name = "Turkestan Liberation Organization" name = TLO  }
+					set_party_name = { ideology = neutrality long_name = "Manghud Dynasty" name = "Manghud Dynasty"  }
+					set_party_name = { ideology = communism long_name = "Vsesoyuznaya Kommunisticheskaya Partiya (Bol'shevikov)" name = "VKP(B)"  }
+					
+					TUR = {
+						TUR_zeki_dogan = { #Turkologist and leader of the Bashkir Revolutionary and Liberation Movement
+							set_portraits = {
+								civilian = { large ="gfx/leaders/Europe/portrait_europe_generic_navy_6.dds" }
+							}
+							set_nationality = PREV.PREV
+						}
+					}
+					add_country_leader_role = {
+						character = TUR_zeki_dogan
+						promote_leader = yes
+						country_leader = {
+							ideology=socialism
+							traits = {
+							}
+							expire="1965.1.1"
+							id=-1
+						}
+					}
+					
+					ROOT = {
+						TMS_sayyid_mir_khan = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = TMS_sayyid_mir_khan
+					
+					ROOT = {
+						TMS_mikhail_fonin = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = TMS_mikhail_fonin
+					
+					add_state_core = 407
+					add_state_core = 406
+					add_state_core = 587
+					add_state_core = 585
+					add_state_core = 402
+					add_state_core = 404
+					add_state_core = 589
+					add_state_core = 586
+					add_state_core = 732
+					add_state_core = 742
+					add_state_core = 405
+					add_state_core = 584
+					add_state_core = 583
+					add_state_core = 590
+					add_state_core = 588
+					add_state_core = 654
+					add_state_core = 823
+					add_state_core = 830
+					add_state_core = 831
+					add_state_core = 832
+				}
+			}
+		}
+	}
+	EXP_reichskommissariat_don = {
+		
+		icon = ger_reichskommissariats
+
+		available = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			controls_state = 218
+			controls_state = 245
+			controls_state = 265
+			controls_state = 239
+			controls_state = 217
+			controls_state = 401
+			controls_state = 250
+			controls_state = 251
+			controls_state = 249
+			controls_state = 652
+			controls_state = 651
+			controls_state = 255
+			controls_state = 829
+		}
+
+		cost = 0
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				OR = {
+					ENG = { has_capitulated = yes }
+					has_subject = ENG
+					NOT = { country_exists = ENG }
+				}
+			}
+		}
+
+		visible = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			NOT = { country_exists = D15 }
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					country_exists = VGE
+				}
+				hidden_effect = {
+					VGE = {
+						set_state_controller = 218
+						set_state_controller = 245
+						set_state_controller = 265
+						set_state_controller = 239
+						set_state_controller = 217
+						set_state_controller = 401
+						set_state_controller = 250
+						set_state_controller = 251
+						set_state_controller = 249
+						set_state_controller = 652
+						set_state_controller = 651
+						set_state_controller = 255
+						set_state_controller = 829
+					}
+				}
+				VGE = {
+					start_civil_war = { ideology = fascism size = 1 }
+				}
+				random_country = {
+					limit= {
+						original_tag = VGE
+						NOT = { tag = VGE }
+						has_government = fascism
+					}
+					transfer_state = 218
+					transfer_state = 245
+					transfer_state = 265
+					transfer_state = 239
+					transfer_state = 217
+					transfer_state = 401
+					transfer_state = 250
+					transfer_state = 251
+					transfer_state = 249
+					transfer_state = 652
+					transfer_state = 651
+					transfer_state = 255
+					transfer_state = 829
+					
+					ROOT = {
+						puppet = PREV
+						set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+						VGE_dietrich_klagges = {
+							set_nationality = PREV.PREV
+						}
+					}
+					set_cosmetic_tag = D15_reichskommissariat
+					promote_character = VGE_dietrich_klagges
+				}
+			}
+			else = {
+				release_on_controlled = VGE
+				VGE = {
+					transfer_state = 218
+					transfer_state = 245
+					transfer_state = 265
+					transfer_state = 239
+					transfer_state = 217
+					transfer_state = 401
+					transfer_state = 250
+					transfer_state = 251
+					transfer_state = 249
+					transfer_state = 652
+					transfer_state = 651
+					transfer_state = 255
+					transfer_state = 829
+					
+					set_cosmetic_tag = D15_reichskommissariat
+					
+					ROOT = {
+						VGE_dietrich_klagges = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = VGE_dietrich_klagges
+				}
+				set_autonomy = { target = VGE autonomy_state = autonomy_integrated_puppet }
+			}
+			hidden_effect = {				
+				random_country = {
+					limit= {
+						original_tag = VGE
+						is_subject_of = GER
+					}
+					set_party_name = { ideology = fascism long_name = "Nationalsozialistische Deutsche Arbeiterpartei" name = NSDAP }
+					
+					SOV = {
+						SOV_pyotr_krasnov = {
+							set_nationality = PREV.PREV
+						}
+					}
+					add_country_leader_role = {
+						character = SOV_pyotr_krasnov  #Leader of the Don Army White Movement, later Nazi Collaborator
+						promote_leader = yes
+						country_leader = {
+							ideology=oligarchism
+							traits = {
+							}
+							expire="1965.1.1"
+							id=-1
+						}
+					}
+					
+					ROOT = {
+						VGE_alexander_filimonov = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = VGE_alexander_filimonov
+					
+					add_state_core = 218
+					add_state_core = 245
+					add_state_core = 265
+					add_state_core = 239
+					add_state_core = 217
+					add_state_core = 401
+					add_state_core = 250
+					add_state_core = 251
+					add_state_core = 249					
+					add_state_core = 652
+					add_state_core = 651
+					add_state_core = 255
+					add_state_core = 829
+				}
+			}
+		}
+	}
+	EXP_reichskommissariat_ural = {
+		
+		icon = ger_reichskommissariats
+
+		available = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			controls_state = 582
+			controls_state = 572
+			controls_state = 573
+			controls_state = 653
+			controls_state = 580
+			controls_state = 579
+			controls_state = 577
+			controls_state = 578
+			controls_state = 570
+			controls_state = 40
+			controls_state = 569
+			controls_state = 571
+			controls_state = 403
+			controls_state = 824
+		}
+
+		cost = 0
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				OR = {
+					ENG = { has_capitulated = yes }
+					has_subject = ENG
+					NOT = { country_exists = ENG }
+				}
+			}
+		}
+
+		visible = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			NOT = { country_exists = OVO }
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					country_exists = OVO
+				}
+				hidden_effect = {
+					if = {
+						limit = { 581 = { is_controlled_by_ROOT_or_subject = yes } }
+						set_state_controller = 581
+					}
+					OVO = {						
+						set_state_controller = 582
+						set_state_controller = 572
+						set_state_controller = 573
+						set_state_controller = 653
+						set_state_controller = 580
+						set_state_controller = 579
+						set_state_controller = 577
+						set_state_controller = 578
+						set_state_controller = 570
+						set_state_controller = 40
+						set_state_controller = 569
+						set_state_controller = 571
+						set_state_controller = 403
+						set_state_controller = 824
+					}
+				}
+				OVO = {
+					start_civil_war = { ideology = fascism size = 1 }
+				}
+				random_country = {
+					limit= {
+						original_tag = OVO
+						NOT = { tag = OVO }
+						has_government = fascism
+					}
+					if = {
+						limit = { 581 = { is_controlled_by_ROOT_or_subject = yes } }
+						transfer_state = 581
+					}
+					transfer_state = 582
+					transfer_state = 572
+					transfer_state = 573
+					transfer_state = 653
+					transfer_state = 580
+					transfer_state = 579
+					transfer_state = 577
+					transfer_state = 578
+					transfer_state = 570
+					transfer_state = 40
+					transfer_state = 569
+					transfer_state = 571
+					transfer_state = 403
+					transfer_state = 824
+					
+					ROOT = {
+						puppet = PREV
+						set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+						OVO_richard_darre = {
+							set_nationality = PREV.PREV
+						}
+					}
+					set_cosmetic_tag = KAZ_reichskommissariat
+					promote_character = OVO_richard_darre
+				}
+			}
+			else = {
+				release_on_controlled = OVO
+				OVO = {
+					if = {
+						limit = { 581 = { is_controlled_by_ROOT_or_subject = yes } }
+						transfer_state = 581
+					}
+					transfer_state = 582
+					transfer_state = 572
+					transfer_state = 573
+					transfer_state = 653
+					transfer_state = 580
+					transfer_state = 579
+					transfer_state = 577
+					transfer_state = 578
+					transfer_state = 570
+					transfer_state = 40
+					transfer_state = 569
+					transfer_state = 571
+					transfer_state = 403
+					transfer_state = 824
+					
+					set_cosmetic_tag = KAZ_reichskommissariat
+					
+					ROOT = {
+						OVO_richard_darre = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = OVO_richard_darre
+				}
+				set_autonomy = { target = OVO autonomy_state = autonomy_integrated_puppet }
+			}
+			hidden_effect = {				
+				random_country = {
+					limit= {
+						original_tag = OVO
+						is_subject_of = GER
+					}
+					set_party_name = { ideology = fascism long_name = "Nationalsozialistische Deutsche Arbeiterpartei" name = "NSDAP" }
+					set_party_name = { ideology = neutrality long_name = "Ancien Régime" name = "Ancien Régime" }
+				
+					ROOT = {
+						OVO_howie_ting = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = OVO_howie_ting
+					
+					ROOT = {
+						OVO_howie_ting = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = OVO_yankow_iki
+					
+					ROOT = {
+						OVO_howie_ting = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = OVO_prokopi_spiridonov
+					
+					add_state_core = 581
+					add_state_core = 582
+					add_state_core = 572
+					add_state_core = 573
+					add_state_core = 653
+					add_state_core = 580
+					add_state_core = 579
+					add_state_core = 577
+					add_state_core = 578
+					add_state_core = 570
+					add_state_core = 40
+					add_state_core = 569
+					add_state_core = 571
+					add_state_core = 403
+					add_state_core = 824
+				}
+			}
+		}
+	}
+	EXP_reichskommissariat_siberien = {
+		
+		icon = ger_reichskommissariats
+
+		available = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			controls_state = 329
+			controls_state = 568
+			controls_state = 576
+			controls_state = 516
+			controls_state = 575
+			controls_state = 567
+			controls_state = 566
+			controls_state = 565
+			controls_state = 564
+		}
+
+		cost = 0
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				OR = {
+					ENG = { has_capitulated = yes }
+					has_subject = ENG
+					NOT = { country_exists = ENG }
+				}
+			}
+		}
+
+		visible = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+		}
+
+		complete_effect = {
+			if = {
+				limit = { NOT ={ country_exists = FER } }
+				set_variable = { EXP_to_become_siberia = FER }
+			}
+			else_if = {
+				limit = { NOT ={ country_exists = TAY } }
+				set_variable = { EXP_to_become_siberia = TAY }
+			}
+			else = {
+				set_variable = { EXP_to_become_siberia = TAN }
+			}
+			
+			if = {
+				limit = {
+					country_exists = ROOT.EXP_to_become_siberia
+				}
+				hidden_effect = {
+					var:EXP_to_become_siberia = {
+						set_state_controller = 329
+						set_state_controller = 568
+						set_state_controller = 576
+						set_state_controller = 516
+						set_state_controller = 575
+						set_state_controller = 567
+						set_state_controller = 566
+						set_state_controller = 565
+						set_state_controller = 564
+					}
+				}
+				var:EXP_to_become_siberia = {
+					start_civil_war = { ideology = fascism size = 1 }
+				}
+				random_country = {
+					limit= {
+						original_tag = ROOT.EXP_to_become_siberia
+						NOT = { tag = ROOT.EXP_to_become_siberia }
+						has_government = fascism
+					}
+					transfer_state = 329
+					transfer_state = 568
+					transfer_state = 576
+					transfer_state = 516
+					transfer_state = 575
+					transfer_state = 567
+					transfer_state = 566
+					transfer_state = 565
+					transfer_state = 564
+					ROOT = {
+						puppet = PREV
+						set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+					}
+					set_cosmetic_tag = TAN_reichskommissariat
+				}
+			}
+			else = {
+				var:EXP_to_become_siberia = {
+					transfer_state = 329
+					transfer_state = 568
+					transfer_state = 576
+					transfer_state = 516
+					transfer_state = 575
+					transfer_state = 567
+					transfer_state = 566
+					transfer_state = 565
+					transfer_state = 564
+					set_cosmetic_tag = TAN_reichskommissariat
+				}
+				set_autonomy = { target = ROOT.EXP_to_become_siberia autonomy_state = autonomy_integrated_puppet }
+			}
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_global_flag = form_siberian_republic_flag } }
+					set_global_flag = form_siberian_republic_flag
+				}
+				random_country = {
+					limit= {
+						original_tag = ROOT.EXP_to_become_siberia
+						is_subject_of = GER
+					}
+					set_party_name = { ideology = fascism long_name = "Nationalsozialistische Deutsche Arbeiterpartei" name = "NSDAP" }
+					set_party_name = { ideology = neutrality long_name = "Tsarists" name = "Tsarists" }
+					set_party_name = { ideology = democratic long_name = "White Movement" name = "Whites" }
+					set_party_name = { ideology = communism long_name = "Vsesoyuznaya Kommunisticheskaya Partiya" name = "VKP(B)" }
+					
+					#In future, look into grabbing SOV_vladimir_kirillovich for this country
+					SOV = {
+						SOV_tsar_vladimir_kirillovich = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = SOV_tsar_vladimir_kirillovich
+					
+					random_country = {
+						limit = { has_character = TAN_fritz_sauckel }
+						TAN_fritz_sauckel = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = TAN_fritz_sauckel
+					
+					random_country = {
+						limit = { has_character = SOV_grigory_semyonov }
+						SOV_grigory_semyonov = {
+							set_nationality = PREV.PREV
+						}
+					}
+					add_country_leader_role = {
+						character = SOV_grigory_semyonov  #Japanese-supported leader of the White movement in Transbaikal
+						promote_leader = yes
+						country_leader = {
+							ideology=conservatism
+							traits = {
+							}
+							expire="1965.1.1"
+							id=-1
+						}
+					}
+					
+					ROOT = {
+						TAN_nikolay_matveyev = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = TAN_nikolay_matveyev
+					
+					add_state_core = 329
+					add_state_core = 568
+					add_state_core = 576
+					add_state_core = 516
+					add_state_core = 575
+					add_state_core = 567
+					add_state_core = 566
+					add_state_core = 565
+					add_state_core = 564
+					add_state_core = 560
+					add_state_core = 644					
+					add_state_core = 637					
+					add_state_core = 562					
+					add_state_core = 574					
+					add_state_core = 563					
+					add_state_core = 561					
+					add_state_core = 657					
+					add_state_core = 409					
+					add_state_core = 408					
+					add_state_core = 822					
+					add_state_core = 655					
+					add_state_claim = 537					
+				}
+			}
+			every_state = {
+				limit = {
+					is_controlled_by_ROOT_or_subject = yes
+					OR = {
+						is_core_of = ROOT.EXP_to_become_siberia
+						is_claimed_by = ROOT.EXP_to_become_siberia
+					}
+				}
+				transfer_state_to = ROOT.EXP_to_become_siberia
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						408 = { is_owned_and_controlled_by = ROOT.EXP_to_become_siberia }
+					}
+					var:EXP_to_become_siberia = {
+						set_capital = { state = 408 remember_old_capital = no }
+					}
+				}
+			}
+		}
+	}
+	EXP_reichskommissariat_siberien_2 = {
+		
+		icon = ger_reichskommissariats
+
+		available = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			any_state = {
+				is_controlled_by_ROOT_or_subject = yes
+				NOT = { OWNER = { is_subject_of = ROOT } }
+				OR = {
+					is_core_of = ROOT.EXP_to_become_siberia
+					is_claimed_by = ROOT.EXP_to_become_siberia
+				}
+			}
+			has_subject = EXP_to_become_siberia
+			any_state = {
+				NOT = { is_owned_by = ROOT.EXP_to_become_siberia }
+				OR = {
+					is_core_of = ROOT.EXP_to_become_siberia
+					is_claimed_by = ROOT.EXP_to_become_siberia
+				}
+			}
+		}
+
+		cost = 0
+		ai_will_do = {
+			base = 200
+		}
+
+		visible = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			any_country = {
+				is_subject_of = GER
+				has_cosmetic_tag = TAN_reichskommissariat
+			}
+		}
+
+		complete_effect = {
+			every_state = {
+				limit = {
+					is_controlled_by_ROOT_or_subject = yes
+					OR = {
+						is_core_of = ROOT.EXP_to_become_siberia
+						is_claimed_by = ROOT.EXP_to_become_siberia
+					}
+				}
+				transfer_state_to = ROOT.EXP_to_become_siberia
+			}
+		}
+	}
+}
+form_siberia_category = {
+	#Created so that Siberia can get all of its cores
+	EXP_conquer_the_west = {
+		icon = generic_form_nation
+
+		allowed = {
+			OR = {
+				original_tag = YAK # Yakutia
+				original_tag = FER # Far Eastern Republic
+				original_tag = CKK # Chukotka
+				original_tag = VLA # Vladivostok
+				original_tag = BYA # Buryatia
+				original_tag = TAY # Taymyria
+				original_tag = ALT # Altai
+				original_tag = YAM # Yamalia
+				original_tag = OVO # Ostyak-Vogulia
+				original_tag = TAN # Tannu Tuva
+			}
+		}
+
+		available = {
+			controls_state = 564 # Buryatia
+			controls_state = 563 # Chita
+			controls_state = 574 # Yakutsk
+			controls_state = 516 # Taymyria
+			controls_state = 644 # Northeast Siberia
+			
+			controls_state = 644 #Yamalia
+			controls_state = 577 #Surgut
+			controls_state = 578 #Tomsk
+			controls_state = 569 #Kemerovo
+		}
+
+		visible = {
+			OR = {
+				original_tag = YAK # Yakutia
+				original_tag = FER # Far Eastern Republic
+				original_tag = CKK # Chukotka
+				original_tag = VLA # Vladivostok
+				original_tag = BYA # Buryatia
+				original_tag = TAY # Taymyria
+				original_tag = ALT # Altai
+				original_tag = YAM # Yamalia
+				original_tag = OVO # Ostyak-Vogulia
+				original_tag = TAN # Tannu Tuva
+			}
+			has_dlc = "No Step Back"
+		}
+		
+		complete_effect = {			
+			custom_effect_tooltip = form_siberia_russian_siberia_coring_states_tt			
+			custom_effect_tooltip = form_siberia_yakutia_coring_states_tt			
+			custom_effect_tooltip = form_siberia_altai_coring_states_tt			
+			custom_effect_tooltip = form_siberia_ostyak_coring_states_tt			
+			custom_effect_tooltip = form_siberia_yamalia_coring_states_tt
+			
+			# Taymyria
+			516 = { add_core_of = ROOT }			
+			# Buryatia
+			564 = { add_core_of = ROOT }			
+			# Tannu Tuva
+			329 = { add_core_of = ROOT }			
+			# Chita
+			563 = { add_core_of = ROOT }
+			
+			hidden_effect = {			
+				# Yakutsk
+				574 = { add_core_of = ROOT }				
+				# Northeast Siberia
+				644 = { add_core_of = ROOT }				
+				# Oyrot Region
+				654 = { add_core_of = ROOT }				
+				# Altai Krai
+				40 = { add_core_of = ROOT }				
+				# Surgut
+				577 = { add_core_of = ROOT }
+				# Tobolsk
+				580 = { add_core_of = ROOT }				
+				# Yamalia
+				824 = { add_core_of = ROOT }				
+				# Salekhard
+				579 = { add_core_of = ROOT }				
+				# Tyumen
+				403 = { add_core_of = ROOT }				
+				# Omsk
+				571 = { add_core_of = ROOT }				
+				# Tomsk
+				578 = { add_core_of = ROOT }				
+				# Novosibirsk
+				570 = { add_core_of = ROOT }				
+				# Yeniseisk
+				576 = { add_core_of = ROOT }				
+				# Kemerovo
+				569 = { add_core_of = ROOT }				
+				# Krasnoyarsk
+				568 = { add_core_of = ROOT }				
+				# Bratsk
+				567 = { add_core_of = ROOT }				
+				# Irkutsk
+				566 = { add_core_of = ROOT }				
+				# Kirensk
+				575 = { add_core_of = ROOT }				
+				# Boyadbo
+				565 = { add_core_of = ROOT }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}

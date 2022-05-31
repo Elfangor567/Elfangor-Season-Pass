@@ -1,0 +1,39 @@
+### search_filters = { FOCUS_FILTER_POLITICAL }
+### search_filters = { FOCUS_FILTER_RESEARCH }
+### search_filters = { FOCUS_FILTER_INDUSTRY }
+### search_filters = { FOCUS_FILTER_STABILITY }
+### search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+### search_filters = { FOCUS_FILTER_MANPOWER }
+### search_filters = { FOCUS_FILTER_ANNEXATION }
+
+
+#This is not a real tree, it exists to remove errors from the text log related to completed national focus checks.
+focus_tree = {
+	id = zzz_ignore_zzz
+	country = {
+		base = 0
+	}
+	
+	default = no
+	
+	focus = {
+		id = AUS_free_elections
+		icon = GFX_focus_generic_self_management
+		cost = 100.00
+		ai_will_do = {
+			factor = 100
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		mutually_exclusive = {
+		}
+		
+		available_if_capitulated = yes
+		
+		x = 0
+		y = 0
+		completion_reward = {
+			add_political_power = 2000
+		}
+	}
+}

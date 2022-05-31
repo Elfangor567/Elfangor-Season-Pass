@@ -1,0 +1,170 @@
+ideas = {
+	country = {
+		ERI_little_rome = {
+			
+			picture = gre_political_instability_metaxism
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.1
+			}
+			
+			modifier = {
+				ai_focus_aggressive_factor = 0.5
+				justify_war_goal_time = -0.5
+				stability_factor = 0.05
+				non_core_manpower = 0.018
+			}
+		}
+	}
+	
+	# TECHNOLOGY
+	
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		ERI_sisler = { #OFFICINA ELETTROMECCANICA REMO SISLER, A large pre-WWII firm that built both boats and motor-vehicles
+		
+			picture = generic_tank_manufacturer_2
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { fast_tank_manufacturer }
+		}
+	}
+
+	naval_manufacturer = { 
+		
+		designer = yes
+		
+		ERI_massawa_docks = {
+			
+			picture = generic_naval_manufacturer_2
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+		}
+		
+		ERI_assab_yards = {
+			
+			picture = generic_naval_manufacturer_1
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { pacific_fleet_naval_manufacturer }
+		}
+	}
+	
+	aircraft_manufacturer = { 
+			
+		designer = yes
+		
+		ERI_littoria = {
+			
+			picture = generic_air_manufacturer_2
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { fuel_efficient_aircraft_manufacturer }
+		}
+	}
+	
+	industrial_concern = {
+	
+		designer = yes
+		
+		ERI_costa = { #COSTRUZIONI MECCANICHE VINCENZO COSTA, An Electromechancial Company in Asmara (Founded 1936)
+			
+			picture = generic_industrial_concern_1
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}
+		
+		ERI_sedao = { #1936 Electrical Company, SOCIETA' ELETTRICA DELL'AFRICA ORIENTALE
+		
+			picture = generic_electronics_concern_1
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes	
+		
+		ERI_rino = { #OFFICINA MECCANICA (Owned by Desideri Rino, owned a "Shell" gas station and an auto-store)
+			
+			picture = generic_motorized_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+		ERI_concentrate = { #Okay, this is technically a canning factory. Look, information on industry in Eritrea is basically non-existent okay?
+		
+			picture = generic_infantry_equipment_manufacturer_3
+		
+			allowed = {
+				original_tag = ERI
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+	}
+}

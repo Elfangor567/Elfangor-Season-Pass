@@ -1,0 +1,217 @@
+Abyssinian_nonaligned = {
+	name = "Abyssinian Nonaligned Plan"
+	desc = "All hail King Haile Selassie I!"
+
+	enable = {
+		original_tag = ETH
+		OR = {
+			is_historical_focus_on = yes
+			has_game_rule = {
+				rule = DARK_ethiopia_ai_behavior
+				option = NONALIGNED
+			}
+			has_country_flag = ETH_AI_RANDOM_NONALIGNED
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+	
+	ideas = {
+		ETH_wubneh_amoraw = 10
+	}
+
+	ai_national_focuses = {
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		ETH_go_communist = 0
+		ETH_more_congress = 0
+		ETH_solidify_imperial_power = 1.0
+	}
+}
+Abyssinian_democratic = {
+	name = "Abyssinian Democratic Plan"
+	desc = "The freedom of the people of Abyssinia is of the utmost importance."
+
+	enable = {
+		original_tag = ETH
+		OR = {
+			has_game_rule = {
+				rule = DARK_ethiopia_ai_behavior
+				option = DEMOCRATIC
+			}
+			has_country_flag = ETH_AI_RANDOM_DEMOCRATIC
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+	
+	ideas = {
+		ETH_tekle_hawariat = 10
+	}
+
+	ai_national_focuses = {
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		ETH_go_communist = 0
+		ETH_stand_against_expansionism = 1.0
+		ETH_turn_evil = 0
+		ETH_more_congress = 1.0
+		ETH_solidify_imperial_power = 0
+		ETH_abolish_slavery = 1.0
+		ETH_gradual_emancipation = 0
+		ETH_ignore_lon = 0
+		ETH_trust_in_lon = 1.0
+	}
+}
+Abyssinian_communist = {
+	name = "Abyssinian Communist Plan"
+	desc = "The chains of the emperor and the priests shall be broken!"
+
+	enable = {
+		original_tag = ETH
+		OR = {
+			has_game_rule = {
+				rule = DARK_ethiopia_ai_behavior
+				option = COMMUNIST
+			}
+			has_country_flag = ETH_AI_RANDOM_COMMUNIST
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+	
+	ideas = {
+		ETH_abebe_damtew = 10
+	}
+
+	ai_national_focuses = {
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		ETH_go_communist = 1.0
+		ETH_stand_against_expansionism = 0
+		ETH_turn_evil = 0
+	}
+}
+Abyssinian_surrender = {
+	name = "Abyssinian Surrender"
+	desc = "Viva il Duce, viva il Re, viva l’Italia!"
+
+	enable = {
+		original_tag = ETH
+		OR = {
+			has_game_rule = {
+				rule = DARK_ethiopia_ai_behavior
+				option = FASCIST_SURRENDER
+			}
+			has_country_flag = ETH_AI_RANDOM_FASCIST_SURRENDER
+		}
+	}
+	
+	abort = {
+		has_global_flag = DARK_end_of_ita_eth_war
+	}
+	
+	ideas = {
+		ETH_afevork_jesus = 100
+	}
+
+	ai_national_focuses = {
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+}
+Abyssinian_fascist = {
+	name = "Abyssinian Imperial Plan"
+	desc = "All glory to Haile Selassie I, long may he reign!"
+
+	enable = {
+		original_tag = ETH
+		OR = {
+			has_game_rule = {
+				rule = DARK_ethiopia_ai_behavior
+				option = FASCIST_AFTER
+			}
+			has_country_flag = ETH_AI_RANDOM_FASCIST_AFTER
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+	
+	ideas = {
+		ETH_wubneh_amoraw2 = 10
+	}
+
+	ai_national_focuses = {
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		ETH_go_communist = 0
+		ETH_stand_against_expansionism = 0
+		ETH_turn_evil = 1.0
+		ETH_ignore_lon = 1.0
+		ETH_trust_in_lon = 0
+	}
+}

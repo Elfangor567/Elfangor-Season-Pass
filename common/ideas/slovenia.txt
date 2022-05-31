@@ -1,0 +1,151 @@
+ideas = {
+	
+	country = {
+	
+	}
+	
+	#TECH
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		SLV_steelworks = {
+			
+			picture = generic_tank_manufacturer_3
+			
+			allowed = {
+				original_tag = SLV
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			equipment_bonus = {
+				armor = { reliability = 0.1 }
+			}
+			
+			traits = { blank_tank_manufacturer }
+		}
+	}
+	
+	aircraft_manufacturer = {
+	
+		designer = yes
+		
+		SLV_CANT = { #Cantieri Aeronautici e Navali Triestini
+			
+			picture = generic_naval_manufacturer_3
+			
+			allowed = {
+				original_tag = SLV
+			}
+			
+			available = {
+				controls_state = 736
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { naval_aircraft_manufacturer  }
+		}	
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		SLV_pula = {
+			
+			picture = generic_naval_manufacturer_2
+			
+			allowed = {
+				OR = {
+					original_tag = SLV
+					original_tag = CRO
+				}
+			}
+			
+			available = {
+				controls_state = 736
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			equipment_bonus = {
+			
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+		}
+		SLV_cantiere = { #Cantiere Navale Triestino (CNT)
+			
+			picture = generic_naval_manufacturer_1
+			
+			allowed = {
+				original_tag = SLV
+			}
+			
+			available = {
+				controls_state = 736
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			equipment_bonus = {
+			
+			}
+			
+			traits = { atlantic_fleet_naval_manufacturer }
+		}		
+	}
+	
+	materiel_manufacturer = {
+		
+		designer = yes
+		
+		SLV_jesinice = {
+			
+			picture = generic_infantry_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = SLV
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }			
+		}
+		
+	}
+	
+	industrial_concern = {
+	
+		designer = yes
+		
+		SLV_store = {
+			
+			picture = generic_industrial_concern_1
+			
+			allowed = {
+				original_tag = SLV
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }			
+		}
+		
+	}
+
+}

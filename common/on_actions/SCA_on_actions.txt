@@ -1,0 +1,205 @@
+on_actions = {
+	
+	on_startup = {
+		effect = {
+			#Removing generated characters
+			every_possible_country = {
+				limit = {
+					original_tag = ICE
+				}
+				every_character = {
+					limit = {
+						NOT = { has_character_flag = SCA_original_gangster }
+					}
+					retire = yes
+				}
+			}
+		
+			144 = { add_core_of = SMI }
+			666 = { add_core_of = SMI }
+			148 = { add_core_of = SMI }
+			722 = { add_core_of = SMI }
+			213 = { add_core_of = SMI }
+			DEN = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = SCA_denmark_ai_behavior
+							option = RANDOM
+						}
+					}
+					random_list = {
+						16 = { DEN = { set_country_flag = DEN_AI_RANDOM_DEFENCELESS_HISTORICAL } }
+						16 = { DEN = { set_country_flag = DEN_AI_RANDOM_DEFENCELESS_ALTERNATE } }
+						17 = { DEN = { set_country_flag = DEN_AI_RANDOM_DEMOCRATIC } }
+						17 = { DEN = { set_country_flag = DEN_AI_RANDOM_COMINTERN } }
+						17 = { DEN = { set_country_flag = DEN_AI_RANDOM_ANARCHO_COMMUNIST } }
+						17 = { DEN = { set_country_flag = DEN_AI_RANDOM_FASCIST } }
+					}
+				}
+			}
+			ICE = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = SCA_iceland_ai_behavior
+							option = RANDOM
+						}
+					}
+					random_list = {
+						20 = { ICE = { set_country_flag = ICE_AI_RANDOM_DEMOCRATIC_HISTORICAL } }
+						20 = { ICE = { set_country_flag = ICE_AI_RANDOM_DEMOCRATIC_ALTERNATE } }
+						20 = { ICE = { set_country_flag = ICE_AI_RANDOM_GO_WITH_DEN } }
+						20 = { ICE = { set_country_flag = ICE_AI_RANDOM_COMMUNIST } }
+						20 = { ICE = { set_country_flag = ICE_AI_RANDOM_FASCIST } }
+					}
+				}
+			}
+			NOR = { 
+				add_manpower = 20000 #Lets them crew their new ships/armies
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = SCA_norway_ai_behavior
+							option = RANDOM
+						}
+					}
+					random_list = {
+						12 = { NOR = { set_country_flag = NOR_AI_RANDOM_NEUTRAL_ALLIES } }
+						12 = { NOR = { set_country_flag = NOR_AI_RANDOM_NEUTRAL_AXIS } }
+						13 = { NOR = { set_country_flag = NOR_AI_RANDOM_DEMOCRATIC_OWN_FACTION } }
+						12 = { NOR = { set_country_flag = NOR_AI_RANDOM_DEMOCRATIC_ALLIES } }
+						13 = { NOR = { set_country_flag = NOR_AI_RANDOM_NORTHERN_REVOLUTION } }
+						12 = { NOR = { set_country_flag = NOR_AI_RANDOM_COMINTERN } }
+						13 = { NOR = { set_country_flag = NOR_AI_RANDOM_FASCIST_HJORT } }
+						13 = { NOR = { set_country_flag = NOR_AI_RANDOM_FASCIST_FUGLESANG } }
+					}
+				}
+			}
+			SWE = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = SCA_sweden_ai_behavior
+							option = RANDOM
+						}
+					}
+					random_list = {
+						14 = { SWE = { set_country_flag = SWE_AI_RANDOM_NEUTRAL_HISTORICAL } }
+						15 = { SWE = { set_country_flag = SWE_AI_RANDOM_NEUTRAL_LEAGUE } }
+						14 = { SWE = { set_country_flag = SWE_AI_RANDOM_NEUTRAL_ALLIES } }
+						14 = { SWE = { set_country_flag = SWE_AI_RANDOM_NEUTRAL_AXIS } }
+						14 = { SWE = { set_country_flag = SWE_AI_RANDOM_FOURTH_INTERNATIONAL } }
+						14 = { SWE = { set_country_flag = SWE_AI_RANDOM_COMINTERN } }
+						15 = { SWE = { set_country_flag = SWE_AI_RANDOM_FASCIST } }
+					}
+				}
+			}
+			FIN = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = SCA_finland_ai_behavior
+							option = RANDOM
+						}
+					}
+					random_list = {
+						20 = { FIN = { set_country_flag = FIN_AI_RANDOM_NEUTRAL_GER } }
+						20 = { FIN = { set_country_flag = FIN_AI_RANDOM_NEUTRAL_JAP } }
+						20 = { FIN = { set_country_flag = FIN_AI_RANDOM_NEUTRAL_ALLIES } }
+						20 = { FIN = { set_country_flag = FIN_AI_RANDOM_NEUTRAL_OWN_WAY } }
+						20 = { FIN = { set_country_flag = FIN_AI_RANDOM_COMMUNIST } }
+					}
+				}
+			}
+		}
+	}
+	
+	# FROM is war target, ROOT is declarer
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = fall_of_denmark }
+					ROOT = { 
+						TAG = GER 
+						is_subject = no
+						is_faction_leader = yes
+					}
+					FROM = { 
+						TAG = DEN 
+						is_subject = no
+						has_civil_war = no
+						NOT = { has_government = fascism }
+						NOT = { has_government = democratic }
+					}
+				}
+				FROM = { country_event = { id = SCA_denmark.100 hours = 2 } }
+			}
+			if = {
+				limit = {
+					original_tag = NOR
+					NOT = { TAG = NOR }
+					has_government = fascism
+					NOR = { has_country_flag = NOR_figurehead_primed }
+				}
+				set_country_flag = NOR_figurehead_primed
+				add_ideas = NOR_quisling_figurehead
+			}				
+		}
+	}
+	
+	on_uncapitulation = {
+		effect = {
+			if = {
+				limit = {
+					TAG = NOR
+					has_country_flag = fall_of_norway
+					has_government = democratic
+				}
+				drop_cosmetic_tag = yes
+				news_event = { id = SCA_norway.112 hours = 6 }
+			}
+			else_if = {
+				limit = {
+					TAG = DEN
+					has_global_flag = fall_of_denmark
+				}
+				drop_cosmetic_tag = yes
+				news_event = { id = SCA_denmark.120 hours = 6 }
+			}
+		}
+	}
+	
+	#For Norway's Figurehead Quisling
+	on_government_change = {
+		effect = {
+			if = {
+				limit = {
+					has_government = fascism
+					NOT = { has_idea = NOR_quisling_figurehead }
+					has_country_flag = NOR_figurehead_primed
+				}
+				add_ideas = NOR_quisling_figurehead
+			}
+		}
+	}
+	
+	#For Sami capital
+	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = { tag = SMI }
+					FROM.FROM = { state = 144 }
+				}
+				log = "tag_color SMI 252  209  22"
+				add_victory_points = {
+					province = 9191
+					value = 2
+				}
+			}
+		}
+	}
+}

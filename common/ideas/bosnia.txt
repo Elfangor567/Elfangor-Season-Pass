@@ -1,0 +1,223 @@
+ideas = {
+	# MILITARY
+	
+	# TECHNOLOGY
+	tank_manufacturer = { 
+		
+		designer = yes
+		
+		BOS_GRAS = { #JKP GRAS Sarajevo, Founded by Austria-Hungary but didn't act as a real company until the 
+
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				OR = {
+					original_tag = BOS
+					has_cosmetic_tag = BOS_united
+				}
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { medium_tank_manufacturer }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	naval_manufacturer = { 
+		
+		designer = yes
+		
+		BOS_brcko = { #Large port city on the Sava river
+			
+			picture = generic_naval_manufacturer_1
+			
+			allowed = {
+				OR = {
+					original_tag = BOS
+					has_cosmetic_tag = BOS_united
+				}
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { mediterranean_naval_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}			
+	}
+	
+	aircraft_manufacturer = { 
+			
+		designer = yes
+		
+		BOS_soko = { #Soko, founded as a branch of Ikarus
+			
+			picture = generic_air_manufacturer_1
+			
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+					has_cosmetic_tag = BOS_united
+				}
+			}
+			
+						
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}	
+	
+	materiel_manufacturer = {
+		
+		designer = yes
+		
+		BOS_dasp = { #DASP, D ržavno and utomobilsko with aobraćajno p Firm, later changed to Autoprevoz
+			
+			picture = generic_motorized_equipment_manufacturer_2
+			
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+					has_cosmetic_tag = BOS_united
+				}
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+		BOS_slavko = { #Slavko Rodic Factory, Made grenades and cannons, honestly have no idea when it was built
+			
+			picture = generic_artillery_manufacturer_2
+			
+			allowed = {
+				OR = {
+					original_tag = BOS
+					has_cosmetic_tag = BOS_united
+				}
+			}
+			
+			research_bonus = {
+				artillery = 0.15
+			}
+			
+			traits = { artillery_manufacturer }
+		}
+		
+		BOS_vitez = { #Vitez Factory, Gunpowder factory, honestly have no idea when it was built
+			
+			picture = generic_infantry_equipment_manufacturer_3
+			
+			allowed = {
+				OR = {
+					original_tag = BOS
+					has_cosmetic_tag = BOS_united
+				}
+			}
+			
+			research_bonus = {
+				artillery = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+		
+	}
+	
+	industrial_concern = {
+		
+		BOS_ebih = { #Elektroprivreda Bosne i Hercegovine (Elektrobih in 1945)
+		
+			picture = generic_electronics_concern_1
+			
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+					has_cosmetic_tag = BOS_united
+				}
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		BOS_unioninvest = { #Unioninvest
+		
+			picture = generic_industrial_concern_1
+			
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+					has_cosmetic_tag = BOS_united
+				}
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		BOS_petrol = { #Bosna Petrol, one of the companies merged to form Energopetrol (Other being Jugopetrol Sarajevo)
+		
+			picture = generic_refining_concern_1
+			
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+					has_cosmetic_tag = BOS_united
+				}
+			}
+			
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.15
+			}
+			
+			traits = { refinery_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+ai_historical_focus_list_NOR = {
+	ai_national_focuses = {
+		NOR_flight #jan 1 - march 11 (1936)
+		NOR_establish_economic_uni #march 11 - july 29
+		NOR_go_neutral #july 29 - oct 7
+		NOR_balance_budget #oct 7 - dec 16
+		NOR_infr #dec 16 - feb 24 (1937)
+		NOR_exp_narvik #feb 24 - may 5
+		NOR_ind_tech #may 5 - july 14
+		NOR_central_ind #july 14 - sep 22
+		NOR_rehabilitate_navy #sep 22 - dec 1
+		NOR_dockyards #dec 1 - feb 9 (1938)
+		NOR_rehabilitate_mil #feb 9 - apr 20
+		NOR_drsrn #apr 20 - june 29		
+		NOR_ind_tech2 #june 29 - sept 7
+		NOR_civ_fac #sept 7 - nov 16
+		NOR_volunteers #nov 16 - jan 25 (1939)
+		NOR_shore_up_def #jan 25 - apr 5
+		NOR_naas #apr 5 - june 14
+		NOR_rnnas #june 14 - aug 23
+		NOR_anti_sub #aug 23 - nov 1
+		NOR_deterrence #nov 1 - jan 10 (1940)
+		NOR_mobilize_1 #jan 10 - mar 20
+		NOR_mobilize_2 #mar 20 - may 29
+		NOR_defend_north
+		NOR_central_forts
+	}
+}

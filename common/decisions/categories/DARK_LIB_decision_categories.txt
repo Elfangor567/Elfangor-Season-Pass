@@ -1,0 +1,134 @@
+LIB_USA_influence_category = {
+	allowed = {
+		tag = LIB
+	}
+	
+	icon = power_struggle
+	picture = GFX_decision_cat_generic_lib_usa_influence
+	priority = {
+		base = 10
+	}
+	
+	custom_icon = {
+		tag = USA
+		value = LIB_USA_influence_value
+		desc = LIB_USA_influence_desc
+		
+		visible = {
+			NOT = { has_completed_focus = LIB_alone }
+		}
+	}
+}
+
+USA_LIB_influence_category = {
+	allowed = {
+		original_tag = USA
+	}
+	
+	icon = generic_political_actions
+	picture = GFX_decision_cat_generic_lib_usa_influence
+
+	priority = { base = 10 }
+	
+	visible = {
+		check_variable = {
+			var = LIB.LIB_USA_influence
+			value = 100
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+LIB_intervene_USCW_category = {
+	allowed = {
+		original_tag = LIB
+	}
+	
+	icon = category_generic_democracy
+	
+	visible = {
+		OR = {
+			USA = { has_war_with = CSA }
+			USA = { has_war_with = USB }
+			USA = { has_civil_war = yes }
+		}
+	}
+}
+
+LIB_integrate_hinterlands_category = {
+	allowed = {
+		original_tag = LIB
+	}
+	
+	icon = generic_independence
+	picture = GFX_decision_cat_generic_LIB_hinterland
+	
+	priority = 9
+	
+	visible = {
+		always = yes
+	}
+}
+
+LIB_raise_militia_category = {
+	allowed = {
+		OR = {
+			tag = LIB
+			AND = {
+				original_tag = LIB
+				has_civil_war = no
+			}
+		}
+	}
+	
+	icon = army_reform
+	picture = GFX_decision_cat_generic_lib_usa_influence
+}
+
+LIB_force_neutral_vote_category = {
+	allowed = {
+		original_tag = LIB
+	}
+	
+	icon = generic_democracy
+	picture = GFX_decision_cat_generic_liberian_politics
+	
+	visible = {
+		neutrality > 0.5
+	}
+}
+
+LIB_reform_army_category = {
+	allowed = {
+		original_tag = LIB
+	}
+	
+	icon = army_reform
+	
+	priority = { base = 8 }	
+}
+
+LIB_take_africa_category = {
+	allowed = {
+		original_tag = LIB
+	}
+	
+	icon = saf_anti_colonialist_crusade
+	
+	priority = { base = 10 }
+	
+	visible = {
+		OR = {
+			has_country_flag = LIB_the_revolution_begins
+			has_country_flag = LIB_the_crusade_begins
+		}
+	}
+}
+
+LIB_freeport_category = {
+	allowed = {
+		original_tag = LIB
+	}
+	
+	icon = generic_industry	
+}

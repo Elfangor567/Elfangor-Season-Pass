@@ -1,0 +1,14 @@
+#################
+#### Finland ####
+#################
+
+FIN_continuation_war_category = {
+
+	icon = border_conflicts
+
+	picture = GFX_decision_cat_picture_finnish_propaganda
+
+	allowed = {
+		original_tag = FIN
+	}
+}

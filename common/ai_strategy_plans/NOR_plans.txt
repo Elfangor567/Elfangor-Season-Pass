@@ -1,0 +1,506 @@
+Norwegian_historical_allies = {
+	name = "Norwegian Neutral Ally Plan"
+	desc = "We don't want war, but if it comes, we will side with the Allies."
+
+	enable = {
+		original_tag = NOR
+		OR = {
+			has_game_rule = {
+				rule = SCA_norway_ai_behavior
+				option = NEUTRAL_ALLIES
+			}
+			has_country_flag = NOR_AI_RANDOM_NEUTRAL_ALLIES
+		}
+	}
+	abort = {
+		has_war_with = ENG
+	}
+
+	ai_national_focuses = {
+		NOR_flight #jan 1 - march 11 (1936)
+		NOR_establish_economic_uni #march 11 - july 29
+		NOR_go_neutral #july 29 - oct 7
+		NOR_balance_budget #oct 7 - dec 16
+		NOR_infr #dec 16 - feb 24 (1937)
+		NOR_exp_narvik #feb 24 - may 5
+		NOR_ind_tech #may 5 - july 14
+		NOR_central_ind #july 14 - sep 22
+		NOR_rehabilitate_navy #sep 22 - dec 1
+		NOR_dockyards #dec 1 - feb 9 (1938)
+		NOR_rehabilitate_mil #feb 9 - apr 20
+		NOR_drsrn #apr 20 - june 29		
+		NOR_ind_tech2 #june 29 - sept 7
+		NOR_civ_fac #sept 7 - nov 16
+		NOR_volunteers #nov 16 - jan 25 (1939)
+		NOR_shore_up_def #jan 25 - apr 5
+		NOR_naas #apr 5 - june 14
+		NOR_rnnas #june 14 - aug 23
+		NOR_anti_sub #aug 23 - nov 1
+		NOR_deterrence #nov 1 - jan 10 (1940)
+		NOR_mobilize_1 #jan 10 - mar 20
+		NOR_mobilize_2 #mar 20 - may 29
+		NOR_mobilize_3 #may 29 - aug 7
+		NOR_defend_north
+		NOR_central_forts
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		NOR_go_neutral = 1.0
+		NOR_lean_axis = 0
+	}
+}
+Norwegian_historical_axis = {
+	name = "Norwegian Neutral Axis Plan"
+	desc = "We don't want war, but if it comes, we will side with the Axis."
+
+	enable = {
+		original_tag = NOR
+		OR = {
+			has_game_rule = {
+				rule = SCA_norway_ai_behavior
+				option = NEUTRAL_AXIS
+			}
+			has_country_flag = NOR_AI_RANDOM_NEUTRAL_AXIS
+		}
+	}
+	
+	abort = {
+		has_war_with = GER
+	}
+
+	ai_national_focuses = {
+		NOR_flight #jan 1 - march 11 (1936)
+		NOR_establish_economic_uni #march 11 - july 29
+		NOR_go_neutral #july 29 - oct 7
+		NOR_balance_budget #oct 7 - dec 16
+		NOR_infr #dec 16 - feb 24 (1937)
+		NOR_exp_narvik #feb 24 - may 5
+		NOR_ind_tech #may 5 - july 14
+		NOR_central_ind #july 14 - sep 22
+		NOR_rehabilitate_navy #sep 22 - dec 1
+		NOR_dockyards #dec 1 - feb 9 (1938)
+		NOR_rehabilitate_mil #feb 9 - apr 20
+		NOR_drsrn #apr 20 - june 29		
+		NOR_ind_tech2 #june 29 - sept 7
+		NOR_civ_fac #sept 7 - nov 16
+		NOR_volunteers #nov 16 - jan 25 (1939)
+		NOR_shore_up_def #jan 25 - apr 5
+		NOR_naas #apr 5 - june 14
+		NOR_rnnas #june 14 - aug 23
+		NOR_anti_sub #aug 23 - nov 1
+		NOR_deterrence #nov 1 - jan 10 (1940)
+		NOR_mobilize_1 #jan 10 - mar 20
+		NOR_mobilize_2 #mar 20 - may 29
+		NOR_mobilize_3 #may 29 - aug 7
+		NOR_defend_north
+		NOR_central_forts
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		NOR_go_neutral = 1.0
+		NOR_lean_allies = 0
+	}
+}
+Norwegian_own_democracy = {
+	name = "The Northern Concord"
+	desc = "We cannot rely on outsiders to defend against tyranny, we can only rely on our kin."
+
+	enable = {
+		original_tag = NOR
+		OR = {
+			has_game_rule = {
+				rule = SCA_norway_ai_behavior
+				option = DEMOCRATIC_OWN_FACTION
+			}
+			has_country_flag = NOR_AI_RANDOM_DEMOCRATIC_OWN_FACTION
+		}
+	}
+	
+	abort = {
+		has_war_with = FIN
+	}
+	
+	ideas = {
+		NOR_axel_aubert = 10
+		NOR_norsk_hydro = 20		
+	}
+	traits = {
+		democratic_reformer = 10
+	}
+
+	ai_national_focuses = {
+		NOR_flight #jan 1 - march 11 (1936)
+		NOR_establish_economic_uni #march 11 - july 29
+		NOR_go_democratic #july 29 - oct 7
+		NOR_push_agenda #oct 7 - dec 16
+		NOR_loans #dec 16 - feb 24 (1937)
+		NOR_infr #feb 24 - may 5
+		NOR_invest_ind #may 5 - july 14
+		NOR_heavy_civ_fac #july 14 - sep 22
+		NOR_heavy_mil_fac #sep 22 - dec 1
+		NOR_heavy_dock #dec 1 - feb 9 (1938)
+		NOR_rehabilitate_mil #feb 9 - apr 20
+		NOR_shore_up_def #apr 20 - june 29		
+		NOR_mobilize_1 #june 29 - sept 7
+		NOR_end_neutral #sept 7 - nov 16
+		NOR_volunteers #nov 16 - jan 25 (1939)
+		NOR_spread_propaganda #jan 25 - apr 5
+		NOR_protect_fin #apr 5 - june 14
+		NOR_ice_den #june 14 - aug 23
+		NOR_ally_swe #aug 23 - nov 1
+		NOR_tech_sharing #nov 1 - jan 10 (1940)
+		NOR_mobilize_2 #jan 10 - mar 20
+		NOR_defend_north #mar 20 - may 29
+		NOR_central_forts #may 29 - aug 7
+		NOR_fortress
+		NOR_nuclear
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		NOR_go_democratic = 1.0
+		NOR_spread_propaganda = 1.0
+	}
+}
+Norwegian_allies = {
+	name = "Norwegian Allied Plan"
+	desc = "We must join with those who stand up for the ones that cannot."
+
+	enable = {
+		original_tag = NOR
+		OR = {
+			has_game_rule = {
+				rule = SCA_norway_ai_behavior
+				option = DEMOCRATIC_ALLIES
+			}
+			has_country_flag = NOR_AI_RANDOM_DEMOCRATIC_ALLIES
+		}
+	}
+	
+	abort = {
+		OR = {
+			has_war_with = ENG
+			NOT = { ENG = { has_government = democratic } }
+		}
+	}
+	
+	traits = {
+		democratic_reformer = 10
+	}
+
+	ai_national_focuses = {
+		NOR_flight #jan 1 - march 11 (1936)
+		NOR_establish_economic_uni #march 11 - july 29
+		NOR_go_democratic #july 29 - oct 7
+		NOR_push_agenda #oct 7 - dec 16
+		NOR_loans #dec 16 - feb 24 (1937)
+		NOR_infr #feb 24 - may 5
+		NOR_invest_ind #may 5 - july 14
+		NOR_heavy_civ_fac #july 14 - sep 22
+		NOR_heavy_mil_fac #sep 22 - dec 1
+		NOR_heavy_dock #dec 1 - feb 9 (1938)
+		NOR_rehabilitate_mil #feb 9 - apr 20
+		NOR_shore_up_def #apr 20 - june 29		
+		NOR_mobilize_1 #june 29 - sept 7
+		NOR_end_neutral #sept 7 - nov 16
+		NOR_volunteers #nov 16 - jan 25 (1939)
+		NOR_lean_uk #jan 25 - apr 5
+		NOR_eng_protection #apr 5 - june 14
+		NOR_commonwealth_tech #june 14 - aug 23
+		NOR_dockyards #aug 23 - nov 1
+		NOR_anti_sub #nov 1 - jan 10 (1940)
+		NOR_mobilize_2 #jan 10 - mar 20
+		NOR_defend_north #mar 20 - may 29
+		NOR_central_forts #may 29 - aug 7
+		NOR_naas
+		NOR_rnnas
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		NOR_go_democratic = 1.0
+		NOR_lean_uk = 1.0
+	}
+}
+Norwegian_revolution = {
+	name = "The Northern Revolution"
+	desc = "The spark of the old revolution has faded, we must alight it anew."
+
+	enable = {
+		original_tag = NOR
+		OR = {
+			has_game_rule = {
+				rule = SCA_norway_ai_behavior
+				option = NORTHERN_REVOLUTION
+			}
+			has_country_flag = NOR_AI_RANDOM_NORTHERN_REVOLUTION
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+	
+	traits = {
+		communist_revolutionary = 10
+	}
+
+	ai_national_focuses = {
+		NOR_go_communist #jan 1 - march 11 (1936)
+		NOR_establish_economic_uni #march 11 - july 29
+		NOR_flight #july 29 - oct 7
+		NOR_break_moscow #oct 7 - dec 16
+		NOR_balance_budget #dec 16 - feb 24 (1937)
+		NOR_infr #feb 24 - may 5
+		NOR_exp_narvik #may 5 - july 14
+		NOR_central_ind #july 14 - sep 22
+		NOR_ind_tech #sep 22 - dec 1
+		NOR_militias #dec 1 - feb 9 (1938)
+		NOR_worker_prod #feb 9 - apr 20
+		NOR_new_rev #apr 20 - june 29		
+		NOR_king #june 29 - sept 7
+		NOR_rehabilitate_mil #sept 7 - nov 16
+		NOR_shore_up_def #nov 16 - jan 25 (1939)
+		NOR_mil_fac #jan 25 - apr 5
+		NOR_rehabilitate_navy #apr 5 - june 14
+		NOR_dockyards #june 14 - aug 23
+		NOR_kill_swe #aug 23 - nov 1
+		NOR_mountain_arty #nov 1 - jan 10 (1940)
+		NOR_mobilize_2 #jan 10 - mar 20
+		NOR_elite_mountain #mar 20 - may 29
+		NOR_naas
+		NOR_rnnas
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		NOR_go_communist = 1.0
+		NOR_break_moscow = 1.0
+		NOR_new_rev = 1.0
+	}
+}
+Norwegian_comintern = {
+	name = "Norwegian Comintern Plan"
+	desc = "We must align ourselves with Moscow in order to spread the revolution."
+
+	enable = {
+		original_tag = NOR
+		OR = {
+			has_game_rule = {
+				rule = SCA_norway_ai_behavior
+				option = COMINTERN
+			}
+			has_country_flag = NOR_AI_RANDOM_COMINTERN
+		}
+	}
+	
+	abort = {
+		OR = {
+			is_subject = yes
+			SOV = { NOT = { has_government = communism } }
+			SOV = { is_faction_leader = no }
+		}
+	}
+	
+	traits = {
+		communist_revolutionary = 10
+	}
+
+	ai_national_focuses = {
+		NOR_go_communist #jan 1 - march 11 (1936)
+		NOR_establish_economic_uni #march 11 - july 29
+		NOR_flight #july 29 - oct 7
+		NOR_go_with_ussr #oct 7 - dec 16
+		NOR_balance_budget #dec 16 - feb 24 (1937)
+		NOR_infr #feb 24 - may 5
+		NOR_exp_narvik #may 5 - july 14
+		NOR_central_ind #july 14 - sep 22
+		NOR_ind_tech #sep 22 - dec 1
+		NOR_militias #dec 1 - feb 9 (1938)
+		NOR_worker_prod #feb 9 - apr 20
+		NOR_join_comintern #apr 20 - june 29		
+		NOR_king #june 29 - sept 7
+		NOR_rehabilitate_mil #sept 7 - nov 16
+		NOR_shore_up_def #nov 16 - jan 25 (1939)
+		NOR_mil_fac #jan 25 - apr 5
+		NOR_rehabilitate_navy #apr 5 - june 14
+		NOR_split_fin #june 14 - aug 23
+		NOR_dockyards #aug 23 - nov 1
+		NOR_mountain_arty #nov 1 - jan 10 (1940)
+		NOR_mobilize_2 #jan 10 - mar 20
+		NOR_elite_mountain #mar 20 - may 29
+		NOR_naas
+		NOR_rnnas
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		NOR_go_communist = 1.0
+		NOR_go_with_ussr = 1.0
+		NOR_join_comintern = 1.0
+	}
+}
+Norwegian_hjort = {
+	name = "Hjort's Norwegian Vision"
+	desc = "Johan Hjort knows the way forward for Nasjonal Samling and for Norway!"
+
+	enable = {
+		original_tag = NOR
+		OR = {
+			has_game_rule = {
+				rule = SCA_norway_ai_behavior
+				option = FASCIST_HJORT
+			}
+			has_country_flag = NOR_AI_FASCIST_HJORT
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+
+	ai_national_focuses = {
+		NOR_go_right #jan 1 - march 11 (1936)
+		NOR_establish_economic_uni #march 11 - july 29
+		NOR_flight #july 29 - oct 7
+		NOR_choose_hjort #oct 7 - dec 16
+		NOR_forer_question #dec 16 - feb 24 (1937)
+		NOR_loans #feb 24 - may 5
+		NOR_infr #may 5 - july 14
+		NOR_invest_ind #july 14 - sep 22
+		NOR_heavy_civ_fac #sep 22 - dec 1
+		NOR_heavy_mil_fac #dec 1 - feb 9 (1938)
+		NOR_expand_hird #feb 9 - apr 20
+		NOR_ns_youth #apr 20 - june 29		
+		NOR_destroy_teachers #june 29 - sept 7
+		NOR_rehabilitate_mil #sept 7 - nov 16
+		NOR_shore_up_def #nov 16 - jan 25 (1939)
+		NOR_mobilize_1 #jan 25 - apr 5
+		NOR_rehabilitate_navy #apr 5 - june 14
+		NOR_dockyards #june 14 - aug 23
+		NOR_naas
+		NOR_rnnas
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		NOR_go_right = 1.0
+		NOR_choose_hjort = 1.0
+	}
+}
+Norwegian_fuglesang = {
+	name = "Fuglesang's Norwegian Vision"
+	desc = "Rolf Fuglesang knows the way forward for Nasjonal Samling and for Norway!"
+
+	enable = {
+		original_tag = NOR
+		OR = {
+			has_game_rule = {
+				rule = SCA_norway_ai_behavior
+				option = FASCIST_FUGLESANG
+			}
+			has_country_flag = NOR_AI_FASCIST_FUGLESANG
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+
+	ai_national_focuses = {
+		NOR_go_right #jan 1 - march 11 (1936)
+		NOR_establish_economic_uni #march 11 - july 29
+		NOR_flight #july 29 - oct 7
+		NOR_back_fuglesang #oct 7 - dec 16
+		NOR_restructure_ns #dec 16 - feb 24 (1937)
+		NOR_ger_protection #feb 24 - may 5
+		NOR_loans #may 5 - july 14
+		NOR_infr #july 14 - sep 22
+		NOR_invest_ind #sep 22 - dec 1
+		NOR_heavy_civ_fac #dec 1 - feb 9 (1938)
+		NOR_heavy_mil_fac #feb 9 - apr 20
+		NOR_ns_youth #apr 20 - june 29		
+		NOR_destroy_teachers #june 29 - sept 7
+		NOR_rehabilitate_mil #sept 7 - nov 16
+		NOR_shore_up_def #nov 16 - jan 25 (1939)
+		NOR_mobilize_1 #jan 25 - apr 5
+		NOR_rehabilitate_navy #apr 5 - june 14
+		NOR_dockyards #june 14 - aug 23
+		NOR_naas
+		NOR_rnnas
+		NOR_universism
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		NOR_go_right = 1.0
+		NOR_back_fuglesang = 1.0
+		NOR_universism = 1.0
+	}
+}

@@ -1,0 +1,337 @@
+Finnish_neutral_ger = {
+	name = "Finnish-German Cooperation Plan"
+	desc = "We cannot stand alone and the Germans have helped us in the past."
+
+	enable = {
+		original_tag = FIN
+		OR = {
+			is_historical_focus_on = yes
+			has_game_rule = {
+				rule = SCA_finland_ai_behavior
+				option = NEUTRAL_GER
+			}
+			has_country_flag = FIN_AI_RANDOM_NEUTRAL_GER
+		}
+	}
+	
+	abort = {
+		OR = {
+			is_subject = yes
+			NOT = { country_exists = GER }
+			GER = { is_subject = yes }
+			GER = { has_government = communism }
+			GER = { is_in_faction_with = SOV }
+		}
+	}
+
+	ai_national_focuses = {
+		FIN_diverse_econ #jan 1 - march 11 (1936)
+		FIN_government #march 11 - july 29
+		FIN_neutral_focus #july 29 - oct 7
+		FIN_sca_assurance #oct 7 - dec 16
+		FIN_mil #dec 16 - feb 24 (1937)
+		FIN_mann_line #feb 24 - may 5
+		FIN_ski #may 5 - july 14
+		FIN_af #july 14 - sep 22
+		FIN_lean_axis #sep 22 - dec 1
+		FIN_foreign_leases #dec 1 - feb 9 (1938)
+		FIN_lean_jap #feb 9 - apr 20
+		FIN_renew_drsrn #apr 20 - june 29		
+		FIN_mills #june 29 - sept 7
+		FIN_war_econ_prep #sept 7 - nov 16
+		FIN_modern_facs #nov 16 - jan 25 (1939)
+		FIN_large_facs #jan 25 - apr 5
+		FIN_other_arms #apr 5 - june 14
+		FIN_swe_guns #june 14 - aug 23
+		FIN_swe_ally #aug 23 - nov 1
+		FIN_german_arms #nov 1 - jan 10 (1940)
+		FIN_ger_mil_mission #jan 10 - mar 20
+		FIN_ger_focus #mar 20 - may 29
+		FIN_german_air #may 29 - aug 7
+		FIN_jagers
+		FIN_begin_salpa
+		FIN_reinforce_salpa
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "GER"
+		value = 100
+	}
+
+	focus_factors = {
+		FIN_stand_ger = 1.0
+		FIN_ally_jap = 0
+		FIN_allied_lean = 0
+	}
+}
+Finnish_neutral_jap = {
+	name = "Finnish-Japanese Cooperation Plan"
+	desc = "We cannot stand alone and the Japanese have much in common with us."
+
+	enable = {
+		original_tag = FIN
+		OR = {
+			has_game_rule = {
+				rule = SCA_finland_ai_behavior
+				option = NEUTRAL_JAP
+			}
+			has_country_flag = FIN_AI_RANDOM_NEUTRAL_JAP
+		}
+	}
+	
+	abort = {
+		OR = {
+			is_subject = yes
+			NOT = { country_exists = JAP }
+			JAP = { is_subject = yes }
+			JAP = { has_government = communism }
+			JAP = { is_in_faction_with = SOV }
+		}
+	}
+
+	ai_national_focuses = {
+		FIN_diverse_econ #jan 1 - march 11 (1936)
+		FIN_government #march 11 - july 29
+		FIN_neutral_focus #july 29 - oct 7
+		FIN_sca_assurance #oct 7 - dec 16
+		FIN_mil #dec 16 - feb 24 (1937)
+		FIN_mann_line #feb 24 - may 5
+		FIN_ski #may 5 - july 14
+		FIN_af #july 14 - sep 22
+		FIN_lean_axis #sep 22 - dec 1
+		FIN_foreign_leases #dec 1 - feb 9 (1938)
+		FIN_lean_jap #feb 9 - apr 20
+		FIN_renew_drsrn #apr 20 - june 29		
+		FIN_mills #june 29 - sept 7
+		FIN_war_econ_prep #sept 7 - nov 16
+		FIN_modern_facs #nov 16 - jan 25 (1939)
+		FIN_large_facs #jan 25 - apr 5
+		FIN_other_arms #apr 5 - june 14
+		FIN_swe_guns #june 14 - aug 23
+		FIN_swe_ally #aug 23 - nov 1
+		FIN_jap_arms #nov 1 - jan 10 (1940)
+		FIN_jap_mil_mission #jan 10 - mar 20
+		FIN_bushido #mar 20 - may 29
+		FIN_german_arms #may 29 - aug 7
+		FIN_supremacy
+		FIN_begin_salpa
+		FIN_reinforce_salpa
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "JAP"
+		value = 100
+	}
+
+	focus_factors = {
+		FIN_stand_ger = 0
+		FIN_ally_jap = 1.0
+		FIN_allied_lean = 0
+	}
+}
+Finnish_neutral_allies = {
+	name = "Finnish Ally Plan"
+	desc = "Would the western powers truly abandon their hard-won order?"
+
+	enable = {
+		original_tag = FIN
+		OR = {
+			has_game_rule = {
+				rule = SCA_finland_ai_behavior
+				option = NEUTRAL_ALLIES
+			}
+			has_country_flag = FIN_AI_RANDOM_NEUTRAL_ALLIES
+		}
+	}
+	
+	abort = {
+		OR = {
+			is_subject = yes
+			NOT = { country_exists = ENG }
+			ENG = { is_subject = yes }
+			ENG = { has_government = communism }
+			ENG = { is_in_faction_with = SOV }
+		}
+	}
+
+	ai_national_focuses = {
+		FIN_diverse_econ #jan 1 - march 11 (1936)
+		FIN_government #march 11 - july 29
+		FIN_neutral_focus #july 29 - oct 7
+		FIN_sca_assurance #oct 7 - dec 16
+		FIN_mil #dec 16 - feb 24 (1937)
+		FIN_mann_line #feb 24 - may 5
+		FIN_ski #may 5 - july 14
+		FIN_af #july 14 - sep 22
+		FIN_foreign_leases #sep 22 - dec 1
+		FIN_lean_allies #dec 1 - feb 9 (1938)
+		FIN_eng_arms #feb 9 - apr 20
+		FIN_renew_drsrn #apr 20 - june 29		
+		FIN_mills #june 29 - sept 7
+		FIN_war_econ_prep #sept 7 - nov 16
+		FIN_modern_facs #nov 16 - jan 25 (1939)
+		FIN_large_facs #jan 25 - apr 5
+		FIN_other_arms #apr 5 - june 14
+		FIN_swe_guns #june 14 - aug 23
+		FIN_volunteer_guarantees #aug 23 - nov 1
+		FIN_french_arms #nov 1 - jan 10 (1940)
+		FIN_eng_mil_mission #jan 10 - mar 20
+		FIN_fre_mil_mission #mar 20 - may 29
+		FIN_allied_lean #may 29 - aug 7
+		FIN_allied_tech
+		FIN_french_weapons
+		FIN_eng_arty
+		FIN_french_tanks
+		FIN_eng_navy
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "ENG"
+		value = 100
+	}
+
+	focus_factors = {
+		FIN_stand_ger = 0
+		FIN_ally_jap = 0
+		FIN_allied_lean = 1.0
+	}
+}
+Finnish_neutral_own_way = {
+	name = "Finnish Leadership Plan"
+	desc = "We cannot depend on anyone else in this world. We must seize our own future."
+
+	enable = {
+		original_tag = FIN
+		OR = {
+			has_game_rule = {
+				rule = SCA_finland_ai_behavior
+				option = NEUTRAL_OWN_WAY
+			}
+			has_country_flag = FIN_AI_RANDOM_NEUTRAL_OWN_WAY
+		}
+	}
+	
+	abort = {
+		OR = {
+			is_subject = yes
+			NOT = { country_exists = ENG }
+			ENG = { is_subject = yes }
+			ENG = { has_government = communism }
+			ENG = { is_in_faction_with = SOV }
+		}
+	}
+
+	ai_national_focuses = {
+		FIN_diverse_econ #jan 1 - march 11 (1936)
+		FIN_government #march 11 - july 29
+		FIN_neutral_focus #july 29 - oct 7
+		FIN_est #oct 7 - dec 16
+		FIN_baltic_alliance #dec 16 - feb 24 (1937)
+		FIN_stand_strong #feb 24 - may 5
+		FIN_ask_pol #may 5 - july 14
+		FIN_tech_coop #july 14 - sep 22
+		FIN_sca_assurance #sep 22 - dec 1
+		FIN_renew_drsrn #dec 1 - feb 9 (1938)
+		FIN_swe_ally #feb 9 - apr 20
+		FIN_sca_alliance #apr 20 - june 29		
+		FIN_ally_den #june 29 - sept 7
+		FIN_sca_tech #sept 7 - nov 16
+		FIN_sca_tech_share #nov 16 - jan 25 (1939)
+		FIN_mil #jan 25 - apr 5
+		FIN_mann_line #apr 5 - june 14
+		FIN_ski #june 14 - aug 23
+		FIN_af #aug 23 - nov 1
+		FIN_aa #nov 1 - jan 10 (1940)
+		FIN_foreign_leases #jan 10 - mar 20
+		FIN_swe_guns #mar 20 - may 29
+		FIN_infr #may 29 - aug 7
+		FIN_mills
+		FIN_war_econ_prep
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		FIN_stand_strong = 1.0
+		FIN_ask_pol = 1.0
+		FIN_swe_ally = 1.0
+	}
+}
+Finnish_neutral_own_way = {
+	name = "Finnish Submission"
+	desc = "There is no hope in resisting the Soviet Union, may they be good natured overlord."
+
+	enable = {
+		original_tag = FIN
+		OR = {			
+			has_game_rule = {
+				rule = SCA_finland_ai_behavior
+				option = COMMUNIST
+			}
+			has_country_flag = FIN_AI_RANDOM_COMMUNIST
+		}
+	}
+	
+	abort = {
+		OR = {
+			NOT = { country_exists = SOV }
+			SOV = { is_subject = yes }
+		}
+	}
+
+	ai_national_focuses = {
+		FIN_government
+		FIN_unthinkable
+		FIN_sov_submission
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		FIN_unthinkable = 1.0
+	}
+}

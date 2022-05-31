@@ -1,0 +1,682 @@
+characters={
+	#Serbia is odd, since it is basically just Yugoslavia lite
+	#SO, that means that a lot of stuff is handled in on_actions instead.
+
+#Country Leaders
+	SER_zivorad_jovanovic={
+		name=SER_zivorad_jovanovic
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
+			}
+		}
+		country_leader={
+			ideology=leninism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	SER_george_karadordevic={
+		name=SER_george_karadordevic
+		portraits={
+			civilian={
+				large="gfx/leaders/YUG/Portrait_Yugoslavia_Prince_Paul.dds"
+				small="GFX_idea_prince_paul"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			id=-1
+		}
+		
+		advisor={
+			slot = political_advisor
+			idea_token = SER_george_karadordevic
+			allowed = {
+				original_tag = SER
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { staunch_monarchist }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+				}
+			}
+		}
+	}
+	
+	
+#Generals and Admirals
+	SER_ilija_trifunovic_bircanin={ #Chetnik commander who had also fought in the Balkan Wars and WWI
+		name=SER_ilija_trifunovic_bircanin
+		portraits={
+			army={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_19.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_4.dds"
+			}
+		}
+		corps_commander={
+			traits = { old_guard career_officer trait_reckless harsh_leader commando trait_mountaineer }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id=-1
+		}
+	}
+	SER_dragutin_keserovic={ #Chetnik commander, often said to be the best of the Chetnik Commanders
+		name=SER_dragutin_keserovic
+		portraits={
+			army={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_16.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_4.dds"
+			}
+		}
+		corps_commander={
+			traits = { brilliant_strategist infantry_officer commando trait_mountaineer adaptable }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 4
+			legacy_id=-1
+		}
+	}
+
+#Chiefs of Staff
+	SER_kosta_pecanac={ #Chetnik leader, not associated with Draza. Balkan Wars and WWI leader, collaborated with the Nazis
+		name=SER_kosta_pecanac
+		portraits={
+			army={
+				small="GFX_idea_hino_kumazo"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SER_kosta_pecanac
+			allowed = { 
+				original_tag = SER
+			}
+			
+			traits = { army_chief_offensive_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	SER_stevan_moljevic={ #Author of "Homogeneous Serbia, one of the 3 leaders of the Central National Committee in the Chetniks
+		name=SER_stevan_moljevic
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_1"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SER_stevan_moljevic
+			allowed = { 
+				original_tag = SER
+			}
+			
+			traits = { army_chief_defensive_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	SER_koca_popovic={ #The "savior" of the Yugoslav Partisans who orchestrated the breakthrough in the Battle of Sutjeska
+		name=SER_koca_popovic
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_1"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SER_koca_popovic
+			allowed = { 
+				original_tag = SER
+			}
+			
+			traits = { army_chief_planning_3 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	SER_kara_dimitrijevic={ #Commander of the Yugoslav Partisan Navy
+		name=SER_kara_dimitrijevic
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = SER_kara_dimitrijevic
+			allowed = { 
+				original_tag = SER
+			}
+			
+			traits = { navy_chief_decisive_battle_1 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	SER_svetozar_milovanovic={ #Commander of the Yugoslav Partisan Navy
+		name=SER_svetozar_milovanovic
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = SER_svetozar_milovanovic
+			allowed = { 
+				original_tag = SER
+			}
+			
+			traits = { navy_chief_maneuver_1 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+
+#High Command
+	SER_nikola_kalabic={ #Son of Milan Kalabic, Commander of the elite Mountain Guard Corps in the Chetnik Army
+		name=SER_nikola_kalabic
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SER_nikola_kalabic
+			ledger = army
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = { army_commando_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SER_mladen_zujovic={ #Leader of the Chetniks in Dalmatia, Lika and Western Bosnia
+		name=SER_mladen_zujovic
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SER_mladen_zujovic
+			ledger = army
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = { army_infantry_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}	
+	SER_ilija_bircanin={ #Chetnik commander, responsible for over 500 Bosnian civilian deaths
+		name=SER_ilija_bircanin
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SER_ilija_bircanin
+			ledger = army
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = { army_chief_organizational_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	SER_zdenko_ulepic={ #Commander of the Yugoslav Air Force 1946-1965
+		name=SER_zdenko_ulepic
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SER_zdenko_ulepic
+			ledger = air
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = { air_air_superiority_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SER_viktor_bubanj={ #Pilot in WW2, Commander of the Yugoslav Air Force 1965-1970
+		name=SER_viktor_bubanj
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SER_viktor_bubanj
+			ledger = air
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = { air_pilot_training_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	SER_aleksander_beric={ #Commander of the monitor Drava in WWII, died heroically fighting off against the far stronger German Lutwaffe, refusing to surrender
+		name=SER_aleksander_beric
+		portraits={
+			army={
+				small="GFX_idea_gaetano_crocco"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SER_aleksander_beric
+			ledger = navy
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = { navy_naval_air_defense_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SER_dragutin_iskra={ #Deputy Commander of the Yugoslav Partisan Navy
+		name=SER_dragutin_iskra
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SER_dragutin_iskra
+			ledger = navy
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = { navy_screen_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SER_rada_prodanovic={ #Deputy Political Commissar of the Yugoslav Partisan Navy
+		name=SER_rada_prodanovic
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SER_rada_prodanovic
+			ledger = navy
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = { navy_fleet_logistics_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	
+#Theorists
+	SER_milan_kalabic={ #Veteran of the Balkan Wars and WWI, Officer in the SDS but was secretly supplying the Chetniks through his son
+		name = SER_milan_kalabic
+		portraits={
+			army={
+				small="GFX_idea_sergei_korolev"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = SER_milan_kalabic
+			ledger = army
+			allowed = {
+				original_tag = SER
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SER_miodrag_tomic={ #WW1 Pilot and Commander of the Novi Sad in WW2
+		name = SER_miodrag_tomic
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = SER_miodrag_tomic
+			ledger = air
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = SER_miodrag_tomic
+			ledger = air
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = {
+				air_chief_reform_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SER_milan_radojevic={ #Commander of the Serbian River Flotilla in WWI
+		name = SER_milan_radojevic
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = SER_milan_radojevic
+			ledger = navy
+			allowed = {
+				original_tag = SER
+			}
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+
+#Advisors
+	SER_aca_stanojevic={ #Founder of the Serbian People's Radical Party, opposed Alexander I's personal rule in 1929
+		name=SER_aca_stanojevic
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SER_aca_stanojevic
+			allowed = {
+				original_tag = SER
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+			}
+		}
+	}
+	SER_dragojlo_dudic={ #Serbian communist and leader of the short-lived Republic of Užice under the Main National Liberation Committee for Serbia in 1941
+		name=SER_dragojlo_dudic
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SER_dragojlo_dudic
+			allowed = {
+				original_tag = SER
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					is_subject = no
+					has_completed_focus = internationalism_focus
+				}
+			}
+		}
+	}
+	SER_milan_acimovic={ #Leader of the original collaborationist government under Germany
+		name=SER_milan_acimovic
+		portraits={
+			army={
+				small="GFX_idea_generic_air_south_america_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SER_milan_acimovic
+			allowed = {
+				original_tag = SER
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					is_subject = no
+					has_completed_focus = nationalism_focus
+				}
+			}
+		}
+	}
+	
+	
+	SER_svetozar_vujkovic={ #Leader of the SDS, responsible for widescale murder and torture, much of which he oversaw personally and enjoyed
+		name=SER_svetozar_vujkovic
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+		advisor={
+			slot = SER_svetozar_vujkovic
+			idea_token = MAC_andjelko_krstic
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = { prince_of_terror }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	SER_petar_stambolic={ #Communist serbian, partisan, President of the Central Committee of the Serbian Communist Party 1948-1957, Prime Minister of Serbia 1948-1953
+		name=SER_petar_stambolic
+		portraits={
+			army={
+				small="GFX_idea_ENG_ernest_bevin"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SER_petar_stambolic
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = { silent_workhorse }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	SER_dragomir_jovanovic={ #Leader of the SDS, mayor of Belgrade and Nazi collaborator
+		name=SER_dragomir_jovanovic
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SER_dragomir_jovanovic
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = { backroom_backstabber }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	SER_sreten_zujovic={ #Longtime communist who eventually sided with Stalin against Tito
+		name=SER_sreten_zujovic
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SER_sreten_zujovic
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = { ideological_crusader }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	SER_mihailo_alas={ #Yugoslav prime minister in-exile, also a famous political thinker and philosopher
+		name=SER_mihailo_alas
+		gender = female
+		portraits={
+			army={
+				small="GFX_idea_eng_alan_turing"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SER_mihailo_alas
+			allowed = {
+				original_tag = SER
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}	
+}

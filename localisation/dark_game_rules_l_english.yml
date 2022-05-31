@@ -1,0 +1,46 @@
+﻿l_english:
+ 
+ RULE_GROUP_HEART_OF_DARKNESS:0 "Heart of Darkness"
+ 
+ DARK_ETH_WIN_LOSE_BEHAVIOR:0 "@ITA£in_combat @ETH Fate of the Second Italo-Abyssinian War"
+    #Default
+        RULE_OPTION_DEFAULT_ETH_WIN_LOSE_DESC:0 "The Second Italo-Abyssinian war will run as normal. (Note that Italy does win a majority of the time, but not everytime.)"
+    RULE_OPTION_DARK_ETH_LOSE_WAR:0 "@ETH Lose the war"
+        RULE_OPTION_DARK_ETH_LOSE_WAR_AI_DESC:0 "This option will significantly cripple Ethiopia, making it all but certain that Italy will win the Second Italo-Abyssinian War."
+    RULE_OPTION_DARK_ETH_WIN_WAR:0 "@ETH Win the war"
+        RULE_OPTION_DARK_ETH_WIN_WAR_AI_DESC:0 "This option will significantly strengthen Ethiopia, making it all but certain that they will defeat Italy in the Second Italo-Abyssinian War."
+     
+ DARK_LIB_AI_BEHAVIOR:0 "@LIB Liberia"
+    #Democratic
+        RULE_OPTION_DARK_LIB_DEMOCRATIC_AI_DESC:0 "The Liberian AI will attempt to secure its ties with the US by going down the relevant paths in the national focus tree."
+    RULE_OPTION_DARK_LIB_ALONE_FASCIST:0 "Fascist - Alone"
+        RULE_OPTION_DARK_LIB_ALONE_FASCIST_AI_DESC:0 "The Liberian AI will attempt to go it alone as a Fascist nation by going down the relevant paths in the national focus tree."
+    RULE_OPTION_DARK_LIB_RECONNECT_FASCIST:0 "Fascist - Recommencement"
+        RULE_OPTION_DARK_LIB_RECONNECT_FASCIST_AI_DESC:0 "The Liberian AI will attempt to go Fascist and then reconnect with the outside world by going down the relevant paths in the national focus tree."
+    RULE_OPTION_DARK_LIB_ALONE_COMMUNIST:0 "Communist - Alone"
+        RULE_OPTION_DARK_LIB_ALONE_COMMUNIST_AI_DESC:0 "The Liberian AI will attempt to go it alone as a Communist nation by going down the relevant paths in the national focus tree."
+    RULE_OPTION_DARK_LIB_RECONNECT_COMMUNIST:0 "Communist - Recommencement"
+        RULE_OPTION_DARK_LIB_RECONNECT_COMMUNIST_AI_DESC:0 "The Liberian AI will attempt to go Communist and then reconnect with the outside world by going down the relevant paths in the national focus tree."
+    
+ DARK_ETH_AI_BEHAVIOR:0 "@ETH Ethiopia"
+    RULE_OPTION_DARK_ETH_NONALIGNED:0 "Imperial Consolidation"
+        RULE_OPTION_DARK_ETH_NONALIGNED_AI_DESC:0 "The Abyssinian AI will attempt to keep power in the hands of the emperor by going down the relevant paths in the national focus tree."
+    #Democratic
+        RULE_OPTION_DARK_ETH_DEMOCRATIC_AI_DESC:0 "The Abyssinian AI will attempt to align itself with the western powers and grant greater freedoms to its peoples by going down the relevant paths in the national focus tree."
+    #Communist
+        RULE_OPTION_DARK_ETH_COMMUNIST_AI_DESC:0 "The Abyssinian AI will attempt to overthrow the emperor in a communist coup by going down the relevant paths in the national focus tree."
+    RULE_OPTION_FASCIST_SURRENDER:0 "Fascist - Surrender"
+        RULE_OPTION_DARK_ETH_FASCIST_SURRENDER_AI_DESC:0 "The Abyssinian AI will attempt to surrender to the Italians with Haile Selassie Gugsa."
+    RULE_OPTION_FASCIST_AFTER:0 "Fascist - Imperial"
+        RULE_OPTION_DARK_ETH_FASCIST_AFTER_AI_DESC:0 "The Abyssinian AI will attempt to model itself after Imperial Japan by going down the relevant paths in the national focus tree."
+    
+ DARK_NEW_ITALY_AI_BEHAVIOR:0 "@ITA Italy"
+    #Fascist
+        RULE_OPTION_DARK_NEW_ITALY_FASCIST_AI_DESC:0 "Should they lose to Abyssinia, the Italian AI will attempt to remain fascist with its original focus tree."
+    RULE_OPTION_DARK_NEW_ITALY_NONALIGNED:0 "Monarchist"
+        RULE_OPTION_DARK_NEW_ITALY_NONALIGNED_AI_DESC:0 "Should they lose to Abyssinia, the Italian AI will re-invent itself under King Emmanuel III by going down the relevant path in their new national focus tree."
+    #Democratic
+        RULE_OPTION_DARK_NEW_ITALY_DEMOCRATIC_AI_DESC:0 "Should they lose to Abyssinia, the Italian AI will re-invent itself as a democracy by going down the relevant path in their new national focus tree."
+    #Communist
+        RULE_OPTION_DARK_NEW_ITALY_COMMUNIST_AI_DESC:0 "Should they lose to Abyssinia, the Italian AI will usher in a communist state by going down the relevant path in their new national focus tree."
+    

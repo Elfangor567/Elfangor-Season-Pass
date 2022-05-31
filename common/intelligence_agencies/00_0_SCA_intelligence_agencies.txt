@@ -1,0 +1,38 @@
+# List of names and logos for intelligence agencies
+# available trigger will determine if the logo is in the list of available logos or not
+# names is a list of names. Can be a localization entry, or the name directly. A random name will be picked from them.
+
+intelligence_agency = {
+
+	picture = GFX_intelligence_agency_logo_den
+	names = { "FST-E" }
+	
+	default = { tag = DEN }
+	available = { original_tag = DEN }
+}
+
+intelligence_agency = {
+
+	picture = GFX_intelligence_agency_logo_ice
+	names = { "Eftirgrennslanadeild" }
+	
+	default = { tag = ICE }
+	available = { original_tag = ICE }
+}
+
+intelligence_agency = {
+
+	picture = GFX_intelligence_agency_logo_ns
+	names = { "Sonderabteilung Lola" }
+	
+	default = { 
+		original_tag = NOR
+		NOT = { tag = NOR }
+		has_global_flag = NS_Allowed
+	}
+	available = { 
+		original_tag = NOR
+		NOT = { tag = NOR }
+		has_global_flag = NS_Allowed
+	}
+}

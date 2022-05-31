@@ -1,0 +1,537 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+
+#Description depending on whether active for country or not
+defined_text = {
+	name = SWI_fascist_leader
+	text = {
+		trigger = {
+			NOT = { has_country_flag = has_henne }
+		}
+		localization_key = "Wilhelm Gustloff"
+	}
+	text = {
+		trigger = {
+			has_country_flag = has_henne
+		}
+		localization_key = "Rolf Henne"
+	}
+}
+
+defined_text = {
+	name = SWI_ger_or_fra
+	text = {
+		trigger = {
+			original_tag = GER
+		}
+		localization_key = "[FRA.GetNameDef]"
+	}
+	text = {
+		trigger = {
+			original_tag = FRA
+		}
+		localization_key = "[GER.GetNameDef]"
+	}
+}
+
+defined_text = {
+	name = AUS_duke_emperor
+	text = {
+		trigger = {
+			has_cosmetic_tag = AUS_duchy
+		}
+		localization_key = "Archduke"
+	}
+	text = {
+		trigger = {
+			has_cosmetic_tag = HUN_EMPIRE
+		}
+		localization_key = "Kaiser"
+	}
+}
+
+defined_text = {
+	name = AUS_horthy_alive
+	text = {
+		trigger = {
+			NOT = { HUN = { has_completed_focus = HUN_assassinate_horthy } }
+		}
+		localization_key = "Twice Miklós Horthy has prevented the return of the rightful heir to the throne, remaining the regent of a Kingdom without a King!"
+	}
+	text = {
+		trigger = {
+			OR = {
+				HUN = { has_completed_focus = HUN_assassinate_horthy }
+				HUN = { has_government = democratic }
+				HUN = { has_government = communism }
+			}
+		}
+		localization_key = "Hungary has had a turbalent history since their forced seperation from us. Now the usurper [HUN.GetLeader] rules instead of the proper king."
+	}
+}
+
+defined_text = {
+	name = AUS_can_see_greater_germany_decision
+	text = {
+		trigger = {
+			has_completed_focus = AUS_greater_germany_focus
+		}
+		localization_key = " or has proclaimed Greater Germany."
+	}
+	text = {
+		trigger = {
+			NOT = { has_completed_focus = AUS_greater_germany_focus }
+		}
+		localization_key = "."
+	}
+}
+
+#### DOES NOT WORK AS OF RIGHT NOW (unless you want a country named [HUN_EMPIRE_NAME]
+##Renamed Austria-Hungary
+defined_text = {
+	name = HUN_EMPIRE_NAME
+	
+	text = {
+		trigger = {
+			has_country_flag = EYE_TRI_EMPIRE
+		}
+		localization_key = "[TRI_EMPIRE_NAME]"
+	}
+	text = {
+		trigger = {
+			has_country_flag = EYE_QUAD_EMPIRE
+		}
+		localization_key = "[QUAD_EMPIRE_NAME]"
+	}
+	text = {
+		trigger = {
+			has_country_flag = EYE_FED_EMPIRE
+		}
+		localization_key = "[FED_EMPIRE_NAME]"
+	}
+	text = { #default
+		trigger = {
+			NOT = { has_country_flag = EYE_TRI_EMPIRE }
+			NOT = { has_country_flag = EYE_QUAD_EMPIRE }
+			NOT = { has_country_flag = EYE_FED_EMPIRE }
+			has_government = neutrality
+		}
+		
+		localization_key = "Austria-Hungary"
+	}	
+	text = { #default
+		trigger = {
+			NOT = { has_country_flag = EYE_TRI_EMPIRE }
+			NOT = { has_country_flag = EYE_QUAD_EMPIRE }
+			NOT = { has_country_flag = EYE_FED_EMPIRE }
+			has_government = democratic
+		}
+		
+		localization_key = "Danubian Confederation"
+	}
+	text = { #default
+		trigger = {
+			NOT = { has_country_flag = EYE_TRI_EMPIRE }
+			NOT = { has_country_flag = EYE_QUAD_EMPIRE }
+			NOT = { has_country_flag = EYE_FED_EMPIRE }
+			has_government = fascism
+		}
+		
+		localization_key = "Austro-Hungarian Empire"
+	}
+	text = { #default
+		trigger = {
+			NOT = { has_country_flag = EYE_TRI_EMPIRE }
+			NOT = { has_country_flag = EYE_QUAD_EMPIRE }
+			NOT = { has_country_flag = EYE_FED_EMPIRE }
+			has_government = communism
+		}
+		
+		localization_key = "Association of Autonomous States"
+	}
+}
+defined_text = {
+	name = HUN_EMPIRE_DEF
+	
+	text = {
+		trigger = {
+			has_country_flag = EYE_TRI_EMPIRE
+		}
+		localization_key = "[TRI_EMPIRE_DEF]"
+	}
+	text = {
+		trigger = {
+			has_country_flag = EYE_QUAD_EMPIRE
+		}
+		localization_key = "[QUAD_EMPIRE_DEF]"
+	}
+	text = {
+		trigger = {
+			has_country_flag = EYE_FED_EMPIRE
+		}
+		localization_key = "[FED_EMPIRE_DEF]"
+	}
+	text = { #default
+		trigger = {
+			NOT = { has_country_flag = EYE_TRI_EMPIRE }
+			NOT = { has_country_flag = EYE_QUAD_EMPIRE }
+			NOT = { has_country_flag = EYE_FED_EMPIRE }
+			has_government = neutrality
+		}
+		
+		localization_key = "Austria-Hungary"
+	}	
+	text = { #default
+		trigger = {
+			NOT = { has_country_flag = EYE_TRI_EMPIRE }
+			NOT = { has_country_flag = EYE_QUAD_EMPIRE }
+			NOT = { has_country_flag = EYE_FED_EMPIRE }
+			has_government = democratic
+		}
+		
+		localization_key = "The Danubian Confederation"
+	}
+	text = { #default
+		trigger = {
+			NOT = { has_country_flag = EYE_TRI_EMPIRE }
+			NOT = { has_country_flag = EYE_QUAD_EMPIRE }
+			NOT = { has_country_flag = EYE_FED_EMPIRE }
+			has_government = fascism
+		}
+		
+		localization_key = "The Austro-Hungarian Empire"
+	}
+	text = { #default
+		trigger = {
+			NOT = { has_country_flag = EYE_TRI_EMPIRE }
+			NOT = { has_country_flag = EYE_QUAD_EMPIRE }
+			NOT = { has_country_flag = EYE_FED_EMPIRE }
+			has_government = communism
+		}
+		
+		localization_key = "The Association of Autonomous States"
+	}
+}
+defined_text = {
+	name = HUN_EMPIRE_ADJ
+	
+	text = {
+		trigger = {
+			has_country_flag = EYE_TRI_EMPIRE
+		}
+		localization_key = "[TRI_EMPIRE_ADJ]"
+	}
+	text = {
+		trigger = {
+			has_country_flag = EYE_QUAD_EMPIRE
+		}
+		localization_key = "[QUAD_EMPIRE_ADJ]"
+	}
+	text = {
+		trigger = {
+			has_country_flag = EYE_FED_EMPIRE
+		}
+		localization_key = "[FED_EMPIRE_ADJ]"
+	}
+	text = { #default
+		trigger = {
+			NOT = { has_country_flag = EYE_TRI_EMPIRE }
+			NOT = { has_country_flag = EYE_QUAD_EMPIRE }
+			NOT = { has_country_flag = EYE_FED_EMPIRE }
+			has_government = neutrality
+		}
+		
+		localization_key = "Austro-Hungarian"
+	}	
+	text = { #default
+		trigger = {
+			NOT = { has_country_flag = EYE_TRI_EMPIRE }
+			NOT = { has_country_flag = EYE_QUAD_EMPIRE }
+			NOT = { has_country_flag = EYE_FED_EMPIRE }
+			has_government = democratic
+		}
+		
+		localization_key = "Danubian"
+	}
+	text = { #default
+		trigger = {
+			NOT = { has_country_flag = EYE_TRI_EMPIRE }
+			NOT = { has_country_flag = EYE_QUAD_EMPIRE }
+			NOT = { has_country_flag = EYE_FED_EMPIRE }
+			has_government = fascism
+		}
+		
+		localization_key = "Austro-Hungarian"
+	}
+	text = { #default
+		trigger = {
+			NOT = { has_country_flag = EYE_TRI_EMPIRE }
+			NOT = { has_country_flag = EYE_QUAD_EMPIRE }
+			NOT = { has_country_flag = EYE_FED_EMPIRE }
+			has_government = communism
+		}
+		
+		localization_key = "Association's"
+	}
+}
+
+defined_text = {
+	name = TRI_EMPIRE_NAME
+	
+	text = {
+		trigger = {
+			has_government = neutrality
+		}
+		localization_key = "Austria-Hungary-Croatia"
+	}
+	text = {
+		trigger = {
+			has_government = democratic
+		}
+		localization_key = "Tri-State Federation"
+	}
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = "Austro-Hungaro-Croatian Empire"
+	}
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "Tri-State Republic"
+	}
+}
+defined_text = {
+	name = TRI_EMPIRE_DEF
+	
+	text = {
+		trigger = {
+			has_government = neutrality
+		}
+		localization_key = "Austria-Hungary-Croatia"
+	}
+	text = {
+		trigger = {
+			has_government = democratic
+		}
+		localization_key = "The Tri-State Federation"
+	}
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = "The Austro-Hungaro-Croatian Empire"
+	}
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "The Tri-State Republic"
+	}
+}
+defined_text = {
+	name = TRI_EMPIRE_ADJ
+	
+	text = {
+		trigger = {
+			has_government = neutrality
+		}
+		localization_key = "Austro-Hungaro-Croatian"
+	}
+	text = {
+		trigger = {
+			has_government = democratic
+		}
+		localization_key = "Tri-State"
+	}
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = "Austro-Hungaro-Croatian"
+	}
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "Tri-State"
+	}
+}
+defined_text = {
+	name = QUAD_EMPIRE_NAME
+	
+	text = {
+		trigger = {
+			has_government = neutrality
+		}
+		localization_key = "Quadralist Empire"
+	}
+	text = {
+		trigger = {
+			has_government = democratic
+		}
+		localization_key = "Federation of The Four States"
+	}
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = "Greater Totalitarity"
+	}
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "Union of Four Socialist Republics"
+	}
+}
+defined_text = {
+	name = QUAD_EMPIRE_DEF
+	
+	text = {
+		trigger = {
+			has_government = neutrality
+		}
+		localization_key = "The Quadralist Empire"
+	}
+	text = {
+		trigger = {
+			has_government = democratic
+		}
+		localization_key = "the Federation of The Four States"
+	}
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = "The Greater Totalitarity"
+	}
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "The Union of Four Socialist Republics"
+	}
+}
+defined_text = {
+	name = QUAD_EMPIRE_ADJ
+	
+	text = {
+		trigger = {
+			has_government = neutrality
+		}
+		localization_key = "Quadralist"
+	}
+	text = {
+		trigger = {
+			has_government = democratic
+		}
+		localization_key = "Four State"
+	}
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = "Totalitarit"
+	}
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "Union"
+	}
+}
+defined_text = {
+	name = FED_EMPIRE_NAME
+	
+	text = {
+		trigger = {
+			has_government = neutrality
+		}
+		localization_key = "United States of Greater Austria"
+	}
+	text = {
+		trigger = {
+			has_government = democratic
+		}
+		localization_key = "Danubian State"
+	}
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = "Greater Austrian Empire"
+	}
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "United Workers of The Danube"
+	}
+}
+defined_text = {
+	name = FED_EMPIRE_DEF
+	
+	text = {
+		trigger = {
+			has_government = neutrality
+		}
+		localization_key = "The United States of Greater Austria"
+	}
+	text = {
+		trigger = {
+			has_government = democratic
+		}
+		localization_key = "The Danubian State"
+	}
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = "The Greater Austrian Empire"
+	}
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "The United Workers of the Danube"
+	}
+}
+defined_text = {
+	name = FED_EMPIRE_ADJ
+	
+	text = {
+		trigger = {
+			has_government = neutrality
+		}
+		localization_key = "Austrian"
+	}
+	text = {
+		trigger = {
+			has_government = democratic
+		}
+		localization_key = "Danubian"
+	}
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = "Austrian"
+	}
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "Danubian"
+	}
+}

@@ -1,0 +1,162 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Kungliga Svenska Marinen"			
+		naval_base = 6050 # Stockholm
+		task_force = {				
+			name = "Kustflottan"
+			location = 6050 # Stockholm
+			ship = { name = "HSwMS Dristigheten" definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = SWE version_name = "Dristigheten Class" } } }				
+			
+			ship = { name = "HSwMS Örnen" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SWE version_name = "Örnen Class" } } }		
+			ship = { name = "HSwMS Jacob Bagge" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SWE version_name = "Örnen Class" } } }		
+			ship = { name = "HSwMS Psilander" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SWE version_name = "Örnen Class" } } }		
+			
+			ship = { name = "HSwMS Magne" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SWE version_name = "Magne Class" } } }		
+			
+			ship = { name = "HSwMS Clas Fleming" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = SWE version_name = "Clas Fleming Class" } } }				
+			
+			ship = { name = "HSwMS Sökaren" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = SWE version_name = "Sökaren Class" } } }				
+			ship = { name = "HSwMS Sveparen" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = SWE version_name = "Sökaren Class" } } }				
+			ship = { name = "HSwMS Sprängaren" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = SWE version_name = "Sökaren Class" } } }				
+			
+			#Minelayers belonging to the Coastal Artillery, they do not have the HSwMS prefix as they are not Navy Ships
+			ship = { name = "Mul3" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = SWE version_name = "Ångkranpramen Class" } } }				
+			ship = { name = "Mul5" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = SWE version_name = "Ångkranpramen Class" } } }				
+			ship = { name = "Mul6" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = SWE version_name = "Ångkranpramen Class" } } }				
+			ship = { name = "Mul7" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = SWE version_name = "Ångkranpramen Class" } } }				
+			ship = { name = "Mul8" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = SWE version_name = "Ångkranpramen Class" } } }				
+			ship = { name = "Mul9" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = SWE version_name = "Ångkranpramen Class" } } }				
+		}
+		task_force = { 
+			name = "1a Eskadern"
+			location = 11215 # Karlskrona
+			ship = { name = "HSwMS Gustaf V" pride_of_the_fleet = yes definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = SWE version_name = "Sverige Class" } } }				
+			ship = { name = "HSwMS Sverige" definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = SWE version_name = "Sverige Class" } } }				
+			ship = { name = "HSwMS Drottning Victoria" definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = SWE version_name = "Sverige Class" } } }				
+			
+			ship = { name = "HSwMS Gotland" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = SWE version_name = "Gotland Class" } } }				
+			# 1. Jagarflottiljen				
+			ship = { name = "HSwMS Klas Horn" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SWE version_name = "Klas Class" } } }		
+			ship = { name = "HSwMS Klas Uggla" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SWE version_name = "Klas Class" } } }		
+			
+			ship = { name = "HSwMS Ehrensköld" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SWE version_name = "Ehrensköld Class" } } }		
+			ship = { name = "HSwMS Nordenskjöld" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SWE version_name = "Ehrensköld Class" } } }		
+			
+			
+			ship = { name = "HSwMS Vidar" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SWE version_name = "Ragnar Class" } } }
+			ship = { name = "HSwMS Ragnar" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SWE version_name = "Ragnar Class" } } }
+			ship = { name = "HSwMS Sigurd" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SWE version_name = "Ragnar Class" } } }
+		}
+		task_force = { 
+			name = "Ålandshavseskader"
+			location = 408 # Gotland
+			ship = { name = "HSwMS Äran" definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = SWE version_name = "Äran Class" } } }				
+			ship = { name = "HSwMS Tapperheten" definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = SWE version_name = "Äran Class" } } }				
+			
+			ship = { name = "HSwMS Wale" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SWE version_name = "Wale Class" } } }				
+		}
+		task_force = { 
+			name = "Karlskrona Avdelningen"
+			location = 11215 # Karlskrona
+			ship = { name = "HSwMS Wasa" definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = SWE version_name = "Äran Class" } } }				
+			ship = { name = "HSwMS Manligheten" definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = SWE version_name = "Äran Class" } } }
+			
+			ship = { name = "HSwMS Jägaren" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = SWE version_name = "Jägaren Class" } } }
+			ship = { name = "HSwMS Kaparen" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = SWE version_name = "Jägaren Class" } } }
+			ship = { name = "HSwMS Snapphanen" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = SWE version_name = "Jägaren Class" } } }
+			ship = { name = "HSwMS Väktaren" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = SWE version_name = "Jägaren Class" } } }
+			
+			ship = { name = "HSwMS Svenksund" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = SWE version_name = "Svenksund Class" } } }
+			# 1. Ubatsflottiljen				
+			ship = { name = "HSwMS Draken" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SWE version_name = "Draken Class" } } }
+			ship = { name = "HSwMS Gripen" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SWE version_name = "Draken Class" } } }
+			ship = { name = "HSwMS Ulven" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SWE version_name = "Draken Class" } } }
+			
+			ship = { name = "HSwMS Svärdfisken" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SWE version_name = "Svärdfisken Class" } } }
+			ship = { name = "HSwMS Tumlaren" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SWE version_name = "Svärdfisken Class" } } }
+			
+			ship = { name = "HSwMS Abborren" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SWE version_name = "Abborren Class" } } }
+			ship = { name = "HSwMS Braxen" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SWE version_name = "Abborren Class" } } }
+		}
+		task_force = { 
+			name = "Göteborgs Eskadern"
+			location = 383 # Göteborg
+			ship = { name = "HSwMS Oden" definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = SWE version_name = "Oden Class" } } }
+			ship = { name = "HSwMS Thor" definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = SWE version_name = "Oden Class" } } }
+			#Guns were removed from Niord in 1928
+			
+			ship = { name = "HSwMS Oscar II" definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = SWE version_name = "Oscar II Class" } } }	
+			
+			ship = { name = "HSwMS Fylgia" definition = battleship equipment = { ship_hull_pre_dreadnought  = { amount = 1 owner = SWE version_name = "Fylgia Class" } } }				
+			
+			ship = { name = "HSwMS Wrangel" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SWE version_name = "Wrangel Class" } } }
+			ship = { name = "HSwMS Wachtmeister" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SWE version_name = "Wrangel Class" } } }
+			
+			ship = { name = "HSwMS Göteborg" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = SWE version_name = "Göteborg Class" } } }
+			# 2. Ubatsflottiljen				
+			ship = { name = "HSwMS Hajen" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SWE version_name = "Hajen II Class" } } }
+			ship = { name = "HSwMS Sälen" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SWE version_name = "Hajen II Class" } } }
+			ship = { name = "HSwMS Valrossen" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SWE version_name = "Hajen II Class" } } }
+			# 3. Ubatsflottiljen				
+			ship = { name = "HSwMS Illern" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SWE version_name = "Bävern Class" } } }
+			ship = { name = "HSwMS Uttern" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SWE version_name = "Bävern Class" } } }
+			ship = { name = "HSwMS Bävern" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SWE version_name = "Bävern Class" } } }
+			
+			ship = { name = "HSwMS Valen" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SWE version_name = "Valen Class" } } }
+		}
+	}
+}
+
+
+### Starting Production ###
+instant_effect = {
+	### Under Construction Notes ###
+	# DD: Göteborg class (x1) ("HSwMS Stockholm")
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "SWE"
+			version_name = "Göteborg Class"
+		}
+		name = "HSwMS Stockholm" 
+		requested_factories = 1
+		progress = 0.50
+		amount = 1
+	}
+	# SS: Delfinen Class (x3) ("HSwMS Delfinen" "HSwMS Nordkaparen" "HSwMS Springaren")
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_submarine_2
+			creator = "SWE"
+			version_name = "Delfinen Class"
+		}
+		name = "HSwMS Delfinen" 
+		requested_factories = 1
+		progress = 0.80
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_submarine_2
+			creator = "SWE"
+			version_name = "Delfinen Class"
+		}
+		name = "HSwMS Nordkaparen" 
+		requested_factories = 1
+		progress = 0.60
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_submarine_2
+			creator = "SWE"
+			version_name = "Delfinen Class"
+		}
+		name = "HSwMS Springaren" 
+		requested_factories = 1
+		progress = 0.40
+		amount = 1
+	}
+}

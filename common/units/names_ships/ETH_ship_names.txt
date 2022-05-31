@@ -1,0 +1,57 @@
+﻿##### ETHIOPIA NAME LISTS #####
+ETH_TITLED_SHIPS = {
+	name = NAME_THEME_TITLES
+
+	for_countries = { ETH }
+
+	type = ship
+	ship_types = { 
+		ship_hull_carrier ship_hull_cruiser ship_hull_heavy ship_hull_light ship_hull_submarine
+		carrier battleship heavy_cruiser battle_cruiser light_cruiser destroyer submarine
+	}			
+
+	prefix = "A "							
+	fallback_name = "Ras %d"					
+
+	unique = {											
+		"Kantiba" "Blattengueta" "Woizerit" "Woizerit-Hoy" "Nagradas" "Zagwe" "Afe Negus" "Blatta" "Basha"
+		
+		"Mesfin Harar" "Abba" "Fitaurari" "Zerai Deres" "Grazmach" "Azmach" "Qenyazmach" "Nebura ed" "Shum"
+		"Aqabe Se'at" "Qomos" "Lique Liqawint" "Qess" "Diaqon"
+		
+		"Bajirond" "Lij" "Dejaz" "Enderase" "Dejazmach" "Shaleqa" "Asiraleqa" "Metoaleqa" "Jantirar"
+		"Lique Mekwas" "Lique Diaqon"
+		
+		"Bitwoded" "Abeto" "Abeto-Hoy" "Ras" "Nigiste Negestatt" "Shambel" "Amsa Aleqa" "Reise Mekwanint" 
+		"Sebate" "Lique Siltanat"
+		
+		"Le'elt" "Itege" "Emebet" "Emebet-Hoy" "Woizero" "Woizero-Hoy"
+		
+		"Afenagus" "Mered Azmatch" "Negus" "Bahr Ghazal" "Balambaras" "Ila Ammist Aleqa" "Makonnen" "Abuna"
+		"Ichege" "Abetohun"
+		
+		"Negus-Hoy" "Negus Negusti" "Janhoy" "Seyoume Igziabeher" "Moa Anbessa Ze Imnegede Yehuda" "Neguse Tsion"
+		"Girmawi" "Atse" 
+	}
+}
+ETH_OUR_SHIPS = {
+	name = NAME_THEME_COUNTRY_NAME
+
+	for_countries = { ETH }
+
+	type = ship
+	ship_types = { 
+		ship_hull_carrier ship_hull_cruiser ship_hull_heavy
+		carrier battleship heavy_cruiser battle_cruiser
+	}			
+
+	prefix = "A "							
+	fallback_name = "Ras %d"					
+
+	unique = {											
+		"Ethiopia" "Abyssinia" "Axum" "Aksum" "Aethiopia" "Itoobiya" " Itiyoophiyaa" "Solomon"
+		"ኢትዮጵያ" "Αἰθιοπία" "Ḥbštm" "Ḥbśt" "Zemene Mesafint" "Arbegnoch" "Solomonid" "Sheba"
+	}
+}
+
+

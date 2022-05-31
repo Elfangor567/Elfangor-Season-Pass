@@ -1,0 +1,546 @@
+characters={
+#Country Leaders
+	ERI_woldeab_woldemariam={
+		name=ERI_woldeab_woldemariam
+		portraits={
+			civilian={
+				large="gfx/leaders/SAF/Portrait_South_Africa_Political_Leader_Generic.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	ERI_idris_mohammed_adam={ #Leader of initial muslim guerilla forces
+		name=ERI_idris_mohammed_adam
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_land_3.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+		field_marshal={
+			traits = { offensive_doctrine trait_reckless infantry_officer commando skirmisher hill_fighter }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id=-1
+		}
+	}
+	ERI_ibrahim_sultan_ali={
+		name=ERI_ibrahim_sultan_ali
+		portraits={
+			civilian={
+				large="gfx/leaders/DARK/Portrait_DARK_Ibrahim_Sultan_Ali.tga"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	ERI_hamid_idris_awate={ #Founder of the Eritrean Liberation Army
+		name=ERI_hamid_idris_awate
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_1.dds"
+			}
+		}
+		country_leader={
+			ideology=anti_revisionism
+			expire="1965.1.1"
+			id=-1
+		}
+		field_marshal={
+			traits = { offensive_doctrine trait_reckless infantry_officer trickster trait_mountaineer }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id=-1
+		}
+	}
+	
+#Generals and Admirals
+
+#Chiefs of Staff
+	ERI_musa_adem={ #Imam Musa Adem, Founder of the Moslem Youth League in 1953
+		name=ERI_musa_adem
+		portraits={
+			army={
+				small="GFX_idea_generic_army_arab_3"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = ERI_musa_adem
+			allowed = {
+				original_tag = ERI
+			}
+			traits = { army_chief_offensive_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ERI_gherenki={ #Gherenkiel Berakhi, Leader of the New Eritrea Party, joined the Independence Bloc in 1949
+		name=ERI_gherenki
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_3"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = ERI_gherenki
+			allowed = {
+				original_tag = ERI
+			}
+			traits = { navy_chief_commerce_raiding_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ERI_beyn={ #Fissahazion Beyn, the first Eritrean Pilot
+		name=ERI_beyn
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_1"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = ERI_beyn
+			allowed = {
+				original_tag = ERI
+			}
+			traits = { air_chief_all_weather_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#High Command
+	ERI_al_haj={ #Mahamoud Ismael Al-Haj, First Clandestine member of the ELM
+		name=ERI_al_haj
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ERI_al_haj
+			ledger = army
+			allowed = {
+				original_tag = ERI
+			}
+			traits = { army_concealment_1 }
+			cost = 75
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ERI_redda={ #Tesfai Redda, founder of the Young Federalists
+		name=ERI_redda
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ERI_redda
+			ledger = army
+			allowed = {
+				original_tag = ERI
+			}
+			traits = { army_chief_organizational_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ERI_beshir={ #Ahmed Abdulkader Beshir, Leader of the National Party, joined the Independence Bloc in 1949
+		name=ERI_beshir
+		portraits={
+			army={
+				small="GFX_idea_generic_army_arab_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ERI_beshir
+			ledger = army
+			allowed = {
+				original_tag = ERI
+			}
+			traits = { army_infantry_1 }
+			cost = 75
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ERI_tessema={ #Ras Tessema Asberom, A leading member of the Liberal Progressive Party, joined the Independence Bloc in 1949
+		name=ERI_tessema
+		portraits={
+			navy={
+				small="GFX_idea_generic_army_african_6"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ERI_tessema
+			ledger = navy
+			allowed = {
+				original_tag = ERI
+			}
+			traits = { navy_chief_maneuver_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ERI_omar={ #Omar Mohammed Baduri, A leading member of the New Eritrea Party (Also known as the New Eritrea Pro-Italy Party), joined the Independence Bloc in 1949
+		name=ERI_omar
+		portraits={
+			navy={
+				small="GFX_idea_generic_army_african_4"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ERI_omar
+			ledger = navy
+			allowed = {
+				original_tag = ERI
+			}
+			traits = { navy_naval_air_defense_2 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ERI_deres={ #Tesfatsion Deres, Leader of the Independant Eritrea Party, joined the Independence Bloc in 1949
+		name = ERI_deres
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ERI_deres
+			ledger = air
+				allowed = {
+					original_tag = ERI
+				}
+				traits = { air_chief_ground_support_1 }
+				cost = 75
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	ERI_radai={ #Ali Mussa Radai, Lead splinter group Moslem League of Western Eritrea away from the Moslem League (who had joined the Independence Bloc)
+		name = ERI_radai
+		portraits={
+			army={
+				small="GFX_idea_generic_air_arab_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ERI_radai
+			ledger = air
+			allowed = {
+				original_tag = ERI
+			}
+			traits = { air_air_superiority_1 }
+			cost = 75
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+#Theorists
+	ERI_el_hassan={ #Mohammed el-Hassan, Founding member of the ELM
+		name = ERI_el_hassan
+		portraits={
+			army={
+				small="GFX_idea_generic_army_arab_1"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = ERI_el_hassan
+			ledger = army
+			allowed = {
+				original_tag = ERI
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ERI_hajji_ahmed={ #Hajji Suleiman Ahmed, Early leader of the Moslem Youth League
+		name = ERI_hajji_ahmed
+		portraits={
+			army={
+				small="GFX_idea_generic_air_arab_3"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = ERI_hajji_ahmed
+			ledger = navy
+			allowed = {
+				original_tag = ERI
+			}				
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+		}
+	}
+	ERI_pollera={ #Michele Pollera, Leader of the Italo-Eritrean Association, joined the Independence Bloc in 1949
+		name = ERI_pollera
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_1"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = ERI_pollera
+			ledger = air
+			allowed = {
+				original_tag = ERI
+			}				
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+		}
+	}
+	
+#Advisors
+	ERI_dohen={ #Associate of Awate's, Mohammed Al-Hassan Dohen
+	#Same guy as in AOI, as such will not be visible if they exist
+		name=ERI_dohen
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ERI_dohen
+			allowed = {
+				original_tag = ERI
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	ERI_asmerom={ #Asmerom Woldegiorghis, Leader of the Liberal Progressive Party, joined the Independence Bloc in 1949
+		name=ERI_asmerom
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ERI_asmerom
+			allowed = {
+				original_tag = ERI
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	ERI_ali_ibrahim={ #Ali Ibrahim, Leader of the War Veteran's Association, joined the Independence Bloc in 1949
+		name=ERI_ali_ibrahim
+		portraits={
+			army={
+				small="GFX_idea_osman_kenadid"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ERI_ali_ibrahim
+			allowed = {
+				original_tag = ERI
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	
+	ERI_bairu={ #Pro-Ethiopian Politician, famously called for union in the 40's. Would eventually defect to the ELF in 1967
+		name=ERI_bairu
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ERI_bairu
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { ideological_crusader }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ERI_asfaha={ #Asfaha Woldemikael, Another pro-Ethiopian politician, would remain one until his death in 1994
+		name=ERI_asfaha
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ERI_asfaha
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { propaganda_expert }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ERI_nawd={ #Mohamed Said Nawd, Founding member of the Eritrean Liberation Movement (ELM), not to be confused with the ELF
+		name=ERI_nawd
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ERI_nawd
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { popular_figurehead }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ERI_eyay={ #Salih Ahmed Eyay, Founding member of the ELM
+		name=ERI_eyay
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ERI_eyay
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { captain_of_industry }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ERI_blatta_ali={ #Blatta Mohamed Abdella Ali, vice president of the New Eritrea Party
+		name=ERI_blatta_ali
+		portraits={
+			army={
+				small="GFX_idea_generic_army_arab_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ERI_blatta_ali
+			allowed = {
+				original_tag = ERI
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+}

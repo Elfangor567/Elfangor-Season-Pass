@@ -1,0 +1,671 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+			#Removing generated characters
+			every_possible_country = {
+				limit = {
+					OR = {
+						original_tag = BOS
+						original_tag = CRO
+						original_tag = MAC
+						original_tag = MNT
+						original_tag = SER
+						original_tag = SLV
+					}
+				}
+				every_character = {
+					limit = {
+						NOT = { has_character_flag = EYE_original_gangster }
+					}
+					retire = yes
+				}
+			}
+			
+			#AI Behaviour
+			SWI = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = EYE_switzerland_ai_behavior
+							option = RANDOM
+						}
+					}
+					random_list = {
+						20 = { SWI = { set_country_flag = SWI_AI_RANDOM_HISTORICAL } }
+						20 = { SWI = { set_country_flag = SWI_AI_RANDOM_DEMOCRATIC } }
+						20 = { SWI = { set_country_flag = SWI_AI_RANDOM_COMMUNIST } }
+						20 = { SWI = { set_country_flag = SWI_AI_RANDOM_FASCIST_CORPORATIST } }
+						20 = { SWI = { set_country_flag = SWI_AI_RANDOM_FASCIST_OLD } }
+					}
+				}
+			}
+			AUS = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = EYE_austria_ai_behavior
+							option = RANDOM
+						}
+					}
+					random_list = {
+						34 = { AUS = { set_country_flag = AUS_AI_RANDOM_HISTORICAL } }
+						33 = { AUS = { set_country_flag = AUS_AI_RANDOM_RESTORE_OTTO } }
+						33 = { AUS = { set_country_flag = AUS_AI_RANDOM_FASCIST } }
+					}
+				}
+			}
+			
+			SLO = {
+				if = {
+					limit = {
+						has_start_date < 1936.2.1
+						has_game_rule = {
+							rule = EYE_free_slovakia
+							option = EYE_SLO_FREED
+						}
+					}
+					add_state_core = 664
+					add_state_core = 70
+					add_state_core = 71
+					add_state_core = 73
+					add_state_claim = 72
+					CZE = {
+						release = SLO
+						remove_ideas = CZE_divided_nation
+						set_cosmetic_tag = CZE_ONLY					
+					}
+					SLO = {
+						if = {
+							limit = { has_dlc = "No Step Back" }
+							load_oob = AUS_slovak_troops_nsb
+						}
+						else = {
+							load_oob = AUS_slovak_troops
+						}
+					}
+				}
+			}
+			
+			SER = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = yug_fragmentation_status
+							option = YUG_FRAGMENTED
+						}
+					}
+					YUG = {
+						YUG_slobodan_jovanovic = {
+							add_country_leader_role = {
+								country_leader = {
+									ideology = oligarchism
+									expire = "1965.1.1"
+								}
+							}
+						}
+						YUG_dusan_simovic = {
+							add_country_leader_role = {
+								country_leader = {
+									ideology = oligarchism
+									expire = "1965.1.1"
+								}
+							}
+						}
+					}
+					EYE_free_serbia_effect = yes
+				}
+			}
+		}
+	}
+	
+	on_unit_leader_created = {
+		effect = {
+			if = { 
+				limit = {
+					FROM = { 
+						TAG = SWI
+						OR = {
+							has_idea = SWI_special_conscription_1
+							has_idea = SWI_special_conscription_2
+							has_idea = SWI_special_conscription_3
+							has_idea = SWI_special_conscription_4
+						}
+					}
+				}
+				if = {
+					limit = { is_field_marshal = no }
+					add_unit_leader_trait = EYE_swiss_commander
+				}
+				if = {
+					limit = { is_field_marshal = yes }
+					add_unit_leader_trait = EYE_swiss_general
+				}
+			}
+		}
+	}
+	
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = SWI
+					NOT = { tag = SWI }
+				}
+				every_unit_leader = {
+					remove_unit_leader_trait = EYE_swiss_commander
+					remove_unit_leader_trait = EYE_swiss_general
+				}
+			}
+		}
+	}
+	
+	on_puppet = {
+		effect = {
+			#Habsburgs
+			if = {
+				limit = { 
+					original_tag = POL 
+					NOT = { has_country_leader = { character = POL_karl_albrecht ruling_only = yes } }
+					FROM = { 
+						tag = AUS
+						OR = {
+							has_character = HUN_otto_von_habsburg
+							has_idea = AUS_otto_von_figurehead
+						}
+					}
+				}
+				if = { 
+					limit = { has_cosmetic_tag = PLC_UNIFIED }
+					set_cosmetic_tag = PLC_UNIFIED_HABSBURG
+					
+					else = {
+						set_cosmetic_tag = EYE_POL_habsburg
+					}
+				}	
+				promote_character = POL_karl_albrecht
+				if = {
+					limit = { NOT = { has_government = neutrality } }
+					set_politics = {
+						ruling_party = neutrality
+					}
+				}
+				set_party_name = { ideology = neutrality long_name = "Royalists" name = "Royalists" }
+			}
+			if = {
+				limit = { 
+					original_tag = UKR 
+					NOT = { has_country_leader = { character = UKR_vasyl_vyshyvani_habsburg ruling_only = no } }
+					FROM = { 
+						tag = AUS
+						OR = {
+							has_character = HUN_otto_von_habsburg
+							has_idea = AUS_otto_von_figurehead
+						}
+					}
+				}
+				set_cosmetic_tag = EYE_UKR_habsburg
+			
+				add_country_leader_role = {
+					character = UKR_vasyl_vyshyvani_habsburg
+					promote_leader = yes
+					country_leader = {
+					  ideology=despotism
+					  traits = { EYE_red_prince }
+					  expire="1965.1.1"
+					}
+				}
+				
+				if = {
+					limit = { NOT = { has_government = neutrality } }
+					set_politics = {
+						ruling_party = neutrality
+					}
+				}
+				set_party_name = { ideology = neutrality long_name = "Royalists" name = Royalists }
+			}
+			if = {
+				limit = { 
+					original_tag = SLV
+					NOT = { has_country_leader = { character = SLV_johann_graf ruling_only = no } }
+					FROM = { 
+						tag = AUS
+						OR = {
+							has_character = HUN_otto_von_habsburg
+							has_idea = AUS_otto_von_figurehead
+						}
+					}
+				}
+				set_cosmetic_tag = EYE_SLV_habsburg
+			
+				add_country_leader_role = {
+					character = SLV_johann_graf
+					promote_leader = yes
+					country_leader = {
+						expire = "1965.1.1"
+						ideology = despotism
+						traits = { }
+					}
+				}
+				
+				if = {
+					limit = { NOT = { has_government = neutrality } }
+					set_politics = {
+						ruling_party = neutrality
+					}
+				}
+				set_party_name = { ideology = neutrality long_name = "Royalists" name = Royalists }
+			}
+			if = {
+				limit = { 
+					original_tag = CRO
+					NOT = { has_country_leader = { character = CRO_leopold_habsburg ruling_only = no } }
+					FROM = { 
+						tag = AUS
+						OR = {
+							has_character = HUN_otto_von_habsburg
+							has_idea = AUS_otto_von_figurehead
+						}
+					}
+				}
+				if = {
+					limit = { NOT = { has_cosmetic_tag = EYE_TRIUNE } }
+					set_cosmetic_tag = EYE_CRO_habsburg
+				}
+				add_country_leader_role = {
+					character = CRO_leopold_habsburg
+					promote_leader = yes
+					country_leader = {
+						expire = "1965.1.1"
+						ideology = despotism
+						traits = { likes_austria }
+					}
+				}
+				if = {
+					limit = { NOT = { has_government = neutrality } }
+					set_politics = {
+						ruling_party = neutrality
+					}
+				}
+				set_party_name = { ideology = neutrality long_name = "Royalists" name = "Royalists" }
+			}
+			if = {
+				limit = { 
+					original_tag = MEX
+					NOT = { has_country_leader = { character = MEX_maria_josepha ruling_only = no } }
+					FROM = { 
+						tag = AUS
+						OR = {
+							has_character = HUN_otto_von_habsburg
+							has_idea = AUS_otto_von_figurehead
+						}
+					}
+				}
+				if = {
+					limit = { NOT = { has_cosmetic_tag = EYE_MEX_habsburg } }
+					set_cosmetic_tag = EYE_MEX_habsburg
+				}
+				add_country_leader_role = {
+					character = MEX_maria_josepha
+					promote_leader = yes
+					country_leader = {
+						ideology = despotism
+						expire = "1965.1.1"
+					}
+				}
+				if = {
+					limit = { NOT = { has_government = neutrality } }
+					set_politics = {
+						ruling_party = neutrality
+					}
+				}
+				set_party_name = { ideology = neutrality long_name = "Royalists" name = "Royalists" }
+				hidden_effect = {
+					remove_ideas = {
+						MEX_callistas
+						MEX_church_power_1 MEX_church_power_2 MEX_church_power_3 MEX_church_power_4 MEX_church_power_5
+						MEX_cedillo_tension MEX_cedillo_tension_2 MEX_cedillo_tension_3 MEX_cedillo_tension_4
+						MEX_politicised_army MEX_politicised_army_2
+						MEX_left_wing_paramilitaries MEX_right_wing_paramilitaries
+						MEX_womens_suffrage MEX_international_peacekeepers
+						MEX_oil_concessions
+						MEX_synarchist_influence MEX_bolivarian_agitation MEX_idea_vanguard_of_the_4th_international								
+					}
+					add_ideas = MEX_church_power_3
+					add_ideas = neutral_influence
+					USA = {
+						remove_resource_rights = 479
+						remove_resource_rights = 480
+					}
+					ENG = {
+						remove_resource_rights = 477
+						remove_resource_rights = 476
+					}
+				}
+			}
+			#Serbia and Yugoslavia
+			if = {
+				limit = {
+					original_tag = SER
+					NOT = { has_country_flag = SER_has_yugoslavian_assets }
+				}
+				EYE_free_serbia_effect = yes
+			}
+		}
+	}
+	
+	on_release_as_puppet = {
+		effect = {
+			#Habsburgs
+			if = {
+				limit = { 
+					original_tag = CRO
+					NOT = { has_country_leader = { character = CRO_leopold_habsburg ruling_only = no } }
+					FROM = { 
+						tag = AUS
+						OR = {
+							has_character = HUN_otto_von_habsburg
+							has_idea = AUS_otto_von_figurehead
+						}
+					}
+				}
+				if = {
+					limit = { NOT = { has_cosmetic_tag = EYE_TRIUNE } }
+					set_cosmetic_tag = EYE_CRO_habsburg
+				}
+				add_country_leader_role = {
+					character = CRO_leopold_habsburg
+					promote_leader = yes
+					country_leader = {
+						expire = "1965.1.1"
+						ideology = despotism
+						traits = { likes_austria }
+					}
+				}
+				if = {
+					limit = { NOT = { has_government = neutrality } }
+					set_politics = {
+						ruling_party = neutrality
+					}
+				}
+				set_party_name = { ideology = neutrality long_name = "Royalists" name = "Royalists" }
+			}
+			if = {
+				limit = { 
+					original_tag = SLO 
+					NOT = { has_country_leader = { character = SLO_maximilian_habsburg ruling_only = no } }
+					FROM = { 
+						tag = AUS
+						OR = {
+							has_character = HUN_otto_von_habsburg
+							has_idea = AUS_otto_von_figurehead
+						}
+					}
+				}
+				set_cosmetic_tag = EYE_SLO_habsburg
+			
+				add_country_leader_role = {
+					character = SLO_maximilian_habsburg
+					promote_leader = yes
+					country_leader = {
+						expire = "1965.1.1"
+						ideology = despotism
+						traits = { likes_austria }
+					}
+				}
+				if = {
+					limit = { NOT = { has_government = neutrality } }
+					set_politics = {
+						ruling_party = neutrality
+					}
+				}
+				set_party_name = { ideology = neutrality long_name = "Royalists" name = Royalists }
+			}
+			if = {
+				limit = { 
+					original_tag = CZE 
+					NOT = { has_country_leader = { character = CZE_josef_habsburg ruling_only = no } }
+					FROM = { 
+						tag = AUS
+						OR = {
+							has_character = HUN_otto_von_habsburg
+							has_idea = AUS_otto_von_figurehead
+						}
+					}
+				}
+			
+				add_country_leader_role = {
+					character = CZE_josef_habsburg
+					promote_leader = yes
+					country_leader = {
+						expire = "1965.1.1"
+						ideology = despotism
+						traits = { }
+					}
+				}
+				if = {
+					limit = { NOT = { has_government = neutrality } }
+					set_politics = {
+						ruling_party = neutrality
+					}
+				}
+				set_party_name = { ideology = neutrality long_name = "Royalists" name = Royalists }
+			}
+			if = {
+				limit = { 
+					original_tag = MEX
+					NOT = { has_country_leader = { character = MEX_maria_josepha ruling_only = no } }
+					FROM = { 
+						tag = AUS
+						OR = {
+							has_character = HUN_otto_von_habsburg
+							has_idea = AUS_otto_von_figurehead
+						}
+					}
+				}
+				if = {
+					limit = { NOT = { has_cosmetic_tag = EYE_MEX_habsburg } }
+					set_cosmetic_tag = EYE_MEX_habsburg
+				}
+				add_country_leader_role = {
+					character = MEX_maria_josepha
+					promote_leader = yes
+					country_leader = {
+						ideology = despotism
+						expire = "1965.1.1"
+					}
+				}
+				if = {
+					limit = { NOT = { has_government = neutrality } }
+					set_politics = {
+						ruling_party = neutrality
+					}
+				}
+				set_party_name = { ideology = neutrality long_name = "Royalists" name = "Royalists" }
+				hidden_effect = {
+					remove_ideas = {
+						MEX_callistas
+						MEX_church_power_1 MEX_church_power_2 MEX_church_power_3 MEX_church_power_4 MEX_church_power_5
+						MEX_cedillo_tension MEX_cedillo_tension_2 MEX_cedillo_tension_3 MEX_cedillo_tension_4
+						MEX_politicised_army MEX_politicised_army_2
+						MEX_left_wing_paramilitaries MEX_right_wing_paramilitaries
+						MEX_womens_suffrage MEX_international_peacekeepers
+						MEX_oil_concessions
+						MEX_synarchist_influence MEX_bolivarian_agitation MEX_idea_vanguard_of_the_4th_international								
+					}
+					add_ideas = MEX_church_power_3
+					add_ideas = neutral_influence
+					USA = {
+						remove_resource_rights = 479
+						remove_resource_rights = 480
+					}
+					ENG = {
+						remove_resource_rights = 477
+						remove_resource_rights = 476
+					}
+				}
+			}
+			#Serbia and Yugoslavia
+			if = {
+				limit = {
+					original_tag = SER
+					NOT = { has_country_flag = SER_has_yugoslavian_assets }
+				}
+				EYE_free_serbia_effect = yes
+			}
+		}
+	}
+	
+	on_release_as_free = {
+		effect = {
+			if = {
+				limit = { tag = SLV }
+				if = {
+					limit = { num_of_civilian_factories < 1 }
+					random_owned_controlled_state = {
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = { num_of_military_factories < 1 }
+					random_owned_controlled_state = {
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = { air_base < 1 }
+					random_owned_controlled_state = {
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = air_base
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+			#Serbia and Yugoslavia
+			if = {
+				limit = {
+					original_tag = SER
+					NOT = { has_country_flag = SER_has_yugoslavian_assets }
+				}
+				EYE_free_serbia_effect = yes
+			}
+		}
+	}
+	on_release_as_puppet = {
+		effect = {
+			if = {
+				limit = { tag = SLV }
+				if = {
+					limit = { num_of_civilian_factories < 1 }
+					random_owned_controlled_state = {
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = { num_of_military_factories < 1 }
+					random_owned_controlled_state = {
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = { air_base < 1 }
+					random_owned_controlled_state = {
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = air_base
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+			#Serbia and Yugoslavia
+			if = {
+				limit = {
+					original_tag = SER
+					NOT = { has_country_flag = SER_has_yugoslavian_assets }
+				}
+				EYE_free_serbia_effect = yes
+			}
+		}
+	}
+	
+	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = {
+			#Westphalia
+			if = {
+				limit = {
+					original_tag = PRE
+					FROM.FROM = {
+						OR = {
+							state = 55
+							state = 60
+						}
+						NOT = { is_core_of = WST }
+					}
+				}
+				FROM.FROM = {
+					add_core_of = WST
+					if = {
+						limit = { NOT = { country_exists = WST } }
+						FRA = { transfer_state = PREV }
+						set_state_controller_to = FRA
+						FRA = { release_puppet_on_controlled = WST }
+						WST = { country_event = { id = EYE_aus.11000 hours = 25 } }
+					}
+					else = { 
+						WST = { transfer_state = PREV }
+						set_state_controller_to = WST
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					original_tag = HAN
+					FROM.FROM = { 
+						state = 57
+						NOT = { is_core_of = WST }
+					}
+				}
+				FROM.FROM = {
+					add_core_of = WST
+					if = {
+						limit = { NOT = { country_exists = WST } }
+						FRA = { transfer_state = PREV }
+						set_state_controller_to = FRA
+						FRA = { release_puppet_on_controlled = WST }
+						WST = { country_event = { id = EYE_aus.11000 hours = 25 } }
+					}
+					else = { 
+						WST = { transfer_state = PREV }
+						set_state_controller_to = WST
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+objectTypes = {	
+	####
+	# Fishery Protectors
+	####
+	pdxmesh = {
+		name = "generic_DEN_ship_hull_fishery_protection_mesh"
+		file = "gfx/models/units/ships/generic_destroyer.mesh"
+		
+		animation = { id = "idle"			type = "generic_destroyer_idle_animation" }
+		animation = { id = "attack"			type = "generic_destroyer_attack_animation" }
+		animation = { id = "defend"			type = "generic_destroyer_defend_animation" }
+		animation = { id = "damaged_attack"	type = "generic_destroyer_attack_animation" }
+		animation = { id = "damaged_defend"	type = "generic_destroyer_defend_animation" }
+		animation = { id = "death"			type = "generic_destroyer_death_animation" }
+	}
+	
+	####
+	# Gunboats
+	####
+	pdxmesh = {
+		name = "generic_SCA_ship_hull_gunboat_mesh"
+		file = "gfx/models/units/ships/generic_destroyer.mesh"
+		
+		animation = { id = "idle"			type = "generic_destroyer_idle_animation" }
+		animation = { id = "attack"			type = "generic_destroyer_attack_animation" }
+		animation = { id = "defend"			type = "generic_destroyer_defend_animation" }
+		animation = { id = "damaged_attack"	type = "generic_destroyer_attack_animation" }
+		animation = { id = "damaged_defend"	type = "generic_destroyer_defend_animation" }
+		animation = { id = "death"			type = "generic_destroyer_death_animation" }
+	}
+}

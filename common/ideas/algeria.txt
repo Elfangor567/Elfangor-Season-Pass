@@ -1,0 +1,227 @@
+ideas = {
+	country = {
+		ALG_mecca_of_revs = {
+			
+			picture = tur_varlik_vergisi
+			
+			allowed = {
+				original_tag = ALG
+			}
+			
+			allowed_civil_war = {
+				is_subject = no
+			}
+			
+			modifier = {
+				land_night_attack = 0.1
+				resistance_growth_on_our_occupied_states = 0.25
+				propaganda_mission_factor = 0.5
+				autonomy_gain = 0.25
+			}
+		}
+	}
+	
+	# TECHNOLOGY
+	
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		ALG_OCFA = { #Office des Chemins de fer Algériens, Operated all railways within Algeria
+		
+			picture = generic_tank_manufacturer_2
+			
+			allowed = {
+				original_tag = ALG
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { heavy_tank_manufacturer }
+		}
+	}
+
+	naval_manufacturer = { 
+		
+		designer = yes
+		
+		ALG_mers = { #Mers El Kébir, an incredibly important port and shipbuilding site since Roman times
+			
+			picture = generic_naval_manufacturer_3
+			
+			allowed = {
+				original_tag = ALG
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { raiding_fleet_naval_manufacturer }
+		}
+		
+		ALG_annaba = { #Annaba, important port built up during the 1800's
+			
+			picture = generic_naval_manufacturer_2
+			
+			allowed = {
+				original_tag = ALG
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { mediterranean_naval_manufacturer }
+		}
+		
+		ALG_tamentfoust = { #Located in Algiers, home of Algeria's Naval Academy, been a port for centuries
+			
+			picture = generic_naval_manufacturer_1
+			
+			allowed = {
+				original_tag = ALG
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { atlantic_fleet_naval_manufacturer }
+		}
+	}
+	
+	aircraft_manufacturer = {
+			
+		designer = yes
+		
+		ALG_aerotechnique= { #Aérotechnique
+			
+			picture = generic_air_manufacturer_1
+			
+			allowed = {
+				original_tag = ALG
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
+		}
+		ALG_SACA = { #Société Algérienne de Construction Aéronautique
+			
+			picture = generic_air_manufacturer_2
+			
+			allowed = {
+				original_tag = ALG
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+		}
+		ALG_CGT = { #Compagnie générale transsaharienne
+			
+			picture = generic_infantry_equipment_manufacturer_1
+			
+			allowed = {
+				original_tag = ALG
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { fuel_efficient_aircraft_manufacturer }
+		}
+		ALG_CATA = { #Compagnie Algerienne de Transports Aeriens
+			
+			picture = generic_air_manufacturer_3
+			
+			allowed = {
+				original_tag = ALG
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+		}
+	}
+	
+	industrial_concern = {
+	
+		designer = yes
+		
+		ERI_ouenza = { #Société de l'Ouenza, mining company in Ouenza
+			
+			picture = generic_industrial_concern_1
+			
+			allowed = {
+				original_tag = ALG
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}
+		
+		ALG_radio_alger = { #1926 Radio for Algeria, would expand in 1944 and again in 1948
+		
+			picture = generic_electronics_concern_1
+			
+			allowed = {
+				original_tag = ALG
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes	
+		
+		ALG_SADAB = { #Société Africaine des Automobiles BERLIET, est. 1957
+			
+			picture = generic_motorized_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = ALG
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+		ALG_djelloul = { #No clue where this is (thanks french wikipedia), but apparently the ALN used the area to manufacture weapons
+		
+			picture = generic_infantry_equipment_manufacturer_3
+		
+			allowed = {
+				original_tag = ALG
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+	}
+}

@@ -1,0 +1,242 @@
+ideas = {
+
+	country = {
+		#
+	}
+	
+	tank_manufacturer = {
+	
+		designer = yes
+		
+		MNT_dakic = { #Industrija Mašina Radoje Dakic, a heavy machinery factory that was built in Podgorica
+		
+			picture = generic_tank_manufacturer_2
+			
+			allowed = {
+				original_tag = MNT
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { medium_tank_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	aircraft_manufacturer = {
+	
+		designer = yes
+		
+		MNT_podgorica = { #Podgorica Airbase
+			
+			picture = generic_air_manufacturer_1
+			
+			allowed = {
+				original_tag = MNT
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		MNT_bijela = { #Jadransko brodogradilište Bijela, large shipyard, used by Yugoslavia in Vanilla
+		
+			picture = generic_naval_manufacturer_2
+			
+			allowed = {
+				original_tag = MNT
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		MNT_bar = { #Port of Bar ?
+			
+			picture = generic_naval_manufacturer_3
+			
+			allowed = {
+				original_tag = MNT
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { raiding_fleet_naval_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		MNT_barska = { #Barska Plovidba, small company based out of Pristan, founded 1926
+			
+			picture = brooklyn_naval_yard
+			
+			allowed = {
+				original_tag = MNT
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		MNT_tivat = { #Tivat Naval Base, used by Austria, Italy and Yugoslavia. Now owned by Porto Montenegro, a superyacht marina
+			
+			picture = generic_naval_manufacturer_1
+			
+			allowed = {
+				original_tag = MNT
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { battlefleet_designer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes
+		
+		MNT_gradski = { #AD Gradski Saobraćaj
+		
+			picture = generic_motorized_equipment_manufacturer_1
+			
+			allowed = {
+				original_tag = MNT
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}		
+		MNT_cetinje = { #Historical Artillery Foundry in Cetinje (Founded in the 1860's or 1870's)
+		
+			picture = generic_artillery_manufacturer_2
+			
+			allowed = {
+				original_tag = MNT
+			}
+			
+			research_bonus = {
+				artillery = 0.15
+			}
+			
+			traits = { artillery_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		MNT_obod = { #Historical Arsenal in Obod (Founded in the 1860's or 1870's)
+		
+			picture = generic_infantry_equipment_manufacturer_2
+			
+			allowed = {
+				original_tag = MNT
+			}
+			
+			research_bonus = {
+				infantry_equipment = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	industrial_concern = {
+	
+		designer = yes
+		
+		MNT_elektroprivreda = { #Elektroprivreda Crne Gore
+		
+			picture = generic_electronics_concern_1
+			
+			allowed = {
+				original_tag = MNT
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		MNT_petrol = { #Jugopetrol AD, founded in 1947 it was one of the first Yugoslavian oil/gas companies
+		
+			picture = generic_refining_concern_1
+		
+			allowed = {
+				original_tag = MNT
+			}
+			
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.15
+			}
+			
+			traits = { refinery_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

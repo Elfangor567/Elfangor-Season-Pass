@@ -1,0 +1,49 @@
+﻿##### ICELAND NAME LISTS #####
+##### Creatures #####
+ICE_SHIP_NAMES_CREATURES = {
+	name = NAME_THEME_NORSE_MONSTERS
+
+	for_countries = { ICE }
+
+	type = ship
+
+	prefix = "ICGV "
+	
+	unique = {
+		"Draugr" "Norn" "Haugbui" "Fossegrim" "Wight" "Gjenganger" "Huldufólk" "Munin" "Hugin" "Hábrók" "Nykr"
+		"Jötunn" "Garmr" "Fenrir" "Nøkk" "Hafgufa" "Bækhest" "Lyngbakr" "Kraken" "Valkyrja" "Thursar" "Dís"
+		"Ratatoskr" "Veðrfölnir" "Níðhöggr" "Hart" "Góinn" "Móinn" "Grafvitnir"
+	}
+}
+ICE_SHIP_NAMES_GODS = {
+	name = NAME_THEME_NORSE_GODS
+
+	for_countries = { ICE }
+
+	type = ship
+
+	prefix = "ICGV "
+	
+	unique = {
+		"Sága" "Sökkvabekkr" "Bolli" "Guðrún" "Grímr" "Friðþjóf" "Fáfnir" "Reginn" "Hrómundr" "Óðinn" "Gautur"
+		"Aldaföðr" "Hroptatýr" "Beli" "Baldr" "Hreiðmarr" "Ótr" "Hel" "Hyrrokkin" "Ingibjörg" "Helgi" "Hröngvið"
+		"Lindworm" "Grettir" "Kjartan" "Hafliða" "Örvar-Oddr" "Hjalmar" "Vignir" "Óláfr" "Þráinn" "Sigurd" 
+		"Herfjötur" "Svipul" "Þrúðr" "Kára" "Þór" "Týr" "Ægir" "Baldur" "Líf" "Sif"
+		
+	}
+}
+ICE_SHIP_NAMES_OTHER = {
+	name = NAME_THEME_NORSE_OTHER
+
+	for_countries = { ICE }
+
+	type = ship
+
+	prefix = "ICGV "
+	
+	unique = {
+		"Saga" "Frœkni" "Laxdæla" "Tyrfing" "Dáinsleif" "Mistilteinn" "Gram" "Barnstokkr" "Balmung" "Mimung"
+		"Hrunting" "Gusisnautar" "Liðsmannakonung" "Trollskap" "Ragnarök" "Yggdrasil" "Seiðr" "Blót" "Kerlaugar"
+		"Bifröst" "Ásbrú"
+	}
+}

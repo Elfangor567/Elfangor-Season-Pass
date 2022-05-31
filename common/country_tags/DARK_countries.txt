@@ -1,0 +1,2 @@
+AOI = "countries/Africa Orientales Italiana.txt"
+MTA = "countries/Mittelafrika.txt"

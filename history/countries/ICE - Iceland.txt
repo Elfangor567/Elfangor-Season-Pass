@@ -1,0 +1,320 @@
+﻿capital = 100
+
+oob = "ICE_1936"
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "ICE_1936_naval_mtg"
+	else = {
+		set_naval_oob = "ICE_1936_naval_legacy"
+	}
+}
+
+recruit_character = ICE_gisli_sigurbjornsson
+recruit_character = ICE_brynjolfur_bjarnason
+recruit_character = ICE_jon_baldvinsson
+recruit_character = ICE_hermann_jonasson
+recruit_character = ICE_sveinn_bjornsson
+recruit_character = ICE_tryggvi_borhallsson
+
+recruit_character = ICE_einar_arnalds
+recruit_character = ICE_olafur_sveinsson
+
+recruit_character = ICE_bjorn_bjornsson
+recruit_character = ICE_eysteinn_jonsson
+recruit_character = ICE_alexander_johannesson
+recruit_character = ICE_borsteinn_jonsson
+recruit_character = ICE_jon_hermannsson
+recruit_character = ICE_erlingur_palsson
+recruit_character = ICE_richard_thors
+recruit_character = ICE_thor_jensen
+recruit_character = ICE_vilhjalmur_thor
+recruit_character = ICE_johannes_snorrason
+recruit_character = ICE_kristinn_jonsson
+recruit_character = ICE_sigurdar_jonsson
+recruit_character = ICE_orn_johnson
+
+recruit_character = ICE_alfred_eliasson
+recruit_character = ICE_olafur_thors
+recruit_character = ICE_erling_ellingsen
+
+recruit_character = ICE_magnus_jonsson
+recruit_character = ICE_einar_olgeirsson
+recruit_character = ICE_stefan_stefansson
+recruit_character = ICE_eidur_kvaran
+recruit_character = ICE_bjorn_olafsson
+recruit_character = ICE_olafur_johannesson
+recruit_character = ICE_bjorn_bordarson
+recruit_character = ICE_asgeir_asgeirsson
+recruit_character = ICE_agnar_hansen
+
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1
+	trade_interdiction = 1
+	basic_train = 1
+}
+if = {
+	limit = { NOT = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_destroyer = 1
+		early_light_cruiser = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		DEN_fishery_protection_ships = 1 #Unique to Denmark/Iceland
+		coastal_defense_ships = 1
+		
+		basic_naval_mines = 1
+		early_ship_hull_light = 1
+			basic_depth_charges = 1
+		early_ship_hull_heavy = 1
+		early_ship_hull_submarine = 1		
+		early_ship_hull_cruiser = 1
+		basic_battery = 1
+			basic_light_battery = 1
+			basic_medium_battery = 1
+			basic_heavy_battery = 1
+		basic_secondary_battery = 1		
+		basic_torpedo = 1
+	}
+}
+
+add_ideas = {  
+	ICE_icelandic_neutrality
+	ICE_christian_x
+}
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	
+	#icelandic focuses
+	complete_national_focus = ICE_roads_program #jan 1 - march 11 (1936)
+	complete_national_focus = ICE_look_away #march 11 - july 29
+	complete_national_focus = ICE_domestic_ind #july 29 - oct 7
+	complete_national_focus = ICE_infr_2 #oct 7 - dec 16
+	complete_national_focus = ICE_coastguard #dec 16 - feb 24 (1937)
+	complete_national_focus = ICE_nav_doc #feb 24 - may 5
+	complete_national_focus = ICE_look_out #may 5 - july 14
+	complete_national_focus = ICE_sup_dem #july 14 - sep 22
+	complete_national_focus = ICE_distance_den #sep 22 - dec 1
+	complete_national_focus = ICE_recycling_programs #dec 1 - feb 9 (1938)
+	complete_national_focus = ICE_new_industry #feb 9 - apr 20
+	complete_national_focus = ICE_renew_drsrn #apr 20 - june 29		
+	complete_national_focus = ICE_strong_neutral #june 29 - sept 7
+	complete_national_focus = ICE_guarantees #sept 7 - nov 16
+	
+	if = {
+		limit = { has_dlc = "No Step Back" }
+			set_technology = {
+				gwtank_chassis = 1
+			}
+		else = {
+			set_technology = {
+				gwtank = 1
+			}
+		}
+	}
+	set_technology = {
+		early_fighter = 1
+		early_bomber = 1
+		naval_bomber1 = 1
+		cv_naval_bomber1 = 1
+		gw_artillery = 1
+		interwar_artillery = 1
+		interwar_antiair = 1
+		interwar_antitank = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+		motorised_infantry = 1
+		scout_plane1 = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		convoy_interdiction_ti = 1
+		raider_patrols = 1
+		carrier_operations = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		dispersed_industry3 = 1
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			set_technology = {
+				submarine_mine_laying = 1
+				sonar = 1
+				smoke_generator = 1
+				basic_ship_hull_light = 1
+				basic_ship_hull_submarine = 1
+				basic_ship_hull_cruiser = 1
+				basic_cruiser_armor_scheme = 1
+				improved_ship_torpedo_launcher = 1
+			}
+			set_naval_oob = "ICE_1939_naval_mtg"
+		else = {
+			set_technology = {
+				basic_submarine = 1
+				basic_light_cruiser = 1
+				basic_destroyer = 1
+			}
+			set_naval_oob = "ICE_1939_naval_legacy"
+		}
+	}
+	
+	oob = "ICE_1939"
+	
+	add_ideas = drsrn_signatory
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1934.6.24"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	neutrality = 64
+	democratic = 25
+	fascism = 1
+	communism = 10
+}
+
+1939.1.1 = {
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1937.6.29"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		neutrality = 66
+		democratic = 22
+		fascism = 0
+		communism = 12
+	}
+}
+
+set_convoys = 20
+set_stability = 0.9
+set_war_support = 0.15
+
+### VARIANTS ###
+# 1936 Start #
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+		### Tank Variants
+	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	### Ship Variants ###
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	
+	#Fishery Protection Ships"
+	create_equipment_variant = {
+		name = "Óðinn Class"
+		type = DEN_ship_hull_fishery_protection_ship
+		name_group = ICE_SHIP_NAMES_GODS
+		parent_version = 0
+		modules = {
+			front_1_custom_slot = empty
+			rear_1_custom_slot = ship_anti_air_1
+			fixed_ship_engine_slot = light_ship_engine_2
+		}
+	}
+	create_equipment_variant = {
+		name = "Þór Class"
+		type = DEN_ship_hull_fishery_protection_ship
+		name_group = ICE_SHIP_NAMES_GODS
+		parent_version = 0
+		modules = {
+			front_1_custom_slot = ship_light_battery_2
+			rear_1_custom_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_2
+		}
+	}	
+	create_equipment_variant = {
+		name = "Islands Falk Class"
+		type = DEN_ship_hull_fishery_protection_ship
+		name_group = ICE_SHIP_NAMES_OTHER
+		parent_version = 0
+		modules = {
+			front_1_custom_slot = ship_light_battery_2
+			rear_1_custom_slot = ship_anti_air_1
+			fixed_ship_engine_slot = light_ship_engine_2
+		}
+	}
+	
+	#Destroyer
+	create_equipment_variant = {
+		name = "Ægir Class"
+		type = ship_hull_light_1
+		name_group = ICE_SHIP_NAMES_GODS
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_2
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_torpedo_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_2
+			mid_1_custom_slot = ship_depth_charge_1
+		}
+	}
+}
+
+# 1939 Start #
+1939.1.1 = {
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+			### Tank Variants
+		}
+	}
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		# Ship variants #
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		#Fishery Protection#
+		create_equipment_variant = {
+			name = "Óðinn II Class"
+			type = DEN_ship_hull_fishery_protection_ship
+			name_group = ICE_SHIP_NAMES_GODS
+			parent_version = 0
+			modules = {
+				front_1_custom_slot = ship_anti_air_2
+				rear_1_custom_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_2
+			}
+			
+		}
+	}
+}
+	

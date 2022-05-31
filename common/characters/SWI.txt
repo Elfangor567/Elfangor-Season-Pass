@@ -1,0 +1,812 @@
+characters={
+#Country Leaders
+	SWI_federal_council={
+		name=SWI_federal_council
+		portraits={
+			civilian={
+				large=GFX_portrait_SWI_federal_council
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=centrism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	SWI_wilhelm_gustlaff={
+		name=SWI_wilhelm_gustlaff
+		portraits={
+			civilian={
+				large="gfx/leaders/CZE/Portrait_Czech_Edvard_Benes.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1"
+			traits = { likes_germany }
+			id=20000
+		}
+	}
+	SWI_rolf_henne={
+		name=SWI_rolf_henne
+		portraits={
+			civilian={
+				large="gfx/leaders/NZL/Portrait_New_Zeeland_John_Ormond.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1"
+			traits = { likes_germany }
+			id=20001
+		}
+	}	
+	SWI_fritz_platten={
+		name=SWI_fritz_platten
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
+			}
+		}
+		country_leader={
+			ideology=leninism
+			expire="1965.1.1"
+			id=21000
+		}
+	}
+	SWI_leon_nicole={
+		name=SWI_leon_nicole
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/Portrait_Soviet_Dmitri_Danilovich_Lelyushenko.dds"
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			expire="1965.1.1"
+			id=21001
+		}
+	}
+	SWI_workers_congress={
+		name=SWI_workers_congress
+		portraits={
+			civilian={
+				large=GFX_portrait_SWI_federal_council
+			}
+		}
+		country_leader={
+			ideology=anti_revisionism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+#Generals and Admirals
+	SWI_renzo_lardelli={
+		name=SWI_renzo_lardelli
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_france_charles_huntziger.dds"
+				small="gfx/interface/ideas/idea_fra_charles_huntziger.dds"
+			}
+		}
+		corps_commander={
+			traits = { EYE_swiss_commander infantry_officer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=-1
+		}
+	}
+	SWI_friedrich_prisi={
+		name=SWI_friedrich_prisi
+		portraits={
+			army={
+				large="gfx/leaders/FRA/Portrait_France_Maurice_Gamelin.dds"
+				small="gfx/interface/ideas/idea_fra_maurice_gamelin.dds"
+			}
+		}
+		corps_commander={
+			traits = { EYE_swiss_commander old_guard }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id=-1
+		}
+	}
+	SWI_rudolf_miescher={
+		name=SWI_rudolf_miescher
+		portraits={
+			army={
+				large="gfx/leaders/FRA/Portrait_France_Alphonse_Juin.dds"
+				small="gfx/interface/ideas/idea_FRA_alphonse_juin.dds"
+			}
+		}
+		corps_commander={
+			traits = { EYE_swiss_commander trait_mountaineer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=-1
+		}
+	}
+	SWI_jakob_labhardt={
+		name=SWI_jakob_labhardt
+		portraits={
+			army={
+				large="gfx/leaders/EYE/Portrait_EYE_Jakob_Labhardt.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_1.dds"
+			}
+		}
+		corps_commander={
+			traits = { EYE_swiss_commander armor_officer career_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=-1
+		}
+	}
+	
+	SWI_henri_guisan={
+		name=SWI_henri_guisan
+		portraits={
+			army={
+				large="gfx/leaders/EYE/Portrait_EYE_Henri_Guisan.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_2.dds"
+			}
+		}
+		corps_commander={
+			traits = { EYE_swiss_commander career_officer trait_cautious brilliant_strategist unyielding_defender }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id=22002
+		}
+	}
+	SWI_jules_borel={
+		name=SWI_jules_borel
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_france_henri_giraud.dds"
+				small="gfx/interface/ideas/idea_FRA_henri_giraud.dds"
+			}
+		}
+		corps_commander={
+			traits = { EYE_swiss_commander trait_cautious inflexible_strategist }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id=22001
+		}
+	}
+	SWI_ulriche_wille_jr={
+		name=SWI_ulriche_wille_jr
+		portraits={
+			army={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_12.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_4.dds"
+			}
+		}
+		corps_commander={
+			traits = { EYE_swiss_commander career_officer trait_reckless }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id=22004
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SWI_ulriche_wille_jr
+			allowed = { 
+				original_tag = SWI
+			}
+			
+			traits = { army_chief_offensive_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+#Chiefs of Staff
+	SWI_jakob_huber={
+		name=SWI_jakob_huber
+		portraits={
+			army={
+				small="GFX_idea_jakob_huber"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SWI_jakob_huber
+			allowed = { 
+				original_tag = SWI
+			}
+			
+			traits = { army_chief_defensive_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	SWI_friedrich_rihner={
+		name=SWI_friedrich_rihner
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = SWI_friedrich_rihner
+			allowed = { 
+				original_tag = SWI
+			}
+			
+			traits = { air_bomber_interception_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	SWI_hans_bandi={
+		name=SWI_hans_bandi
+		portraits={
+			army={
+				small="GFX_idea_hans_bandi"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = SWI_hans_bandi
+			allowed = { 
+				original_tag = SWI
+			}
+			
+			traits = { air_chief_safety_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	SWI_nicolas_jaquet={
+		name=SWI_nicolas_jaquet
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = SWI_nicolas_jaquet
+			allowed = { 
+				original_tag = SWI
+			}
+			
+			traits = { navy_chief_maneuver_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	SWI_heinrich_rengel={
+		name=SWI_heinrich_rengel
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = SWI_heinrich_rengel
+			allowed = { 
+				original_tag = SWI
+			}
+			
+			traits = { navy_chief_decisive_battle_1 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+
+#High Command
+	SWI_edouard_petitpierre={
+		name=SWI_edouard_petitpierre
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SWI_edouard_petitpierre
+			ledger = army
+			allowed = {
+				original_tag = SWI
+			}
+			
+			traits = { army_commando_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SWI_jean_de_muralt={
+		name=SWI_jean_de_muralt
+		portraits={
+			army={
+				small="GFX_idea_jean_muralt"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SWI_jean_de_muralt
+			ledger = army
+			allowed = {
+				original_tag = SWI
+			}
+			
+			traits = { army_artillery_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SWI_alfred_struby={
+		name=SWI_alfred_struby
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SWI_alfred_struby
+			ledger = army
+			allowed = {
+				original_tag = SWI
+			}
+			
+			traits = { army_entrenchment_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	SWI_etienne_primault={
+		name=SWI_etienne_primault
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SWI_etienne_primault
+			ledger = air
+			allowed = {
+				original_tag = SWI
+			}
+			
+			traits = { air_air_superiority_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SWI_august_haefeli={
+		name=SWI_august_haefeli
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SWI_august_haefeli
+			ledger = air
+			allowed = {
+				original_tag = SWI
+			}
+			
+			traits = { air_chief_all_weather_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	SWI_oskar_meier={
+		name=SWI_oskar_meier
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SWI_oskar_meier
+			ledger = air
+			allowed = {
+				original_tag = SWI
+			}
+			
+			traits = { navy_anti_submarine_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SWI_hans_oehler={
+		name=SWI_hans_oehler
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SWI_hans_oehler
+			ledger = air
+			allowed = {
+				original_tag = SWI
+			}
+			
+			traits = { navy_capital_ship_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#Theorists
+	SWI_eugen_bircher={
+		name = SWI_eugen_bircher
+		portraits={
+			army={
+				small="GFX_idea_eugen_bircher"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = SWI_eugen_bircher
+			ledger = army
+			allowed = {
+				original_tag = SWI
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SWI_henry_pillichody={
+		name = SWI_henry_pillichody
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = SWI_henry_pillichody
+			ledger = air
+			allowed = {
+				original_tag = SWI
+			}
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SWI_gottlieb_duttweiler={
+		name = SWI_gottlieb_duttweiler
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = SWI_gottlieb_duttweiler
+			ledger = navy
+			allowed = {
+				original_tag = SWI
+			}
+			available = {
+				has_completed_focus = SWI_naval_doc
+			}
+			traits = {
+				merchant_mariner
+			}
+			cost = 25
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SWI_paul_scherrer={
+		name = SWI_paul_scherrer
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = SWI_paul_scherrer
+			ledger = army
+			allowed = {
+				original_tag = SWI
+			}
+			
+			traits = {
+				nuclear_scientist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#Advisors
+	SWI_dr_max={
+		name=SWI_dr_max
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SWI_dr_max
+			allowed = {
+				original_tag = SWI
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					has_completed_focus = SWI_go_right
+				}
+			}		
+		}
+	}
+	SWI_hans_oprecht={
+		name=SWI_hans_oprecht
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SWI_hans_oprecht
+			allowed = {
+				original_tag = SWI
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					has_completed_focus = SWI_compromise
+				}
+			}		
+		}
+	}
+	SWI_edgar_woog={
+		name=SWI_edgar_woog
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SWI_edgar_woog
+			allowed = {
+				original_tag = SWI
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					has_completed_focus = SWI_go_left
+				}
+			}		
+		}
+	}
+	SWI_claude_pasquier={
+		name=SWI_claude_pasquier
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SWI_claude_pasquier
+			allowed = {
+				original_tag = SWI
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { neutrality_advocate }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}
+	}
+	
+	SWI_giuseppe_motta={
+		name=SWI_giuseppe_motta
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SWI_giuseppe_motta
+			allowed = {
+				original_tag = SWI
+			}
+			
+			traits = { silent_workhorse }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}
+	SWI_johannes_baumann={
+		name=SWI_johannes_baumann
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SWI_johannes_baumann
+			allowed = {
+				original_tag = SWI
+			}
+			
+			traits = { popular_figurehead }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}
+	SWI_ernst_wetter={
+		name=SWI_ernst_wetter
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SWI_ernst_wetter
+			allowed = {
+				original_tag = SWI
+			}
+			
+			traits = { financial_expert }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}
+	SWI_roger_masson={
+		name=SWI_roger_masson
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SWI_ernst_wetter
+			allowed = {
+				original_tag = SWI
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}
+}

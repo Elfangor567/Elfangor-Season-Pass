@@ -1,0 +1,895 @@
+characters={
+#Leaders
+
+#Generals and Admirals
+	NS_arthur_qvist = { #Added by event
+		name = NS_arthur_qvist
+		portraits={
+			army={
+				large="gfx/leaders/GER/Portrait_Germany_Generic_land_4.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_5.dds"
+			}
+		}
+		field_marshal={
+			traits = { politically_connected }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=-1
+			visible = { has_global_flag = NS_Allowed }
+		}
+	}
+	NS_henry_rinnan = { #Added by event
+		name = NS_henry_rinnan
+		portraits={
+			army={
+				large="gfx/leaders/CZE/portrait_sergej_vojcechovsky.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_6.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = NS_henry_rinnan
+			allowed = {
+				original_tag = NOR
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander={
+			traits = { commando }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=-1
+			visible = { has_global_flag = NS_Allowed }
+		}
+	}
+	NS_konrad_sundlo = { #Added by event
+		name = NS_konrad_sundlo
+		portraits={
+			army={
+				large="gfx/leaders/SCA/Portrait_SCA_Konrad_Sundlo.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_2.dds"
+			}
+		}
+		corps_commander={
+			traits = { old_guard trait_cautious }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=-1
+			visible = { has_global_flag = NS_Allowed }
+		}
+	}
+	
+#Chiefs of Staff
+	NS_ragnvald_hvoslef = {
+		name=NS_ragnvald_hvoslef
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = army_chief
+			idea_token = NS_ragnvald_hvoslef
+			name = NS_ragnvald_hvoslef
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { army_chief_morale_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+	}
+	NS_jonas_lie = {
+		name=NS_jonas_lie
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = army_chief
+			idea_token = NS_jonas_lie
+			name = NS_jonas_lie
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { army_chief_offensive_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_jonas_lie"
+			}
+		}
+	}
+	NS_tryggve_gran = {
+		name=NS_tryggve_gran
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = air_chief
+			idea_token = NS_tryggve_gran
+			name=NS_tryggve_gran
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { air_chief_all_weather_3 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+	}
+	NS_rudolf_bratteng = { # Norwegian Fighter for the Lutwaffe
+		name=NS_rudolf_bratteng
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = air_chief
+			idea_token = NS_rudolf_bratteng
+			name=NS_rudolf_bratteng
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { air_bomber_interception_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+	}
+	NS_kjeld_irgens = {
+		name=NS_kjeld_irgens
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = NS_kjeld_irgens
+			name=NS_kjeld_irgens
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { navy_chief_decisive_battle_2 }
+			
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+	}
+#High Command
+	NS_oliver_moystad = {
+		name=NS_oliver_moystad
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = NS_oliver_moystad
+			ledger = army
+			name=NS_oliver_moystad
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { army_infantry_2 }
+	
+			cost = 200
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_oliver_moystad"
+			}
+		}
+	}
+	NS_carl_hanssen = {
+		name=NS_carl_hanssen
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = NS_carl_hanssen
+			ledger = army
+			name=NS_carl_hanssen
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { army_artillery_2 }
+	
+			cost = 200
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+	}
+	NS_axel_stang = {
+		name=NS_axel_stang
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = NS_axel_stang
+			ledger = army
+			name=NS_axel_stang
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { army_chief_organizational_1 }
+	
+			cost = 200
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_axel_stang"
+			}
+		}
+	}
+	NS_alf_whist = {
+		name=NS_alf_whist
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = NS_alf_whist
+			ledger = navy
+			name=NS_alf_whist
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { navy_fleet_logistics_2 }
+	
+			cost = 200
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+	}
+	NS_finn_kjelstrup = {
+		name=NS_finn_kjelstrup
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = NS_finn_kjelstrup
+			ledger = navy
+			name=NS_finn_kjelstrup
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { navy_chief_reform_2 }
+	
+			cost = 200
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+	}
+	NS_christen_knudsen = {
+		name=NS_christen_knudsen
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = NS_christen_knudsen
+			ledger = navy
+			name=NS_christen_knudsen
+			allowed = {
+				original_tag = NOR
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { navy_anti_submarine_3 }
+	
+			cost = 200
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+	}
+	NS_hans_haereid = {# Norwegian Bomber for the Lutwaffe
+		name=NS_hans_haereid
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = NS_hans_haereid
+			ledger = air
+			name=NS_hans_haereid
+			allowed = {
+				original_tag = NOR
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { air_tactical_bombing_2 }
+	
+			cost = 200
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+	}
+#Theorists
+	NS_axle_rod = {
+		name=NS_axle_rod
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = theorist
+			idea_token = NS_axle_rod
+			ledger = army
+			name=NS_axle_rod
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			traits = { military_theorist }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+	}
+	NS_jens_bache_wiig = {
+		name=NS_jens_bache_wiig
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = theorist
+			idea_token = NS_jens_bache_wiig
+			ledger = navy
+			name=NS_jens_bache_wiig
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			traits = { naval_theorist }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+	}
+	NS_reidar_aagaard = { #Founder of the Hirdens Flyveavdeling which would later become the Hirdens Flykorps
+		name=NS_reidar_aagaard
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = theorist
+			idea_token = NS_reidar_aagaard
+			ledger = air
+			name=NS_reidar_aagaard
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			traits = { air_warfare_theorist }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+	}
+	NS_bjarne_eriksen = { #Manager of Norsk Hydro
+		name=NS_bjarne_eriksen
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = theorist
+			idea_token = NS_bjarne_eriksen
+			ledger = army
+			name=NS_bjarne_eriksen
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			research_bonus = {
+				nuclear = 0.150
+			}
+			traits = { nuclear_scientist }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+	}
+#Advisors
+	NS_radet_council = { #Ruling Council of the Milorg resistence group
+		name=NS_radet_council
+		portraits={
+			civilian={
+				large="gfx/leaders/POL/portrait_POL_the_sejm.dds"
+				small="GFX_idea_SPR_anarchist_council"
+			}
+		}
+		country_leader = {
+			ideology = moderatism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = NS_radet_council
+			name = NS_radet_council
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { neutrality_advocate }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					has_completed_focus = NOR_go_neutral
+				}
+			}
+		}
+	}
+	NS_lauritz_sand = { #Leader of the XU resistence group
+		name=NS_lauritz_sand
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_western_european_2d"
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = NS_lauritz_sand
+			name = NS_lauritz_sand
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					has_completed_focus = NOR_go_democratic
+				}
+			}
+		}
+	}
+	NS_abjorn_sunde = { #Leader of the main communist resistence
+		name=NS_abjorn_sunde
+		portraits={
+			civilian={
+				small="GFX_idea_generic_communist_revolutionary_western_european_2d"
+			}
+		}
+		country_leader = {
+			ideology = stalinism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = NS_abjorn_sunde
+			name = NS_abjorn_sunde
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					has_completed_focus = NOR_go_communist
+				}
+			}
+		}
+	}
+	NS_gustav_jaeger = {
+		name=NS_gustav_jaeger
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = NS_gustav_jaeger
+			name=NS_gustav_jaeger
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { popular_figurehead }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	NS_eivind_blehr = {
+		name=NS_eivind_blehr
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = NS_eivind_blehr
+			name=NS_eivind_blehr
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { silent_workhorse }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	NS_tormod_hustad = {
+		name=NS_tormod_hustad
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = NS_tormod_hustad
+			name=NS_tormod_hustad
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { captain_of_industry }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	NS_karl_marthinsen = { #Instrumental part of the Norwegian Holocaust, known for his brutality
+		name=NS_karl_marthinsen
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = NS_karl_marthinsen
+			name=NS_karl_marthinsen
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				has_country_flag = SCA_NS_Norway
+				has_global_flag = NS_Allowed
+			}
+			
+			traits = { prince_of_terror }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

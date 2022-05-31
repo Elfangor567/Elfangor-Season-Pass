@@ -1,0 +1,1034 @@
+characters={
+#Country Leaders
+	AUS_kurt_schuschnigg={
+		name=AUS_kurt_schuschnigg
+		portraits={
+			civilian={
+				large="gfx/leaders/AUS/Portrait_Austria_Kurt_Schuschnigg.dds"
+			}
+		}
+		country_leader={
+			ideology=corporatism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	AUS_otto_von_habsburg={
+		name=AUS_otto_von_habsburg
+		portraits={
+			civilian={
+				large="gfx/leaders/AUS/Portrait_Austria_Kurt_Schuschnigg.dds"
+			}
+		}
+		country_leader={
+			ideology=corporatism
+			expire="1965.1.1"
+			id=21010
+		}
+	}
+	AUS_karl_renner={
+		name=AUS_karl_renner
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	AUS_arthur_seyss-inquart={
+		name=AUS_arthur_seyss-inquart
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_1.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1"
+			traits  = {
+				prince_of_terror 
+			}
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_arthur_seyss-inquart
+			allowed  = {
+				original_tag  = AUS
+			}
+			available = {
+				NOT = { has_government = fascism }
+			}
+			traits  = {
+				prince_of_terror 
+			}
+		}
+	}
+	AUS_alfred_klahr={
+		name=AUS_alfred_klahr
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
+			}
+		}
+		country_leader={
+			ideology=marxism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+	
+#Generals and Admirals
+	AUS_wilhelm_zehner={ # General of the Infantry, "Father of the Austrian Army"
+		name=AUS_wilhelm_zehner
+		portraits={
+			army={
+				large="gfx/leaders/EYE/Portrait_EYE_Wilhelm_Zehner.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_1.dds"
+			}
+		}
+		field_marshal={
+			traits = { brilliant_strategist war_hero infantry_officer inspirational_leader trait_mountaineer }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 6
+			planning_skill = 5
+			logistics_skill = 4
+			legacy_id=22010
+			visible = { 
+				OR = {
+					original_tag = AUS
+					has_cosmetic_tag = HUN_empire
+				}
+			}
+		}
+	}
+	AUS_heinrich_stumpfl={ #Commander of 1st Division Burgenland (1934-1938), Nazi collaborator
+		name=AUS_heinrich_stumpfl
+		portraits={
+			army={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_4.dds"
+			}
+		}
+		corps_commander={
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id=-1
+		}
+	}
+	AUS_theodor_haselmayr={ #Commander of 2nd Division Vienna (1934-1938)
+		name=AUS_theodor_haselmayr
+		portraits={
+			army={
+				large="gfx/leaders/YUG/portrait_vladimir_cukavac.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_5.dds"
+			}
+		}
+		corps_commander={
+			traits = { infantry_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id=22011
+			visible = { 
+				OR = {
+					original_tag = AUS
+					has_cosmetic_tag = HUN_empire
+				}
+			}
+		}
+	}
+	AUS_valentin_feurstein={ #Commander of 3rd Division Lower Austria (1937-1938), Nazi General
+		name=AUS_valentin_feurstein
+		portraits={
+			army={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_7.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_6.dds"
+			}
+		}
+		corps_commander={
+			traits = { infantry_officer commando trait_mountaineer }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id=-1
+		}
+	}
+	AUS_anton_kienbauer={ #Commander of 4th Division Upper Austria (1935-1938)
+		name=AUS_anton_kienbauer
+		portraits={
+			army={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_12.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_3.dds"
+			}
+		}
+		corps_commander={
+			traits = { trait_cautious }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=22012
+			visible = { 
+				OR = {
+					original_tag = AUS
+					has_cosmetic_tag = HUN_empire
+				}
+			}
+		}
+	}
+	AUS_rudolf_scheffarz={ #Commander of 5th Division Styria (1936-1938)
+		name=AUS_rudolf_scheffarz
+		portraits={
+			army={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_2.dds"
+			}
+		}
+		corps_commander={
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id=22013
+			visible = { 
+				OR = {
+					original_tag = AUS
+					has_cosmetic_tag = HUN_empire
+				}
+			}
+		}
+	}
+	AUS_eugen_beyer={ #Commander of 6th Division Carinthia, Salzburg, Tyrol and Vorarlberg (1935-1938), Nazi General
+		name=AUS_eugen_beyer
+		portraits={
+			army={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_navy_2.dds"
+				small="gfx/interface/ideas/idea_europe_generic_navy_2.dds"
+			}
+		}
+		corps_commander={
+			traits = { war_hero infantry_officer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id=-1
+		}
+	}
+	AUS_eduard_barger={ #Commander of 7th Division (1936-1938)
+		name=AUS_eduard_barger
+		portraits={
+			army={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_15.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_6.dds"
+			}
+		}
+		corps_commander={
+			traits = { inflexible_strategist }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id=22014
+			visible = { 
+				OR = {
+					original_tag = AUS
+					has_cosmetic_tag = HUN_empire
+				}
+			}
+		}
+	}
+	AUS_alfred_von_hubicki={ #Commander of Rapid Division (1936-1938), Nazi General
+		name=AUS_alfred_von_hubicki
+		portraits={
+			army={
+				large="gfx/leaders/YUG/portrait_petar_kosic.dds"
+				small="gfx/interface/ideas/idea_generic_air_europe_1.dds"
+			}
+		}
+		corps_commander={
+			traits = { armor_officer war_hero trait_mountaineer }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id=-1
+		}
+	}
+	
+#Chiefs of Staff
+	AUS_sigismund_schilhawsky={
+		name=AUS_sigismund_schilhawsky
+		portraits={
+			army={
+				small="GFX_idea_sigismund_schilhawsky"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = AUS_sigismund_schilhawsky
+			allowed = { 
+				original_tag = AUS
+			}
+			
+			traits = { army_chief_organizational_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	AUS_alfred_jansa={
+		name=AUS_alfred_jansa
+		portraits={
+			army={
+				small="GFX_idea_alfred_jansa"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = AUS_alfred_jansa
+			allowed = { 
+				original_tag = AUS
+			}
+			available = {
+				has_government = neutrality
+			}
+			
+			traits = { army_chief_morale_3 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	AUS_friedrich_materna={
+		name=AUS_friedrich_materna
+		portraits={
+			army={
+				small="GFX_idea_friedrich_materna"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = AUS_friedrich_materna
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { army_chief_reform_3 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	AUS_julius_yllam={
+		name=AUS_julius_yllam
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = AUS_julius_yllam
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { air_chief_reform_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	AUS_otto_schobel={
+		name=AUS_otto_schobel
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = AUS_otto_schobel
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { air_bomber_interception_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	AUS_viktor_seebauer={
+		name=AUS_viktor_seebauer
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = AUS_viktor_seebauer
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { air_air_combat_training_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	AUS_paul_von_hegedus={
+		name=AUS_paul_von_hegedus
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = AUS_paul_von_hegedus
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { navy_chief_decisive_battle_1 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	AUS_georg_trapp={ #Of "The Sound of Music" fame
+		name=AUS_georg_trapp
+		portraits={
+			army={
+				small="GFX_idea_georg_trapp"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = AUS_georg_trapp
+			allowed = {
+				original_tag = AUS
+			}
+			available = {
+				NOT = { has_government = fascism }
+			}
+		
+			traits = { navy_submarine_3 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}		
+	}	
+
+#High Command
+	AUS_franz_bohme={
+		name=AUS_franz_bohme
+		portraits={
+			army={
+				small="GFX_idea_franz_bohme"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AUS_franz_bohme
+			ledger = army
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { army_chief_maneuver_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	AUS_camillo_bregant={
+		name=AUS_camillo_bregant
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_western_european_2d"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AUS_camillo_bregant
+			ledger = army
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { army_cavalry_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	AUS_kurt_zborzil={ #Commander of 8th Division (1938), Earlier leader of an alpenjager battalion
+		name=AUS_kurt_zborzil
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AUS_kurt_zborzil
+			ledger = army
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { army_commando_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	AUS_benno_fernbrugg={
+		name=AUS_benno_fernbrugg
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AUS_benno_fernbrugg
+			ledger = air
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { air_air_superiority_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	AUS_julius_arigi={
+		name=AUS_julius_arigi
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AUS_julius_arigi
+			ledger = air
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { air_chief_safety_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	AUS_richard_ritter_von_barry={
+		name=AUS_richard_ritter_von_barry
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AUS_richard_ritter_von_barry
+			ledger = navy
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { navy_chief_reform_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	AUS_anton_willenik={
+		name=AUS_anton_willenik
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AUS_anton_willenik
+			ledger = navy
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { navy_capital_ship_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#Theorists
+	AUS_otto_meixner_von_zweienstamm={
+		name = AUS_otto_meixner_von_zweienstamm
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_3"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = AUS_otto_meixner_von_zweienstamm
+			ledger = army
+			allowed = {
+				original_tag = AUS
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	AUS_alexander_lohr={
+		name = AUS_alexander_lohr
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = AUS_alexander_lohr
+			ledger = air
+			allowed = {
+				original_tag = AUS
+			}
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	AUS_richard_florio={ #Previous commander of the SMS Kronprinz Erzherzog Rudolf in the A-H days
+		name = AUS_richard_florio
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = AUS_richard_florio
+			ledger = navy
+			allowed = {
+				original_tag = AUS
+			}
+			available = {
+				any_state = {
+					is_controlled_by = ROOT
+					is_coastal = yes
+				}
+			}
+			
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#Advisors
+	AUS_ludwig_draxler={
+		name=AUS_ludwig_draxler
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_ludwig_draxler
+			allowed = {
+				original_tag = AUS
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = AUS_restored_habsburgs_tt
+					OR = {
+						has_country_leader = { id = 21010 ruling_only = no name = "Otto von Habsburg" }
+						has_country_leader = { id = 21011 ruling_only = no name = "Otto von Habsburg" }
+						has_idea = AUS_otto_von_figurehead
+					}
+				}
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { staunch_monarchist }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}
+	}
+	AUS_othmar_spann={
+		name=AUS_othmar_spann
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_western_european_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_othmar_spann
+			allowed = {
+				original_tag = AUS
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}
+	}
+	AUS_franz_koritschoner={
+		name=AUS_franz_koritschoner
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_western_european_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_franz_koritschoner
+			allowed = {
+				original_tag = AUS
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}
+	}
+	AUS_otto_bauer={
+		name=AUS_otto_bauer
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_western_european_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_otto_bauer
+			allowed = {
+				original_tag = AUS
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}
+	}
+	
+	AUS_edmund_horstenau={
+		name=AUS_edmund_horstenau
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_edmund_horstenau
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { armaments_organizer }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}
+	AUS_theodor_innitzer={
+		name=AUS_theodor_innitzer
+		portraits={
+			army={
+				small="GFX_idea_alexander_kerensky"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_theodor_innitzer
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { popular_figurehead }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}
+	AUS_maximilian_ronge = { #Last head of the Austro-Hungarian Evidenzbureau, involved in the post-war intelligence agencies of Austria right up until after the war, concentration camp survivor
+		name=AUS_maximilian_ronge
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_maximilian_ronge
+			allowed = {
+				original_tag = AUS
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}
+	##Non-Fascists
+	AUS_leonhard_steinwender = {
+		name=AUS_leonhard_steinwender
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_leonhard_steinwender
+			allowed = {
+				original_tag = AUS
+			}
+			available = {
+				NOT = { has_government = fascism }
+			}
+			
+			traits = { resilient_nationalist }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}
+	AUS_leopold_figl = {
+		name=AUS_leopold_figl
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_leopold_figl
+			allowed = {
+				original_tag = AUS
+			}
+			available = {
+				NOT = { has_government = fascism }
+			}
+			
+			traits = { silent_workhorse }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}
+	AUS_julius_raab = {
+		name=AUS_julius_raab
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_julius_raab
+			allowed = {
+				original_tag = AUS
+			}
+			available = {
+				NOT = { has_government = fascism }
+			}
+			
+			traits = { captain_of_industry }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}
+	AUS_theodor_hornbostel = {
+		name=AUS_theodor_hornbostel
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_theodor_hornbostel
+			allowed = {
+				original_tag = AUS
+			}
+			available = {
+				NOT = { has_government = fascism }
+			}
+			
+			traits = { smooth_talking_charmer }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}
+	##Fascists
+	AUS_ernst_kaltenbrunner = {
+		name=AUS_ernst_kaltenbrunner
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_ernst_kaltenbrunner
+			allowed = {
+				original_tag = AUS
+			}
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { backroom_backstabber }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}
+	AUS_hans_fischbock = {
+		name=AUS_hans_fischbock
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_hans_fischbock
+			allowed = {
+				original_tag = AUS
+			}
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { financial_expert } # Well, more like took all the stuff from the Jews.
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}
+	
+}

@@ -1,0 +1,301 @@
+Icelandic_historical = {
+	name = "Icelandic Historical Plan"
+	desc = "Essentially the historical behaviour for Iceland."
+
+	enable = {
+		original_tag = ICE
+		OR = {
+			is_historical_focus_on = yes
+			has_game_rule = {
+				rule = SCA_iceland_ai_behavior
+				option = DEMOCRATIC_HISTORICAL
+			}
+			has_country_flag = DEN_AI_RANDOM_DEMOCRATIC_HISTORICAL
+		}
+	}
+	abort = {
+		has_war = yes
+	}
+
+	ai_national_focuses = {
+		ICE_roads_program #jan 1 - march 11 (1936)
+		ICE_look_away #march 11 - july 29
+		ICE_domestic_ind #july 29 - oct 7
+		ICE_infr_2 #oct 7 - dec 16
+		ICE_coastguard #dec 16 - feb 24 (1937)
+		ICE_nav_doc #feb 24 - may 5
+		ICE_look_out #may 5 - july 14
+		ICE_sup_dem #july 14 - sep 22
+		ICE_distance_den #sep 22 - dec 1
+		ICE_recycling_programs #dec 1 - feb 9 (1938)
+		ICE_new_industry #feb 9 - apr 20
+		ICE_renew_drsrn #apr 20 - june 29		
+		ICE_strong_neutral #june 29 - sept 7
+		ICE_guarantees #sept 7 - nov 16
+		ICE_refine_research #nov 16 - jan 25 (1939)
+		ICE_discoveries #jan 25 - apr 5
+		ICE_steel_mill #apr 5 - june 14
+		ICE_national_def_force #june 14 - aug 23
+		ICE_build_dock #aug 23 - nov 1
+		ICE_dockyards_2 #nov 1 - jan 10 (1940)
+		ICE_sea_air #jan 10 - mar 20
+		ICE_train_reserves #mar 20 - may 29
+		ICE_eng_defences #may 29 - aug 7
+		ICE_mountain_train
+		ICE_eng_expand_airport
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		ICE_look_away = 1.0
+	}
+}
+Icelandic_alternate = {
+	name = "Icelandic Alternate Plan"
+	desc = "We cannot stand idly by as evil triumphs."
+
+	enable = {
+		original_tag = ICE
+		OR = {
+			has_game_rule = {
+				rule = SCA_iceland_ai_behavior
+				option = DEMOCRATIC_ALTERNATE
+			}
+			has_country_flag = DEN_AI_RANDOM_DEMOCRATIC_ALTERNATE
+		}
+	}
+
+	abort = {
+		OR = {
+			has_war_with = ENG
+			NOT = { ENG = { has_government = democratic } }
+		}
+	}
+
+	ai_national_focuses = {
+		ICE_roads_program #jan 1 - march 11 (1936)
+		ICE_look_away #march 11 - july 29
+		ICE_domestic_ind #july 29 - oct 7
+		ICE_infr_2 #oct 7 - dec 16
+		ICE_coastguard #dec 16 - feb 24 (1937)
+		ICE_nav_doc #feb 24 - may 5
+		ICE_look_out #may 5 - july 14
+		ICE_sup_dem #july 14 - sep 22
+		ICE_distance_den #sep 22 - dec 1
+		ICE_recycling_programs #dec 1 - feb 9 (1938)
+		ICE_new_industry #feb 9 - apr 20
+		ICE_guarantees #apr 20 - june 29		
+		ICE_break_den #june 29 - sept 7
+		ICE_end_neutrality #sept 7 - nov 16
+		ICE_refine_research #nov 16 - jan 25 (1939)
+		ICE_discoveries #jan 25 - apr 5
+		ICE_mil_facs #apr 5 - june 14
+		ICE_national_def_force #june 14 - aug 23
+		ICE_train_reserves #aug 23 - nov 1
+		ICE_join_allies #nov 1 - jan 10 (1940)
+		ICE_close_eng #jan 10 - mar 20
+		ICE_close_usa #mar 20 - may 29
+		ICE_eng_defences #may 29 - aug 7
+		ICE_ally_tech
+		ICE_mountain_train
+		ICE_eng_expand_airport
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "USA"
+		value = 100
+	}
+	
+
+	focus_factors = {
+		ICE_look_away = 1.0
+		ICE_sup_dem = 1.0
+		ICE_break_den = 1.0
+		ICE_end_neutrality = 1.0
+	}
+}
+Icelandic_danish_cooperation = {
+	name = "Icelandic-Danish Cooperation"
+	desc = "Our destiny lies with Denmark."
+
+	enable = {
+		original_tag = ICE
+		OR = {
+			has_game_rule = {
+				rule = SCA_iceland_ai_behavior
+				option = GO_WITH_DEN
+			}
+			has_country_flag = DEN_AI_RANDOM_GO_WITH_DEN
+		}
+	}
+	
+	abort = {
+		NOT = { is_subject_of = DEN }
+	}
+
+	ai_national_focuses = {
+		ICE_roads_program #jan 1 - march 11 (1936)
+		ICE_look_den #march 11 - july 29
+		ICE_domestic_ind #july 29 - oct 7
+		ICE_den_inf #oct 7 - dec 16
+		ICE_den_mil_invest #dec 16 - feb 24 (1937)
+		ICE_den_invest_final #feb 24 - may 5
+		ICE_new_industry #may 5 - july 14
+		ICE_infr_2 #july 14 - sep 22
+		ICE_recycling_programs #sep 22 - dec 1
+		ICE_refine_research #dec 1 - feb 9 (1938)
+		ICE_discoveries #feb 9 - apr 20
+		ICE_national_def_force #apr 20 - june 29		
+		ICE_train_reserves #june 29 - sept 7
+		ICE_coastguard #sept 7 - nov 16
+		ICE_build_dock #nov 16 - jan 25 (1939)
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "DEN"
+		value = 200
+	}
+	
+
+	focus_factors = {
+		ICE_look_den = 1.0
+	}
+}
+Icelandic_communist = {
+	name = "Icelandic Communist Plan"
+	desc = "It is our will, not our size that will bring victory for the revolution."
+
+	enable = {
+		original_tag = ICE
+		OR = {
+			has_game_rule = {
+				rule = SCA_iceland_ai_behavior
+				option = COMMUNIST
+			}
+			has_country_flag = DEN_AI_RANDOM_COMMUNIST
+		}
+	}
+
+	ai_national_focuses = {
+		ICE_roads_program #jan 1 - march 11 (1936)
+		ICE_look_away #march 11 - july 29
+		ICE_domestic_ind #july 29 - oct 7
+		ICE_infr_2 #oct 7 - dec 16
+		ICE_look_out #dec 16 - feb 24 (1937)
+		ICE_sup_com #feb 24 - may 5
+		ICE_com_rallies #may 5 - july 14
+		ICE_national_def_force #july 14 - sep 22
+		ICE_train_reserves #sep 22 - dec 1
+		ICE_recycling_programs #dec 1 - feb 9 (1938)
+		ICE_new_industry #feb 9 - apr 20
+		ICE_com_takeover #apr 20 - june 29		
+		ICE_break_den #june 29 - sept 7
+		ICE_end_neutrality #sept 7 - nov 16
+		ICE_create_ifv #nov 16 - jan 25 (1939)
+		ICE_refine_research #jan 25 - apr 5
+		ICE_discoveries #apr 5 - june 14
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		ICE_look_away = 1.0
+	}
+}
+Icelandic_fascist = {
+	name = "Icelandic Fascist Plan"
+	desc = "We are the true heirs to the Norse and we will have our due!"
+
+	enable = {
+		original_tag = ICE
+		OR = {
+			has_game_rule = {
+				rule = SCA_iceland_ai_behavior
+				option = FASCIST
+			}
+			has_country_flag = DEN_AI_RANDOM_FASCIST
+		}
+	}
+	
+	abort = {
+		OR = {
+			GER = { has_government = democratic }
+			GER = { has_government = communism }
+			NOT = { country_exists = GER }
+			GER = { is_subject = yes }
+		}
+	}
+
+	ai_national_focuses = {
+		ICE_roads_program #jan 1 - march 11 (1936)
+		ICE_look_away #march 11 - july 29
+		ICE_fas_rallies #july 29 - oct 7
+		ICE_fas_youth #oct 7 - dec 16
+		ICE_domestic_ind #dec 16 - feb 24 (1937)
+		ICE_new_industry #feb 24 - may 5
+		ICE_national_def_force #may 5 - july 14
+		ICE_train_reserves #july 14 - sep 22
+		ICE_abolish_althing #sep 22 - dec 1
+		ICE_infr_2 #dec 1 - feb 9 (1938)
+		ICE_recycling_programs #feb 9 - apr 20
+		ICE_coastguard #apr 20 - june 29		
+		ICE_fas_leader #june 29 - sept 7
+		ICE_build_dock #sept 7 - nov 16
+		ICE_ikarus #nov 16 - jan 25 (1939)
+		ICE_end_neutrality #jan 25 - apr 5
+		ICE_refine_research #apr 5 - june 14
+		ICE_discoveries
+		ICE_mil_facs
+		ICE_create_ifv
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		ICE_look_away = 1.0
+		ICE_fas_rallies = 1.0
+		ICE_end_neutrality = 1.0
+	}
+}

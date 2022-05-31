@@ -1,0 +1,232 @@
+SCA_denmark_ai_behavior = {
+	name = "SCA_DENMARK_AI_BEHAVIOR"
+	group = "RULE_GROUP_WINTER_WARS"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = DEFENCELESS_HISTORICAL
+		text = "RULE_OPTION_SCA_DEN_DEFENCELESS"
+		desc = "RULE_OPTION_SCA_DEN_DEFENCELESS_AI_DESC"
+		allow_achievements = yes #Entirely for the aesthetics of the historical one not having the X'd trophy
+	}
+	option = {
+		name = DEFENCELESS_ALTERNATE
+		text = "RULE_OPTION_SCA_DEN_DEFENCELESS_ALTERNATE"
+		desc = "RULE_OPTION_SCA_DEN_DEFENCELESS_ALTERNATE_AI_DESC"
+	}
+	option = {
+		name = DEMOCRATIC
+		text = "RULE_OPTION_DEMOCRATIC"
+		desc = "RULE_OPTION_SCA_DEN_DEMOCRATIC_AI_DESC"
+	}
+	option = {
+		name = COMINTERN
+		text = "RULE_OPTION_SCA_DEN_COMINTERN"
+		desc = "RULE_OPTION_SCA_DEN_COMINTERN_AI_DESC"
+	}
+	option = {
+		name = ANARCHO_COMMUNIST
+		text = "RULE_OPTION_SCA_DEN_ANARCHO_COMMUNIST"
+		desc = "RULE_OPTION_SCA_DEN_ANARCHO_COMMUNIST_AI_DESC"
+	}
+	option = {
+		name = FASCIST
+		text = "RULE_OPTION_FASCIST"
+		desc = "RULE_OPTION_SCA_DEN_FASCISM_AI_DESC"
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+	}
+}
+SCA_iceland_ai_behavior = {
+	name = "SCA_ICELAND_AI_BEHAVIOR"
+	group = "RULE_GROUP_WINTER_WARS"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = DEMOCRATIC_HISTORICAL
+		text = "RULE_OPTION_SCA_ICE_DEMOCRATIC_HISTORICAL"
+		desc = "RULE_OPTION_SCA_ICE_DEMOCRATIC_AI_DESC"
+		allow_achievements = yes #Entirely for the aesthetics of the historical one not having the X'd trophy
+	}
+	option = {
+		name = DEMOCRATIC_ALTERNATE
+		text = "RULE_OPTION_DEMOCRATIC_ALTERNATE"
+		desc = "RULE_OPTION_SCA_ICE_DEMOCRATIC_ALTERNATE_AI_DESC"
+	}
+	option = {
+		name = GO_WITH_DEN
+		text = "RULE_OPTION_SCA_ICE_GO_WITH_DEN"
+		desc = "RULE_OPTION_SCA_ICE_GO_WITH_DEN_AI_DESC"
+	}
+	option = {
+		name = COMMUNIST
+		text = "RULE_OPTION_COMMUNIST"
+		desc = "RULE_OPTION_SCA_ICE_COMMUNIST_AI_DESC"
+	}
+	option = {
+		name = FASCIST
+		text = "RULE_OPTION_FASCIST"
+		desc = "RULE_OPTION_SCA_ICE_FASCIST_AI_DESC"
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+	}
+}
+SCA_norway_ai_behavior = {
+	name = "SCA_NORWAY_AI_BEHAVIOR"
+	group = "RULE_GROUP_WINTER_WARS"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = NEUTRAL_ALLIES
+		text = "RULE_OPTION_SCA_NOR_NEUTRAL_ALLIES"
+		desc = "RULE_OPTION_SCA_NOR_NEUTRAL_ALLIES_AI_DESC"
+		allow_achievements = yes #Entirely for the aesthetics of the historical one not having the X'd trophy
+	}
+	option = {
+		name = NEUTRAL_AXIS
+		text = "RULE_OPTION_SCA_NOR_NEUTRAL_AXIS"
+		desc = "RULE_OPTION_SCA_NOR_NEUTRAL_AXIS_AI_DESC"
+		allow_achievements = yes #Entirely for the aesthetics of the historical one not having the X'd trophy
+	}
+	option = {
+		name = DEMOCRATIC_OWN_FACTION
+		text = "RULE_OPTION_SCA_NOR_DEMOCRATIC_OWN_FACTION"
+		desc = "RULE_OPTION_SCA_NOR_DEMOCRATIC_OWN_FACTION_AI_DESC"
+	}
+	option = {
+		name = DEMOCRATIC_ALLIES
+		text = "RULE_OPTION_SCA_NOR_DEMOCRATIC_ALLIES"
+		desc = "RULE_OPTION_SCA_NOR_DEMOCRATIC_ALLIES_AI_DESC"
+	}
+	option = {
+		name = NORTHERN_REVOLUTION
+		text = "RULE_OPTION_SCA_NOR_NORTHERN_REVOLUTION"
+		desc = "RULE_OPTION_SCA_NOR_NORTHERN_REVOLUTION_AI_DESC"
+	}
+	option = {
+		name = COMINTERN
+		text = "RULE_OPTION_SCA_NOR_COMINTERN"
+		desc = "RULE_OPTION_SCA_NOR_COMINTERN_AI_DESC"
+	}
+	option = {
+		name = FASCIST_HJORT
+		text = "RULE_OPTION_SCA_NOR_FASCIST_HJORT"
+		desc = "RULE_OPTION_SCA_NOR_FASCIST_HJORT_AI_DESC"
+	}
+	option = {
+		name = FASCIST_FUGLESANG
+		text = "RULE_OPTION_SCA_NOR_FASCIST_FUGLESANG"
+		desc = "RULE_OPTION_SCA_NOR_FASCIST_FUGLESANG_AI_DESC"
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+	}
+}
+SCA_sweden_ai_behavior = {
+	name = "SCA_SWEDEN_AI_BEHAVIOR"
+	group = "RULE_GROUP_WINTER_WARS"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = NEUTRAL_HISTORICAL
+		text = "RULE_OPTION_SCA_SWE_NEUTRAL_HISTORICAL"
+		desc = "RULE_OPTION_SCA_SWE_NEUTRAL_HISTORICAL_AI_DESC"
+		allow_achievements = yes #Entirely for the aesthetics of the historical one not having the X'd trophy
+	}
+	option = {
+		name = NEUTRAL_LEAGUE
+		text = "RULE_OPTION_SCA_SWE_NEUTRAL_LEAGUE"
+		desc = "RULE_OPTION_SCA_SWE_NEUTRAL_LEAGUE_AI_DESC"
+	}
+	option = {
+		name = NEUTRAL_ALLIES
+		text = "RULE_OPTION_SCA_SWE_NEUTRAL_ALLIES"
+		desc = "RULE_OPTION_SCA_SWE_NEUTRAL_ALLIES_AI_DESC"
+	}
+	option = {
+		name = NEUTRAL_AXIS
+		text = "RULE_OPTION_SCA_SWE_NEUTRAL_AXIS"
+		desc = "RULE_OPTION_SCA_SWE_NEUTRAL_AXIS_AI_DESC"
+	}
+	option = {
+		name = FOURTH_INTERNATIONAL
+		text = "RULE_OPTION_SCA_SWE_FOURTH_INTERNATIONAL"
+		desc = "RULE_OPTION_SCA_SWE_FOURTH_INTERNATIONAL_AI_DESC"
+	}
+	option = {
+		name = COMINTERN
+		text = "RULE_OPTION_SCA_SWE_COMINTERN"
+		desc = "RULE_OPTION_SCA_SWE_COMINTERN_AI_DESC"
+	}
+	option = {
+		name = FASCIST
+		text = "RULE_OPTION_FASCIST"
+		desc = "RULE_SCA_SWE_FASCIST_AI_DESC"
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+	}
+}
+
+SCA_finland_ai_behavior = {
+	name = "SCA_FINLAND_AI_BEHAVIOR"
+	group = "RULE_GROUP_WINTER_WARS"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = NEUTRAL_GER
+		text = "RULE_OPTION_SCA_FIN_NEUTRAL_GER"
+		desc = "RULE_OPTION_SCA_FIN_NEUTRAL_GER_AI_DESC"
+		allow_achievements = yes #Entirely for the aesthetics of the historical one not having the X'd trophy
+	}
+	option = {
+		name = NEUTRAL_JAP
+		text = "RULE_OPTION_SCA_FIN_NEUTRAL_JAP"
+		desc = "RULE_OPTION_SCA_FIN_NEUTRAL_JAP_AI_DESC"
+	}
+	option = {
+		name = NEUTRAL_ALLIES
+		text = "RULE_OPTION_SCA_FIN_NEUTRAL_ALLIES"
+		desc = "RULE_OPTION_SCA_FIN_NEUTRAL_ALLIES_AI_DESC"
+	}
+	option = {
+		name = NEUTRAL_OWN_WAY
+		text = "RULE_OPTION_SCA_FIN_NEUTRAL_OWN_WAY"
+		desc = "RULE_OPTION_SCA_FIN_NEUTRAL_OWN_WAY_AI_DESC"
+	}
+	option = {
+		name = COMMUNIST
+		text = "RULE_OPTION_COMMUNIST"
+		desc = "RULE_OPTION_SCA_FIN_COMMUNIST_AI_DESC"
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+	}
+}

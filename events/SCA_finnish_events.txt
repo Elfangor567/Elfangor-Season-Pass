@@ -1,0 +1,2606 @@
+﻿add_namespace = SCA_finland
+
+# Continuation War
+#country_event = { ## OBSOLETED BY DECISIONS
+#	id = SCA_finland.1
+#	title = SCA_finland.1.t
+#	desc = SCA_finland.1.desc
+#	picture = GFX_report_event_finnish_soldiers_snow
+#	
+#	fire_only_once = yes
+#	
+#	trigger = {
+#		tag = FIN
+#		FIN = { has_country_flag = FIN_surrender }
+#		FIN = { is_subject = no }
+#		FIN = { has_war = no }
+#		NOT = { FIN = { is_in_faction_with = SOV } }
+#		GER = { has_war_with = SOV }
+#		GER = { surrender_progress < 0.1 }
+#		GER = { is_faction_leader = yes }
+#		96 = { CONTROLLER = {
+#			OR = {
+#				tag = GER
+#				is_subject_of = GER
+#			}
+#		} }
+#		95 = { CONTROLLER = {
+#			OR = {
+#				tag = GER
+#				is_subject_of = GER
+#			}
+#		} }
+#		93 = { CONTROLLER = {
+#			OR = {
+#				tag = GER
+#				is_subject_of = GER
+#			}
+#		} }
+#		91 = { CONTROLLER = {
+#			OR = {
+#				tag = GER
+#				is_subject_of = GER
+#			}
+#		} }
+#		89 = { CONTROLLER = {
+#			OR = {
+#				tag = GER
+#				is_subject_of = GER
+#			}
+#		} }
+#	}
+#	mean_time_to_happen = {
+#		days = 30
+#	}
+#	
+#	option = { #Once More Into the Breach
+#		name = SCA_finland.1.a
+#		ai_chance = {
+#			factor = 90
+#		}
+#		add_state_core = 213
+#		add_state_core = 215
+#		declare_war_on = {
+#			target = SOV
+#			type = take_state_focus
+#			generator = { 146 215 147 213 216 195 }
+#		}
+#		if = {
+#			limit = { FIN = { is_in_faction = no } }
+#			add_to_faction = GER
+#		}
+#	}
+#	
+#	option = { #We don't need more war
+#		name = SCA_finland.1.b
+#		ai_chance = {
+#			factor = 0
+#			modifier = {
+#				add = 45
+#				has_government = communism
+#			}
+#		}
+#	}
+#}
+
+#Second Surrender of Finland and the Lappland War
+country_event = {
+	id = SCA_finland.2
+	title = SCA_finland.2.t
+	desc = SCA_finland.2.desc
+	picture = GFX_report_event_finnish_soldiers_snow
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FIN
+		FIN = { has_war_with = SOV }
+		GER = { has_war_with = SOV }
+		FIN = { has_country_flag = FIN_surrender }
+		NOT = { has_war_with = GER }
+		GER = { surrender_progress > 0.5 }
+		FIN = { surrender_progress > 0.25 }
+	}
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = { #Surrender
+		name = SCA_finland.2.a
+		ai_chance = {
+			factor = 90
+		}
+		
+		effect_tooltip = {
+			SOV = {
+				white_peace = {
+					tag = FIN
+					message = FIN_agree_peace_2
+				}
+			}
+			SOV = { transfer_state = 722 }
+			SOV = {
+				add_to_faction = ROOT
+			}
+			add_to_war = {
+				targeted_alliance = SOV
+				enemy = GER
+				hostility_reason = ally
+			}
+		}
+		SOV = { country_event = SCA_finland.3 }
+	}
+	
+	option = { #We cannot surrender
+		name = SCA_finland.2.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}
+	country_event = {
+		id = SCA_finland.3
+		title = SCA_finland.3.t
+		desc = SCA_finland.3.desc
+		picture = GFX_report_event_finnish_soldiers_snow
+		
+		is_triggered_only = yes
+		
+		option = { #Accept Surrender
+			name = SCA_finland.3.a
+			ai_chance = {
+				factor = 10
+			}
+			
+			white_peace = {
+				tag = FIN
+				message = FIN_agree_peace_2
+			}
+			transfer_state = 722
+			add_to_faction = FROM
+			FROM = {
+				add_to_war = {
+					targeted_alliance = ROOT
+					enemy = GER
+					hostility_reason = ally
+				}
+				country_event = SCA_finland.4
+			}
+		}
+		
+		option = { #Refuse
+			name = SCA_finland.3.b
+			ai_chance = { 
+				factor = 1
+				modifier = {
+					factor = 0
+					is_historical_focus_on = yes
+				}
+			}
+			
+			FIN = { country_event = SCA_finland.5 }
+		}
+	}
+	country_event = {
+		id = SCA_finland.4
+		title = SCA_finland.4.t
+		desc = SCA_finland.4.desc
+		picture = GFX_report_event_finnish_letter
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.4.a
+			
+			hidden_effect = {
+				set_country_flag = FIN_surrendered_again
+				if = {
+					limit = { has_country_leader = { id = 15000 ruling_only = yes name = "Risto Heikki Ryti" } }
+					country_event = SCA_finland.6
+				}
+			}
+		}
+	}
+	country_event = { #Russia Kill
+		id = SCA_finland.5
+		title = SCA_finland.5.t
+		desc = SCA_finland.5.desc
+		picture = GFX_report_event_finnish_letter
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.5.a
+		}
+	}
+
+# The Resignation of Risto Ryti
+country_event = {
+	id = SCA_finland.6
+	title = SCA_finland.6.t
+	desc = SCA_finland.6.desc
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SCA_finland.6.a
+		
+		promote_character = FIN_carl_gustaf_mannerheim
+	}
+}
+
+
+#1937 Presidential Election
+country_event = {
+	id = SCA_finland.7
+	title = SCA_finland.7.t
+	desc = SCA_finland.7.desc
+	picture = GFX_report_event_election_vote
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FIN
+		OR = {
+			has_government = democratic
+			has_government = neutrality
+		}
+		NOT = { has_idea = FIN_absolute_monarchy }
+		date > 1937.1.15
+		date < 1939.1.1
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { #Kyösti Kallio
+		name = SCA_finland.7.a
+		ai_chance = {
+			factor = 75
+		}
+		
+		add_political_power = 75
+		
+		set_party_name = { ideology = neutrality long_name = "Maalaisliitto" name = "ML" }
+		
+		add_popularity = { ideology = democratic popularity = -0.1 }
+		add_popularity = { ideology = neutrality popularity = 0.1 }
+		hidden_effect = {
+			add_popularity = { ideology = communism popularity = -0.02 }
+			add_popularity = { ideology = fascism popularity = 0.03 }
+		}
+		
+		set_politics = {
+			ruling_party = neutrality
+			last_election = "1937.1.16"
+			election_frequency = 72
+			elections_allowed = yes
+		}
+		
+		promote_character = FIN_kyosti_kallio
+	}
+	
+	option = { #Pehr Evind Svinhufvud
+		name = SCA_finland.7.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		add_political_power = -25
+		
+		add_popularity = { ideology = democratic popularity = 0.05 }
+		add_popularity = { ideology = fascism popularity = 0.02 }		
+	}
+}
+
+#Death of Kyösti Kallio
+news_event = {
+	id = SCA_finland.8
+	title = SCA_finland.8.t
+	desc = {
+		text = SCA_finland.8.desc2
+		trigger = { has_country_leader = { id = 15001 ruling_only = no name = "Kyösti Kallio" } }
+	}
+	desc = {
+		text = SCA_finland.8.desc
+		trigger = { has_country_leader = { id = 15001 ruling_only = yes name = "Kyösti Kallio" } }
+	}
+	
+
+	picture = news_event_generic_funeral
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FIN
+		has_country_leader = { id = 15001 ruling_only = no name = "Kyösti Kallio" }
+		NOT = { has_idea = FIN_absolute_monarchy }
+		date > 1940.11.10
+	}
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = { 
+		name = SCA_finland.8.a
+		
+		set_party_name = { ideology = neutrality long_name = "Kansallinen Edistyspuolue" name = KEP }
+		
+		kill_ideology_leader = neutrality
+		promote_character = FIN_risto_heikki_ryti
+	}
+}
+
+#Death of Pehr Evind Svinhufvud
+country_event = {
+	id = SCA_finland.9
+	title = SCA_finland.9.t
+	desc = SCA_finland.9.desc
+	picture = GFX_report_event_europe_funeral
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FIN
+		has_country_leader = { id = 15002 ruling_only = no name = "Pehr Evind Svinhufvud" }
+		date > 1944.2.1
+	}
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {
+		name = SCA_finland.9.a
+		
+		kill_ideology_leader = democratic
+		promote_character = FIN_edwin_linkomies
+	}
+}
+
+#Mannerheim Resigns
+country_event = {
+	id = SCA_finland.10
+	title = SCA_finland.10.t
+	desc = SCA_finland.10.desc
+	picture = GFX_report_event_generic_parliament
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FIN
+		has_country_leader = { id = 15003 ruling_only = yes name = "Carl Gustaf Emil Mannerheim" }
+		date > 1946.3.1
+	}
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {
+		name = SCA_finland.10.a
+		
+		add_popularity = { ideology = democratic popularity = 0.3 }
+		set_party_name = { ideology = neutrality long_name = "Suomen Sosialidemokraattinen Puolue" name = SDP }
+		
+		set_politics = {
+			ruling_party = democratic
+			last_election = "1943.1.16"
+			election_frequency = 72
+			elections_allowed = yes
+		}
+		
+		promote_character = FIN_juho_paasikivi
+		promote_character = FIN_karl_august_fagerholm
+	}
+}
+
+#Estonian Espionage
+country_event = {
+	id = SCA_finland.11
+	title = SCA_finland.11.t
+	desc = SCA_finland.11.desc
+	picture = GFX_report_event_soviet_in_riga
+	
+	trigger = {
+		tag = EST
+		country_exists = EST
+		NOT = { is_in_faction_with = SOV }
+		NOT = { is_in_faction_with = FIN }
+		NOT = { has_war_with = FIN }
+		FIN = { has_war_with = SOV }
+		NOT = { FIN = { has_idea = FIN_est_intel } }
+		NOT = { FIN = { has_country_flag = FIN_est_deny } }
+	}
+	mean_time_to_happen = {
+		days = 15
+	}
+	
+	option = { #Send info
+		name = SCA_finland.11.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.1
+				has_government = communism
+			}
+		}
+		add_intel = {
+			target = SOV
+			civilian_intel = 1
+			army_intel = 10
+			navy_intel = 10
+			airforce_intel = 10
+		}
+
+		FIN = { country_event = SCA_finland.12 }
+		effect_tooltip = {
+			FIN = { 
+				add_ideas = FIN_est_intel
+				add_intel = {
+					target = SOV
+					civilian_intel = 1
+					army_intel = 10
+					navy_intel = 10
+					airforce_intel = 10
+				}
+			}
+		}
+	}
+	option = { #Nope
+		name = SCA_finland.11.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				add = 5
+				has_government = communism
+				is_historical_focus_on = no
+			}
+		}
+		add_intel = {
+			target = SOV
+			civilian_intel = 1
+			army_intel = 10
+			navy_intel = 10
+			airforce_intel = 10
+		}
+		FIN = { country_event = SCA_finland.13 }
+		effect_tooltip = {
+			FIN = { 
+				add_opinion_modifier = {
+					target = EST
+					modifier = FIN_est_hate
+				}
+			}
+		}
+		hidden_effect = {
+			FIN = { set_country_flag = FIN_est_deny }
+		}
+	}
+}
+	country_event = {
+		id = SCA_finland.12
+		title = SCA_finland.12.t
+		desc = SCA_finland.12.desc
+		picture = GFX_report_event_soviet_in_riga
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.12.a
+			add_intel = {
+				target = SOV
+				civilian_intel = 1
+				army_intel = 10
+				navy_intel = 10
+				airforce_intel = 10
+			}
+			add_ideas = FIN_est_intel
+		}
+	}
+	country_event = {
+		id = SCA_finland.13
+		title = SCA_finland.13.t
+		desc = SCA_finland.13.desc
+		picture = GFX_report_event_soviet_in_riga
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.13.a
+			add_opinion_modifier = {
+				target = EST
+				modifier = FIN_est_hate
+			}
+		}
+	}	
+
+#Finland Submits to Soviets
+country_event = {
+	id = SCA_finland.14
+	title = SCA_finland.14.t
+	desc = SCA_finland.14.desc
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SCA_finland.14.a
+		
+		if = {
+			limit = {
+				FIN = { has_government = neutrality }
+			}
+			set_autonomy = { target = FIN autonomy_state = autonomy_dominion }
+			hidden_effect = {
+				FIN = {
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = yes
+					}
+					set_popularities = {
+						democratic = 0
+						fascism = 10
+						communism = 30
+						neutrality = 60
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FIN = { has_government = democratic }
+			}
+			set_autonomy = { target = FIN autonomy_state = autonomy_dominion }
+			hidden_effect = {
+				FIN = {
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+					}
+					set_popularities = {
+						democratic = 60
+						fascism = 10
+						communism = 30
+						neutrality = 0
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FIN = { has_government = fascism }
+			}
+			set_autonomy = { target = FIN autonomy_state = autonomy_dominion }
+			hidden_effect = {
+				FIN = {
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = yes
+					}
+					set_popularities = {
+						democratic = 10
+						fascism = 60
+						communism = 30
+						neutrality = 0
+					}
+				}
+			}
+		}
+		else = {
+			set_autonomy = { target = FIN autonomy_state = autonomy_dominion }
+		}
+		
+		add_to_faction = FIN
+	}
+}
+
+###FINNISH SELLING EVENTS
+##France
+country_event = {
+	id = SCA_finland.15
+	title = SCA_finland.15.t
+	desc = SCA_finland.15.desc
+	picture = GFX_report_event_tank_factory
+	
+	is_triggered_only = yes
+	
+	option = { #yes, light tanks
+		name = SCA_finland.15.a
+		ai_chance = {
+			factor = 70
+		}
+		trigger = {
+			has_equipment = { light_tank_chassis > 50 }
+		}
+		send_equipment = {
+			target = FROM
+			type = light_tank_chassis
+			amount = 50
+		}
+		add_timed_idea = { idea = FIN_equipment_payment days = 180 }
+		FROM = { country_event = SCA_finland.16 }		
+	}
+	option = { #yes, medium tanks
+		name = SCA_finland.15.b
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			has_equipment = { medium_tank_chassis > 50 }
+		}
+		send_equipment = {
+			target = FROM
+			type = medium_tank_chassis
+			amount = 50
+		}
+		add_timed_idea = { idea = FIN_equipment_payment days = 180 }
+		FROM = { country_event = SCA_finland.16 }		
+	}
+	option = { #yes, heavy tanks
+		name = SCA_finland.15.c
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			has_equipment = { heavy_tank_chassis > 50 }
+		}
+		send_equipment = {
+			target = FROM
+			type = heavy_tank_chassis
+			amount = 50
+		}
+		add_timed_idea = { idea = FIN_equipment_payment days = 180 }
+		FROM = { country_event = SCA_finland.16 }		
+	}
+	option = { #yes, divert tank production
+		name = SCA_finland.15.d
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			NOT = { has_equipment = { light_tank_chassis > 50 } }
+		}
+		add_timed_idea = { idea = FIN_equipment_payment days = 180 }
+		add_timed_idea = { idea = FIN_tanks_diverted days = 180 }
+		FROM = { country_event = SCA_finland.19 }		
+	}
+	option = { #yes, infantry weapons
+		name = SCA_finland.15.e
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			has_equipment = { infantry_equipment > 5000 }
+		}
+		send_equipment = {
+			target = FROM
+			type = infantry_equipment
+			amount = 5000
+		}
+		FROM = { country_event = SCA_finland.18 }
+	}
+	option = { #no
+		name = SCA_finland.15.f
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					is_in_faction_with = FROM
+					has_government = FROM
+				}
+			}
+		}
+		
+		FROM = { country_event = SCA_finland.17 }
+	}
+}
+	country_event = { #Yes
+		id = SCA_finland.16
+		title = SCA_finland.16.t
+		desc = SCA_finland.16.desc
+		picture = GFX_report_event_tank_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.16.a
+			
+			add_opinion_modifier = {
+				target = FROM
+				modifier = FIN_sold_equipment
+			}
+		}
+	}
+	country_event = { #No
+		id = SCA_finland.17
+		title = SCA_finland.17.t
+		desc = SCA_finland.17.desc
+		picture = GFX_report_event_tank_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.17.a
+		}
+	}
+	country_event = { #Infantry Equipment
+		id = SCA_finland.18
+		title = SCA_finland.18.t
+		desc = SCA_finland.18.desc
+		picture = GFX_report_event_generic_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.18.a
+			
+			add_opinion_modifier = {
+				target = FROM
+				modifier = FIN_sold_equipment
+			}
+		}
+	}
+	country_event = { #Diverted Tanks
+		id = SCA_finland.19
+		title = SCA_finland.16.t
+		desc = SCA_finland.16.desc
+		picture = GFX_report_event_tank_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.16.a
+			
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							has_tech = gwtank
+							has_tech = gwtank_chassis
+						}
+						NOT = { has_tech = basic_light_tank }
+						NOT = { has_tech = basic_light_tank_chassis }
+					}
+				}
+				add_equipment_to_stockpile = { type = light_tank_chassis_0 amount = 50 producer = FRA }
+			}
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							has_tech = basic_light_tank
+							has_tech = basic_light_tank_chassis
+						}
+						NOT = { has_tech = improved_light_tank }
+						NOT = { has_tech = improved_light_tank_chassis }
+					}
+				}
+				add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 50 producer = FRA }
+			}
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							has_tech = improved_light_tank
+							has_tech = improved_light_tank_chassis
+						}
+						NOT = { has_tech = advanced_light_tank }
+						NOT = { has_tech = advanced_light_tank_chassis }
+					}
+				}
+				add_equipment_to_stockpile = { type = light_tank_chassis_2 amount = 50 producer = FRA }
+			}
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							has_tech = advanced_light_tank
+							has_tech = advanced_light_tank_chassis
+						}
+					}
+				}
+				add_equipment_to_stockpile = { type = light_tank_chassis_3 amount = 50 producer = FRA }
+			}
+			
+			add_opinion_modifier = {
+				target = FROM
+				modifier = FIN_sold_equipment
+			}
+		}
+	}
+	
+	
+##ENGLAND
+country_event = {
+	id = SCA_finland.23
+	title = SCA_finland.23.t
+	desc = SCA_finland.23.desc
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes
+	
+	option = { #yes, artillery
+		name = SCA_finland.23.a
+		ai_chance = {
+			factor = 70
+		}
+		trigger = {
+			has_equipment = { artillery_equipment > 1000 }
+		}
+		send_equipment = {
+			target = FIN
+			type = artillery_equipment
+			amount = 1000
+		}
+		add_timed_idea = { idea = FIN_equipment_payment days = 180 }
+		FIN = { country_event = SCA_finland.24 }		
+	}
+	option = { #yes, anti-tank guns
+		name = SCA_finland.23.b
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			has_equipment = { anti_tank_equipment > 1000 }
+		}
+		send_equipment = {
+			target = FIN
+			type = anti_tank_equipment
+			amount = 1000
+		}
+		add_timed_idea = { idea = FIN_equipment_payment days = 180 }
+		FIN = { country_event = SCA_finland.241 }		
+	}
+	option = { #yes, anti_air
+		name = SCA_finland.23.c
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			has_equipment = { anti_air_equipment > 1000 }
+		}
+		send_equipment = {
+			target = FIN
+			type = anti_air_equipment
+			amount = 1000
+		}
+		add_timed_idea = { idea = FIN_equipment_payment days = 180 }
+		FIN = { country_event = SCA_finland.242 }		
+	}
+	option = { #yes, divert artillery production
+		name = SCA_finland.23.d
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			NOT = { has_equipment = { artillery_equipment > 1000 } }
+		}
+		add_timed_idea = { idea = FIN_equipment_payment days = 180 }
+		add_timed_idea = { idea = FIN_arty_diverted days = 180 }
+		FIN = { country_event = SCA_finland.25 }		
+	}
+	option = { #yes, infantry weapons
+		name = SCA_finland.23.e
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			has_equipment = { infantry_equipment > 5000 }
+		}
+		send_equipment = {
+			target = FIN
+			type = infantry_equipment
+			amount = 5000
+		}
+		FIN = { country_event = SCA_finland.18 }
+	}
+	option = { #no
+		name = SCA_finland.23.f
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					is_in_faction_with = FIN
+					has_government = FROM
+				}
+			}
+		}
+		
+		FIN = { country_event = SCA_finland.17 }
+	}
+}
+	country_event = { #Yes Artillery
+		id = SCA_finland.24
+		title = SCA_finland.24.t
+		desc = SCA_finland.24.desc
+		picture = GFX_report_event_generic_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.24.a
+			
+			add_opinion_modifier = {
+				target = FROM
+				modifier = FIN_sold_equipment
+			}
+		}
+	}
+	country_event = { #Yes Anti-Tank
+		id = SCA_finland.241
+		title = SCA_finland.241.t
+		desc = SCA_finland.241.desc
+		picture = GFX_report_event_generic_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.24.a
+			
+			add_opinion_modifier = {
+				target = FROM
+				modifier = FIN_sold_equipment
+			}
+		}
+	}
+	country_event = { #Yes AA
+		id = SCA_finland.242
+		title = SCA_finland.242.t
+		desc = SCA_finland.242.desc
+		picture = GFX_report_event_generic_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.24.a
+			
+			add_opinion_modifier = {
+				target = FROM
+				modifier = FIN_sold_equipment
+			}
+		}
+	}
+	country_event = { #Diverted Artillery
+		id = SCA_finland.25
+		title = SCA_finland.24.t
+		desc = SCA_finland.24.desc
+		picture = GFX_report_event_generic_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.24.a
+			
+			if = {
+				limit = {
+					FROM = {
+						has_tech = gw_artillery
+						NOT = { has_tech = artillery1 }
+					}
+				}
+				add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 1000 producer = ENG }
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_tech = artillery1
+						NOT = { has_tech = artillery4 }
+					}
+				}
+				add_equipment_to_stockpile = { type = artillery_equipment_2 amount = 1000 producer = ENG }
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_tech = artillery4
+					}
+				}
+				add_equipment_to_stockpile = { type = artillery_equipment_3 amount = 1000 producer = ENG }
+			}
+			
+			add_opinion_modifier = {
+				target = FROM
+				modifier = FIN_sold_equipment
+			}
+		}
+	}
+	
+##Other Countries
+country_event = {
+	id = SCA_finland.26
+	title = SCA_finland.26.t
+	desc = SCA_finland.26.desc
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes
+	
+	option = { #Send Weapons
+		name = SCA_finland.26.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				FIN = { has_war = yes }				
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_war_with = FIN
+					AND = {
+						is_in_faction_with = SOV
+						FIN = { has_war_with = SOV }
+					}
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				has_equipment = {
+					infantry_equipment_0 > 1000
+				}
+				has_equipment = {
+					infantry_equipment_1 > 1000
+				}
+				has_equipment = {
+					infantry_equipment_2 > 1000
+				}
+				has_equipment = {
+					infantry_equipment_3 > 1000
+				}
+			}
+		}
+		
+		if = {
+			limit = { 
+				has_equipment = {
+					infantry_equipment_0 > 1000
+				}
+				NOT = { has_equipment = {
+					infantry_equipment_1 > 1000
+				} }
+				NOT = { has_equipment = {
+					infantry_equipment_2 > 1000
+				} }
+				NOT = { has_equipment = {
+					infantry_equipment_3 > 1000
+				} }
+			}
+			send_equipment = {
+				target = FIN
+				type = infantry_equipment_0
+				amount = 1000
+			}
+			hidden_effect = { set_country_flag = FIN_gun_0 }
+		}
+		if = {
+			limit = {
+				has_equipment = {
+					infantry_equipment_1 > 1000
+				}
+				NOT = { has_equipment = {
+					infantry_equipment_2 > 1000
+				} }
+				NOT = { has_equipment = {
+					infantry_equipment_3 > 1000
+				} }
+				NOT = { has_country_flag = FIN_gun_0 }
+			}
+			send_equipment = {
+				target = FIN
+				type = infantry_equipment_1
+				amount = 1000
+			}
+			hidden_effect = { set_country_flag = FIN_gun_1 } 
+		}
+		if = {
+			limit = {
+				has_equipment = {
+					infantry_equipment_2 > 1000
+				}
+				NOT = { has_equipment = {
+					infantry_equipment_3 > 1000
+				} }
+				AND = {
+					NOT = { has_country_flag = FIN_gun_0 }
+					NOT = { has_country_flag = FIN_gun_1 }
+				}
+			}
+			send_equipment = {
+				target = FIN
+				type = infantry_equipment_2
+				amount = 1000
+			}
+			hidden_effect = { FIN = { set_country_flag = FIN_gun_2 } }
+		}
+		if = {
+			limit = {
+				has_equipment = {
+					infantry_equipment_3 > 1000
+				}
+				AND = {
+					NOT = { has_country_flag = FIN_gun_0 }
+					NOT = { has_country_flag = FIN_gun_1 }
+					NOT = { has_country_flag = FIN_gun_2 }
+				}
+			}
+			send_equipment = {
+				target = FIN
+				type = infantry_equipment_3
+				amount = 1000
+			}
+			hidden_effect = { FIN = { set_country_flag = FIN_gun_3 } }
+		}
+		
+		FIN = { country_event = SCA_finland.27 }
+	}
+	
+	option = { #Send Men
+		name = SCA_finland.26.b
+		trigger = {
+			FIN = { has_war = yes }
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				OR = {
+					has_war_with = FIN
+					AND = {
+						is_in_faction_with = SOV
+						FIN = { has_war_with = SOV }
+					}
+				}				
+			}
+		}
+		
+		if = {
+			limit = {
+				AND = {
+					has_manpower < 50000
+					has_manpower > 10000
+				}
+			}
+			add_manpower = -10000
+			effect_tooltip = { FIN = { add_manpower = 10000 } }
+			hidden_effect = { FIN = { set_country_flag = FIN_man_10000 } }
+		}
+		if = {
+			limit = { 
+				AND = {
+					has_manpower < 100000
+					has_manpower > 50000
+				}
+			}
+			add_manpower = -50000
+			effect_tooltip = { FIN = { add_manpower = 50000 } }
+			hidden_effect = { FIN = { set_country_flag = FIN_man_50000 } }
+		}
+		if = {
+			limit = { has_manpower > 100000 }
+			add_manpower = -100000
+			effect_tooltip = { FIN = { add_manpower = 100000 } }
+			hidden_effect = { FIN = { set_country_flag = FIN_man_100000 } }
+		}
+		
+		FIN = { country_event = SCA_finland.28 }
+	}
+	
+	option = { #Allow Men
+		name = SCA_finland.26.c
+		trigger = {
+			FIN = { has_war = yes }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_war_with = FIN
+					AND = {
+						is_in_faction_with = SOV
+						FIN = { has_war_with = SOV }
+					}
+				}				
+			}
+		}
+		
+		effect_tooltip = { FIN = { add_manpower = 1000 } }
+		FIN = { country_event = SCA_finland.29 }
+	}
+	
+	option = { #No help for the Finns
+		name = SCA_finland.26.d
+		ai_chance = {
+			factor = 1
+			modifier = {
+				add = 100
+				OR = {
+					has_war_with = FIN
+					AND = {
+						is_in_faction_with = SOV
+						FIN = { has_war_with = SOV }
+					}
+				}				
+			}
+			modifier = {
+				add = 50
+				OR = {
+					AND = {
+						FIN = { has_war_with = SOV }
+						has_opinion = { target = SOV value > 75 }
+					}
+					has_opinion = { target = FIN value < -75 }
+				}				
+			}
+		}
+		
+		effect_tooltip = {
+			FIN = { add_opinion_modifier = { 
+				target = ROOT
+				modifier = FIN_no_help
+			} }
+		}
+		FIN = { country_event = SCA_finland.30 }
+	}
+		
+}
+	country_event = {
+		id = SCA_finland.27
+		title = SCA_finland.27.t
+		desc = SCA_finland.27.desc
+		picture = GFX_report_event_generic_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.27.a
+			
+			custom_effect_tooltip = SCA_finland.27.a_tt			
+		}
+	}
+	country_event = {
+		id = SCA_finland.28
+		title = SCA_finland.28.t
+		desc = SCA_finland.28.desc
+		picture = GFX_report_event_spain_civil_war_volunteers_02
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.28.a
+			if = {
+				limit = { FIN = { has_country_flag = FIN_man_100000 } }
+				add_manpower = 100000
+			}
+			if = {
+				limit = { FIN = { has_country_flag = FIN_man_50000 } }
+				add_manpower = 50000
+			}
+			if = {
+				limit = { FIN = { has_country_flag = FIN_man_10000 } }
+				add_manpower = 10000
+			}
+		}
+	}
+	country_event = {
+		id = SCA_finland.29
+		title = SCA_finland.29.t
+		desc = SCA_finland.29.desc
+		picture = GFX_report_event_spain_civil_war_volunteers_02
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.29.a
+			add_manpower = 1000
+		}
+	}
+	country_event = {
+		id = SCA_finland.30
+		title = SCA_finland.30.t
+		desc = SCA_finland.30.desc
+		picture = GFX_report_event_finnish_letter
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.30.a
+			add_opinion_modifier = {
+				target = FROM
+				modifier = FIN_no_help
+			}
+		}
+	}
+
+country_event = {
+	id = SCA_finland.31
+	title = SCA_finland.31.t
+	desc = SCA_finland.31.desc
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes
+	
+	option = { #Sell arms
+		name = SCA_finland.31.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0.5
+				AND = {
+					has_global_flag = sov_yes_pact
+					NOT = { has_war_with = SOV }
+				}
+			}
+			modifier = {
+				factor = 0.1
+				has_government = communism
+			}
+			modifier = {
+				factor = 0
+				is_in_faction_with = SOV
+			}			
+		}
+		trigger = {
+			OR = {
+				has_equipment = {
+					infantry_equipment_0 > 10000
+				}
+				has_equipment = {
+					infantry_equipment_1 > 10000
+				}
+				has_equipment = {
+					infantry_equipment_2 > 10000
+				}
+				has_equipment = {
+					infantry_equipment_3 > 10000
+				}
+			}
+		}
+		if = {
+			limit = { 
+				has_equipment = {
+					infantry_equipment_0 > 10000
+				}
+				NOT = { has_equipment = {
+					infantry_equipment_1 > 10000
+				} }
+				NOT = { has_equipment = {
+					infantry_equipment_2 > 10000
+				} }
+				NOT = { has_equipment = {
+					infantry_equipment_3 > 10000
+				} }
+			}
+			send_equipment = {
+				target = FIN
+				type = infantry_equipment_0
+				amount = 10000
+			}
+		}
+		else_if = {
+			limit = {
+				has_equipment = {
+					infantry_equipment_1 > 10000
+				}
+				NOT = { has_equipment = {
+					infantry_equipment_2 > 10000
+				} }
+				NOT = { has_equipment = {
+					infantry_equipment_3 > 10000
+				} }
+			}
+			send_equipment = {
+				target = FIN
+				type = infantry_equipment_1
+				amount = 10000
+			}
+		}
+		else_if = {
+			limit = {
+				has_equipment = {
+					infantry_equipment_2 > 10000
+				}
+				NOT = { has_equipment = {
+					infantry_equipment_3 > 10000
+				} }
+			}
+			send_equipment = {
+				target = FIN
+				type = infantry_equipment_2
+				amount = 10000
+			}
+		}
+		else_if = {
+			limit = {
+				has_equipment = {
+					infantry_equipment_3 > 10000
+				}
+			}
+			send_equipment = {
+				target = FIN
+				type = infantry_equipment_3
+				amount = 10000
+			}
+		}
+		
+		effect_tooltip = {
+			add_opinion_modifier = {
+				target = FROM
+				modifier = FIN_sold_equipment
+			}
+		}
+		
+		FIN = { country_event = SCA_finland.32 }
+	}
+	
+	option = { #Only what we can spare
+		name = SCA_finland.31.b
+		
+		custom_effect_tooltip = SCA_finland.31.b_tt
+		
+		FIN = { country_event = SCA_finland.33 }
+	}				
+	
+	option = { #No
+		name = SCA_finland.31.c
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 50
+				AND = {
+					has_global_flag = sov_yes_pact
+					NOT = { has_war_with = SOV }
+				}
+			}
+			modifier = {
+				factor = 0
+				has_war_with = SOV
+			}
+		}
+		
+		FIN = { country_event = SCA_finland.34 }
+	}
+}
+	country_event = {
+		id = SCA_finland.32
+		title = SCA_finland.32.t
+		desc = SCA_finland.32.desc
+		picture = GFX_report_event_generic_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.32.a
+			
+			add_opinion_modifier = {
+				target = FROM
+				modifier = FIN_sold_equipment
+			}
+		}
+	}
+	country_event = {
+		id = SCA_finland.33
+		title = SCA_finland.33.t
+		desc = SCA_finland.33.desc
+		picture = GFX_report_event_generic_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.33.a		
+			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 1000 producer = FIN }
+		}
+	}
+	country_event = {
+		id = SCA_finland.34
+		title = SCA_finland.34.t
+		desc = SCA_finland.34.desc
+		picture = GFX_report_event_generic_factory
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.34.a
+		}
+	}
+	
+country_event = {
+	id = SCA_finland.35
+	title = SCA_finland.35.t
+	desc = SCA_finland.35.desc
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes
+	
+	option = { #Sell arms
+		name = SCA_finland.31.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0.1
+				has_government = communism
+			}
+			modifier = {
+				factor = 0
+				is_in_faction_with = SOV
+			}			
+		}
+		trigger = {
+			OR = {
+				has_equipment = {
+					infantry_equipment_0 > 5000
+				}
+				has_equipment = {
+					infantry_equipment_1 > 5000
+				}
+				has_equipment = {
+					infantry_equipment_2 > 5000
+				}
+				has_equipment = {
+					infantry_equipment_3 > 5000
+				}
+			}
+		}
+		if = {
+			limit = { 
+				has_equipment = {
+					infantry_equipment_0 > 5000
+				}
+				NOT = { has_equipment = {
+					infantry_equipment_1 > 5000
+				} }
+				NOT = { has_equipment = {
+					infantry_equipment_2 > 5000
+				} }
+				NOT = { has_equipment = {
+					infantry_equipment_3 > 5000
+				} }
+			}
+			send_equipment = {
+				target = FIN
+				type = infantry_equipment_0
+				amount = 5000
+			}
+		}
+		if = {
+			limit = {
+				has_equipment = {
+					infantry_equipment_1 > 5000
+				}
+				NOT = { has_equipment = {
+					infantry_equipment_2 > 5000
+				} }
+				NOT = { has_equipment = {
+					infantry_equipment_3 > 5000
+				} }
+			}
+			send_equipment = {
+				target = FIN
+				type = infantry_equipment_1
+				amount = 5000
+			}
+		}
+		if = {
+			limit = {
+				has_equipment = {
+					infantry_equipment_2 > 5000
+				}
+				NOT = { has_equipment = {
+					infantry_equipment_3 > 5000
+				} }
+			}
+			send_equipment = {
+				target = FIN
+				type = infantry_equipment_2
+				amount = 10000
+			}
+		}
+		if = {
+			limit = {
+				has_equipment = {
+					infantry_equipment_3 > 5000
+				}
+			}
+			send_equipment = {
+				target = FIN
+				type = infantry_equipment_3
+				amount = 10000
+			}
+		}
+		
+		effect_tooltip = {
+			add_opinion_modifier = {
+				target = FROM
+				modifier = FIN_sold_equipment
+			}
+		}
+		
+		FIN = { country_event = SCA_finland.32 }
+	}
+	
+	option = { #Only what we can spare
+		name = SCA_finland.31.b
+		
+		custom_effect_tooltip = SCA_finland.31.b_tt
+		
+		FIN = { country_event = SCA_finland.33 }
+	}				
+	
+	option = { #No
+		name = SCA_finland.31.c
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 50
+				AND = {
+					has_global_flag = sov_yes_pact
+					NOT = { has_war_with = SOV }
+				}
+			}
+			modifier = {
+				factor = 0
+				has_war_with = SOV
+			}
+		}
+		
+		FIN = { country_event = SCA_finland.34 }
+	}
+}
+
+#Western Guarantee
+country_event = {
+	id = SCA_finland.20
+	title = SCA_finland.20.t
+	desc = SCA_finland.20.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #Yes
+		name = SCA_finland.20.a
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0.1
+				OR = {
+					FIN = { has_government = fascism }
+					FIN = { has_war = yes }
+				}
+			}
+		}
+		
+		effect_tooltip = {
+			give_guarantee = FIN
+		}
+		FIN = { country_event = SCA_finland.21 }
+	}
+	
+	option = { #No
+		name = SCA_finland.20.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				is_in_faction_with = FIN
+			}
+		}
+		
+		FIN = { country_event = SCA_finland.22 }
+	}
+}
+	country_event = {
+		id = SCA_finland.21
+		title = SCA_finland.21.t
+		desc = SCA_finland.21.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.21.a
+			FROM = { give_guarantee = FIN }
+		}
+	}
+	country_event = {
+		id = SCA_finland.22
+		title = SCA_finland.22.t
+		desc = SCA_finland.22.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.22.a
+		}
+	}
+	
+#Restoration of the House of Hesse
+country_event = {
+	id = SCA_finland.36
+	title = SCA_finland.36.t
+	desc = {
+		text = SCA_finland.36.desc1
+		trigger = {
+			date < 1940.5.28
+		}
+	}
+	desc = {
+		text = SCA_finland.36.desc2
+		trigger = {
+			date > 1940.5.27
+		}
+	}
+	picture = GFX_report_event_wolfgang
+	
+	is_triggered_only = yes
+	
+	immediate = { set_cosmetic_tag = FIN_hesse }
+	
+	option = { #Head of the country	
+		name = SCA_finland.36.a
+		trigger = {
+			fascism > 0.25
+		}
+		if = {
+			limit = { has_government = neutrality }
+			add_political_power = -150
+			set_rule = { can_puppet = yes }
+			set_rule = { can_guarantee_other_ideologies = yes }
+			add_ideas = FIN_absolute_monarchy
+		
+			set_party_name = { ideology = neutrality long_name = "Royalists" name = "Royalists" }
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			
+			promote_character = FIN_vaino_ii
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_popularity = { ideology = fascism popularity = -0.3 }
+			add_popularity = { ideology = neutrality popularity = 0.3 }
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			set_rule = { can_puppet = yes }
+			set_rule = { can_guarantee_other_ideologies = yes }
+			add_ideas = FIN_absolute_monarchy
+		
+			set_party_name = { ideology = neutrality long_name = "Royalists" name = "Royalists" }
+			
+			promote_character = FIN_vaino_ii
+		}
+		
+		hidden_effect = {
+			news_event = { id = SCA_finland.37 hours = 24 }
+		}
+	}
+	
+	option = { #Figurehead
+		name = SCA_finland.36.b
+		add_political_power = 50
+		add_ideas = FIN_wolfgang
+		add_popularity = { ideology = neutrality popularity = 0.1 }
+		hidden_effect = {
+			news_event = { id = SCA_finland.38 hours = 24 }
+		}
+	}
+}
+	news_event = {
+		id = SCA_finland.37
+		title = SCA_finland.37.t
+		desc = SCA_finland.37.desc
+		picture = GFX_news_event_wolfgang
+		
+		is_triggered_only = yes
+		major = yes
+		
+		option = { #Generic
+			name = SCA_finland.37.a
+			trigger = {
+				NOT = { tag = GER }
+				NOT = { tag = SOV }
+				NOT = { tag = FIN }
+				AND = {
+					NOT = { tag = HUN }
+					NOT = { HUN = { has_completed_focus = HUN_elect_a_king } }
+				}
+			}
+		}
+		option = { #Finland
+			name = SCA_finland.37.fin
+			trigger = { tag = FIN }
+		}
+		option = { #Germany
+			name = SCA_finland.37.ger
+			trigger = { tag = GER }
+		}
+		option = { #USSR
+			name = SCA_finland.37.sov
+			trigger = { tag = SOV }
+		}
+		option = { #Monachist Hungary
+			name = SCA_finland.37.hun
+			trigger = {
+				tag = HUN
+				HUN = { has_completed_focus = HUN_elect_a_king }
+			}
+		}
+	}
+	news_event = {
+		id = SCA_finland.38
+		title = SCA_finland.38.t
+		desc = SCA_finland.38.desc
+		picture = GFX_news_event_wolfgang
+		
+		is_triggered_only = yes
+		major = yes
+		
+		option = { #Generic
+			name = SCA_finland.37.a
+			trigger = {
+				NOT = { tag = GER }
+				NOT = { tag = SOV }
+				NOT = { tag = FIN }
+				NOT = { has_completed_focus = HUN_elect_a_king }
+			}
+		}
+		option = { #Finland
+			name = SCA_finland.38.fin
+			trigger = { tag = FIN }
+		}
+		option = { #Germany
+			name = SCA_finland.38.ger
+			trigger = { tag = GER }
+		}
+		option = { #USSR
+			name = SCA_finland.38.sov
+			trigger = { tag = SOV }
+		}
+		option = { #Monachist Hungary
+			name = SCA_finland.38.hun
+			trigger = {
+				has_completed_focus = HUN_elect_a_king
+			}
+		}
+	}
+	
+# Finland Allies Japan
+country_event = {
+	id = SCA_finland.39
+	title = SCA_finland.39.t
+	desc = {
+		text = SCA_finland.39.desc1
+		trigger = { is_faction_leader = yes }
+	}
+	desc = {
+		text = SCA_finland.39.desc2
+		trigger = {
+			GER = { is_faction_leader = yes }
+			is_in_faction_with = GER
+		}
+	}
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = { # Allow them to join OUR faction
+		name = SCA_finland.39.a
+		ai_chance = {
+			factor = 1
+		}
+		
+		trigger = {
+			is_faction_leader = yes
+		}
+		
+		add_to_faction = FIN
+	}
+	option = { # Allow them to join the Axis
+		name = SCA_finland.39.b
+		ai_chance = {	
+			factor = 1
+		}
+		
+		trigger = {
+			GER = { is_faction_leader = yes }
+			is_in_faction_with = GER
+		}
+		
+		custom_effect_tooltip = FIN_add_to_axis
+		hidden_effect = {
+			GER = {
+				add_to_faction = FIN
+			}
+		}
+		
+		GER = { news_event = SCA_finland.40 } 
+	}
+	option = { # Refuse!
+		name = SCA_finland.39.c
+		ai_chance = {
+			factor = 0
+		}
+		
+		effect_tooltip = {
+			FIN = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = FIN_refused_alliance
+				}
+				remove_ideas = FIN_jap_mission
+			}
+		}
+		
+		FIN = { country_event = SCA_finland.41 }
+	}
+}
+	news_event = {
+		id = SCA_finland.40
+		title = SCA_finland.40.t
+		desc = SCA_finland.40.desc
+		picture = GFX_news_event_070
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.40.a
+		}
+	}
+	
+	country_event = {
+		id = SCA_finland.41
+		title = SCA_finland.41.t
+		desc = SCA_finland.41.desc
+		picture = GFX_report_event_japan_europe_pact
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.41.a
+			
+			add_opinion_modifier = {
+				target = FROM
+				modifier = FIN_refused_alliance
+			}
+			
+			effect_tooltip = { remove_ideas = FIN_jap_mission }
+			hidden_effect = {
+				remove_ideas = FIN_jap_mission
+				remove_ideas = FIN_jap_mission_2
+			}
+		}
+	}
+	
+#Baltic Events
+country_event = {
+	id = SCA_finland.42
+	title = SCA_finland.42.t
+	desc = SCA_finland.42.desc
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = SCA_finland.42.a
+		ai_chance = {
+			factor = 1
+		}
+		effect_tooltip = {
+			FIN = {
+				give_guarantee = EST
+			}
+			add_opinion_modifier = {
+				target = FROM
+				modifier = FIN_est_guaranteed
+			}
+		}
+		FIN = { country_event = SCA_finland.43 }
+	}
+	option = { # Refuse
+		name = SCA_finland.42.b
+		ai_chance = {
+			factor = 1
+		}
+		
+		FIN = { country_event = SCA_finland.44 }
+	}
+}
+	country_event = {
+		id = SCA_finland.43
+		title = SCA_finland.43.t
+		desc = SCA_finland.43.desc
+		picture = GFX_report_event_generic_sign_treaty1
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.43.a
+			give_guarantee = EST
+			EST = {					
+				add_opinion_modifier = {
+					target = FROM
+					modifier = FIN_est_guaranteed
+				}
+			}
+		}
+	}
+	country_event = {
+		id = SCA_finland.44
+		title = SCA_finland.44.t
+		desc = SCA_finland.44.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.44.a
+		}
+	}
+	
+country_event = {
+	id = SCA_finland.45
+	title = SCA_finland.45.t
+	desc = SCA_finland.45.desc
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = { # Join
+		name = SCA_finland.45.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_government = communism
+				NOT = { has_war_with = SOV }
+			}
+		}
+		FIN = { add_to_faction = ROOT }
+		FIN = { country_event = SCA_finland.46 }
+	}
+	option = { #Refuse
+		name = SCA_finland.46.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				add = 1
+				has_government = communism
+				NOT = { has_war_with = SOV }
+			}
+		}
+		effect_tooltip = {
+			FIN = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = FIN_refused_alliance
+				}
+				
+				create_wargoal = {
+					target = ROOT
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+		hidden_effect = {
+			FIN = { set_rule = { can_puppet = yes } }
+		}
+		FIN = { country_event = SCA_finland.47 }
+	}
+}
+	country_event = {
+		id = SCA_finland.46
+		title = SCA_finland.46.t
+		desc = SCA_finland.46.desc
+		picture = GFX_report_event_generic_sign_treaty1
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.46.a
+		}
+	}
+	country_event = {
+		id = SCA_finland.47
+		title = SCA_finland.47.t
+		desc = SCA_finland.47.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.47.a
+			
+			add_opinion_modifier = {
+				target = FROM
+				modifier = FIN_refused_alliance
+			}
+			
+			create_wargoal = {
+				target = FROM
+				type = puppet_wargoal_focus
+			}
+		}
+	}
+	
+country_event = { #Ask Poland
+	id = SCA_finland.48
+	title = SCA_finland.48.t
+	desc = SCA_finland.48.desc
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = { # Yes
+		name = SCA_finland.48.a
+		ai_chance = {
+			factor = 75
+		}
+		
+		FIN = { add_to_faction = ROOT }
+		FIN = { country_event = SCA_finland.46 }
+	}	
+	
+	option = { # Only if we can be the leaders
+		name = SCA_finland.48.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				OR = {
+					GER = { focus_progress = { focus = GER_danzig_or_war progress > 0 } }
+					SOV = { focus_progress = { focus = SOV_claims_on_poland progress > 0 } }
+				}
+			}
+		}
+		
+		FIN = { country_event = SCA_finland.49 }
+	}	
+	
+	option = { # No
+		name = SCA_finland.48.c
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				OR = {
+					GER = { focus_progress = { focus = GER_danzig_or_war progress > 0 } }
+					SOV = { focus_progress = { focus = SOV_claims_on_poland progress > 0 } }
+				}
+			}
+		}
+	
+		effect_tooltip = {
+			FIN = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = FIN_refused_alliance
+				}
+				
+				create_wargoal = {
+					target = ROOT
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+		hidden_effect = {
+			FIN = { set_rule = { can_puppet = yes } }
+		}
+		FIN = { country_event = SCA_finland.47 }
+	}
+}
+
+country_event = {
+	id = SCA_finland.49
+	title = SCA_finland.49.t
+	desc = SCA_finland.49.desc
+	picture = GFX_report_event_poland_rejects
+	
+	is_triggered_only = yes
+	
+	option = { # That's Fine
+		name = SCA_finland.49.a
+		ai_chance = {
+			factor = 1
+		}
+		
+		if = { 
+			limit = { POL = { is_faction_leader = no } }
+			POL = { set_rule = { can_create_factions = yes } }
+			POL = { create_faction = miedzymorze_faction }
+		}
+		#POL = {
+		#	add_to_faction = {
+		#		every_other_country = {
+		#			limit = { is_in_faction_with = FIN }
+		#		}
+		#	}
+		#}
+		every_other_country = {
+			limit = { is_in_faction_with = FIN }
+			POL = { add_to_faction = PREV }
+		}
+		POL = { add_to_faction = FIN }
+	}
+	
+	option = { # NEVER
+		name = SCA_finland.49.b
+		ai_chance = {
+			factor = 3
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+		
+		POL = { country_event = SCA_finland.50 }
+	}
+}
+	country_event = {
+		id = SCA_finland.50
+		title = SCA_finland.50.t
+		desc = SCA_finland.50.desc
+		
+		is_triggered_only = yes
+		
+		option = { # FINE THEN
+			name = SCA_finland.50.a			
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					OR = {
+						GER = { focus_progress = { focus = GER_danzig_or_war progress > 0 } }
+						SOV = { focus_progress = { focus = SOV_claims_on_poland progress > 0 } }
+					}
+				}
+			}
+		}
+		option = { # Ummm, on second thought...
+			name = SCA_finland.50.b			
+			ai_chance = {
+				factor = 0
+				modifier = {
+					add = 1
+					OR = {
+						GER = { focus_progress = { focus = GER_danzig_or_war progress > 0 } }
+						SOV = { focus_progress = { focus = SOV_claims_on_poland progress > 0 } }
+					}
+				}
+			}
+			
+			FIN = { add_to_faction = POL }
+		}
+	}
+
+country_event = {
+	id = SCA_finland.51
+	title = SCA_finland.51.t
+	desc = SCA_finland.51.desc
+	
+	is_triggered_only = yes
+	
+	option = { # Yes
+		name = SCA_finland.51.a
+		ai_chance = {
+			factor = 50
+		}
+		
+		FIN = { add_to_faction = ROOT }
+		FIN = { country_event = SCA_finland.46 }
+	}	
+	option = { # Only if we can be the leader
+		name = SCA_finland.51.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				OR = {
+					GER = { focus_progress = { focus = GER_danzig_or_war progress > 0 } }
+					SOV = { focus_progress = { focus = SOV_claims_on_poland progress > 0 } }
+				}
+			}
+		}
+		
+		FIN = { country_event = SCA_finland.49 }
+	}
+	option = { # No
+		name = SCA_finland.51.c
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				OR = {
+					GER = { focus_progress = { focus = GER_danzig_or_war progress > 0 } }
+					SOV = { focus_progress = { focus = SOV_claims_on_poland progress > 0 } }
+				}
+			}
+		}
+	
+		effect_tooltip = {
+			FIN = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = FIN_refused_alliance
+				}
+				
+				create_wargoal = {
+					target = ROOT
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+		hidden_effect = {
+			FIN = { set_rule = { can_puppet = yes } }
+		}
+		FIN = { country_event = SCA_finland.47 }
+	}
+}
+	
+#Finnish Scandinavian Alliances
+country_event = {
+	id = SCA_finland.52
+	title = SCA_finland.52.t
+	desc = {
+		text = SCA_finland.52.desc1
+		trigger = { FIN = { is_faction_leader = yes } }
+	}
+	desc = {
+		text = SCA_finland.52.desc2
+		trigger = { FIN = { is_in_faction = no } }
+	}
+	desc = {
+		text = SCA_finland.52.desc3
+		trigger = { FIN = { is_faction_leader = no } POL = { is_faction_leader = yes } }
+	}
+			
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = { # Join
+		name = SCA_finland.52.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				FIN = { is_faction_leader = yes }
+			}
+			modifier = {
+				factor = 5
+				FIN = { is_in_faction_with = EST }
+				FIN = { is_in_faction_with = LAT }
+				FIN = { is_in_faction_with = LIT }
+			}
+			modifier = {
+				factor = 10
+				FIN = { is_in_faction_with = POL }
+			}
+			modifier = {
+				factor = 0.2
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0.1
+				has_completed_focus = SWE_one_neutral
+			}
+		}
+		if = {
+			limit = { FIN = { is_faction_leader = yes } }
+			FIN = { add_to_faction = SWE }
+		}
+		if = {
+			limit = { FIN = { is_in_faction = no } }
+			hidden_effect = { FIN = { set_rule = { can_create_factions = yes } } }
+			FIN = { create_faction = SCA_DEF_alliance }
+			FIN = { add_to_faction = SWE }
+		}
+		if = {
+			limit = { FIN = { is_faction_leader = no } POL = { is_faction_leader = yes } }
+			POL = { add_to_faction = SWE }
+			POL = { country_event = SCA_finland.53 }
+		}
+		
+		FIN = { country_event = SCA_finland.54 }
+	}
+	
+	option = { # Not Join
+		name = SCA_finland.52.b
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 10
+				FIN = { has_war_with = SOV }
+				FIN = { is_in_faction = no }
+			}
+			modifier = {	
+				factor = 5
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				SWE = { has_war = yes }
+			}
+		}
+		
+		FIN = { country_event = SCA_finland.55 }		
+	}
+}
+	country_event = {
+		id = SCA_finland.53
+		title = SCA_finland.53.t
+		desc = SCA_finland.53.desc
+		picture = GFX_report_event_finnish_letter
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.53.a
+		}
+	}
+	country_event = {
+		id = SCA_finland.54
+		title = SCA_finland.54.t
+		desc = SCA_finland.54.desc
+		picture = GFX_report_event_generic_sign_treaty1
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.54.a
+		}
+	}
+	country_event = {
+		id = SCA_finland.55
+		title = SCA_finland.55.t
+		desc = SCA_finland.55.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.55.a
+		}
+	}
+	
+country_event = {
+	id = SCA_finland.56
+	title = SCA_finland.56.t
+	desc = SCA_finland.56.desc
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = { # Yes
+		name = SCA_finland.56.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				FIN = { surrender_progress > 0.33 }
+			}
+		}
+		FIN = { country_event = SCA_finland.54 }
+		if = {
+			limit = { FIN = { is_faction_leader = yes } }
+			FIN = { add_to_faction = ROOT }
+		}
+		if = {
+			limit = { FIN = { is_faction_leader = no } POL = { is_faction_leader = yes } }
+			POL = { add_to_faction = ROOT }
+			POL = { country_event = SCA_finland.53 }
+		}
+		FIN = { country_event = SCA_finland.54 }
+	}
+	
+	option = { # No
+		name = SCA_finland.56.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				add = 1
+				FIN = { surrender_progress > 0.33 }
+			}
+		}
+		
+		FIN = { country_event = SCA_finland.55 }
+	}
+}
+
+
+### Joining the War Against the Soviets (Continuation War)
+country_event = {
+	id = SCA_finland.57
+	title = SCA_finland.57.t
+	desc = SCA_finland.57.desc
+	picture = GFX_report_event_finnish_soldiers_snow
+	
+	is_triggered_only = yes
+	
+	option = { # Yes
+		name = SCA_finland.57.a
+		ai_chance = {
+			factor = 1
+		}
+		
+		effect_tooltip = {
+			add_to_faction = FROM
+			FROM = {				
+				add_to_war = {
+					targeted_alliance = ROOT
+					enemy = SOV
+					hostility_reason = war
+				}
+			}
+		}
+		FROM = { country_event = SCA_finland.58 }
+	}
+	
+	option = { #No
+		name = SCA_finland.57.b
+		ai_chance = {
+			factor = 0
+		}
+		
+		hidden_effect = {
+			set_country_flag = SCA_rejected_finnish_help
+		}
+		FIN = { country_event = SCA_finland.59 }
+	}
+}
+	country_event = {
+		id = SCA_finland.58
+		title = SCA_finland.58.t
+		desc = SCA_finland.58.desc
+		picture = GFX_report_event_finnish_soldiers_snow
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.58.a
+			hidden_effect = {
+				clr_country_flag = FIN_surrendered_again
+			}
+			FROM = {
+				add_to_faction = ROOT
+			}
+			add_to_war = {
+				targeted_alliance = FROM
+				enemy = SOV
+				hostility_reason = war
+			}
+		}
+	}
+	country_event = {
+		id = SCA_finland.59
+		title = SCA_finland.59.t
+		desc = SCA_finland.59.desc
+		picture = GFX_report_event_finnish_letter
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_finland.59.a
+			hidden_effect = {
+				clr_country_flag = FIN_surrendered_again
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	

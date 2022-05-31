@@ -1,0 +1,115 @@
+﻿ERI = {
+	male = {
+		names = { 
+				  Abdalla Abdulkadir Abel Abraha Abraham Ahmed Alamin Alemayo Ali Araya Arefaine Bahta Beraki Berehet Bereket Berhane Daniel Dawit Ermias Fesshaye Fikrejesus Filipos Filmon Gergis Germano Ghebreselassie Ghirmai Girma 
+				  Haile Hais Hamid Haregot Herman Ibrahim Isaias Jemal Kidane Mahmoud Meb Menghesteab Mesfin Michael Mohamed Mohammed Nevi Ogbe Osman Paulos Petros Remo Saleh Samson Samuel Sebhat Semere Seyoum Solomon Srafel Sulaiman 
+				  Tedla Teklay Tekle Teklemariam Tesfai Tesfaye Tesfayohannes Testfaldet Umar Woldai Wodeab Woldemichael Worku Yared Yegizaw Yemane Yinekachew Yohannes Yonas Zekarias Zerai Zersenay
+				  #
+				  Woldeab Idris Mohammed "Ibrahim Sultan" "Hamid Idris" Abel Alexander Nat Joel Henok Mebrahtom
+				  Thomas Yonas Oliver Golgol Teklemariam Zersenay Michael Yegizaw Haregot Oqbe "Ali Abdu" 
+				  "Aman Mikael" Tedla Zerai Araya Sebrat Yemane Ghirmai Umar Abdalla Abraha Abdulkadir Tekle Osman 
+				}
+	}
+	female = {
+		names = { 
+			Abeba Amna Askalu Aster Dehab Fozia Furtuna Hannah Helen Meraf Nebiat Ruth Senait Simret Zeudi
+			#
+			Simret Nebiat 
+		}
+	}
+	surnames =  { 
+				  Abbai Abdalla Abdella Abdu Abera Abraha Brehe Addonia Adonai Aferworki Afewerki Ahmed Alamin Ali Amahazion Araya Asgedom Asmerom Awate Ayele Baduri Bahta Bairu Baria Berhe Cristaldi Debas Deres Desta Ephrem Faytinga
+				  Fissehatsion Francois Futur Gebreab Bhebrehiwet Ghebremariam Ghebremeskez Ghebreselassie Ghirmazion Girone Goitom Habtemariam Hagos Haile Hashim Hassan Himid Isaak Jabir Kebire Keflezighi Kekya Kidane Kiflay Kifle
+				  Kiflemariam Medhin Mehari Meki Meles Mengisteab Menkerios Mesfen Michael Mohammed Mukhtar Nati Nawd Nurhusein Omer Pool Russom Samuel Selassie Sherifo Shimangus Simon Solomon Sultan Tadese Tadesse Tedros Teklehaymanot
+				  Teklemichael Teklerb Tesfagiorgis Tesfamariam Tesfamichael Tesfaszghi Tilahun Tsegay Tsehaye Tseqay Welday Wolday Woldemariam Woldense Woldeyohannes Yohannes Yoseph Zegergish
+				  #
+				  Woldemariam Adam Ali Awate Aferworki Isak Berhe Gerezgiher Goitom Habtemariam Keflezighi Kelati Kifle
+				  Kylington Mebrahtu Medhin Tadese Abbai Abreha Ahmed Andom Bairu Deres Desta Ephram Gebreab Gebremariam
+				  Hassan Jabir Kassa Kebire Kiflay Omer Sabbe Sherifo Solomon Tesfagiorgis Woldense
+				}
+	callsigns = { }
+}
+
+SOM = {
+	male = {
+		names = { 
+				Aar Abadir Abd Abdallah Abdi Abdihakim Abdillahi Abdiqasim Abdirahman Abdirashid Abdirizak Abdisalam Abdiweli Abdourahman Abdulkadir Abdullahi 
+				Abdulsalami Adan Aden Ahmed Ali Arawelo Ayub Dahir Daud Elman Faisal Farah Hasan Hassan Hirsi Ibrahim Ismail Jama Jaylaani Liban 
+				Maxamed Mo Mohamed Mohammed Mohamoud Mohamud Muse Mustafa Nur Nuruddin Olol Omar Osman Rageh Salaad Sharif Shaykh Shire Uways Warsame Yusuf
+				#
+				Mohammed Olol Omar Aden Siad Abdulkadir Elman Abdirizak Aden Abdullahi Abdirahman "Ismaïl Omar" Jama
+				Abdiqasim Dahir Ahmed Yusuf Haji Abdiweli Osman "Ali Khalif" "Umar Arteh" "Nur Hassan" "Abdi Farah"
+		}
+	}
+	female = {
+		names = { 
+			Amina Asha Asli Ayaan Edna Fatima Fowziya Halima Hanan Hawa Hodan Idyl Iman Khadija Ladan Maryam Siham Waris Yasmin Yasmine Yussur Zahra
+			#
+			Dekha Leila Fartuun Halima Hodan Ifrah Nimco 
+		}
+	}
+	surnames =  { 
+				Aato Abade Abdi Abdillahi Abdulle Abdulmajid Abrar Abubakar Adan Addou Afrax "Al-Amawi" Ahmed Ali Allas Aptidon "Ar-Rida" Aweys Awl Bani "Al-Barawi" Barre Bile Daar Daud Diinle Dirie Duale Elmi Farah Farole Feiruz Galal 
+				Galaydh Ghalib Ghedi Haji "Haji-Faqi" Hashi Hassan Hersi Hirsi Hussein Ibrahim Ibrahim Ikar Irro Islam Ismail Issa Isse "Al-Jabarti" Jama Osman Jibrell Kahin Kassim "Al-Kawneyn" Kediye Kenadid Kusow Liibaan Maanta Madobe 
+				Mahamuud Malimey Moalim Mohallim Mohamed Muhammad Mukhtar Mumin Mursal Nalayeh Nur Omaar Omer Osman Osoble Qalanjo Qarshe "Al-Qutbi" Said Samatar Sharmarke Shermarke Shirdon Shire Siad Silanyo Sinimo Sufi Timacade Waberi 
+				Warfa Warsame "Al-Zayla'i"
+				#
+				Dinke Samanthar Adde Barre Ghalib Issa Hussein "Aw Hirsi" Hashi Farole Daar Abdi Abdulle Hersi Kahin
+				"Ali Tuur" "Haji Nur" "Ali Shermarke" "Jama Ali" Jibrell Tako Yasin 
+	}
+	callsigns = { }
+}
+
+AOI = {
+	male = {
+		names = { Alessandro Alfonso Ambrogio Amedeo Andrea Angelo Antonio Benito Camillo Carlo
+				  Cesare Costanzo Davide Enrico Ettore Fabrizio Faustino Federico Felice Ferdinando
+			   	  Fiorenzo Francesco Gaetano Gennaro Girolamo Giulio Giuseppe Guglielmo Innocenzo Leopoldo
+				  Luigi Marco Massimo Matteo Nicola Oreste Paolo Pasquale Pietro Prospero
+				  Raffaele Roberto Ruggiero Silvio Simone Tancredi Ugo Umberto Vincenzo Vittorio
+				  Woldeab Idris Mohammed "Ibrahim Sultan" "Hamid Idris" Abel Alexander Nat Joel Henok Mebrahtom
+				  Thomas Yonas Oliver Golgol Teklemariam Zersenay Michael Yegizaw Haregot Oqbe "Ali Abdu" 
+				  "Aman Mikael" Tedla Zerai Araya Sebrat Yemane Ghirmai Umar Abdalla Abraha Abdulkadir Tekle Osman
+				  Mohammed Olol Omar Aden Siad Abdulkadir Elman Abdirizak Aden Abdullahi Abdirahman "Ismaïl Omar" Jama
+				  Abdiqasim Dahir Ahmed Yusuf Haji Abdiweli Osman "Ali Khalif" "Umar Arteh" "Nur Hassan" "Abdi Farah"
+				  Olol Omar Aden Siad Elman Abdirizak Aden Abdullahi Abdirahman "Ismaïl Omar" Jama "Abdi Farah"
+				  Abdiqasim Yusuf Haji Abdiweli Osman "Ali Khalif" "Umar Arteh" "Nur Hassan" 
+				}
+		surnames = { }
+		callsigns = { }
+	}
+	female = {
+		names = { Maria Anna }
+		surnames = { }
+		callsigns = { }
+	}
+	surnames =  { Acton Albricci Badoglio Baldissera Baratieri Bava-Beccaris Cadorna Cagni Canevaro Capello
+				  Caviglia Ceccherini Cialdini Cusani Dezza "di Robilant" "di Savoia"
+				  Emo Fanti Fara Filomarino Garibaldi Giardino Govone "La Màrmora" Mambretti 
+				  Menabrea Orengo Pallavicino Pecori-Giraldi  Pelloux Perruchetti Pianelli Porro
+				  Presbitero Ramorino Ricotti-Magnani Sacchi Saletta Sanna Solari Vaccari Zupelli
+				  Woldemariam Adam Ali Awate Aferworki Isak Berhe Gerezgiher Goitom Habtemariam Keflezighi Kelati Kifle
+				  Kylington Mebrahtu Medhin Tadese Abbai Abreha Andom Bairu Deres Desta Ephram Gebreab Gebremariam
+				  Hassan Jabir Kassa Kebire Kiflay Omer Sabbe Sherifo Solomon Tesfagiorgis Woldense
+				  Dinke Samanthar Adde Barre Ghalib Issa Hussein "Aw Hirsi" Hashi Farole Daar Abdi Abdulle Hersi Kahin
+                  "Ali Tuur" "Haji Nur" "Ali Shermarke" "Jama Ali" Jibrell Tako Yasin
+			    }
+	callsigns = { Buzzard Dusty Falcon Hawk Hammer Viper Banshee "The Baron" Lightning Duce Raven "Two Shot" Rosso }
+}
+
+MTA = {
+	male = {
+		names = {  Maximilian Felix Erich Gerhard Gunther Otto Walter Wilhelm Heinz Hermann Heinrich 
+			Theodor Hans Anton Joachim Max Emil Peter Fritz Otto Adolf Tobias Staffan Marco Karl
+		}
+	}
+	female = {
+		names = { Jessica Emma Hanna Sofia Marie }
+	}
+	surnames = { 
+		Muller Schmidt Schneider Fischer Meyer Weber Schulz Wagner Hartmann Rall Barkhorn 
+		Becker Hoffmann Graf Erhler Hafner Lipfert Brendel Stotz Kirschner Lang Sturm 
+		Beisswenger Duttmann Wilbs Berglen Behrmann 
+		}
+	callsigns = { "Bubi" "Assi" "The Black Devil" "The Blond Knight Of Mittelafrika" "Dolfo" "Fighter of Salaam" "Petit Rouge" "Pritzl" "The Black Baron" "The Black Battle-flyer" "The Black Knight" "Reeste" }
+}

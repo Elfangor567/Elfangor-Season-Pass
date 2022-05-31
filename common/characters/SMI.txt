@@ -1,0 +1,63 @@
+characters={
+#Leaders
+	SMI_johan_roska={ #Reindeer herder who attended the 1917 Sami conference, chosen mostly because of his cool hat
+		name=SMI_johan_roska
+		portraits={
+			civilian={
+				large="gfx/leaders/TIB/Portrait_Tibet_Jamphel_Yeshe_Gyaltsen.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	SMI_gustav_park={ #Second editor of the Samefolket, called the "Mussolini of the Lapps" (Likely not fair, but I need a fascist leader)
+		name=SMI_gustav_park
+		portraits={
+			civilian={
+				large="gfx/leaders/FRA/portrait_fra_jacques_doriot.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	SMI_per_fokstad={ #Important Sami person in 1900's who argued relentlessly for greater Sami autonomy
+		name=SMI_per_fokstad
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_9.dds"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	SMI_vasiliy_alymov={ #Executed in Stalin's purge, supposedly the to-be president of a Sapmi breakaway state. While unlikely, it makes him a good character to have.
+		name=SMI_vasiliy_alymov
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/Portrait_Soviet_Generic_1.dds"
+			}
+		}
+		country_leader={
+			ideology=leninism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+}

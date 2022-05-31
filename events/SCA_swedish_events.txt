@@ -1,0 +1,2819 @@
+﻿add_namespace = SCA_sweden
+
+#Changes name of Democratic Party in 1938
+country_event = {
+	id = SCA_sweden.0
+	hidden = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SWE
+		date > 1938.6.15
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = SCA_sweden.0.a
+		
+		set_party_name = { ideology = democratic long_name = "Högerns Riksorganisation" name = "HR" }
+	}
+}
+
+#The Holiday Cabinet
+country_event = {
+	id = SCA_sweden.1
+	title = SCA_sweden.1.t
+	desc = SCA_sweden.1.desc
+	picture = GFX_report_event_generic_parliament
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SWE
+		has_government = neutrality
+		date > 1936.4.1
+		date < 1939.1.1
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = SCA_sweden.1.a
+		
+		promote_character = SWE_axel_pehrsson
+		set_party_name = { ideology = democratic long_name = "Bondeförbundet" name = "Bondeförbundet" }
+		set_politics = {
+			ruling_party = democratic
+			last_election = "1932.9.18"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		
+		hidden_effect = {
+			set_country_flag = holiday_cabinet
+			add_popularity = { ideology = democratic popularity = 0.03 }
+		}
+	}
+	
+}
+
+country_event = {
+	id = SCA_sweden.2
+	title = SCA_sweden.2.t
+	desc = SCA_sweden.2.desc
+	picture = GFX_report_event_election_vote
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SWE
+		has_country_flag = holiday_cabinet
+		has_government = democratic
+		date > 1936.9.18
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { #Form new Social Democratic Majority
+		name = SCA_sweden.2.a
+		ai_chance = {
+			factor = 20
+		}
+		
+		add_political_power = 100
+		promote_character = SWE_gosta_adolfsson_bagge
+		set_party_name = { ideology = democratic long_name = "Allmänna Valmansförbundet" name = "AVF" }
+		if = {
+			limit = {
+				AND = {
+					fascism < 0.15
+					communism < 0.15
+				}
+			}
+			hidden_effect = {			
+				set_politics = {
+					ruling_party = neutrality
+					last_election = "1936.9.20"
+					election_frequency = 48
+					elections_allowed = yes
+				}
+				set_popularities = {
+					neutrality = 73.1
+					democratic = 17.6
+					communism = 7.7
+					fascism = 1.6
+				}
+			}
+		}
+		else = {
+			add_popularity = { ideology = neutrality popularity = 25 }
+		}
+		set_politics = {
+			ruling_party = neutrality
+			last_election = "1936.9.20"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		hidden_effect = {
+			clr_country_flag = holiday_cabinet
+		}
+	}
+	
+	option = { #Keep the Minority Party
+		name = SCA_sweden.2.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		add_political_power = -100
+		add_popularity = { ideology = neutrality  popularity = -0.1 }
+	}
+}
+
+#Unite the National Socialist Parties
+country_event = {
+	id = SCA_sweden.3
+	title = SCA_sweden.3.t
+	desc = SCA_sweden.3.desc
+	picture = GFX_report_event_fascist_gathering
+	
+	is_triggered_only = yes
+	
+	option = { #The Swedish National Socialist Party SNSP
+		name = SCA_sweden.3.a
+		ai_chance = {
+			factor = 25
+		}
+		
+		promote_character = SWE_birger_furugard
+		set_party_name = { ideology = fascism long_name = "Svenska Nationalsocialistiska Partiet" name = "SNSP" }
+		add_popularity = { ideology = fascism popularity = 0.10 }
+	}
+	
+	option = { #National Socialist Workers' party NSAP
+		name = SCA_sweden.3.b
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_political_power = 150
+		
+		add_popularity = { ideology = fascism popularity = 0.15 }
+	}
+	
+	option = { #National Socialist Bloc
+		name = SCA_sweden.3.c
+		ai_chance = {
+			factor = 33
+		}	
+		
+		promote_character = SWE_martin_ekstrom
+		set_party_name = { ideology = fascism long_name = "Nationalsocialistiska Blocket" name = "NSB" }
+		add_popularity = { ideology = fascism popularity = 0.05 }
+	}
+}
+
+#Sweden demands Aland
+country_event = {
+	id = SCA_sweden.4
+	title = SCA_sweden.4.t
+	desc = SCA_sweden.4.desc
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = { #Submit
+		name = SCA_sweden.4.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 25
+				has_war_with = SOV
+			}
+		}		
+		effect_tooltip = {
+			SWE = { transfer_state = 145 }
+		}
+		SWE = { country_event = { id = SCA_sweden.5 hours = 12 } }
+		hidden_effect = {
+			set_country_flag = FIN_gave_aland
+		}
+	}
+	
+	option = { #Refuse
+		name = SCA_sweden.4.b
+		ai_chance = {
+			factor = 5
+		}
+		
+		SWE = { country_event = { id = SCA_sweden.6 hours = 12 } }
+		effect_tooltip = {
+			SWE = {
+				create_wargoal = {
+					type = take_state_focus
+					target = FIN
+					generator = { 145 }
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = SCA_sweden.5
+	title = SCA_sweden.5.t
+	desc = SCA_sweden.5.desc
+	picture = GFX_report_event_finnish_letter
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SCA_sweden.5.a
+		FIN = {
+			SWE = { transfer_state = 145 }
+		}
+		if = {
+			limit = { 145 = { is_demilitarized_zone = yes } }
+			145 = { set_demilitarized_zone = no }
+		}
+	}
+}
+country_event = {
+	id = SCA_sweden.6
+	title = SCA_sweden.6.t
+	desc = SCA_sweden.6.desc
+	picture = GFX_report_event_finnish_soldiers_snow
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SCA_sweden.6.a
+		create_wargoal = {
+			type = take_state_focus
+			target = FIN
+			generator = { 145 }
+		}
+	}
+}
+
+
+#Martin Eugen Ekström offers baltic states protectorate status
+country_event = {
+	id = SCA_sweden.7
+	title = SCA_sweden.7.t
+	desc = SCA_sweden.7.desc
+	picture = GFX_report_event_lithuania_army
+	
+	is_triggered_only = yes
+	
+	option = { #Accept
+		name = SCA_sweden.7.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					is_in_faction = yes
+					is_subject = yes
+					strength_ratio = {
+						tag = FROM
+						ratio > 0.75
+					}
+				}
+			}
+		}
+		
+		effect_tooltip = {
+			SWE = { puppet = ROOT }
+			set_autonomy = { target = ROOT autonomy_state = autonomy_dominion }
+		}
+		custom_effect_tooltip = SCA_sweden.7.a_tt 
+		hidden_effect = {
+			SWE = { country_event = SCA_sweden.8 }
+		}
+	}
+	
+	option = { #Decline
+		name = SCA_sweden.7.b
+		ai_chance = {
+			factor = 3
+		}
+		
+		effect_tooltip = {
+			SWE = {
+				create_wargoal = {
+					type = annex_everything
+					target = ROOT
+				}
+			}
+		}
+		SWE = { country_event = SCA_sweden.9 }
+	}
+}
+	country_event = {
+		id = SCA_sweden.8
+		title = SCA_sweden.8.t
+		desc = SCA_sweden.8.desc
+		picture = GFX_report_event_generic_sign_treaty3
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_sweden.8.a
+			SWE = { puppet = FROM }
+			hidden_effect = {
+				set_autonomy = { target = FROM autonomy_state = autonomy_satellite }
+			}
+		}
+	}
+	country_event = {
+		id = SCA_sweden.9
+		title = SCA_sweden.9.t
+		desc = SCA_sweden.9.desc
+		picture = GFX_report_event_lithuania_army
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_sweden.9.a
+		}
+	}
+	
+	
+#Invitations to the Third League of Armed Neutrality
+country_event = {
+	id = SCA_sweden.10
+	title = SCA_sweden.10.t
+	desc = { #Either Democratic or Neutral
+		text = SCA_sweden.10.desc
+		trigger = {
+			OR = {
+				has_government = neutrality
+				has_government = democratic
+			}
+		}
+	}
+	desc = { #Country is fascist/communist
+		text = SCA_sweden.10.desc2
+		trigger = {
+			AND = {
+				NOT = { has_government = neutrality }
+				NOT = { has_government = democratic }
+			}
+		}
+	}
+	
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = alliance_applicant
+			FROM = {
+				save_event_target_as = alliance_inviter
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = { #We'll Join
+		name = SCA_sweden.10.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0.1
+				OR = {
+					NOR = { has_government = fascism }
+					NOR = { has_government = communism }
+				}
+			}
+			modifier = {
+				factor = 100 #ohshitohshitohshit
+				if = { limit = { OR = { tag = DEN  tag = NOR } }
+					GER = {
+						focus_progress = { focus = GER_weserubung progress > 0}
+					}
+				}
+			}
+		}
+		ROOT = {
+			add_ai_strategy = {
+				type = alliance
+				id = "SWE"
+				value = 200
+			}
+		}
+
+		FROM = { add_to_faction = ROOT }
+		hidden_effect = {
+			set_country_flag = alliance_applicant@ROOT
+			FROM = { set_country_flag = alliance_inviter@FROM }
+			news_event = { id = news.289 hours = 12 }
+		}
+		SWE = { country_event = SCA_sweden.11 }
+		if = {
+			limit = { tag = DEN }
+			remove_ideas = DEN_defenceless_neutrality
+			remove_ideas = DEN_defenceless_neutrality2
+			remove_ideas = drsrn_signatory
+			add_ideas = SCA_league_neutrality
+		}
+		if = {
+			limit = { tag = ICE }
+			remove_ideas = ICE_icelandic_neutrality
+			remove_ideas = ICE_icelandic_neutrality2
+			remove_ideas = drsrn_signatory
+			add_ideas = SCA_league_neutrality
+		}
+		if = {
+			limit = { tag = NOR }
+			remove_ideas = NOR_neutrality_idea
+			remove_ideas = NOR_neutrality_idea2
+			remove_ideas = drsrn_signatory
+			add_ideas = SCA_league_neutrality
+		}
+		if = {
+			limit = { tag = FIN }
+			remove_ideas = neutrality_idea
+			remove_ideas = drsrn_signatory
+			add_ideas = SCA_league_neutrality
+		}
+	}
+	
+	option = { # Bugger Off
+		name = sweden.10.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 3
+				is_historical_focus_on = yes #You will not screw up the timeline!
+			}
+		}
+		SWE = { country_event = SCA_sweden.12 }
+	}	
+}
+	country_event = { # Joined
+		id = SCA_sweden.11
+		title = SCA_sweden.11.t
+		desc = SCA_sweden.11.desc
+		picture = GFX_report_event_generic_sign_treaty3
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_sweden.11.a
+		}
+	}
+	country_event = { # Refused
+		id = SCA_sweden.12
+		title = SCA_sweden.12.t
+		desc = SCA_sweden.12.desc
+		picture = GFX_report_event_generic_sign_treaty3
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_sweden.12.a
+		}
+	}
+	country_event = { #Prevents people from removing the league neutrality idea
+		id = SCA_sweden.13
+		hidden = yes
+		
+		trigger = {
+			OR = {
+				tag = SWE
+				is_in_faction_with = SWE
+			}
+			SWE = { is_faction_leader = yes }
+			SWE = { has_completed_focus = SWE_league }
+			NOT = { has_idea = SCA_league_neutrality }
+			NOT = { has_idea = SCA_league_neutrality2 }
+		}
+		mean_time_to_happen = {
+			days = 2
+		}
+		
+		option = {
+			name = SCA_sweden.13.a
+			
+			if = { 
+				limit = { has_country_flag = drsrn_renewed }
+				add_ideas = SCA_league_neutrality
+			}
+			if = { limit = { NOT = { has_country_flag = drsrn_renewed } }
+				add_ideas = SCA_league_neutrality2
+			}
+		}
+	}
+	country_event = { #Makes sure that no-one has both the league and the DRSRN at the same time
+		id = SCA_sweden.131
+		hidden = yes
+		
+		trigger = {
+			OR = {
+				has_idea = SCA_league_neutrality
+				has_idea = SCA_league_neutrality2
+			}
+			has_idea = drsrn_signatory
+		}
+		mean_time_to_happen = {
+			days = 2
+		}
+		
+		option = {
+			name = SCA_sweden.131.a
+			remove_ideas = drsrn_signatory
+		}
+	}
+	
+		
+	
+	
+#Swedish Empire [Live]
+country_event = {
+	id = SCA_sweden.14
+	title = SCA_sweden.14.t
+	desc = SCA_sweden.14.desc
+	picture = GFX_report_event_royal_parade
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_cosmetic_tag = SWE_empire
+		hidden_effect = {
+			news_event = { hours = 12 id = SCA_sweden.15 }
+		}
+	}
+	
+	option = { #The Emperor Should Rule
+		name = SCA_sweden.14.a
+		
+		if = {
+			limit = { has_country_leader = { id = 13002 ruling_only = yes name = "Martin Eugen Ekström" } }
+			
+			add_field_marshal_role = {
+				character = SWE_martin_ekstrom
+				traits = { war_hero offensive_doctrine fast_planner }
+				skill = 5
+				attack_skill = 6
+				defense_skill = 3
+				planning_skill = 5
+				logistics_skill = 3
+			}
+		}
+		else_if = {
+			limit = { has_country_leader = { id = 13000 ruling_only = yes name = "Sven Olov Lindholm" } }
+			add_corps_commander_role = {
+				character = SWE_sven_olov_lindholm
+				traits = { media_personality urban_assault_specialist }
+				skill = 2
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 2
+			}
+		}
+		else_if = {
+			limit = { has_country_leader = { id = 13001 ruling_only = yes name = "Birger Furugård" } }
+			add_advisor_role = {
+				character = SWE_birger_furugard
+				activate = yes
+				advisor = {
+					slot = political_advisor
+					cost = 50
+					idea_token = SWE_birger_furugard
+					traits = { propaganda_expert }
+					allowed = {
+						original_tag = SWE
+					}
+				}				
+			}
+		}
+		promote_character = SWE_gustaf_v
+	}
+	
+	option = { #The Emperor needs a guiding hand
+		name = SCA_sweden.14.b
+	}
+}
+	news_event = {
+		id = SCA_sweden.15
+		title = SCA_sweden.15.t
+		desc = SCA_sweden.15.desc
+		picture = news_event_royal_visit
+		
+		is_triggered_only = yes
+		
+		major = yes
+		
+		option = { #Sweden 
+			name = SCA_sweden.15.a
+			trigger = {
+				tag = SWE 
+			}
+		}
+		option = { #Scandinavian
+			name = SCA_sweden.15.b
+			trigger = {
+				OR = {
+					tag = FIN
+					tag = NOR
+					tag = DEN
+					tag = ICE
+				}
+				NOT = { is_in_faction_with = SWE }
+			}
+		}
+		option = { #In faction
+			name = SCA_sweden.15.c
+			trigger = {
+				is_in_faction_with = SWE
+				NOT = { tag = SWE }
+			}
+		}
+		option = { #Other
+			name = SCA_sweden.15.d
+			trigger = {
+				NOT = { is_in_faction_with = SWE }
+				NOT = {
+					OR = {
+						tag = FIN
+						tag = NOR
+						tag = DEN
+						tag = ICE
+						tag = SWE
+					}
+				}
+			}
+		}
+	}
+	
+	
+#Secondary Air Focus
+country_event = {
+	id = SCA_sweden.16
+	title = SCA_sweden.16.t
+	desc = SCA_sweden.16.desc
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+	
+	option = { #Tac Bomber
+		name = SCA_sweden.16.a
+		swap_ideas = {
+			remove_idea = SWE_domestic_planes_1
+			add_idea = SWE_domestic_planes_tac_bomber
+		}
+	}
+	option = { #Nav Bomber
+		name = SCA_sweden.16.b
+		swap_ideas = {
+			remove_idea = SWE_domestic_planes_1
+			add_idea = SWE_domestic_planes_nav_bomber
+		}
+	}
+	option = { #Strat Bomber
+		name = SCA_sweden.16.c
+		swap_ideas = {
+			remove_idea = SWE_domestic_planes_1
+			add_idea = SWE_domestic_planes_strat_bomber
+		}
+	}
+	option = { #CAS
+		name = SCA_sweden.16.d
+		swap_ideas = {
+			remove_idea = SWE_domestic_planes_1
+			add_idea = SWE_domestic_planes_cas
+		}
+	}
+}
+
+
+#Swedish Northern Concord
+country_event = {
+	id = SCA_sweden.17
+	title = SCA_sweden.17.t
+	desc = { #Either Democratic or Neutral
+		text = SCA_sweden.17.desc
+		trigger = {
+			tag = FIN
+		}
+	}
+	desc = { #Country is fascist/communist
+		text = SCA_sweden.17.desc2
+		trigger = {
+			tag = NOR
+		}
+	}
+	picture = GFX_report_event_finnish_letter
+	
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = alliance_inviter
+			FROM = {
+				save_event_target_as = alliance_applicant
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = { #We'll Join
+		name = SCA_sweden.17.a
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = { SWE = { is_in_faction = no } }
+			SWE = {	create_faction = NOR_FIN_alliance }
+			FROM = { add_to_faction = ROOT }
+			hidden_effect = {
+				set_country_flag = alliance_inviter@ROOT
+				FROM = { set_country_flag = alliance_applicant@ROOT }
+			}
+		}
+		if = {
+			limit = { SWE = { is_in_faction = yes } }
+			FROM = { add_to_faction = ROOT }
+			hidden_effect = {
+				set_country_flag = alliance_inviter@ROOT
+				FROM = { set_country_flag = alliance_applicant@ROOT }
+				news_event = { id = news.289 hours = 12 }
+			}
+			SWE = { country_event = SCA_sweden.18 }
+		}
+	}
+	
+	option = { #Nope
+		name = SCA_sweden.17.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				add = 1
+				SWE = { has_completed_focus = SWE_aland }
+			}
+		}
+		
+		SWE = { country_event = SCA_sweden.19 }
+	}
+}
+	country_event = { 
+		id = SCA_sweden.18
+		title = SCA_sweden.18.t
+		desc = SCA_sweden.18.desc
+		picture = GFX_report_event_generic_sign_treaty3
+		
+		is_triggered_only = yes
+		
+		option = { 
+			name = SCA_sweden.18.a
+		}
+	}
+	country_event = { 
+		id = SCA_sweden.19
+		title = SCA_sweden.19.t
+		desc = SCA_sweden.19.desc
+		picture = GFX_report_event_finnish_letter
+		
+		is_triggered_only = yes
+		
+		option = { 
+			name = SCA_sweden.19.a
+		}
+	}
+	
+#End Swedish Monarchy
+country_event = {
+	id = SCA_sweden.20
+	title = SCA_sweden.20.t
+	desc = SCA_sweden.20.desc	
+	picture = GFX_report_event_royal_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SCA.20.a
+		swap_ideas = {
+			remove_idea = SWE_gustaf_v
+			add_idea = SWE_worker_pride
+		}
+		if = {
+			limit = { has_cosmetic_tag = SCA_unite_scandinavia }
+			set_cosmetic_tag = SCA_unite_scandinavia_no_king
+		}
+		if = {
+			limit = { 
+				NOT = { has_cosmetic_tag = SCA_unite_scandinavia }
+				NOT = { has_cosmetic_tag = SCA_unite_scandinavia_no_king }
+			}
+			set_cosmetic_tag = SWE_republic
+		}		
+	}
+}
+
+
+#Foreign Fighters - GER, ITA, FRA, USA, ENG
+country_event = {
+	id = SCA_sweden.21
+	title = SCA_sweden.21.t
+	desc = SCA_sweden.21.desc
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only  = yes
+	
+	option = { #Send fighters
+		name = SCA_sweden.21.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				add = -50
+				has_war = yes
+			}
+		}
+		trigger = {
+			has_equipment = { fighter_equipment > 50 }
+		}
+		send_equipment = {
+			target = SWE
+			type = fighter_equipment
+			amount = 50
+		}
+		add_timed_idea = { idea = SWE_air_payment days = 180 }
+		SWE = { country_event = SCA_sweden.22 }
+	}
+	
+	option = { #Divert fighters from production
+		name = SCA_sweden.21.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				add = -25
+				has_war = yes
+			}
+		}
+		trigger = {
+			NOT = { has_equipment = { fighter_equipment > 50 } }
+		}
+		add_timed_idea = { idea = SWE_air_payment days = 180 }
+		add_timed_idea = { idea = YUG_fighter_production_diverted days = 120 }
+		SWE = { country_event = SCA_sweden.22 }
+	}
+	
+	option = { # No
+		name = SCA_sweden.21.c
+		ai_chance = {
+			factor = 25
+			modifier = {
+				add = 50
+				has_war = yes
+			}
+		}
+	}
+}
+	# Country Sells Fighters
+	country_event = {
+		id = SCA_sweden.22
+		title = SCA_sweden.22.t
+		desc = SCA_sweden.22.desc
+		picture = GFX_report_event_fighters
+		
+		is_triggered_only = yes
+		
+		option = { # :)
+			name = SCA_sweden.22.a
+			add_opinion_modifier = { target = FROM modifier = SWE_sold_planes }
+		}
+	}
+	#Country diverts production
+	country_event = {
+		id = SCA_sweden.23
+		title = SCA_sweden.22
+		desc = SCA_sweden.22
+		picture = GFX_report_event_fighters
+		
+		is_triggered_only = yes
+		
+		option = { # Yay
+			name = SCA_sweden.22.a
+			if = {
+				limit = {
+					FROM = {
+						tag = GER
+					}
+				}
+				if = {
+					limit = { 
+						GER = { 
+							has_tech = early_fighter
+							NOT = { has_tech = fighter1 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 50 producer = GER } 
+				}
+				if = {
+					limit = { 
+						GER = { 
+							has_tech = fighter1 
+							NOT = { has_tech = fighter2 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 50 producer = GER } 
+				}
+				if = {
+					limit = { 
+						GER = { 
+							has_tech = fighter2 
+							NOT = { has_tech = fighter3 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 50 producer = GER } 
+				}
+				if = {
+					limit = { 
+						GER = { 
+							has_tech = fighter3 
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_3 amount = 50 producer = GER } 
+				}
+			} 
+			if = {
+				limit = {
+					FROM = {
+						tag = ITA
+					}
+				}
+				if = {
+					limit = { 
+						ITA= { 
+							has_tech = early_fighter
+							NOT = { has_tech = fighter1 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 50 producer = ITA } 
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							has_tech = fighter1 
+							NOT = { has_tech = fighter2 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 50 producer = ITA } 
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							has_tech = fighter2 
+							NOT = { has_tech = fighter3 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 50 producer = ITA } 
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							has_tech = fighter3 
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_3 amount = 50 producer = ITA } 
+				}
+			}
+
+			if = {
+				limit = {
+					FROM = {
+						tag = FRA
+					}
+				}
+				if = {
+					limit = { 
+						FRA = { 
+							has_tech = early_fighter
+							NOT = { has_tech = fighter1 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 50 producer = FRA } 
+				}
+				if = {
+					limit = { 
+						FRA = { 
+							has_tech = fighter1 
+							NOT = { has_tech = fighter2 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 50 producer = FRA } 
+				}
+				if = {
+					limit = { 
+						FRA = { 
+							has_tech = fighter2 
+							NOT = { has_tech = fighter3 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 50 producer = FRA } 
+				}
+				if = {
+					limit = { 
+						FRA = { 
+							has_tech = fighter3 
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_3 amount = 50 producer = FRA } 
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						tag = USA
+					}
+				}
+				if = {
+					limit = { 
+						USA = { 
+							has_tech = early_fighter
+							NOT = { has_tech = fighter1 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 50 producer = FRA } 
+				}
+				if = {
+					limit = { 
+						USA = { 
+							has_tech = fighter1 
+							NOT = { has_tech = fighter2 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 50 producer = FRA } 
+				}
+				if = {
+					limit = { 
+						USA = { 
+							has_tech = fighter2 
+							NOT = { has_tech = fighter3 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 50 producer = FRA } 
+				}
+				if = {
+					limit = { 
+						USA = { 
+							has_tech = fighter3 
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_3 amount = 50 producer = FRA } 
+				}
+			}
+
+			if = {
+				limit = {
+					FROM = {
+						tag = ENG
+					}
+				}
+				if = {
+					limit = { 
+						ENG = { 
+							has_tech = early_fighter
+							NOT = { has_tech = fighter1 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 50 producer = ENG } 
+				}
+				if = {
+					limit = { 
+						ENG = { 
+							has_tech = fighter1 
+							NOT = { has_tech = fighter2 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 50 producer = ENG } 
+				}
+				if = {
+					limit = { 
+						ENG = { 
+							has_tech = fighter2 
+							NOT = { has_tech = fighter3 }
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 50 producer = ENG } 
+				}
+				if = {
+					limit = { 
+						ENG = { 
+							has_tech = fighter3 
+						} 
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_3 amount = 50 producer = ENG } 
+				}
+			}
+			add_opinion_modifier = { target = FROM modifier = SWE_sold_planes}	
+		}
+	}
+	
+	
+#Swedish Bomber Competition
+country_event = {
+	id = SCA_sweden.24
+	title = SCA_sweden.24.t
+	desc = SCA_sweden.24.desc	
+	picture = GFX_report_event_generic_bombers
+	
+	is_triggered_only = yes
+	
+	option = { #Nav
+		name = SCA_sweden.24.a
+		trigger = {
+			OR = {
+				GER = {
+					is_available_nav_bomber_SWE = yes
+				}
+				FRA = {
+					is_available_nav_bomber_SWE = yes
+				}
+				ITA = {
+					is_available_nav_bomber_SWE = yes
+				}
+				ENG = {
+					is_available_nav_bomber_SWE = yes
+				}
+				USA = {
+					is_available_nav_bomber_SWE = yes
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_tech = naval_bomber1
+				add = -10
+			}
+			modifier = {
+				has_tech = naval_bomber2
+				add = -10
+			}
+			modifier = {
+				has_tech = naval_bomber3
+				factor = 0
+			}
+		}
+		country_event = SCA_sweden.25 	
+	}
+	
+	option = {# TAC
+		name = SCA_sweden.24.b
+		trigger = {
+			OR = {
+				GER = {
+					is_available_tac_SWE = yes
+				}
+				FRA = {
+					is_available_tac_SWE = yes
+				}
+				ITA = {
+					is_available_tac_SWE = yes
+				}
+				ENG = {
+					is_available_tac_SWE = yes
+				}
+				USA = {
+					is_available_tac_SWE = yes
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_tech = tactical_bomber1
+				add = -10
+			}
+			modifier = {
+				has_tech = tactical_bomber2
+				add = -10
+			}
+			modifier = {
+				has_tech = tactical_bomber3
+				factor = 0
+			}
+		}
+		country_event = SCA_sweden.26
+	}
+	
+	option = {# Strat
+		name = SCA_sweden.24.c
+		trigger = {
+			OR = {
+				GER = {
+					is_available_strat_SWE = yes
+				}
+				FRA = {
+					is_available_strat_SWE = yes
+				}
+				ITA = {
+					is_available_strat_SWE = yes
+				}
+				ENG = {
+					is_available_strat_SWE = yes
+				}
+				USA = {
+					is_available_strat_SWE = yes
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				has_tech = strategic_bomber1
+				add = -10
+			}
+			modifier = {
+				has_tech = strategic_bomber2
+				add = -10
+			}
+			modifier = {
+				has_tech = strategic_bomber3
+				factor = 0
+			}
+		}
+		country_event = SCA_sweden.27
+	}
+}
+	country_event = { #Chose Nav
+		id = SCA_sweden.25
+		title = SCA_sweden.25.t
+		desc = {
+			text = SCA_sweden.25.desc
+			trigger = { 
+				NOT = { has_country_flag = GER_naval_bomber_refused } 
+				NOT = { has_country_flag = ITA_naval_bomber_refused } 
+				NOT = { has_country_flag = FRA_naval_bomber_refused } 
+				NOT = { has_country_flag = ENG_naval_bomber_refused } 
+				NOT = { has_country_flag = USA_naval_bomber_refused } 				
+			}
+		}
+		desc = {
+			text = SCA_sweden.25.desc2
+			trigger = {
+				OR = {
+					has_country_flag = GER_naval_bomber_refused 
+					has_country_flag = ITA_naval_bomber_refused 
+					has_country_flag = FRA_naval_bomber_refused 
+					has_country_flag = ENG_naval_bomber_refused 
+					has_country_flag = USA_naval_bomber_refused 
+				}
+			}
+		}
+		picture = GFX_report_event_generic_bombers
+		
+		is_triggered_only = yes
+		
+		option = {# Select German Plane
+			name = SCA_sweden.25.a
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = GER
+					factor = 10
+				}
+				modifier = {
+					GER = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					GER = {
+						has_tech = naval_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					GER = {
+						has_tech = naval_bomber2
+					}
+					add = 10
+				}
+				modifier = {
+					GER = {
+						has_tech = naval_bomber3
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						GER = { has_tech = naval_bomber1 }
+						SWE = { NOT = { has_tech = naval_bomber1 } }
+					}
+					AND = {
+						GER = { has_tech = naval_bomber2 }
+						SWE = { NOT = { has_tech = naval_bomber2 } }
+					}
+					AND = {
+						GER = { has_tech = naval_bomber3 }
+						SWE = { NOT = { has_tech = naval_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = GER }
+				NOT = { has_country_flag = GER_naval_bomber_refused }
+			}
+			GER = { country_event = SCA_sweden.28 }	
+		}
+
+		option = {# select italian plane
+			name = SCA_sweden.25.b
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = ITA
+					factor = 10
+				}
+				modifier = {
+					ITA = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					ITA = {
+						has_tech = naval_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					ITA = {
+						has_tech = naval_bomber2
+					}
+					add = 10
+				}
+				modifier = {
+					ITA = {
+						has_tech = naval_bomber3
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						ITA = { has_tech = naval_bomber1 }
+						SWE = { NOT = { has_tech = naval_bomber1 } }
+					}
+					AND = {
+						ITA = { has_tech = naval_bomber2 }
+						SWE = { NOT = { has_tech = naval_bomber2 } }
+					}
+					AND = {
+						ITA = { has_tech = naval_bomber3 }
+						SWE = { NOT = { has_tech = naval_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = ITA }
+				NOT = { has_country_flag = ITA_naval_bomber_refused }
+			}
+			ITA = { country_event = SCA_sweden.28 }	
+		}
+
+		option = {# select french plane
+			name = SCA_sweden.25.c
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = FRA
+					factor = 10
+				}
+				modifier = {
+					FRA = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					FRA = {
+						has_tech = naval_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					FRA = {
+						has_tech = naval_bomber2
+					}
+					add = 10
+				}
+				modifier = {
+					FRA = {
+						has_tech = naval_bomber3
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						FRA = { has_tech = naval_bomber1 }
+						SWE = { NOT = { has_tech = naval_bomber1 } }
+					}
+					AND = {
+						FRA = { has_tech = naval_bomber2 }
+						SWE = { NOT = { has_tech = naval_bomber2 } }
+					}
+					AND = {
+						FRA = { has_tech = naval_bomber3 }
+						SWE = { NOT = { has_tech = naval_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = FRA }
+				NOT = { has_country_flag = FRA_naval_bomber_refused }
+			}
+			FRA = { country_event = SCA_sweden.28 }	
+		}
+		option = {# select british plane
+			name = SCA_sweden.25.d
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = ENG
+					factor = 10
+				}
+				modifier = {
+					ENG = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					ENG = {
+						has_tech = naval_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					ENG = {
+						has_tech = naval_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					ENG = {
+						has_tech = naval_bomber1
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						ENG = { has_tech = naval_bomber1 }
+						SWE = { NOT = { has_tech = naval_bomber1 } }
+					}
+					AND = {
+						ENG = { has_tech = naval_bomber2 }
+						SWE = { NOT = { has_tech = naval_bomber2 } }
+					}
+					AND = {
+						ENG = { has_tech = naval_bomber3}
+						SWE = { NOT = { has_tech = naval_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = ENG }
+				NOT = { has_country_flag = ENG_naval_bomber_refused }
+			}
+			ENG = { country_event = SCA_sweden.28 }	
+		}
+		option = {# select american plane
+			name = SCA_sweden.25.e
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = USA
+					factor = 10
+				}
+				modifier = {
+					USA = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					USA = {
+						has_tech = naval_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					USA = {
+						has_tech = naval_bomber2
+					}
+					add = 10
+				}
+				modifier = {
+					USA = {
+						has_tech = naval_bomber3
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						USA = { has_tech = naval_bomber1}
+						SWE = { NOT = { has_tech = naval_bomber1 } }
+					}
+					AND = {
+						USA = { has_tech = naval_bomber2}
+						SWE = { NOT = { has_tech = naval_bomber2 } }
+					}
+					AND = {
+						USA = { has_tech = naval_bomber3}
+						SWE = { NOT = { has_tech = naval_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = USA }
+				NOT = { has_country_flag = USA_naval_bomber_refused }
+				NOT = { #to prevent overflow issues
+					AND = {
+						GER = {
+							is_available_cas_SWE = yes
+						}
+						FRA = {
+							is_available_cas_SWE = yes
+						}
+						ITA = {
+							is_available_cas_SWE = yes
+						}
+						ENG = {
+							is_available_cas_SWE = yes
+						}
+					}
+				}
+			}
+			USA = { country_event = SCA_sweden.28 }	
+		}
+		option = {# failsafe
+			name = SCA_sweden.25.f	
+			trigger = {
+				OR = {
+					has_country_flag = GER_CAS_refused
+					has_country_flag = ITA_CAS_refused
+					has_country_flag = ENG_CAS_refused
+					has_country_flag = FRA_CAS_refused
+					has_country_flag = USA_CAS_refused
+				}
+			}
+			air_experience = 50
+		}
+	}
+	
+	country_event = { #Chose TAC
+		id = SCA_sweden.26
+		title = SCA_sweden.26.t
+		desc = {
+			text = SCA_sweden.26.desc
+			trigger = { 
+				NOT = { has_country_flag = GER_naval_bomber_refused } 
+				NOT = { has_country_flag = ITA_naval_bomber_refused } 
+				NOT = { has_country_flag = FRA_naval_bomber_refused } 
+				NOT = { has_country_flag = ENG_naval_bomber_refused } 
+				NOT = { has_country_flag = USA_naval_bomber_refused } 				
+			}
+		}
+		desc = {
+			text = SCA_sweden.25.desc2
+			trigger = {
+				OR = {
+					has_country_flag = GER_naval_bomber_refused 
+					has_country_flag = ITA_naval_bomber_refused 
+					has_country_flag = FRA_naval_bomber_refused 
+					has_country_flag = ENG_naval_bomber_refused 
+					has_country_flag = USA_naval_bomber_refused 
+				}
+			}
+		}
+		picture = GFX_report_event_generic_bombers
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_sweden.26.a
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = GER
+					factor = 10
+				}
+				modifier = {
+					GER = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					GER = {
+						has_tech = tactical_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					GER = {
+						has_tech = tactical_bomber2
+					}
+					add = 10
+				}
+				modifier = {
+					GER = {
+						has_tech = tactical_bomber3
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						GER = { has_tech = tactical_bomber1}
+						SWE = { NOT = { has_tech = tactical_bomber1 } }
+					}
+					AND = {
+						GER = { has_tech = tactical_bomber2}
+						SWE = { NOT = { has_tech = tactical_bomber2 } }
+					}
+					AND = {
+						GER = { has_tech = tactical_bomber3}
+						SWE = { NOT = { has_tech = tactical_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = GER }
+				NOT = { has_country_flag = GER_tactical_bomber_refused }
+			}
+			GER = { country_event = SCA_sweden.29 }	
+		}
+
+		option = {# select italian plane
+			name = SCA_sweden.26.b
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = ITA
+					factor = 10
+				}
+				modifier = {
+					ITA = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					ITA = {
+						has_tech = tactical_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					ITA = {
+						has_tech = tactical_bomber2
+					}
+					add = 10
+				}
+				modifier = {
+					ITA = {
+						has_tech = tactical_bomber3
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						ITA = { has_tech = tactical_bomber1}
+						SWE = { NOT = { has_tech = tactical_bomber1 } }
+					}
+					AND = {
+						ITA = { has_tech = tactical_bomber2}
+						SWE = { NOT = { has_tech = tactical_bomber2 } }
+					}
+					AND = {
+						ITA = { has_tech = tactical_bomber3}
+						SWE = { NOT = { has_tech = tactical_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = ITA }
+				NOT = { has_country_flag = ITA_tactical_bomber_refused }
+			}
+			ITA = { country_event = SCA_sweden.29 }	
+		}
+
+		option = {# select french plane
+			name = SCA_sweden.26.c
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = FRA
+					factor = 10
+				}
+				modifier = {
+					FRA = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					FRA = {
+						has_tech = tactical_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					FRA = {
+						has_tech = tactical_bomber2
+					}
+					add = 10
+				}
+				modifier = {
+					FRA = {
+						has_tech = tactical_bomber3
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						FRA = { has_tech = tactical_bomber1}
+						SWE = { NOT = { has_tech = tactical_bomber1 } }
+					}
+					AND = {
+						FRA = { has_tech = tactical_bomber2}
+						SWE = { NOT = { has_tech = tactical_bomber2 } }
+					}
+					AND = {
+						FRA = { has_tech = tactical_bomber3}
+						SWE = { NOT = { has_tech = tactical_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = FRA }
+				NOT = { has_country_flag = FRA_tactical_bomber_refused }
+			}
+			FRA = { country_event = SCA_sweden.29 }	
+		}
+		option = {# select british plane
+			name = SCA_sweden.26.d
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = ENG
+					factor = 10
+				}
+				modifier = {
+					ENG = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					ENG = {
+						has_tech = tactical_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					ENG = {
+						has_tech = tactical_bomber2
+					}
+					add = 10
+				}
+				modifier = {
+					ENG = {
+						has_tech = tactical_bomber3
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						ENG = { has_tech = tactical_bomber1}
+						SWE = { NOT = { has_tech = tactical_bomber1 } }
+					}
+					AND = {
+						ENG = { has_tech = tactical_bomber2}
+						SWE = { NOT = { has_tech = tactical_bomber2 } }
+					}
+					AND = {
+						ENG = { has_tech = tactical_bomber3}
+						SWE = { NOT = { has_tech = tactical_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = ENG }
+				NOT = { has_country_flag = ENG_tactical_bomber_refused }
+			}
+			ENG = { country_event = SCA_sweden.29 }	
+		}
+		option = {# select american plane
+			name = SCA_sweden.26.e
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = USA
+					factor = 10
+				}
+				modifier = {
+					USA = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					USA = {
+						has_tech = tactical_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					USA = {
+						has_tech = tactical_bomber2
+					}
+					add = 10
+				}
+				modifier = {
+					USA = {
+						has_tech = tactical_bomber3
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						USA = { has_tech = tactical_bomber1}
+						SWE = { NOT = { has_tech = tactical_bomber1 } }
+					}
+					AND = {
+						USA = { has_tech = tactical_bomber2}
+						SWE = { NOT = { has_tech = tactical_bomber2 } }
+					}
+					AND = {
+						USA = { has_tech = tactical_bomber3}
+						SWE = { NOT = { has_tech = tactical_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = USA }
+				NOT = { has_country_flag = USA_tactical_bomber_refused }
+				NOT = { #to prevent overflow issues
+					AND = {
+						GER = {
+							is_available_tac_SWE = yes
+						}
+						FRA = {
+							is_available_tac_SWE = yes
+						}
+						ITA = {
+							is_available_tac_SWE = yes
+						}
+						ENG = {
+							is_available_tac_SWE = yes
+						}
+					}
+				}
+			}
+			USA = { country_event = SCA_sweden.29 }	
+		}
+		option = {# failsafe
+			name = SCA_sweden.26.f	
+			trigger = {
+				OR = {
+					has_country_flag = GER_tactical_bomber_refused
+					has_country_flag = ITA_tactical_bomber_refused
+					has_country_flag = ENG_tactical_bomber_refused
+					has_country_flag = FRA_tactical_bomber_refused
+					has_country_flag = USA_tactical_bomber_refused
+				}
+			}
+			air_experience = 50
+		}
+	}
+	country_event = { #Chose Strat
+		id = SCA_sweden.27
+		title = SCA_sweden.27.t
+		desc = {
+			text = SCA_sweden.27.desc
+			trigger = { 
+				NOT = { has_country_flag = GER_naval_bomber_refused } 
+				NOT = { has_country_flag = ITA_naval_bomber_refused } 
+				NOT = { has_country_flag = FRA_naval_bomber_refused } 
+				NOT = { has_country_flag = ENG_naval_bomber_refused } 
+				NOT = { has_country_flag = USA_naval_bomber_refused } 				
+			}
+		}
+		desc = {
+			text = SCA_sweden.25.desc2
+			trigger = {
+				OR = {
+					has_country_flag = GER_naval_bomber_refused 
+					has_country_flag = ITA_naval_bomber_refused 
+					has_country_flag = FRA_naval_bomber_refused 
+					has_country_flag = ENG_naval_bomber_refused 
+					has_country_flag = USA_naval_bomber_refused 
+				}
+			}
+		}
+		picture = GFX_report_event_generic_bombers
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_sweden.27.a
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = GER
+					factor = 10
+				}
+				modifier = {
+					GER = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					GER = {
+						has_tech = strategic_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					GER = {
+						has_tech = strategic_bomber2
+					}
+					add = 10
+				}
+				modifier = {
+					GER = {
+						has_tech = strategic_bomber3
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						GER = { has_tech = strategic_bomber1}
+						SWE = { NOT = { has_tech = strategic_bomber1 } }
+					}
+					AND = {
+						GER = { has_tech = strategic_bomber2}
+						SWE = { NOT = { has_tech = strategic_bomber2 } }
+					}
+					AND = {
+						GER = { has_tech = strategic_bomber3}
+						SWE = { NOT = { has_tech = strategic_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = GER }
+				NOT = { has_country_flag = GER_strategic_bomber_refused }
+			}
+			GER = { country_event = SCA_sweden.30 }	
+		}
+
+		option = {# select italian plane
+			name = SCA_sweden.27.b
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = ITA
+					factor = 10
+				}
+				modifier = {
+					ITA = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					ITA = {
+						has_tech = strategic_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					ITA = {
+						has_tech = strategic_bomber2
+					}
+					add = 10
+				}
+				modifier = {
+					ITA = {
+						has_tech = strategic_bomber3
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						ITA = { has_tech = strategic_bomber1}
+						SWE = { NOT = { has_tech = strategic_bomber1 } }
+					}
+					AND = {
+						ITA = { has_tech = strategic_bomber2}
+						SWE = { NOT = { has_tech = strategic_bomber2 } }
+					}
+					AND = {
+						ITA = { has_tech = strategic_bomber3}
+						SWE = { NOT = { has_tech = strategic_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = ITA }
+				NOT = { has_country_flag = ITA_strategic_bomber_refused }
+			}
+			ITA = { country_event = SCA_sweden.30 }	
+		}
+
+		option = {# select french plane
+			name = SCA_sweden.27.c
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = FRA
+					factor = 10
+				}
+				modifier = {
+					FRA = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					FRA = {
+						has_tech = strategic_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					FRA = {
+						has_tech = strategic_bomber2
+					}
+					add = 10
+				}
+				modifier = {
+					FRA = {
+						has_tech = strategic_bomber3
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						FRA = { has_tech = strategic_bomber1}
+						SWE = { NOT = { has_tech = strategic_bomber1 } }
+					}
+					AND = {
+						FRA = { has_tech = strategic_bomber2}
+						SWE = { NOT = { has_tech = strategic_bomber2 } }
+					}
+					AND = {
+						FRA = { has_tech = strategic_bomber3}
+						SWE = { NOT = { has_tech = strategic_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = FRA }
+				NOT = { has_country_flag = FRA_strategic_bomber_refused }
+			}
+			FRA = { country_event = SCA_sweden.30 }	
+		}
+		option = {# select british plane
+			name = SCA_sweden.27.d
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = ENG
+					factor = 10
+				}
+				modifier = {
+					ENG = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					ENG = {
+						has_tech = strategic_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					ENG = {
+						has_tech = strategic_bomber2
+					}
+					add = 10
+				}
+				modifier = {
+					ENG = {
+						has_tech = strategic_bomber3
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						ENG = { has_tech = strategic_bomber1}
+						SWE = { NOT = { has_tech = strategic_bomber1 } }
+					}
+					AND = {
+						ENG = { has_tech = strategic_bomber2}
+						SWE = { NOT = { has_tech = strategic_bomber2 } }
+					}
+					AND = {
+						ENG = { has_tech = strategic_bomber3}
+						SWE = { NOT = { has_tech = strategic_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = ENG }
+				NOT = { has_country_flag = ENG_strategic_bomber_refused }
+			}
+			ENG = { country_event = SCA_sweden.30 }	
+		}
+		option = {# select american plane
+			name = SCA_sweden.27.e
+			ai_chance = {
+				factor = 30
+				modifier = {
+					is_in_faction_with = USA
+					factor = 10
+				}
+				modifier = {
+					USA = { has_government = ROOT }
+					factor = 2
+				}
+				modifier = {
+					USA = {
+						has_tech = strategic_bomber1
+					}
+					add = 10
+				}
+				modifier = {
+					USA = {
+						has_tech = strategic_bomber2
+					}
+					add = 10
+				}
+				modifier = {
+					USA = {
+						has_tech = strategic_bomber3
+					}
+					add = 10
+				}
+			}
+			trigger = {
+				OR = {
+					AND = {
+						USA = { has_tech = strategic_bomber1}
+						SWE = { NOT = { has_tech = strategic_bomber1 } }
+					}
+					AND = {
+						USA = { has_tech = strategic_bomber2}
+						SWE = { NOT = { has_tech = strategic_bomber2 } }
+					}
+					AND = {
+						USA = { has_tech = strategic_bomber3}
+						SWE = { NOT = { has_tech = strategic_bomber3 } }
+					}
+				}
+				NOT = { has_war_with = USA }
+				NOT = { has_country_flag = USA_strategic_bomber_refused }
+				NOT = { #to prevent overflow issues
+					AND = {
+						GER = {
+							is_available_tac_SWE = yes
+						}
+						FRA = {
+							is_available_tac_SWE = yes
+						}
+						ITA = {
+							is_available_tac_SWE = yes
+						}
+						ENG = {
+							is_available_tac_SWE = yes
+						}
+					}
+				}
+			}
+			USA = { country_event = SCA_sweden.30 }	
+		}
+		option = {# failsafe
+			name = SCA_sweden.27.f	
+			trigger = {
+				OR = {
+					has_country_flag = GER_strategic_bomber_refused
+					has_country_flag = ITA_strategic_bomber_refused
+					has_country_flag = ENG_strategic_bomber_refused
+					has_country_flag = FRA_strategic_bomber_refused
+					has_country_flag = USA_strategic_bomber_refused
+				}
+			}
+			air_experience = 50
+		}
+	}
+	country_event = { #Allow Production Nav?
+		id = SCA_sweden.28
+		title = SCA_sweden.28.t
+		desc = SCA_sweden.28.desc
+		picture = GFX_report_event_generic_bombers
+		
+		is_triggered_only = yes
+		
+		option = { #Yes
+			name = SCA_sweden.28.a
+			ai_chance = {
+				factor = 90
+				modifier = {
+					factor = 0.5
+					has_war = yes
+				}
+				modifier = {
+					add = -15
+					NOT = { has_government = FROM }
+				}
+			}
+			SWE = { country_event = SCA_sweden.31 }
+			air_experience = 20
+			if = {
+				limit = {
+					has_tech = naval_bomber1
+					NOT = { has_tech = naval_bomber2 }
+				}
+				create_production_license = {
+					target = SWE
+					equipment = {
+						type = nav_bomber_equipment_1
+					}
+					cost_factor = 0
+				}
+			}
+			if = {
+				limit = {
+					has_tech = naval_bomber2
+					NOT = { has_tech = naval_bomber3 }
+				}
+				create_production_license = {
+					target = SWE
+					equipment = {
+						type = nav_bomber_equipment_2	
+					}
+					cost_factor = 0
+				}
+			}
+			if = {
+				limit = {
+					has_tech = naval_bomber3
+				}
+				create_production_license = {
+					target = SWE
+					equipment = {
+						type = nav_bomber_equipment_3
+					}
+					cost_factor = 0
+				}
+			}
+		}
+		
+		option = {# no
+			name = SCA_sweden.28.b
+			ai_chance = {
+				factor = 10
+				modifier = {
+					is_in_faction_with = SWE
+					factor = 0
+				}
+			}
+			if = {
+				limit = { tag = GER }
+				SWE = { set_country_flag = GER_naval_bomber_refused }
+			}
+			if = {
+				limit = { tag = ITA }
+				SWE = { set_country_flag = ITA_naval_bomber_refused }
+			}
+			if = {
+				limit = { tag = FRA }
+				SWE = { set_country_flag = FRA_naval_bomber_refused }
+			}
+			if = {
+				limit = { tag = ENG }
+				SWE = { set_country_flag = ENG_naval_bomber_refused }
+			}
+			if = {
+				limit = { tag = USA }
+				SWE = { set_country_flag = USA_naval_bomber_refused }
+			}
+			SWE = { country_event = SCA_sweden.25 }
+			reverse_add_opinion_modifier = { target = SWE modifier = refused_help }
+		}
+	}
+	country_event = { #Allow Production Tac?
+		id = SCA_sweden.29
+		title = SCA_sweden.29.t
+		desc = SCA_sweden.29.desc
+		picture = GFX_report_event_generic_bombers
+		
+		is_triggered_only = yes
+		
+		option = { #Yes
+			name = SCA_sweden.29.a
+			ai_chance = {
+				factor = 90
+				modifier = {
+					factor = 0.5
+					has_war = yes
+				}
+				modifier = {
+					add = -15
+					NOT = { has_government = FROM }
+				}
+			}
+			SWE = { country_event = SCA_sweden.31 }
+			air_experience = 20
+			if = {
+				limit = {
+					has_tech = tactical_bomber1
+					NOT = { has_tech = tactical_bomber2 }
+				}
+				create_production_license = {
+					target = SWE
+					equipment = {
+						type = tac_bomber_equipment_1
+					}
+					cost_factor = 0
+				}
+			}
+			if = {
+				limit = {
+					has_tech = tactical_bomber2
+					NOT = { has_tech = tactical_bomber3 }
+				}
+				create_production_license = {
+					target = SWE
+					equipment = {
+						type = tac_bomber_equipment_2	
+					}
+					cost_factor = 0
+				}
+			}
+			if = {
+				limit = {
+					has_tech = tactical_bomber3
+				}
+				create_production_license = {
+					target = SWE
+					equipment = {
+						type = tac_bomber_equipment_3
+					}
+					cost_factor = 0
+				}
+			}
+		}
+		
+		option = {# no
+			name = SCA_sweden.29.b
+			ai_chance = {
+				factor = 10
+				modifier = {
+					is_in_faction_with = SWE
+					factor = 0
+				}
+			}
+			if = {
+				limit = { tag = GER }
+				SWE = { set_country_flag = GER_tactical_bomber_refused }
+			}
+			if = {
+				limit = { tag = ITA }
+				SWE = { set_country_flag = ITA_tactical_bomber_refused }
+			}
+			if = {
+				limit = { tag = FRA }
+				SWE = { set_country_flag = FRA_tactical_bomber_refused }
+			}
+			if = {
+				limit = { tag = ENG }
+				SWE = { set_country_flag = ENG_tactical_bomber_refused }
+			}
+			if = {
+				limit = { tag = USA }
+				SWE = { set_country_flag = USA_tactical_bomber_refused }
+			}
+			SWE = { country_event = SCA_sweden.26 }
+			reverse_add_opinion_modifier = { target = SWE modifier = refused_help }
+		}
+	}
+	country_event = { #Allow Production Strat?
+		id = SCA_sweden.30
+		title = SCA_sweden.30.t
+		desc = SCA_sweden.30.desc
+		picture = GFX_report_event_generic_bombers
+		
+		is_triggered_only = yes
+		
+		option = { #Yes
+			name = SCA_sweden.30.a
+			ai_chance = {
+				factor = 90
+				modifier = {
+					factor = 0.5
+					has_war = yes
+				}
+				modifier = {
+					add = -15
+					NOT = { has_government = FROM }
+				}
+			}
+			SWE = { country_event = SCA_sweden.31 }
+			air_experience = 20
+			if = {
+				limit = {
+					has_tech = strategic_bomber1
+					NOT = { has_tech = strategic_bomber2 }
+				}
+				create_production_license = {
+					target = SWE
+					equipment = {
+						type = strat_bomber_equipment_1
+					}
+					cost_factor = 0
+				}
+			}
+			if = {
+				limit = {
+					has_tech = strategic_bomber2
+					NOT = { has_tech = strategic_bomber3 }
+				}
+				create_production_license = {
+					target = SWE
+					equipment = {
+						type = strat_bomber_equipment_2	
+					}
+					cost_factor = 0
+				}
+			}
+			if = {
+				limit = {
+					has_tech = strategic_bomber3
+				}
+				create_production_license = {
+					target = SWE
+					equipment = {
+						type = strat_bomber_equipment_3
+					}
+					cost_factor = 0
+				}
+			}
+		}
+		
+		option = {# no
+			name = SCA_sweden.30.b
+			ai_chance = {
+				factor = 10
+				modifier = {
+					is_in_faction_with = SWE
+					factor = 0
+				}
+			}
+			if = {
+				limit = { tag = GER }
+				SWE = { set_country_flag = GER_strategic_bomber_refused }
+			}
+			if = {
+				limit = { tag = ITA }
+				SWE = { set_country_flag = ITA_strategic_bomber_refused }
+			}
+			if = {
+				limit = { tag = FRA }
+				SWE = { set_country_flag = FRA_strategic_bomber_refused }
+			}
+			if = {
+				limit = { tag = ENG }
+				SWE = { set_country_flag = ENG_strategic_bomber_refused }
+			}
+			if = {
+				limit = { tag = USA }
+				SWE = { set_country_flag = USA_strategic_bomber_refused }
+			}
+			SWE = { country_event = SCA_sweden.27 }
+			reverse_add_opinion_modifier = { target = SWE modifier = refused_help }
+		}
+	}
+	
+	country_event = { # Production allowed
+		id = SCA_sweden.31
+		title = SCA_sweden.31.t
+		desc = SCA_sweden.31.desc
+		picture = GFX_report_event_generic_bombers
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_sweden.31.a
+		}
+	}
+	
+	
+# Remilitarization of the Aland Islands
+country_event = {
+	id = SCA_sweden.32
+	title = SCA_sweden.32.t
+	desc = SCA_sweden.32.desc
+	picture = GFX_report_event_finnish_soldiers_snow
+	
+	is_triggered_only = yes
+	
+	option = { # Allow
+		name = SCA_sweden.32.a
+		ai_chance = {
+			factor = 10
+		}
+		
+		FIN = { country_event = SCA_sweden.33 }
+	}
+	
+	option = { # NEVER
+		name = SCA_sweden.32.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				add = 1
+				has_government = fascism
+			}
+			modifier = {
+				add = 10
+				has_government = communism
+			}
+		}
+		
+		add_political_power = -200
+		if = {
+			limit = { 
+				NOT = { 
+					has_government = communism
+					has_government = fascism
+				} 
+			}
+			add_war_support = -0.50
+			add_stability = -0.25
+		}
+		if = {
+			limit = { has_government = fascism }
+			add_war_support = -0.10
+			add_stability = -0.20
+		}
+		if = {
+			limit = { has_government = communism }
+			add_war_support = -0.075
+			add_stability = -0.075
+		}
+		declare_war_on = {
+			target = FIN
+			type = take_state_focus
+			generator = { 145 }
+		}		
+		FIN = { country_event = SCA_sweden.34 }
+	}
+}
+	country_event = { # Yes
+		id = SCA_sweden.33
+		title = SCA_sweden.33.t
+		desc = SCA_sweden.33.desc
+		picture = GFX_report_event_finnish_soldiers_snow
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_sweden.33.a
+		}
+	}
+	country_event = { # No
+		id = SCA_sweden.34
+		title = SCA_sweden.34.t
+		desc = SCA_sweden.34.desc
+		picture = GFX_report_event_swedish_soldier
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_sweden.34.a
+		}
+	}
+	
+# Tungsten Mines
+country_event = { 
+	id = SCA_sweden.35
+	title = SCA_sweden.35.t
+	desc = SCA_sweden.35.desc
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = { # Blow them, see if we care
+		name = SCA_sweden.35.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 10
+				OR = {
+					tag = DEN
+					tag = FIN
+					tag = NOR
+					tag = ICE
+					tag = ENG
+					tag = GER
+					tag = SOV
+				}
+			}
+		}
+		
+		effect_tooltip = { 
+			666 = { 
+				add_resource = {
+					type = tungsten
+					amount = -40
+				}
+				add_resource = {
+					type = steel
+					amount = -26
+				}
+				add_resource = {
+					type = chromium
+					amount = -12
+				}
+			}			
+		}
+		SWE = { country_event = SCA_sweden.36 }
+	}
+	
+	option = { # Wait, no, we can talk about this
+		name = SCA_sweden.35.b
+		ai_chance = {
+			factor = 20
+		}
+		
+		effect_tooltip = {
+			white_peace = {
+				tag = SWE
+				message = SWE_tungsten_peace 
+			} 
+			diplomatic_relation = { country = SWE relation = non_aggression_pact }
+			if = {
+				limit = { 
+					ROOT = { has_opinion_modifier = embargo }
+				}
+				custom_effect_tooltip = SWE_remove_embargo1_tt
+				hidden_effect = {
+					ROOT = {
+						remove_opinion_modifier = {
+							target = SWE
+							modifier = embargo
+						}
+					}
+				}
+			}
+			SWE = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = SWE_peace_for_tungsten
+				}
+			}
+		}
+		
+		SWE = { country_event = SCA_sweden.37 }
+		
+	}
+}
+	country_event = { # WAR
+		id = SCA_sweden.36
+		title = SCA_sweden.36.t
+		desc = SCA_sweden.36.desc
+		picture = GFX_report_event_swedish_soldier
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_sweden.36.a
+			
+			666 = { 
+				add_resource = {
+					type = tungsten
+					amount = -40
+				}
+				add_resource = {
+					type = steel
+					amount = -26
+				}
+				add_resource = {
+					type = chromium
+					amount = -12
+				}
+			}
+		}
+	}
+	country_event = { # PEACE
+		id = SCA_sweden.37
+		title = SCA_sweden.37.t
+		desc = SCA_sweden.37.desc
+		picture = GFX_report_event_hitler_handshake
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_sweden.37.a
+			
+			FROM = { 
+				white_peace = {
+					tag = ROOT
+					message = SWE_tungsten_peace 
+				} 
+				diplomatic_relation = { country = ROOT relation = non_aggression_pact }
+			}
+			if = {
+				limit = { FROM = { has_opinion_modifier = embargo } }
+				custom_effect_tooltip = SWE_remove_embargo2_tt
+				hidden_effect = {
+					FROM = { 
+						remove_opinion_modifier = {
+							target = ROOT
+							modifier = embargo
+						}
+					}
+				}
+			}
+			ROOT = {
+				add_opinion_modifier = {
+					target = FROM
+					modifier = SWE_peace_for_tungsten
+				}
+			}
+		}
+	}
+
+#Sweden Offers to Allow German Military Access
+country_event = {
+	id = SCA_sweden.38
+	title = SCA_sweden.38.t
+	desc = SCA_sweden.38.desc
+	picture = GFX_report_event_swedish_soldier
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SCA_sweden.38.a
+		ai_chance = {
+			base = 1
+		}
+		
+		diplomatic_relation = { country = FROM relation = non_aggression_pact }
+		give_guarantee = FROM
+		FROM = { 
+			give_military_access = ROOT
+			country_event = SCA_sweden.38
+		}
+	}
+	option = {
+		name = SCA_sweden.38.b
+		ai_chance = {
+			base = 0
+		}
+		
+		add_political_power = -50
+		
+		FROM = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = SWE_refused_permit
+			}
+			country_event = SCA_sweden.39
+		}
+	}
+}
+
+	country_event = { #Yes
+		id = SCA_sweden.39
+		title = SCA_sweden.39.t
+		desc = SCA_sweden.39.desc
+		picture = GFX_report_event_swedish_soldier
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_sweden.39.a
+			
+			effect_tooltip = {
+				diplomatic_relation = { country = GER relation = non_aggression_pact }
+				give_military_access = GER
+				GER = { give_guarantee = SWE }
+			}
+		}
+	}
+	country_event = { #No
+		id = SCA_sweden.40
+		title = SCA_sweden.40.t
+		desc = SCA_sweden.40.desc
+		picture = GFX_report_event_swedish_soldier
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_sweden.40.a
+			
+			effect_tooltip = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = SWE_refused_permit
+				}
+			}
+		}
+	}
+
+

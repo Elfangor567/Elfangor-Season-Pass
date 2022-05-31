@@ -1,0 +1,632 @@
+characters={
+
+#Country Leaders
+	MNT_sekula_drljevic={
+		name=MNT_sekula_drljevic
+		portraits={
+			civilian={
+				large="gfx/leaders/FRA/Portrait_France_Paul_Reynaud.dds"
+			}
+		}
+		country_leader={
+			ideology=rexism
+			expire="1965.1.1"
+			id=-1
+		}
+	}	
+	MNT_mihaijlo={
+		name=MNT_mihaijlo
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_19.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	MNT_blazo_jovanovic={
+		name=MNT_blazo_jovanovic
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
+			}
+		}
+		country_leader={
+			ideology=leninism
+			expire="1965.1.1"
+			id=-1
+		}
+	}	
+	MNT_andrija_radovic={
+		name=MNT_andrija_radovic
+		portraits={
+			civilian={
+				large="gfx/leaders/LEB/Portrait_Arabia_Generic_3.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+#Generals and Admirals
+	MNT_peko_dapcevic={
+		name=MNT_peko_dapcevic
+		portraits={
+			army={
+				large="gfx/leaders/SOV/Portrait_Soviet_Generic_land_3.dd"
+				small="gfx/interface/ideas/idea_europe_generic_land_1.dds"
+			}
+		}
+		field_marshal={
+			traits = { brilliant_strategist infantry_officer organisational_leader offensive_doctrine organizer infantry_leader skilled_staffer trait_mountaineer }
+			skill = 4 
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
+			legacy_id=-1
+		}
+	}
+	MNT_mitar_bakic={
+		name=MNT_mitar_bakic
+		portraits={
+			army={
+				large="gfx/leaders/ITA/Portrait_Italy_Generic_land_1.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_4.dds"
+			}
+		}
+		corps_commander={
+			traits = { politically_connected trickster expert_improviser }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=-1
+		}
+	}
+
+#Chiefs of Staff
+	MNT_ivan={ #Ivan Milutinović, hardcore communist leader and unapologetic supporter of the "Leftist Errors"
+		name=MNT_ivan
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = MNT_ivan
+			allowed = { 
+				original_tag = MNT
+			}
+			
+			traits = { army_chief_morale_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	MNT_pavle={ #Pavle Đurišić, Arguably the most competant Chetnik commander in the war
+		name=MNT_pavle
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_arab_1"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = MNT_pavle
+			allowed = { 
+				original_tag = MNT
+			}
+			
+			traits = { army_chief_offensive_3 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	MNT_nikola={ #Nikola Lekić, Yugoslav-Montenegrin military pilot and general
+		name=MNT_nikola
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = MNT_nikola
+			allowed = { 
+				original_tag = MNT
+			}
+			
+			traits = { air_bomber_interception_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	MNT_ivo={  #Ivo Đokić, Port Authority Manager in Bar in 1931
+		name=MNT_ivo
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_arab_2"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = MNT_ivo
+			allowed = { 
+				original_tag = MNT
+			}
+			
+			traits = { navy_chief_commerce_raiding_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+
+#High Command
+	MNT_jovan={ #Jovan Plamenac, Originally a Green, he ended up being a loyal supporter of the Kingdom of Yugoslavia
+		name=MNT_jovan
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MNT_jovan
+			ledger = army
+			allowed = {
+				original_tag = MNT
+			}
+			
+			traits = { army_chief_old_guard }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MNT_bajo={ #Bajo Stanišić, Officer of Yugoslavia, refused to surrender to the Partisans
+		name=MNT_bajo
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MNT_bajo
+			ledger = army
+			allowed = {
+				original_tag = MNT
+			}
+			
+			traits = { army_entrenchment_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}	
+	MNT_lasic={ #Đorđije Lašić, Chetnik leader of "Old Montenegro"
+		name=MNT_lasic
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_western_european_2d"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MNT_lasic
+			ledger = army
+			allowed = {
+				original_tag = MNT
+			}
+			
+			traits = { army_concealment_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MNT_arso={ #Arso Jovanović, Prominent Partisan leader
+		name=MNT_arso
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MNT_arso
+			ledger = army
+			allowed = {
+				original_tag = MNT
+			}
+			
+			traits = { army_artillery_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	MNT_bozo={ #Božo Lazarević, Commanding Officer of the 32nd Aviation Division (Prev. 4th Aviation Bomber Division)
+		name=MNT_bozo
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MNT_bozo
+			ledger = air
+			allowed = {
+				original_tag = MNT
+			}
+			
+			traits = { air_close_air_support_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	MNT_jakov={ #Lieutenant Corvette Jakov Jovović, helped plan the assassination of Ante Pavelić
+		name=MNT_jakov
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MNT_jakov
+			ledger = navy
+			allowed = {
+				original_tag = MNT
+			}
+			
+			traits = { navy_screen_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MNT_dusan={ #Dušan Vlahović, Chetnik delegate to the allies along with Jakov Jovović, not sure if he is Montenegrin, but I think he is?
+		name=MNT_dusan
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MNT_dusan
+			ledger = navy
+			allowed = {
+				original_tag = MNT
+			}
+			
+			traits = { navy_fleet_logistics_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	
+#Theorists
+	MNT_peko={ #Peko Dapčević, Republican Spain volunteer and later a high level officer of Yugoslavia
+		name = MNT_peko
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = MNT_peko
+			ledger = army
+			allowed = {
+				original_tag = MNT
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MNT_radovan={ #Radovan Daković, Pilot for the 117, the name is Montenegrin, but I don't actually know if he is
+		name = MNT_radovan
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = MNT_radovan
+			ledger = air
+			allowed = {
+				original_tag = MNT
+			}
+			
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MNT_rolovic={ #Vladimir Rolović, Partisan from Bar, Montenegro and later ambassador for Yugoslavia
+		name = MNT_rolovic
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = MNT_rolovic
+			ledger = navy
+			allowed = {
+				original_tag = MNT
+			}
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+#Advisors
+	MNT_krsto={ #Krsto Popović, famous Green leader and collaborator
+		name=MNT_krsto
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_western_european_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MNT_krsto
+			allowed = {
+				original_tag = MNT
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					is_subject = no
+					has_completed_focus = nationalism_focus
+				}
+			}
+		}
+	}
+	MNT_janko={ #Janko Spasojević, supporter of Andrija Radović
+		name=MAC_vasil_eschoff
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_southamerican_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAC_vasil_eschoff
+			allowed = {
+				original_tag = MNT
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+			}
+		}
+	}
+	MNT_dilas={ #Partisan and one of the organizers of the Peoples's Liberation Struggle in Macedonia
+		name=MNT_dilas
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MNT_dilas
+			allowed = {
+				original_tag = MNT
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					is_subject = no
+					has_completed_focus = internationalism_focus
+				}
+			}
+		}
+	}
+	MNT_novica={ #Novica Radović, Prominent Federalist leader
+		name=MNT_novica
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MNT_novica
+			allowed = {
+				original_tag = MNT
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { staunch_monarchist }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 5
+					is_subject = no
+					has_government = neutrality
+					has_completed_focus = liberty_ethos
+				}
+			}
+		}
+	}	
+
+	MNT_blazo={ #Blažo Đukanović, Ban of Zeta Banovina (Montenegro) 1941, Chetnik leader
+		name=MNT_blazo
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MNT_blazo
+			allowed = {
+				original_tag = MNT
+			}
+			
+			traits = { propaganda_expert }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	MNT_vlado={ #Vladimir "Vlado" Dapčević, Leading communist, eventually defected to the USSR then later to the West
+		name=MNT_vlado
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MNT_vlado
+			allowed = {
+				original_tag = MNT
+			}
+			
+			traits = { silent_workhorse }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	MNT_vladimir={ #Vladimir Popović, Yugoslav diplomat and Partisan fighter
+		name=MNT_vladimir
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MNT_vladimir
+			allowed = {
+				original_tag = MNT
+			}
+			
+			traits = { education_reformer }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	MNT_svetozar={ #Svetozar Vukmanović, leading Montenigrin communist and in charge of the guerilla war in Macedonia
+		name=MAC_dimitrija_cupovski
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAC_dimitrija_cupovski
+			allowed = {
+				original_tag = MNT
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				base = 0
+			}
+		}
+	}
+}

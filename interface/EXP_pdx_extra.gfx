@@ -1,0 +1,11 @@
+spriteTypes = {
+
+	### Decisions (How did they forget this exactly!?)
+		spriteType = {
+			name = "GFX_decision_category_generic_foreign_policy"
+			textureFile = "gfx/interface/decisions/decision_category_generic_foreign_policy.dds"
+		}
+	
+	###Generic
+		#They added the female advisors!
+}

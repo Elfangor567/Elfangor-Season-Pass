@@ -1,0 +1,1275 @@
+characters={
+#Leaders
+	NOR_vidkun_quisling={
+		name=NOR_vidkun_quisling
+		portraits={
+			civilian={
+				large="gfx/leaders/NOR/Portrait_Norway_Vidkun_Quisling.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	NOR_johan_l_mowinckel={
+		name=NOR_johan_l_mowinckel
+		portraits={
+			civilian={
+				large="gfx/leaders/NZL/Portrait_New_Zeeland_Sidney_Holland.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	NOR_johan_nygaardsvold={
+		name=NOR_johan_nygaardsvold
+		portraits={
+			civilian={
+				large="gfx/leaders/NOR/Portrait_Norway_Johan_Nygaardsvold.dds"
+			}
+		}
+		country_leader={
+			ideology=neutral_socialism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=socialism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	NOR_adam_egede_nissen={
+		name=NOR_adam_egede_nissen
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+	NOR_martin_tranmael={
+		name=NOR_martin_tranmael
+		portraits={
+			civilian={
+				large="gfx/leaders/SCA/Portrait_SCA_Martin_Tranmael.dds"
+			}
+		}
+		country_leader={
+			ideology=leninism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	NOR_alf_mjoen={
+		name=NOR_alf_mjoen
+		portraits={
+			civilian={
+				large="gfx/leaders/FIN/Portrait_Finland_Kyosti_Kallio.dds"
+			}
+		}
+		country_leader={
+			ideology=neutral_socialism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}	
+	NOR_haakon_vii={
+		name=NOR_haakon_vii
+		portraits={
+			civilian={
+				large="gfx/leaders/SCA/Portrait_SCA_Haakon_VII.dds"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			traits = { SCA_indefatigable_king }
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+#Generals and Admirals
+	NOR_otto_ruge={
+		name=NOR_otto_ruge
+		portraits={
+			army={
+				large="gfx/leaders/SCA/Portrait_SCA_Otto_Ruge.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_1.dds"
+			}
+		}
+		field_marshal={
+			traits = { career_officer infantry_officer inflexible_strategist }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id=-1
+		}
+	}
+	NOR_carl_johan_erichsen={ #Commander 1st Division
+		name=NOR_carl_johan_erichsen
+		portraits={
+			army={
+				large="gfx/leaders/SCA/Portrait_SCA_Carl_Johan_Erichsen.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_2.dds"
+			}
+		}
+		corps_commander={
+			traits = { old_guard trait_cautious }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id=-1
+		}
+	}
+	NOR_jacob_hvinden_haug={ #Commander 2nd Division
+		name=NOR_jacob_hvinden_haug
+		portraits={
+			army={
+				large="gfx/leaders/SCA/Portrait_SCA_Jacob_Hvinden_Haug.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_3.dds"
+			}
+		}
+		corps_commander={
+			traits = { trait_mountaineer  }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=-1
+		}
+	}
+	NOR_einar_liljedahl={ #Commander 3rd Division
+		name=NOR_einar_liljedahl
+		portraits={
+			army={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_1.dds"
+			}
+		}
+		corps_commander={
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id=-1
+		}
+	}
+	NOR_william_steffens={ #Commander 4th Division
+		name=NOR_william_steffens
+		portraits={
+			army={
+				large="gfx/leaders/SCA/Portrait_SCA_William_Steffens.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_4.dds"
+			}
+		}
+		corps_commander={
+			traits = { adaptable trait_engineer winter_specialist  }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id=-1
+		}
+	}
+	NOR_jacob_ager_laurantzon={ #Commander 5th Division
+		name=NOR_jacob_ager_laurantzon
+		portraits={
+			army={
+				large="gfx/leaders/SCA/Portrait_SCA_Jacob_Ager_Laurantzon.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_5.dds"
+			}
+		}
+		corps_commander={
+			traits = { trait_engineer fortress_buster }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=16000
+		}
+	}
+	NOR_carl_gustav_fleischer={ #Commander 6th Division
+		name=NOR_carl_gustav_fleischer
+		portraits={
+			army={
+				large="gfx/leaders/SCA/Portrait_SCA_Carl_Gustav_Fleischer.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_6.dds"
+			}
+		}
+		corps_commander={
+			traits = { career_officer trait_reckless trickster winter_specialist }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 4
+			legacy_id=-1
+		}
+	}
+	NOR_elias_corneliussen={
+		name=NOR_elias_corneliussen
+		portraits={
+			navy={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_navy_2.dds"
+				small="gfx/interface/ideas/idea_generic_navy_europe_2.dds"
+			}
+		}
+		navy_leader={
+			traits = { navy_career_officer inshore_fighter spotter }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 2
+			legacy_id=-1
+		}
+	}
+	
+#Chiefs of Staff
+	NOR_olav_v={
+		name=NOR_olav_v
+		advisor={
+			slot = army_chief
+			idea_token = NOR_olav_v
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { army_chief_reform_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				large="gfx/leaders/ENG/Portrait_Britain_Edward_VIII.dds"
+				small="GFX_idea_king_edward_minister"
+			}
+		}
+	}
+	NOR_wilhelm_von_tangen_hansteen={
+		name=NOR_wilhelm_von_tangen_hansteen
+		advisor={
+			slot = army_chief
+			idea_token = NOR_wilhelm_von_tangen_hansteen
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { army_chief_organizational_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_wilhelm_von_tangen_hansteen"
+			}
+		}
+	}
+	NOR_kristian_laake={
+		name=NOR_kristian_laake
+		advisor={
+			slot = army_chief
+			idea_token = NOR_kristian_laake
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { army_chief_defensive_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_kristian_laake"
+			}
+		}
+	}
+	
+	NOR_bjarne_oen={
+		name=NOR_bjarne_oen
+		advisor={
+			slot = air_chief
+			idea_token = NOR_bjarne_oen
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { air_chief_safety_3 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+	}
+	NOR_ole_reistad={
+		name=NOR_ole_reistad
+		advisor={
+			slot = air_chief
+			idea_token = NOR_ole_reistad
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { air_bomber_interception_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+	}
+	NOR_hjalmar_riiser_larsen={
+		name=NOR_hjalmar_riiser_larsen
+		advisor={
+			slot = air_chief
+			idea_token = NOR_hjalmar_riiser_larsen
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { air_chief_all_weather_3 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+	}
+	
+	NOR_carsten_tank_nielsen={
+		name=NOR_carsten_tank_nielsen
+		advisor={
+			slot = navy_chief
+			idea_token = NOR_carsten_tank_nielsen
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			cost = 50
+			traits = { navy_submarine_2 }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_carsten_tank_nielsen"
+			}
+		}
+	}
+	NOR_henry_diesen={
+		name=NOR_henry_diesen
+		advisor={
+			slot = navy_chief
+			idea_token = NOR_henry_diesen
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { navy_anti_submarine_2 }
+	
+			cost = 50
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_carsten_tank_nielsen"
+			}
+		}
+	}
+#High Command
+	NOR_birger_ljungberg={
+		name=NOR_birger_ljungberg
+		advisor={
+			slot = high_command
+			idea_token = NOR_birger_ljungberg
+			ledger = army
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			modifier = {
+				max_dig_in = 1
+			}
+			
+			traits = { army_chief_old_guard }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_birger_ljungberg"
+			}
+		}
+	}
+	NOR_alfred_roscher_lund={
+		name=NOR_alfred_roscher_lund
+		advisor={
+			slot = high_command
+			idea_token = NOR_alfred_roscher_lund
+			ledger = army
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { army_concealment_3 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+	}
+	NOR_olaf_helset={
+		name=NOR_olaf_helset
+		advisor={
+			slot = high_command
+			idea_token = NOR_olaf_helset
+			ledger = army
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { army_regrouping_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_3"
+			}
+		}
+	}
+	NOR_hans_holtermann={
+		name=NOR_hans_holtermann
+		advisor={
+			slot = high_command
+			idea_token = NOR_hans_holtermann
+			ledger = army
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { army_entrenchment_3 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_hans_holtermann"
+			}
+		}
+	}
+	NOR_jacob_von_der_lippe={
+		name=NOR_jacob_von_der_lippe
+		advisor={
+			slot = high_command
+			idea_token = NOR_jacob_von_der_lippe
+			ledger = navy
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { navy_chief_naval_aviation_3 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+	}
+	NOR_edgar_otto={
+		name=NOR_edgar_otto
+		advisor={
+			slot = high_command
+			idea_token = NOR_edgar_otto
+			ledger = navy
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { navy_fleet_logistics_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_edgar_otto"
+			}
+		}
+	}
+	NOR_bernt_balchen={
+		name=NOR_bernt_balchen
+		advisor={
+			slot = high_command
+			idea_token = NOR_bernt_balchen
+			ledger = air
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { air_strategic_bombing_2 }
+	
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_1"
+			}
+		}
+	}
+#Theorists
+	NOR_oscar_sigvald_strugstad={
+		name=NOR_oscar_sigvald_strugstad
+		advisor={
+			slot = theorist
+			idea_token = NOR_oscar_sigvald_strugstad
+			ledger = army
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { military_theorist }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_3"
+			}
+		}
+	}
+	NOR_tryggve_gran={
+		name=NOR_tryggve_gran
+		advisor={
+			slot = theorist
+			idea_token = NOR_tryggve_gran
+			ledger = air
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { air_warfare_theorist }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+	}
+	NOR_skule_storheil={
+		name=NOR_skule_storheil
+		advisor={
+			slot = theorist
+			idea_token = NOR_skule_storheil
+			ledger = navy
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { naval_theorist }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+	}
+	NOR_axel_aubert={
+		name=NOR_axel_aubert
+		advisor={
+			slot = theorist
+			idea_token = NOR_axel_aubert
+			ledger = army
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			research_bonus = {
+				nuclear = 0.150
+			}
+			traits = { nuclear_scientist }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+	}
+#Advisors
+	NOR_oscar_torp={
+		name=NOR_oscar_torp
+		advisor={
+			slot = political_advisor
+			idea_token = NOR_oscar_torp
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { neutrality_advocate }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_james_chadwick"
+			}
+		}
+	}
+	NOR_haakon_lie = {
+		name=NOR_haakon_lie
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+		country_leader = {
+			ideology = socialism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = NOR_haakon_lie
+			name = NOR_haakon_lie
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					has_completed_focus = NOR_go_democratic
+				}
+			}
+		}
+	}
+	NOR_henry_kristiansen = {
+		name=NOR_henry_kristiansen
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+		country_leader = {
+			ideology = leninism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = NOR_henry_kristiansen
+			name = NOR_henry_kristiansen
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					has_completed_focus = NOR_go_communist
+				}
+			}
+		}
+	}
+	NOR_rolf_fuglesang = {
+		name=NOR_rolf_fuglesang
+		country_leader = {
+			ideology = nazism
+			traits = { }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = NOR_rolf_fuglesang
+			name = NOR_rolf_fuglesang
+			allowed = {
+				original_tag = NOR
+			}
+			available = {
+				NOT = { has_idea = NOR_johan_hjort }
+				OR = { 
+					NOR = { has_completed_focus = NOR_back_fuglesang }
+					has_country_flag = SCA_NS_Norway
+				}
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			cost = 50
+			
+			modifier = {
+				political_power_factor = 0.1
+				stability_factor = 0.05
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+	}
+	NOR_johan_hjort = {
+		name=NOR_johan_hjort
+		portraits={
+			army={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_8.dds"
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		country_leader = {
+			ideology = nazism
+			traits = { indomitable_perseverance }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = NOR_johan_hjort
+			name = NOR_johan_hjort
+			allowed = {
+				original_tag = NOR
+			}
+			available = {
+				NOT = { has_idea = NOR_rolf_fuglesang }
+				OR = { 
+					NOR = { has_completed_focus = NOR_choose_hjort }
+					has_country_flag = SCA_NS_Norway
+				}
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			cost = 50
+			
+			modifier = {
+				conscription = 0.005
+				war_support_factor = 0.05
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	NOR_laura_johannessen = { #Abwehr agent who betrayed Lauritz Sand
+		name=NOR_laura_johannessen
+		gender = female
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/portrait_europe_generic_operative_female_5.dds"
+				small="GFX_idea_generic_political_advisor_female_europe"
+			}
+		}
+		country_leader = {
+			ideology = nazism
+			traits = { backroom_backstabber }
+			expire = "1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = NOR_laura_johannessen
+			name = NOR_laura_johannessen
+			allowed = {
+				original_tag = NOR
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+				NOT = { has_character = NOR_rolf_fuglesang }
+				NOT = { has_character = NOR_johan_hjort }
+			}
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			cost = 50
+			
+			modifier = {
+				army_intel_factor = 0.1
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	
+	NOR_halvdan_koht={
+		name=NOR_halvdan_koht
+		advisor={
+			slot = political_advisor
+			idea_token = NOR_halvdan_koht
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { smooth_talking_charmer }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+	}
+	NOR_adolf_indrebo={
+		name=NOR_adolf_indrebo
+		advisor={
+			slot = political_advisor
+			idea_token = NOR_adolf_indrebo
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { captain_of_industry }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+	}
+	NOR_trygve_halvdan_lie={
+		name=NOR_trygve_halvdan_lie
+		advisor={
+			slot = political_advisor
+			idea_token = NOR_trygve_halvdan_lie
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { popular_figurehead }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+	}
+	NOR_ragnvald_lund={ #First head of the Norwegian Intelligence Service
+		name=NOR_ragnvald_lund
+		advisor={
+			slot = political_advisor
+			idea_token = NOR_ragnvald_lund
+			allowed = {
+				OR = {
+					tag = NOR
+					AND = {
+						original_tag = NOR
+						NOT = { has_global_flag = NS_Allowed }
+					}
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = SCA_NS_Norway }
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_western_european_2d"
+			}
+		}
+	}
+}

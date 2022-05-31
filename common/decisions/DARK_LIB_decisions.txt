@@ -1,0 +1,1458 @@
+LIB_USA_influence_category = {	
+	LIB_decrease_USA_influence = {
+		
+		icon = generic_political_discourse
+		visible = {
+			NOT = { has_completed_focus = LIB_alone }
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = LIB_influence_greater_than_zero_tt
+				check_variable = {
+					var = LIB_USA_influence
+					value = 0
+					compare = greater_than
+				}
+			}
+		}
+		
+		cost = 100
+		days_re_enable = 0
+		
+		complete_effect = {
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = -10
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 10
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_subtract_influence_tt		
+		}
+		
+		ai_will_do = {
+			base = 0
+			
+			modifier = {
+				add = 50
+				check_variable = {
+					var = LIB_USA_influence
+					value = 50
+					compare = greater_than
+				}
+			}
+		}
+	}
+}
+
+USA_LIB_influence_category = {
+	USA_LIB_influence_decision = {
+		allowed = {
+			original_tag = USA
+		}
+		
+		icon = infiltrate_state		
+		
+		visible = {
+			NOT = {				
+				has_government = fascism
+				has_government = neutrality
+			}
+			check_variable = {
+				var = LIB.LIB_USA_influence
+				value = 100
+				compare = greater_than_or_equals
+			}
+		}
+		
+		cost = 100
+		
+		complete_effect = {
+			LIB = { country_event = { id = DARK_lib.2 hours = 6 } }
+		}
+		
+		ai_will_do = {
+			base = 1
+			
+			modifier = {
+				factor = 0
+				has_country_leader = { ruling_only = yes character = USA_franklin_delano_roosevelt }
+			}
+		}
+	}
+}
+
+LIB_integrate_hinterlands_category = {
+	LIB_integrate_hinterlands_decision_1 = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = generic_operation
+		
+		visible = {
+			835 = { is_controlled_by = ROOT }
+			has_idea = LIB_hinterland_problems_1
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = LIB_has_hinterland_problems_tt
+				OR = {
+					has_idea = LIB_hinterland_problems_1
+					has_idea = LIB_hinterland_problems_2
+					has_idea = LIB_hinterland_problems_3
+				}
+			}
+			835 = { infrastructure > 1 }
+		}
+		
+		fire_only_once = yes
+		cost = 5
+		
+		complete_effect = {
+			835 = { add_extra_state_shared_building_slots = 1 }
+			if = {
+				limit = { has_idea = LIB_hinterland_problems_1 }				
+				swap_ideas = {
+					remove_idea = LIB_hinterland_problems_1
+					add_idea = LIB_hinterland_problems_2
+				}
+			}
+			else_if = {
+				limit = { has_idea = LIB_hinterland_problems_2 }				
+				swap_ideas = {
+					remove_idea = LIB_hinterland_problems_2
+					add_idea = LIB_hinterland_problems_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = LIB_hinterland_problems_3 }				
+				remove_ideas = LIB_hinterland_problems_3
+			}
+			hidden_effect = {
+				set_country_flag = LIB_linked_villages
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	LIB_integrate_hinterlands_decision_2 = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = generic_construction
+		
+		visible = {
+			835 = { is_controlled_by = ROOT }
+			OR = {
+				has_idea = LIB_hinterland_problems_1
+				has_idea = LIB_hinterland_problems_2
+			}
+		}
+		
+		available = {			
+			custom_trigger_tooltip = {
+				tooltip = LIB_has_hinterland_problems_tt
+				OR = {
+					has_idea = LIB_hinterland_problems_1
+					has_idea = LIB_hinterland_problems_2
+					has_idea = LIB_hinterland_problems_3
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = LIB_has_linked_villages_tt
+				has_country_flag = LIB_linked_villages
+			}
+			835 = { infrastructure > 2 }
+		}
+		
+		fire_only_once = yes
+		cost = 5
+		
+		complete_effect = {
+			835 = { add_extra_state_shared_building_slots = 1 }
+			if = {
+				limit = { has_idea = LIB_hinterland_problems_1 }				
+				swap_ideas = {
+					remove_idea = LIB_hinterland_problems_1
+					add_idea = LIB_hinterland_problems_2
+				}
+			}
+			else_if = {
+				limit = { has_idea = LIB_hinterland_problems_2 }				
+				swap_ideas = {
+					remove_idea = LIB_hinterland_problems_2
+					add_idea = LIB_hinterland_problems_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = LIB_hinterland_problems_3 }				
+				remove_ideas = LIB_hinterland_problems_3
+			}	
+			hidden_effect = {
+				set_country_flag = LIB_has_establishment
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	LIB_integrate_hinterlands_decision_3 = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = generic_decision
+		
+		visible = {
+			835 = { is_controlled_by = ROOT }
+			OR = {
+				has_idea = LIB_hinterland_problems_1
+				has_idea = LIB_hinterland_problems_2
+				has_idea = LIB_hinterland_problems_3
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = LIB_has_hinterland_problems_tt
+				OR = {
+					has_idea = LIB_hinterland_problems_1
+					has_idea = LIB_hinterland_problems_2
+					has_idea = LIB_hinterland_problems_3
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = LIB_has_establishment_tt
+				has_country_flag = LIB_has_establishment
+			}
+			835 = { infrastructure > 4 }
+		}
+		
+		fire_only_once = yes
+		cost = 5
+		
+		complete_effect = {
+			835 = { add_extra_state_shared_building_slots = 2 }
+			if = {
+				limit = { has_idea = LIB_hinterland_problems_1 }				
+				swap_ideas = {
+					remove_idea = LIB_hinterland_problems_1
+					add_idea = LIB_hinterland_problems_2
+				}
+			}
+			else_if = {
+				limit = { has_idea = LIB_hinterland_problems_2 }				
+				swap_ideas = {
+					remove_idea = LIB_hinterland_problems_2
+					add_idea = LIB_hinterland_problems_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = LIB_hinterland_problems_3 }				
+				remove_ideas = LIB_hinterland_problems_3
+			}		
+		}
+		
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				date < 1944.1.1
+			}
+		}
+	}
+	
+	LIB_integrate_states_peace = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = generic_nationalism
+		on_map_mode = map_and_decisions_view
+		
+		visible = {
+			OR = {
+				has_country_flag = LIB_the_revolution_begins
+				has_country_flag = LIB_the_crusade_begins
+				has_completed_focus = LIB_old_claims
+			}
+		}
+		
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				is_on_continent = africa
+				is_owned_by = ROOT
+				NOT = { is_core_of = ROOT }
+			}
+		}
+		
+		available = {
+			FROM = {
+				is_on_continent = africa
+				is_owned_by = ROOT
+				NOT = { is_core_of = ROOT }
+			}
+		}
+		
+		cost = 10
+		days_remove = 70
+		
+		remove_effect = {
+			FROM = {
+				add_core_of = ROOT
+				hidden_effect = {
+					ROOT = { add_to_variable = { LIB_num_owned_african_states = 1 } }
+				}		
+			}
+		}
+	}
+}
+
+LIB_raise_militia_category = {		
+	LIB_raise_militia_decision = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = generic_prepare_civil_war
+		
+		visible = {
+			always = yes
+		}
+		
+		available = {
+			custom_trigger_tooltip ={
+				tooltip = LIB_has_raised_militia_tt
+				NOT = { has_country_flag = LIB_has_raised_militia }
+			}
+			OR = {
+				has_war = yes
+				any_other_country = { is_justifying_wargoal_against = LIB }
+				any_other_country = { has_wargoal_against = LIB }
+			}
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			custom_effect_tooltip = LIB_raise_militia_tt
+			custom_effect_tooltip = LIB_raise_militia_warning_tt
+			hidden_effect = {
+				set_country_flag = LIB_has_raised_militia
+				if = {
+					limit = { has_country_flag = LIB_fixed_militia }
+					load_oob = LIB_load_militia_2
+				}
+				else = {
+					if = {
+						limit = { controls_state = 298 }
+						load_oob = LIB_load_militia_1
+					}
+					else_if = {
+						limit = { controls_state = 835 }
+						load_oob = LIB_load_militia_1_cw
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#LIB_dismiss_militia_decision = { ## Dummied out in favour of permanent militia that can only be called in certain circumstances
+	#	allowed = {
+	#		original_tag = LIB
+	#	}
+	#	
+	#	icon = generic_prepare_civil_war
+	#	
+	#	visible = {
+	#		always = yes
+	#	}
+	#	
+	#	available = {
+	#		custom_trigger_tooltip ={
+	#			tooltip = LIB_has_raised_militia_2tt
+	#			has_country_flag = LIB_has_raised_militia
+	#		}
+	#		has_war = no
+	#	}
+	#	
+	#	days_re_enable = 1
+	#	
+	#	complete_effect = {
+	#		custom_effect_tooltip = LIB_dismiss_militia_tt
+	#		hidden_effect = {
+	#			country_event = DARK_lib.5
+	#		}
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}
+}				
+
+LIB_force_neutral_vote_category = {
+	LIB_force_neutral_vote_decision = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = generic_political_discourse
+		
+		visible = {
+			has_elections = yes
+			NOT = { has_idea = LIB_government_cooperation }
+			neutrality > 0.45
+			NOT = { has_government = neutrality }
+		}
+		
+		available = {
+			neutrality > 0.5
+		}
+		
+		cost = 25
+		
+		complete_effect = {
+			add_popularity = { ideology = neutrality popularity = 0.05 }
+			set_politics = {
+				ruling_party = neutrality
+				#last_election = date
+				election_frequency = 48
+				elections_allowed = yes
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				NOT = { has_government = democratic }
+			}
+		}
+	}
+}
+
+LIB_intervene_USCW_category = {
+	LIB_intervene_USCW_decision = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = infiltrate_state
+		
+		visible = {
+			OR = {
+				USA = { has_war_with = CSA }
+				USA = { has_civil_war = yes }
+			}
+		}
+		
+		target_trigger = {
+			
+			FROM = { #The Loyalists if actual Civil War
+				USA = { has_civil_war = yes }
+				original_tag = USA
+				OR = {
+					has_government = democratic
+					has_government = communism
+				}
+			}
+		}
+		
+		available = {
+			has_war = no
+			OR = {
+				USA = { has_war_with = CSA }
+				USA = { has_civil_war = yes }
+			}
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			if = { #Democrats rose up
+				limit = {
+					any_other_country = {
+						original_tag = USA
+						NOT = { has_country_flag = mtg_usa_civil_war_democrats_2 }
+						is_faction_leader = yes
+						OR = {
+							has_government = democratic
+							has_government = communism
+						}
+					}
+				}
+				every_other_country = {
+					limit = {
+						original_tag = USA
+						NOT = { has_country_flag = mtg_usa_civil_war_democrats_2 }
+						is_faction_leader = yes
+						OR = {
+							has_government = democratic
+							has_government = communism
+						}
+					}
+					country_event = generic.2
+				}
+			}
+			else_if = { #Democrats rose up
+				limit = {
+					any_other_country = {
+						original_tag = USA
+						NOT = { has_country_flag = mtg_usa_civil_war_democrats_2 }
+						NOT = { is_faction_leader = yes }
+						OR = {
+							has_government = democratic
+							has_government = communism
+						}
+					}
+				}
+				every_other_country = {
+					limit = {
+						original_tag = USA
+						NOT = { has_country_flag = mtg_usa_civil_war_democrats_2 }
+						is_faction_leader = yes
+						OR = {
+							has_government = democratic
+							has_government = communism
+						}
+					}
+					save_event_target_as = DARK_good_usa
+				}
+				LIB = {
+					add_to_war = {
+						targeted_alliance = FROM
+						enemy = USA
+						hostility_reason = DARK_slavery_reason
+					}
+				}
+			}
+			else_if = { #CSA rose up
+				limit = {
+					USA = { has_country_flag = mtg_usa_civil_war_fascists_2 }
+					USA = { is_faction_leader = yes }
+				}
+				USA = { country_event = generic.2 }				
+			}
+			else_if = { #CSA rose up
+				limit = {
+					USA = { has_country_flag = mtg_usa_civil_war_fascists_2 }
+					NOT = { USA = { is_faction_leader = yes } }
+				}
+				add_to_war = {
+					targeted_alliance = USA
+					enemy = CSA
+					hostility_reason = DARK_slavery_reason
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = LIB_USA_influence
+					value = -150
+				}
+				set_variable = {
+					var = LIB_USA_influence_change
+					value = 150
+				}
+				clamp_variable = {
+					var = LIB_USA_influence
+					min = 0
+					max = 150
+				}
+			}
+			custom_effect_tooltip = LIB_subtract_influence_tt	
+		}
+		
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_capitulated = yes
+			}
+		}
+	}
+}
+	
+LIB_reform_army_category = {
+	LIB_reform_army_decision1 = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = generic_army_support
+		
+		visible = {
+			has_completed_focus = LIB_revolution
+			has_idea = LIB_corrupt_army1
+		}
+		
+		available = {
+			has_army_experience > 25			
+		}
+		
+		cost = 0
+		days_remove = 35
+		
+		complete_effect = {
+			army_experience = -25
+			custom_effect_tooltip = LIB_35_days_tt
+		}
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = LIB_corrupt_army1
+				add_idea = LIB_corrupt_army2
+			}
+		}
+		
+		ai_will_do = {
+			factor = 500
+		}
+	}
+	LIB_reform_army_decision2 = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = generic_army_support
+		
+		visible = {
+			has_completed_focus = LIB_revolution
+			has_idea = LIB_corrupt_army2
+		}
+		
+		available = {
+			has_army_experience > 25			
+		}
+		
+		cost = 0
+		days_remove = 35
+		
+		complete_effect = {
+			army_experience = -25
+			custom_effect_tooltip = LIB_35_days_tt
+		}
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = LIB_corrupt_army2
+				add_idea = LIB_corrupt_army3
+			}
+		}
+		
+		ai_will_do = {
+			factor = 500
+		}
+	}
+	LIB_reform_army_decision3 = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = generic_army_support
+		
+		visible = {
+			has_completed_focus = LIB_revolution
+			has_idea = LIB_corrupt_army3
+		}
+		
+		available = {
+			has_army_experience > 25			
+		}
+		
+		cost = 0
+		days_remove = 35
+		
+		complete_effect = {
+			army_experience = -25
+			custom_effect_tooltip = LIB_35_days_tt
+		}
+		remove_effect = {
+			remove_ideas = LIB_corrupt_army3
+		}
+		
+		ai_will_do = {
+			factor = 500
+		}
+	}
+}
+
+
+LIB_take_africa_category = {
+	## COMMUNISTS
+	LIB_infiltrate_west_africa = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = infiltrate_state
+		
+		visible = {
+			has_government = communism
+			any_other_country = {
+				OR = {
+					original_tag = FRA
+					original_tag = ENG
+					original_tag = SPR
+					original_tag = BEL
+					original_tag = POR
+				}
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = LIB_not_infiltrating_tt
+				NOT = { has_country_flag = LIB_is_infiltrating }
+			}
+		}
+		
+		cost = 25
+		fire_only_once = yes
+		days_remove = 180
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = LIB_is_infiltrating }
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = LIB_infiltration_tt
+			hidden_effect = {
+				clr_country_flag = LIB_is_infiltrating
+				#514 = { set_state_flag = LIB_commune_infiltrated } IMPASSABLE
+				557 = { set_state_flag = LIB_commune_infiltrated }
+				272 = { set_state_flag = LIB_commune_infiltrated }
+				701 = { set_state_flag = LIB_commune_infiltrated }
+				296 = { set_state_flag = LIB_commune_infiltrated }
+				556 = { set_state_flag = LIB_commune_infiltrated }
+				700 = { set_state_flag = LIB_commune_infiltrated }
+				298 = { set_state_flag = LIB_commune_infiltrated }
+				274 = { set_state_flag = LIB_commune_infiltrated }
+				558 = { set_state_flag = LIB_commune_infiltrated }
+				#515 = { set_state_flag = LIB_commune_infiltrated } IMPASSABLE
+				539 = { set_state_flag = LIB_commune_infiltrated }
+				297 = { set_state_flag = LIB_commune_infiltrated }
+				705 = { set_state_flag = LIB_commune_infiltrated }
+				660 = { set_state_flag = LIB_commune_infiltrated }
+				538 = { set_state_flag = LIB_commune_infiltrated }
+				295 = { set_state_flag = LIB_commune_infiltrated }
+				718 = { set_state_flag = LIB_commune_infiltrated }
+				#273 = { set_state_flag = LIB_commune_infiltrated } IMPASSABLE
+				538 = { set_state_flag = LIB_commune_infiltrated }				
+				
+				772 = { set_state_flag = LIB_commune_infiltrated }
+				773 = { set_state_flag = LIB_commune_infiltrated }
+				774 = { set_state_flag = LIB_commune_infiltrated }
+				#775 = { set_state_flag = LIB_commune_infiltrated } IMPASSABLE
+				776 = { set_state_flag = LIB_commune_infiltrated }
+				777 = { set_state_flag = LIB_commune_infiltrated }
+				778 = { set_state_flag = LIB_commune_infiltrated }
+				779 = { set_state_flag = LIB_commune_infiltrated }
+				780 = { set_state_flag = LIB_commune_infiltrated }
+				781 = { set_state_flag = LIB_commune_infiltrated }
+				#782 = { set_state_flag = LIB_commune_infiltrated } IMPASSABLE
+				#786 = { set_state_flag = LIB_commune_infiltrated } IMPASSABLE				
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}		
+	}
+	LIB_infiltrate_east_africa = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = infiltrate_state
+		
+		visible = {
+			has_government = communism
+			any_other_country = {
+				OR = {
+					original_tag = FRA
+					original_tag = ENG
+					original_tag = SPR
+					original_tag = BEL
+					original_tag = POR
+				}
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = LIB_not_infiltrating_tt
+				NOT = { has_country_flag = LIB_is_infiltrating }
+			}
+		}
+		
+		cost = 25
+		fire_only_once = yes
+		days_remove = 180
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = LIB_is_infiltrating }
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = LIB_infiltration_tt
+			hidden_effect = {
+				clr_country_flag = LIB_is_infiltrating
+				#552 = { set_state_flag = LIB_commune_infiltrated } IMPASSABLE
+				456 = { set_state_flag = LIB_commune_infiltrated }
+				457 = { set_state_flag = LIB_commune_infiltrated }
+				551 = { set_state_flag = LIB_commune_infiltrated }
+				550 = { set_state_flag = LIB_commune_infiltrated }
+				549 = { set_state_flag = LIB_commune_infiltrated }
+				271 = { set_state_flag = LIB_commune_infiltrated }
+				268 = { set_state_flag = LIB_commune_infiltrated }
+				269 = { set_state_flag = LIB_commune_infiltrated }
+				559 = { set_state_flag = LIB_commune_infiltrated }
+				547 = { set_state_flag = LIB_commune_infiltrated }
+				548 = { set_state_flag = LIB_commune_infiltrated }
+				718 = { set_state_flag = LIB_commune_infiltrated }
+				546 = { set_state_flag = LIB_commune_infiltrated }
+				
+				767 = { set_state_flag = LIB_commune_infiltrated }
+				768 = { set_state_flag = LIB_commune_infiltrated }
+				769 = { set_state_flag = LIB_commune_infiltrated }
+				
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	LIB_infiltrate_south_africa = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = infiltrate_state
+		
+		visible = {
+			has_government = communism
+			any_other_country = {
+				OR = {
+					original_tag = FRA
+					original_tag = ENG
+					original_tag = SPR
+					original_tag = BEL
+					original_tag = POR
+				}
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		
+		available = {
+			has_government = communism
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = LIB_not_infiltrating_tt
+				NOT = { has_country_flag = LIB_is_infiltrating }
+			}
+		}
+		
+		cost = 25
+		fire_only_once = yes
+		days_remove = 180
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = LIB_is_infiltrating }
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = LIB_infiltration_tt
+			hidden_effect = {
+				clr_country_flag = LIB_is_infiltrating
+				681 = { set_state_flag = LIB_commune_infiltrated }
+				719 = { set_state_flag = LIB_commune_infiltrated }
+				543 = { set_state_flag = LIB_commune_infiltrated }
+				275 = { set_state_flag = LIB_commune_infiltrated }
+				541 = { set_state_flag = LIB_commune_infiltrated }
+				542 = { set_state_flag = LIB_commune_infiltrated }
+				544 = { set_state_flag = LIB_commune_infiltrated }
+				545 = { set_state_flag = LIB_commune_infiltrated }
+				540 = { set_state_flag = LIB_commune_infiltrated }
+				295 = { set_state_flag = LIB_commune_infiltrated }
+				
+				770 = { set_state_flag = LIB_commune_infiltrated }
+				771 = { set_state_flag = LIB_commune_infiltrated }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	LIB_infiltrate_north_africa = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = infiltrate_state
+		
+		visible = {
+			has_government = communism
+			any_other_country = {
+				OR = {
+					original_tag = FRA
+					original_tag = ENG
+					original_tag = SPR
+					original_tag = BEL
+					original_tag = POR
+				}
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = LIB_not_infiltrating_tt
+				NOT = { has_country_flag = LIB_is_infiltrating }
+			}
+		}
+		
+		cost = 25
+		fire_only_once = yes
+		days_remove = 180
+		
+		complete_effect = {
+			hidden_effect = { set_country_flag = LIB_is_infiltrating }
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = LIB_infiltration_tt
+			hidden_effect = {
+				clr_country_flag = LIB_is_infiltrating
+				446 = { set_state_flag = LIB_commune_infiltrated }
+				447 = { set_state_flag = LIB_commune_infiltrated }
+				452 = { set_state_flag = LIB_commune_infiltrated }
+				451 = { set_state_flag = LIB_commune_infiltrated }
+				663 = { set_state_flag = LIB_commune_infiltrated }
+				450 = { set_state_flag = LIB_commune_infiltrated }
+				449 = { set_state_flag = LIB_commune_infiltrated }
+				662 = { set_state_flag = LIB_commune_infiltrated }
+				448 = { set_state_flag = LIB_commune_infiltrated }
+				661 = { set_state_flag = LIB_commune_infiltrated }
+				665 = { set_state_flag = LIB_commune_infiltrated }
+				458 = { set_state_flag = LIB_commune_infiltrated }
+				460 = { set_state_flag = LIB_commune_infiltrated }
+				513 = { set_state_flag = LIB_commune_infiltrated }
+				459 = { set_state_flag = LIB_commune_infiltrated }
+				290 = { set_state_flag = LIB_commune_infiltrated }
+				461 = { set_state_flag = LIB_commune_infiltrated }
+				462 = { set_state_flag = LIB_commune_infiltrated }
+				699 = { set_state_flag = LIB_commune_infiltrated }
+				
+				783 = { set_state_flag = LIB_commune_infiltrated }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	LIB_pull_the_trigger = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = infiltrate_state
+		
+		visible = {
+			has_government = communism
+			any_state = {	
+				has_state_flag = LIB_commune_infiltrated
+			}
+		}
+		
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = LIB_not_infiltrating_tt
+				NOT = { has_country_flag = LIB_is_infiltrating }
+			}
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		
+		complete_effect = {
+			custom_effect_tooltip = LIB_pulled_trigger_tt
+			hidden_effect = {
+				every_state = {
+					limit = { 
+						has_state_flag = LIB_commune_infiltrated 
+						OWNER = {
+							NOT = { is_in_faction_with = LIB }
+							NOT = { has_war_with = LIB }
+							NOT = { has_government = communism }
+							NOT = { is_subject_of = LIB }
+							NOT = { LIB = { is_subject_of = PREV } }
+							OR = {
+								AND = {
+									is_subject = no
+									any_owned_state = {
+										is_capital = yes
+										NOT = { is_on_continent = africa }									
+									}
+								}
+								AND = {
+									is_subject = no
+									any_owned_state = {
+										is_capital = yes
+										is_on_continent = africa
+										NOT = { is_core_of = FROM }									
+									}
+								}								
+								AND = {
+									is_subject = yes
+									any_owned_state = {
+										is_capital = yes
+										is_on_continent = africa
+									}
+									OVERLORD = {
+										any_owned_state = {
+											is_capital = yes
+											NOT = { is_on_continent = africa }
+										}
+									}
+								}
+							}
+						}
+					}
+					OWNER = { 
+						set_country_flag = LIB_to_die						
+					}
+				}
+				every_country = {
+					limit = { has_country_flag = LIB_to_die }
+					LIB = { 
+						declare_war_on = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+					country_event = DARK_lib.48
+					clr_country_flag = LIB_to_die
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_political_power < 25
+			}
+		}
+	}
+	## FASCISTS
+	LIB_declare_fascist_war_decision = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = generic_industry
+		
+		visible = {
+			has_government = fascism
+		}
+		
+		available = {			
+			always = yes
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		
+		complete_effect = {
+			custom_effect_tooltip = LIB_fascist_war_tt
+			hidden_effect = {
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_on_continent = africa
+							is_claimed_by = ROOT
+						}
+						NOT = { has_war_with = LIB }
+						NOT = { is_in_faction_with = LIB }
+						NOT = { LIB = { is_subject_of = PREV } }
+						NOT = { is_subject_of = LIB }
+					}
+					ROOT = {
+						declare_war_on = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					surrender_progress > 0
+					has_idea = LIB_waiting_for_war
+				}
+			}
+		}
+	}
+	LIB_local_unit_callup = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = generic_prepare_civil_war
+		
+		visible = {
+			has_government = fascism
+		}
+		
+		target_trigger = {
+			FROM = {
+				any_owned_state = {
+					is_on_continent = africa
+					is_controlled_by = LIB
+					is_island_state = no
+					NOT = { has_state_flag = LIB_has_raised_units_flag }
+					OWNER = {
+						has_war_with = LIB
+						NOT = { is_in_faction_with = LIB }						
+						NOT = { is_subject_of = LIB }
+						NOT = { LIB = { is_subject_of = FROM } }
+						OR = {
+							AND = {
+								is_subject = no
+								any_owned_state = {
+									is_capital = yes
+									NOT = { is_on_continent = africa }									
+								}
+							}
+							AND = {
+								is_subject = no
+								any_owned_state = {
+									is_capital = yes
+									is_on_continent = africa
+									NOT = { is_core_of = FROM }									
+								}
+							}								
+							AND = {
+								is_subject = yes
+								any_owned_state = {
+									is_capital = yes
+									is_on_continent = africa
+								}
+								OVERLORD = {
+									any_owned_state = {
+										is_capital = yes
+										NOT = { is_on_continent = africa }
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		available = {			
+			is_subject = no
+			FROM = {
+				has_war_with = LIB
+				any_owned_state = {
+					is_on_continent = africa
+					is_island_state = no
+					is_controlled_by = LIB
+					is_claimed_by = LIB
+					custom_trigger_tooltip = {
+						tooltip = LIB_has_raised_units_tt
+						NOT = { has_state_flag = LIB_has_raised_units_flag }
+					}
+				}
+			}
+		}
+		
+		cost = 0
+		
+		complete_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						is_owned_by = FROM
+						OWNER = {
+							OVERLORD = { tag = FROM }
+						}
+					}
+					is_controlled_by = LIB					
+					is_on_continent = africa
+					is_island_state = no
+					is_claimed_by = LIB
+					custom_trigger_tooltip = {
+						tooltip = LIB_has_raised_units_tt
+						NOT = { has_state_flag = LIB_has_raised_units_flag }
+					}
+				}
+				ROOT = {		
+					division_template = {
+						name = "Liberation Army"
+						priority = 2
+						division_names_group = LIB_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 0 y = 3 }
+							infantry = { x = 0 y = 4 }
+						}
+						support = {
+						}
+					}
+				}
+				create_unit = {
+					division = "name = \"Liberation Army\" division_template = \"Liberation Army\" start_experience_factor = 0.3" 
+					owner = ROOT
+				}
+				hidden_effect = {
+					set_state_flag = LIB_has_raised_units_flag
+				}
+			}			
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	##Integration
+	LIB_integrate_states = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = generic_nationalism
+		
+		visible = {
+			OR = {
+				has_country_flag = LIB_the_revolution_begins
+				has_country_flag = LIB_the_crusade_begins
+				has_completed_focus = LIB_old_claims
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				any_owned_state = {
+					is_on_continent = africa
+					is_controlled_by = LIB
+					NOT = { is_core_of = ROOT }
+					OWNER = {
+						has_war_with = ROOT
+						NOT = { is_in_faction_with = ROOT }						
+						NOT = { is_subject_of = ROOT }
+						NOT = { ROOT = { is_subject_of = FROM } }
+						OR = {
+							AND = {
+								is_subject = no
+								any_owned_state = {
+									is_capital = yes
+									NOT = { is_on_continent = africa }									
+								}
+							}
+							AND = {
+								is_subject = no
+								any_owned_state = {
+									is_capital = yes
+									is_on_continent = africa
+									NOT = { is_core_of = FROM }									
+								}
+							}								
+							AND = {
+								is_subject = yes
+								any_owned_state = {
+									is_capital = yes
+									is_on_continent = africa
+								}
+								OVERLORD = {
+									any_owned_state = {
+										is_capital = yes
+										NOT = { is_on_continent = africa }
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		available = {
+			FROM = {
+				any_owned_state = {
+					is_on_continent = africa
+					is_controlled_by = LIB
+					NOT = { is_core_of = ROOT }
+				}
+			}
+		}
+		
+		cost = 25
+		days_remove = 90
+		
+		remove_effect = {
+			FROM = {
+				every_owned_state = {
+					limit = {
+						is_on_continent = africa
+						is_controlled_by = LIB
+						NOT = { is_core_of = ROOT }
+					}
+					add_core_of = ROOT
+					hidden_effect = {
+						ROOT = { add_to_variable = { LIB_num_owned_african_states = 1 } }
+					}
+				}			
+			}
+		}
+	}			
+}
+
+LIB_freeport_category = {
+	LIB_freeport_mission1 = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = generic_construction
+		
+		available = {
+			OR = {
+				NOT = { controls_state = 298 } #THIS IS THE ACTUAL OBJECTIVE
+				DARK_will_dem_USA_not_support = yes
+			}
+		}
+		
+		activation = {
+			controls_state = 298
+			has_completed_focus = LIB_port #This starts the mission
+		}
+		
+		Is_good = yes
+		
+		days_mission_timeout = 90
+		
+		fire_only_once = yes
+		
+		timeout_effect = {
+			298 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					province = 7959
+					level = 2
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						298 = {
+							naval_base < 10
+						}
+					}
+					set_country_flag = LIB_freeport_continues
+				}
+			}
+		}
+	}
+	LIB_freeport_mission2 = {
+		allowed = {
+			original_tag = LIB
+		}
+		
+		icon = generic_construction
+		
+		available = {
+			OR = {
+				NOT = { controls_state = 298 } #THIS IS THE ACTUAL OBJECTIVE
+				DARK_will_dem_USA_not_support = yes
+			}
+		}
+		
+		activation = {
+			controls_state = 298
+			has_country_flag = LIB_freeport_continues #This starts the mission
+		}
+		
+		Is_good = yes
+		
+		days_mission_timeout = 90
+		
+		timeout_effect = {
+			298 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					province = 7959
+					level = 2
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						298 = {
+							any_province_building_level = {
+								province = {
+									id = 7959
+								}
+								building = naval_base
+								level > 9
+							}
+						}
+					}
+					clr_country_flag = LIB_freeport_continues
+				}
+			}
+		}
+	}
+}
+	

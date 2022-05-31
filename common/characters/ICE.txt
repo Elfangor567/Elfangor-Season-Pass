@@ -1,0 +1,798 @@
+characters={
+#Leaders
+	ICE_gisli_sigurbjornsson={
+		name=ICE_gisli_sigurbjornsson
+		portraits={
+			civilian={
+				large="gfx/leaders/EST/portrait_est_konstantin_pats.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	ICE_brynjolfur_bjarnason={ #Note to look into replacing him with Einar Olgeirsson after 1939
+		name=ICE_brynjolfur_bjarnason
+		portraits={
+			civilian={
+				large="gfx/leaders/GER/Portrait_Germany_Generic_3.dds"
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	ICE_jon_baldvinsson={ #Dies in 1938
+		name=ICE_jon_baldvinsson
+		portraits={
+			civilian={
+				large="gfx/leaders/ENG/Portrait_Britain_Generic_3.dds"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			traits = {
+			}
+			expire="1938.3.17"
+			id=-1
+		}
+	}
+	ICE_hermann_jonasson={
+		name=ICE_hermann_jonasson
+		portraits={
+			army = {
+				small="GFX_idea_generic_army_europe_6"
+			}
+			civilian={
+				large="gfx/leaders/CZE/Portrait_Czech_Klement_Gottwald.dds"
+			}
+		}
+		country_leader={
+			ideology=neutral_socialism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=socialism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+		
+		advisor={ # He was more than just the Prime Minister
+			slot = high_command
+			idea_token = ICE_hermann_jonasson
+			allowed = {
+				original_tag = ICE
+			}
+			
+			traits = { army_entrenchment_3 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ICE_sveinn_bjornsson={
+		name=ICE_sveinn_bjornsson
+		portraits={
+			civilian={
+				large="gfx/leaders/ICE/portrait_ice_sveinn_bjornsson.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	ICE_tryggvi_borhallsson={
+		name=ICE_tryggvi_borhallsson
+		portraits={
+			civilian={
+				large="gfx/leaders/IRE/Portrait_Ireland_Eamon_de_Valera.dds"
+			}
+		}
+		country_leader={
+			ideology=neutral_socialism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+#Generals and Admirals
+	ICE_einar_arnalds={
+		name=ICE_einar_arnalds
+		portraits={
+			army={
+				large="gfx/leaders/ENG/Portrait_Britain_Generic_land_3.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_3.dds"
+			}
+		}
+		corps_commander={
+			traits = { winter_specialist winter_expert }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id=-1
+		}
+	}
+	ICE_olafur_sveinsson={ #First Director of the The State Ship Inspection and Registration Office (1930)
+		name=ICE_olafur_sveinsson
+		portraits={
+			navy={
+				large="gfx/leaders/ENG/Portrait_Britain_Generic_navy_2.dds"
+				small="gfx/interface/ideas/idea_generic_navy_europe_1.dds"
+			}
+		}
+		navy_leader={
+			traits = { navy_career_officer arctic_water_expert }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 2
+			legacy_id=-1
+		}
+		
+		advisor={
+			slot = navy_chief
+			idea_token = ICE_olafur_sveinsson
+			allowed = {
+				original_tag = ICE
+			}
+			
+			traits = { navy_chief_maneuver_2 }
+			
+			cost = 50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+
+#Chiefs of Staff
+	ICE_bjorn_bjornsson={
+		name=ICE_bjorn_bjornsson
+		advisor={
+			slot = army_chief
+			idea_token = ICE_bjorn_bjornsson
+			allowed = {
+				original_tag = ICE
+			}
+			
+			traits = { army_commando_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_1"
+			}
+		}
+	}	
+	#ICE_olafur_sveinsson, Already listed under Admirals, First Director of the The State Ship Inspection and Registration Office (1930)
+	
+	ICE_eysteinn_jonsson={
+		name=ICE_eysteinn_jonsson
+		advisor={
+			slot = navy_chief
+			idea_token = ICE_eysteinn_jonsson
+			allowed = {
+				original_tag = ICE
+			}
+			
+			traits = { navy_chief_reform_3 }
+			
+			cost = 50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+	}
+	
+	ICE_alexander_johannesson={ #The second most important aviation pioneer, shadowed by Agnar Hansen (Who frankly shadows everyone)
+		name=ICE_alexander_johannesson
+		advisor={
+			slot = air_chief
+			idea_token = ICE_alexander_johannesson
+			allowed = {
+				original_tag = ICE
+			}
+			
+			traits = { air_chief_safety_3 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+	}
+	ICE_borsteinn_jonsson={ #Only Icelandic Ace, fought for Britain historically
+		name=ICE_borsteinn_jonsson
+		advisor={
+			slot = air_chief
+			idea_token = ICE_borsteinn_jonsson
+			allowed = {
+				original_tag = ICE
+			}
+			
+			traits = { air_air_combat_training_3 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+	}
+
+#High Command
+	#ICE_hermann_jonasson, Already listed under Leaders, he was more than just Prime Minister
+	ICE_jon_hermannsson={ #Police commissioner before Hermann Jónasson
+		name=ICE_jon_hermannsson
+		advisor={
+			slot = high_command
+			idea_token = ICE_jon_hermannsson
+			ledger = army
+			allowed = {
+				original_tag = ICE
+			}
+			
+			modifier = {
+				max_dig_in = 1
+			}
+			
+			traits = { army_chief_old_guard }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+	}
+	ICE_erlingur_palsson={ #Chief Superintendent of the Reykjavik Police in 1925
+		name=ICE_erlingur_palsson
+		advisor={
+			slot = high_command
+			idea_token = ICE_erlingur_palsson
+			ledger = army
+			allowed = {
+				original_tag = ICE
+			}
+			
+			traits = { army_chief_organizational_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+	}
+	ICE_richard_thors={ #Part-Owner of Kveldulf Shipping Company and a major political figure
+		name=ICE_richard_thors
+		advisor={
+			slot = high_command
+			idea_token = ICE_richard_thors
+			ledger = navy
+			allowed = {
+				original_tag = ICE
+			}
+			
+			traits = { navy_fleet_logistics_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+	}
+	ICE_thor_jensen={ #Founder of Kveldulf Shipping Company and a major political figure
+		name=ICE_thor_jensen
+		advisor={
+			slot = high_command
+			idea_token = ICE_thor_jensen
+			ledger = navy
+			allowed = {
+				original_tag = ICE
+			}
+			
+			traits = { navy_chief_commerce_raiding_1 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+	}
+	ICE_vilhjalmur_thor={ #CEO of KEA (in 1937 at any-rate), took an interest in aviation
+		name=ICE_vilhjalmur_thor
+		advisor={
+			slot = high_command
+			idea_token = ICE_vilhjalmur_thor
+			ledger = navy
+			allowed = {
+				original_tag = ICE
+			}
+			
+			traits = { navy_chief_naval_aviation_1 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+	}
+	ICE_johannes_snorrason={ #One of the founders of the Icelandic Air Association
+		name=ICE_johannes_snorrason
+		advisor={
+			slot = high_command
+			idea_token = ICE_johannes_snorrason
+			ledger = air
+			allowed = {
+				original_tag = ICE
+			}
+			
+			traits = { air_air_superiority_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+	}
+	ICE_kristinn_jonsson={ #Early employee of Flugfélag Akureyrar
+		name=ICE_kristinn_jonsson
+		advisor={
+			slot = high_command
+			idea_token = ICE_kristinn_jonsson
+			ledger = air
+			allowed = {
+				original_tag = ICE
+			}
+			
+			traits = { air_naval_strike_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+	}
+	ICE_sigurdar_jonsson={ #First commerical pilot and later CEO of Reykjavik (I think)
+		name=ICE_sigurdar_jonsson
+		advisor={
+			slot = high_command
+			idea_token = ICE_sigurdar_jonsson
+			ledger = air
+			allowed = {
+				original_tag = ICE
+			}
+			
+			traits = { air_chief_night_operations_3 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+	}
+	ICE_orn_johnson={ #First commerical pilot and later CEO of Reykjavik (I think)
+		name=ICE_orn_johnson
+		advisor={
+			slot = high_command
+			idea_token = ICE_orn_johnson
+			ledger = air
+			allowed = {
+				original_tag = ICE
+			}
+			
+			traits = { air_pilot_training_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+	}
+#Theorists
+	ICE_alfred_eliasson={ #Founder of Loftleiðir
+		name=ICE_alfred_eliasson
+		advisor={
+			slot = theorist
+			idea_token = ICE_alfred_eliasson
+			ledger = army
+			allowed = {
+				original_tag = ICE
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_3"
+			}
+		}
+	}
+	ICE_olafur_thors={ # The brother of Richard Thors and son of Thor Jensen
+		name=ICE_olafur_thors
+		advisor={
+			slot = theorist
+			idea_token = ICE_olafur_thors
+			ledger = navy
+			allowed = {
+				original_tag = ICE
+			}
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		portraits={
+			army={
+				small="GFX_idea_olafur_thors"
+			}
+		}
+	}
+	ICE_erling_ellingsen={ #Director General of the Icelandic Air Commission
+		name=ICE_erling_ellingsen
+		advisor={
+			slot = theorist
+			idea_token = ICE_erling_ellingsen
+			ledger = air
+			allowed = {
+				original_tag = ICE
+			}
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+	}
+
+#Advisors
+	ICE_magnus_jonsson={
+		name=ICE_magnus_jonsson
+		advisor={
+			slot = political_advisor
+			idea_token = ICE_magnus_jonsson
+			allowed = {
+				original_tag = ICE
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			
+			traits = { neutrality_advocate }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_james_chadwick"
+			}
+		}
+	}
+	ICE_einar_olgeirsson={
+		name=ICE_einar_olgeirsson
+		advisor={
+			slot = political_advisor
+			idea_token = ICE_einar_olgeirsson
+			allowed = {
+				original_tag = ICE
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					has_completed_focus = ICE_sup_com
+				}
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+	}
+	ICE_stefan_stefansson={
+		name=ICE_stefan_stefansson
+		advisor={
+			slot = political_advisor
+			idea_token = ICE_stefan_stefansson
+			allowed = {
+				original_tag = ICE
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_stefan_stefansson"
+			}
+		}
+	}
+	ICE_eidur_kvaran={
+		name=ICE_eidur_kvaran
+		advisor={
+			slot = political_advisor
+			idea_token = ICE_eidur_kvaran
+			allowed = {
+				original_tag = ICE
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					has_completed_focus = ICE_fas_rallies
+				}
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+	}
+	
+	ICE_bjorn_olafsson={
+		name=ICE_bjorn_olafsson
+		advisor={
+			slot = political_advisor
+			idea_token = ICE_bjorn_olafsson
+			allowed = {
+				original_tag = ICE
+			}
+			traits = { captain_of_industry }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+	}
+	ICE_olafur_johannesson={
+		name=ICE_olafur_johannesson
+		advisor={
+			slot = political_advisor
+			idea_token = ICE_olafur_johannesson
+			allowed = {
+				original_tag = ICE
+			}
+			traits = { backroom_backstabber }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+	}
+	ICE_bjorn_bordarson={
+		name=ICE_bjorn_bordarson
+		advisor={
+			slot = political_advisor
+			idea_token = ICE_bjorn_bordarson
+			allowed = {
+				original_tag = ICE
+			}
+			modifier = {
+				stability_factor = 0.05
+			}
+			traits = { silent_workhorse }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+	}
+	ICE_asgeir_asgeirsson={
+		name=ICE_asgeir_asgeirsson
+		advisor={
+			slot = political_advisor
+			idea_token = ICE_asgeir_asgeirsson
+			allowed = {
+				original_tag = ICE
+			}
+			traits = { smooth_talking_charmer }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_asgeir_asgeirsson"
+			}
+		}
+	}
+	ICE_agnar_hansen={ #He was a pilot, the man in charge of training the Icelandic Defence Force and the Head of Intelligence
+		name=ICE_agnar_hansen
+		advisor={
+			slot = political_advisor
+			idea_token = ICE_agnar_hansen
+			allowed = {
+				original_tag = ICE
+			}
+			traits = { SCA_does_everything }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		portraits={
+			army={
+				large="gfx/leaders/SCA/Portrait_SCA_Agnar_Kofoed_Hansen.dds"
+				small="GFX_idea_agnar_hansen"
+			}
+		}
+	}
+}

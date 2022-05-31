@@ -1,0 +1,119 @@
+﻿capital = 459
+
+add_ideas = ALG_mecca_of_revs
+
+recruit_character = ALG_mohamed_ibrahimi
+recruit_character = ALG_messali_hadj
+recruit_character = ALG_ferhat_abbas
+recruit_character = ALG_mohamed_taleb
+
+recruit_character = ALG_mahmoud_cherif
+
+recruit_character = ALG_said_boualam
+recruit_character = ALG_amar_ouzegane
+recruit_character = ALG_mohamed_larbi
+recruit_character = ALG_edmond_jouhaud
+
+recruit_character = ALG_ahmed_ben_bella
+recruit_character = ALG_said_mohammedi
+recruit_character = ALG_roger_carcassonne
+recruit_character = ALG_saidi_sadok
+recruit_character = ALG_mouloud
+recruit_character = ALG_abdelkader_ali
+recruit_character = ALG_si_djilani
+recruit_character = ALG_jules_roy
+recruit_character = ALG_serri_abderahmen
+
+recruit_character = ALG_maurice_laban
+recruit_character = ALG_jean_de_maisonseul
+recruit_character = ALG_laroussi_khelifa
+
+recruit_character = ALG_ahmed_taoufik
+recruit_character = ALG_mohammed_saleh_bendjelloul
+recruit_character = ALG_emilie_busquant
+recruit_character = ALG_rachid_ouamara
+recruit_character = ALG_belkacem_radjef
+recruit_character = ALG_mohamed_khider
+recruit_character = ALG_amar_imache
+recruit_character = ALG_saad_dahlab
+recruit_character = ALG_mohand_lechani
+recruit_character = ALG_mohamed_boudiaf
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+}
+
+set_convoys = 20
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 25
+	fascism = 20
+	communism = 5
+	neutrality = 50
+}
+
+1939.1.1 = {
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = large_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	set_technology = {
+		tech_support = 1
+		tech_recon = 1
+		support_weapons = 1
+		gw_artillery = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+	
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		democratic = 25
+		fascism = 20
+		communism = 5
+		neutrality = 50
+	}
+}

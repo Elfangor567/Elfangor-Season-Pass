@@ -1,0 +1,52 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Suomen Merivoimat"
+		naval_base = 11105 # Helsinki
+		task_force = {				
+			name = "Rannikkolaivue"				
+			location =  11105 # Helsinki
+			ship = { name = "Ilmarinen" pride_of_the_fleet = yes definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = FIN version_name = "Väinämöinen Class" } } }				
+			ship = { name = "Väinämöinen" definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = FIN version_name = "Väinämöinen Class" } } }				
+		
+			ship = { name = "Karjala" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = FIN version_name = "Karjala Class" } } }			
+			ship = { name = "Turunmaa" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = FIN version_name = "Karjala Class" } } }
+		
+			ship = { name = "Hämeenmaa" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = FIN version_name = "Hämeenmaa Class" } } }				
+			ship = { name = "Uusimmaa" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = FIN version_name = "Hämeenmaa Class" } } }				
+			
+			ship = { name = "Louhi" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = FIN version_name = "Louhi Class" } } }				
+			
+			ship = { name = "Vilppula" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = FIN version_name = "Vilppula Class" } } }				
+			ship = { name = "Rautu" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = FIN version_name = "Vilppula Class" } } }				
+			
+			ship = { name = "Pukkio" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = FIN version_name = "Pukkio Class" } } }
+		}					
+		task_force = {					
+			name = "Sukellusvenelaivue"				
+			location =  11105 # Helsinki
+			ship = { name = "Vetehinen" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = FIN version_name = "Vetehinen Class" } } }
+			ship = { name = "Vesihiisi" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = FIN version_name = "Vetehinen Class" } } }
+			ship = { name = "Iku-Turso" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = FIN version_name = "Vetehinen Class" } } }
+			
+			ship = { name = "Saukko" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = FIN version_name = "Saukko Class" } } }
+			
+			ship = { name = "Vesikko" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = FIN  version_name = "Vesikko Class"} } }
+		}
+		task_force = {					
+			name = "Jäänmurtajat" #Icebreakers			
+			location = 9140 # Petsamo
+			ship = { name = "Murtaja" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FIN version_name = "Icebreaker Class" } } }
+			ship = { name = "Sampo" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FIN version_name = "Icebreaker Class" } } }
+			ship = { name = "Apu" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FIN version_name = "Icebreaker Class" } } }
+			ship = { name = "Tarmo" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FIN version_name = "Icebreaker Class" } } }
+			ship = { name = "Voima" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FIN version_name = "Icebreaker Class" } } }
+			ship = { name = "Jääkahru" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FIN version_name = "Icebreaker Class" } } }
+			ship = { name = "Otso" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FIN version_name = "Icebreaker Class" } } }
+			ship = { name = "Sisu" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = FIN version_name = "Sisu-Icebreaker Class" } } }
+		}		
+	}
+}
+
+

@@ -1,0 +1,417 @@
+Swedish_historical = {
+	name = "Swedish Historical Plan"
+	desc = "Essentially the historical behaviour for Sweden."
+
+	enable = {
+		original_tag = SWE
+		OR = {
+			is_historical_focus_on = yes
+			has_game_rule = {
+				rule = SCA_sweden_ai_behavior
+				option = NEUTRAL_HISTORICAL
+			}
+			has_country_flag = SWE_AI_RANDOM_NEUTRAL_HISTORICAL	
+		}
+	}
+	
+	abort = {
+		has_war = yes
+	}
+
+	ai_national_focuses = {
+		SWE_folkhemmet #jan 1 - march 11 (1936)
+		SWE_building_tech #march 11 - july 29
+		SWE_infr #july 29 - oct 7
+		SWE_politics #oct 7 - dec 16
+		SWE_no_com #dec 16 - feb 24 (1937)
+		SWE_internal #feb 24 - may 5
+		SWE_defence #may 5 - july 14
+		SWE_army_ops #july 14 - sep 22
+		SWE_air_defence #sep 22 - dec 1
+		SWE_history #dec 1 - feb 9 (1938)
+		SWE_neutrality_focus #feb 9 - apr 20
+		SWE_drsrn #apr 20 - may 25
+		SWE_unemployment #may 25 - june 29		
+		SWE_trade_uk #june 29 - sept 7
+		SWE_trade_ger #sept 7 - nov 16
+		SWE_moderate_reform #nov 16 - jan 25 (1939)
+		SWE_one_neutral #jan 25 - apr 5
+		SWE_military_trade #apr 5 - june 14
+		SWE_military_spending #june 14 - aug 23
+		SWE_expand_stock #aug 23 - nov 1
+		SWE_volunteers #nov 1 - jan 10 (1940)
+		SWE_expanded_mil #jan 10 - mar 20
+		SWE_tank_acquisition #mar 20 - may 29
+		SWE_lessons #may 29 - aug 7
+		SWE_navy_staff		
+		SWE_amphibians
+		SWE_per_albin_line_1
+		SWE_expand_mines
+		SWE_artillery
+		SWE_per_albin_line_2
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		SWE_neutrality_focus = 1.0
+		SWE_one_neutral = 1.0
+	}
+}
+Swedish_league = {
+	name = "Swedish League Plan"
+	desc = "Neutrality will never work unless it is done in conjunction with others."
+
+	enable = {
+		original_tag = SWE
+		OR = {
+			has_game_rule = {
+				rule = SCA_sweden_ai_behavior
+				option = NEUTRAL_LEAGUE
+			}
+			has_country_flag = SWE_AI_RANDOM_NEUTRAL_LEAGUE
+		}
+	}
+
+	ai_national_focuses = {
+		SWE_folkhemmet #jan 1 - march 11 (1936)
+		SWE_building_tech #march 11 - july 29
+		SWE_infr #july 29 - oct 7
+		SWE_politics #oct 7 - dec 16
+		SWE_no_com #dec 16 - feb 24 (1937)
+		SWE_internal #feb 24 - may 5
+		SWE_army_ops #may 5 - july 14
+		SWE_air_defence #july 14 - sep 22
+		SWE_navy_staff #sep 22 - dec 1
+		SWE_history #dec 1 - feb 9 (1938)
+		SWE_neutrality_focus #feb 9 - apr 20
+		SWE_drsrn #apr 20 - may 25
+		SWE_unemployment #may 25 - june 29		
+		SWE_trade_uk #june 29 - sept 7
+		SWE_trade_ger #sept 7 - nov 16
+		SWE_moderate_reform #nov 16 - jan 25 (1939)
+		SWE_league #jan 25 - apr 5
+		SWE_invite_sca #apr 5 - june 14
+		SWE_invite_baltic #june 14 - aug 23
+		SWE_invite_lowlands #aug 23 - nov 1
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		SWE_neutrality_focus = 1.0
+		SWE_league = 1.0
+	}
+}
+Swedish_allies = {
+	name = "Swedish Ally Plan"
+	desc = "We cannot turn our heads from the atrocities across the sea, we must join with those who would stop them."
+
+	enable = {
+		original_tag = SWE
+		OR = {
+			has_game_rule = {
+				rule = SCA_sweden_ai_behavior
+				option = NEUTRAL_ALLIES
+			}
+			has_country_flag = SWE_AI_RANDOM_NEUTRAL_ALLIES
+		}
+	}
+	
+	abort = {
+		OR = {
+			is_subject = yes
+			has_war_with = ENG
+			ENG = { NOT = { has_government = democratic } }
+			ENG = { is_faction_leader = no }
+		}
+	}
+
+	ai_national_focuses = {
+		SWE_folkhemmet #jan 1 - march 11 (1936)
+		SWE_building_tech #march 11 - july 29
+		SWE_infr #july 29 - oct 7
+		SWE_politics #oct 7 - dec 16
+		SWE_no_com #dec 16 - feb 24 (1937)
+		SWE_internal #feb 24 - may 5
+		SWE_army_ops #may 5 - july 14
+		SWE_air_defence #july 14 - sep 22
+		SWE_navy_staff #sep 22 - dec 1
+		SWE_history #dec 1 - feb 9 (1938)
+		SWE_neutrality_focus #feb 9 - apr 20
+		SWE_drsrn #apr 20 - may 25
+		SWE_unemployment #may 25 - june 29		
+		SWE_trade_uk #june 29 - sept 7
+		SWE_trade_ger #sept 7 - nov 16
+		SWE_moderate_reform #nov 16 - jan 25 (1939)
+		SWE_ally_trade #jan 25 - apr 5
+		SWE_end_neutral #apr 5 - june 14
+		SWE_join_allies #june 14 - aug 23
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		SWE_neutrality_focus = 1.0
+		SWE_end_neutral = 1.0
+		SWE_join_allies = 1.0
+	}
+}
+Swedish_axis = {
+	name = "Swedish Axis Plan"
+	desc = "We cannot and will not be left out of the New World Order."
+
+	enable = {
+		original_tag = SWE
+		OR = {
+			has_game_rule = {
+				rule = SCA_sweden_ai_behavior
+				option = NEUTRAL_AXIS
+			}
+			has_country_flag = SWE_AI_RANDOM_NEUTRAL_AXIS
+		}
+	}
+	
+	abort = {
+		OR = {
+			is_subject = yes
+			has_war_with = GER
+			GER = { is_faction_leader = no }
+		}
+	}
+
+	ai_national_focuses = {
+		SWE_folkhemmet #jan 1 - march 11 (1936)
+		SWE_building_tech #march 11 - july 29
+		SWE_infr #july 29 - oct 7
+		SWE_politics #oct 7 - dec 16
+		SWE_no_com #dec 16 - feb 24 (1937)
+		SWE_internal #feb 24 - may 5
+		SWE_army_ops #may 5 - july 14
+		SWE_air_defence #july 14 - sep 22
+		SWE_navy_staff #sep 22 - dec 1
+		SWE_history #dec 1 - feb 9 (1938)
+		SWE_neutrality_focus #feb 9 - apr 20
+		SWE_drsrn #apr 20 - may 25
+		SWE_unemployment #may 25 - june 29		
+		SWE_trade_uk #june 29 - sept 7
+		SWE_trade_ger #sept 7 - nov 16
+		SWE_moderate_reform #nov 16 - jan 25 (1939)
+		SWE_permittenttrafiken #jan 25 - apr 5
+		SWE_end_neutral #apr 5 - june 14
+		SWE_join_axis #june 14 - aug 23
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		SWE_neutrality_focus = 1.0
+		SWE_end_neutral = 1.0
+		SWE_join_axis = 1.0
+	}
+}
+Swedish_fourth_international = {
+	name = "Swedish Fourth International Plan"
+	desc = "The revolution is unceassing and unending."
+
+	enable = {
+		original_tag = SWE
+		OR = {
+			has_game_rule = {
+				rule = SCA_sweden_ai_behavior
+				option = FOURTH_INTERNATIONAL
+			}
+			has_country_flag = SWE_AI_RANDOM_FOURTH_INTERNATIONAL
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+	
+	ideas = {
+		SWE_hilding_hagberg = 10
+	}
+
+	ai_national_focuses = {
+		SWE_folkhemmet #jan 1 - march 11 (1936)
+		SWE_building_tech #march 11 - july 29
+		SWE_infr #july 29 - oct 7
+		SWE_politics
+		SWE_inernational_com 
+		SWE_no_sov_socialism
+		SWE_com_militias
+		SWE_internal
+		SWE_unemployment
+		SWE_radical_reform
+		SWE_end_king
+		SWE_fourth
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		SWE_inernational_com = 1.0
+		SWE_no_sov_socialism = 1.0
+		SWE_fourth = 1.0
+		SWE_radical_reform = 10.0
+	}
+}
+Swedish_comintern = {
+	name = "Swedish Comintern Plan"
+	desc = "The Stockholm-Moscow Axis will be eternal."
+
+	enable = {
+		original_tag = SWE
+		OR = {
+			has_game_rule = {
+				rule = SCA_sweden_ai_behavior
+				option = COMINTERN
+			}
+			has_country_flag = SWE_AI_RANDOM_COMINTERN
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+	
+	ideas = {
+		SWE_hilding_hagberg = 10
+	}
+
+	ai_national_focuses = {
+		SWE_folkhemmet #jan 1 - march 11 (1936)
+		SWE_building_tech #march 11 - july 29
+		SWE_infr #july 29 - oct 7
+		SWE_politics
+		SWE_inernational_com
+		SWE_cominterm
+		SWE_com_militias
+		SWE_join_com
+		SWE_internal
+		SWE_unemployment
+		SWE_radical_reform
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		SWE_inernational_com = 1.0
+		SWE_cominterm = 1.0
+		SWE_radical_reform = 1.0
+	}
+}
+Swedish_fascist = {
+	name = "Swedish Fascism"
+	desc = "Dominium Maris Baltici!"
+
+	enable = {
+		original_tag = SWE
+		OR = {
+			has_game_rule = {
+				rule = SCA_sweden_ai_behavior
+				option = FASCIST
+			}
+			has_country_flag = SWE_AI_RANDOM_FASCIST
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+	
+	ideas = {
+		SWE_per_engdahl = 10
+	}
+
+	ai_national_focuses = {
+		SWE_folkhemmet #jan 1 - march 11 (1936)
+		SWE_building_tech #march 11 - july 29
+		SWE_infr #july 29 - oct 7
+		SWE_politics
+		SWE_no_com
+		SWE_nsp
+		SWE_military_trade
+		SWE_internal
+		SWE_repeal_eden
+		SWE_defence
+		SWE_navy_staff
+		SWE_air_defence
+		SWE_history
+		SWE_expand_stock
+		SWE_military_spending
+		SWE_aland
+		SWE_trade_ger
+		SWE_permittenttrafiken
+		SWE_lessons
+		SWE_baltic
+		SWE_tank_acquisition
+		SWE_exp_civ
+		SWE_volunteers
+		SWE_expanded_mil
+		SWE_expand_home
+		SWE_expand_lotta
+		SWE_expand_mines
+		SWE_mil_fac
+		SWE_reform_empire
+		SWE_north
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		SWE_no_com = 1.0
+		SWE_nsp = 1.0
+		SWE_repeal_eden = 1.0
+	}
+}

@@ -1,0 +1,141 @@
+﻿New_Italian_nonaligned = {
+	name = "Italian Monarchist Plan"
+	desc = "Viva il Re!"
+
+	enable = {
+		original_tag = ITA
+		has_cosmetic_tag = NEW_ITALY #Means that their focus tree has changed
+		OR = {
+			has_game_rule = {
+				rule = DARK_new_italy_ai_behavior
+				option = NONALIGNED
+			}
+			has_country_flag = NEW_ITA_AI_RANDOM_NONALIGNED
+		}
+	}
+	
+	abort = {
+		OR = {
+			is_subject = yes
+			has_government = fascism
+		}
+	}
+	
+	ideas = {
+		
+	}
+
+	ai_national_focuses = {
+		NEW_ITA_new_government
+		NEW_ITA_the_monarchy
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		NEW_ITA_the_pendulum = 0
+		NEW_ITA_leftism = 0
+		NEW_ITA_the_monarchy = 1.0
+	}
+}
+New_Italian_democratic = {
+	name = "Italian Democratic Plan"
+	desc = "We have seen the evils of fascism firsthand and we will fight them to our last dying breath!"
+
+	enable = {
+		original_tag = ITA
+		has_cosmetic_tag = NEW_ITALY #Means that their focus tree has changed
+		OR = {
+			has_game_rule = {
+				rule = DARK_new_italy_ai_behavior
+				option = DEMOCRATIC
+			}
+			has_country_flag = NEW_ITA_AI_RANDOM_DEMOCRATIC
+		}
+	}
+	
+	abort = {
+		OR = {
+			is_subject = yes
+			has_government = fascism
+		}
+	}
+	
+	ideas = {
+		
+	}
+
+	ai_national_focuses = {
+		NEW_ITA_new_government
+		NEW_ITA_leftism
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		NEW_ITA_the_pendulum = 0
+		NEW_ITA_leftism = 1.0
+		NEW_ITA_the_monarchy = 0
+	}
+}
+New_Italian_communist = {
+	name = "Italian Communist Plan"
+	desc = "We have been failed by democracy, fascism and our king. Perhaps a different approach is required."
+
+	enable = {
+		original_tag = ITA
+		has_cosmetic_tag = NEW_ITALY #Means that their focus tree has changed
+		OR = {
+			has_game_rule = {
+				rule = DARK_new_italy_ai_behavior
+				option = COMMUNIST
+			}
+			has_country_flag = NEW_ITA_AI_RANDOM_COMMUNIST
+		}
+	}
+	
+	abort = {
+		OR = {
+			is_subject = yes
+			has_government = fascism
+		}
+	}
+	
+	ideas = {
+		
+	}
+
+	ai_national_focuses = {
+		NEW_ITA_new_government
+		NEW_ITA_the_pendulum
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		NEW_ITA_the_pendulum = 1.0
+		NEW_ITA_leftism = 0
+		NEW_ITA_the_monarchy = 0
+	}
+}

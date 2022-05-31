@@ -1,0 +1,905 @@
+characters={
+#Country Leaders
+	DEN_frits_clausen={
+		name=DEN_frits_clausen
+		portraits={
+			civilian={
+				large="gfx/leaders/YUG/portrait_milutin_nedic.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1"
+			id=10000
+		}
+	}
+	DEN_aksel_larsen={
+		name=DEN_aksel_larsen
+		portraits={
+			civilian={
+				large="gfx/leaders/AST/Portrait_Australia_Earle_Page.dds"
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			expire="1965.1.1"
+			id=10001
+		}
+	}
+	DEN_john_christmas_moller={
+		name=DEN_john_christmas_moller
+		portraits={
+			civilian={
+				large="gfx/leaders/NZL/Portrait_New_Zeeland_Michael_Joseph_Savage.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	DEN_thorvald_stauning={
+		name = DEN_thorvald_stauning
+		portraits={
+			civilian={
+				large="gfx/leaders/DEN/Portrait_Denmark_Thorvald_Stauning.dds"
+			}
+		}
+		country_leader={
+			ideology=neutral_socialism
+			expire="1965.1.1"
+			id=10002
+		}
+		country_leader={
+			ideology=socialism
+			expire="1965.1.1"
+			id=10002
+		}
+	}
+	
+	DEN_erik_scavenius={
+		name=DEN_erik_scavenius
+		portraits={
+			civilian={
+				large="gfx/leaders/DEN/Portrait_Denmark_Erik_Scavenius.dds"
+			}
+		}
+		country_leader={
+			ideology=neutral_socialism
+			expire="1965.1.1"
+			id=10006
+		}
+		country_leader={
+			ideology=socialism
+			expire="1965.1.1"
+			id=10006
+		}
+	}
+	DEN_peter_rochegune_munch={
+		name=DEN_peter_rochegune_munch
+		advisor={
+			slot = political_advisor
+			idea_token = DEN_peter_rochegune_munch
+			allowed = {
+				original_tag = DEN
+			}			
+			available = {
+				has_war = no
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { staunch_pacifist }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		country_leader={
+			ideology=neutral_socialism
+			expire="1965.1.1"
+			id=10008
+		}
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_europe_1"
+				large="gfx/leaders/ENG/Portrait_Britain_Andrew_Cunningham.dds"
+			}
+		}
+	}
+	DEN_kai_moltke={
+		name=DEN_kai_moltke
+		portraits={
+			civilian={
+				large="gfx/leaders/ITA/Portrait_Italy_Generic_1.dd"
+			}
+		}
+		country_leader={
+			ideology=anarchist_communism
+			expire="1965.1.1"
+			id=10007
+		}
+	}
+	DEN_workers_committee={
+		name=DEN_workers_committee
+		portraits={
+			civilian={
+				large="gfx/leaders/SPR/portrait_spr_anarchist_commune.dds"
+			}
+		}
+		country_leader={
+			ideology=anarchist_communism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	DEN_christian_x={
+		name=DEN_christian_x
+		portraits={
+			civilian={
+				large="gfx/leaders/SCA/Portrait_SCA_Christian_X.dds"
+			}
+		}
+		country_leader={
+			ideology=rexism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+	DEN_henrik_kauffmann={
+		name=DEN_henrik_kauffmann
+		portraits={
+			civilian={
+				large="gfx/leaders/SCA/Portrait_SCA_Henrik_Kauffmann.dds"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	DEN_aksel_svane={
+		name=DEN_aksel_svane
+		portraits={
+			civilian={
+				large="gfx/leaders/BUL/Portrait_Bulgaria_Georgi_Dimitrov.dds"
+			}
+		}
+		country_leader={
+			ideology=neutral_socialism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	DEN_kai_nielson={
+		name=DEN_kai_nielson
+		portraits={
+			civilian={
+				large="gfx/leaders/NOR/Portrait_Norway_Vidkun_Quisling.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	DEN_augo_lynge={
+		name=DEN_augo_lynge
+		portraits={
+			civilian={
+				large="gfx/leaders/YUG/Portrait_Yugoslavia_Milan_Grol.dds"
+			}
+		}
+		country_leader={
+			ideology=leninism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+#Generals and Admirals
+	DEN_wilhelm_wain_prior={
+		name=DEN_wilhelm_wain_prior
+		portraits={
+			army={
+				large="gfx/leaders/SCA/Portrait_SCA_William_Prior.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_2.dds"
+			}
+		}
+		field_marshal={
+			traits={ inflexible_strategist career_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id=-1
+		}
+	}
+	DEN_frederick_essemann={
+		name=DEN_frederick_essemann
+		portraits={
+			army={
+				large="gfx/leaders/Europe/portrait_europe_generic_navy_400.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_1.dds"
+			}
+		}
+		corps_commander={
+			traits={ }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id=-1
+		}
+	}
+	DEN_hans_rolsted={
+		name=DEN_hans_rolsted
+		portraits={
+			army={
+				large="gfx/leaders/SCA/Portrait_SCA_Hans_Rolsted.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_3.dds"
+			}
+		}
+		corps_commander={
+			traits={ career_officer skilled_staffer organizer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=-1
+		}
+	}
+	DEN_aage_vedel={
+		name=DEN_aage_vedel
+		portraits={
+			navy={
+				large="gfx/leaders/ENG/Portrait_Britain_Generic_navy_3.dds"
+				small="gfx/interface/ideas/idea_generic_navy_europe_2.dds"
+			}
+		}
+		navy_leader={
+			traits={ navy_career_officer spotter mine_layer inshore_fighter green_water_expert }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			maneuvering_skill = 2
+			coordination_skill = 3
+			legacy_id=-1
+		}
+	}
+	
+	DEN_eske_brun={
+		name=DEN_eske_brun
+		portraits={
+			army={
+				large="gfx/leaders/CZE/Portrait_Czech_Klement_Gottwald.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_4.dds"
+			}
+		}
+		#Made Field Marshal by event
+	}
+	DEN_ib_poulsen={
+		name=DEN_ib_poulsen
+		portraits={
+			army={
+				large="gfx/leaders/HOL/portrait_hol_prins_bernhard.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_5.dds"
+			}
+		}
+		#Made Corps Commander by event
+	}
+	
+	
+#Chiefs of Staff
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+	DEN_ebbe_gortz={
+		name=DEN_ebbe_gortz
+		advisor={
+			slot = army_chief
+			idea_token = DEN_ebbe_gortz
+			allowed = {
+					original_tag = DEN
+				}
+				traits = {
+					army_chief_offensive_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_1"
+			}
+		}
+	}
+	DEN_charles_rye={
+		name=DEN_charles_rye
+		advisor={
+			slot = army_chief
+			idea_token = DEN_charles_rye
+			allowed = {
+					original_tag = DEN
+				}
+				traits = {
+					army_chief_defensive_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+	}
+
+	DEN_carl_hammerich={
+		name=DEN_carl_hammerich
+		advisor={
+			slot = navy_chief
+			idea_token = DEN_carl_hammerich
+			allowed = {
+					original_tag = DEN
+				}
+				traits = {
+					navy_chief_decisive_battle_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+	}
+	DEN_hans_wurmbach={
+		name=DEN_hans_wurmbach
+		advisor={
+			slot = navy_chief
+			idea_token = DEN_hans_wurmbach
+			allowed = {
+					original_tag = DEN
+				}
+				traits = {
+					navy_anti_submarine_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+	}
+	
+	DEN_paul_sommer={
+		name=DEN_paul_sommer
+		advisor={
+			slot = air_chief
+			idea_token = DEN_paul_sommer
+			allowed = {
+					original_tag = DEN
+				}
+				traits = {
+					air_chief_ground_support_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+	}
+	DEN_kaj_birksted={
+		name=DEN_kaj_birksted
+		advisor={
+			slot = air_chief
+			idea_token = DEN_kaj_birksted
+			allowed = {
+					original_tag = DEN
+				}
+				traits = {
+					air_air_combat_training_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+	}
+#High Command
+	DEN_erik_bille_brahe={
+		name=DEN_erik_bille_brahe
+		advisor={
+			slot = high_command
+			idea_token = DEN_erik_bille_brahe
+			ledger = army
+			allowed = {
+				original_tag = DEN
+			}
+			traits = {
+				army_artillery_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_erik_bille-brahe"
+			}
+		}
+	}
+	DEN_christian_frederik_von_schalburg={
+		name=DEN_christian_frederik_von_schalburg
+		advisor={
+			slot = high_command
+			idea_token = DEN_christian_frederik_von_schalburg
+			ledger = army
+			allowed = {
+				original_tag = DEN
+			}
+			on_add = {
+				add_popularity = { ideology = fascism popularity = 0.05 }
+			}
+			traits = {
+				army_logistics_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_christian_schalberg"
+			}
+		}
+	}
+	DEN_erik_leschly={
+		name=DEN_erik_leschly
+		advisor={
+			slot = high_command
+			idea_token = DEN_erik_leschly
+			ledger = army
+			allowed = {
+				original_tag = DEN
+			}
+			traits = {
+				army_cavalry_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_erik_leschly"
+			}
+		}
+	}
+	DEN_hjalmar_rechnitzer={  #Chief of Naval Command, 1932-1940
+		name=DEN_hjalmar_rechnitzer
+		advisor={
+			slot = high_command
+			idea_token = DEN_hjalmar_rechnitzer
+			ledger = navy
+				allowed = {
+					original_tag = DEN
+				}
+				traits = {
+					navy_fleet_logistics_1
+				}
+				cost =  50
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+	}
+	DEN_emmanuel_crevecoeur={  #Chief of Naval Command, 1940-1941
+		name=DEN_emmanuel_crevecoeur
+		advisor={
+			slot = high_command
+			idea_token = DEN_emmanuel_crevecoeur
+			ledger = navy
+				allowed = {
+					original_tag = DEN
+				}
+				traits = {
+					navy_naval_air_defense_2
+				}
+				cost =  50
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+	}
+	DEN_axel_georg={ #Prince Axel Georg, Admiral of the Danish Navy
+		name = DEN_axel_georg
+		advisor={
+			slot = high_command
+			idea_token = DEN_axel_georg
+			ledger = navy
+				allowed = {
+					original_tag = DEN
+				}
+				traits = {
+					navy_chief_maneuver_2
+				}
+				cost =  50
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+	}
+	DEN_wolfgang_fabian={
+		name = DEN_wolfgang_fabian
+		advisor={
+			slot = high_command
+			idea_token = DEN_wolfgang_fabian
+			ledger = air
+				allowed = {
+					original_tag = DEN
+				}
+				traits = {
+					air_chief_safety_1
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+	}
+	DEN_christian_forslev = { #Chief of the Army Aviation Troops 1932-1945
+		name = DEN_christian_forslev
+		advisor={
+			slot = high_command
+			idea_token = DEN_christian_forslev
+			ledger = air
+				allowed = {
+					original_tag = DEN
+				}
+				traits = {
+					air_close_air_support_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+	}
+	DEN_asger_grandjean = { #Chief of the Naval Air Service 1918-1941
+		name = DEN_asger_grandjean
+		advisor={
+			slot = high_command
+			idea_token = DEN_asger_grandjean
+			ledger = air
+				allowed = {
+					original_tag = DEN
+				}
+				traits = {
+					air_naval_strike_3
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+	}
+#Theorists
+	DEN_kristian_knudtzon={
+		name = DEN_kristian_knudtzon
+		advisor={
+			slot = theorist
+			idea_token = DEN_kristian_knudtzon
+			ledger = army
+				allowed = {
+					original_tag = DEN
+				}
+				traits = {
+					military_theorist
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		portraits={
+			army={
+				small="GFX_idea_kristian_knudtzon"
+			}
+		}
+	}
+	DEN_hans_lunding={
+		name = DEN_hans_lunding
+		advisor={		
+			slot = theorist
+			idea_token = DEN_hans_lunding
+			ledger = navy
+			allowed = {
+				original_tag = DEN
+			}				
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+	}
+	DEN_c_forslev={
+		name=DEN_c_forslev
+		advisor={		
+			slot = theorist
+			idea_token = DEN_c_forslev
+			ledger = air
+			allowed = {
+				original_tag = DEN
+			}				
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+	}
+	
+#Advisors
+	DEN_thoger_thogersen={
+		name=DEN_thoger_thogersen
+		advisor={
+			slot = political_advisor
+			idea_token = DEN_thoger_thogersen
+			allowed = {
+				original_tag = DEN
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					has_completed_focus = DEN_go_com
+				}
+			}		
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+	}
+	DEN_vilhelm_fibiger={
+		name=DEN_vilhelm_fibiger
+		advisor={
+			slot = political_advisor
+			idea_token = DEN_vilhelm_fibiger
+			allowed = {
+				original_tag = DEN
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+	
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					has_completed_focus = DEN_defend_danish_home
+				}
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+	}
+	#DEN_peter_rochegune_munch is under Leaders
+	DEN_carl_vaernet={
+		name=DEN_carl_vaernet
+		advisor={
+			slot = political_advisor
+			idea_token = DEN_carl_vaernet
+			allowed = {
+				original_tag = DEN
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 10
+					has_completed_focus = DEN_go_fas
+				}
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+	}
+	
+	DEN_viggo_kampman={
+		name=DEN_viggo_kampman
+		advisor={
+			slot = political_advisor
+			idea_token = DEN_viggo_kampman
+			allowed  = {
+				original_tag  = DEN
+			}
+			traits  = {
+				smooth_talking_charmer 
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+	}
+	DEN_ejnar_warum={
+		name=DEN_ejnar_warum
+		advisor={
+			slot = political_advisor
+			idea_token = DEN_ejnar_warum
+			allowed  = {
+					original_tag  = DEN
+				}
+				traits  = {
+					captain_of_industry 
+				}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_western_european_2d"
+			}
+		}
+	}	
+	DEN_knud_kristensen={
+		name=DEN_knud_kristensen
+		advisor={
+			slot = political_advisor
+			idea_token = DEN_knud_kristensen
+			allowed  = {
+				original_tag  = DEN
+			}
+			traits  = {
+				backroom_backstabber 
+			}
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+	}
+	DEN_aage_falking={
+		name=DEN_aage_falking
+		advisor={
+			slot = political_advisor
+			idea_token = DEN_aage_falking
+			allowed  = {
+				original_tag  = DEN
+			}
+			traits  = { quartermaster_general }
+			ai_will_do  = {
+				factor  = 1.000
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_3"
+			}
+		}
+	}
+	DEN_hans_andersen={
+		name=DEN_hans_andersen
+		advisor={
+			slot = political_advisor
+			idea_token = DEN_hans_andersen
+			allowed  = {
+				original_tag  = DEN
+			}
+			traits  = { head_of_intelligence }
+			ai_will_do  = {
+				factor  = 1.000
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+	}
+}

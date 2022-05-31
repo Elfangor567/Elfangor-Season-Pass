@@ -1,0 +1,599 @@
+characters={
+
+#Country Leaders
+	MAC_anastas_stephanoff={
+		name=MAC_anastas_stephanoff
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/portrait_europe_generic_8.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1965.1.1"
+			id=-1
+		}
+	}	
+	MAC_spiro_kitinchev={
+		name=MAC_spiro_kitinchev
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_12.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	MAC_petar_atsev={
+		name=MAC_petar_atsev
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/Portrait_Soviet_Konstantin_Rodzaevsky.dds"
+			}
+		}
+		country_leader={
+			ideology=moderatism
+			expire="1965.1.1"
+			id=-1
+		}
+	}	
+	MAC_dimitar_vlahov={
+		name=MAC_dimitar_vlahov
+		portraits={
+			civilian={
+				large="gfx/leaders/EYE/Portrait_EYE_europe_generic_operative_male_17.dds"
+			}
+		}
+		country_leader={
+			ideology=leninism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+#Generals and Admirals
+	MAC_milivoje_trbic={
+		name=MAC_milivoje_trbic
+		portraits={
+			army={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_17.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_1.dds"
+			}
+		}
+		field_marshal={
+			traits = { brilliant_strategist trait_mountaineer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id=-1
+		}
+	}
+	MAC_stojan_krstic={
+		name=MAC_stojan_krstic
+		portraits={
+			army={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_9.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_4.dds"
+			}
+		}
+		corps_commander={
+			traits = { }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id=-1
+		}
+	}
+
+#Chiefs of Staff
+	MAC_metodija_andonov={ #Partisan, First president of Macedonia after WW2, but he wasn't really a communist and wanted an independent Macedonia, so he was removed from power
+		name=MAC_metodija_andonov
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = MAC_metodija_andonov
+			allowed = { 
+				original_tag = MAC
+			}
+			
+			traits = { army_chief_defensive_3 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	MAC_mihailo_apostolski={ #Partisan General
+		name=MAC_mihailo_apostolski
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_1"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = MAC_mihailo_apostolski
+			allowed = { 
+				original_tag = MAC
+			}
+			
+			traits = { army_chief_planning_3 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	MAC_vasilije_trbic={ #Chetnik under Serbia during the Balkan Wars, flew reconaissance missions. Would become pro-Macedonian in the 1920's, although he also supported Yugoslavia as an entity
+		name=MAC_vasilije_trbic
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = MAC_vasilije_trbic
+			allowed = { 
+				original_tag = MAC
+			}
+			
+			traits = { air_chief_ground_support_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	MAC_kiro_gligorov={ #Prominent communist, chosen for prominence, not because he actually has any naval experience
+		name=MAC_kiro_gligorov
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = MAC_kiro_gligorov
+			allowed = { 
+				original_tag = MAC
+			}
+			
+			traits = { navy_chief_maneuver_1 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+
+#High Command
+	MAC_venko_markovski={ #Communist partisan, wrote several popular partisan marching songs during the war
+		name=MAC_venko_markovski
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_4"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MAC_venko_markovski
+			ledger = army
+			allowed = {
+				original_tag = MAC
+			}
+			
+			traits = { army_chief_morale_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MAC_metodi_shatorov={ #Partisan Communist, but a strongly anti-Yugoslavian (Serbian) one who favoured Bulgaria
+		name=MAC_metodi_shatorov
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MAC_metodi_shatorov
+			ledger = army
+			allowed = {
+				original_tag = MAC
+			}
+			
+			traits = { army_chief_organizational_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}	
+	MAC_tane_nikolov={ #VMRO member, inspector of all revolutionary divisions in Western Macedonia
+		name=MAC_tane_nikolov
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MAC_tane_nikolov
+			ledger = army
+			allowed = {
+				original_tag = MAC
+			}
+			
+			traits = { army_infantry_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MAC_mirce_acev={ #One of the leaders of the Macedonian Partisans
+		name=MAC_mirce_acev
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MAC_mirce_acev
+			ledger = army
+			allowed = {
+				original_tag = MAC
+			}
+			
+			traits = { army_concealment_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	MAC_nikola_janjicijevic={ #In charge of the Chetnik Kumanovo Brigade, Vardar Corps which I believe had at least some connection to the Chetnik Flying Corps
+		name=MAC_nikola_janjicijevic
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MAC_nikola_janjicijevic
+			ledger = air
+			allowed = {
+				original_tag = MAC
+			}
+			
+			traits = { air_air_superiority_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	MAC_bane_andreev={ #From Veles, Party secretary of Macedonia, believed that Macedons were unlikely to fight against the Bulgarians. Only relation to water is that he's from the River City of Veles
+		name=MAC_bane_andreev
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MAC_bane_andreev
+			ledger = navy
+			allowed = {
+				original_tag = MAC
+			}
+			
+			traits = { navy_screen_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	
+#Theorists
+	MAC_nikola_kirov={ #Veteran of the Balkan wars and early supporter of Macedonian Independence
+		name = MAC_nikola_kirov
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = MAC_nikola_kirov
+			ledger = army
+			allowed = {
+				original_tag = MAC
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MAC_lazar_kolisevski={ #Partisan in WW2, leading communist in Macedonia
+		name = MAC_lazar_kolisevski
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = MAC_lazar_kolisevski
+			ledger = air
+			allowed = {
+				original_tag = MAC
+			}
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MAC_veselinka_malinska={ #Leading female partistan, director of Radio Skopje 1952-1961 (I can't really find any actual Macedonian sailors)
+		name = MAC_veselinka_malinska
+		gender = female
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_female_europe"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = MAC_veselinka_malinska
+			ledger = navy
+			allowed = {
+				original_tag = MAC
+			}
+			
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+#Advisors
+	MAC_vasil_eschoff={ #Early MPO supporter and its second president
+		name=MAC_vasil_eschoff
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAC_vasil_eschoff
+			allowed = {
+				original_tag = MAC
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+			}
+		}
+	}
+	MAC_kuzman_pitu={ #Partisan and one of the organizers of the Peoples's Liberation Struggle in Macedonia
+		name=MAC_kuzman_pitu
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAC_kuzman_pitu
+			allowed = {
+				original_tag = MAC
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					is_subject = no
+					has_completed_focus = internationalism_focus
+				}
+			}
+		}
+	}
+	MAC_ivan_mihajlov={ #Leader of the VMRO, continued to fight for Macedonian independence even after WW2
+		name=MAC_ivan_mihajlov
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAC_ivan_mihajlov
+			allowed = {
+				original_tag = MAC
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					is_subject = no
+					has_completed_focus = nationalism_focus
+				}
+			}
+		}
+	}	
+	
+	MAC_andjelko_krstic={ #Former Serbian Chetnik, lived in Skopje as an editor and writer
+		name=MAC_andjelko_krstic
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_western_european_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAC_andjelko_krstic
+			allowed = {
+				original_tag = MAC
+			}
+			
+			traits = { editor }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	MAC_pavel_shatev={ #Communist activist and co-founder of the IMRO (United)
+		name=MAC_pavel_shatev
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAC_pavel_shatev
+			allowed = {
+				original_tag = MAC
+			}
+			
+			traits = { backroom_backstabber }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	MAC_panko_brashnarov={ #Former Serbian Chetnik, lived in Skopje as an editor and writer
+		name=MAC_panko_brashnarov
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAC_panko_brashnarov
+			allowed = {
+				original_tag = MAC
+			}
+			
+			traits = { education_reformer }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	MAC_dimitrija_cupovski={ #Former Serbian Chetnik, lived in Skopje as an editor and writer
+		name=MAC_dimitrija_cupovski
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAC_dimitrija_cupovski
+			allowed = {
+				original_tag = MAC
+			}
+			
+			traits = { popular_figurehead }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	MAC_mencha_karnicheva={ #Wife of Ivan Mihailov, assassinated Todor Panitsa in 1925
+		name=MAC_mencha_karnicheva
+		gender = female
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_female_arab"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAC_mencha_karnicheva
+			allowed = {
+				original_tag = MAC
+			}
+			
+			traits = { head_of_intelligence_female }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}	
+}

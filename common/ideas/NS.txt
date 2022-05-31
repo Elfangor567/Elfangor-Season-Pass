@@ -1,0 +1,7 @@
+ideas = { # Ideas of Quisling Norway
+
+	country = { }
+	
+	#Everything has been moved to Characters, this file is kept only in case we end up needing it again
+	
+}

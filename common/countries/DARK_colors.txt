@@ -1,0 +1,9 @@
+﻿#reload countrycolors
+AOI = {
+	color = rgb { 0  255  137 }
+	color_ui = rgb { 0 129 69 }
+}
+MTA = {
+	color = rgb { 121 121 121 }
+	color_ui = rgb { 197 197 197 }
+}

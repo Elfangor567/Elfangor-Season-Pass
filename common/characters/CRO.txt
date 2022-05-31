@@ -1,0 +1,545 @@
+characters={
+## ONLY LEADERS I'M ADDING ARE THE COUNTRY LEADERS/IDEOLOGY REFORMERS/HEAD OF INTELLIGENCE, EVERYTHING ELSE IS PARADOX, FOR BETTER OR WORSE
+
+#Country Leaders
+	CRO_ante_pavelic={
+		name=CRO_ante_pavelic
+		portraits={
+			civilian={
+				large=GFX_Portrait_Croatia_Ante_Pavelic
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			id=-1
+		}
+	}	
+	#CRO_nikola_mandic, Created in YUG for some reason
+	CRO_pavle_gregoric={
+		name=CRO_pavle_gregoric
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/Portrait_Soviet_Dmitri_Danilovich_Lelyushenko.dds"
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			expire="1965.1.1"
+			id=-1
+		}
+	}	
+	CRO_ivan_subasic={
+		name=CRO_ivan_subasic
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_19.dds"
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		country_leader={
+			ideology=centrism
+			expire="1965.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_ivan_subasic
+			allowed = {
+				original_tag = CRO
+			}
+			
+			traits = { backroom_backstabber }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	
+#Generals and Admirals
+	
+
+#Chiefs of Staff
+	CRO_vladimir_laxa={ #From PDX
+		name=CRO_vladimir_laxa
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_4"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = CRO_vladimir_laxa
+			allowed = { 
+				original_tag = CRO
+			}
+			
+			traits = { army_chief_defensive_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	CRO_fedor_dragojlov={ #From PDX
+		name=CRO_fedor_dragojlov
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = CRO_fedor_dragojlov
+			allowed = { 
+				original_tag = CRO
+			}
+			
+			traits = { army_chief_maneuver_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	CRO_friedrich_navratil={ #From PDX
+		name=CRO_friedrich_navratil
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = CRO_friedrich_navratil
+			allowed = { 
+				original_tag = CRO
+			}
+			
+			traits = { air_chief_reform_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	CRO_adalbert_rogulja={ #From PDX
+		name=CRO_adalbert_rogulja
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = CRO_adalbert_rogulja
+			allowed = { 
+				original_tag = CRO
+			}
+			
+			traits = { air_chief_ground_support_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	CRO_edgar_angeli={ #From PDX
+		name=CRO_edgar_angeli
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = CRO_edgar_angeli
+			allowed = { 
+				original_tag = CRO
+			}
+			
+			traits = { navy_chief_maneuver_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	CRO_nikola_steinfl={ #From PDX
+		name=CRO_nikola_steinfl
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = CRO_nikola_steinfl
+			allowed = { 
+				original_tag = CRO
+			}
+			
+			traits = { navy_chief_decisive_battle_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+
+#High Command
+	CRO_slavko_stancer={ #From PDX
+		name=CRO_slavko_stancer
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRO_slavko_stancer
+			ledger = army
+			allowed = {
+				original_tag = CRO
+			}
+			
+			traits = { army_artillery_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	CRO_vilko_begic={ #From PDX
+		name=CRO_vilko_begic
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRO_vilko_begic
+			ledger = army
+			allowed = {
+				original_tag = CRO
+			}
+			
+			traits = { army_armored_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	CRO_slavko_kvaternik={ #From PDX
+		name=CRO_slavko_kvaternik
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRO_slavko_kvaternik
+			ledger = army
+			allowed = {
+				original_tag = CRO
+			}
+			
+			traits = { army_regrouping_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	CRO_vladimir_kren={ #From PDX
+		name=CRO_vladimir_kren
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRO_vladimir_kren
+			ledger = air
+			allowed = {
+				original_tag = CRO
+			}
+			
+			traits = { air_air_superiority_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	CRO_djuro_jakcin={ #From PDX
+		name=CRO_djuro_jakcin
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRO_djuro_jakcin
+			ledger = navy
+			allowed = {
+				original_tag = CRO
+			}
+			
+			traits = { navy_screen_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	
+#Theorists
+	CRO_sismundo_pejacevic={ #From PDX
+		name = CRO_sismundo_pejacevic
+		portraits={
+			army={
+				small="GFX_idea_eugen_bircher"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = CRO_sismundo_pejacevic
+			ledger = army
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	CRO_mihajlo_tomasic={ #From PDX
+		name = CRO_mihajlo_tomasic
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = CRO_mihajlo_tomasic
+			ledger = air
+			allowed = {
+				original_tag = CRO
+			}
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	CRO_ivan_crnkovic={ #From PDX
+		name = CRO_ivan_crnkovic
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = CRO_ivan_crnkovic
+			ledger = navy
+			allowed = {
+				original_tag = CRO
+			}
+			
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+#Advisors
+	CRO_branimir_jelic={ #Early Ustashe member and lifelong far-right activist
+		name=CRO_branimir_jelic
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_branimir_jelic
+			allowed = {
+				original_tag = CRO
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					is_subject = no
+					has_completed_focus = nationalism_focus					
+				}
+			}
+		}
+	}
+	CRO_andrija_hebrang={ #Croatian Communist, possibly was Stalin's choice to replace Tito
+		name=CRO_andrija_hebrang
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_andrija_hebrang
+			allowed = {
+				original_tag = CRO
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					is_subject = no
+					has_completed_focus = internationalism_focus					
+				}
+			}
+		}
+	}
+	CRO_vladko_macek={ #Vladko Maček, leader of the Croatian Peasant Party
+		name=CRO_vladko_macek
+		portraits={
+			army={
+				large="GFX/leaders/CRO/portrait_CRO_vladko_macek.dds"
+				small="GFX_idea_generic_democratic_reformer_western_european_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_vladko_macek
+			allowed = {
+				original_tag = CRO
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+			}
+		}
+	}	
+	CRO_eugen_dido_kvaternik={ #Chief of Internal Security for Croatia in WW2, after the war he would continue fighting against Tito from Argentina
+		name=CRO_eugen_dido_kvaternik
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_western_european_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_eugen_dido_kvaternik
+			allowed = {
+				original_tag = CRO
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	CRO_alojzije_stepinac={ #From PDX
+		name=CRO_alojzije_stepinac
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_alojzije_stepinac
+			allowed = {
+				original_tag = CRO
+			}
+			
+			traits = { ideological_crusader }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	CRO_gaspar_njegovan={ #From PDX
+		name=CRO_gaspar_njegovan
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRO_gaspar_njegovan
+			allowed = {
+				original_tag = CRO
+			}
+			
+			traits = { captain_of_industry }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+}

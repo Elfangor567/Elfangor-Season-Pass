@@ -1,0 +1,604 @@
+characters={
+#Country Leaders
+	SOM_olol_dinke={
+		name=SOM_olol_dinke
+		portraits={
+			civilian={
+				large="gfx/leaders/SYR/Portrait_Arabia_Generic_land_1.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+		field_marshal={
+			traits = { brilliant_strategist cavalry_officer offensive_doctrine cavalry_leader commando skirmisher desert_fox }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 6
+			planning_skill = 4
+			logistics_skill = 5
+			legacy_id=30311
+			visible = {
+				NOT = {
+					is_subject_of = ETH
+					OR = {
+						has_country_leader = { ruling_only = yes character = SOM_omar_samanthar }
+						has_country_leader = { ruling_only = yes character = SOM_ali_yusuf_kenadid }
+					}
+				}
+			}
+		}
+	}
+	SOM_osman_mahamuud={
+		name=SOM_osman_mahamuud
+		portraits={
+			civilian={
+				large="gfx/leaders/DARK/Portrait_DARK_Osman_Mahamuud.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	SOM_omar_samanthar={
+		name=SOM_omar_samanthar
+		portraits={
+			civilian={
+				large="gfx/leaders/SYR/Portrait_Arabia_Generic_land_2.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			id=-1
+		}
+		field_marshal = {
+			traits = { brilliant_strategist cavalry_officer offensive_doctrine cavalry_leader cavalry_expert trickster desert_fox }
+			skill = 5
+			attack_skill = 6
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 5			
+			legacy_id=30310
+			visible = {
+				NOT = {
+					is_subject_of = ITA
+					OR = {
+						has_country_leader = { ruling_only = yes character = SOM_olol_dinke }
+						has_country_leader = { ruling_only = yes character = SOM_osman_mahamuud }
+					}
+				}
+			}
+		}
+	}
+	SOM_ali_yusuf_kenadid={
+		name=SOM_ali_yusuf_kenadid
+		portraits={
+			civilian={
+				large="gfx/leaders/YEM/portrait_yem_imam_yaha.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			id=-1
+		}
+	}	
+	SOM_aden_adde={
+		name=SOM_aden_adde
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_2.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	SOM_siad_barre={
+		name=SOM_siad_barre
+		portraits={
+			civilian={
+				large="gfx/leaders/DARK/Portrait_DARK_Siad_Barre.dds"
+			}
+		}
+		country_leader={
+			ideology=leninism
+			expire="1965.1.1"
+			id=-1
+		}
+		corps_commander={
+			traits = { brilliant_strategist harsh_leader infantry_officer infantry_leader desert_fox }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id=-1
+		}
+	}
+	
+#Generals and Admirals
+
+#Chiefs of Staff
+	SOM_mohamoud_shire={ #Former ally of the 'Mad Mullah', respected leader of the Warsangali clan
+		name=SOM_mohamoud_shire
+		portraits={
+			army={
+				small="GFX_idea_mohamoud_shire"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SOM_mohamoud_shire
+			allowed = {
+				original_tag = SOM
+			}
+			traits = { army_chief_morale_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	SOM_ali_abdi={ #Early member of the Somali Youth League
+		name=SOM_ali_abdi
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_2"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = SOM_ali_abdi
+			allowed = {
+				original_tag = SOM
+			}
+			traits = { navy_chief_commerce_raiding_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	SOM_sultan_diiriye={ #Garxajis ally of of Olol Dinle
+		name=SOM_sultan_diiriye
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_arab_2"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = SOM_sultan_diiriye
+			allowed = {
+				original_tag = SOM
+			}
+			traits = { air_chief_night_operations_1 }
+			cost = 75
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#High Command
+	SOM_jama_korshel={ #Later member of the Revolutionary council
+		name=SOM_jama_korshel
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SOM_jama_korshel
+			ledger = army
+			allowed = {
+				original_tag = SOM
+			}
+			traits = { army_chief_organizational_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SOM_abdullah_fadil={ #Son of parents who served under the Sultanate of Hobyo, later Revolutionary Council member
+		name=SOM_abdullah_fadil
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SOM_abdullah_fadil
+			ledger = army
+			allowed = {
+				original_tag = SOM
+			}
+			traits = { army_chief_offensive_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SOM_farah={ #General of Mohamoud Ali Shire, later Osman Mahaumuud
+		name=SOM_farah
+		portraits={
+			army={
+				small="GFX_idea_generic_army_arab_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SOM_farah
+			ledger = army
+			allowed = {
+				original_tag = SOM
+			}
+			traits = { army_infantry_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	SOM_yasin_sharmake={ #First leader/founder of the Somali Youth League
+		name=SOM_yasin_sharmake
+		portraits={
+			navy={
+				small="GFX_idea_generic_air_arab_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SOM_yasin_sharmake
+			ledger = navy
+			allowed = {
+				original_tag = SOM
+			}
+			traits = { navy_screen_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SOM_mahamed_mahad={ #Founder of the Somali Youth League
+		name=SOM_mahamed_mahad
+		portraits={
+			navy={
+				small="GFX_idea_generic_navy_african_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SOM_mahamed_mahad
+			ledger = navy
+				allowed = {
+					original_tag = SOM
+				}
+				traits = { navy_anti_submarine_2 }
+				cost =  100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	
+	SOM_mohamed_nur={ #Founder of the Somali Youth League
+		name = SOM_mohamed_nur
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SOM_mohamed_nur
+			ledger = air
+				allowed = {
+					original_tag = SOM
+				}
+				traits = { air_air_superiority_1 }
+				cost = 75
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	SOM_osman_rage={ #Founder of the Somali Youth League
+		name = SOM_osman_rage
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SOM_osman_rage
+			ledger = air
+			allowed = {
+				original_tag = SOM
+			}
+			traits = { air_strategic_bombing_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+#Theorists
+	SOM_sakhawadin={ #Founder of the Somali Youth Club (Predecessor of the Somali Youth League)
+		name = SOM_sakhawadin
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_2"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = SOM_sakhawadin
+			ledger = army
+			allowed = {
+				original_tag = SOM
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SOM_shermarke={ #Second President of Somalia
+		name = SOM_shermarke
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_1"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = SOM_shermarke
+			ledger = navy
+			allowed = {
+				original_tag = SOM
+			}				
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+		}
+	}
+	SOM_issa={ #Founder of the Somali Youth League
+		name = SOM_issa
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_6"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = SOM_issa
+			ledger = air
+			allowed = {
+				original_tag = SOM
+			}				
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+		}
+	}
+	
+#Advisors
+	SOM_haji_yusuf={ #First President of the Somali National Assembly
+		name=SOM_haji_yusuf
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SOM_haji_yusuf
+			allowed = {
+				original_tag = SOM
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	SOM_hussein_afrah={ #Straight talking member of the Revolutionary Council
+		name=SOM_hussein_afrah
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SOM_hussein_afrah
+			allowed = {
+				original_tag = SOM
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	SOM_osman_kenadid={ #Brother of Sultan Ali Kenadid, inventor of the Somali Script
+		name=SOM_osman_kenadid
+		portraits={
+			army={
+				small="GFX_idea_osman_kenadid"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SOM_osman_kenadid
+			allowed = {
+				original_tag = SOM
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { staunch_monarchist }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	SOM_biixi_fooley={ #An Ogaden Somali Ally of Olol Dinle's
+		name=SOM_biixi_fooley
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SOM_biixi_fooley
+			allowed = {
+				original_tag = SOM
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	
+	SOM_haji_omar={ #Minister of Economic Affairs
+		name=SOM_haji_omar
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SOM_haji_omar
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { financial_expert }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	SOM_jama_qalib={ #Early member of the Somali Youth League
+		name=SOM_jama_qalib
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SOM_jama_qalib
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { silent_workhorse }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	SOM_sheikh_hussein={ #Prominent Somali Youth League member and president of Somalia twice
+		name=SOM_sheikh_hussein
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SOM_sheikh_hussein
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { popular_figurehead }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	SOM_abdulrahim_farah={ #Involved in the civilian administration of Somalia, notably as the Director of the Somali Information Service
+		name=SOM_abdulrahim_farah
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SOM_abdulrahim_farah
+			allowed = {
+				original_tag = SOM
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+}

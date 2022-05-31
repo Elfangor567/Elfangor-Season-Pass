@@ -1,0 +1,30 @@
+DARK_will_dem_USA_support = {
+	any_other_country = {
+		original_tag = USA
+		OR = {
+			has_government = democratic
+			has_government = communism
+		}
+		NOT = {
+			has_war_with = ROOT
+		}
+		OR = {
+			has_opinion = { target = ROOT value > 74 }
+			is_in_faction_with = ROOT
+			has_subject = ROOT
+		}
+	}
+}
+DARK_will_dem_USA_not_support = {
+	any_other_country = {
+		original_tag = USA
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+			has_war_with = ROOT
+			has_opinion = { target = ROOT value < 75 }
+		}
+		NOT = { is_in_faction_with = ROOT }
+		NOT = { has_subject = ROOT }
+	}
+}

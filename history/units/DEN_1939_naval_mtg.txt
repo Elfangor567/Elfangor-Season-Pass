@@ -1,0 +1,86 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Den Danske Flåde"			
+		naval_base = 6287  # Copenhagen
+		task_force = {
+			name = "Den Danske Flåde"
+			location = 6287  # Copenhagen			
+			ship = { name = "HDMS Niels Iuel" pride_of_the_fleet = yes definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = DEN version_name = "Niels Iuel Class" } } }
+			ship = { name = "HDMS Peder Skram" definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = DEN version_name = "Herluf Trolle Class" } } }
+						
+			ship = { name = "HDMS Hekla" definition = light_cruiser equipment = { ship_hull_light_1 = { amount = 1 owner = DEN version_name = "Hekla Class" } } }
+			
+			ship = { name = "HDMS Grønsund" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Grønsund Class" } } }
+			
+			ship = { name = "HDMS Beskytteren" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Beskytteren Class" } } }
+			
+			ship = { name = "HDMS Maagen" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Maagen Class" } } }
+			
+			ship = { name = "HDMS Hejmdal" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Hejmdal Class" } } }
+			
+			ship = { name = "HDMS Ternen" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Ternen Class" } } }
+			
+			ship = { name = "HDMS Freja" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Freja Class" } } }
+			
+			ship = { name = "HDMS Hvidbjørnen" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Hvidbjørnen Class" } } }
+			
+			ship = { name = "HDMS Ingolf" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Ingolf Class" } } }			
+			
+			ship = { name = "HDMS Hvalrossen" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Hvalrossen Class" } } }
+			
+			ship = { name = "HDMS Dragen" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Dragen Class" } } }
+			ship = { name = "HDMS Hvalen" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Dragen Class" } } }
+			ship = { name = "HDMS Laxen" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Dragen Class" } } }
+			
+			ship = { name = "HDMS Glenten" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Glenten Class" } } }
+			ship = { name = "HDMS Høgen" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Glenten Class" } } }
+			ship = { name = "HDMS Ørnen" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Glenten Class" } } }
+			
+			ship = { name = "HDMS Springeren" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Springeren II Class" } } } #Represents the ships refitted to be minesweepers
+			ship = { name = "HDMS Støren" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Springeren II Class" } } }
+			ship = { name = "HDMS Søløven" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Springeren II Class" } } }
+			ship = { name = "HDMS Søhunden" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Springeren II Class" } } }
+			ship = { name = "HDMS Havhesten" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Springeren II Class" } } }
+			ship = { name = "HDMS Narhvalen" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Springeren II Class" } } }
+			
+			ship = { name = "HDMS Makrelen" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Springeren Class" } } } #Represents the ships not refitted
+			ship = { name = "HDMS Nordkaperen" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Springeren Class" } } }
+			ship = { name = "HDMS Havkatten" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Springeren Class" } } }
+			ship = { name = "HDMS Sælen" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Springeren Class" } } }
+			
+			#Dedicated Minelayers/Minesweepers
+			ship = { name = "HDMS Lossen" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Lossen Class" } } }
+			
+			ship = { name = "HDMS Kvintus" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Minekran Class" } } }
+			ship = { name = "HDMS Sixtus" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Minekran Class" } } }
+			
+			ship = { name = "HDMS Henrik Gerner" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Henrik Gerner Class" } } }
+			
+			ship = { name = "HDMS Søløven II" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Søløven Class" } } }
+			ship = { name = "HDMS Søbjørnen" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Søløven Class" } } }
+			ship = { name = "HDMS Søulven" definition = SCA_gunboat equipment = { SCA_ship_hull_gunboat = { amount = 1 owner = DEN version_name = "Søløven Class" } } }
+			
+			
+			ship = { name = "HDMS Ran" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = DEN version_name = "B Class" } } }
+			ship = { name = "HDMS Triton" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = DEN version_name = "B Class" } } }
+			ship = { name = "HDMS Galathea" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = DEN version_name = "B Class" } } }
+			
+			ship = { name = "HDMS Rota" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = DEN version_name = "C Class" } } }			
+			ship = { name = "HDMS Bellona" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = DEN version_name = "C Class" } } }		
+			ship = { name = "HDMS Flora" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = DEN version_name = "C Class" } } }
+			
+			ship = { name = "HDMS Daphne" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = DEN version_name = "D Class" } } }
+			ship = { name = "HDMS Dryaden" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = DEN version_name = "D Class" } } }
+			
+			
+			ship = { name = "HDMS Havmanden" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = DEN version_name = "H Class" } } }
+			ship = { name = "HDMS Havfruen" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = DEN version_name = "H Class" } } }
+			ship = { name = "HDMS Havkalen" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = DEN version_name = "H Class" } } }					
+		
+		}
+	}
+}
+
+

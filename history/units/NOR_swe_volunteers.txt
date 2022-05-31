@@ -1,0 +1,32 @@
+﻿division_template = {
+	name = "Volunteer Division"  	# Swedish Volunteer Divisions
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+units = {
+	##### Svenske Frivillige #####
+	division = {
+		name = "1. Svenske Frivillige Inndeling"
+		location = 6115  # OSLO
+		division_template = "Volunteer Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "2. Svenske Frivillige Indelling"
+		location = 6115  # OSLO
+		division_template = "Volunteer Division"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+}

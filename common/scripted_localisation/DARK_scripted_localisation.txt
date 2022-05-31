@@ -1,0 +1,491 @@
+﻿defined_text = {
+	name = LIB_USA_influence_value_color
+	
+	text = {
+		trigger = {
+			check_variable = {
+				var = FROM.LIB_USA_influence
+				value = 51
+				compare = less_than
+			}
+		}
+		localization_key = "LIB_green_text"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = FROM.LIB_USA_influence
+				value = 51
+				compare = greater_than
+			}
+			check_variable = {
+				var = FROM.LIB_USA_influence
+				value = 76
+				compare = less_than
+			}
+		}
+		localization_key = "LIB_yellow_text"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = FROM.LIB_USA_influence
+				value = 75
+				compare = greater_than
+			}
+		}
+		localization_key = "LIB_red_text"
+	}
+}
+
+defined_text = {
+	name = LIB_crusade_or_revolution
+	
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = "The Crusade for Africa"
+	}
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "The African Revolution"
+	}
+	text = {
+		trigger = {
+			NOT = { has_government = fascism }
+			NOT = { has_government = communism }
+		}
+		localization_key = "The Liberation of Africa"
+	}
+}
+
+defined_text = {
+	name = LIB_voting_or_no
+	
+	text = {
+		trigger = {
+			has_elections = yes
+		}
+		localization_key = "Grant Full Voting Rights"
+	}
+	text = {
+		trigger = {
+			has_elections = no
+		}
+		localization_key = "Grant Full Citizen Rights"
+	}
+}
+	defined_text = {
+		name = LIB_voting_or_no_d
+		
+		text = {
+			trigger = {
+				has_elections = yes
+			}
+			localization_key = "LIB_integrate_hinterlands_decision_3_desc1"
+		}
+		text = {
+			trigger = {
+				has_elections = no
+			}
+			localization_key = "LIB_integrate_hinterlands_decision_3_desc2"
+		}
+	}
+	
+defined_text = {
+	name = LIB_type_of_empire
+	
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = "African Empire"
+	}
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "Home of the African Revolution"
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_government = democratic
+				has_government = neutrality
+			}
+		}
+		localization_key = "United Africa"
+	}
+}
+
+defined_text = {
+	name = ETH_open_weapons_allowed_t
+	text = {
+		trigger = {
+			NOT = { has_global_flag = ETH_end_of_embargo }
+		}
+		localization_key = "ETH_send_weapons_openly_decision_t1"
+	}
+	text = {
+		trigger = {
+			has_global_flag = ETH_end_of_embargo
+		}
+		localization_key = "ETH_send_weapons_openly_decision_t2"
+	}
+}
+defined_text = {
+	name = ETH_open_weapons_allowed_desc
+	text = {
+		trigger = {
+			NOT = { has_global_flag = ETH_end_of_embargo }
+		}
+		localization_key = "ETH_send_weapons_openly_decision_desc1"
+	}
+	text = {
+		trigger = {
+			has_global_flag = ETH_end_of_embargo
+		}
+		localization_key = "ETH_send_weapons_openly_decision_desc2"
+	}
+}
+defined_text = {
+	name = ETH_which_broker
+	text = {
+		trigger = {
+			has_country_flag = ETH_most_recent_eng
+		}
+		localization_key = "[ENG.GetName]"
+	}
+	text = {
+		trigger = {
+			has_country_flag = ETH_most_recent_fra
+		}
+		localization_key = "[FRA.GetName]"
+	}
+	text = {
+		trigger = {
+			has_country_flag = ETH_most_recent_ger
+		}
+		localization_key = "[GER.GetName]"
+	}
+	text = {
+		trigger = {
+			has_country_flag = ETH_most_recent_jap
+		}
+		localization_key = "[JAP.GetName]"
+	}
+}
+defined_text = {
+	name = ETH_which_broker_def
+	text = {
+		trigger = {
+			has_country_flag = ETH_most_recent_eng
+		}
+		localization_key = "[ENG.GetNameDef]"
+	}
+	text = {
+		trigger = {
+			has_country_flag = ETH_most_recent_fra
+		}
+		localization_key = "[FRA.GetNameDef]"
+	}
+	text = {
+		trigger = {
+			has_country_flag = ETH_most_recent_ger
+		}
+		localization_key = "[GER.GetNameDef]"
+	}
+	text = {
+		trigger = {
+			has_country_flag = ETH_most_recent_jap
+		}
+		localization_key = "[JAP.GetNameDef]"
+	}
+}
+defined_text = {
+	name = ETH_noble_influence_value_color
+	
+	text = {
+		trigger = {
+			check_variable = {
+				var = ETH_noble_influence_value
+				value = 26
+				compare = less_than
+			}
+		}
+		localization_key = "ETH_green_text"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ETH_noble_influence_value
+				value = 26
+				compare = greater_than
+			}
+			check_variable = {
+				var = ETH_noble_influence_value
+				value = 76
+				compare = less_than
+			}
+		}
+		localization_key = "ETH_yellow_text"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = ETH_noble_influence_value
+				value = 75
+				compare = greater_than
+			}
+		}
+		localization_key = "ETH_red_text"
+	}
+}
+defined_text = {
+	name = ETH_imperial_or_communist1
+	
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "Expand the Revolutionary Guard"
+	}
+	text = {
+		trigger = {
+			NOT = { has_government = communism }
+		}
+		localization_key = "Expand the Imperial Army"
+	}
+}
+defined_text = {
+	name = ETH_imperial_or_communist2
+	
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "Focus on the Revolutionary Guard"
+	}
+	text = {
+		trigger = {
+			NOT = { has_government = communism }
+		}
+		localization_key = "Focus on the Imperial Troops"
+	}
+}
+defined_text = {
+	name = ETH_imperial_or_communist_idea
+	
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "Revolutionary Guard Expansion"
+	}
+	text = {
+		trigger = {
+			NOT = { has_government = communism }
+		}
+		localization_key = "Imperial Army Expansion"
+	}
+}
+defined_text = {
+	name = ETH_get_tri_quad
+	
+	text = {
+		trigger = {
+			has_global_flag = DARK_quad_pact
+		}
+		localization_key = "Quadripartite Pact"
+	}
+	text = {
+		trigger = {
+			NOT = { has_global_flag = DARK_quad_pact }
+		}
+		localization_key = "Tripartite Pact"
+	}
+}
+defined_text = {
+	name = ETH_are_there_italians
+	
+	text = {
+		trigger = {
+			has_global_flag = DARK_quad_pact
+		}
+		localization_key = ", the [ITA_fascism.GetAdjective]s "
+	}
+	text = {
+		trigger = {
+			NOT = { has_global_flag = DARK_quad_pact }
+		}
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = ETH_imperial_or_communist_idea2
+	
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "The Revolutionary Guard"
+	}
+	text = {
+		trigger = {
+			NOT = { has_government = communism }
+		}
+		localization_key = "The Imperial Army"
+	}
+}
+		
+defined_text = {
+	name = DARK_eth_vs_ita_war_cat
+	text = {
+		trigger = {
+			original_tag = ITA
+		}
+		localization_key = "Forced Peace With [ETH.GetName]"
+	}
+	text = {
+		trigger = {
+			original_tag = ETH
+		}
+		localization_key = "Force Peace With [ITA.GetName]"
+	}
+}
+
+defined_text = {
+	name = DARK_push_for_whom
+	text = {
+		trigger = {
+			has_country_flag = chosen_eth_peace_flag
+		}
+		localization_key = "Make push for [ETH.GetNameDef]."
+	}
+	text = {
+		trigger = {
+			has_country_flag = chosen_ita_peace_flag
+		}
+		localization_key = "Make push for [ITA.GetNameDef]."
+	}
+}
+defined_text = {
+	name = DARK_side_with_whom
+	text = {
+		trigger = {
+			has_country_flag = chosen_eth_peace_flag
+		}
+		localization_key = "Side with [From.GetNameDef] against [ITA.GetNameDef]."
+	}
+	text = {
+		trigger = {
+			has_country_flag = chosen_ita_peace_flag
+		}
+		localization_key = "Side with [From.GetNameDef] against [ETH.GetNameDef]."
+	}
+}
+defined_text = {
+	name = DARK_push_for_whom2
+	text = {
+		trigger = {
+			has_country_flag = ETH_backed_other
+		}
+		localization_key = "Make push for [ETH_which_broker_def]."
+	}
+	text = {
+		trigger = {
+			has_country_flag = ETH_backed_italy
+		}
+		localization_key = "Make push for [ITA.GetNameDef]."
+	}
+}
+defined_text = {
+	name = DARK_side_with_whom2
+	text = {
+		trigger = {
+			has_country_flag = ETH_backed_other
+		}
+		localization_key = "Side with [ETH_which_broker_def] against [ITA.GetNameDef]."
+	}
+	text = {
+		trigger = {
+			has_country_flag = ETH_backed_italy
+		}
+		localization_key = "Side with [ITA.GetNameDef] against [ETH_which_broker_def]."
+	}
+}
+defined_text = {
+	name = DARK_get_bul_gre
+	text = {
+		trigger = {
+			original_tag = BUL
+		}
+		localization_key = "[GRE.GetNameDef]"
+	}
+	text = {
+		trigger = {
+			original_tag = GRE
+		}
+		localization_key = "[BUL.GetNameDef]"
+	}
+}
+
+defined_text = {
+	name = DARK_SOM_or_DJI
+	text = {
+		trigger = {
+			original_tag = SOM
+		}
+		localization_key = "[DJI.GetNameDef]"
+	}
+	text = {
+		trigger = {
+			original_tag = DJI
+		}
+		localization_key = "[SOM.GetNameDef]"
+	}
+}
+
+defined_text = {
+	name = DARK_get_rhodesia_type
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = "Greater Rhodesia"
+	}
+	text = {
+		trigger = {
+			has_government = neutrality
+		}
+		localization_key = "The Central African Federation"
+	}
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = "The Republic of the Free Peoples of Rhodesia"
+	}
+	text = {
+		trigger = {
+			has_government = democratic
+		}
+		localization_key = "Rhodesia-Nyasaland"
+	}
+}
+
+defined_text = {
+	name = DARK_get_rhodesian_death
+	text = {
+		trigger = {
+			has_government = fascism
+		}
+		localization_key = " that Rhodesians Never Die"
+	}
+	text = { #Default
+		localization_key = "of our claim"
+	}
+}

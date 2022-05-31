@@ -1,0 +1,649 @@
+characters={
+#Country Leaders
+	LIB_charles_king={
+		name=LIB_charles_king
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_2.dds"
+			}
+		}
+		country_leader={
+			ideology=centrism
+			expire="1965.1.1"
+			traits = { resurgent_politician }
+			id=-1
+		}
+	}
+	LIB_edwin_barclay={
+		name=LIB_edwin_barclay
+		portraits={
+			civilian={
+				large="gfx/leaders/LIB/Portrait_LIB_edwin_barclay.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	LIB_william_tubman={
+		name=LIB_william_tubman
+		portraits={
+			civilian={
+				large="gfx/leaders/DARK/Portrait_DARK_William_Tubman.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	LIB_didwho_welleh_twe={
+		name=LIB_didwho_welleh_twe
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_3.dds"
+			}
+		}
+		country_leader={
+			ideology=anti_revisionism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	LIB_marcus_garvey={
+		name=LIB_marcus_garvey
+		portraits={
+			civilian={
+				large="gfx/leaders/DARK/Portrait_DARK_Marcus_Garvey.dds"
+			}
+		}
+		country_leader={
+			ideology=anti_revisionism
+			expire="1965.1.1"
+			id=30000
+		}
+	}
+	LIB_king_jeh={
+		name=LIB_king_jeh
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/portrait_africa_generic_land_5.dds"
+			}
+		}
+		country_leader={
+			ideology=rexism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	LIB_barduway_jallah={
+		name=LIB_barduway_jallah
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_4.dds"
+			}
+		}
+		country_leader={
+			ideology=rexism
+			expire="1965.1.1"
+			id=30001
+		}
+		field_marshal={
+			traits = { media_personality inflexible_strategist }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=-1
+			visible = { has_country_leader = { ruling_only = yes character = LIB_barduway_jallah } }
+		}
+	}
+	
+#Generals and Admirals
+	LIB_alford_russ={
+		name=LIB_alford_russ
+		portraits={
+			army={
+				large="gfx/leaders/DARK/Portrait_DARK_Alford_Russ.dds"
+				small="GFX_idea_generic_army_african_1"
+			}
+		}
+		field_marshal={
+			traits = { trait_cautious infantry_officer urban_assault_specialist }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id=30011
+		}
+	}
+	LIB_thomas_harvey={
+		name=LIB_thomas_harvey
+		portraits={
+			army={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_4.dds"
+				small="GFX_idea_generic_army_african_4"
+			}
+		}
+		field_marshal={
+			traits = { infantry_officer brilliant_strategist }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=-1
+			visible = { 
+				has_country_flag = LIB_chose_communism
+				has_government = communism
+			}
+		}
+	}
+	LIB_moses_grant={
+		name=LIB_moses_grant
+		portraits={
+			army={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_land_3.dds"
+				small="GFX_idea_generic_army_african_3"
+			}
+		}
+		corps_commander={
+			traits = { infantry_officer jungle_rat ranger }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id=30010
+		}
+	}
+
+#Chiefs of Staff
+	LIB_lemuel_smith={ #Major of the LFF
+		name=LIB_lemuel_smith
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_1"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = LIB_lemuel_smith
+			allowed = {
+				original_tag = LIB
+			}
+			traits = { army_logistics_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	LIB_alexander_harper={ #Major of the LFF
+		name=LIB_alexander_harper
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_5"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = LIB_alexander_harper
+			allowed = {
+				original_tag = LIB
+			}
+			traits = { army_chief_organizational_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	LIB_henry_cooper={ #Customs Official
+		name=LIB_henry_cooper
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_2"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = LIB_henry_cooper
+			allowed = {
+				original_tag = LIB
+			}
+			traits = { navy_fleet_logistics_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	LIB_fred_syphert={ #Co-Owner of LNA, former US Pilot
+		name=LIB_fred_syphert
+		portraits={
+			army={
+				small="GFX_idea_generic_air_air_combat_trainer_african_2d"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = LIB_fred_syphert
+			allowed = {
+				original_tag = LIB
+			}
+			traits = { air_chief_ground_support_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#High Command
+	LIB_isaac_moart={ #Head of the militia
+		name=LIB_isaac_moart
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_african_2d"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = LIB_isaac_moart
+			ledger = army
+			allowed = {
+				original_tag = LIB
+			}
+			traits = { army_infantry_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	LIB_joseph_dennis={ #2nd in command of of the militia
+		name=LIB_joseph_dennis
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = LIB_joseph_dennis
+			ledger = army
+			allowed = {
+				original_tag = LIB
+			}
+			traits = { army_regrouping_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	LIB_jenkins_yancey={ #Major of the LFF
+		name=LIB_jenkins_yancey
+		portraits={
+			army={
+				small="GFX_idea_jenkins_yancey"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = LIB_jenkins_yancey
+			ledger = army
+			allowed = {
+				original_tag = LIB
+			}
+			traits = { army_chief_maneuver_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	LIB_william_nabors={ #US Military Advisor to Liberia, 1936-1942
+		name=LIB_william_nabors
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = LIB_william_nabors
+			ledger = army
+			allowed = {
+				original_tag = LIB
+			}
+			available = { DARK_will_dem_USA_support = yes }
+			traits = { army_chief_reform_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	LIB_kofi={ #Kru boatman who helped bring Charles S. Johnson ashore to Liberia
+		name=LIB_kofi
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = LIB_kofi
+			ledger = navy
+				allowed = {
+					original_tag = LIB
+				}
+				traits = { navy_chief_maneuver_1 }
+				cost =  50
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	
+	LIB_ken_wagner={ #Co-Owner of LNA, former US Pilot
+		name = LIB_ken_wagner
+		portraits={
+			army={
+				small="GFX_idea_generic_air_air_combat_trainer_african_2d"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = LIB_ken_wagner
+			ledger = air
+				allowed = {
+					original_tag = LIB
+				}
+				traits = { air_chief_all_weather_3 }
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = LIB_ken_wagner
+			ledger = air
+			allowed = {
+				original_tag = LIB
+			}				
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+		}
+	}
+	LIB_william_a_thomas={ #Liberian attached as part of the technical corps for the US 99th Air Pursuit Squadron
+		name = LIB_william_a_thomas
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_4"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = LIB_william_a_thomas
+			ledger = air
+			allowed = {
+				original_tag = LIB
+			}
+			traits = { air_chief_safety_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+#Theorists
+	LIB_elwood_davis={ #Lt Col Aide-de-Campe to C.D.B King
+		name = LIB_elwood_davis
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_african_2d"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = LIB_elwood_davis
+			ledger = army
+			allowed = {
+				original_tag = LIB
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	LIB_james_cooper={ #Secretary of War
+		name = LIB_james_cooper
+		portraits={
+			army={
+				large="gfx/leaders/DARK/Portrait_DARK_James_Cooper.dds"
+				small="GFX_idea_james_cooper"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = LIB_james_cooper
+			ledger = navy
+			allowed = {
+				original_tag = LIB
+			}				
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+		}
+	}
+	
+#Advisors
+	LIB_frederick_johnson={ # Justice, Leader of the Citizens' Nonpartisan League
+		name=LIB_frederick_johnson
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_4.dds"
+				small="GFX_idea_generic_democratic_reformer_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = LIB_frederick_johnson
+			allowed = {
+				original_tag = LIB
+			}			
+			available = { has_government = communism }
+			
+			traits = { pan_african }
+	
+			ai_will_do = {
+				base = 2
+			}		
+		}		
+	}
+	LIB_nathaniel_massaquoi={ #Son of King Momolu Massaquoi, politician
+		name=LIB_nathaniel_massaquoi
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = LIB_nathaniel_massaquoi
+			allowed = {
+				original_tag = LIB
+			}			
+			available = { 
+				has_government = democratic
+				NOT = { has_country_leader = { ruling_only = yes character = LIB_edwin_barclay } }
+			}
+	
+			traits = { true_reformer }
+	
+			ai_will_do = {
+				base = 2
+			}
+		}
+	}
+	LIB_bellah_beh={ #Chief Messenger and Paramount Chief for Baruday-Jallah
+		name=LIB_bellah_beh
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = LIB_bellah_beh
+			allowed = {
+				original_tag = LIB
+			}			
+			available = { has_government = fascism }
+			
+			traits = { african_monarchist }
+	
+			ai_will_do = {
+				base = 2
+			}
+		}
+	}
+	
+	LIB_louis_grimes={ #Secretary of State
+		name=LIB_louis_grimes
+		portraits={
+			army={
+				small="GFX_idea_louis_grimes"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = LIB_louis_grimes
+			allowed  = {
+				original_tag = LIB
+			}
+			traits  = { propaganda_expert }
+			ai_will_do  = {
+				factor  = 1
+			}
+		}
+	}
+	LIB_clarence_simpson={ #Secretary of State
+		name=LIB_clarence_simpson
+		advisor={
+			slot = political_advisor
+			idea_token = LIB_clarence_simpson
+			allowed  = {
+				original_tag = LIB
+			}
+			traits  = { armaments_organizer }
+			ai_will_do  = {
+				factor  = 1
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_western_european_2d"
+			}
+		}
+	}	
+	LIB_frank_tolbert={ #Prominent Politician
+		name=LIB_frank_tolbert
+		portraits={
+			army={
+				small="GFX_idea_frank_tolbert"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = LIB_frank_tolbert
+			allowed  = {
+				original_tag = LIB
+			}
+			traits  = { backroom_backstabber }
+			ai_will_do  = {
+				factor  = 1
+			}
+		}
+	}
+	LIB_richard_holder={ #Secretary of the Interior
+		name=LIB_richard_holder
+		portraits={
+			army={
+				small="GFX_idea_generic_war_industrialist_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = LIB_richard_holder
+			allowed  = {
+				original_tag = LIB
+			}
+			traits  = { captain_of_industry }
+			ai_will_do  = {
+				factor  = 1
+			}
+		}
+	}	
+	LIB_edward_stettinius={ #US Ambassador who helped establish Liberia's economic policy in the 40's
+		name=LIB_edward_stettinius
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = LIB_edward_stettinius
+			allowed  = {
+				original_tag = LIB
+			}
+			available = {
+				DARK_will_dem_USA_support = yes
+			}
+			cost = 50
+			traits  = { smooth_talking_charmer }
+			ai_will_do  = {
+				factor  = 1
+			}
+		}
+	}
+	LIB_wellington_campbell={ #Head of the NISS (Probably the first?)
+		name=LIB_wellington_campbell
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = LIB_wellington_campbell
+			allowed  = {
+				original_tag = LIB
+			}
+			traits  = { head_of_intelligence }
+			ai_will_do  = {
+				factor  = 1
+			}
+		}
+	}
+}

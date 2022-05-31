@@ -1,0 +1,145 @@
+﻿capital = 268
+
+oob = "FRA_colonial_1936"
+
+add_ideas = DJI_pearl_of_the_gulf
+
+set_research_slots = 3
+
+recruit_character = DJI_mahmoud_harbi_farah
+recruit_character = DJI_mohamed_kamil_mohamed
+recruit_character = DJI_hassan_gouled_aptidon
+recruit_character = DJI_hummad_bin_muhammad_bin_arbahim
+
+recruit_character = DJI_osman_houffaneh
+recruit_character = DJI_djama_moussa
+recruit_character = DJI_hanfare_hassan
+
+recruit_character = DJI_william_syad
+recruit_character = DJI_abdi_gouled
+recruit_character = DJI_iftin
+recruit_character = DJI_abdillah_hared
+recruit_character = DJI_ali_oudoum
+recruit_character = DJI_ibrahim_sultan
+recruit_character = DJI_hassan_gueldon
+
+recruit_character = DJI_robert_ferry
+recruit_character = DJI_abd_el_hai
+recruit_character = DJI_abdi_warfa
+
+recruit_character = DJI_orbiss
+recruit_character = DJI_aicha
+recruit_character = DJI_hamad_hummad
+recruit_character = DJI_osman_waiss
+recruit_character = DJI_said_coubeche
+recruit_character = DJI_djama_hassan
+recruit_character = DJI_djama_mahamoud
+recruit_character = DJI_omar_guelleh
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	tech_mountaineers = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	support_weapons = 1
+	tech_recon = 1
+	gwtank = 1
+	tech_engineers = 1
+	trade_interdiction = 1
+	armored_car1 = 1
+}
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_submarine = 1
+		early_destroyer = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		early_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_torpedo = 1
+		mtg_transport = 1
+	}
+}
+
+set_convoys = 10
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 35
+	fascism = 10
+	communism = 20
+	neutrality = 35
+}
+
+1939.1.1 = {
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = large_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	set_technology = {
+		
+		infantry_weapons1 = 1
+		interwar_artillery = 1
+		scout_plane1 = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		convoy_interdiction_ti = 1
+		raider_patrols = 1
+		carrier_operations = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+	
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities  = {
+		democratic = 40
+		fascism = 10
+		communism = 20		
+		neutrality = 30
+	}
+}
+	

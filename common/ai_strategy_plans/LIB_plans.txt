@@ -1,0 +1,258 @@
+﻿Liberian_democratic = {
+	name = "Liberian Democratic Plan"
+	desc = "The love of Liberty brought us here."
+
+	enable = {
+		original_tag = LIB
+		OR = {
+			is_historical_focus_on = yes
+			has_game_rule = {
+				rule = DARK_liberia_ai_behavior
+				option = DEMOCRATIC
+			}
+			has_country_flag = LIB_AI_RANDOM_DEMOCRATIC
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+
+	ai_national_focuses = {
+		LIB_trade_concessions #jan 1 - march 11 (1936)
+        LIB_greenback #july 29 - oct 7
+        LIB_secure_US #oct 7 - dec 16
+        LIB_foreign_tech2 #dec 16 - feb 24 (1937)
+        LIB_neutrality_focus #feb 24 - may 5
+        LIB_end_negotiations #may 5 - july 14
+        LIB_us_mil_coop #july 14 - sep 22
+        LIB_firestone_invest #sep 22 - dec 1
+        LIB_american_steel #dec 1 - feb 9 (1938)
+        LIB_expand_rubber #feb 9 - apr 20
+        LIB_us_training #apr 20 - may 25
+        LIB_officer_schools #may 25 - june 29		
+        LIB_us_backed_neutrality #june 29 - sept 7
+        LIB_anti_fascism #sept 7 - nov 16
+        LIB_modern_guns #nov 16 - jan 25 (1939)
+        LIB_auto_tech #jan 25 - apr 5
+        LIB_air_nav #apr 5 - june 14
+        LIB_military_infra #june 14 - aug 23
+        LIB_focus_mil #aug 23 - nov 1
+        LIB_us_roads #nov 1 - jan 10 (1940)
+        LIB_us_tech #jan 10 - feb 14
+        LIB_pay_on_time
+        LIB_mil_doc
+        LIB_us_firestone	
+        LIB_mil_sup
+        LIB_areas_defense
+        LIB_us_construction
+        LIB_port
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		LIB_alone = 0
+		LIB_trade_concessions = 1.0
+	}
+}
+
+Liberian_lonely_fascist = {
+	name = "Liberian Fascism Alone Plan"
+	desc = "All those who oppose us will either kneel or be destroyed."
+
+	enable = {
+		original_tag = LIB
+		OR = {
+			has_game_rule = {
+				rule = DARK_liberia_ai_behavior
+				option = ALONE_FASCIST
+			}
+			has_country_flag = LIB_AI_ALONE_FASCIST
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+
+	ai_national_focuses = {
+		LIB_alone
+		LIB_end_firestone
+		LIB_leave_league
+		LIB_failed_state
+		LIB_recruit_americo
+		LIB_new_leader
+		LIB_recruit_kru
+		LIB_disciplined_force
+		LIB_revolution
+		LIB_stands_alone
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		LIB_alone = 1.0
+		LIB_trade_concessions = 0
+		LIB_stands_alone = 1.0
+		LIB_detente = 0
+	}
+}
+Liberian_friendly_fascist = {
+	name = "Liberian Fascist Detente Plan"
+	desc = "All those who oppose us will either kneel or be destroyed."
+
+	enable = {
+		original_tag = LIB
+		OR = {
+			has_game_rule = {
+				rule = DARK_liberia_ai_behavior
+				option = RECONNECT_FASCIST
+			}
+			has_country_flag = LIB_AI_RECONNECT_FASCIST
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+
+	ai_national_focuses = {
+		LIB_alone
+		LIB_end_firestone
+		LIB_leave_league
+		LIB_failed_state
+		LIB_recruit_americo
+		LIB_new_leader
+		LIB_recruit_kru
+		LIB_disciplined_force
+		LIB_revolution
+		LIB_detente
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		LIB_alone = 1.0
+		LIB_trade_concessions = 0
+		LIB_stands_alone = 0
+		LIB_detente = 1.0
+	}
+}
+Liberian_lonely_communist = {
+	name = "Liberian Communism Alone Plan"
+	desc = "We believe in communism in one state, so long as that one state is Africa."
+
+	enable = {
+		original_tag = LIB
+		OR = {
+			has_game_rule = {
+				rule = DARK_liberia_ai_behavior
+				option = ALONE_COMMUNIST
+			}
+			has_country_flag = LIB_AI_ALONE_COMMUNIST
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+
+	ai_national_focuses = {
+		LIB_alone
+		LIB_end_firestone
+		LIB_leave_league
+		LIB_failed_state
+		LIB_recruit_americo
+		LIB_new_leader
+		LIB_recruit_kru
+		LIB_disciplined_force
+		LIB_revolution
+		LIB_stands_alone
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		LIB_alone = 1.0
+		LIB_trade_concessions = 0
+		LIB_stands_alone = 1.0
+		LIB_detente = 0
+	}
+}
+Liberian_friendly_communist = {
+	name = "Liberian Communist Detente Plan"
+	desc = "We will show the world the power of civilized communism."
+
+	enable = {
+		original_tag = LIB
+		OR = {
+			has_game_rule = {
+				rule = DARK_liberia_ai_behavior
+				option = RECONNECT_COMMUNIST
+			}
+			has_country_flag = LIB_AI_RECONNECT_COMMUNIST
+		}
+	}
+	
+	abort = {
+		is_subject = yes
+	}
+
+	ai_national_focuses = {
+		LIB_alone
+		LIB_end_firestone
+		LIB_leave_league
+		LIB_failed_state
+		LIB_recruit_americo
+		LIB_new_leader
+		LIB_recruit_kru
+		LIB_disciplined_force
+		LIB_revolution
+		LIB_detente
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		LIB_alone = 1.0
+		LIB_trade_concessions = 0
+		LIB_stands_alone = 0
+		LIB_detente = 1.0
+	}
+}

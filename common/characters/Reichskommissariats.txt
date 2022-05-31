@@ -1,0 +1,317 @@
+#For the various Reichskommissariats
+characters={
+#Norwegen (Norway)
+	NS_josef_terboven={ #Planned head of the Reichskommissariat Kaukasus
+		name=NS_josef_terboven
+		portraits={
+			civilian={
+				large="gfx/leaders/EXP/Portrait_SCA_Josef_Terboven.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+#Kaukasus (Georgia)
+	GEO_arno_schichedanz={ #Planned head of the Reichskommissariat Kaukasus
+		name=GEO_arno_schichedanz
+		portraits={
+			civilian={
+				large="gfx/leaders/GER/Portrait_Germany_Gunther_von_Kluge.dds" #They look similar
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	GEO_akaki_chkhenkeli={ #PM of the shortlived Transcaucasian Republic
+		name=GEO_akaki_chkhenkeli
+		portraits={
+			civilian={
+				large="gfx/leaders/South America/portrait_south_america_generic_land_10.dds"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	GEO_vasily_kharlamov={ #Cossack who lead the Special Transcaucasian Committee
+		name=GEO_vasily_kharlamov
+		portraits={
+			civilian={
+				large="gfx/leaders/South America/portrait_south_america_generic_land_8.dds"
+			}
+		}
+		country_leader={
+			ideology=oligarchism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	GEO_mikhail_tskhakaya={ #Founding member of the USSR and a chairman of the Transcaucasian SSR
+		name=GEO_mikhail_tskhakaya
+		portraits={
+			civilian={
+				large="gfx/leaders/South America/portrait_south_america_generic_9.dds"
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+#Moscowien (Soviets)
+	SOV_siegfried_kasche = { #Planned head of the Reichskommissariat Moskowien
+		name=SOV_siegfried_kasche
+		portraits={
+			civilian={
+				large="gfx/leaders/GER/Portrait_Germany_Generic_land_5.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+#Turketstan (Turkmenistan)
+	TMS_veli_kayyum_han = { #Head of the National Turkestan Unity Committee under Nazi Germant
+		name=TMS_veli_kayyum_han
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	#TUR_zeki_dogan
+	TMS_sayyid_mir_khan = { #Last Khan of Khiva
+		name=TMS_sayyid_mir_khan
+		portraits={
+			civilian={
+				large="gfx/leaders/EXP/Portrait_SCA_Mohammed_Alim.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}	
+	TMS_mikhail_fonin = { #General Secretary of the Communist Party of the Turkmen SSR (1939-1947)
+		name=TMS_mikhail_fonin
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/portrait_SOV_sidor_kovpak.dds"
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+#Don-Wolga (Volg Germany)
+	VGE_dietrich_klagges = { #Planned head of the Reichskommissariat Don-Wolga
+		name=VGE_dietrich_klagges
+		portraits={
+			civilian={
+				large="gfx/leaders/NOR/Portrait_Norway_Johan_Nygaardsvold.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	#SOV_pyotr_krasnov
+	VGE_alexander_filimonov = { #Leader of the brief Kuban People's Republic
+		name=VGE_alexander_filimonov
+		portraits={
+			civilian={
+				large="gfx/leaders/TUR/portrait_tur_fakhri_pasha.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+#Ural (Ostyak-Vogul)
+	OVO_richard_darre = { #A high-ranking Nazi known for his obsession with agriculture and lebensraum
+		name=OVO_richard_darre
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	OVO_howie_ting = { #Reference to Wu Hou-Ting, King of the Earth Kingdom in Avatar
+		name=OVO_howie_ting
+		portraits={
+			civilian={
+				large="gfx/leaders/RAJ/Portrait_The_Raj_Krishna_Pillai.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	OVO_yankow_iki = { #Yänkow-iki, leader of the Kazym War/Rebellion, a Shaman
+		name=OVO_yankow_iki
+		portraits={
+			civilian={
+				large="gfx/leaders/EST/portrait_EST_jaan_tonisson.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	OVO_prokopi_spiridonov = { #A Khanty and head of the Kazym Soviet (At least, in 1933)
+		name=OVO_prokopi_spiridonov
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/portrait_SOV_andrey_shkuro.dds"
+			}
+		}
+		country_leader={
+			ideology=leninism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+#Siberien (Tannu Tuva)
+	TAN_fritz_sauckel = { #Nazi General Plenipotentiary for Labour Deployment
+		name=TAN_fritz_sauckel
+		portraits={
+			civilian={
+				large="gfx/leaders/GER/Portrait_Germany_Gerd_von_Rundstedt.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	#SOV_tsar_vladimir_kirillovich
+	#SOV_grigory_semyonov
+	TAN_nikolay_matveyev = { #Final President of the Far Eastern Republic
+		name=TAN_nikolay_matveyev
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/Portrait_Soviet_Filipp_Oktyabrsky.dds"
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+#Schweden
+	SWE_nikolaus_falkenhorst = { #Planned Operation Weserübung and was in charge of planning Operation Polarfuchs, a plan to invade Sweden if necessary
+		name=SWE_nikolaus_falkenhorst
+		portraits={
+			civilian={
+				large="gfx/leaders/GER/Portrait_Germany_Erwin_von_Witzleben.dds" #They look similar
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+#Danemark (Denmark)
+	DEN_hermann_hanneken = { #Supreme (German) Commander of Denmark (1942-1945)
+		name=DEN_hermann_hanneken
+		portraits={
+			civilian={
+				large="gfx/leaders/GER/Portrait_Germany_Georg_von_Kuchler.dds" #They look similar
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+#Skandinavien (Iceland/Scandinavia)
+	ICE_wolfram_sievers = { #Reichsgeschäftsführer, or managing director, of the Ahnenerbe (1935-1945)
+		name=ICE_wolfram_sievers
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/Portrait_Soviet_Konstantin_Rodzaevsky.dds" #Beards are acceptably similar
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits = {
+			}
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+}

@@ -1,0 +1,3915 @@
+﻿add_namespace = DARK_dark
+
+##Liberation from Ethiopia
+country_event = {
+	id = DARK_dark.1
+	title = DARK_dark.1.t	# Freedom for BOT
+	desc = DARK_dark.1.desc
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		BOT = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 542
+					}
+				}
+					transfer_state = 542
+			}
+		}
+		ROOT = { puppet = BOT }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+		BOT = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 542
+						} 
+
+					}
+					transfer_state = 542
+				}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}	
+		}
+		ROOT = { add_to_faction = BOT }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = DARK_dark.2
+	title = DARK_dark.2.t	# Freedom for EGY
+	desc = DARK_dark.2.desc
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		EGY = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 446
+						controls_state = 447
+						controls_state = 452
+						controls_state = 453
+						controls_state = 456
+						controls_state = 457
+						controls_state = 552
+					}
+				}
+				transfer_state = 446
+				transfer_state = 447
+				transfer_state = 452
+				transfer_state = 453
+				transfer_state = 456
+				transfer_state = 457
+				transfer_state = 552
+			}
+		}
+		ROOT = { puppet = EGY }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+		EGY = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 446
+						controls_state = 447
+						controls_state = 452
+						controls_state = 453
+						controls_state = 456
+						controls_state = 457
+						controls_state = 552
+					}
+				}
+				transfer_state = 446
+				transfer_state = 447
+				transfer_state = 452
+				transfer_state = 453
+				transfer_state = 456
+				transfer_state = 457
+				transfer_state = 552
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}	
+		}
+		ROOT = { add_to_faction = EGY }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = DARK_dark.3
+	title = DARK_dark.3.t	# Freedom for LBA
+	desc = DARK_dark.3.desc
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		LBA = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 451
+						controls_state = 663
+						controls_state = 450
+						controls_state = 273
+						controls_state = 449
+						controls_state = 661
+						controls_state = 662
+						controls_state = 448
+					}
+				}
+				transfer_state = 451
+				transfer_state = 663
+				transfer_state = 450
+				transfer_state = 273
+				transfer_state = 449
+				transfer_state = 661
+				transfer_state = 662
+				transfer_state = 448
+			}
+		}
+		ROOT = { puppet = LBA }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+		LBA = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 451
+						controls_state = 663
+						controls_state = 450
+						controls_state = 273
+						controls_state = 449
+						controls_state = 661
+						controls_state = 662
+						controls_state = 448
+					}
+				}
+				transfer_state = 451
+				transfer_state = 663
+				transfer_state = 450
+				transfer_state = 273
+				transfer_state = 449
+				transfer_state = 661
+				transfer_state = 662
+				transfer_state = 448
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}	
+		}
+		ROOT = { add_to_faction = LBA }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = DARK_dark.4
+	title = DARK_dark.4.t	# Freedom for ISR
+	desc = DARK_dark.4.desc
+	picture = GFX_report_event_DARK_arab_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		ISR = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 454
+					}
+				}
+				transfer_state = 454
+			}
+		}
+		ROOT = { puppet = ISR }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+		ISR = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 454
+					}
+				}
+				transfer_state = 454
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}	
+		}
+		ROOT = { add_to_faction = ISR }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = DARK_dark.5
+	title = DARK_dark.5.t	# Freedom for PAL
+	desc = DARK_dark.5.desc
+	picture = GFX_report_event_DARK_arab_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		PAL = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 454
+					}
+				}
+				transfer_state = 454
+			}
+		}
+		ROOT = { puppet = PAL }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+		PAL = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 454
+					}
+				}
+				transfer_state = 454
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}	
+		}
+		ROOT = { add_to_faction = PAL }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = DARK_dark.6
+	title = DARK_dark.6.t	# Freedom for JOR
+	desc = DARK_dark.6.desc
+	picture = GFX_report_event_DARK_arab_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		JOR = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 455
+					}
+				}
+				transfer_state = 455
+			}
+		}
+		ROOT = { puppet = JOR }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+		JOR = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 455
+					}
+				}
+				transfer_state = 455
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}	
+		}
+		ROOT = { add_to_faction = JOR }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = DARK_dark.7
+	title = DARK_dark.7.t	# Freedom for LEB
+	desc = DARK_dark.7.desc
+	picture = GFX_report_event_DARK_arab_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		LEB = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 553
+					}
+				}
+				transfer_state = 553
+			}
+		}
+		ROOT = { puppet = LEB }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+		LEB = {
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 553
+					}
+				}
+				transfer_state = 553
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}
+		ROOT = { add_to_faction = LEB }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = DARK_dark.8
+	title = DARK_dark.8.t	# Freedom for SYR
+	desc = DARK_dark.8.desc
+	picture = GFX_report_event_DARK_arab_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		SYR = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 554
+						controls_state = 677
+						controls_state = 680
+					}
+				}
+				transfer_state = 554
+				transfer_state = 677
+				transfer_state = 680
+			}
+		}
+		ROOT = { puppet = SYR }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+		SYR = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 554
+						controls_state = 677
+						controls_state = 680
+					}
+				}
+				transfer_state = 554
+				transfer_state = 677
+				transfer_state = 680
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}
+		ROOT = { add_to_faction = SYR }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+country_event = {
+	id = DARK_dark.9
+	title = DARK_dark.9.t	# Freedom for SAF
+	desc = DARK_dark.9.desc
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		SAF = { 
+			if = {
+				limit = { 
+					ROOT = {
+						controls_state = 681
+						controls_state = 275
+						controls_state = 719
+					}
+				}
+				transfer_state = 681
+				transfer_state = 275
+				transfer_state = 719
+			}
+		}
+		ROOT = { puppet = SAF }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+		SAF = { 
+			if = {
+				limit = { 
+					ROOT = {
+						controls_state = 681
+						controls_state = 275
+						controls_state = 719
+					}
+				}
+				transfer_state = 681
+				transfer_state = 275
+				transfer_state = 719
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}
+		ROOT = { add_to_faction = SAF }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+
+
+##Djibouti/Somalia Events
+#DJI petitions SOM to join them
+country_event = {
+	id = DARK_dark.10
+	title = DARK_dark.10.t
+	desc = DARK_dark.10.desc
+	picture = GFX_report_event_DARK_arab_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = DARK_dark.10.a
+		ai_chance = {
+			base = 1
+		}
+		
+		if = {
+			limit = { is_ai = yes }
+			FROM = { ROOT = { change_tag_from = FROM } }
+		}
+		hidden_effect = {
+			FROM = {
+				every_unit_leader = {
+					set_nationality = ROOT
+				}
+				every_navy_leader = {
+					set_nationality = ROOT
+				}
+			}
+			news_event = { id = DARK_dark.12 hours = 48 }
+		}
+		annex_country = {
+			target = FROM
+			transfer_troops = yes
+		}
+	}
+	
+	option = {
+		name = DARK_dark.10.b
+		ai_chance = {
+			base = 0
+		}
+		
+		FROM = { country_event = DARK_dark.11 }
+	}
+}
+	country_event = {
+		id = DARK_dark.11
+		title = DARK_dark.11.t
+		desc = DARK_dark.11.desc
+		picture = GFX_report_event_DARK_arab_soldiers
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = DARK_dark.11.a			
+			
+			add_popularity = { ideology = neutrality popularity = -0.1 }
+		}
+	}
+	news_event = {
+		id = DARK_dark.12
+		title = DARK_dark.12.t
+		desc = DARK_dark.12.desc
+		picture = GFX_news_event_saf_soldiers_2
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = DARK_dark.12.a			
+			trigger = {
+				tag = SOM
+			}
+		}
+		option = {
+			name = DARK_dark.12.b	
+			trigger = {
+				NOT = { tag = SOM }
+				NOT = { tag = ETH }
+			}
+		}
+		option = {
+			name = DARK_dark.12.c
+			trigger = {
+				tag = ETH
+			}
+		}
+	}
+
+
+##Take Control of Mittelafrika?
+country_event = {
+	id = DARK_dark.13
+	title = DARK_dark.13.t
+	desc = DARK_dark.13.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #No
+		name = DARK_dark.13.a
+		
+		add_political_power = 0
+	}
+	option = { #Yes
+		name = DARK_dark.13.b
+		
+		MTA = { change_tag_from = ROOT }
+	}
+}
+
+country_event = {
+	id = DARK_dark.14
+	title = DARK_dark.14.t	# Freedom for NMB
+	desc = DARK_dark.14.desc
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		NMB = { 
+			if = {
+				limit = { 
+					ROOT = {
+						controls_state = 541
+					}
+				}
+				transfer_state = 541
+			}
+		}
+		ROOT = { puppet = NMB }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+		NMB = { 
+			if = {
+				limit = { 
+					ROOT = {
+						controls_state = 541
+					}
+				}
+				transfer_state = 541
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}
+		ROOT = { add_to_faction = NMB }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+
+country_event = {
+	id = DARK_dark.15
+	title = DARK_dark.15.t	# Freedom for CYP
+	desc = DARK_dark.15.desc
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		CYP = { 
+			if = {
+				limit = { 
+					ROOT = {
+						controls_state = 183
+					}
+				}
+				transfer_state = 183
+			}
+		}
+		ROOT = { puppet = CYP }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+		CYP = { 
+			if = {
+				limit = { 
+					ROOT = {
+						controls_state = 183
+					}
+				}
+				transfer_state = 183
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}
+		ROOT = { add_to_faction = CYP }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -70
+	}	
+}
+	
+
+##Liberation for SAF
+country_event = {
+	id = DARK_dark.1000
+	title = DARK_dark.100.t	# Freedom for ETH
+	desc = DARK_dark.100.desc	#
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		ETH = { 
+			if = {
+				limit = { 
+					SAF = { 
+						controls_state = 271 
+						controls_state = 836
+						controls_state = 837
+					} 
+
+				}
+					transfer_state = 271
+					transfer_state = 836
+					transfer_state = 837
+			}
+		}
+		SAF = { puppet = ETH }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+			ETH = { 
+				if = {
+					limit = { 
+						SAF = { 
+							controls_state = 271 
+							controls_state = 836
+							controls_state = 837 
+							} 
+
+						}
+						transfer_state = 271
+						transfer_state = 836
+						transfer_state = 837
+					}
+				hidden_effect = {
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.75
+					}
+				}	
+			}
+		SAF = { add_to_faction = ETH }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		
+		add_political_power = -70
+	}		
+}
+country_event = {
+	id = DARK_dark.1001
+	title = DARK_dark.101.t	# Freedom for ERI
+	desc = DARK_dark.101.desc	#
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		ETH = { 
+			if = {
+				limit = { 
+					SAF = { 
+						controls_state = 550 
+					} 
+
+				}
+				transfer_state = 550
+			}
+		}
+		SAF = { puppet = ERI }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+			ERI = { 
+				if = {
+					limit = { 
+						SAF = { 
+							controls_state = 550
+							} 
+
+						}
+						transfer_state = 550
+					}
+				hidden_effect = {
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.75
+					}
+				}	
+			}
+		SAF = { add_to_faction = ERI }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		
+		add_political_power = -70
+	}		
+}
+country_event = {
+	id = DARK_dark.1002
+	title = DARK_dark.102.t	# Freedom for SOM
+	desc = DARK_dark.102.desc	#
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		SOM = { 
+			if = {
+				limit = { 
+					SAF = { 
+						controls_state = 268 
+						controls_state = 269
+						controls_state = 559 
+					} 
+
+				}
+				transfer_state = 268
+				transfer_state = 269
+				transfer_state = 559
+			}
+		}
+		SAF = { puppet = SOM }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+			SOM = { 
+				if = {
+					limit = { 
+						SAF = { 
+							controls_state = 268 
+							controls_state = 269
+							controls_state = 559 
+							} 
+
+						}
+						transfer_state = 268
+						transfer_state = 269
+						transfer_state = 559
+					}
+				hidden_effect = {
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.75
+					}
+				}	
+			}
+		SAF = { add_to_faction = SOM }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		
+		add_political_power = -70
+	}		
+}
+country_event = {
+	id = DARK_dark.1003
+	title = tfv_south_africa.98.t	# Freedom for LIB
+	desc = tfv_south_africa.98.d	#
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = DARK_dark.1.a
+		ai_chance = {
+			base = 100
+		}
+		LIB = { 
+			if = {
+				limit = { 
+					SAF = { 
+						controls_state = 298 
+						controls_state = 835
+					} 
+
+				}
+				transfer_state = 298
+				transfer_state = 835
+			}
+		}
+		SAF = { puppet = LIB }
+	}
+
+	option = { #full freedom
+		name = DARK_dark.1.b
+		ai_chance = {
+			base = 0
+		}
+			LIB = { 
+				if = {
+					limit = { 
+						SAF = { 
+							controls_state = 298 
+							controls_state = 835
+							} 
+
+						}
+						transfer_state = 298
+						transfer_state = 835
+					}
+				hidden_effect = {
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.75
+					}
+				}	
+			}
+		SAF = { add_to_faction = LIB }		
+	}
+
+	option = { #refuse them because of reasons
+		name = DARK_dark.1.c
+		ai_chance = {
+			base = 0
+		}
+		
+		add_political_power = -70
+	}		
+}
+
+### COPIED DIRECTLY FROM SAF, HANDLES EVENT 60-104 ###
+country_event = {
+	id = DARK_dark.60
+	title = tfv_south_africa.60.t	# Freedom for ANG
+	desc = tfv_south_africa.60.d	#
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.60.a
+		ai_chance = {
+			base = 100
+		}
+			ANG = { 
+				if = {
+				limit = { 
+					ROOT = { controls_state = 540 } 
+						}
+					transfer_state = 540
+					}
+				}
+			ROOT = { puppet = ANG }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.60.b
+		ai_chance = {
+			base = 0
+		}
+		ANG = { 
+			if = {
+				limit = { 
+					ROOT = { controls_state = 540 } 
+				}
+				transfer_state = 540
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+						ideology = communism
+						popularity = 0.75
+				}
+			}
+		}
+		ROOT = { add_to_faction = ANG }
+	}		
+}
+	
+country_event = {
+	id = DARK_dark.61
+	title = tfv_south_africa.61.t	# Freedom for MZB
+	desc = tfv_south_africa.61.d	#
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.61.a
+		ai_chance = {
+			base = 100
+		}
+			MZB = { 
+				if = {
+				limit = { 
+					ROOT = { controls_state = 544 } 
+						}
+					transfer_state = 544
+					}
+				}
+			ROOT = { puppet = MZB }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.61.b
+		ai_chance = {
+			base = 0
+		}
+			MZB = { 
+				if = {
+					limit = { 
+						ROOT = { controls_state = 544 } 
+					}
+					transfer_state = 544
+				}
+				hidden_effect = {
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.75
+					}
+				}
+			}
+		ROOT = { add_to_faction = MZB }		
+	}	
+}
+
+country_event = {
+	id = DARK_dark.62
+	title = tfv_south_africa.62.t	# Freedom for COG
+	desc = tfv_south_africa.62.d	#
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.61.a
+		ai_chance = {
+			base = 100
+		}
+			COG = { 
+				if = {
+					limit = { 
+						ROOT = { 
+							controls_state = 295 
+							controls_state = 538 
+							controls_state = 718 
+							} 
+
+						}
+							transfer_state = 295
+							transfer_state = 538
+							transfer_state = 718
+					}
+				}
+			ROOT = { puppet = COG }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.61.b
+		ai_chance = {
+			base = 0
+		}
+			COG = { 
+				if = {
+					limit = { 
+						ROOT = { 
+							controls_state = 295 
+							controls_state = 538 
+							controls_state = 718 
+							} 
+
+						}
+						transfer_state = 295
+						transfer_state = 538
+						transfer_state = 718
+					}
+				hidden_effect = {
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.75
+					}
+				}	
+			}
+			ROOT = { add_to_faction = COG }		
+	}		
+}
+
+country_event = {
+	id = DARK_dark.63
+	title = tfv_south_africa.63.t	# Freedom for ZIM
+	desc = tfv_south_africa.63.d	#
+	picture = GFX_report_event_african_soldiers
+	
+
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.63.a
+		ai_chance = {
+			base = 100
+		}
+			ZIM = { 
+				if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 545  
+						} 
+
+					}
+						transfer_state = 545
+					}
+				}
+			ROOT = { puppet = ZIM }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.63.b
+		ai_chance = {
+			base = 0
+		}
+			ZIM = { 
+				if = {
+					limit = { 
+						ROOT = { 
+							controls_state = 545 
+							
+							} 
+
+						}
+						transfer_state = 545
+						
+					}
+				hidden_effect = {
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.75
+					}
+				}
+			}
+			ROOT = { add_to_faction = ZIM }		
+	}
+	
+}
+
+country_event = {
+	id = DARK_dark.64
+	title = tfv_south_africa.64.t	# Freedom for KEN
+	desc = tfv_south_africa.64.d	#
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+			KEN = { 
+				if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 547
+						} 
+
+					}
+						transfer_state = 547
+					}
+				}
+			ROOT = { puppet = KEN }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+			KEN = { 
+				if = {
+					limit = { 
+						ROOT = { 
+							controls_state = 547 
+							} 
+
+						}
+						transfer_state = 547
+					}
+				hidden_effect = {
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.75
+					}
+				}
+			}			
+			ROOT = { add_to_faction = KEN }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.65
+	title = tfv_south_africa.65.t	# Freedom for MAD
+	desc = tfv_south_africa.65.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		MAD = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 543
+						controls_state = 706
+						controls_state = 708
+					} 
+				}
+				transfer_state = 543
+				transfer_state = 706
+				transfer_state = 708
+			}
+		}
+		ROOT = { puppet = MAD }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		MAD = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 543
+						controls_state = 706
+						controls_state = 708 
+					} 
+				}
+				transfer_state = 543
+				transfer_state = 706
+				transfer_state = 708
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = MAD }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.66
+	title = tfv_south_africa.66.t	# Freedom for BOT
+	desc = tfv_south_africa.66.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		BOT = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 542
+					} 
+				}
+				transfer_state = 542
+			}
+		}
+		ROOT = { puppet = BOT }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		BOT = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 542
+					}
+				}
+				transfer_state = 542
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = BOT }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.67
+	title = tfv_south_africa.67.t	# Freedom for ZAM
+	desc = tfv_south_africa.67.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		ZAM = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 771
+					} 
+				}
+				transfer_state = 771
+			}
+		}
+		ROOT = { puppet = ZAM }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		ZAM = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 771
+					}
+				}
+				transfer_state = 771
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = ZAM }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.68
+	title = tfv_south_africa.68.t	# Freedom for MLW
+	desc = tfv_south_africa.68.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		MLW = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 770
+					} 
+				}
+				transfer_state = 770
+			}
+		}
+		ROOT = { puppet = MLW }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		MLW = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 770
+					}
+				}
+				transfer_state = 770
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = MLW }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.69
+	title = tfv_south_africa.69.t	# Freedom for TZN
+	desc = tfv_south_africa.69.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		TZN = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 546
+					} 
+				}
+				transfer_state = 546
+			}
+		}
+		ROOT = { puppet = TZN }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		TZN = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 546
+					}
+				}
+				transfer_state = 546
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = TZN }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.70
+	title = tfv_south_africa.70.t	# Freedom for UGA
+	desc = tfv_south_africa.70.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		UGA = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 548
+					} 
+				}
+				transfer_state = 548
+			}
+		}
+		ROOT = { puppet = UGA }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		UGA = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 548
+					}
+				}
+				transfer_state = 548
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = UGA }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.71
+	title = tfv_south_africa.71.t	# Freedom for SUD
+	desc = tfv_south_africa.71.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		SUD = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 549
+						controls_state = 551
+						controls_state = 767
+					} 
+				}
+				transfer_state = 549
+				transfer_state = 551
+				transfer_state = 767
+			}
+		}
+		ROOT = { puppet = SUD }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		SUD = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 549
+						controls_state = 551
+						controls_state = 767
+					}
+				}
+				transfer_state = 549
+				transfer_state = 551
+				transfer_state = 767
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = SUD }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.72
+	title = tfv_south_africa.72.t	# Freedom for EGY
+	desc = tfv_south_africa.72.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		EGY = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 552
+						controls_state = 456
+						controls_state = 457
+						controls_state = 447
+						controls_state = 452
+						controls_state = 446
+						controls_state = 453
+					} 
+				}
+				transfer_state = 552
+				transfer_state = 456
+				transfer_state = 457
+				transfer_state = 447
+				transfer_state = 452
+				transfer_state = 446
+				transfer_state = 453
+			}
+		}
+		ROOT = { puppet = EGY }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		EGY = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 552
+						controls_state = 456
+						controls_state = 457
+						controls_state = 447
+						controls_state = 452
+						controls_state = 446
+						controls_state = 453
+					}
+				}
+				transfer_state = 552
+				transfer_state = 456
+				transfer_state = 457
+				transfer_state = 447
+				transfer_state = 452
+				transfer_state = 446
+				transfer_state = 453
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = EGY }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.73
+	title = tfv_south_africa.73.t	# Freedom for ERI
+	desc = tfv_south_africa.73.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		ERI = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 550
+					} 
+				}
+				transfer_state = 550
+			}
+		}
+		ROOT = { puppet = ERI }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		ERI = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 550
+					}
+				}
+				transfer_state = 550
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = ERI }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.74
+	title = tfv_south_africa.74.t	# Freedom for ETH
+	desc = tfv_south_africa.74.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		ETH = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 271
+					} 
+				}
+				transfer_state = 271
+			}
+		}
+		ROOT = { puppet = ETH }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		ETH = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 271
+					}
+				}
+				transfer_state = 271
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = ETH }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.75
+	title = tfv_south_africa.75.t	# Freedom for DJI
+	desc = tfv_south_africa.75.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		DJI = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 268
+					} 
+				}
+				transfer_state = 268
+			}
+		}
+		ROOT = { puppet = DJI }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		DJI = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 268
+					}
+				}
+				transfer_state = 268
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = DJI }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.76
+	title = tfv_south_africa.76.t	# Freedom for SOM
+	desc = tfv_south_africa.76.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		SOM = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 269
+						controls_state = 559
+					} 
+				}
+				transfer_state = 269
+				transfer_state = 559
+			}
+		}
+		ROOT = { puppet = SOM }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		SOM = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 269
+						controls_state = 559
+					}
+				}
+				transfer_state = 269
+				transfer_state = 559
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = SOM }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.77
+	title = tfv_south_africa.77.t	# Freedom for RWA
+	desc = tfv_south_africa.77.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		RWA = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 768
+					} 
+				}
+				transfer_state = 768
+			}
+		}
+		ROOT = { puppet = RWA }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		RWA = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 768
+					}
+				}
+				transfer_state = 768
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = RWA }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.78
+	title = tfv_south_africa.78.t	# Freedom for BRD
+	desc = tfv_south_africa.78.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		BRD = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 769
+					} 
+				}
+				transfer_state = 769
+			}
+		}
+		ROOT = { puppet = BRD }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		BRD = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 769
+					}
+				}
+				transfer_state = 769
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = BRD }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.79
+	title = tfv_south_africa.79.t	# Freedom for RCG
+	desc = tfv_south_africa.79.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		RCG = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 772
+					} 
+				}
+				transfer_state = 772
+			}
+		}
+		ROOT = { puppet = RCG }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		RCG = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 772
+					}
+				}
+				transfer_state = 772
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = RCG }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.80
+	title = tfv_south_africa.80.t	# Freedom for GAB
+	desc = tfv_south_africa.80.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		GAB = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 539
+					} 
+				}
+				transfer_state = 539
+			}
+		}
+		ROOT = { puppet = GAB }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		GAB = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 539
+					}
+				}
+				transfer_state = 539
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = GAB }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.81
+	title = tfv_south_africa.81.t	# Freedom for EQG
+	desc = tfv_south_africa.81.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		EQG = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 297
+					} 
+				}
+				transfer_state = 297
+			}
+		}
+		ROOT = { puppet = EQG }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		EQG = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 297
+					}
+				}
+				transfer_state = 297
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = EQG }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.82
+	title = tfv_south_africa.82.t	# Freedom for CMR
+	desc = tfv_south_africa.82.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		CMR = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 773
+					} 
+				}
+				transfer_state = 773
+			}
+		}
+		ROOT = { puppet = CMR }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		CMR = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 773
+					}
+				}
+				transfer_state = 773
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = CMR }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.83
+	title = tfv_south_africa.83.t	# Freedom for CAR
+	desc = tfv_south_africa.83.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		CAR = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 660
+					} 
+				}
+				transfer_state = 660
+			}
+		}
+		ROOT = { puppet = CAR }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		CAR = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 660
+					}
+				}
+				transfer_state = 660
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = CAR }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.84
+	title = tfv_south_africa.84.t	# Freedom for CHA
+	desc = tfv_south_africa.84.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		CHA = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 774
+						controls_state = 775
+					} 
+				}
+				transfer_state = 774
+				transfer_state = 775
+			}
+		}
+		ROOT = { puppet = CHA }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		CHA = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 774
+						controls_state = 775
+					}
+				}
+				transfer_state = 774
+				transfer_state = 775
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = CHA }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.85
+	title = tfv_south_africa.85.t	# Freedom for NGA
+	desc = tfv_south_africa.85.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		NGA = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 558
+					} 
+				}
+				transfer_state = 558
+			}
+		}
+		ROOT = { puppet = NGA }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		NGA = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 558
+					}
+				}
+				transfer_state = 558
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = NGA }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.86
+	title = tfv_south_africa.86.t	# Freedom for NGR
+	desc = tfv_south_africa.86.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		NGR = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 781
+						controls_state = 515
+					} 
+				}
+				transfer_state = 781
+				transfer_state = 515
+			}
+		}
+		ROOT = { puppet = NGR }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		NGR = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 781
+						controls_state = 515
+					}
+				}
+				transfer_state = 781
+				transfer_state = 515
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = NGR }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.87
+	title = tfv_south_africa.87.t	# Freedom for DAH
+	desc = tfv_south_africa.87.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		DAH = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 776
+					} 
+				}
+				transfer_state = 776
+			}
+		}
+		ROOT = { puppet = DAH }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		DAH = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 776
+					}
+				}
+				transfer_state = 776
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = DAH }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.88
+	title = tfv_south_africa.88.t	# Freedom for TOG
+	desc = tfv_south_africa.88.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		TOG = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 777
+					} 
+				}
+				transfer_state = 777
+			}
+		}
+		ROOT = { puppet = TOG }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		TOG = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 777
+					}
+				}
+				transfer_state = 777
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = TOG }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.89
+	title = tfv_south_africa.89.t	# Freedom for GHA
+	desc = tfv_south_africa.89.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		GHA = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 274
+					} 
+				}
+				transfer_state = 274
+			}
+		}
+		ROOT = { puppet = GHA }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		GHA = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 274
+					}
+				}
+				transfer_state = 274
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = GHA }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.90
+	title = tfv_south_africa.90.t	# Freedom for IVO
+	desc = tfv_south_africa.90.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		IVO = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 779
+					} 
+				}
+				transfer_state = 779
+			}
+		}
+		ROOT = { puppet = IVO }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		IVO = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 779
+					}
+				}
+				transfer_state = 779
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = IVO }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.91
+	title = tfv_south_africa.91.t	# Freedom for VOL
+	desc = tfv_south_africa.91.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		VOL = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 778
+					} 
+				}
+				transfer_state = 778
+			}
+		}
+		ROOT = { puppet = VOL }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		VOL = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 778
+					}
+				}
+				transfer_state = 778
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = VOL }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.92
+	title = tfv_south_africa.92.t	# Freedom for MLI
+	desc = tfv_south_africa.92.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		MLI = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 556
+						controls_state = 782
+					} 
+				}
+				transfer_state = 556
+				transfer_state = 782
+			}
+		}
+		ROOT = { puppet = MLI }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		MLI = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 556
+						controls_state = 782
+					}
+				}
+				transfer_state = 556
+				transfer_state = 782
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = MLI }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.93
+	title = tfv_south_africa.93.t	# Freedom for SIE
+	desc = tfv_south_africa.93.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		SIE = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 700
+					} 
+				}
+				transfer_state = 700
+			}
+		}
+		ROOT = { puppet = SIE }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		SIE = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 700
+					}
+				}
+				transfer_state = 700
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = SIE }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.94
+	title = tfv_south_africa.94.t	# Freedom for GNA
+	desc = tfv_south_africa.94.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		GNA = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 780
+					} 
+				}
+				transfer_state = 780
+			}
+		}
+		ROOT = { puppet = GNA }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		GNA = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 780
+					}
+				}
+				transfer_state = 780
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = GNA }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.95
+	title = tfv_south_africa.95.t	# Freedom for GNB
+	desc = tfv_south_africa.95.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		GNB = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 296
+					} 
+				}
+				transfer_state = 296
+			}
+		}
+		ROOT = { puppet = GNB }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		GNB = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 296
+					}
+				}
+				transfer_state = 296
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = GNB }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.96
+	title = tfv_south_africa.96.t	# Freedom for SEN
+	desc = tfv_south_africa.96.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		SEN = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 272
+					} 
+				}
+				transfer_state = 272
+			}
+		}
+		ROOT = { puppet = SEN }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		SEN = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 272
+					}
+				}
+				transfer_state = 272
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = SEN }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.97
+	title = tfv_south_africa.97.t	# Freedom for GAM
+	desc = tfv_south_africa.97.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		GAM = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 701
+					} 
+				}
+				transfer_state = 701
+			}
+		}
+		ROOT = { puppet = GAM }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		GAM = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 701
+					}
+				}
+				transfer_state = 701
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = GAM }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.98
+	title = tfv_south_africa.98.t	# Freedom for LIB
+	desc = tfv_south_africa.98.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		LIB = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 298
+					} 
+				}
+				transfer_state = 298
+			}
+		}
+		ROOT = { puppet = LIB }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		LIB = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 298
+					}
+				}
+				transfer_state = 298
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = LIB }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.99
+	title = tfv_south_africa.99.t	# Freedom for MRT
+	desc = tfv_south_africa.99.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		MRT = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 557
+						controls_state = 786
+					} 
+				}
+				transfer_state = 557
+				transfer_state = 786
+			}
+		}
+		ROOT = { puppet = MRT }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		MRT = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 557
+						controls_state = 786
+					}
+				}
+				transfer_state = 557
+				transfer_state = 786
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = MRT }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.100
+	title = tfv_south_africa.100.t	# Freedom for WES
+	desc = tfv_south_africa.100.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		WES = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 699
+					} 
+				}
+				transfer_state = 699
+			}
+		}
+		ROOT = { puppet = WES }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		WES = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 699
+					}
+				}
+				transfer_state = 699
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = WES }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.101
+	title = tfv_south_africa.101.t	# Freedom for ALG
+	desc = tfv_south_africa.101.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		ALG = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 459
+						controls_state = 460
+						controls_state = 513
+						controls_state = 514
+					} 
+				}
+				transfer_state = 459
+				transfer_state = 460
+				transfer_state = 513
+				transfer_state = 514
+			}
+		}
+		ROOT = { puppet = ALG }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		ALG = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 459
+						controls_state = 460
+						controls_state = 513
+						controls_state = 514
+					}
+				}
+				transfer_state = 459
+				transfer_state = 460
+				transfer_state = 513
+				transfer_state = 514
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = ALG }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.102
+	title = tfv_south_africa.102.t	# Freedom for MOR
+	desc = tfv_south_africa.102.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		MOR = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 290
+						controls_state = 461
+						controls_state = 462
+						controls_state = 783
+					} 
+				}
+				transfer_state = 290
+				transfer_state = 461
+				transfer_state = 462
+				transfer_state = 783
+			}
+		}
+		ROOT = { puppet = MOR }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		MOR = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 290
+						controls_state = 461
+						controls_state = 462
+						controls_state = 783
+					}
+				}
+				transfer_state = 290
+				transfer_state = 461
+				transfer_state = 462
+				transfer_state = 783
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = MOR }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.103
+	title = tfv_south_africa.103.t	# Freedom for TUN
+	desc = tfv_south_africa.103.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		TUN = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 458
+						controls_state = 665
+					} 
+				}
+				transfer_state = 458
+				transfer_state = 665
+			}
+		}
+		ROOT = { puppet = TUN }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		TUN = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 458
+						controls_state = 665
+					}
+				}
+				transfer_state = 458
+				transfer_state = 665
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = TUN }		
+	}
+}
+
+country_event = {
+	id = DARK_dark.104
+	title = tfv_south_africa.104.t	# Freedom for LBA
+	desc = tfv_south_africa.104.d
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #puppet new state
+		name = tfv_south_africa.64.a
+		ai_chance = {
+			base = 100
+		}
+		LBA = { 
+			if = {
+				limit = { 
+					ROOT = { 
+						controls_state = 448
+						controls_state = 449
+						controls_state = 450
+						controls_state = 451
+						controls_state = 661
+						controls_state = 662
+						controls_state = 663
+						controls_state = 273
+					} 
+				}
+				transfer_state = 448
+				transfer_state = 449
+				transfer_state = 450
+				transfer_state = 451
+				transfer_state = 661
+				transfer_state = 662
+				transfer_state = 663
+				transfer_state = 273
+			}
+		}
+		ROOT = { puppet = LBA }
+	}
+
+	option = { #full freedom
+		name = tfv_south_africa.64.b
+		ai_chance = {
+			base = 0
+		}
+		LBA = {
+			if = {
+				limit = {
+					ROOT = {
+						controls_state = 448
+						controls_state = 449
+						controls_state = 450
+						controls_state = 451
+						controls_state = 661
+						controls_state = 662
+						controls_state = 663
+						controls_state = 273
+					}
+				}
+				transfer_state = 448
+				transfer_state = 449
+				transfer_state = 450
+				transfer_state = 451
+				transfer_state = 661
+				transfer_state = 662
+				transfer_state = 663
+				transfer_state = 273
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+			}
+		}			
+		ROOT = { add_to_faction = LBA }		
+	}
+}
+
+
+###Event to change flags for English Dominions###
+country_event = {
+	id = DARK_dark.105
+	hidden = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		has_completed_focus = ENG_self_government_for_africa
+		any_other_country = {
+			is_subject_of = ENG
+			NOT = { has_country_flag = DARK_released_from_eng }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = DARK_dark.105.a
+		
+		every_other_country = {
+			limit = {
+				is_subject_of = ENG
+				has_capitulated = no
+				any_owned_state = {
+					is_capital = yes					
+					is_on_continent = africa
+				}
+			}
+			country_event = DARK_dark.106
+		}
+	}
+}
+country_event = {
+	id = DARK_dark.106
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = DARK_dark.106.a
+		
+		set_country_flag = DARK_released_from_eng
+		if = {
+			limit = {
+				ROOT = { tag = SOM }
+			}
+			ROOT = {
+				set_cosmetic_tag = SOM_UK
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = SUD }
+			}
+			ROOT = {
+				set_cosmetic_tag = SUD_UK
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = KEN }
+			}
+			ROOT = {
+				set_cosmetic_tag = KEN_UK
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = BOT }
+			}
+			ROOT = {
+				set_cosmetic_tag = BOT_UK
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = GHA }
+			}
+			ROOT = {
+				set_cosmetic_tag = GHA_UK
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = SIE }
+			}
+			ROOT = {
+				set_cosmetic_tag = SIE_UK
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = MLW }
+			}
+			ROOT = {
+				set_cosmetic_tag = MLW_UK
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = NGA }
+			}
+			ROOT = {
+				set_cosmetic_tag = NGA_UK
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = TZN }
+			}
+			ROOT = {
+				set_cosmetic_tag = TZN_UK
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = GAM }
+			}
+			ROOT = {
+				set_cosmetic_tag = GAM_UK
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = UGA }
+			}
+			ROOT = {
+				set_cosmetic_tag = UGA_UK
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = ZAM }
+			}
+			ROOT = {
+				set_cosmetic_tag = ZAM_UK
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = ZIM }
+			}
+			ROOT = {
+				set_cosmetic_tag = ZIM_UK
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { tag = MAD }
+			}
+			ROOT = {
+				set_cosmetic_tag = MAD_UK
+			}
+		}
+	}
+}

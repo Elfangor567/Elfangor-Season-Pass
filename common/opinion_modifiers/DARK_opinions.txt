@@ -1,0 +1,105 @@
+opinion_modifiers = {
+	
+	#DARK
+	DARK_left_league = {
+		value = -75
+	}
+	DARK_reneged_on_promise = {
+		value = -50
+	}
+	DARK_took_zara = {
+		value = -100
+	}
+	DARK_gave_away_claimed_land = {
+		value = -50
+	}
+	DARK_betrayal_of_treaty = {
+		value = -100
+	}
+	DARK_no_port = {
+		value = -50
+	}
+	
+	#Liberia
+	LIB_broke_ties = {
+		value = -100
+	}
+	LIB_trade_concessions_opinion = {
+		trade = yes
+		value = 25
+	}
+	LIB_ties = {
+		value = 50
+	}
+	LIB_protection = {
+		value = 50
+	}
+	LIB_no_protection = {
+		value = -50
+	}
+	LIB_protecting = {
+		value = 50
+	}
+	LIB_hates = {
+		value = -50
+	}
+	LIB_likes = {
+		value = 15
+	}
+	LIB_hatred = {
+		value = -50
+	}
+	LIB_ended_firestone ={
+		value = -75
+	}
+	LIB_asked_for_help = {
+		value = 25
+	}
+	
+	#Ethiopia
+	ETH_backed_us = {
+		value = 25
+	}
+	ETH_helped_enemies = {
+		value = -75
+	}
+	ETH_tried_to_send_weapons_againt_embargo = {
+		value = -25
+	}
+	ETH_tried_to_send_weapons_againt_embargo2 = {
+		trade = yes
+		value = -25
+	}
+	ETH_asked_for_support = {
+		value = 10
+	}
+	ETH_brokered_peace1 = {
+		value = 25
+	}
+	ETH_brokered_peace2 = {
+		value = 75
+	}
+	ETH_brokered_peace3 = {
+		value = 100
+	}
+	ETH_mission = {
+		value = 50
+	}
+	ETH_friendship = {
+		value = 75
+	}
+	ETH_lesser_friendship = {
+		value = 25
+	}
+	ETH_new_ally_modifier = {
+		value = 75
+	}
+	ETH_sold_planes = {
+		value = 25
+	}
+	
+	#New Italy
+	NEW_ITA_lovely_france = {
+		value = 50
+	}
+}

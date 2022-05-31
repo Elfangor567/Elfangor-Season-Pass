@@ -1,0 +1,4150 @@
+﻿add_namespace = DARK_lib
+
+### They finally added on_remove
+#country_event = { #Remove Firestone bonus when no longer had
+#	id = DARK_lib.1
+#	hidden = yes
+#	
+#	trigger = {
+#		NOT = { has_idea = LIB_firestone_company }
+#		has_country_flag = chosen_firestone
+#	}
+#	mean_time_to_happen = {
+#		days = 2
+#	}
+#	
+#	option = {
+#		name = DARK_lib.1.a
+#		modify_building_resources = {
+#		   building = synthetic_refinery
+#		   resource = rubber
+#		   amount = -1
+#		}
+#		clr_country_flag = chosen_firestone
+#	}
+#}
+
+#USA attempts annexation
+country_event = {
+	id = DARK_lib.2
+	title = DARK_lib.2.t
+	desc = DARK_lib.2.desc
+	picture = GFX_report_event_usa_heavy_cruiser
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #Submit
+		name = DARK_lib.2.a
+		ai_chance = {
+			base = 1
+		}
+		
+		custom_effect_tooltip = GAME_OVER_TT
+		effect_tooltip = {
+			USA = {
+				annex_country = { target = LIB transfer_troops = yes }
+			}
+		}
+		USA = { country_event = { id = DARK_lib.3 hours = 6 } }
+	}
+	option = { #Resist
+		name = DARK_lib.2.a
+		ai_chance = {
+			base = 0
+		}
+		
+		effect_tooltip = {
+			USA = {
+				add_state_claim = 298
+				add_state_claim = 835
+				declare_war_on = {
+					target = LIB
+					type = annex_everything
+				}
+			}
+		}
+		USA = { country_event = { id = DARK_lib.4 hours = 24 } }
+	}
+}
+	country_event = { #Liberia Submits
+		id = DARK_lib.3
+		title = DARK_lib.3.t
+		desc = DARK_lib.3.desc
+		picture = GFX_report_event_usa_heavy_cruiser
+		
+		is_triggered_only = yes
+		
+		option = { #Submit
+			name = DARK_lib.3.a
+			
+			annex_country = { target = LIB transfer_troops = yes }
+			hidden_effect = {
+				news_event = { id = DARK_lib.100 hours = 24 }
+			}
+		}
+	}
+	country_event = { #Liberia Fights Back
+		id = DARK_lib.4
+		title = DARK_lib.4.t
+		desc = DARK_lib.4.desc
+		picture = GFX_report_event_usa_heavy_cruiser
+		
+		is_triggered_only = yes
+		
+		option = { #Submit
+			name = DARK_lib.4.a
+			
+			add_state_claim = 298
+			add_state_claim = 835
+			declare_war_on = {
+				target = LIB
+				type = annex_everything
+			}
+			hidden_effect = {
+				news_event = { id = DARK_lib.101 hours = 24 }
+			}
+		}
+	}
+	
+#Dismiss the Militia, Dummied out, kept for prosterity, possible later revision
+country_event = {
+	id = DARK_lib.5
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = DARK_lib.5.a
+		
+		clr_country_flag = LIB_has_raised_militia
+		
+		delete_unit_template_and_units = { division_template = "Liberian Militia" }
+		delete_unit_template_and_units = { division_template = "Trained Liberian Militia" }
+	}
+}
+
+#US Protection
+country_event = { 
+	id = DARK_lib.6
+	title = DARK_lib.6.t
+	desc = DARK_lib.6.desc
+	picture = GFX_report_event_FDR_speech
+	
+	is_triggered_only = yes
+	
+	option = { #Accept
+		name = DARK_lib.6.a
+		ai_chance = {
+			base = 1
+		}
+		
+		give_guarantee = LIB
+		effect_tooltip = { 			 
+			LIB = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = LIB_protection
+				}
+				country_event = { id = DARK_lib.7 hours = 6 }
+			}
+		}
+		hidden_effect = {
+			LIB = { country_event = { id = DARK_lib.7 hours = 6 } }
+		}
+	}
+	option = { #Refuse
+		name = DARK_lib.6.b
+		ai_chance = {
+			base = 0
+		}
+		
+		add_political_power = -200
+		add_stability = -0.1
+		LIB = { country_event = { id = DARK_lib.8 hours = 6 } }
+	}
+}
+	country_event = { #US Accepts
+		id = DARK_lib.7
+		title = DARK_lib.7.t
+		desc = DARK_lib.7.desc
+		picture = GFX_report_event_saf_soldiers_2
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = DARK_lib.7.a
+			
+			effect_tooltip = { FROM = { give_guarantee = LIB } }
+			add_opinion_modifier = {
+				target = FROM
+				modifier = LIB_protection
+			}
+		}
+	}
+	country_event = { #US Refuses
+		id = DARK_lib.8
+		title = DARK_lib.8.t
+		desc = DARK_lib.8.desc
+		picture = GFX_report_event_FDR_speech
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = DARK_lib.8.a
+			
+			add_opinion_modifier = {
+				target = FROM
+				modifier = LIB_no_protection
+			}
+		}
+	}
+	
+#Choose a leader
+country_event = {
+	id = DARK_lib.9
+	title = DARK_lib.9.t
+	desc = DARK_lib.9.desc
+	picture = GFX_report_event_fascist_militia
+	
+	is_triggered_only = yes
+	
+	option = { #Communism
+		name = DARK_lib.9.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = DARK_liberia_ai_behavior
+						option = ALONE_FASCIST
+					}
+					has_game_rule = {
+						rule = DARK_liberia_ai_behavior
+						option = RECONNECT_FASCIST
+					}
+				}
+			}
+		}
+		
+		hidden_effect = {
+			set_country_flag = LIB_chose_communism
+		}
+		
+		LIB_marcus_garvey = {
+			promote_character = yes
+			set_character_flag = LIB_marcus_in_liberia
+		}
+		set_party_name = { ideology = communism long_name = "Universal Negro Improvement Association and African Communities League" name = "UNIA-ACL" }
+		add_popularity = { ideology = communism popularity = 0.15 }
+	}
+	option = { #Fascism
+		name = DARK_lib.9.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = DARK_liberia_ai_behavior
+						option = ALONE_COMMUNIST
+					}
+					has_game_rule = {
+						rule = DARK_liberia_ai_behavior
+						option = RECONNECT_COMMUNIST
+					}
+				}
+			}
+		}
+		
+		hidden_effect = {
+			set_country_flag = LIB_chose_fascism
+			set_cosmetic_tag = LIB_gone_wild
+		}
+		
+		promote_character = LIB_barduway_jallah
+		set_party_name = { ideology = fascism long_name = "Nien Dynasty" name = "Nien Dynasty" }
+		add_popularity = { ideology = fascism popularity = 0.15 }
+	}
+}
+
+##The Election of 1939
+country_event = {
+	id = DARK_lib.10
+	title = DARK_lib.10.t
+	desc = DARK_lib.10.desc
+	picture = GFX_report_event_election_vote
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = LIB
+		date > 1939.9.1
+		has_government = democratic
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = { #No Meddling
+		name = DARK_lib.10.a
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		custom_effect_tooltip = LIB_no_meddled_tt
+		hidden_effect = {
+			random_list = {
+				50 = { set_country_flag = LIB_neutral_gains }
+				50 = { }
+			}
+		}
+	}
+	
+	option = { #Meddle
+		name = DARK_lib.10.b
+		ai_chance = {
+			base = 4
+		}
+
+		add_political_power = -25
+		custom_effect_tooltip = LIB_meddled_tt
+		hidden_effect = {
+			set_country_flag = LIB_meddled_flag
+			random_list = {
+				25 = { set_country_flag = LIB_anger_over_meddling }
+				75 = { }
+			}
+		}
+	}
+}
+	country_event = { #Neutral gain
+		id = DARK_lib.11
+		title = DARK_lib.11.t
+		desc = DARK_lib.11.desc
+		picture = GFX_report_event_election_vote	
+		
+		fire_only_once = yes
+	
+		trigger = {
+			date > 1939.9.15
+			has_government = democratic
+			has_country_flag = LIB_neutral_gains
+		}
+		mean_time_to_happen = {
+			days = 10
+		}
+		
+		option = {
+			name = DARK_lib.11.a
+			
+			hidden_effect = {
+				add_popularity = { ideology = communism popularity = 0.02 }
+				add_popularity = { ideology = fascism popularity = 0.01 }
+				clr_country_flag = LIB_neutral_gains
+			}
+			add_popularity = { ideology = neutrality popularity = 0.1 }			
+		}
+	}
+	country_event = { #Meddling Discovered
+		id = DARK_lib.12
+		title = DARK_lib.12.t
+		desc = DARK_lib.12.desc
+		picture = GFX_report_event_election_vote	
+		
+		fire_only_once = yes
+	
+		trigger = {
+			date > 1939.9.15
+			has_government = democratic
+			has_country_flag = LIB_anger_over_meddling
+		}
+		mean_time_to_happen = {
+			days = 10
+		}
+		
+		option = {
+			name = DARK_lib.12.a
+	
+			add_political_power = -125
+			add_popularity = { ideology = democratic popularity = -0.1 }	
+			hidden_effect = {
+				clr_country_flag = LIB_anger_over_meddling
+			}
+		}
+	}
+	news_event = { #Election Results
+		id = DARK_lib.13
+		title = {
+			text = DARK_lib.13.t1
+			trigger = {
+				neutrality > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		title = {
+			text = DARK_lib.13.t2
+			trigger = {
+				OR = {
+					democratic > 0.5
+					has_country_flag = LIB_meddled_flag
+				}
+				neutrality > 0.2
+				OR = {
+					NOT = { has_country_flag = LIB_meddled_flag }
+					has_country_flag = LIB_anger_over_meddling
+				}
+			}
+		}
+		title = {
+			text = DARK_lib.13.t3
+			trigger = {
+				OR = {
+					democratic > 0.5
+					has_country_flag = LIB_meddled_flag
+				}
+				OR = {
+					neutrality < 0.2
+					AND = {
+						has_country_flag = LIB_meddled_flag
+						NOT = { has_country_flag = LIB_anger_over_meddling }
+					}
+				}
+			}
+		}
+		title = {
+			text = DARK_lib.13.t4
+			trigger = {
+				fascism > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		title = {
+			text = DARK_lib.13.t5
+			trigger = {
+				neutrality > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		title = {
+			text = DARK_lib.13.t6
+			trigger = {
+				democratic < 0.5
+				neutrality < 0.5
+				fascism < 0.5
+				communism < 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		desc = {
+			text = DARK_lib.13.desc1
+			trigger = {
+				neutrality > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		desc = {
+			text = DARK_lib.13.desc2
+			trigger = {
+				OR = {
+					democratic > 0.5
+					has_country_flag = LIB_meddled_flag
+				}
+				neutrality > 0.2
+				OR = {
+					NOT = { has_country_flag = LIB_meddled_flag }
+					has_country_flag = LIB_anger_over_meddling
+				}
+			}
+		}
+		desc = {
+			text = DARK_lib.13.desc3
+			trigger = {
+				OR = {
+					democratic > 0.5
+					has_country_flag = LIB_meddled_flag
+				}
+				OR = {
+					neutrality < 0.2
+					AND = {
+						has_country_flag = LIB_meddled_flag
+						NOT = { has_country_flag = LIB_anger_over_meddling }
+					}
+				}
+			}
+		}
+		desc = {
+			text = DARK_lib.13.desc4
+			trigger = {
+				fascism > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		desc = {
+			text = DARK_lib.13.desc5
+			trigger = {
+				neutrality > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		desc = {
+			text = DARK_lib.13.desc6
+			trigger = {
+				democratic < 0.5
+				neutrality < 0.5
+				fascism < 0.5
+				communism < 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		picture = GFX_news_event_election_vote	
+		
+		fire_only_once = yes
+	
+		trigger = {
+			original_tag = LIB
+			date > 1939.10.10
+			has_government = democratic
+		}
+		mean_time_to_happen = {
+			days = 1
+		}
+		
+		option = { #Neutral Wins
+			name = DARK_lib.13.a
+			trigger = {
+				neutrality > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+	
+			add_popularity = { ideology = neutrality popularity = 0.05 }
+			set_politics = {
+				ruling_party = neutrality
+				last_election = 1939.10.10
+				election_frequency = 48
+				elections_allowed = yes
+			}
+			hidden_effect = {
+				clr_country_flag = LIB_meddled_flag
+				clr_country_flag = LIB_anger_over_meddling
+			}
+		}
+		option = { #Democratic wins. Neutral Gains
+			name = DARK_lib.13.b
+			trigger = {
+				OR = {
+					democratic > 0.5
+					has_country_flag = LIB_meddled_flag
+				}
+				neutrality > 0.2
+				OR = {
+					NOT = { has_country_flag = LIB_meddled_flag }
+					has_country_flag = LIB_anger_over_meddling
+				}
+			}
+			
+			set_politics = {
+				ruling_party = democratic
+				last_election = 1939.10.10
+				election_frequency = 48
+				elections_allowed = yes
+			}
+			country_event = { id = DARK_lib.14 hours = 24 }
+			hidden_effect = {
+				clr_country_flag = LIB_meddled_flag
+				clr_country_flag = LIB_anger_over_meddling
+			}
+		}
+		option = { #Democratic win
+			name = DARK_lib.13.c
+			trigger = {
+				OR = {
+					democratic > 0.5
+					has_country_flag = LIB_meddled_flag
+				}
+				OR = {
+					neutrality < 0.2
+					AND = {
+						has_country_flag = LIB_meddled_flag
+						NOT = { has_country_flag = LIB_anger_over_meddling }
+					}
+				}
+			}
+			
+			set_politics = {
+				ruling_party = democratic
+				last_election = 1939.10.10
+				election_frequency = 48
+				elections_allowed = yes
+			}
+			add_country_leader_role = {
+				character = LIB_james_cooper
+				promote_leader = yes
+				country_leader = {
+					ideology = centrism
+					expire = "1965.1.1.1"
+					traits = { new_status_quo }
+					id=-1
+				}
+			}
+			set_party_name = { ideology = neutrality long_name = "Democratic Party" name = "Democrats" }
+			hidden_effect = {
+				clr_country_flag = LIB_meddled_flag
+				clr_country_flag = LIB_anger_over_meddling
+			}
+		}
+		option = { #Communists win
+			name = DARK_lib.13.d
+			trigger = {
+				communism > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+			
+			add_popularity = { ideology = communism popularity = 0.05 }
+			set_politics = {
+				ruling_party = communism
+				last_election = 1939.10.10
+				election_frequency = 48
+				elections_allowed = yes
+			}
+			hidden_effect = {
+				clr_country_flag = LIB_meddled_flag
+				clr_country_flag = LIB_anger_over_meddling
+			}
+		}
+		option = { #Fascists win
+			name = DARK_lib.13.e
+			trigger = {
+				fascism > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+			
+			add_popularity = { ideology = fascism popularity = 0.05 }
+			set_politics = {
+				ruling_party = fascism
+				last_election = 1939.10.10
+				election_frequency = 48
+				elections_allowed = yes
+			}
+			hidden_effect = {
+				clr_country_flag = LIB_meddled_flag
+				clr_country_flag = LIB_anger_over_meddling
+			}
+		}
+		option = { #Coalition government
+			name = DARK_lib.13.f
+			trigger = {
+				democratic < 0.5
+				neutrality < 0.5
+				fascism < 0.5
+				communism < 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+			
+			country_event = { id = DARK_lib.15 hours = 24 }
+			hidden_effect = {
+				clr_country_flag = LIB_meddled_flag
+				clr_country_flag = LIB_anger_over_meddling
+			}
+		}
+	}
+	country_event = { #Neutral Gains Government
+		id = DARK_lib.14
+		title = DARK_lib.14.t
+		desc = DARK_lib.14.desc
+		picture = GFX_report_event_election_vote	
+		
+		is_triggered_only = yes
+		
+		option = { #Form Consensus
+			name = DARK_lib.14.a
+			ai_chance = {
+				base = 75
+			}
+			
+			add_political_power = -50
+			add_ideas = LIB_government_cooperation
+			add_popularity = { ideology = neutrality popularity = 0.15 }
+			set_politics = {
+				ruling_party = democratic
+				last_election = 1939.10.10
+				election_frequency = 48
+				elections_allowed = yes
+			}
+		}
+		option = { #Make sure this never happens again!
+			name = DARK_lib.14.b
+			ai_chance = {
+				base = 25
+			}
+			
+			add_political_power = -100
+			add_ideas = LIB_government_noncooperation
+			set_politics = {
+				ruling_party = democratic
+				last_election = 1939.10.10
+				election_frequency = 48
+				elections_allowed = yes
+			}
+			add_country_leader_role = {
+				character = LIB_james_cooper
+				promote_leader = yes
+				country_leader = {
+					ideology = centrism
+					expire = "1965.1.1.1"
+					traits = { new_status_quo }
+					id=-1
+				}
+			}
+			set_party_name = { ideology = neutrality long_name = "Democratic Party" name = "Democrats" }
+		}
+	}		
+	country_event = { #Coalition Government
+		id = DARK_lib.15
+		title = DARK_lib.15.t
+		desc = DARK_lib.15.desc
+		picture = GFX_report_event_election_vote	
+		
+		is_triggered_only = yes
+		
+		option = { #The Unit Whigs
+			name = DARK_lib.15.a
+			trigger = {
+				neutrality > 0.12
+			}
+			ai_chance = {
+				base = 33
+			}
+			
+			
+			add_political_power = -50
+			add_ideas = LIB_government_cooperation
+			add_popularity = { ideology = neutrality popularity = 0.1 }	
+			add_popularity = { ideology = democratic popularity = 0.1 }	
+			set_politics = {
+				ruling_party = democratic
+				last_election = 1939.10.10
+				election_frequency = 48
+				elections_allowed = yes
+			}
+		}
+		option = { #The Communists
+			name = DARK_lib.15.b
+			trigger = {
+				communism > 0.12
+			}
+			ai_chance = {
+				base = 33
+			}
+			
+			add_political_power = -50
+			add_ideas = LIB_government_cooperation
+			add_popularity = { ideology = communism popularity = 0.1 }	
+			add_popularity = { ideology = democratic popularity = 0.1 }	
+			set_politics = {
+				ruling_party = democratic
+				last_election = 1939.10.10
+				election_frequency = 48
+				elections_allowed = yes
+			}
+		}
+		option = { #The Fascists
+			name = DARK_lib.15.c
+			trigger = {
+				fascism > 0.12
+			}
+			ai_chance = {
+				base = 33
+			}
+			
+			add_political_power = -50
+			add_ideas = LIB_government_cooperation
+			add_popularity = { ideology = fascism popularity = 0.1 }	
+			add_popularity = { ideology = democratic popularity = 0.1 }	
+			set_politics = {
+				ruling_party = democratic
+				last_election = 1939.10.10
+				election_frequency = 48
+				elections_allowed = yes
+			}
+		}
+	}
+	
+##The Election of 1943
+country_event = {
+	id = DARK_lib.16
+	title = DARK_lib.16.t
+	desc = DARK_lib.16.desc
+	picture = GFX_report_event_election_vote
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = LIB
+		date > 1943.9.1
+		has_government = democratic
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = { #No Meddling
+		name = DARK_lib.10.a
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		custom_effect_tooltip = LIB_no_meddled_tt
+		hidden_effect = {
+			random_list = {
+				50 = { set_country_flag = LIB_neutral_gains }
+				50 = { }
+			}
+		}
+	}
+	
+	option = { #Meddle
+		name = DARK_lib.10.b
+		ai_chance = {
+			base = 4
+		}
+
+		add_political_power = -25
+		custom_effect_tooltip = LIB_meddled_tt
+		hidden_effect = {
+			set_country_flag = LIB_meddled_flag
+			random_list = {
+				25 = { set_country_flag = LIB_anger_over_meddling }
+				75 = { }
+			}
+		}
+	}
+}
+	country_event = { #Neutral gain
+		id = DARK_lib.17
+		title = DARK_lib.17.t
+		desc = DARK_lib.17.desc
+		picture = GFX_report_event_election_vote	
+		
+		fire_only_once = yes
+	
+		trigger = {
+			date > 1943.9.15
+			has_government = democratic
+			has_country_flag = LIB_neutral_gains
+		}
+		mean_time_to_happen = {
+			days = 10
+		}
+		
+		option = {
+			name = DARK_lib.11.a
+			
+			hidden_effect = {
+				add_popularity = { ideology = communism popularity = 0.02 }
+				add_popularity = { ideology = fascism popularity = 0.01 }
+				clr_country_flag = LIB_neutral_gains
+			}
+			add_popularity = { ideology = neutrality popularity = 0.1 }			
+		}
+	}
+	country_event = { #Meddling Discovered
+		id = DARK_lib.18
+		title = DARK_lib.12.t
+		desc = DARK_lib.12.desc
+		picture = GFX_report_event_election_vote	
+		
+		fire_only_once = yes
+	
+		trigger = {
+			date > 1943.9.15
+			has_government = democratic
+			has_country_flag = LIB_anger_over_meddling
+		}
+		mean_time_to_happen = {
+			days = 10
+		}
+		
+		option = {
+			name = DARK_lib.12.a
+	
+			add_political_power = -125
+			add_popularity = { ideology = democratic popularity = -0.1 }
+			hidden_effect = {
+				clr_country_flag = LIB_anger_over_meddling
+			}
+		}
+	}
+	news_event = { #Election Results
+		id = DARK_lib.19
+		title = {
+			text = DARK_lib.19.t1
+			trigger = {
+				neutrality > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		title = {
+			text = DARK_lib.19.t2
+			trigger = {
+				OR = {
+					democratic > 0.5
+					has_country_flag = LIB_meddled_flag
+				}
+				neutrality > 0.2
+				OR = {
+					NOT = { has_country_flag = LIB_meddled_flag }
+					has_country_flag = LIB_anger_over_meddling
+				}
+			}
+		}
+		title = {
+			text = DARK_lib.19.t3
+			trigger = {
+				OR = {
+					democratic > 0.5
+					has_country_flag = LIB_meddled_flag
+				}
+				OR = {
+					neutrality < 0.2
+					AND = {
+						has_country_flag = LIB_meddled_flag
+						NOT = { has_country_flag = LIB_anger_over_meddling }
+					}
+				}
+			}
+		}
+		title = {
+			text = DARK_lib.19.t4
+			trigger = {
+				fascism > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		title = {
+			text = DARK_lib.19.t5
+			trigger = {
+				neutrality > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		title = {
+			text = DARK_lib.19.t6
+			trigger = {
+				democratic < 0.5
+				neutrality < 0.5
+				fascism < 0.5
+				communism < 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		desc = {
+			text = DARK_lib.19.desc1
+			trigger = {
+				neutrality > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		desc = {
+			text = DARK_lib.19.desc2
+			trigger = {
+				OR = {
+					democratic > 0.5
+					has_country_flag = LIB_meddled_flag
+				}
+				neutrality > 0.2
+				OR = {
+					NOT = { has_country_flag = LIB_meddled_flag }
+					has_country_flag = LIB_anger_over_meddling
+				}
+			}
+		}
+		desc = {
+			text = DARK_lib.19.desc3
+			trigger = {
+				OR = {
+					democratic > 0.5
+					has_country_flag = LIB_meddled_flag
+				}
+				OR = {
+					neutrality < 0.2
+					AND = {
+						has_country_flag = LIB_meddled_flag
+						NOT = { has_country_flag = LIB_anger_over_meddling }
+					}
+				}
+			}
+		}
+		desc = {
+			text = DARK_lib.19.desc4
+			trigger = {
+				fascism > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		desc = {
+			text = DARK_lib.19.desc5
+			trigger = {
+				neutrality > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		desc = {
+			text = DARK_lib.19.desc6
+			trigger = {
+				democratic < 0.5
+				neutrality < 0.5
+				fascism < 0.5
+				communism < 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+		}
+		picture = GFX_news_event_election_vote	
+		
+		fire_only_once = yes
+	
+		trigger = {
+			original_tag = LIB
+			date > 1943.10.12
+			has_government = democratic
+		}
+		mean_time_to_happen = {
+			days = 1
+		}
+		
+		immediate = {
+			retire_character = LIB_edwin_barclay
+			promote_character = LIB_william_tubman
+		}
+		
+		option = { #Neutral Wins
+			name = DARK_lib.13.a
+			trigger = {
+				neutrality > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+	
+			add_popularity = { ideology = neutrality popularity = 0.05 }
+			set_politics = {
+				ruling_party = neutrality
+				last_election = 1943.10.12
+				election_frequency = 48
+				elections_allowed = yes
+			}
+			hidden_effect = {
+				clr_country_flag = LIB_meddled_flag
+				clr_country_flag = LIB_anger_over_meddling
+			}
+		}
+		option = { #Democratic wins. Neutral Gains
+			name = DARK_lib.19.b
+			trigger = {
+				OR = {
+					democratic > 0.5
+					has_country_flag = LIB_meddled_flag
+				}
+				neutrality > 0.2
+				OR = {
+					NOT = { has_country_flag = LIB_meddled_flag }
+					has_country_flag = LIB_anger_over_meddling
+				}
+			}
+			
+			set_politics = {
+				ruling_party = democratic
+				last_election = 1943.10.12
+				election_frequency = 48
+				elections_allowed = yes
+			}
+			country_event = { id = DARK_lib.20 hours = 24 }
+			hidden_effect = {
+				clr_country_flag = LIB_meddled_flag
+				clr_country_flag = LIB_anger_over_meddling
+			}
+		}
+		option = { #Democratic win
+			name = DARK_lib.19.c
+			trigger = {
+				OR = {
+					democratic > 0.5
+					has_country_flag = LIB_meddled_flag
+				}
+				OR = {
+					neutrality < 0.2
+					AND = {
+						has_country_flag = LIB_meddled_flag
+						NOT = { has_country_flag = LIB_anger_over_meddling }
+					}
+				}
+			}
+			
+			set_politics = {
+				ruling_party = democratic
+				last_election = 1943.10.12
+				election_frequency = 48
+				elections_allowed = yes
+			}
+			hidden_effect = {
+				clr_country_flag = LIB_meddled_flag
+				clr_country_flag = LIB_anger_over_meddling
+			}
+		}
+		option = { #Communists win
+			name = DARK_lib.19.d
+			trigger = {
+				communism > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+			
+			add_popularity = { ideology = communism popularity = 0.05 }
+			set_politics = {
+				ruling_party = communism
+				last_election = 1943.10.12
+				election_frequency = 48
+				elections_allowed = yes
+			}
+			hidden_effect = {
+				clr_country_flag = LIB_meddled_flag
+				clr_country_flag = LIB_anger_over_meddling
+			}
+		}
+		option = { #Fascists win
+			name = DARK_lib.19.e
+			trigger = {
+				fascism > 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+			
+			add_popularity = { ideology = fascism popularity = 0.05 }
+			set_politics = {
+				ruling_party = fascism
+				last_election = 1943.10.12
+				election_frequency = 48
+				elections_allowed = yes
+			}
+			hidden_effect = {
+				clr_country_flag = LIB_meddled_flag
+				clr_country_flag = LIB_anger_over_meddling
+			}
+		}
+		option = { #Coalition government
+			name = DARK_lib.19.f
+			trigger = {
+				democratic < 0.5
+				neutrality < 0.5
+				fascism < 0.5
+				communism < 0.5
+				NOT = { has_country_flag = LIB_meddled_flag }
+			}
+			
+			country_event = { id = DARK_lib.21 hours = 24 }
+			hidden_effect = {
+				clr_country_flag = LIB_meddled_flag
+				clr_country_flag = LIB_anger_over_meddling
+			}
+		}
+	}
+	country_event = { #Neutral Gains Government
+		id = DARK_lib.20
+		title = DARK_lib.20.t
+		desc = DARK_lib.20.desc
+		picture = GFX_report_event_election_vote	
+		
+		is_triggered_only = yes
+		
+		option = { #Form Consensus
+			name = DARK_lib.20.a
+			ai_chance = {
+				base = 75
+			}
+			
+			add_political_power = -50
+			add_ideas = LIB_government_cooperation
+			add_popularity = { ideology = neutrality popularity = 0.15 }
+			set_politics = {
+				ruling_party = democratic
+				last_election = 1943.10.12
+				election_frequency = 48
+				elections_allowed = yes
+			}
+		}
+		option = { #Make sure this never happens again!
+			name = DARK_lib.20.b
+			ai_chance = {
+				base = 25
+			}
+			
+			add_political_power = -100
+			add_ideas = LIB_government_noncooperation
+			set_politics = {
+				ruling_party = democratic
+				last_election = 1943.10.12
+				election_frequency = 48
+				elections_allowed = yes
+			}
+		}
+	}		
+	country_event = { #Coalition Government
+		id = DARK_lib.21
+		title = DARK_lib.21.t
+		desc = DARK_lib.21.desc
+		picture = GFX_report_event_election_vote	
+		
+		is_triggered_only = yes
+		
+		option = { #The Democrats
+			name = DARK_lib.21.a
+			trigger = {
+				neutrality > 0.12
+			}
+			ai_chance = {
+				base = 33
+			}
+			
+			
+			add_political_power = -50
+			add_ideas = LIB_government_cooperation
+			add_popularity = { ideology = neutrality popularity = 0.1 }	
+			add_popularity = { ideology = democratic popularity = 0.1 }	
+			set_politics = {
+				ruling_party = democratic
+				last_election = 1943.10.12
+				election_frequency = 48
+				elections_allowed = yes
+			}
+		}
+		option = { #The Communists
+			name = DARK_lib.21.b
+			trigger = {
+				communism > 0.12
+			}
+			ai_chance = {
+				base = 33
+			}
+			
+			add_political_power = -50
+			add_ideas = LIB_government_cooperation
+			add_popularity = { ideology = communism popularity = 0.1 }	
+			add_popularity = { ideology = democratic popularity = 0.1 }	
+			set_politics = {
+				ruling_party = democratic
+				last_election = 1943.10.12
+				election_frequency = 48
+				elections_allowed = yes
+			}
+		}
+		option = { #The Fascists
+			name = DARK_lib.21.c
+			trigger = {
+				fascism > 0.12
+			}
+			ai_chance = {
+				base = 33
+			}
+			
+			add_political_power = -50
+			add_ideas = LIB_government_cooperation
+			add_popularity = { ideology = fascism popularity = 0.1 }	
+			add_popularity = { ideology = democratic popularity = 0.1 }	
+			set_politics = {
+				ruling_party = democratic
+				last_election = 1943.10.12
+				election_frequency = 48
+				elections_allowed = yes
+			}
+		}
+	}
+	
+
+##CIVIL WAR EVENTS
+#Equal Representation?
+country_event = {
+	id = DARK_lib.22
+	title = DARK_lib.22.t
+	desc = DARK_lib.22.desc
+	picture = GFX_report_event_military_planning
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = LIB
+		focus_progress = { focus = LIB_revolution progress > 0}
+		has_completed_focus = LIB_recruit_kru
+		NOT = { has_completed_focus = LIB_revolution }
+	}
+	mean_time_to_happen = {
+		days = 35
+	}
+	
+	option = { #Written Assurance
+		name = DARK_lib.22.a
+		ai_chance = {
+			base = 10
+		}
+		
+		add_political_power = -50
+		custom_effect_tooltip = LIB_will_lower_hinterland_tt		
+		hidden_effect = {
+			set_country_flag = LIB_will_lower_hinterland_1
+		}
+	}
+	
+	option = { #Uh, yeah, we'll totally get right on that
+		name = DARK_lib.22.b
+		ai_chance = {
+			base = 1
+		}
+	
+	}
+}
+	#Hinterland Capital?
+	country_event = {
+		id = DARK_lib.23
+		title = DARK_lib.23.t
+		desc = DARK_lib.23.desc
+		picture = GFX_report_event_military_planning
+		
+		fire_only_once = yes
+		
+		trigger = {
+			tag = LIB
+			focus_progress = { focus = LIB_revolution progress > 0}
+			has_country_flag = LIB_will_lower_hinterland_1
+			has_completed_focus = LIB_recruit_kru
+			NOT = { has_completed_focus = LIB_revolution }
+		}
+		mean_time_to_happen = {
+			days = 35
+		}
+		
+		option = { #Makes Sense
+			name = DARK_lib.23.a
+			ai_chance = {
+				base = 5
+			}
+			
+			add_political_power = -75
+			custom_effect_tooltip = LIB_will_lower_hinterland_tt
+			hidden_effect = {
+				set_country_flag = LIB_will_lower_hinterland_2
+			}
+		}
+		
+		option = { #What!? NO!
+			name = DARK_lib.23.b
+			ai_chance = {
+				base = 1
+			}		
+		}
+	}	
+#Reparations?
+country_event = {
+	id = DARK_lib.24
+	title = DARK_lib.24.t
+	desc = DARK_lib.24.desc
+	picture = GFX_report_event_military_planning
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = LIB
+		focus_progress = { focus = LIB_revolution progress > 0}
+		NOT = { has_completed_focus = LIB_revolution }
+	}
+	mean_time_to_happen = {
+		days = 60
+	}
+	
+	option = { #All Americo-Liberals will pay
+		name = DARK_lib.24.a
+		
+		custom_effect_tooltip = LIB_yes_reps_tt
+		hidden_effect = { set_country_flag = LIB_yes_reps_flag }
+	}
+		
+	option = { #We can distribute the land of the government officials, but them alone
+		name = DARK_lib.24.b
+		trigger = {
+			has_completed_focus = LIB_recruit_americo
+		}
+		
+		custom_effect_tooltip = LIB_some_reps_tt
+		hidden_effect = { set_country_flag = LIB_some_reps_flag }
+	}
+	option = { #No, no reps
+		name = DARK_lib.24.c
+		
+		custom_effect_tooltip = LIB_no_reps_tt
+		hidden_effect = { set_country_flag = LIB_no_reps_flag }
+	}
+}
+#Army Discipline
+country_event = { #Profiteering
+	id = DARK_lib.25
+	title = DARK_lib.25.t
+	desc = DARK_lib.25.desc
+	picture = GFX_report_event_military_planning
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = LIB
+		focus_progress = { focus = LIB_revolution progress > 0}
+		NOT = { has_completed_focus = LIB_revolution }
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = { #We can't do anything
+		name = DARK_lib.25.a
+		
+		custom_effect_tooltip = LIB_no_discipline_tt
+		hidden_effect = { set_country_flag = LIB_no_discipline_flag }
+	}
+	option = { #Execute the men in charge of the racket
+		name = DARK_lib.25.b
+		trigger = {
+			has_completed_focus = LIB_disciplined_force
+		}
+			
+		add_political_power = -50
+		custom_effect_tooltip = LIB_discipline_tt
+		hidden_effect = { set_country_flag = LIB_discipline_2 }
+	}
+}
+	country_event = { #More Profiteering
+		id = DARK_lib.26
+		title = DARK_lib.26.t
+		desc = DARK_lib.26.desc
+		picture = GFX_report_event_military_planning
+		
+		fire_only_once = yes
+		
+		trigger = {
+			tag = LIB
+			focus_progress = { focus = LIB_revolution progress > 0}
+			NOT = { has_completed_focus = LIB_revolution }
+			has_country_flag = LIB_no_discipline_flag
+		}
+		mean_time_to_happen = {
+			days = 70
+		}
+		
+		option = { #We can't do anything
+			name = DARK_lib.26.a
+			
+			custom_effect_tooltip = LIB_no_discipline_tt
+		}
+		option = { #Execute the men in charge of the racket
+			name = DARK_lib.26.b
+			trigger = {
+				has_completed_focus = LIB_disciplined_force
+			}
+			
+			add_political_power = -100
+			custom_effect_tooltip = LIB_discipline2_tt
+			hidden_effect = { set_country_flag = LIB_discipline_1 }
+		}
+	}
+	country_event = { #Standards of Recruitment
+		id = DARK_lib.27
+		title = DARK_lib.27.t
+		desc = DARK_lib.27.desc
+		picture = GFX_report_event_military_planning
+		
+		fire_only_once = yes
+		
+		trigger = {
+			tag = LIB
+			focus_progress = { focus = LIB_revolution progress > 0}
+			NOT = { has_completed_focus = LIB_revolution }
+			OR = {
+				has_country_flag = LIB_discipline_1
+				has_completed_focus = LIB_disciplined_force
+			}
+		}
+		mean_time_to_happen = {
+			days = 70
+		}
+		
+		option = { #We have standards
+			name = DARK_lib.27.a
+			
+			add_political_power = -50
+			custom_effect_tooltip = LIB_standards_tt
+			hidden_effect = { set_country_flag = LIB_discipline_2 }
+		}
+		option = { #No we don't
+			name = DARK_lib.27.b
+			trigger = {
+				has_completed_focus = LIB_disciplined_force
+			}
+				
+			custom_effect_tooltip = LIB_no_standards_tt			
+		}
+	}
+
+##End of the Liberian Civil War
+#War Ends
+country_event = {
+	id = DARK_lib.28
+	title = DARK_lib.28.t
+	desc = DARK_lib.28.desc
+	picture = GFX_report_event_saf_civil_war
+	
+	is_triggered_only = yes
+	
+	immediate = { #Clear discipline flags
+		hidden_effect = {
+			clr_country_flag = LIB_discipline_2
+			clr_country_flag = LIB_discipline_1
+			clr_country_flag = LIB_no_discipline_flag
+		}
+	}
+	
+	option = {
+		name = DARK_lib.28.a
+		
+		add_political_power = 500
+		add_stability = 0.25
+		hidden_effect = { set_country_flag = LIB_end_of_civil_war }
+	}
+}
+#Moving the capital
+country_event = {
+	id = DARK_lib.29
+	title = DARK_lib.29.t
+	desc = DARK_lib.29.desc
+	picture = GFX_report_event_military_planning
+	
+	trigger = {
+		original_tag = LIB
+		has_country_flag = LIB_end_of_civil_war
+		has_country_flag = LIB_will_lower_hinterland_2
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	fire_only_once = yes
+	
+	immediate = { #Clear hinterland_2 flag
+		hidden_effect = {
+			clr_country_flag = LIB_will_lower_hinterland_2
+		}
+	}
+	
+	option = { #Move Capital
+		name = DARK_lib.29.a
+		ai_chance = {
+			base = 0
+		}
+			
+		set_capital = { state = 835 remember_old_capital = no }
+		835 = { set_state_name = "Liberia" }
+		298 = { set_state_name = "Liberian Coast" }
+	}
+	option = { #Move Capital and change name to founder's
+		name = DARK_lib.29.b
+		ai_chance = {
+			base = 1
+		}
+			
+		set_capital = { state = 835 remember_old_capital = no }
+		set_province_name = { id = 13236 name = "Robertston" }
+		835 = { set_state_name = "Liberia" }
+		298 = { set_state_name = "Liberian Coast" }
+	}
+	option = { #Move Capital and change name to ruler's
+		name = DARK_lib.29.c
+		trigger = {
+			OR = {
+				has_country_leader = { ruling_only = yes character = LIB_marcus_garvey }
+				has_country_leader = { ruling_only = yes character = LIB_barduway_jallah }
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+		
+		add_political_power = -50
+		set_capital = { state = 835 remember_old_capital = no }
+		if = {
+			limit = { has_country_leader = { ruling_only = yes character = LIB_marcus_garvey } }
+			set_province_name = { id = 13236 name = "Garvechester" }
+		}
+		else = {
+			set_province_name = { id = 13236 name = "Nienna" }
+		}
+		835 = { set_state_name = "Liberia" }
+		298 = { set_state_name = "Liberian Coast" }
+	}
+}
+#Paying Reparations = {
+country_event = {
+	id = DARK_lib.30
+	title = DARK_lib.30.t
+	desc = {
+		text = DARK_lib.30.desc1
+		trigger = {
+			has_country_flag = LIB_yes_reps_flag
+		}
+	}
+	desc = {
+		text = DARK_lib.30.desc2
+		trigger = {
+			has_country_flag = LIB_some_reps_flag
+		}
+	}
+	desc = {
+		text = DARK_lib.30.desc3
+		trigger = {
+			has_country_flag = LIB_no_reps_flag
+		}
+	}
+		
+	picture = GFX_report_event_african_soldiers
+	
+	trigger = {
+		original_tag = LIB
+		has_country_flag = LIB_end_of_civil_war
+		OR = {
+			has_country_flag = LIB_yes_reps_flag
+			has_country_flag = LIB_some_reps_flag
+			has_country_flag = LIB_no_reps_flag
+		}
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = { #Yes Reps
+		name = DARK_lib.30.a
+		trigger = {
+			has_country_flag = LIB_yes_reps_flag
+		}
+		
+		add_stability = 0.05
+		add_timed_idea = { idea = LIB_new_owners days = 540 }
+		hidden_effect = {
+			clr_country_flag = LIB_yes_reps_flag
+		}
+	}
+	option = { #Some Reps
+		name = DARK_lib.30.b
+		trigger = {
+			has_country_flag = LIB_some_reps_flag
+		}
+		
+		add_stability = 0.05
+		swap_ideas = {
+			remove_idea = LIB_economic_disaster_1
+			add_idea = LIB_economic_disaster_2
+		}
+		hidden_effect = {
+			clr_country_flag = LIB_some_reps_flag
+		}
+	}
+	option = { #No Reps
+		name = DARK_lib.30.c
+		trigger = {
+			has_country_flag = LIB_no_reps_flag
+		}
+		
+		add_stability = -0.05
+		swap_ideas = {
+			remove_idea = LIB_economic_disaster_1
+			add_idea = LIB_economic_disaster_2
+		}
+		if = {
+			limit = { has_country_flag = LIB_chose_fascism }
+			add_timed_idea = { idea = LIB_angry_natives_f days = 540 }
+		}
+		else = {
+			add_timed_idea = { idea = LIB_angry_natives_c days = 540 }
+		}
+		hidden_effect = {
+			clr_country_flag = LIB_no_reps_flag
+		}
+	}
+}
+	
+#New Constitution
+country_event = {
+	id = DARK_lib.31
+	title = DARK_lib.31.t
+	desc = DARK_lib.31.desc
+	picture = GFX_report_event_liberian_constitution
+	
+	trigger = {
+		original_tag = LIB
+		has_country_flag = LIB_end_of_civil_war
+	}
+	mean_time_to_happen = {
+		days = 31
+	}
+	
+	fire_only_once = yes
+	
+	option = { #Base it upon the old one
+		name = DARK_lib.31.a
+		
+		custom_effect_tooltip = LIB_renew_con_tt
+		hidden_effect = {
+			set_country_flag = LIB_deciding_constitution
+		}
+		country_event = { id = DARK_lib.32 hours = 24 }
+	}
+	option = { #Start from scratch
+		name = DARK_lib.31.b
+		trigger = {
+			OR = {
+				has_country_leader = { ruling_only = yes character = LIB_marcus_garvey }
+				has_country_leader = { ruling_only = yes character = LIB_barduway_jallah }
+			}
+		}
+		ai_chance = { 
+			base = 0
+		}
+		
+		custom_effect_tooltip = LIB_new_con_tt
+		hidden_effect = {
+			set_country_flag = LIB_deciding_constitution
+		}
+		country_event = { id = DARK_lib.36 hours = 24 }
+	}
+}
+	country_event = { #Based on original constitution, The Bill of Rights
+		id = DARK_lib.32
+		title = DARK_lib.32.t
+		desc = DARK_lib.32.desc
+		picture = GFX_report_event_liberian_constitution
+		
+		is_triggered_only = yes
+		
+		option = { #Remove voting requirements
+			name = DARK_lib.32.a
+			ai_chance = { 
+				base = 1
+			}
+			
+			if = {
+				limit = { has_country_leader = { ruling_only = yes character = LIB_barduway_jallah } }
+				add_popularity = { ideology = fascism popularity = 0.1 }				
+			}
+			else = {
+				add_popularity = { ideology = communism popularity = 0.1 }
+			}
+			add_popularity = { ideology = neutrality popularity = 0.05 }
+			hidden_effect = {
+				country_event = { id = DARK_lib.33 hours = 120 }
+			}			
+		}
+		option = { #Keep voting requirements
+			name = DARK_lib.32.b
+			ai_chance = { 
+				base = 0
+			}
+			
+			add_political_power = 25
+			if = {
+				limit = { has_country_leader = { ruling_only = yes character = LIB_barduway_jallah } }
+				add_popularity = { ideology = fascism popularity = -0.1 }				
+			}
+			else = {
+				add_popularity = { ideology = communism popularity = -0.1 }
+			}
+			add_popularity = { ideology = democratic popularity = 0.1 }
+			hidden_effect = {
+				country_event = { id = DARK_lib.33 hours = 120 }
+			}
+		}
+	}
+	country_event = { #Based on original constitution, The Bill of Rights 2
+		id = DARK_lib.33
+		title = DARK_lib.33.t
+		desc = DARK_lib.33.desc
+		picture = GFX_report_event_liberian_constitution
+		
+		is_triggered_only = yes
+		
+		option = { #Add Explicit Minority Protection
+			name = DARK_lib.33.a
+			ai_chance = { 
+				base = 1
+			}
+			
+			if = {
+				limit = { has_idea = LIB_hinterland_problems_1 }
+				swap_ideas = {
+					remove_idea = LIB_hinterland_problems_1
+					add_idea = LIB_hinterland_problems_2
+				}
+			}
+			else_if = {
+				limit = { has_idea = LIB_hinterland_problems_2 }
+				swap_ideas = {
+					remove_idea = LIB_hinterland_problems_2
+					add_idea = LIB_hinterland_problems_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = LIB_hinterland_problems_3 }
+				remove_ideas = LIB_hinterland_problems_3
+			}
+			else = {
+				add_political_power = 50
+			}
+			hidden_effect = {
+				country_event = { id = DARK_lib.34 hours = 120 }
+			}	
+		}
+		option = { #Keep as is
+			name = DARK_lib.33.b
+			ai_chance = { 
+				base = 0
+			}
+			
+			add_political_power = 100
+			hidden_effect = {
+				country_event = { id = DARK_lib.34 hours = 120 }
+			}
+		}
+	}
+	country_event = { #Based on original constitution, The Executive
+		id = DARK_lib.34
+		title = {
+			text = DARK_lib.34.t1
+			trigger = {
+				OR = {
+					NOT = { has_government = fascism }
+					has_idea = LIB_dual_heads
+				}
+			}
+		}
+		title = {
+			text = DARK_lib.34.t2
+			trigger = {
+				has_government = fascism
+			}
+		}
+		desc = {
+			text = DARK_lib.34.desc1
+			trigger = {
+				OR = {
+					NOT = { has_government = fascism }
+					has_idea = LIB_dual_heads
+				}
+			}
+		}
+		desc = {
+			text = DARK_lib.34.desc2
+			trigger = {
+				has_government = fascism
+			}
+		}
+		
+		picture = GFX_report_event_liberian_constitution
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			hidden_effect = {
+				LIB = { set_variable = { LIB_election_years = 0 } }
+			}
+		}
+		
+		option = { #President 2 Year Term, Original Constitution
+			name = DARK_lib.34.a
+			trigger = {
+				OR = {
+					NOT = { has_government = fascism }
+					has_idea = LIB_dual_heads
+				}
+			}
+			ai_chance = { 
+				base = 0
+			}
+			
+			custom_effect_tooltip = LIB_two_years_tt
+			hidden_effect = {
+				country_event = { id = DARK_lib.35 hours = 24 }
+				set_variable = { LIB_election_years = 2 }
+			}	
+		}
+		option = { #President 4 Year Term, 1908
+			name = DARK_lib.34.b
+			trigger = {
+				OR = {
+					NOT = { has_government = fascism }
+					has_idea = LIB_dual_heads
+				}
+			}
+			ai_chance = { 
+				base = 1
+			}
+			
+			custom_effect_tooltip = LIB_four_years_tt
+			hidden_effect = {
+				country_event = { id = DARK_lib.35 hours = 24 }
+				set_variable = { LIB_election_years = 4 }
+			}
+		}
+		option = { #President 8 Year Term, 1935
+			name = DARK_lib.34.c
+			trigger = {
+				OR = {
+					NOT = { has_government = fascism }
+					has_idea = LIB_dual_heads
+				}
+			}
+			ai_chance = { 
+				base = 0
+			}
+			
+			custom_effect_tooltip = LIB_eight_years_tt
+			hidden_effect = {
+				country_event = { id = DARK_lib.35 hours = 24 }
+				set_variable = { LIB_election_years = 8 }
+			}
+		}
+		option = { #The King replaces the President
+			name = DARK_lib.34.d
+			trigger = {
+				has_government = fascism
+				NOT = { has_idea = LIB_dual_heads }
+			}
+			ai_chance = { 
+				base = 1
+			}
+			
+			add_country_leader_trait = dictator
+			hidden_effect = {
+				country_event = { id = DARK_lib.35 hours = 24 }
+				set_variable = { LIB_election_years = 2 }
+			}	
+		}
+		option = { #There will be a King and a President both
+			name = DARK_lib.34.e
+			trigger = {
+				has_government = fascism
+				NOT = { has_idea = LIB_dual_heads }
+			}
+			ai_chance = { 
+				base = 2
+			}
+			
+			add_ideas = LIB_dual_heads
+			hidden_effect = {
+				country_event = { id = DARK_lib.34 hours = 24 }
+			}	
+		}
+	}		
+	country_event = { #The Re-Imagined Constitution
+		id = DARK_lib.35
+		title = DARK_lib.35.t
+		desc = DARK_lib.35.desc
+		picture = GFX_report_event_liberian_constitution
+		
+		is_triggered_only = yes
+		
+		immediate = {			
+			hidden_effect = {
+				clr_country_flag = LIB_deciding_constitution
+			}
+		}
+		
+		option = {
+			name = DARK_lib.35.a
+			
+			add_stability = 0.1
+			if = {
+				limit = { has_government = fascism }
+				add_popularity = { ideology = fascism popularity = 0.05 }
+			}
+			else_if = {
+				limit = { has_government = communism }
+				add_popularity = { ideology = communism popularity = 0.05 }
+			}
+			if = {
+				limit = { check_variable = { LIB_election_years = 2 } }
+				if = {
+					limit = { has_government = democratic }					
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+						election_frequency = 24 #Why can I not just set this to LIB_election_years directly!?
+						#last_election = date
+					}
+				}
+				else_if = {
+					limit = { has_government = neutrality }					
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = yes
+						election_frequency = 24
+						#last_election = date
+					}
+				}
+				else_if = {
+					limit = { has_government = fascism }					
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = yes
+						election_frequency = 24
+						#last_election = date
+					}
+				}
+				else_if = {
+					limit = { has_government = communism }					
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = yes
+						election_frequency = 24
+						#last_election = date
+					}
+				}
+			}
+			else_if = {
+				limit = { check_variable = { LIB_election_years = 4 } }
+				if = {
+					limit = { has_government = democratic }					
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+						election_frequency = 48
+						#last_election = date
+					}
+				}
+				else_if = {
+					limit = { has_government = neutrality }					
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = yes
+						election_frequency = 48
+						#last_election = date
+					}
+				}
+				else_if = {
+					limit = { has_government = fascism }					
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = yes
+						election_frequency = 48
+						#last_election = date
+					}
+				}
+				else_if = {
+					limit = { has_government = communism }					
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = yes
+						election_frequency = 48
+						#last_election = date
+					}
+				}
+			}
+			else_if = {
+				limit = { check_variable = { LIB_election_years = 8 } }
+				if = {
+					limit = { has_government = democratic }					
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+						election_frequency = 96
+						#last_election = date
+					}
+				}
+				else_if = {
+					limit = { has_government = neutrality }					
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = yes
+						election_frequency = 96
+						#last_election = date
+					}
+				}
+				else_if = {
+					limit = { has_government = fascism }					
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = yes
+						election_frequency = 96
+						#last_election = date
+					}
+				}
+				else_if = {
+					limit = { has_government = communism }					
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = yes
+						election_frequency = 96
+						#last_election = date
+					}
+				}
+			}
+			else = { #Fallback
+				if = {
+					limit = { has_government = democratic }					
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+						election_frequency = 60
+						#last_election = date
+					}
+				}
+				else_if = {
+					limit = { has_government = neutrality }					
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = yes
+						election_frequency = 60
+						#last_election = date
+					}
+				}
+				else_if = {
+					limit = { has_government = fascism }					
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = yes
+						election_frequency = 60
+						#last_election = date
+					}
+				}
+				else_if = {
+					limit = { has_government = communism }					
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = yes
+						election_frequency = 60
+						#last_election = date
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_government = fascism }
+				}
+				add_ideas = LIB_us_system
+			}
+			hold_election = ROOT
+			hidden_effect = {
+				clr_country_flag = LIB_deciding_constitution
+			}
+		}
+	}
+	#--------------------------------------------------------------------------------
+	country_event = { #New constitution, The Bill of Rights
+		id = DARK_lib.36
+		title = DARK_lib.36.t
+		desc = DARK_lib.36.desc
+		picture = GFX_report_event_liberian_constitution
+		
+		is_triggered_only = yes
+		
+		option = { #Yes voting
+			name = DARK_lib.36.a
+			ai_chance = { 
+				base = 1
+			}
+			
+			if = {
+				limit = { has_idea = LIB_hinterland_problems_1 }
+				swap_ideas = {
+					remove_idea = LIB_hinterland_problems_1
+					add_idea = LIB_hinterland_problems_2
+				}
+			}
+			else_if = {
+				limit = { has_idea = LIB_hinterland_problems_2 }
+				swap_ideas = {
+					remove_idea = LIB_hinterland_problems_2
+					add_idea = LIB_hinterland_problems_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = LIB_hinterland_problems_3 }
+				remove_ideas = LIB_hinterland_problems_3
+			}
+			else = {
+				if = {
+					limit = { has_country_leader = { ruling_only = yes character = LIB_barduway_jallah } }
+					add_popularity = { ideology = fascism popularity = 0.05 }
+					else = {
+						add_popularity = { ideology = communism popularity = 0.05 }
+					}
+				}
+			}			
+			add_popularity = { ideology = neutrality popularity = 0.05 }
+			hidden_effect = {
+				country_event = { id = DARK_lib.37 hours = 120 }
+			}
+		}
+		option = { #No voting
+			name = DARK_lib.36.b
+			trigger = {
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+			}
+			ai_chance = { 
+				base = 1
+			}			
+			
+			add_stability = -0.1
+			if = {
+				limit = { has_country_leader = { ruling_only = yes character = LIB_barduway_jallah } }
+				add_popularity = { ideology = fascism popularity = -0.2 }				
+			}
+			else = {
+				add_popularity = { ideology = communism popularity = -0.2 }
+			}
+			
+			hidden_effect = {			
+				set_country_flag = LIB_no_voting
+				country_event = { id = DARK_lib.37 hours = 120 }				
+			}
+		}
+	}
+	country_event = { #New constitution, Form of Government
+		id = DARK_lib.37
+		title = DARK_lib.37.t
+		desc = DARK_lib.37.desc
+		picture = GFX_report_event_liberian_constitution
+		
+		is_triggered_only = yes
+		
+		option = { #Dictatorship of the Proletariet
+			name = DARK_lib.37.a
+			trigger = {
+				has_government = communism
+				has_country_flag = LIB_no_voting
+			}
+			ai_chance = { 
+				base = 10
+			}
+			
+			add_country_leader_trait = dictator
+			hidden_effect = {
+				country_event = { id = DARK_lib.39 hours = 120 }
+			}	
+		}
+		option = { #Monarchism
+			name = DARK_lib.37.b
+			trigger = {
+				has_government = fascism
+				has_country_flag = LIB_no_voting
+			}
+			ai_chance = { 
+				base = 10
+			}
+			
+			add_country_leader_trait = dictator
+			hidden_effect = {
+				country_event = { id = DARK_lib.39 hours = 120 }
+			}
+		}
+		option = { #Keep as is for the most part
+			name = DARK_lib.37.c
+			trigger = {
+				NOT = { has_country_flag = LIB_no_voting }
+				NOT = { has_country_leader = { ruling_only = yes character = LIB_barduway_jallah } }
+			}
+			ai_chance = { 
+				base = 1
+			}
+			
+			add_ideas = LIB_us_system
+			hidden_effect = {
+				country_event = { id = DARK_lib.38 hours = 120 }
+			}
+		}
+		option = { #Parliamentary System
+			name = DARK_lib.37.d
+			trigger = {
+				NOT = { has_country_flag = LIB_no_voting }
+			}
+			ai_chance = { 
+				base = 1
+			}
+			
+			add_ideas = LIB_uk_system
+			hidden_effect = {
+				country_event = { id = DARK_lib.38 hours = 120 }
+			}
+		}
+		option = { #Dual System
+			name = DARK_lib.37.e
+			trigger = {
+				has_country_leader = { ruling_only = yes character = LIB_barduway_jallah }
+				NOT = { has_country_flag = LIB_no_voting }
+			}
+			ai_chance = { 
+				base = 1
+			}
+			
+			add_ideas = LIB_dual_heads
+			hidden_effect = {
+				country_event = { id = DARK_lib.38 hours = 120 }
+			}
+		}
+	}
+	country_event = { #Election Length
+		id = DARK_lib.38
+		title = DARK_lib.38.t
+		desc = DARK_lib.38.desc
+		
+		picture = GFX_report_event_liberian_constitution
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			hidden_effect = {
+				LIB = { set_variable = { LIB_election_years = 0 } }
+			}
+		}
+		
+		option = { #President 2 Year Term, Original Constitution
+			name = DARK_lib.38.a
+			ai_chance = { 
+				base = 0
+			}
+			
+			custom_effect_tooltip = LIB_two_years_tt
+			hidden_effect = {
+				country_event = { id = DARK_lib.39 hours = 24 }
+				set_variable = { LIB_election_years = 2 }
+			}	
+		}
+		option = { #President 4 Year Term, 1908
+			name = DARK_lib.38.b
+			ai_chance = { 
+				base = 1
+			}
+			
+			custom_effect_tooltip = LIB_four_years_tt
+			hidden_effect = {
+				country_event = { id = DARK_lib.39 hours = 24 }
+				set_variable = { LIB_election_years = 4 }
+			}
+		}
+		option = { #President 8 Year Term, 1935
+			name = DARK_lib.38.c
+			ai_chance = { 
+				base = 1
+			}
+			
+			custom_effect_tooltip = LIB_eight_years_tt
+			hidden_effect = {
+				country_event = { id = DARK_lib.39 hours = 24 }
+				set_variable = { LIB_election_years = 8 }
+			}
+		}
+	}		
+	country_event = { #The New Constitution
+		id = DARK_lib.39
+		title = DARK_lib.39.t
+		desc = {
+			text = DARK_lib.39.desc1
+			trigger = {
+				has_country_flag = LIB_no_voting
+			}
+		}
+		desc = {
+			text = DARK_lib.39.desc2
+			trigger = {
+				NOT = { has_country_flag = LIB_no_voting }
+			}
+		}
+		picture = GFX_report_event_liberian_constitution
+		
+		is_triggered_only = yes
+		
+		option = { #No Elections
+			name = DARK_lib.39.a
+			trigger = {
+				has_country_flag = LIB_no_voting
+			}
+			
+			hidden_effect = {
+				clr_country_flag = LIB_no_voting
+				clr_country_flag = LIB_deciding_constitution
+			}
+		}
+		option = { #Elections
+			name = DARK_lib.39.b
+			trigger = {
+				NOT = { has_country_flag = LIB_no_voting }
+			}
+			
+			add_stability = 0.1
+			if = {
+				limit = { check_variable = { LIB_election_years = 2 } }
+				if = {
+					limit = { has_government = democratic }					
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+						election_frequency = 24
+					}
+				}
+				else_if = {
+					limit = { has_government = neutrality }					
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = yes
+						election_frequency = 24
+					}
+				}
+				else_if = {
+					limit = { has_government = fascism }					
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = yes
+						election_frequency = 24
+					}
+				}
+				else_if = {
+					limit = { has_government = communism }					
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = yes
+						election_frequency = 24
+					}
+				}
+			}
+			else_if = {
+				limit = { check_variable = { LIB_election_years = 4 } }
+				if = {
+					limit = { has_government = democratic }					
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+						election_frequency = 48
+					}
+				}
+				else_if = {
+					limit = { has_government = neutrality }					
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = yes
+						election_frequency = 48
+					}
+				}
+				else_if = {
+					limit = { has_government = fascism }					
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = yes
+						election_frequency = 48
+					}
+				}
+				else_if = {
+					limit = { has_government = communism }					
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = yes
+						election_frequency = 48
+					}
+				}
+			}
+			else_if = {
+				limit = { check_variable = { LIB_election_years = 8 } }
+				if = {
+					limit = { has_government = democratic }					
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+						election_frequency = 96
+					}
+				}
+				else_if = {
+					limit = { has_government = neutrality }					
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = yes
+						election_frequency = 96
+					}
+				}
+				else_if = {
+					limit = { has_government = fascism }					
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = yes
+						election_frequency = 96
+					}
+				}
+				else_if = {
+					limit = { has_government = communism }					
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = yes
+						election_frequency = 96
+					}
+				}
+			}
+			else = { #Fallback
+				if = {
+					limit = { has_government = democratic }					
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+						election_frequency = 60
+					}
+				}
+				else_if = {
+					limit = { has_government = neutrality }					
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = yes
+						election_frequency = 60
+					}
+				}
+				else_if = {
+					limit = { has_government = fascism }					
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = yes
+						election_frequency = 60
+					}
+				}
+				else_if = {
+					limit = { has_government = communism }					
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = yes
+						election_frequency = 60
+					}
+				}
+			}
+			if = {
+				limit = { has_government = fascism }
+				add_popularity = { ideology = fascism popularity = 0.05 }
+			}
+			else_if = {
+				limit = { has_government = communism }
+				add_popularity = { ideology = communism popularity = 0.05 }
+			}
+			hold_election = ROOT
+			
+			hidden_effect = {
+				clr_country_flag = LIB_no_voting
+				clr_country_flag = LIB_deciding_constitution
+			}
+		}
+	}
+	
+	
+#Ask Soviets for help
+country_event = {
+	id = DARK_lib.40 
+	title = DARK_lib.40.t
+	desc = {
+		text = DARK_lib.40.desc1
+		trigger = {
+			FROM = { has_government = communism }
+		}
+	}
+	desc = {
+		text = DARK_lib.40.desc2
+		trigger = {
+			FROM = { NOT = { has_government = communism } }
+		}
+	}
+	picture = GFX_report_event_stalin_meeting
+	
+	is_triggered_only = yes
+	
+	option = { #Help
+		name = DARK_lib.40.a
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 0
+				surrender_progress > 0.1
+			}
+			modifier = {
+				factor = 2
+				LIB = { has_government = communism }
+			}
+			modifier = {
+				add = 95
+				556 = { OWNER = { has_war_with = SOV } }
+				700 = { OWNER = { has_war_with = SOV } }
+			}
+		}
+		
+		add_to_faction = LIB
+		hidden_effect = {
+			add_ai_strategy = {
+				type = alliance
+				id = "LIB"
+				value = 200
+			}
+		}
+		effect_tooltip = {
+			556 = {
+				OWNER = {
+					LIB = {							
+						create_wargoal = {
+							type = take_state_focus
+							target = PREV
+							generator = { 556 272 }
+						}
+					}
+				}
+			}
+			700 = {
+				OWNER = {
+					LIB = {							
+						create_wargoal = {
+							type = take_state_focus
+							target = PREV
+							generator = { 700 701 274 558 }
+						}
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = LIB_we_will_also_go_to_war_tt
+		LIB = {
+			country_event = { id = DARK_lib.41 hours = 24 }
+		}
+		hidden_effect = {
+			set_country_flag = LIB_will_go_to_war_with_liberia
+		}		
+	}
+	option = { #Send them guns and hope for the best
+		name = DARK_lib.40.b
+		trigger = {
+			has_equipment = {
+				infantry_equipment > 10000
+			}
+		}
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = 0.5
+				has_government = communism
+			}
+			modifier = {
+				factor = 5
+				has_government = communism
+				surrender_progress > 0.1
+			}
+		}
+		
+		send_equipment = {
+			equipment = infantry_equipment
+			amount = 5000
+			target = LIB
+		}
+		if = {
+			limit = { has_equipment = { artillery_equipment > 2000 } }
+			send_equipment = {
+				equipment = artillery_equipment
+				amount = 1000
+				target = LIB
+			}
+		}
+		if = {
+			limit = { has_equipment = { fighter_equipment > 200 } }
+			send_equipment = {
+				equipment = fighter_equipment
+				amount = 100
+				target = LIB
+			}
+		}
+		if = {
+			limit = { has_equipment = { tac_bomber_equipment > 200 } }
+			send_equipment = {
+				equipment = tac_bomber_equipment
+				amount = 100
+				target = LIB
+			}
+		}
+		LIB = { country_event = { id = DARK_lib.42 hours = 24 } }
+	}
+	option = { #Nope
+		name = DARK_lib.40.c
+		ai_chance = {
+			base = 1
+		}
+		
+		remove_opinion_modifier = {
+			target = FROM
+			modifier = LIB_asked_for_help
+		}
+		
+		LIB = { country_event = { id = DARK_lib.43 hours = 24 } }
+	}
+}
+	country_event = { # Soviets agree
+		id = DARK_lib.41
+		title = DARK_lib.41.t
+		desc = DARK_lib.41.desc
+		picture = GFX_report_event_stalin_meeting
+		
+		is_triggered_only = yes
+		
+		option = { 
+			name = DARK_lib.41.a
+			
+			add_state_claim = 556
+			add_state_claim = 700
+			556 = {
+				OWNER = {
+					LIB = {							
+						create_wargoal = {
+							type = take_state_focus
+							target = PREV
+							generator = { 556 272 }
+						}
+					}
+				}
+			}
+			700 = {
+				OWNER = {
+					LIB = {							
+						create_wargoal = {
+							type = take_state_focus
+							target = PREV
+							generator = { 700 701 274 558 }
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				set_country_flag = LIB_getting_soviet_help
+			}
+		}
+	}
+	country_event = { # Soviets Send Guns
+		id = DARK_lib.42
+		title = DARK_lib.42.t
+		desc = DARK_lib.42.desc
+		picture = GFX_report_event_stalin_meeting
+		
+		is_triggered_only = yes
+		
+		option = { 
+			name = DARK_lib.42.a
+			
+			effect_tooltip = {
+				SOV = {
+					send_equipment = {
+						equipment = infantry_equipment
+						amount = 5000
+						target = LIB
+					}
+					if = {
+						limit = { has_equipment = { artillery_equipment > 2000 } }
+						send_equipment = {
+							equipment = artillery_equipment
+							amount = 1000
+							target = LIB
+						}
+					}
+					if = {
+						limit = { has_equipment = { fighter_equipment > 200 } }
+						send_equipment = {
+							equipment = fighter_equipment
+							amount = 100
+							target = LIB
+						}
+					}
+					if = {
+						limit = { has_equipment = { tac_bomber_equipment > 200 } }
+						send_equipment = {
+							equipment = tac_bomber_equipment
+							amount = 100
+							target = LIB
+						}
+					}
+				}
+			}
+		}
+	}
+	country_event = { # Soviets refuse
+		id = DARK_lib.43
+		title = DARK_lib.43.t
+		desc = DARK_lib.43.desc
+		picture = GFX_report_event_stalin_meeting
+		
+		is_triggered_only = yes
+		
+		option = { 
+			name = DARK_lib.43.a
+			
+			effect_tooltip = {
+				SOV = {
+					remove_opinion_modifier = {
+						target = ROOT
+						modifier = LIB_asked_for_help
+					}
+				}
+			}
+		}
+	}	
+	
+#Ask the Germans for help
+country_event = {
+	id = DARK_lib.44 
+	title = DARK_lib.44.t
+	desc = {
+		text = DARK_lib.44.desc1
+		trigger = {
+			has_government = fascism
+		}
+	}
+	desc = {
+		text = DARK_lib.44.desc2
+		trigger = {
+			NOT = { has_government = fascism }
+		}
+	}
+	picture = GFX_report_event_germany_politician_handshake
+	
+	is_triggered_only = yes
+	
+	option = { #Help
+		name = DARK_lib.44.a
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 0
+				surrender_progress > 0.1
+			}
+			modifier = {
+				factor = 2
+				LIB = { has_government = fascism }
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+			modifier = {
+				add = 5
+				556 = { OWNER = { has_war_with = GER } }
+				700 = { OWNER = { has_war_with = GER } }
+			}
+		}
+		
+		add_to_faction = LIB
+		hidden_effect = {
+			add_ai_strategy = {
+				type = alliance
+				id = "LIB"
+				value = 200
+			}
+		}
+		effect_tooltip = {
+			556 = {
+				OWNER = {
+					LIB = {							
+						create_wargoal = {
+							type = take_state_focus
+							target = PREV
+							generator = { 556 272 }
+						}
+					}
+				}
+			}
+			700 = {
+				OWNER = {
+					LIB = {							
+						create_wargoal = {
+							type = take_state_focus
+							target = PREV
+							generator = { 700 701 274 558 }
+						}
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = LIB_we_will_also_go_to_war_tt
+		LIB = {
+			country_event = { id = DARK_lib.45 hours = 24 }
+		}
+		hidden_effect = {
+			set_country_flag = LIB_will_go_to_war_with_liberia
+		}		
+	}
+	option = { #Send them guns and hope for the best
+		name = DARK_lib.44.b
+		trigger = {
+			has_equipment = {
+				infantry_equipment > 10000
+			}
+		}
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = 0.5
+				has_government = communism
+			}
+			modifier = {
+				factor = 5
+				has_government = communism
+				surrender_progress > 0.1
+			}
+		}
+		
+		send_equipment = {
+			equipment = infantry_equipment
+			amount = 5000
+			target = LIB
+		}
+		if = {
+			limit = { has_equipment = { artillery_equipment > 2000 } }
+			send_equipment = {
+				equipment = artillery_equipment
+				amount = 1000
+				target = LIB
+			}
+		}
+		if = {
+			limit = { has_equipment = { fighter_equipment > 200 } }
+			send_equipment = {
+				equipment = fighter_equipment
+				amount = 100
+				target = LIB
+			}
+		}
+		if = {
+			limit = { has_equipment = { tac_bomber_equipment > 200 } }
+			send_equipment = {
+				equipment = tac_bomber_equipment
+				amount = 100
+				target = LIB
+			}
+		}
+		LIB = { country_event = { id = DARK_lib.46 hours = 24 } }
+	}
+	option = { #Nope
+		name = DARK_lib.44.c
+		ai_chance = {
+			base = 1
+		}
+		
+		remove_opinion_modifier = {
+			target = FROM
+			modifier = LIB_asked_for_help
+		}
+		
+		LIB = { country_event = { id = DARK_lib.47 hours = 24 } }
+	}
+}
+	country_event = { # Germans agree
+		id = DARK_lib.45
+		title = DARK_lib.45.t
+		desc = {
+			text = DARK_lib.45.desc1
+			trigger = {
+				FROM = { has_government = fascism }
+			}
+		}
+		desc = {
+			text = DARK_lib.45.desc2
+			trigger = {
+				FROM = { NOT = { has_government = fascism } }
+			}
+		}
+		picture = GFX_report_event_germany_politician_handshake
+		
+		is_triggered_only = yes
+		
+		option = { 
+			name = DARK_lib.45.a
+			
+			add_state_claim = 556
+			add_state_claim = 700
+			556 = {
+				OWNER = {
+					LIB = {							
+						create_wargoal = {
+							type = take_state_focus
+							target = PREV
+							generator = { 556 272 }
+						}
+					}
+				}
+			}
+			700 = {
+				OWNER = {
+					LIB = {							
+						create_wargoal = {
+							type = take_state_focus
+							target = PREV
+							generator = { 700 701 274 558 }
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				set_country_flag = LIB_getting_nazi_help
+			}
+		}
+	}
+	country_event = { # Germans Send Guns
+		id = DARK_lib.46
+		title = DARK_lib.46.t
+		desc = DARK_lib.46.desc
+		picture = GFX_report_event_germany_politician_handshake
+		
+		is_triggered_only = yes
+		
+		option = { 
+			name = DARK_lib.46.a
+			
+			effect_tooltip = {
+				GER = {
+					send_equipment = {
+						equipment = infantry_equipment
+						amount = 5000
+						target = LIB
+					}
+					if = {
+						limit = { has_equipment = { artillery_equipment > 2000 } }
+						send_equipment = {
+							equipment = artillery_equipment
+							amount = 1000
+							target = LIB
+						}
+					}
+					if = {
+						limit = { has_equipment = { fighter_equipment > 200 } }
+						send_equipment = {
+							equipment = fighter_equipment
+							amount = 100
+							target = LIB
+						}
+					}
+					if = {
+						limit = { has_equipment = { tac_bomber_equipment > 200 } }
+						send_equipment = {
+							equipment = tac_bomber_equipment
+							amount = 100
+							target = LIB
+						}
+					}
+				}
+			}
+		}
+	}
+	country_event = { # Germans refuse
+		id = DARK_lib.47
+		title = DARK_lib.47.t
+		desc = DARK_lib.47.desc
+		picture = GFX_report_event_germany_politician_handshake
+		
+		is_triggered_only = yes
+		
+		option = { 
+			name = DARK_lib.47.a
+			
+			effect_tooltip = {
+				GER = {
+					remove_opinion_modifier = {
+						target = ROOT
+						modifier = LIB_asked_for_help
+					}
+				}
+			}
+		}
+	}	
+	
+	
+#Liberian Communist Uprising
+country_event = {
+	id = DARK_lib.48
+	title = DARK_lib.48.t
+	desc = DARK_lib.48.desc
+	picture = GFX_report_event_fascist_militia
+	
+	is_triggered_only = yes
+	#trigger = {
+	#	has_war_with = LIB
+	#	any_owned_state = {
+	#		has_state_flag = LIB_commune_infiltrated
+	#	}
+	#}
+	#mean_time_to_happen = {
+	#	days = 1
+	#}
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				limit = { 
+					has_state_flag = LIB_commune_infiltrated 
+				}				
+				LIB = {		
+					set_state_controller = PREV
+					division_template = {
+						name = "Communist Militia"
+						priority = 2
+						division_names_group = LIB_GAR_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+						support = {
+							
+						}
+					}
+				}				
+				create_unit = {
+					division = "name = \"Communist Militia\" division_template = \"Communist Militia\" start_experience_factor = 0.1" 
+					owner = LIB
+				}
+				ROOT = { set_state_controller = PREV }
+				clr_state_flag = LIB_commune_infiltrated
+			}
+			LIB = { country_event = DARK_lib.49 }
+		}
+	}
+	
+	option = { 	
+		name = DARK_lib.48.a
+	}
+}
+	country_event = {
+		id = DARK_lib.49
+		title = DARK_lib.49.t
+		desc = DARK_lib.49.desc
+		picture = GFX_report_event_fascist_militia
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			add_timed_idea = { idea = LIB_communist_supply days = 360 }
+		}
+		
+		option = { 
+			name = DARK_lib.49.a
+		}
+	}
+	
+
+## Italian Anger over Liberian Claims
+country_event = {
+	id = DARK_lib.50
+	title = DARK_lib.50.t
+	desc = DARK_lib.50.desc
+	picture = GFX_report_event_angry_mussolini
+	
+	trigger = {
+		original_tag = ITA
+		has_government = fascism
+		is_in_faction_with = GER
+		is_in_faction_with = LIB
+		has_completed_focus = ITA_victoryinETH
+		OR = {
+			LIB = { has_cosmetic_tag = LIB_african_hegemony }
+			any_owned_state = {
+				OR = {
+					is_core_of = LIB
+					is_claimed_by = LIB
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+
+	option = { #Win first, then figure it out
+		name = DARK_lib.50.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				surrender_progress > 0.15
+			}
+		}
+	}
+	option = { #Talk to Liberia
+		name = DARK_lib.50.b
+		ai_chance = {
+			factor = 5
+		}
+		
+		LIB = { country_event = { id = DARK_lib.51 hours = 12 } }
+	}
+	option = { #Talk to Germany
+		name = DARK_lib.50.c
+		ai_chance = {
+			factor = 10
+		}
+		
+		GER = { country_event = { id = DARK_lib.54 hours = 12 } }
+	}
+}
+	country_event = { # Liberia and Italy talk
+		id = DARK_lib.51
+		title = DARK_lib.51.t
+		desc = DARK_lib.51.desc
+		picture = GFX_report_event_angry_mussolini
+		
+		is_triggered_only = yes
+		
+		option = { #Submit to Italian Demands
+			name = DARK_lib.51.a
+			ai_chance = {
+				base = 0
+			}
+			
+			custom_effect_tooltip = LIB_give_in_to_italy_tt
+			hidden_effect = {
+				DARK_lose_eastern_africa = yes
+				DARK_lose_northern_africa = yes
+				every_state = {
+					limit = {
+						OR = {
+							is_owned_by = ROOT
+							OWNER = { is_subject_of = ROOT }
+						}
+						has_state_flag = DARK_gave_up
+					}					
+					FROM = { set_state_owner = PREV }
+				}
+				every_state = {
+					limit = {
+						is_controlled_by_ROOT_or_subject = yes
+						NOT = { is_owned_by = ROOT }
+						has_state_flag = DARK_gave_up
+					}
+					FROM = { set_state_controller = PREV }
+				}
+			}
+			ITA = { country_event = { id = DARK_lib.52 hours = 6 } }
+		}
+		option = { #Offer a compromise
+			name = DARK_lib.51.b
+			ai_chance = {
+				base = 10
+			}
+			
+			custom_effect_tooltip = LIB_offer_compromise_to_italy_tt
+			ITA = { country_event = { id = DARK_lib.53 hours = 12 } }		
+		}
+		option = { #Turn to Germany for Mediation
+			name = DARK_lib.51.c
+			ai_chance = {
+				base = 5
+			}
+			
+			GER = { country_event = { id = DARK_lib.54 hours = 12 } }
+		}
+	}
+		country_event = { #Liberia Folds
+			id = DARK_lib.52
+			title = DARK_lib.52.t
+			desc = DARK_lib.52.desc
+			picture = GFX_report_event_angry_mussolini
+			
+			is_triggered_only = yes
+			
+			option = {
+				name = DARK_lib.52.a
+				
+			}			
+		}
+		country_event = { #Liberia Offers Compromise
+			id = DARK_lib.53
+			title = DARK_lib.53.t
+			desc = DARK_lib.53.desc
+			picture = GFX_report_event_angry_mussolini
+			
+			is_triggered_only = yes
+			
+			option = { #Accept
+				name = DARK_lib.53.a
+				ai_chance = {
+					factor = 1
+				}
+				
+				custom_effect_tooltip = LIB_accept_compromise_tt
+				hidden_effect = {					
+					DARK_lose_western_africa = yes
+					DARK_lose_southern_africa = yes
+					every_state = {
+						limit = {
+							OR = {
+								is_owned_by = ROOT
+								OWNER = { is_subject_of = ROOT }
+							}
+							has_state_flag = DARK_gave_up
+						}					
+						FROM = { set_state_owner = PREV }
+					}
+					every_state = {
+						limit = {
+							is_controlled_by_ROOT_or_subject = yes
+							NOT = { is_owned_by = ROOT }
+							has_state_flag = DARK_gave_up
+						}
+						FROM = { set_state_controller = PREV }
+					}					
+					DARK_gain_egypt = yes
+					every_state = {
+						limit = {
+							has_state_flag = DARK_gained
+						}					
+						add_claim_by = ROOT
+					}
+					FROM = {
+						every_state = {
+							limit = {
+								OR = {
+									is_owned_by = FROM
+									OWNER = { is_subject_of = FROM }
+								}
+								has_state_flag = DARK_gained
+							}					
+							ROOT = { set_state_owner = PREV }
+						}
+						every_state = {
+							limit = {
+								OR = {
+									is_controlled_by = FROM
+									CONTROLLER = { is_subject_of = FROM }
+								}
+								NOT = { is_owned_by = FROM }
+								has_state_flag = DARK_gained
+							}
+							ROOT = { set_state_controller = PREV }
+						}						
+					}
+					#Give Liberia everything else
+					every_state = {
+						limit = {
+							is_on_continent = africa
+							OR = {
+								is_owned_by = ROOT
+								OWNER = { is_subject_of = ROOT }
+							}
+							NOT = { has_state_flag = DARK_gained }
+						}					
+						FROM = { set_state_owner = PREV }
+					}
+					every_state = {
+						limit = {
+							is_on_continent = africa
+							is_controlled_by_ROOT_or_subject = yes
+							NOT = { is_owned_by = ROOT }
+							NOT = { has_state_flag = DARK_gained }
+						}
+						FROM = { set_state_controller = PREV }
+					}
+					##Lose all other claims/cores
+					every_state = {
+						limit = {
+							is_on_continent = africa
+							NOT = { has_state_flag = DARK_gained }
+						}					
+						remove_claim_by = ROOT
+						remove_core_of = ROOT
+					}
+					every_state = {
+						limit = {
+							is_on_continent = africa
+							has_state_flag = DARK_gained
+						}					
+						remove_claim_by = FROM
+						remove_core_of = FROM
+					}
+				}
+			}
+			option = { #Turn to Germany for Mediation
+				name = DARK_lib.53.b
+				ai_chance = {
+					factor = 1
+				}
+				
+				GER = { country_event = { id = DARK_lib.55 hours = 6 } }
+			}
+		}
+	country_event = { #German Mediation
+		id = DARK_lib.54
+		title = DARK_lib.54.t
+		desc = DARK_lib.54.desc
+		picture = GFX_report_event_angry_mussolini
+		
+		is_triggered_only = yes
+		
+		option = { #Side with Liberia
+			name = DARK_lib.54.a
+			ai_chance = {
+				factor = 10
+			}
+			
+			custom_effect_tooltip = LIB_side_with_liberia_tt
+			ITA = { country_event = { id = DARK_lib.55 hours = 24 } }
+		}
+		option = { #Offer Compromise
+			name = DARK_lib.54.b
+			ai_chance = {
+				factor = 1
+			}
+			
+			custom_effect_tooltip = LIB_side_with_compromise_tt
+			ITA = { country_event = { id = DARK_lib.57 hours = 24 } }
+			LIB = { country_event = { id = DARK_lib.57 hours = 24 } }
+		}
+		option = { #Side with Italy
+			name = DARK_lib.54.c
+			ai_chance = {
+				factor = 2
+			}
+			
+			custom_effect_tooltip = LIB_side_with_italy_tt
+			LIB = { country_event = { id = DARK_lib.62 hours = 24 } }
+		}
+	}
+		country_event = { #Germany sided with Liberia
+			id = DARK_lib.55
+			title = DARK_lib.55.t
+			desc = DARK_lib.55.desc
+			picture = GFX_report_event_angry_mussolini
+			
+			is_triggered_only = yes
+			
+			option = { #...We accept this outcome
+				name = DARK_lib.55.a
+				ai_chance = {
+					base = 1
+				}
+				
+				custom_effect_tooltip = LIB_lose_all_states_in_africa_tt
+				LIB = { country_event = { id = DARK_lib.56 hours = 6 } }
+			}
+			option = { #THEN NO-ONE CAN HAVE IT!
+				name = DARK_lib.55.b
+				ai_chance = {
+					base = 0
+				}
+				
+				leave_faction = yes
+				LIB = { country_event = DARK_lib.61 }
+				GER = { country_event = DARK_lib.61 }
+				declare_war_on = {
+					type = annex_everything
+					target = LIB
+				}
+			}
+		}
+			country_event = { #Liberia Wins
+				id = DARK_lib.56
+				title = DARK_lib.56.t
+				desc = DARK_lib.56.desc
+				picture = GFX_report_event_angry_mussolini
+				
+				is_triggered_only = yes
+				
+				option = {
+					name = DARK_lib.56.a
+					ai_chance = {
+						base = 1
+					}
+					
+					custom_effect_tooltip = LIB_wins_africa_tt
+					hidden_effect = {
+						every_state = {
+							limit = {
+								is_on_continent = africa
+								OR = {
+									is_owned_by = FROM
+									OWNER = { is_subject_of = FROM }
+								}
+							}
+							ROOT = { set_state_owner = PREV }
+						}
+						every_state = {
+							limit = {
+								is_on_continent = africa
+								OR = {
+									is_controlled_by = FROM
+									CONTROLLER = { is_subject_of = FROM }
+								}
+								NOT = { is_owned_by = FROM }
+							}
+							ROOT = { set_state_controller = PREV }
+						}
+					}
+				}
+			}
+		country_event = { #Compromise?
+			id = DARK_lib.57
+			title = DARK_lib.57.t
+			desc = DARK_lib.57.desc
+			picture = GFX_report_event_angry_mussolini
+			
+			is_triggered_only = yes
+			
+			option = { #...We accept this outcome
+				name = DARK_lib.57.a
+				trigger = {
+					original_tag = ITA
+				}
+				ai_chance = {
+					base = 1
+				}
+				
+				custom_effect_tooltip = LIB_accept_compromise_tt
+				hidden_effect = {
+					set_country_flag = LIB_accepted_compromise_flag
+					country_event = DARK_lib.58
+				}
+			}
+			option = { #THEN NO-ONE CAN HAVE IT!
+				name = DARK_lib.57.b
+				trigger = {
+					original_tag = ITA
+				}
+				ai_chance = {
+					base = 0
+				}
+				
+				leave_faction = yes
+				LIB = { country_event = DARK_lib.61 }
+				GER = { country_event = DARK_lib.61 }
+				declare_war_on = {
+					type = annex_everything
+					target = LIB
+				}
+			}
+			option = { #...We accept this outcome
+				name = DARK_lib.57.c
+				trigger = {
+					original_tag = LIB
+				}
+				ai_chance = {
+					base = 1
+				}
+				
+				custom_effect_tooltip = LIB_accept_compromise2_tt
+				hidden_effect = {
+					set_country_flag = LIB_accepted_compromise_flag
+					country_event = DARK_lib.58
+				}
+			}
+			option = { #THEN NO-ONE CAN HAVE IT!
+				name = DARK_lib.57.d
+				trigger = {
+					original_tag = LIB
+				}
+				ai_chance = {
+					base = 0
+				}
+				
+				leave_faction = yes
+				ITA = { country_event = DARK_lib.61 }
+				GER = { country_event = DARK_lib.61 }
+				declare_war_on = {
+					type = annex_everything
+					target = ITA
+				}
+			}
+		}
+			country_event = {
+				id = DARK_lib.58
+				hidden = yes
+				
+				is_triggered_only = yes
+				
+				option = {
+					name = DARK_lib.58
+					trigger = {
+						any_other_country = {
+							has_country_flag = LIB_accepted_compromise_flag
+						}
+					}
+					
+					every_country = {
+						limit = { has_country_flag = LIB_accepted_compromise_flag }
+						country_event = DARK_lib.59
+						country_event = DARK_lib.60
+					}
+				}
+				option = {
+					name = DARK_lib.58
+					trigger = {
+						NOT = {
+							any_other_country = {
+								has_country_flag = LIB_accepted_compromise_flag
+							}
+						}
+					}
+				}
+			}
+				country_event = {
+					id = DARK_lib.59
+					hidden = yes
+					
+					is_triggered_only = yes
+					
+					option = {
+						name = DARK_lib.59.a
+						trigger = {
+							original_tag = ITA
+						}
+						
+						DARK_lose_western_africa = yes
+						DARK_lose_southern_africa = yes
+						every_state = {
+							limit = {
+								OR = {
+									is_owned_by = ROOT
+									OWNER = { is_subject_of = ROOT }
+								}
+								has_state_flag = DARK_gave_up
+							}					
+							LIB = { set_state_owner = PREV }
+						}
+						every_state = {
+							limit = {
+								is_controlled_by_ROOT_or_subject = yes
+								NOT = { is_owned_by = ROOT }
+								NOT = { OWNER = { is_subject_of = ROOT } }
+								has_state_flag = DARK_gave_up
+							}
+							LIB = { set_state_controller = PREV }
+						}					
+						DARK_gain_egypt = yes
+						every_state = {
+							limit = {
+								has_state_flag = DARK_gained
+							}					
+							add_claim_by = ROOT
+						}
+						LIB = {
+							every_state = {
+								limit = {
+									OR = {
+										is_owned_by = LIB
+										OWNER = { is_subject_of = LIB }
+									}
+									has_state_flag = DARK_gained
+								}					
+								ROOT = { set_state_owner = PREV }
+							}
+							every_state = {
+								limit = {
+									OR = {
+										is_controlled_by = LIB
+										CONTROLLER = { is_subject_of = LIB }
+									}
+									NOT = { is_owned_by = LIB }
+									NOT = { OWNER = { is_subject_of = ROOT } }
+									has_state_flag = DARK_gained
+								}
+								ROOT = { set_state_controller = PREV }
+							}						
+						}
+						#Give Liberia everything else
+						every_state = {
+							limit = {
+								is_on_continent = africa
+								OR = {
+									is_owned_by = ROOT
+									OWNER = { is_subject_of = ROOT }
+								}
+								NOT = { has_state_flag = DARK_gained }
+							}					
+							LIB = { set_state_owner = PREV }
+						}
+						every_state = {
+							limit = {
+								is_on_continent = africa
+								is_controlled_by_ROOT_or_subject = yes
+								NOT = { is_owned_by = ROOT }
+								NOT = { OWNER = { is_subject_of = ROOT } }
+								NOT = { has_state_flag = DARK_gained }
+							}
+							LIB = { set_state_controller = PREV }
+						}
+						##Lose all other claims/cores
+						every_state = {
+							limit = {
+								is_on_continent = africa
+								NOT = { has_state_flag = DARK_gained }
+							}					
+							remove_claim_by = ROOT
+							remove_core_of = ROOT
+						}
+						every_state = {
+							limit = {
+								is_on_continent = africa
+								has_state_flag = DARK_gained
+							}					
+							remove_claim_by = LIB
+							remove_core_of = LIB
+						}
+					}
+					option = {
+						name = DARK_lib.59.b
+						trigger = {
+							original_tag = LIB
+						}
+						
+						ITA = { country_event = DARK_lib.59 }
+					}
+				}
+				country_event = { #Compromise Accepted
+					id = DARK_lib.60
+					title = {
+						text = DARK_lib.60.t1
+						trigger = {
+							original_tag = ITA
+						}
+					}
+					title = {
+						text = DARK_lib.60.t2
+						trigger = {
+							original_tag = LIB
+						}
+					}
+					desc = {
+						text = DARK_lib.60.desc1
+						trigger = {
+							original_tag = ITA
+						}
+					}
+					desc = {
+						text = DARK_lib.60.desc2
+						trigger = {
+							original_tag = LIB
+						}
+					}
+					picture = GFX_report_event_angry_mussolini
+					
+					is_triggered_only = yes
+					
+					option = {
+						name = DARK_lib.60.a
+						
+					}
+				}
+			country_event = { #Someone refused to compromise
+				id = DARK_lib.61
+				title = DARK_lib.61.t
+				desc = DARK_lib.61.desc
+				picture = GFX_report_event_angry_mussolini
+				
+				is_triggered_only = yes
+				
+				option = {
+					name = DARK_lib.61.a
+					trigger = {
+						OR = {
+							original_tag = LIB
+							original_tag = ITA
+						}
+					}
+				}
+				option = {
+					name = DARK_lib.61.b
+					trigger = {
+						original_tag = GER
+					}
+				}
+			}
+		country_event = { #Germany Sided With Italy
+			id = DARK_lib.62
+			title = DARK_lib.62.t
+			desc = DARK_lib.62.desc
+			picture = GFX_report_event_angry_mussolini
+			
+			is_triggered_only = yes
+			
+			option = { #...We accept this outcome
+				name = DARK_lib.62.a
+				ai_chance = {
+					base = 1
+				}
+				
+				custom_effect_tooltip = LIB_lose_all_states_in_africa2_tt
+				ITA = { country_event = { id = DARK_lib.63 hours = 6 } }
+			}
+			option = { #THEN NO-ONE CAN HAVE IT!
+				name = DARK_lib.62.b
+				ai_chance = {
+					base = 2
+				}
+				
+				leave_faction = yes
+				ITA = { country_event = DARK_lib.61 }
+				GER = { country_event = DARK_lib.61 }
+				declare_war_on = {
+					type = annex_everything
+					target = ITA
+				}
+			}
+		}
+			country_event = { #Italy Wins
+				id = DARK_lib.63
+				title = DARK_lib.63.t
+				desc = DARK_lib.63.desc
+				picture = GFX_report_event_angry_mussolini
+				
+				is_triggered_only = yes
+				
+				option = {
+					name = DARK_lib.63.a
+					
+					custom_effect_tooltip = LIB_wins_africa2_tt
+					hidden_effect = {
+						every_state = {
+							limit = {
+								is_on_continent = africa
+								OR = {
+									is_owned_by = FROM
+									OWNER = { is_subject_of = FROM }
+								}
+								NOT = { state = 298 }
+								NOT = { state = 835 }
+							}
+							ROOT = { set_state_owner = PREV }
+						}
+						every_state = {
+							limit = {
+								is_on_continent = africa
+								OR = {
+									is_controlled_by = FROM
+									CONTROLLER = { is_subject_of = FROM }
+								}
+								NOT = { state = 298 }
+								NOT = { state = 835 }
+							}
+							ROOT = { set_state_controller = PREV }
+						}
+					}
+				}
+			}
+			
+	
+###NEWS EVENTS
+#America annexes Liberia
+news_event = {
+	id = DARK_lib.100
+	title = DARK_lib.100.t
+	desc = DARK_lib.100.desc
+	picture = GFX_news_event_saf_civil_war
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = DARK_lib.100.a
+		trigger = {
+			tag = USA
+		}
+	}
+	option = {
+		name = DARK_lib.100.b
+		trigger = {
+			has_government = fascism	
+			OR = {
+				original_tag = SAF
+				NOT = {
+					tag = USA
+					any_state = {
+						is_capital = yes
+						is_on_continent = africa
+						CONTROLLER = { has_capitulated = no }
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = DARK_lib.100.c
+		trigger = {
+			has_government = communism
+			NOT = {
+				tag = USA
+				original_tag = SAF
+				any_state = {
+					is_capital = yes
+					is_on_continent = africa
+					CONTROLLER = { has_capitulated = no }
+				}
+			}
+		}
+	}
+	option = {
+		name = DARK_lib.100.d
+		trigger = {	
+			OR = {
+				AND = {
+					original_tag = SAF
+					NOT = {	has_government = fascism }
+					NOT = {	has_government = communism }
+				}
+				NOT = {
+					tag = USA				
+					has_government = fascism
+					has_government = communism				
+					any_state = {
+						is_capital = yes
+						is_on_continent = africa
+						CONTROLLER = { has_capitulated = no }
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = DARK_lib.100.e
+		trigger = {
+			OR = {
+				AND = { 
+					original_tag = SAF 
+					has_government = communism
+				}				
+				any_state = {
+					is_capital = yes
+					is_on_continent = africa
+					CONTROLLER = { has_capitulated = no }
+				}
+			}
+		}
+	}
+}
+#America Declares War on Liberia
+news_event = {
+	id = DARK_lib.101
+	title = DARK_lib.101.t
+	desc = DARK_lib.101.desc
+	picture = GFX_news_event_kenya_army
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = DARK_lib.101.a
+		trigger = {
+			tag = USA
+		}
+	}
+	option = {
+		name = DARK_lib.101.b
+		trigger = {
+			has_government = fascism
+			NOT = {
+				tag = USA
+				tag = LIB
+				any_state = {
+					is_capital = yes
+					is_on_continent = africa
+					CONTROLLER = { has_capitulated = no }
+				}
+			}
+		}
+	}
+	option = {
+		name = DARK_lib.101.c
+		trigger = {
+			has_government = communism
+			OR = {
+				original_tag = SAF
+				NOT = {
+					tag = USA
+					tag = LIB
+					any_state = {
+						is_capital = yes
+						is_on_continent = africa
+						CONTROLLER = { has_capitulated = no }
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = DARK_lib.101.d
+		trigger = {
+			OR = {
+				original_tag = SAF
+				NOT = {
+					tag = USA
+					tag = LIB
+					has_government = fascism
+					has_government = communism				
+					any_state = {
+						is_capital = yes
+						is_on_continent = africa
+						CONTROLLER = { has_capitulated = no }
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = DARK_lib.101.e
+		trigger = {
+			NOT = { tag = LIB }
+			NOT = { original_tag = SAF }
+			any_state = {
+				is_capital = yes
+				is_on_continent = africa
+				CONTROLLER = { has_capitulated = no }
+			}			
+		}
+	}
+	option = {
+		name = DARK_lib.101.f
+		trigger = {
+			tag = LIB
+		}
+	}
+}
+
+#Firestene Kicked Out of Liberia
+news_event = {
+	id = DARK_lib.102
+	title = DARK_lib.102.t
+	desc = DARK_lib.102.desc
+	picture = GFX_news_event_generic_factory
+	
+	major = no
+	is_triggered_only = yes
+	
+	option = {
+		name = DARK_lib.102.a
+		trigger = {
+			tag = LIB
+		}
+		
+		add_ideas = LIB_economic_disaster_1 
+	}
+	option = {
+		name = DARK_lib.102.a
+		trigger = {
+			tag = USA
+		}
+		
+		effect_tooltip = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = LIB_ended_firestone
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = embargo
+			}
+		}
+	}
+}
+
+#Death of Marcus Garvey
+news_event = {
+	id = DARK_lib.103
+	title = DARK_lib.103.t
+	desc = DARK_lib.103.desc
+	picture = GFX_news_event_generic_funeral
+	
+	fire_only_once = yes
+	major = no
+	
+	trigger = {
+		original_tag = LIB
+		has_character = LIB_marcus_garvey
+		LIB_marcus_garvey = {
+			has_character_flag = LIB_marcus_in_liberia
+		}
+		date > 1940.1.1
+	}
+	mean_time_to_happen = {
+		days = 186
+	}
+	
+	
+	
+	option = {
+		name = DARK_lib.103.a
+		
+		kill_ideology_leader = communism
+		promote_character = LIB_didwho_welleh_twe
+	}
+}
+
+#Liberian Civil War
+news_event = {
+	id = DARK_lib.104
+	title = DARK_lib.104.t
+	desc = DARK_lib.104.desc
+	picture = GFX_news_event_liberian_frontier_force
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = DARK_lib.104.a
+		trigger = {
+			tag = LIB
+		}
+	}
+	option = {
+		name = DARK_lib.104.b
+		trigger = {
+			original_tag = LIB
+			NOT = { tag = LIB }
+		}
+	}
+	option = {
+		name = DARK_lib.104.c
+		trigger = {			
+			NOT = { original_tag = LIB }
+			any_state = {
+				is_capital = yes
+				is_on_continent = africa
+				CONTROLLER = { has_capitulated = no }
+			}
+		}
+	}
+	option = {
+		name = DARK_lib.104.d
+		trigger = {
+			NOT = {
+				tag = USA
+				original_tag = LIB
+				any_state = {
+					is_capital = yes
+					is_on_continent = africa
+					CONTROLLER = { has_capitulated = no }
+				}
+			}
+		}
+	}
+	option = {
+		name = DARK_lib.104.e
+		trigger = {
+			tag = USA
+		}
+	}
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	

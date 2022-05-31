@@ -1,0 +1,153 @@
+Austrian_historical = {
+	name = "Austrian Historical Plan"
+	desc = "Essentially the historical behaviour for Austria."
+
+	enable = {
+		original_tag = AUS
+		OR = {
+			is_historical_focus_on = yes
+			has_game_rule = {
+				rule = EYE_austria_ai_behavior
+				option = HISTORICAL
+			}
+			has_country_flag = AUS_AI_RANDOM_HISTORICAL
+		}
+	}
+
+	ai_national_focuses = {
+		AUS_dissolve_heimwehr #jan 1 - march 11 (1936)
+		AUS_reform_conscription #march 11 - july 29
+		AUS_abkommen #july 29 - oct 7
+		AUS_sturmkorps #oct 7 - dec 16
+		AUS_foreign_appeal #dec 16 - feb 24 (1937)
+		AUS_railway #feb 24 - may 5
+		AUS_recovery #may 5 - july 14
+		AUS_peasants #july 14 - sep 22
+		AUS_reform_army #sep 22 - dec 1
+		AUS_reinforce_guilds #dec 1 - feb 9 (1938)
+		AUS_democracy #feb 9 - apr 20
+		AUS_corporatism_focus #apr 20 - may 25
+		AUS_free_elections #may 25 - june 29
+		AUS_static
+		AUS_defend_ger
+		AUS_good_steel
+		AUS_armament
+		AUS_interconnect_rails
+		AUS_old_companies
+		AUS_hydroelectric
+		AUS_think_tanks
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		AUS_dissolve_heimwehr = 1.0
+		AUS_abkommen = 1.0
+		AUS_foreign_appeal = 1.0
+	}
+
+}
+
+Austrian_hapsburg = {
+	name = "Austrian Succession Plan"
+	desc = "A.E.I.O.U."
+
+	enable = {
+		original_tag = AUS
+		OR = {
+			has_game_rule = {
+				rule = EYE_austria_ai_behavior
+				option = RESTORE_OTTO
+			}
+			has_country_flag = AUS_AI_RANDOM_RESTORE_OTTO
+		}
+	}
+
+	ai_national_focuses = {
+		AUS_dissolve_heimwehr #jan 1 - march 11 (1936)
+		AUS_reform_conscription #march 11 - july 29
+		AUS_no_ger #july 29 - oct 7
+		AUS_sturmkorps #oct 7 - dec 16
+		AUS_hapsburgs #dec 16 - feb 24 (1937)
+		AUS_ally_italy #feb 24 - may 5
+		AUS_recovery #may 5 - july 14
+		AUS_reform_army #july 14 - sep 22
+		AUS_railway #sep 22 - dec 1
+		AUS_demand_hun #dec 1 - feb 9 (1938)
+		AUS_protect_cze #feb 9 - apr 20
+		AUS_ally_bul #apr 20 - may 25
+		AUS_peasants #may 25 - june 29
+		AUS_interconnect_rails
+		AUS_defend_ger
+		AUS_good_steel
+		AUS_old_companies
+		AUS_hydroelectric
+		AUS_think_tanks
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		AUS_dissolve_heimwehr = 1.0
+		AUS_no_ger = 1.0
+		AUS_hapsburgs = 1.0
+	}
+
+}
+
+Austrian_fascist = {
+	name = "Austrian Unification Plan"
+	desc = "Our destiny lies with Germany, Sieg Heil!"
+
+	enable = {
+		original_tag = AUS
+		OR = {
+			has_game_rule = {
+				rule = EYE_austria_ai_behavior
+				option = FASCIST
+			}
+			has_country_flag = AUS_AI_RANDOM_FASCIST
+		}
+	}
+
+	ai_national_focuses = {
+		AUS_unholy_alliance #jan 1 - march 11 (1936)
+		AUS_railway #march 11 - july 29
+		AUS_good_steel #july 29 - oct 7
+		AUS_armament #oct 7 - dec 16
+		AUS_interconnect_rails #dec 16 - feb 24 (1937)
+		AUS_stab_in_back #feb 24 - may 5
+		AUS_fascist_coup #may 5 - july 14
+		AUS_hydroelectric #july 14 - sep 22
+		AUS_new_civ #sep 22 - dec 1
+		AUS_join_germany #dec 1 - feb 9 (1938)
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		AUS_unholy_alliance = 1.0
+		AUS_stab_in_back = 1.0
+	}
+}

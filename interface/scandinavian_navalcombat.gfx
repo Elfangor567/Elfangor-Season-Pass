@@ -1,0 +1,15 @@
+spriteTypes = {
+
+	spriteType = { # "Fishery Protection"
+		name = "GFX_navalcombat_ship_icon_fishery_protection"
+		texturefile = "gfx/interface/navalcombat/ships/fishery_protection.dds"
+		noOfFrames = 2
+	}
+	
+	spriteType = { # "Gunboats"
+		name = "GFX_navalcombat_ship_icon_gunboat"
+		texturefile = "gfx/interface/navalcombat/ships/gunboat.dds"
+		noOfFrames = 2
+	}
+
+}

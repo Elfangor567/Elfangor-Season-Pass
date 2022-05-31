@@ -1,0 +1,35 @@
+on_actions = {
+	#Fixing what I assume to be a PDX error
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = yug_fragmentation_status
+						option = YUG_FRAGMENTED
+					}
+				}
+				764 = {
+					add_core_of = SER
+					transfer_state_to = SER
+				}
+			}
+		}
+	}
+
+	# country 
+	on_new_term_neutral_election = {
+		random_events = {
+			100 = neutral_election.2
+			100 = neutral_election.3
+			100 = neutral_election.4
+			100 = neutral_election.5
+			100 = neutral_election.6
+			100 = neutral_election.11
+			100 = neutral_election.12
+			100 = neutral_election.13
+			100 = neutral_election.14
+			100 = neutral_election.15
+		}
+	}
+}

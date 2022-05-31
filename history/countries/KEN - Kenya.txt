@@ -1,0 +1,125 @@
+﻿capital = 547
+
+oob = "ENG_colonial_1936"
+
+add_ideas = KEN_land_and_freedom
+
+recruit_character = KEN_harry_thuku
+recruit_character = KEN_jomo_kenyatta
+recruit_character = KEN_stanley_mathenge
+recruit_character = KEN_jaramogi_oginga_odinga
+
+recruit_character = KEN_dedan_kimathi
+recruit_character = KEN_kurito_ole_kisio
+
+recruit_character = KEN_waruhiu_itote
+recruit_character = KEN_koinange_mbiyu
+recruit_character = KEN_wilfred_hevelock
+recruit_character = KEN_eliud_mathu
+recruit_character = KEN_ian_sargenson
+
+recruit_character = KEN_joseph_kang
+recruit_character = KEN_mwangi_macharia
+recruit_character = KEN_ewart_grogan
+recruit_character = KEN_mbiyu_koinange
+recruit_character = KEN_campbell
+recruit_character = KEN_salim
+recruit_character = KEN_charles_koinange
+recruit_character = KEN_florence_wilson
+recruit_character = KEN_hugo_dunkerley
+recruit_character = KEN_elizabeth_watkins
+
+recruit_character = KEN_joseph_ndolo
+recruit_character = KEN_littledale
+recruit_character = KEN_beryl_markham
+
+recruit_character = KEN_bildad_kaggia
+recruit_character = KEN_achieng_oneko
+recruit_character = KEN_james_beauttah
+recruit_character = KEN_fred_kubai
+recruit_character = KEN_kungu_karumba
+recruit_character = KEN_paul_ngei
+recruit_character = KEN_henry_muoria
+recruit_character = KEN_r_c_cavendish
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	motorised_infantry = 1
+	tech_mountaineers = 1
+	grand_battle_plan = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1	
+	gwtank = 1
+	early_fighter = 1
+	early_bomber = 1
+	armored_car1 = 1
+}
+
+set_convoys = 5
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 30
+	fascism = 20
+	communism = 10
+	neutrality = 40
+}
+
+1939.1.1 = {
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	set_technology = {
+		
+		infantry_weapons1 = 1
+		scout_plane1 = 1
+
+		#doctrines		
+		trench_warfare = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+	
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		democratic = 25
+		fascism = 25
+		communism = 15
+		neutrality = 35
+	}
+}
+

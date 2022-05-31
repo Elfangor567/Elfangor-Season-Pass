@@ -1,0 +1,43 @@
+#################
+#### Denmark ####
+#################
+
+DEN_reintegrate_schleswig_category = {
+
+	icon = border_war
+
+	allowed = {
+		original_tag = DEN
+	}
+}
+
+DEN_spanish_intervention_category = {
+	
+	icon = intervention_in_spain
+	
+	allowed = {
+		original_tag = DEN
+	}
+	
+	visible = {
+		has_completed_focus = DEN_fuel_rev
+		is_subject = no
+		country_exists = SPC
+		SPR_scw_in_progress = yes
+	}
+}
+
+DEN_spanish_friends_category = {
+	
+	icon = intervention_in_spain
+	
+	allowed = {
+		original_tag = DEN
+	}
+	
+	visible = {
+		has_completed_focus = DEN_abolish_state
+		country_exists = SPC
+		SPR_scw_in_progress = no
+	}
+}

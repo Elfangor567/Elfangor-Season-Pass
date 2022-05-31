@@ -1,0 +1,249 @@
+ideas = {
+	country = {
+		ZAM_neutral_interventionist = {
+			
+			picture = generic_secret_police
+			
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			modifier = {				
+				decryption = 1
+				encryption = 1
+				foreign_subversive_activites = -0.5
+				intel_from_operatives_factor = 0.5
+				operative_slot = 1
+				operation_cost = -0.5
+				operation_outcome = 0.5
+			}
+		}
+	}
+	
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		ZAM_rhodesian_railways = { #Large Railway Company that covered both Northern and Southern Rhodesia
+			
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { heavy_tank_manufacturer }
+		}
+	}
+	
+	naval_manufacturer = {
+		
+		designer = yes
+		
+		ZAM_mpulungu = { #Mpulungu is the largest Zambian settlement bordering Lake Tanganyika
+			
+			picture = brooklyn_naval_yard
+			
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+		}
+		
+		ZAM_nchelenge_kashikishi = { #Nchelenge and Kashikishi are large Zambian settlements bordering Lake Mweru
+			
+			picture = generic_naval_manufacturer_2
+
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+		}
+	}
+	
+	aircraft_manufacturer = {
+			
+		designer = yes		
+		
+		ZAM_IA = { #Imperial Airways
+			
+			picture = generic_air_manufacturer_1
+			
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			available = {
+				OR = {
+					NOT = { country_exists = ENG }
+					is_in_faction_with = ENG
+					is_subject_of = ENG
+					has_subject = ENG
+				}
+			}
+			cancel_if_invalid = yes
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer_2 }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		ZAM_airways = { #Mines Air Services Limited, subsidiary of ZCCM, would later be renamed Zambian Airways (Not to be confused with Zambia Airways, a seperate company)
+			
+			picture = generic_air_manufacturer_2
+			
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { CAS_manufacturer }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		ZAM_rana = { #Rhodesia & Nyasaland Airways
+			
+			picture = generic_air_manufacturer_3
+			
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes
+		
+		ZAM_RST = { #Rhodesian Selection Trust, a large mining corporation, which likely produced small arms like many mining companies of Northern Rhodesia during WW2 (Also Rhodesian Railways)
+			
+			picture = generic_infantry_equipment_manufacturer_1
+			
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+		
+		ZAM_northern = { #Northern Motors, 1959 company founded by Cecil Burney
+			
+			picture = generic_motorized_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+		ZAM_INDECO = { #Industrial Development Corporation, a corporation founded with the express intent of energizing Northern Rhodesian manufacturing/industry. Like most companies, made parts for weapons/vehicles during WW2
+			
+			picture = generic_artillery_manufacturer_1
+			
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			research_bonus = {
+				support_tech = 0.15
+			}
+			
+			traits = { support_equipment_manufacturer }
+		}
+	}
+	
+	industrial_concern = {
+
+		ZAM_CABS = { #Central African Broadcasting System, first Radio of Zambia brought about by Henry Franklin and Kenneth Bradley
+					
+			picture = generic_electronics_concern_2
+				
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
+		
+		ZAM_chilanga = { #Chilanga Cement, large cement company in Zambia, founded 1949
+		
+			picture =  generic_industrial_concern_1
+
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}
+		
+		ZAM_rhokana = { #Rhokana Corporation, main Northern Rhodesian mining company
+			
+			picture = generic_industrial_concern_3
+			
+			allowed = {
+				original_tag = ZAM
+			}
+			
+			cost = 50
+			
+			modifier = {
+				local_resources_factor = 0.1
+			}
+			
+			traits = { mine_company }
+		}
+	}
+}

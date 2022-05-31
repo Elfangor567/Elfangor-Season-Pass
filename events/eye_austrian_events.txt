@@ -1,0 +1,7104 @@
+﻿add_namespace = EYE_aus
+
+### THEY FINALLY ADDED on_remove !!!!!!!!
+#country_event = { #Remove Semperit bonus when no longer had
+#	id = EYE_aus.1
+#	hidden = yes
+#	
+#	trigger = {
+#		NOT = { has_idea = AUS_semperit }
+#		has_country_flag = chosen_semperit
+#	}
+#	mean_time_to_happen = {
+#		days = 2
+#	}
+#	
+#	option = {
+#		name = EYE_aus.a.1
+#		modify_building_resources = {
+#		   building = synthetic_refinery
+#		   resource = rubber
+#		   amount = -2
+#		}
+#		clr_country_flag = chosen_semperit
+#	}
+#}
+
+#Habsburg Prince
+country_event = { #Hungary has Otto
+	id = EYE_aus.2
+	title = EYE_aus.2.t
+	desc = EYE_aus.2.desc
+			
+	picture = GFX_report_event_hungary_parliament
+	
+	is_triggered_only = yes
+	
+	option = { #Very well
+		name = EYE_aus.2.a
+		ai_chance = {
+			factor = 1
+		}
+		
+		custom_effect_tooltip = GAME_OVER_TT
+		effect_tooltip = {
+			AUS = {
+				annex_country = { target = HUN transfer_troops = yes }
+			}
+		}
+		AUS = { country_event = EYE_aus.3 }
+	}
+	option = { #Otto may leave, but we will NOT!
+		name = EYE_aus.2.b
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+			NOT = { is_subject_of = AUS }
+		}
+		
+		custom_effect_tooltip = AUS_royalist_revolt_tt
+		hidden_effect = {
+			if = {
+				limit = { has_government = neutrality }
+				retire_country_leader = yes
+			}
+		}
+		add_popularity = { ideology = neutrality popularity = -0.33 }
+		add_ideas = AUS_royalist_civil_war
+		
+		effect_tooltip = {
+			HUN_otto_von_habsburg = { 
+				add_country_leader_trait = hapsburg_emperor
+				set_nationality = AUS
+			}
+			every_state = {
+				limit = { is_core_of = HUN }
+				add_core_of = AUS
+			}
+			every_unit_leader = {
+				limit = { has_id = 556 }
+				set_nationality = AUS
+			}
+		}
+		
+		if = {
+			limit = { is_in_faction_with = AUS }
+			leave_faction = yes
+		}
+		hidden_effect = {
+			every_state = {
+				limit = { is_core_of = HUN }
+				add_core_of = AUS
+			}
+			create_dynamic_country = {
+				original_tag = AUS
+				copy_tag = HUN
+				set_cosmetic_tag = AUS_royalist_civil_war_tag
+				
+				transfer_state = 145
+				transfer_state = 155
+				set_capital = { state = 155 remember_old_capital = yes }
+				PREV = {
+					transfer_units_fraction = {
+						target = PREV
+						size = 0.333
+						stockpile_ratio = 0.333
+					}
+				}
+				set_stability = 0.9
+				set_war_support = 0.8
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				set_popularities = {
+					neutrality = 100
+					democratic = 0
+					fascism = 0
+					communism = 0
+				}
+				add_ideas = AUS_royalist_civil_war
+				declare_war_on = {
+					target = ROOT
+					type = civil_war
+				}
+			}
+		}
+		effect_tooltip = {
+			start_civil_war = {
+				ideology = neutrality
+				size = 0.33
+				capital = 154
+				states = { 155 }
+				states_filter = {
+					owner = { original_tag = HUN }
+				}
+			}
+		}
+		
+		if = {
+			limit = { HUN = { has_completed_focus = HUN_elect_a_fascist_king } }
+			add_country_leader_role = {
+				character = HUN_franz_friedrich
+				promote_leader = yes
+				country_leader = {
+				  ideology=despotism
+				  traits = { fascist_sympathies }
+				  expire="1965.1.1"
+				  id = 501 #Neutral Franz
+				}
+			}
+			
+			else = {
+				add_country_leader_role = {
+					character = HUN_carl_v
+					promote_leader = yes
+					country_leader = {
+					  ideology=despotism
+					  traits = { }
+					  expire="1965.1.1"
+					  id = 21012
+					}
+				}
+			}
+		}		
+		
+		set_party_name = { ideology = fascism long_name = "House Mecklenburg-Schwerin" name = "Mecklenburg-Schwerin" }
+		add_country_leader_role = {
+			character = HUN_franz_friedrich
+			promote_leader = yes
+			country_leader = {
+			  ideology=nazism
+			  expire="1965.1.1"
+			  id = 502 #Nazi Franz
+			}
+		}
+		
+		hidden_effect = {
+			add_popularity = { ideology = neutrality popularity = 0.16 }
+			AUS = { country_event = EYE_aus.4 }
+		}
+	}
+}
+	country_event = { #Hungary submits
+		id = EYE_aus.3
+		title = EYE_aus.3.t
+		desc = EYE_aus.3.desc
+		picture = GFX_report_event_hungary_parliament
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			effect_tooltip = {
+				every_state = {
+					limit = { is_core_of = HUN }
+					add_core_of = AUS
+				}
+			}
+		}
+		
+		option = {
+			name = EYE_aus.3.a
+			
+			hidden_effect = {
+				HUN = {
+					set_party_name = { ideology = fascism long_name = HUN_arrow_cross_party_long name = HUN_arrow_cross_party }
+					if = {
+						limit = { has_character = HUN_miklos_horthy }
+						add_naval_commander_role = {
+							character = HUN_miklos_horthy
+							traits = { gunnery_expert navy_media_personality superior_tactician }
+							skill = 3
+							attack_skill = 2
+							defense_skill = 2
+							maneuvering_skill = 2
+							coordination_skill = 4
+						}
+						HUN_miklos_horthy = {
+							set_leader_portrait = GFX_Portrait_hungary_miklos_horthy_admiral
+							set_nationality = AUS
+						}
+					}
+					HUN_otto_von_habsburg = { 
+						add_country_leader_trait = hapsburg_emperor
+						set_nationality = AUS
+					}
+					every_unit_leader = {
+						set_nationality = AUS
+					}
+				}		
+			}
+			if = {
+				limit = { NOT = { has_idea = AUS_otto_von_figurehead } }
+				promote_character = HUN_otto_von_habsburg
+			}
+			annex_country = { target = HUN transfer_troops = yes }
+			hidden_effect = {
+				every_state = {
+					limit = { is_core_of = HUN }
+					add_core_of = ROOT
+				}
+				news_event = { id = EYE_aus.100 hours = 24 }
+			}
+		}
+	}
+	country_event = { #Hungary refuses
+		id = EYE_aus.4
+		title = EYE_aus.4.t
+		desc = EYE_aus.4.desc
+		picture = GFX_report_event_hungary_refused
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			hidden_effect = {
+				HUN = {
+					set_party_name = { ideology = fascism long_name = HUN_arrow_cross_party_long name = HUN_arrow_cross_party }
+					if = {
+						limit = { has_character = HUN_miklos_horthy }
+						add_naval_commander_role = {
+							character = HUN_miklos_horthy
+							traits = { gunnery_expert navy_media_personality superior_tactician }
+							skill = 3
+							attack_skill = 2
+							defense_skill = 2
+							maneuvering_skill = 2
+							coordination_skill = 4
+						}
+						HUN_miklos_horthy = {
+							set_leader_portrait = GFX_Portrait_hungary_miklos_horthy_admiral
+							set_nationality = AUS
+						}
+					}
+					HUN_otto_von_habsburg = { 
+						add_country_leader_trait = hapsburg_emperor
+						set_nationality = AUS
+					}
+					every_unit_leader = {
+						set_nationality = AUS
+					}
+				}		
+			}
+			if = {
+				limit = { NOT = { has_idea = AUS_otto_von_figurehead } }
+				promote_character = HUN_otto_von_habsburg
+			}
+			every_state = {
+				limit = { is_core_of = HUN }
+				add_core_of = AUS
+			}
+		}
+		
+		option = { #Join royalists
+			name = EYE_aus.4.a
+			ai_chance = {
+				factor = 1
+			}
+			
+			custom_effect_tooltip = AUS_annex_revolting_tt
+			hidden_effect = {
+				every_country = {
+					limit = { 
+						original_tag = HUN 
+						NOT = { tag = HUN }
+						has_war_with = HUN
+						is_subject = no
+					}
+					country_event = EYE_aus.13 
+				}
+			}
+			
+			declare_war_on = {
+				target = FROM
+				type = annex_everything				
+			}
+		}
+		option = { #We cannot join overtly
+			name = EYE_aus.4.b
+			trigger = {
+				OR = {
+					has_manpower > 5000
+					has_equipment = {
+						infantry_equipment > 1500
+					}
+				}
+			}
+				
+			ai_chance = {
+				factor = 0
+			}
+			
+			if = {
+				limit = { has_manpower > 5000 }
+				add_manpower = -5000
+				every_country = {
+					limit = { original_tag = HUN NOT = { tag = HUN } }
+					add_manpower = 5000
+				}
+			}
+			if = {
+				limit = {
+					has_equipment = {
+						infantry_equipment > 1500
+					}
+				}
+				custom_effect_tooltip = AUS_send_royalists_equipment_tt
+				hidden_effect = {
+					every_country = {
+						limit = { original_tag = HUN NOT = { tag = HUN } }
+						country_event = EYE_aus.14
+					}
+				}
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}			
+		}
+		option = { #They must do this on their own
+			name = EYE_aus.4.c
+			ai_chance = {
+				factor = 0
+			}
+			
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+	}
+	news_event = { #Royalists win civil war
+		id = EYE_aus.5
+		title = EYE_aus.5.t
+		desc = EYE_aus.5.desc
+		picture = GFX_news_event_hungarian_soldiers
+		
+		major = no
+		trigger = {
+			tag = AUS
+			OR = {
+				has_country_leader = { character = HUN_otto_von_habsburg ruling_only = yes }
+				has_idea = AUS_otto_von_figurehead
+			}
+			any_country = {
+				has_cosmetic_tag = AUS_royalist_civil_war_tag
+				NOT = { has_war_with = HUN }
+				NOT = { has_government = communism }
+			}
+		}
+		mean_time_to_happen = {
+			days = 5
+		}
+		
+		fire_only_once = yes
+		
+		immediate = {
+			every_state = {
+				limit = { is_core_of = HUN }
+				add_core_of = AUS
+			}
+		}
+		
+		option = { 
+			name = EYE_aus.5.a
+			
+			hidden_effect = {
+				random_other_country = {
+					limit = { 
+						has_cosmetic_tag = AUS_royalist_civil_war_tag
+						NOT = { has_war_with = HUN }
+						NOT = { has_government = communism }
+					}
+					every_unit_leader = {
+						set_nationality = AUS
+					}
+				}
+			}
+			random_other_country = {
+				limit = {
+					has_cosmetic_tag = AUS_royalist_civil_war_tag
+					NOT = { has_war_with = HUN }
+					NOT = { has_government = communism }
+				}
+				ROOT = { annex_country = { target = PREV transfer_troops = yes } }
+			}
+			
+			hidden_effect = {
+				news_event = { id = EYE_aus.100 hours = 24 }
+			}
+		}
+	}
+	
+country_event = { #Hungary has pretender
+	id = EYE_aus.6
+	title = EYE_aus.6.t
+	desc = EYE_aus.6.desc
+	picture = GFX_report_event_hungary_parliament
+	
+	is_triggered_only = yes
+	
+	option = { #Submit
+		name = EYE_aus.6.a
+		ai_chance = {
+			factor = 1
+		}
+		
+		custom_effect_tooltip = GAME_OVER_TT
+		effect_tooltip = {
+			AUS = {
+				annex_country = { target = HUN transfer_troops = yes }
+			}
+		}
+		AUS = { country_event = EYE_aus.7 }
+	}
+	option = { #Refuse
+		name = EYE_aus.6.b
+		trigger = {
+			NOT = { is_subject_of = AUS }
+		}
+		ai_chance = {
+			factor = 2
+		}
+		
+		custom_effect_tooltip = AUS_royalist_revolt_tt
+		hidden_effect = {
+			if = {
+				limit = { has_government = neutrality }
+				retire_country_leader = yes
+			}
+		}
+		if = {
+			limit = { 
+				has_completed_focus = HUN_elect_a_fascist_king 
+				has_government = neutrality
+			}
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+		}
+		else_if = {
+			limit = {
+				has_completed_focus = HUN_elect_a_democratic_king
+				has_government = neutrality
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+		}
+		add_popularity = { ideology = neutrality popularity = -0.25 }
+		add_ideas = AUS_royalist_civil_war
+		effect_tooltip = {
+			HUN_otto_von_habsburg = { 
+				add_country_leader_trait = hapsburg_emperor
+				set_nationality = AUS
+			}
+			AUS = {
+				promote_character = HUN_otto_von_habsburg
+			}
+			HUN_miklos_horthy = {
+				set_nationality = AUS
+			}
+			every_state = {
+				limit = { is_core_of = HUN }
+				add_core_of = AUS
+			}
+		}
+		
+		effect_tooltip = {
+			start_civil_war = {
+				ideology = neutrality
+				size = 0.25
+				capital = 154
+				states = { 155 }
+				states_filter = {
+					owner = { original_tag = HUN }
+				}
+			}
+		}
+		hidden_effect = {
+			every_state = {
+				limit = { is_core_of = HUN }
+				add_core_of = AUS
+			}
+			create_dynamic_country = {
+				original_tag = AUS
+				copy_tag = HUN
+				set_cosmetic_tag = AUS_royalist_civil_war_tag
+				
+				transfer_state = 145
+				transfer_state = 155
+				set_capital = { state = 155 remember_old_capital = yes }
+				PREV = {
+					transfer_units_fraction = {
+						target = PREV
+						size = 0.25
+						stockpile_ratio = 0.25
+					}
+				}
+				set_stability = 0.9
+				set_war_support = 0.8
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				set_popularities = {
+					neutrality = 100
+					democratic = 0
+					fascism = 0
+					communism = 0
+				}
+				add_ideas = AUS_royalist_civil_war
+				declare_war_on = {
+					target = ROOT
+					type = civil_war
+				}
+			}
+		}
+		hidden_effect = {
+			AUS = { country_event = EYE_aus.8 }
+		}
+	}
+}
+	country_event = { #Hungary submits
+		id = EYE_aus.7
+		title = EYE_aus.3.t
+		desc = EYE_aus.7.desc
+		picture = GFX_report_event_hungary_parliament
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			effect_tooltip = {
+				every_state = {
+					limit = { is_core_of = HUN }
+					add_core_of = AUS
+				}
+			}
+		}
+		
+		option = {
+			name = EYE_aus.7.a
+			
+			hidden_effect = {
+				HUN = {
+					set_party_name = { ideology = fascism long_name = HUN_arrow_cross_party_long name = HUN_arrow_cross_party }
+					if = {
+						limit = { has_character = HUN_miklos_horthy }
+						add_naval_commander_role = {
+							character = HUN_miklos_horthy
+							traits = { gunnery_expert navy_media_personality superior_tactician }
+							skill = 3
+							attack_skill = 2
+							defense_skill = 2
+							maneuvering_skill = 2
+							coordination_skill = 4
+						}
+						HUN_miklos_horthy = {
+							set_leader_portrait = GFX_Portrait_hungary_miklos_horthy_admiral
+							set_nationality = AUS
+						}
+					}
+					HUN_otto_von_habsburg = { 
+						add_country_leader_trait = hapsburg_emperor
+						set_nationality = AUS
+					}
+					every_unit_leader = {
+						set_nationality = AUS
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { has_idea = AUS_otto_von_figurehead } }
+				promote_character = HUN_otto_von_habsburg
+			}
+			annex_country = { target = HUN transfer_troops = yes }
+			hidden_effect = {
+				news_event = { id = EYE_aus.100 hours = 24 }
+			}
+		}
+	}
+	country_event = { #Hungary refuses
+		id = EYE_aus.8
+		title = EYE_aus.4.t
+		desc = EYE_aus.8.desc
+		picture = GFX_report_event_hungary_refused
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			hidden_effect = {
+				HUN = {
+					set_party_name = { ideology = fascism long_name = HUN_arrow_cross_party_long name = HUN_arrow_cross_party }
+					if = {
+						limit = { has_character = HUN_miklos_horthy }
+						add_naval_commander_role = {
+							character = HUN_miklos_horthy
+							traits = { gunnery_expert navy_media_personality superior_tactician }
+							skill = 3
+							attack_skill = 2
+							defense_skill = 2
+							maneuvering_skill = 2
+							coordination_skill = 4
+						}
+						HUN_miklos_horthy = {
+							set_leader_portrait = GFX_Portrait_hungary_miklos_horthy_admiral
+							set_nationality = AUS
+						}
+					}
+					HUN_otto_von_habsburg = { 
+						add_country_leader_trait = hapsburg_emperor
+						set_nationality = AUS
+					}
+					every_unit_leader = {
+						set_nationality = AUS
+					}
+				}		
+			}
+			if = {
+				limit = { NOT = { has_idea = AUS_otto_von_figurehead } }
+				promote_character = HUN_otto_von_habsburg
+			}
+			every_state = {
+				limit = { is_core_of = HUN }
+				add_core_of = AUS
+			}
+		}
+		
+		option = { #Join royalists
+			name = EYE_aus.4.a
+			ai_chance = {
+				factor = 1
+			}
+			
+			custom_effect_tooltip = AUS_annex_revolting_tt
+			hidden_effect = {
+				every_country = {
+					limit = { original_tag = HUN NOT = { tag = HUN } }
+					country_event = EYE_aus.13 
+				}
+			}
+			declare_war_on = {
+				target = FROM
+				type = annex_everything				
+			}
+		}
+		option = { #We cannot join overtly
+			name = EYE_aus.4.b
+			trigger = {
+				OR = {
+					has_manpower > 5000
+					has_equipment = {
+						infantry_equipment > 1500
+					}
+				}
+			}
+				
+			ai_chance = {
+				factor = 0
+			}
+			
+			if = {
+				limit = { has_manpower > 5000 }
+				add_manpower = -5000
+				every_country = {
+					limit = { original_tag = HUN NOT = { tag = HUN } }
+					add_manpower = 5000
+				}
+			}
+			if = {
+				limit = {
+					has_equipment = {
+						infantry_equipment > 1500
+					}
+				}
+				custom_effect_tooltip = AUS_annex_revolting_tt
+				hidden_effect = {
+					every_country = {
+						limit = { original_tag = HUN NOT = { tag = HUN } }
+						country_event = EYE_aus.13 
+					}
+				}
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}			
+		}
+		option = { #They must do this on their own
+			name = EYE_aus.4.c
+			ai_chance = {
+				factor = 0
+			}
+			
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+	}
+	
+#How shall Otto rule?
+country_event = {
+	id = EYE_aus.9
+	title = EYE_aus.9.t
+	desc = EYE_aus.9.desc
+	picture = GFX_report_event_royal_parade
+	
+	trigger = {
+		tag = AUS
+		OR = {
+			has_country_leader = { character = HUN_otto_von_habsburg ruling_only = yes }
+			has_completed_focus = AUS_hapsburgs
+		}
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	fire_only_once = yes
+	
+	option = { #Full Head of State
+		name = EYE_aus.9.a
+		ai_chance = {
+			factor = 10
+		}
+		
+		hidden_effect = {
+			HUN = {
+				HUN_otto_von_habsburg = { 
+					add_country_leader_trait = hapsburg_emperor
+					set_nationality = AUS
+				}
+			}
+			retire_country_leader = yes
+		}
+		promote_character = HUN_otto_von_habsburg
+	}
+	option = { #Figurehead
+		name = EYE_aus.9.b
+		ai_chance = {
+			factor = 1
+		}
+		
+		add_political_power = 120
+		promote_character = AUS_kurt_schuschnigg
+		add_ideas = AUS_otto_von_figurehead
+	}
+}
+
+#Hungary goes Monarchist after Austria has Otto
+country_event = {
+	id = EYE_aus.10
+	title = EYE_aus.10.t
+	desc = {
+		text = EYE_aus.10.desc1
+		trigger = { HUN = { has_completed_focus = HUN_invite_the_habsburg_prince } }
+	}
+	desc = {
+		text = EYE_aus.10.desc2
+		trigger = { HUN = { NOT = { has_completed_focus = HUN_invite_the_habsburg_prince } } }
+	}
+	picture = GFX_report_event_royal_parade
+	
+	trigger = {
+		tag = AUS
+		NOT = { has_country_flag = AUS_demanded_stepdown }
+		OR = {
+			has_country_leader = { character = AUS_otto_von_figurehead ruling_only = yes }
+			has_idea = AUS_otto_von_figurehead
+		}
+		OR = {
+			HUN = { has_completed_focus = HUN_elect_a_democratic_king }
+			HUN = { has_completed_focus = HUN_elect_a_fascist_king }
+			HUN = { has_completed_focus = HUN_invite_the_habsburg_prince }
+		}
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	fire_only_once = yes
+	
+	option = { # Habsburg
+		name = EYE_aus.10.a
+		trigger = {
+			HUN = { has_completed_focus = HUN_invite_the_habsburg_prince }
+		}
+		
+		HUN = { country_event = EYE_aus.2 }
+		hidden_effect = {
+			clr_country_flag = AUS_demanded_stepdown
+		}
+	}
+	option = { # Pretender		
+		name = EYE_aus.10.b
+		trigger = {
+			HUN = { 
+				OR = {
+					has_completed_focus = HUN_elect_a_democratic_king
+					has_completed_focus = HUN_elect_a_fascist_king
+				} 
+			}
+		}
+		
+		HUN = { country_event = EYE_aus.6 }
+		hidden_effect = {
+			clr_country_flag = AUS_demanded_stepdown
+		}
+	}
+}
+
+#Austria demands that Horthy step down
+country_event = {
+	id = EYE_aus.11
+	title = EYE_aus.11.t
+	desc = {
+		text = EYE_aus.11.desc1
+		trigger = { HUN = { has_character = HUN_miklos_horthy } }
+	}
+	desc = {
+		text = EYE_aus.11.desc2
+		trigger = { NOT = { HUN = { has_character = HUN_miklos_horthy } } }
+	}
+	picture = GFX_report_event_hungary_refused
+	
+	is_triggered_only = yes
+	
+	option = { #Submit
+		name = EYE_aus.11.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 2
+				AUS = { is_in_faction_with = ITA }
+			}
+			modifier = {
+				factor = 2
+				has_completed_focus = HUN_balanced_budget
+			}
+		}
+		
+		custom_effect_tooltip = GAME_OVER_TT
+		effect_tooltip = {
+			AUS = {
+				annex_country = { target = HUN transfer_troops = yes }
+			}
+		}
+		AUS = { country_event = EYE_aus.3 }
+	}
+	option = { #Refuse
+		name = EYE_aus.11.b
+		ai_chance = {
+			factor = 1
+		}
+		trigger = {
+			NOT = { is_subject_of = AUS }
+		}
+		
+		custom_effect_tooltip = AUS_royalist_revolt_tt
+		hidden_effect = {
+			if = {
+				limit = { has_government = neutrality }
+				retire_country_leader = yes
+			}
+		}
+		add_popularity = { ideology = neutrality popularity = -0.33 }
+		add_ideas = AUS_royalist_civil_war
+		
+		effect_tooltip = {
+			every_state = {
+				limit = { is_core_of = HUN }
+				add_core_of = AUS
+			}
+		}
+		
+		effect_tooltip = {
+			start_civil_war = {
+				ideology = neutrality
+				size = 0.33
+				capital = 154
+				states = { 155 }
+				states_filter = {
+					owner = { original_tag = HUN }
+				}
+			}
+		}
+		hidden_effect = {
+			every_state = {
+				limit = { is_core_of = HUN }
+				add_core_of = AUS
+			}
+			create_dynamic_country = {
+				original_tag = AUS
+				copy_tag = HUN
+				set_cosmetic_tag = AUS_royalist_civil_war_tag
+				
+				transfer_state = 145
+				transfer_state = 155
+				set_capital = { state = 155 remember_old_capital = yes }
+				PREV = {
+					transfer_units_fraction = {
+						target = PREV
+						size = 0.33
+						stockpile_ratio = 0.33
+					}
+				}
+				set_stability = 0.9
+				set_war_support = 0.8
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				set_popularities = {
+					neutrality = 100
+					democratic = 0
+					fascism = 0
+					communism = 0
+				}
+				add_ideas = AUS_royalist_civil_war
+				declare_war_on = {
+					target = ROOT
+					type = civil_war
+				}
+			}
+		}
+		hidden_effect = {
+			AUS = { country_event = EYE_aus.12 }
+		}
+	}
+}
+	country_event = { #Hungary refuses
+		id = EYE_aus.12
+		title = EYE_aus.4.t
+		desc = {
+			text = EYE_aus.12.desc1
+			trigger = { HUN = { NOT = { has_completed_focus = HUN_assassinate_horthy } } }
+		}
+		desc = {
+			text = EYE_aus.12.desc2
+			trigger = { HUN = { has_completed_focus = HUN_assassinate_horthy } }
+		}
+		picture = GFX_report_event_hungary_refused
+		
+		is_triggered_only = yes
+		
+		immediate = {
+			effect_tooltip = {
+				every_state = {
+					limit = { is_core_of = HUN }
+					add_core_of = AUS
+				}
+			}
+		}
+		
+		option = { #Join royalists
+			name = EYE_aus.12.a
+			ai_chance = {
+				factor = 1
+			}
+			
+			custom_effect_tooltip = AUS_annex_revolting_tt
+			hidden_effect = {
+				every_country = {
+					limit = { original_tag = HUN NOT = { tag = HUN } }
+					country_event = EYE_aus.13 
+				}
+			}
+			declare_war_on = {
+				target = FROM
+				type = annex_everything				
+			}
+		}
+		option = { #We cannot join overtly
+			name = EYE_aus.4.b
+			trigger = {
+				OR = {
+					has_manpower > 5000
+					has_equipment = {
+						infantry_equipment > 1500
+					}
+				}
+			}
+				
+			ai_chance = {
+				factor = 0
+			}
+			
+			if = {
+				limit = { has_manpower > 5000 }
+				add_manpower = -5000
+				every_country = {
+					limit = { original_tag = HUN NOT = { tag = HUN } }
+					add_manpower = 5000
+				}
+			}
+			if = {
+				limit = {
+					has_equipment = {
+						infantry_equipment > 1500
+					}
+				}
+				custom_effect_tooltip = AUS_send_royalists_equipment_tt
+				hidden_effect = {
+					every_country = {
+						limit = { original_tag = HUN NOT = { tag = HUN } }
+						country_event = EYE_aus.14
+					}
+				}
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}			
+		}
+		option = { #They must do this on their own
+			name = EYE_aus.4.c
+			ai_chance = {
+				factor = 0
+			}
+			
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+	}
+	
+country_event = { # AUSTRIA ANNEXES ROYALISTS
+	id = EYE_aus.13
+	hidden = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EYE_aus.13.a
+		
+		custom_effect_tooltip = GAME_OVER_TT
+		AUS ={
+			annex_country = { 
+				target = ROOT
+				transfer_troops = yes 
+			}
+		}	
+	}
+}
+country_event = { # AUSTRIA SEND ROYALISTS SUPPLIES
+	id = EYE_aus.14
+	hidden = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EYE_aus.14.a
+		
+		AUS = {
+			send_equipment = {
+				target = ROOT
+				type = infantry_equipment
+				amount = 1500
+			}
+		}
+	}
+}
+
+
+#Faction with Italy
+country_event = { #Austria already faction leader
+	id = EYE_aus.15
+	title = EYE_aus.15.t
+	desc = EYE_aus.15.t
+	picture = GFX_report_event_mussolini_and_schuschnigg
+	
+	is_triggered_only = yes
+	
+	option = { # Join
+		name = EYE_aus.15.a
+		ai_chance = {
+			factor = 1
+		}
+		
+		if = {
+			limit = { has_country_flag = AUS_sent_from_hungry }
+			AUS = {
+				every_country = {
+					limit = { is_in_faction_with = ITA is_subject = no }
+					add_ai_strategy = {
+						type = alliance
+						id = "AUS"
+						value = 200
+					}
+					country_event = generic.5
+				}
+			}
+		}
+		AUS = {
+			add_to_faction = ITA
+			country_event = EYE_aus.17
+		}
+		hidden_effect = {
+			add_ai_strategy = {
+				type = alliance
+				id = "AUS"
+				value = 200
+			}
+		}		
+	}
+	
+	option = { # Refuse
+		name = EYE_aus.15.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				add = 1
+				is_historical_focus_on = yes
+			}
+		}
+		
+		AUS = { country_event = EYE_aus.18 }
+	}
+}
+	country_event = { 
+		id = EYE_aus.16
+		title = EYE_aus.16.t
+		desc = EYE_aus.16.desc
+		picture = GFX_report_event_mussolini_and_schuschnigg
+		
+		is_triggered_only = yes
+		
+		option = { # Join
+			name = EYE_aus.16.a
+			ai_chance = {
+				factor = 1
+			}
+			
+			AUS = {
+				create_faction = HUN_PACT_OF_ROME_FACTION
+				add_to_faction = ITA
+				country_event = EYE_aus.17
+			}
+			hidden_effect = {
+				add_ai_strategy = {
+					type = alliance
+					id = "AUS"
+					value = 200
+				}
+				clr_country_flag = AUS_sent_from_hungry
+			}
+		}
+		
+		option = { # Refuse
+			name = EYE_aus.16.b
+			ai_chance = {
+				factor = 0
+				modifier = {
+					add = 1
+					is_historical_focus_on = yes
+				}
+			}			
+			AUS = { country_event = EYE_aus.18 }
+		}
+	}
+	country_event = { # Italy Joins
+		id = EYE_aus.17
+		title = EYE_aus.17.t
+		desc = EYE_aus.17.desc
+		picture = GFX_report_event_mussolini_and_schuschnigg
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.17.a			
+		}
+	}
+	country_event = { # Italy Refuses to Join
+		id = EYE_aus.18
+		title = EYE_aus.18.t
+		desc = EYE_aus.18.desc
+		picture = GFX_report_event_schuschnigg_defeated
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.18.a	
+
+			add_opinion_modifier = {
+				target = ITA
+				modifier = AUS_rejected_alliance
+			}
+		}
+	}
+	
+#Ask Hungary to Join Alliance
+country_event = {
+	id = EYE_aus.19
+	title = EYE_aus.19.t
+	desc = EYE_aus.19.desc 
+	picture = GFX_report_event_hungary_parliament
+	
+	is_triggered_only = yes
+	
+	option = { # Yes
+		name = EYE_aus.19.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				ITA = { is_faction_leader = yes	}
+			}
+			modifier = {
+				factor = 5
+				ITA = { is_in_faction = no }
+			}
+			modifier = {
+				factor = 100
+				AUS = { is_in_faction_with = ITA }
+			}
+		}
+		
+		hidden_effect = {
+			add_ai_strategy = {
+				type = alliance
+				id = "AUS"
+				value = 200
+			}
+		}
+		AUS = {
+			create_faction = HUN_PACT_OF_ROME_FACTION
+			add_to_faction = HUN
+			country_event = EYE_aus.20
+			if = {
+				limit = { ITA = { is_in_faction = no } }
+				hidden_effect = {
+					ITA = {
+						add_ai_strategy = {
+							type = alliance
+							id = "AUS"
+							value = 200
+						}
+					}
+				}
+				ITA = { country_event = generic.5 }
+			}
+			else_if = {
+				limit = { ITA = { is_faction_leader = yes is_ai = yes } }
+				hidden_effect = {
+					ITA = {
+						add_ai_strategy = {
+							type = alliance
+							id = "AUS"
+							value = 200
+						}
+					}
+				}
+				every_country = {
+					limit = { is_in_faction_with = ITA is_subject = no }
+					add_ai_strategy = {
+						type = alliance
+						id = "AUS"
+						value = 200
+					}
+					country_event = generic.5
+				}
+				ITA = {
+					country_event = EYE_aus.15
+				}
+			}
+			else_if = {
+				limit = { ITA = { is_faction_leader = yes is_ai = no } }
+				ITA = { country_event = EYE_aus.15 }
+				set_country_flag = AUS_sent_from_hungry
+			}
+		}
+	}
+	option = { # No
+		name = EYE_aus.19.b
+		ai_chance = {
+			factor = 1
+		}
+		
+		AUS = { country_event = EYE_aus.21 }
+	}
+}
+	country_event = { #Hungary Accepted
+		id = EYE_aus.20
+		title = EYE_aus.20.t
+		desc = EYE_aus.20.desc
+		picture = GFX_report_event_generic_sign_treaty2
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.20.a
+		}
+	}
+	country_event = { #Hungary Rejected
+		id = EYE_aus.21
+		title = EYE_aus.21.t
+		desc = EYE_aus.21.desc
+		picture = GFX_report_event_hungary_refused
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.21.a
+			
+			add_opinion_modifier = {
+				target = HUN
+				modifier = AUS_rejected_alliance
+			}
+		}
+	}
+
+#Tyrol for Dalmatia
+country_event = {
+	id = EYE_aus.22
+	title = EYE_aus.22.t
+	desc = EYE_aus.22.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #Agree
+		name = EYE_aus.22.a
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 5
+				has_global_flag = form_austria_hungary_flag
+			}
+		}
+		
+		custom_effect_tooltip = AUS_tyrol_for_dalmatia_tt
+		add_state_claim = 103
+		add_state_claim = 105
+		declare_war_on = {
+			target = YUG
+			type = take_state_focus
+			generator = { 103 105 }
+		}
+		effect_tooltip = {
+			AUS = {
+				declare_war_on = {
+					target = YUG
+					type = take_state_focus
+					generator = { 102 }
+				}
+			}
+		}
+		AUS = { country_event = EYE_aus.23 }
+		hidden_effect = {
+			set_global_flag = AUS_ITA_dalmatia_pact
+		}
+	}
+	option = { #Refuse
+		name = EYE_aus.22.b
+		ai_chance = {
+			factor = 1
+		}
+		
+		AUS = { country_event = EYE_aus.24 }
+	}
+}
+	country_event = {
+		id = EYE_aus.23
+		title = EYE_aus.23.t
+		desc = EYE_aus.23.desc
+		picture = GFX_report_event_generic_sign_treaty2
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.23.a
+			
+			add_state_claim = 102
+			declare_war_on = {
+				target = YUG
+				type = take_state_focus
+				generator = { 102 }
+			}
+		}
+	}
+	country_event = {
+		id = EYE_aus.24
+		title = EYE_aus.24.t
+		desc = EYE_aus.24.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.24.a
+		}
+	}
+country_event = {
+	id = EYE_aus.25
+	title = EYE_aus.25.t
+	desc = EYE_aus.25.desc
+	picture = GFX_report_event_generic_military_parade
+	
+	trigger = {
+		tag = AUS
+		has_global_flag = AUS_ITA_dalmatia_pact
+		ITA = { exists = yes }
+		ITA = { controls_state = 39 }
+		NOT = { has_war_with = ITA }
+		OR = {
+			OR = {
+				owns_state = 103
+				owns_state = 105
+			}
+			AND = {
+				YUG = { has_capitulated = yes }
+				OR = {
+					controls_state = 103
+					controls_state = 105
+				}
+			}
+			OR = {
+				any_other_country = {
+					is_in_faction_with = AUS
+					AUS = { is_faction_leader = yes }
+					OR = {
+						owns_state = 103
+						owns_state = 105
+						AND = {
+							YUG = { has_capitulated = yes }
+							OR = {
+								controls_state = 103
+								controls_state = 105
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	fire_only_once = yes
+	
+	option = { #Accept
+		name = EYE_aus.25.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				is_in_faction_with = YUG
+				YUG = { has_civil_war = no }
+			}
+		}
+		
+		if = {
+			limit = {
+				103 = {
+					OR ={
+						is_controlled_by = AUS
+						any_other_country = {
+							controls_state = 103
+							is_in_faction_with = AUS
+							AUS = { is_faction_leader = yes }
+						
+						}
+					}
+				}
+			}
+			ITA = { transfer_state = 103 }
+		}
+		if = {
+			limit = {
+				105 = {
+					OR ={
+						is_controlled_by = AUS
+						any_other_country = {
+							controls_state = 105
+							is_in_faction_with = AUS
+							AUS = { is_faction_leader = yes }
+						
+						}
+					}
+				}
+			}
+			ITA = { transfer_state = 105 }
+		}
+		transfer_state = 39
+		ITA = { country_event = EYE_aus.26 }
+	}
+	option = { #Decline
+		name = EYE_aus.25.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					is_in_faction_with = YUG
+					YUG = { has_civil_war = no }
+				}
+			}
+		}
+		
+		hidden_effect = {
+			clr_global_flag = AUS_ITA_dalmatia_pact
+			add_ai_strategy = {
+				type = alliance
+				id = "AUS"
+				value = -400
+			}
+		}
+		effect_tooltip = {
+			ITA = { 
+				if = {
+					limit = { 
+						is_in_faction_with = AUS 
+						AUS = { is_faction_leader = yes }
+					}
+					leave_faction = yes
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = AUS
+				}
+				add_opinion_modifier = {
+					target = AUS
+					modifier = ITA_AUS_rejected_terms
+				}
+			}
+		}
+		ITA = { country_event = EYE_aus.27 }
+	}
+}
+	country_event = { #Austria Honors Treat
+		id = EYE_aus.26
+		title = EYE_aus.26.t
+		desc = EYE_aus.26.desc
+		picture = GFX_report_event_mussolini_and_schuschnigg
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.23.a
+			
+			effect_tooltip = { 
+				AUS = {
+					transfer_state = 39
+				}
+			}
+		}
+	}
+	country_event = { #Austria DOES NOT Honor Treat
+		id = EYE_aus.27
+		title = EYE_aus.27.t
+		desc = EYE_aus.27.desc
+		picture = GFX_report_event_generic_parliament
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.27.a
+			
+			if = {
+				limit = { 
+					is_in_faction_with = AUS 
+					AUS = { is_faction_leader = yes }
+				}
+				leave_faction = yes
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = AUS
+			}
+			add_opinion_modifier = {
+				target = AUS
+				modifier = ITA_AUS_rejected_terms
+			}
+		}
+	}
+
+#Demand Sudetenland
+country_event = {
+	id = EYE_aus.28
+	title = EYE_aus.28.t
+	desc = {
+		text = EYE_aus.28.desc1
+		trigger = {
+			NOT = { has_country_flag = EYE_CZE_FRA_refused_help }
+			NOT = { has_country_flag = EYE_CZE_ENG_refused_help }
+		}
+	}
+	desc = {
+		text = EYE_aus.28.desc2
+		trigger = {
+			OR = {
+				has_country_flag = EYE_CZE_FRA_refused_help
+				has_country_flag = EYE_CZE_ENG_refused_help
+			}
+		}
+	}
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #Submit
+		name = EYE_aus.28.a
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = 5
+				AUS = { has_army_manpower = { size > 749999 } }
+			}
+			modifier = {
+				factor = 10 #Better the Austrians than the Germans
+				GER = {
+					OR = {
+						focus_progress = { focus = GER_demand_sudetenland progress > 0}
+						focus_progress = { focus = GER_end_of_czechoslovakia progress > 0}
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = EYE_CZE_ENG_refused_help
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = EYE_CZE_FRA_refused_help
+			}
+		}
+		
+		effect_tooltip = { AUS = { transfer_state = 69 } }
+		AUS = { country_event = EYE_aus.29 }
+	}
+	option = { #Appeal to France
+		name = EYE_aus.28.b
+		trigger = {
+			FRA = { is_subject = no }
+			NOT = { has_country_flag = EYE_CZE_FRA_refused_help }
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = -4
+				GER = {
+					OR = {
+						focus_progress = { focus = GER_demand_sudetenland progress > 0}
+						focus_progress = { focus = GER_end_of_czechoslovakia progress > 0}
+					}
+				}
+			}
+		}
+		
+		FRA = { country_event = EYE_aus.30 }
+	}
+	option = { #Appeal to Great Britain
+		name = EYE_aus.28.c
+		trigger = {
+			ENG = { is_subject = no }
+			NOT = { has_country_flag = EYE_CZE_ENG_refused_help }
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = -4
+				GER = {
+					OR = {
+						focus_progress = { focus = GER_demand_sudetenland progress > 0}
+						focus_progress = { focus = GER_end_of_czechoslovakia progress > 0}
+					}
+				}
+			}
+		}
+		
+		ENG = { country_event = EYE_aus.30 }
+	}
+	option = { #Flat Out Refuse
+		name = EYE_aus.28.d
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 15
+				has_army_manpower = { size > 1000000 }
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = EYE_CZE_ENG_refused_help
+				has_country_flag = EYE_CZE_FRA_refused_help
+			}
+		}
+		
+		effect_tooltip = {
+			AUS = {
+				create_wargoal = {
+					target = CZE
+					type = take_state_focus
+					generator = { 69 }
+				}
+			}
+		}
+		AUS = { country_event = EYE_aus.33 }
+	}
+}
+	
+	country_event = { #Czechs submit
+		id = EYE_aus.29
+		title = EYE_aus.29.t
+		desc = EYE_aus.29.desc
+		picture = GFX_report_event_generic_military_parade
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.29.a
+			
+			transfer_state = 69
+			hidden_effect = {
+				news_event = EYE_aus.101
+			}
+		}
+	}
+	country_event = { #Czechs appeal to Great Power
+		id = EYE_aus.30
+		title = EYE_aus.30.t
+		desc = EYE_aus.30.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = { #Back Czechs
+			name = EYE_aus.30.a
+			trigger = {
+				is_puppet = no
+			}
+			ai_chance = {
+				base = 10
+				modifier = {
+					factor = 0
+					is_in_faction_with = AUS
+				}
+				modifier = {
+					factor = 0.1
+					is_historical_focus_on = yes
+				}
+				modifier = {
+					factor = 0.1
+					OR = {
+						CZE = { has_country_flag = EYE_CZE_ENG_refused_help }
+						CZE = { has_country_flag = EYE_CZE_FRA_refused_help }
+					}
+				}
+				modifier = {
+					factor = 3
+					has_government = communism
+					CZE = { has_government = communism }
+				}
+				modifier = {
+					factor = 3
+					AUS = { has_war = yes }
+				}
+			}
+			
+			if = {
+				limit = { CZE = { NOT = { is_guaranteed_by = ROOT } } }
+				give_guarantee = CZE
+			}
+			effect_tooltip = {
+				AUS = {
+					create_wargoal = {
+						target = CZE
+						type = take_state_focus
+						generator = { 69 }
+					}
+				}
+			}
+			AUS = { country_event = EYE_aus.31 }
+			CZE = { country_event = EYE_aus.32 }
+		}
+		option = { # Abandon
+			name = EYE_aus.30.b
+			ai_chance = {
+				base = 90
+				modifier = {
+					factor = 0.3
+					has_government = communism
+					CZE = { has_government = communism }
+				}
+				modifier = {
+					factor = 0.3
+					AUS = { has_war = yes }
+				}
+			}
+			
+			if = {
+				limit = { CZE = { is_guaranteed_by = ROOT } }
+				diplomatic_relation = {
+					country = CZE
+					relation = guarantee
+					active = no
+				}
+				add_ai_strategy = {
+					type = ignore
+					id = "CZE"
+					value = 100
+				}
+			}
+			hidden_effect = {
+				CZE = { 
+					if = {
+						limit = { tag = ENG }
+						set_country_flag = EYE_CZE_ENG_refused_help
+					}
+					else_if = {
+						limit = { tag = FRA }
+						set_country_flag = EYE_CZE_FRA_refused_help
+					}
+					country_event = EYE_aus.28
+				}
+			}
+		}
+	}
+		country_event = { #Great Power Protects CZE (AUS)
+			id = EYE_aus.31
+			title = EYE_aus.31.t
+			desc = EYE_aus.31.desc
+			picture = GFX_report_event_schuschnigg_defeated
+			
+			is_triggered_only = yes
+			
+			option = {
+				name = EYE_aus.31.a
+				
+				create_wargoal = {
+					target = CZE
+					type = take_state_focus
+					generator = { 69 }
+				}
+			}
+		}
+		country_event = { #Great Power Protects CZE (CZE)
+			id = EYE_aus.32
+			title = EYE_aus.32.t
+			desc = EYE_aus.32.desc
+			picture = GFX_report_event_generic_sign_treaty1
+			
+			is_triggered_only = yes
+			
+			option = {
+				name = EYE_aus.32.a
+				
+				effect_tooltip = {
+					FROM = { give_guarantee = CZE }
+				}
+			}
+		}
+	country_event = { #Czechs Refuse (No Great Power)
+		id = EYE_aus.33
+		title = EYE_aus.33.t
+		desc = EYE_aus.33.desc
+		picture = GFX_report_event_czech_soldiers_02
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.33.a
+			
+			create_wargoal = {
+				target = CZE
+				type = take_state_focus
+				generator = { 69 }
+			}
+		}
+	}
+	
+#Austria Demands Czech Subjugation
+country_event = {
+	id = EYE_aus.34
+	title = EYE_aus.34.t
+	desc = EYE_aus.34.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #Accept
+		name = EYE_aus.34.a
+		ai_chance = {
+			base = 8
+			modifier = {
+				factor = 3
+				AUS = { has_army_manpower = { size > 1000000 } }
+			}				
+		}
+		
+		custom_effect_tooltip = GAME_OVER_TT
+		AUS = {
+			annex_country = {
+				target = ROOT
+				transfer_troops = yes
+			}
+		}
+		AUS = { country_event = EYE_aus.35 }
+	}
+	option = { #Refuse
+		name = EYE_aus.34.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0.1
+				NOT = { controls_state = 69 }
+			}
+		}
+		
+		effect_tooltip = {
+			AUS = {
+				declare_war_on = {
+					target = CZE
+					type = annex_everything
+				}
+			}
+		}
+		AUS = { country_event = EYE_aus.36 }
+	}
+}
+	country_event = { # CZE Submits
+		id = EYE_aus.35
+		title = EYE_aus.35.t
+		desc = EYE_aus.35.desc
+		picture = GFX_report_event_generic_sign_treaty2
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.35.a
+			
+		}
+	}
+	country_event = { # CZE Fights
+		id = EYE_aus.36
+		title = EYE_aus.36.t
+		desc = EYE_aus.36.desc
+		picture = GFX_report_event_czech_soldiers_02
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.36.a
+			
+			declare_war_on = {
+				target = CZE
+				type = annex_everything
+			}
+			hidden_effect = {
+				if = {
+					limit = { CZE = { has_idea = CZE_divided_nation } }
+					country_event = { id = EYE_aus.37 days = 1 }
+				}
+			}
+		}
+	}	
+
+#Slovakia Revolts
+country_event = {
+	id = EYE_aus.37
+	title = EYE_aus.37.t
+	desc = EYE_aus.37.desc
+	picture = GFX_report_event_generic_riot
+	
+	trigger = {
+		tag = AUS
+		has_government = neutrality
+		NOT = { country_exists = SLO }
+		is_subject = no
+		has_war_with = CZE
+		CZE = { has_idea = CZE_divided_nation }
+		OR = {
+			has_government = neutrality
+			has_government = democratic
+		}
+		OR = {
+			has_country_leader = { id = 21010 ruling_only = no name = "Otto von Habsburg" }
+			has_country_leader = { id = 21011 ruling_only = no name = "Otto von Habsburg" }
+			has_idea = AUS_otto_von_figurehead
+		}
+		OR = {
+			CZE = { owns_state = 664 }
+			CZE = { owns_state = 70 }
+			CZE = { owns_state = 71 }
+			CZE = { owns_state = 73 }
+		}
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	fire_only_once = yes
+	
+	option = { # Back them
+		name = EYE_aus.37.a
+		ai_chance = {
+			factor = 1
+		}
+		
+		if = {
+			limit = {
+				664 = {
+					OR = {
+						is_owned_by = AUS
+						is_owned_by = CZE
+					}
+				}
+			}
+			SLO = { transfer_state = 664 }
+		}
+		if = {
+			limit = {
+				70 = {
+					OR = {
+						is_owned_by = AUS
+						is_owned_by = CZE
+					}
+				}
+			}
+			SLO = { transfer_state = 70 }
+		}
+		if = {
+			limit = {
+				71 = {
+					OR = {
+						is_owned_by = AUS
+						is_owned_by = CZE
+					}
+				}
+			}
+			SLO = { transfer_state = 71 }
+		}
+		if = {
+			limit = {
+				73 = {
+					OR = {
+						is_owned_by = AUS
+						is_owned_by = CZE
+					}
+				}
+			}
+			SLO = { transfer_state = 73 }
+		}
+		if = {
+			limit = {
+				72 = {
+					OR = {
+						is_owned_by = AUS
+						is_owned_by = CZE
+					}
+				}
+				country_exists = POL
+			}
+			POL = { country_event = germany.52 }
+			effect_tooltip = { POL = { transfer_state = 72 } }
+		}
+		else_if = {
+			limit = {
+				72 = {
+					OR = {
+						is_owned_by = AUS
+						is_owned_by = CZE
+					}
+				}
+				NOT = { country_exists = POL }
+			}
+			SLO = { 
+				transfer_state = 72
+				add_state_core = 72
+			}
+		}
+		hidden_effect = {
+			SLO = { set_cosmetic_tag = EYE_SLO_habsburg }
+			CZE = { set_cosmetic_tag = CZE_ONLY }
+			SLO = {
+				if = {
+					limit = { has_dlc = "No Step Back" }
+					load_oob = AUS_slovak_troops_nsb
+				}
+				else = {
+					load_oob = AUS_slovak_troops
+				}
+			}
+			SLO = {
+				add_state_core = 664
+				add_state_core = 70
+				add_state_core = 71
+				add_state_core = 73
+				add_state_claim = 72
+			}
+		}
+		puppet = SLO
+		set_autonomy = { target = SLO autonomy_state = autonomy_dominion }
+		SLO = {
+			add_country_leader_role = {
+				character = SLO_maximilian_habsburg
+				promote_leader = yes
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = { likes_austria }
+				}
+			}
+		}
+		hidden_effect = {
+			SLO = { set_party_name = { ideology = neutrality long_name = "Royalists" name = Royalists } }
+			CZE = { country_event = EYE_aus.371 }
+		}
+	}
+	option = { # Don't
+		name =EYE_aus.37.b
+		ai_chance = {
+			base = 0
+		}
+		
+	}
+}
+	country_event = {
+		id = EYE_aus.371
+		title = EYE_aus.371.t
+		desc = EYE_aus.371.desc
+		picture = GFX_report_event_generic_riot
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.371
+			
+			remove_ideas = CZE_divided_nation
+			custom_effect_tooltip = EYE_CZE_recieve_loyalists_tt
+			hidden_effect = {
+				if = {
+					limit = { has_dlc = "No Step Back" }
+					load_oob = AUS_slovak_troops_nsb
+				}
+				else = {
+					load_oob = AUS_slovak_troops
+				}
+			}
+		}
+	} 
+
+#Anschluss 
+country_event = {
+	id = EYE_aus.38
+	title = EYE_aus.38.t
+	desc = EYE_aus.38.desc
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EYE_aus.38.a
+		
+		add_named_threat = { threat = 5 name = germany.4.t }
+		4 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_core_of = GER
+			}
+		}
+		152 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_core_of = GER
+			}
+		}
+		153 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_core_of = GER
+			}
+		}
+		AUS = {
+			every_unit_leader = {
+				#Visible should solve this problem, but just in case
+				limit = {
+					NOT = { has_id = 22010 }
+					NOT = { has_id = 22011 }
+					NOT = { has_id = 22012 }
+					NOT = { has_id = 22013 }
+					NOT = { has_id = 22014 }
+				}
+				set_nationality = GER
+			}
+		}
+		annex_country = { target = AUS transfer_troops = yes }
+		add_political_power = 75
+		set_country_flag = AUS_annexed
+		add_popularity = { ideology = fascism popularity = 0.1 }
+		add_war_support = 0.1
+		add_stability = 0.05
+		
+		custom_effect_tooltip = anschluss_mefo_bills_tt
+		hidden_effect = { # Having it appear twice might be confusing
+			GER_mefo_bills_level_down = yes
+			GER_mefo_bills_level_down = yes
+		}
+		custom_effect_tooltip = anschluss_mefo_bills_double_reduction
+		add_to_variable = { var = GER_mefo_bill_counter value = -10 }
+		
+		if = {
+			limit = {
+				has_dlc = "Death or Dishonor"
+				country_exists = YUG
+				YUG = { has_war = no }
+			}
+			country_event = {
+				id = DOD_yugoslavia.30
+				days = 4
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = EYE_aus.102 }
+		}
+	}
+}
+
+#Protect Czechoslovakia
+country_event = {
+	id = EYE_aus.39
+	title = EYE_aus.39.t
+	desc = DOD_hungary.10.desc
+	picture = GFX_report_event_czech_soldiers_01
+	
+	is_triggered_only = yes
+
+	option = { #Agree to join the Empire
+		name = DOD_hungary.10.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 10
+				AUS = { has_completed_focus = AUS_interconnect_rails }
+			}
+			modifier = {
+				threat > 20
+				factor = 2
+			}
+			modifier = {
+				is_in_faction = no
+				factor = 2
+			}
+			modifier = {
+				GER = {
+					OR = {
+						focus_progress = { focus = GER_demand_sudetenland progress > 0}
+						focus_progress = { focus = GER_end_of_czechoslovakia progress > 0}
+					}
+				}
+				factor = 10 #ohshitohshitohshit
+			}
+			modifier = {
+				is_in_faction = yes
+				factor = 0.5
+			}
+		}
+		custom_effect_tooltip =  GAME_OVER_TT
+		AUS = { country_event = { id = EYE_aus.40 hours = 6 } }
+		
+	}
+	option = { #A close association status
+		name = DOD_hungary.10.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 10
+				AUS = { has_completed_focus = AUS_interconnect_rails }
+			}
+		}
+		AUS = { country_event = { id = EYE_aus.41 hours = 6 } }
+	}
+	option = { #Refuse
+		name = DOD_hungary.10.c
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction = yes
+				factor = 2 #we're good thanks
+			}
+		}
+		AUS = { country_event = { id = DOD_hungary.13 hours = 6 } }
+		set_country_flag = HUN_AH_CZE_refused #needed for munich chain
+	}
+}
+	country_event = { #AUS annexes CZE
+		id = EYE_aus.40
+		title = DOD_hungary.11.t
+		desc = EYE_aus.40.desc
+		picture = GFX_report_event_polish_army
+		
+		is_triggered_only = yes
+
+		option = {
+			name = DOD_hungary.11.a
+			CZE = {
+				every_unit_leader = {
+					set_nationality = AUS
+				}
+			}
+			annex_country = { target = CZE transfer_troops = yes }
+			AUS = { set_country_flag = CZE_annexed_peacefully } # Used to change division name lists for HUN
+		}
+	}
+	country_event = { #AUS puppets CZE
+		id = EYE_aus.41
+		title = DOD_hungary.12.t
+		desc = EYE_aus.41.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+
+		option = {
+			name = DOD_hungary.12.a
+			puppet = CZE
+			set_autonomy = { target = CZE autonomy_state = autonomy_dominion }
+			if = {
+				limit = {
+					is_in_faction = yes
+				}
+				random_country = {
+					limit = { 
+						is_in_faction_with = AUS 
+						is_faction_leader = yes
+					}
+					add_to_faction = CZE
+				}
+			}
+		}
+	}
+	
+#Austria Demands Transylvania
+country_event = {
+	id = EYE_aus.42
+	title = EYE_aus.42.t
+	desc = EYE_aus.42.desc
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+
+	option = {#yes 
+		name = DOD_hungary.50.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			modifier = {
+				strength_ratio = { tag = AUS ratio < 0.8 }
+				factor = 2
+			}
+		}
+		AUS = { country_event = { id = EYE_aus.43 } }
+		add_stability = -0.25
+		add_war_support = -0.1
+
+	}
+
+	option = {#no 
+		name = DOD_hungary.50.b
+		ai_chance = {
+			factor = 90
+		}
+		AUS = { country_event = { id = EYE_aus.44 } }
+	}
+}	
+	country_event = { #Romania hands over Transylvania
+		id = EYE_aus.43
+		title = DOD_hungary.51.t
+		desc = DOD_hungary.51.desc
+		picture = GFX_report_event_vienna_award_hungary
+		
+		is_triggered_only = yes
+
+		trigger = {
+			NOT = {
+				has_global_flag = Balkan_crisis_mediation_requested
+			}
+		}
+
+		option = {# 
+			name = DOD_hungary.51.a
+			hidden_effect = {
+				ROM = {
+					set_country_flag = second_vienna_accepted_all #needed for event bulgaria.4
+				}
+			}
+			AUS = {
+				add_stability = 0.05
+				add_war_support = 0.05
+				if = {
+					limit = {
+						FROM = {
+							controls_state = 76
+						}
+					}
+					transfer_state = 76
+				}
+
+				if = {
+					limit = {
+						FROM = {
+							controls_state = 83
+						}
+					}
+					transfer_state = 83
+				}
+
+				if = {
+					limit = {
+						FROM = {
+							controls_state = 84
+						}
+					}
+					transfer_state = 84
+				}
+				
+				if = {
+					limit = {
+						FROM = {
+							controls_state = 82
+						}
+					}
+					transfer_state = 82
+				}
+			}
+			add_threat = -1
+			if = {
+				limit = {
+					has_idea = AUS_war_preparation
+				}
+				remove_ideas = AUS_war_preparation
+			}
+			hidden_effect = {
+				news_event = { id = EYE_aus.103 days = 1 }
+			}
+		}
+	}	
+	country_event = { #Romania refuses to hand over Transylvania
+		id = EYE_aus.44
+		title = DOD_hungary.52.t
+		desc = EYE_aus.44.desc
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+
+		option = {# Let it go
+			name = DOD_hungary.52.a
+			ai_chance = {
+				factor = 20
+				modifier = {
+					strength_ratio = { tag = ROM ratio < 1 } #weaker than Romania
+					factor = 2
+				}
+				modifier = {
+					is_historical_focus_on = yes
+					factor = 0
+				}
+			}
+			add_stability = -0.2
+			add_war_support = -0.1
+			remove_state_claim = 76
+			remove_state_claim = 83
+			remove_state_claim = 84
+			add_threat = -1
+		}
+
+		option = {# Prepare for war!
+			name = DOD_hungary.52.b
+			ai_chance = {
+				factor = 80
+				modifier = {
+					strength_ratio = { tag = ROM ratio > 1.2 }
+					factor = 3
+				}
+			}
+			ROM = { country_event = { id = EYE_aus.45 hours = 24} }
+			add_ideas = AUS_war_preparation
+			add_war_support = 0.1
+			add_threat = 2
+			hidden_effect = {
+				news_event = { id = EYE_aus.104 days = 1 }
+			}
+		}
+	}
+#Romania told about Hungarian preparations
+country_event = {
+	id = EYE_aus.45
+	title = EYE_aus.45.t
+	desc = EYE_aus.45.desc
+	picture = GFX_report_event_hungarian_soldiers
+	
+	is_triggered_only = yes
+
+	option = {# Back down
+		name = DOD_hungary.53.a
+		ai_chance = {
+			factor = 35
+			modifier = { 
+				strength_ratio = { tag = AUS ratio < 0.8 }
+				factor = 0.5
+			}
+			modifier = { 
+				is_historical_focus_on = yes 
+				factor = 0
+			}
+			modifier = {
+				is_in_faction = yes
+				factor = 0 #we got friends
+			}
+		}
+		add_stability = -0.15
+		AUS = {
+			country_event = { id = EYE_aus.43 }
+		}
+	}
+
+	option = {# Prepare for war!
+		name = DOD_hungary.53.b
+		AUS = { country_event = { id = EYE_aus.46 hours = 24 } }
+		ai_chance = {
+			factor = 35
+			modifier = {
+				has_completed_focus = ROM_balkans_dominance
+				factor = 10 #NO DEALS WITH THE HUNGARIAN SCUM
+			}
+			modifier = { 
+				is_historical_focus_on = yes 
+				factor = 0
+			}
+			modifier = { 
+				is_in_faction = yes
+				factor = 2
+			}
+		}
+		add_ideas = ROM_war_preparation
+		add_war_support = 0.1
+		add_threat = 1
+		if = {
+			limit = { 
+				GER = {
+					NOT = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = ROM
+						}
+					}
+				}
+			}
+			GER = { country_event = { id = EYE_aus.52 } } #Germany given option to intervene
+		}
+		if = {
+			limit = { 
+				ITA = {
+					NOT = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = ROM
+						}
+						is_in_faction_with = GER
+					}
+				}
+			}
+			ITA = { country_event = { id = EYE_aus.52 } } #Italy given option to intervene, if not in faction with Germany
+		}
+		if = {
+			limit = { 
+				FRA = {
+					has_war = no
+					has_government = democratic
+				}
+			}
+			FRA = { country_event = { id = EYE_aus.52 } } #France given option to intervene, if they don't have bigger problems
+		}
+		if = {
+			limit = { 
+				ENG = {
+					has_war = no
+					has_government = democratic
+					has_completed_focus = uk_balkan_strategy
+				}
+			}
+			ENG = { country_event = { id = EYE_aus.52 } } #Britain given option to intervene, if they don't have bigger problems
+		}
+	}
+
+	option = {# Ask for mediation
+		name = DOD_hungary.53.c
+		ai_chance = {
+			factor = 35
+		}
+		AUS = { country_event = { id = EYE_aus.47 hours = 24 } }
+		
+	}
+}	
+	country_event = { #Austria told that Romania is mobilizing
+		id = EYE_aus.46
+		title = DOD_hungary.54.t
+		desc = DOD_hungary.54.desc
+		picture = GFX_report_event_romanian_soldiers
+		
+		is_triggered_only = yes
+
+		option = {# Back down
+			name = DOD_hungary.54.a
+			ai_chance = {
+				factor = 35
+				modifier = {
+					strength_ratio = { tag = ROM ratio < 0.5 } #weaker than Romania
+					factor = 2
+				}
+				modifier = { 
+					is_historical_focus_on = yes 
+					factor = 0
+				}
+			}
+			add_stability = -0.15
+			remove_state_claim = 76
+			remove_state_claim = 83
+			remove_state_claim = 84
+			add_threat = -1
+			ROM = {	country_event = { id = EYE_aus.49 } }
+			remove_ideas = AUS_war_preparation
+			
+		}
+
+		option = {# To war!
+			name = DOD_hungary.54.b
+			ai_chance = {
+				factor = 35
+				modifier = { 
+					is_historical_focus_on = yes 
+					factor = 0
+				}
+				modifier = { 
+					strength_ratio = { tag = ROM ratio > 1.25 } #stronger than Romania
+					factor = 2
+				}
+			}
+			declare_war_on = {
+					target = ROM
+					type = take_state_focus
+					generator = { 76 83 84 } 
+				}
+
+		}
+		
+		option = {# Ask for mediation
+			name = DOD_hungary.54.c
+			ai_chance = {
+				factor = 35
+			}
+			country_event = { id = EYE_aus.47 }
+		}
+	}		
+		country_event = { #Austria looks for friends to do mediation
+			id = EYE_aus.47
+			title = DOD_hungary.55.t
+			desc = DOD_hungary.55.desc
+			picture = GFX_report_event_generic_read_write
+			
+			is_triggered_only = yes
+
+			option = {# Germany
+				name = DOD_hungary.55.a
+				trigger = {
+					GER = {
+						NOT = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = ROM
+								has_country_flag = AUS_mediation_refused
+							}
+						}
+					}
+				}
+				GER = { 
+					country_event = { id = EYE_aus.50 } 
+					set_country_flag = AUS_mediation
+				}
+
+			}
+
+			option = {# Britain
+				name = DOD_hungary.55.b
+				trigger = {
+					ENG = {
+						NOT = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = ROM
+								has_country_flag = AUS_mediation_refused
+							}
+						}
+					}
+				}
+				ENG = { 
+					country_event = { id = EYE_aus.50 } 
+					set_country_flag = AUS_mediation
+				}
+			}
+			
+			option = {# France
+				name = DOD_hungary.55.d
+				trigger = {
+					FRA = {
+						NOT = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = ROM
+								has_country_flag = AUS_mediation_refused
+							}
+						}
+					}
+				}
+				FRA = { 
+					country_event = { id = EYE_aus.50 } 
+					set_country_flag = AUS_mediation
+				}
+			}
+
+			option = {# Italy
+				name = DOD_hungary.55.e
+				trigger = {
+					ITA = {
+						NOT = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = ROM
+								has_country_flag = AUS_mediation_refused
+							}
+						}
+					}
+				}
+				ITA = { 
+					country_event = { id = EYE_aus.50 } 
+					set_country_flag = AUS_mediation
+				}
+			}
+
+			option = { # Nobody is eligible
+				name = DOD_hungary.55.f
+				trigger = {
+					AND = {
+						GER = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = ROM
+								has_country_flag = AUS_mediation_refused
+							}
+						}
+						ENG = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = ROM
+								has_country_flag = AUS_mediation_refused
+							}
+						}
+						FRA = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = ROM
+								has_country_flag = AUS_mediation_refused
+							}
+						}
+						ITA = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = ROM
+								has_country_flag = AUS_mediation_refused
+							}
+						}
+					}
+				}
+				AUS = {
+					country_event = { id = EYE_aus.55 }
+				}
+			}
+		}		
+		country_event = { #Romania looks for friends to do mediation
+			id = EYE_aus.48
+			title = DOD_hungary.55.t
+			desc = DOD_hungary.55.desc
+			picture = GFX_report_event_generic_read_write
+			
+			is_triggered_only = yes
+
+			option = {# Germany
+				name = DOD_hungary.55.a
+				trigger = {
+					GER = {
+						NOT = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = AUS
+								has_country_flag = ROM_mediation_refused
+							}
+						}
+					}
+				}
+				GER = { 
+					country_event = { id = EYE_aus.51 } 
+					set_country_flag = ROM_mediation
+				}
+			}
+
+			option = {# Britain
+				name = DOD_hungary.55.b
+				trigger = {
+					ENG = {
+						NOT = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = AUS
+								has_country_flag = ROM_mediation_refused
+							}
+						}
+					}
+				}
+				ENG = { 
+					country_event = { id = EYE_aus.51 } 
+					set_country_flag = ROM_mediation
+				}
+			}
+			
+			option = {# France
+				name = DOD_hungary.55.d
+				trigger = {
+					FRA = {
+						NOT = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = AUS
+								has_country_flag = ROM_mediation_refused
+							}
+						}
+					}
+				}
+				FRA = { 
+					country_event = { id = EYE_aus.51 } 
+					set_country_flag = ROM_mediation
+				}
+			}
+			option = {# Soviet Union
+				name = DOD_hungary.55.c
+				trigger = {
+					SOV = {
+						NOT = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = AUS
+								has_country_flag = ROM_mediation_refused
+							}
+						}
+					}
+					has_government = communism
+				}
+				SOV = { 
+					country_event = { id = EYE_aus.51 } 
+					set_country_flag = ROM_mediation
+				}
+			}
+			option = {# Italy
+				name = DOD_hungary.55.e
+				trigger = {
+					ITA = {
+						NOT = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = AUS
+								has_country_flag = ROM_mediation_refused
+							}
+						}
+					}
+				}
+				ITA = { 
+					country_event = { id = EYE_aus.51 } 
+					set_country_flag = ROM_mediation
+				}
+			}
+
+			option = { # Nobody is eligible
+				name = DOD_hungary.55.f
+				trigger = {
+					AND = {
+						GER = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = AUS
+								has_country_flag = ROM_mediation_refused
+							}
+						}
+						ENG = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = AUS
+								has_country_flag = ROM_mediation_refused
+							}
+						}
+						FRA = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = ROM
+								is_in_faction_with = AUS
+								has_country_flag = ROM_mediation_refused
+							}
+						}
+						AND = {
+							SOV = {
+								OR = {
+									has_war_with = AUS
+									has_war_with = ROM
+									is_in_faction_with = AUS
+									has_country_flag = ROM_mediation_refused
+								}
+							}
+							has_government = communism
+						}
+					}
+				}
+				ROM = {
+					country_event = { id = EYE_aus.56 }
+				}
+			}
+		}
+#Austria backs down - Romania triumphant
+country_event = {
+	id = EYE_aus.49
+	title = EYE_aus.49.t
+	desc = EYE_aus.49.desc
+	picture = GFX_report_event_lithuania_army
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			has_global_flag = Balkan_crisis_mediation_requested
+		}
+	}
+
+	option = {# well done us
+		name = DOD_hungary.57.a
+		add_stability = 0.05
+		remove_ideas = ROM_war_preparation
+	
+	}
+}
+#Austria seeks Mediation
+country_event = {
+	id = EYE_aus.50
+	title = EYE_aus.50.t
+	desc = EYE_aus.50.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	immediate = { clr_global_flag = Balkan_crisis_mediation_requested }
+
+	option = {# agree
+		name = DOD_hungary.58.a
+		ai_chance = {
+			factor = 70
+			modifier = {
+				is_in_faction_with = AUS
+				factor = 100
+			}
+		}
+		AUS = { add_opinion_modifier = { target = PREV modifier = backed_our_cause } }
+		save_event_target_as = AUS_mediator
+		ROM = { country_event = { id = EYE_aus.48 hours = 24 } }
+	}
+	option = {# refuse
+		name = DOD_hungary.58.b
+		ai_chance = {
+			factor = 30
+		}
+		AUS = { add_opinion_modifier = { target = PREV modifier = betrayed_our_cause } }
+		if = {
+			limit = {
+			 	has_global_flag = AUS_rebuffed
+			}
+			AUS = { country_event = { id = EYE_aus.55 } }
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = AUS_rebuffed
+				}
+			}
+			AUS = { country_event = { id = EYE_aus.47 } }
+			set_global_flag = AUS_rebuffed
+		}
+		clr_country_flag = AUS_mediation
+		set_country_flag = AUS_mediation_refused
+	}
+}
+#Romania seeks Mediation
+country_event = {
+	id = EYE_aus.51
+	title = DOD_hungary.59.t
+	desc = EYE_aus.51.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	immediate = { clr_global_flag = Balkan_crisis_mediation_requested }
+
+	option = {# agree
+		name = DOD_hungary.59.a
+		ai_chance = {
+			factor = 70
+		}
+		ROM = { add_opinion_modifier = { target = PREV modifier = backed_our_cause } }
+		save_event_target_as = ROM_mediator
+		if = {
+			limit = {
+				has_country_flag = AUS_mediation
+			}
+			country_event = { id = EYE_aus.60 } #sole party
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = AUS_mediation } 
+			}
+			event_target:AUS_mediator = { country_event = { id = EYE_aus.63 } } #
+		}
+	}
+	option = {# refuse
+		name = DOD_hungary.59.b
+		ai_chance = {
+			factor = 30
+		}
+		ROM = { add_opinion_modifier = { target = PREV modifier = betrayed_our_cause } }
+		if = {
+			limit = {
+			 	has_global_flag = ROM_rebuffed
+			}
+			ROM = { country_event = { id = EYE_aus.56 } }
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = ROM_rebuffed
+				}
+			}
+			ROM = { country_event = { id = EYE_aus.48 } }
+			set_global_flag = ROM_rebuffed
+		}
+		clr_country_flag = ROM_mediation
+		set_country_flag = ROM_mediation_refused	
+	}
+}
+#Balkan Crisis - Intervention
+country_event = {
+	id = EYE_aus.52
+	title = EYE_aus.52.t
+	desc = EYE_aus.52.desc
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes
+
+	option = {# back Austria
+		name = EYE_aus.52.a
+		ai_chance = {
+			factor = 35
+			modifier = {
+				is_in_faction_with = AUS
+				factor = 100
+			}
+			modifier = {
+				is_in_faction_with = ROM
+				factor = 0
+			}
+		}
+		add_threat = 1
+		give_guarantee = AUS
+		ROM = { country_event = { id = EYE_aus.53 } }
+	}
+
+	option = {# back Romania
+		name = DOD_hungary.60.b
+		ai_chance = {
+			factor = 35
+			modifier = {
+				is_in_faction_with = AUS
+				factor = 0
+			}
+			modifier = {
+				is_in_faction_with = ROM
+				factor = 100
+			}
+		}
+		add_threat = 1
+		give_guarantee = ROM
+		AUS = { country_event = { id = EYE_aus.54 } }
+	}
+
+	option = {# let them work it out
+		name = DOD_hungary.60.c
+		ai_chance = {
+			factor = 35
+		}
+		
+	}
+}
+#Balkan Crisis - Romania told a major nation backs Austria
+country_event = {
+	id = EYE_aus.53
+	title = EYE_aus.53.t
+	desc = EYE_aus.53.desc
+	picture = GFX_report_event_soldiers_marching
+	
+	is_triggered_only = yes
+
+	option = {# fold
+		name = DOD_hungary.61.a
+		trigger = {
+			NOT  = { has_global_flag = Balkan_crisis_mediation_requested }
+			NOT = { has_global_flag = Balkan_crisis_AUS_folded }
+		}
+		ai_chance = {
+			factor = 35
+			modifier = {
+				is_in_faction = yes
+				factor = 0.25
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					NOT = { has_global_flag = Balkan_crisis_mediation_requested }
+					NOT = { has_global_flag = Balkan_crisis_ROM_folded }
+					NOT = { has_global_flag = Balkan_crisis_AUS_folded }
+				}
+			}
+			AUS = { country_event = { id = EYE_aus.43 } }
+			remove_ideas = ROM_war_preparation
+			set_global_flag = Balkan_crisis_ROM_folded
+		}
+
+	}
+
+	option = {# Ignore
+		name = DOD_hungary.61.b
+		ai_chance = {
+			factor = 35
+			modifier = {
+				has_completed_focus = ROM_balkans_dominance
+				factor = 2 #come and have a go
+			}
+		}
+	}
+
+	option = {# ask for mediation
+		name = DOD_hungary.61.c
+		trigger = {
+			NOT = {
+				has_global_flag = Balkan_crisis_mediation_requested
+			}
+		}
+		ai_chance = {
+			factor = 35
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = Balkan_crisis_mediation_requested }
+				NOT = { has_global_flag = Balkan_crisis_ROM_folded }
+				NOT = { has_global_flag = Balkan_crisis_AUS_folded }
+				#idea is that the events can fire at the same time, but selecting the mediation option only fires the next event once
+			}
+			AUS = { country_event = { id = EYE_aus.47 hours = 24 } }
+		}
+		set_global_flag = Balkan_crisis_mediation_requested
+	}
+}
+#Balkan Crisis - Austria told a major nation backs Romania
+country_event = {
+	id = EYE_aus.54
+	title = DOD_hungary.62.t
+	desc = DOD_hungary.62.desc
+	picture = GFX_report_event_soldiers_marching
+	
+	is_triggered_only = yes
+
+
+	option = {# fold
+		name = DOD_hungary.62.a
+		trigger = {
+			NOT  = { has_global_flag = Balkan_crisis_mediation_requested }
+			NOT = { has_global_flag = Balkan_crisis_ROM_folded }
+		}
+		ai_chance = {
+			factor = 35
+			modifier = {
+				is_in_faction = yes
+				factor = 0.25
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = Balkan_crisis_ROM_folded }
+				NOT = { has_global_flag = Balkan_crisis_AUS_folded }
+				NOT = { has_global_flag = Balkan_crisis_mediation_requested }
+			}
+		ROM = { country_event = { id = EYE_aus.49 } }
+		remove_ideas = AUS_war_preparation
+		}
+	}
+
+	option = {# Ignore
+		name = DOD_hungary.62.b
+		ai_chance = {
+			factor = 35
+		}
+	}
+
+	option = {# ask for mediation
+		name = DOD_hungary.62.c
+		trigger = {
+			NOT  = { has_global_flag = Balkan_crisis_mediation_requested }
+			NOT = { has_global_flag = Balkan_crisis_ROM_folded }
+			NOT = { has_global_flag = Balkan_crisis_AUS_folded }
+		}
+		ai_chance = {
+			factor = 35
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = Balkan_crisis_mediation_requested }
+				NOT = { has_global_flag = Balkan_crisis_ROM_folded }
+				NOT = { has_global_flag = Balkan_crisis_AUS_folded }
+			}
+			country_event = { id = EYE_aus.47 }
+		}
+		set_global_flag = Balkan_crisis_mediation_requested
+	}
+}
+#Transylvania Mediation - Austria rebuffed twice or Mediation sided with Romania
+country_event = {
+	id = EYE_aus.55
+	title = DOD_hungary.63.t
+	desc = {
+		text = DOD_hungary.63.desc_HUN_refused #Austria found no supporter
+		trigger = {
+			NOT = { 
+				OR = {
+			 		has_global_flag = AUS_mediation_AUS_nothing
+			 		has_country_flag = AUS_mediation_against
+			 	}
+			 } 
+		}
+	}
+	desc = {
+		text = DOD_hungary.63.desc_HUN_nothing #Mediation went against Austria
+		trigger = {
+				OR = {
+			 		has_global_flag = AUS_mediation_AUS_nothing 
+			 		has_country_flag = AUS_mediation_against
+			 	}
+		}
+	}
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+
+	option = {# fold
+		name = DOD_hungary.63.a
+		ai_chance = {
+			factor = 70 #we tried
+		}
+		ROM = {country_event = { id = EYE_aus.49 } }
+		remove_ideas = AUS_war_preparation
+	}
+
+	option = {# To war, anyway!
+		name = DOD_hungary.63.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				strength_ratio = { tag = ROM ratio > 2.0 }# massively stronger than Romania, quick victorious war etc.
+				factor = 3
+			}
+			modifier = {
+				is_in_faction = yes
+				factor = 3
+			}
+		}
+		declare_war_on = {
+				target = ROM
+				type = take_state_focus
+				generator = { 76 83 84 } 
+			}
+		event_target:ROM_mediator = {
+			country_event = { id = EYE_aus.57 }
+		}
+	}
+}
+#Transylvania Mediation - Romania rebuffed twice or mediation sided with Austria
+country_event = {
+	id = EYE_aus.56
+	title = DOD_hungary.64.t
+	desc = {
+		text = EYE_aus.56.desc_AUS_refused #Romania found no supporter
+		trigger = {
+			NOT = { 
+				OR = {
+			 		has_global_flag = AUS_mediation_AUS_all
+			 		has_country_flag = ROM_mediation_against
+			 	}
+			 } 
+		}
+	}
+	desc = {
+		text = EYE_aus.56.desc_AUS_nothing #Mediation went against Romania
+		trigger = {
+				OR = {
+			 		has_global_flag = AUS_mediation_AUS_all
+			 		has_country_flag = ROM_mediation_against
+			 	}
+		}
+	}
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+
+	option = {# fold
+		name = DOD_hungary.64.a
+		ai_chance = {
+			factor = 80
+			modifier = {
+				has_completed_focus = ROM_balkans_dominance
+				factor = 0.2
+			}
+		}
+		AUS = {country_event = { id = EYE_aus.43 } }
+		remove_ideas = ROM_war_preparation
+	}
+
+	option = {# Ignore
+		name = DOD_hungary.64.b
+		ai_chance = {
+			factor = 20
+		}
+		event_target:AUS_mediator = {
+			country_event = { id = EYE_aus.58 }
+		}
+	}
+}
+#Transylvania Mediation - Austria has no backing but still goes to war
+country_event = {
+	id = EYE_aus.57
+	title = EYE_aus.57.t
+	desc = EYE_aus.57.desc
+	picture = GFX_report_event_hungarian_soldiers
+	
+	is_triggered_only = yes
+
+	option = {# fold
+		name = DOD_hungary.65.a
+		ai_chance = {
+			factor = 35
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+		}
+		ROM = { add_opinion_modifier = { target = PREV modifier = betrayed_our_cause } }
+	}
+
+	option = {# Defend Romania
+		name = EYE_aus.57.b
+		ai_chance = {
+			factor = 70
+		}
+		give_guarantee = ROM #should make them want to join war
+		if = {
+			limit = {
+				is_faction_leader = yes
+				ROM = {
+					is_in_faction = no
+				}
+			}
+			add_to_faction = ROM
+		}
+		add_ai_strategy = { 
+    		type = alliance
+     		id = "ROM"			
+ 			value = 200
+    	}
+	}
+
+}
+#Transylvania Mediation - Romania has no backing but still refuses to fold
+country_event = {
+	id = EYE_aus.58
+	title = DOD_hungary.66.t
+	desc = EYE_aus.58.desc
+	picture = GFX_report_event_romanian_soldiers
+	
+	is_triggered_only = yes
+
+	option = {# fold
+		name = DOD_hungary.66.a
+		ai_chance = {
+			factor = 35
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+		}
+		AUS = { add_opinion_modifier = { target = PREV modifier = betrayed_our_cause } }
+		add_war_support = -0.05
+		AUS = { country_event = { id = EYE_aus.59 } }
+	}
+
+	option = {# Support Austria
+		name = DOD_hungary.66.b
+		ai_chance = {
+			factor = 70 
+		}
+		give_guarantee = AUS #should make them want to join war
+		AUS = { country_event = { id = EYE_aus.59 hours = 12} }
+		set_country_flag = AUS_war_support
+		add_war_support = 0.05
+		add_ai_strategy = { 
+    		type = support
+     		id = "AUS"			
+ 			value = 200
+    	}
+	}
+}
+#Transylvania Mediation - negotiations have broken down, war breaks out
+country_event = {
+	id = EYE_aus.59
+	title = DOD_hungary.67.t
+	desc = DOD_hungary.67.desc
+	picture = GFX_report_event_generic_battle
+	
+	is_triggered_only = yes
+
+	option = {# then war it is
+		name = DOD_hungary.67.a
+		if = {
+			limit = {
+				FROM = {
+					has_country_flag = AUS_war_support
+				}
+			}
+			FROM = {
+				declare_war_on = {
+					target = ROM
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+		declare_war_on = {
+				target = ROM
+				type = take_state_focus
+				generator = { 76 83 84 } 
+			}
+	}
+}
+#Transylvania Mediation - both sides have agreed on a mediator, who gets to decide
+country_event = {
+	id = EYE_aus.60
+	title = DOD_hungary.68.t 
+	desc = DOD_hungary.68.desc
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+
+	option = {# all for Austria
+		name = EYE_aus.60.a
+		ai_chance = {
+			factor = 25
+		}
+		ROM = { 
+			set_country_flag = ROM_mediation_against
+			country_event = { id = EYE_aus.56 days = 1} 
+		}
+	}
+	option = {# compromise
+		name = EYE_aus.60.b
+		ai_chance = {
+			factor = 50
+		}
+		ROM = { country_event = { id = EYE_aus.61 days = 1} }
+	}
+	option = {# all for Romania
+		name = DOD_hungary.68.c
+		ai_chance = {
+			factor = 25
+		}
+		AUS = { 
+			set_country_flag = AUS_mediation_against
+			country_event = { id = EYE_aus.55 days = 1 } 
+		}		
+	}
+}
+#Transylvania Mediation Compromise solution (northern transylvania to Austria) - Romanian reaction
+country_event = {
+	id = EYE_aus.61
+	title = DOD_hungary.69.t
+	desc = EYE_aus.61.desc
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+
+	option = {# accept
+		name = DOD_hungary.69.a
+		ai_chance = {
+			factor = 80
+		}
+		AUS = { country_event = { id = EYE_aus.62 } }
+		remove_ideas = ROM_war_preparation
+		set_country_flag = second_vienna_accepted_north #for event bulgaria.4
+	}
+	
+	option = {# refuse
+		name = DOD_hungary.69.b
+		ai_chance = {
+			factor = 20
+		}
+		add_stability = -0.05
+		event_target:AUS_mediator = {
+			country_event = { id = EYE_aus.58 }
+		}
+		
+	}
+}
+#Transylvania Mediation Compromise solution (northern transylvania to Austria) - Romania accepts
+country_event = {
+	id = EYE_aus.62
+	title = DOD_hungary.70.t
+	desc = DOD_hungary.70.desc
+	picture = GFX_report_event_generic_peaceful_annexation
+	
+	is_triggered_only = yes
+
+	option = {# accept
+		name = DOD_hungary.70.a
+		add_stability = 0.05
+		AUS = { transfer_state = 76 }
+		remove_ideas = AUS_war_preparation
+	}
+}
+#Transylvania Mediation - Austrian Mediator gets to make first offer
+country_event = {
+	id = EYE_aus.63
+	title = DOD_hungary.71.t
+	desc = EYE_aus.63.desc
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+
+	option = {# all for Austria
+		name = EYE_aus.63.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				is_in_faction_with = AUS
+				factor = 20
+			}
+		}
+		set_global_flag = AUS_mediation_AUS_all
+		event_target:ROM_mediator = { country_event = { id = EYE_aus.64 hours = 24 } }
+	}
+	option = {# compromise
+		name = EYE_aus.63.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_in_faction_with = ROM
+				factor = 2
+			}
+			modifier = {
+				threat > 0.25
+				factor = 2
+			}
+		}
+		set_global_flag = AUS_mediation_compromise
+		event_target:ROM_mediator = { country_event = { id = EYE_aus.64 hours = 24 } }
+	}
+	option = {# all for Romania
+		name = DOD_hungary.71.c
+		ai_chance = {
+			factor = 25
+			modifier = {
+				is_in_faction_with = ROM
+				factor = 20
+			}
+		}
+		set_global_flag = AUS_mediation_AUS_nothing
+		event_target:ROM_mediator = { country_event = { id = EYE_aus.64 hours = 24 } }
+		
+	}
+}
+#Transylvania Mediation - Romanian Mediator gets to respond
+country_event = {
+	id = EYE_aus.64
+	title = DOD_hungary.72.t
+	desc = {
+		text = EYE_aus.64.desc_AUS_all
+		trigger = { has_global_flag = AUS_mediation_AUS_all }
+	}
+	desc = {
+		text = EYE_aus.64.desc_AUS_compromise
+		trigger = { has_global_flag = AUS_mediation_compromise }
+	}
+	desc = {
+		text = EYE_aus.64.desc_AUS_nothing
+		trigger = { has_global_flag = AUS_mediation_AUS_nothing }
+	}
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+
+	option = {# agree
+		name = DOD_hungary.72.a
+		ai_chance = {
+			factor = 60
+			modifier = {
+				OR = {
+					tag = FRA
+					tag = ENG
+				}
+				event_target:AUS_mediator = {
+					tag = GER
+				}
+				factor = 10
+			}
+			modifier = {
+				has_global_flag = AUS_mediation_AUS_nothing
+				factor = 100
+			}
+		}
+		if = {
+			limit = { has_global_flag = AUS_mediation_AUS_all }
+			ROM = { country_event = { id = EYE_aus.56 } }
+		}
+		if = {
+			limit = { has_global_flag = AUS_mediation_compromise }
+			ROM = { country_event = { id = EYE_aus.61 } }
+		}
+		if = {
+			limit = { has_global_flag = AUS_mediation_AUS_nothing }
+			HUN = { country_event = { id = EYE_aus.55 } }
+		}
+	}
+	option = {# counteroffer
+		name = DOD_hungary.72.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				tag = GER
+				event_target:AUS_mediator = {
+					tag = FRA
+				}
+				NOT = { has_global_flag = AUS_mediation_AUS_nothing }
+				factor = 100
+			}
+		}
+		country_event = { id = EYE_aus.65 hours = 24 } 
+	}
+}
+#Transylvania Mediation - Romanian mediator makes counter offer
+country_event = {
+	id = EYE_aus.65
+	title = DOD_hungary.73.t
+	desc = EYE_aus.65.desc
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+
+	option = {# all for Austria
+		name = EYE_aus.65.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				threat > 0.7
+				factor = 10
+			}
+		}
+		trigger = {
+			NOT = { has_global_flag = AUS_mediation_AUS_all }
+		}
+		set_global_flag = AUS_mediation_AUS_all
+		if = {
+			limit = {
+				has_global_flag = AUS_mediation_compromise
+			}
+			clr_global_flag = AUS_mediation_compromise
+		}
+		if = {
+			limit = {
+				has_global_flag = AUS_mediation_AUS_nothing
+			}
+			clr_global_flag = AUS_mediation_AUS_nothing
+		}
+		event_target:AUS_mediator = { country_event = { id = EYE_aus.66 hours = 24 } }
+
+	}
+	option = {# compromise
+		name = EYE_aus.65.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				tag = FRA
+				factor = 2
+			}
+			modifier = {
+				tag = GER
+				factor = 2
+			}
+		}
+		set_global_flag = AUS_mediation_compromise
+		if = {
+			limit = {
+				has_global_flag = AUS_mediation_AUS_all
+			}
+			clr_global_flag = AUS_mediation_AUS_all
+		}
+		if = {
+			limit = {
+				has_global_flag = AUS_mediation_AUS_nothing
+			}
+			clr_global_flag = AUS_mediation_AUS_nothing
+		}
+		event_target:AUS_mediator = { country_event = { id = EYE_aus.66 hours = 24 } }
+	}
+	option = {# all for Romania
+		name = DOD_hungary.73.c
+		ai_chance = {
+			factor = 45
+		}
+		set_global_flag = AUS_mediation_AUS_nothing
+		if = {
+			limit = {
+				has_global_flag = AUS_mediation_compromise
+			}
+			clr_global_flag = AUS_mediation_compromise
+		}
+		if = {
+			limit = {
+				has_global_flag = AUS_mediation_AUS_all
+			}
+			clr_global_flag = AUS_mediation_AUS_all
+		}
+		event_target:AUS_mediator = { country_event = { id = EYE_aus.66 hours = 24 } }		
+	}
+}
+#Transylvania Mediation - Hungarian Mediator gets to respond to Romanian counter-offer
+country_event = {
+	id = EYE_aus.66
+	title = DOD_hungary.74.t
+	desc = {
+		text = EYE_aus.66.desc_AUS_all
+		trigger = { has_global_flag = AUS_mediation_AUS_all }
+	}
+	desc = {
+		text = EYE_aus.66.desc_compromise
+		trigger = { has_global_flag = AUS_mediation_compromise }
+	}
+	desc = {
+		text = EYE_aus.66.desc_AUS_nothing
+		trigger = { has_global_flag = AUS_mediation_AUS_nothing }
+	} 
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+
+	option = {# agree
+		name = DOD_hungary.74.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				OR = {
+					tag = FRA
+					tag = ENG
+				}
+				event_target:AUS_mediator = {
+					tag = GER
+				}
+				factor = 10
+			}
+		}
+		if = {
+			limit = { has_global_flag = AUS_mediation_AUS_all }
+			ROM = { country_event = { id = EYE_aus.56 } }
+		}
+		if = {
+			limit = { has_global_flag = AUS_mediation_compromise }
+			ROM = { country_event = { id = EYE_aus.61 } }
+		}
+		if = {
+			limit = { has_global_flag = AUS_mediation_AUS_nothing }
+			AUS = { country_event = { id = EYE_aus.55 } }
+		}
+	}
+	option = {# refuse and walk out of negotiations
+		name = DOD_hungary.74.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_global_flag = AUS_mediation_AUS_nothing
+				factor = 5
+			}
+			modifier = {
+				has_global_flag = AUS_mediation_AUS_all
+				factor = 0 #would be dumb as all hell
+			}
+		}
+		
+		AUS = { country_event = { id = EYE_aus.67 } }
+	}
+}
+#Transylvania Mediation - Negotiations have broken down, Austria told
+country_event = {
+	id = EYE_aus.67
+	title = DOD_hungary.67.t
+	desc = DOD_hungary.67.desc 
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	option = {# fold
+		name = DOD_hungary.75.a
+		ai_chance = {
+			factor = 20
+		}
+		ROM = { country_event = { id = EYE_aus.49 } }
+		remove_ideas = AUS_war_preparation
+	}
+
+	option = {# To war, anyway!
+		name = DOD_hungary.67.a
+		ai_chance = {
+			factor = 80
+		}
+		event_target:ROM_mediator = {
+			country_event = { id = EYE_aus.55 }
+		}
+		event_target:AUS_mediator = {
+			country_event = { id = EYE_aus.56 }
+		}
+	}
+}
+
+
+#Austria Demands Return to WWI Borders With Yugoslavia
+country_event = {
+	id = EYE_aus.68
+	title = EYE_aus.68.t
+	desc = EYE_aus.68.desc 
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	option = {# fold
+		name = EYE_aus.68.a
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 5
+				strength_ratio = { tag = AUS ratio < 1 }
+			}
+			modifier = {
+				factor = 10 #Better the Austrians than the Germans
+				GER = {
+					OR = {
+						focus_progress = { focus = GER_demand_slovenia progress > 0}
+						focus_progress = { focus = GER_first_ljubljana_award progress > 0}
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				any_other_country = {
+					has_guaranteed = YUG
+				}
+			}
+			modifier = {
+				factor = 0
+				is_in_faction = yes # I have friends
+			}
+		}
+		
+		add_stability = -0.1
+		add_war_support = -0.05
+		
+		if = {
+			limit = { owns_state = 102 }
+			AUS = { transfer_state = 102 }
+		}
+		if = {
+			limit = { owns_state = 103 }
+			AUS = { transfer_state = 103 }
+		}
+		if = {
+			limit = { owns_state = 109 }
+			AUS = { transfer_state = 109 }
+		}
+		if = {
+			limit = { owns_state = 104 }
+			AUS = { transfer_state = 104 }
+		}
+		if = {
+			limit = { owns_state = 45 }
+			AUS = { transfer_state = 45 }
+		}
+		if = {
+			limit = { owns_state = 764 }
+			AUS = { transfer_state = 764 }
+		}
+		
+		if = {
+			limit = { has_idea = YUG_idea_croatian_opposition }
+			remove_ideas = YUG_idea_croatian_opposition
+		}
+		if = {
+			limit = { has_idea = YUG_idea_croats_suppressed }
+			remove_ideas = YUG_idea_croats_suppressed
+		}
+		if = {
+			limit = { has_idea = YUG_idea_slovene_nationalism }
+			remove_ideas = YUG_idea_slovene_nationalism
+		}
+		if = {
+			limit = { has_idea = YUG_idea_slovene_nationalism_2 }
+			remove_ideas = YUG_idea_slovene_nationalism_2
+		}
+		
+		AUS = { country_event = EYE_aus.69 }
+	}
+	option = {# compromise
+		name = EYE_aus.68.b
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0.5
+				any_other_country = {
+					has_guaranteed = YUG
+				} # I have back-up
+			}
+			modifier = {
+				factor = 0
+				is_in_faction = yes # I have friends
+			}
+		}
+		
+		custom_effect_tooltip = EYE_should_AUS_accept_YUG_tt
+		effect_tooltip = {
+			if = {
+				limit = { owns_state = 102 }
+				AUS = { transfer_state = 102 }
+			}
+			if = {
+				limit = { owns_state = 103 }
+				CRO = { transfer_state = 103 }
+			}
+			if = {
+				limit = { owns_state = 109 }
+				CRO = { transfer_state = 109 }
+			}
+			AUS = { puppet = CRO }
+			if = {
+				limit = { has_idea = YUG_idea_croatian_opposition }
+				remove_ideas = YUG_idea_croatian_opposition
+			}
+			if = {
+				limit = { has_idea = YUG_idea_croats_suppressed }
+				remove_ideas = YUG_idea_croats_suppressed
+			}
+			if = {
+				limit = { has_idea = YUG_idea_slovene_nationalism }
+				remove_ideas = YUG_idea_slovene_nationalism
+			}
+			if = {
+				limit = { has_idea = YUG_idea_slovene_nationalism_2 }
+				remove_ideas = YUG_idea_slovene_nationalism_2
+			}
+		}
+		
+		AUS = { country_event = { id = EYE_aus.70 hours = 6 } }
+	}	
+	option = {# stand fast
+		name = EYE_aus.68.c
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 5
+				strength_ratio = { tag = AUS ratio > 1.2 }
+			}
+		}
+		
+		effect_tooltip = {
+			AUS = {
+				add_state_claim = 102
+				add_state_claim = 103
+				add_state_claim = 109
+				add_state_claim = 104
+				add_state_claim = 45
+				add_state_claim = 163
+				add_state_claim = 764
+			}
+		}
+		AUS = { country_event = { id = EYE_aus.72 hours = 6 } }
+	}
+	option = { # mediate
+		name = EYE_aus.68.d
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0.5
+				GER = {
+					OR = {
+						focus_progress = { focus = GER_demand_slovenia progress > 0}
+						focus_progress = { focus = GER_first_ljubljana_award progress > 0}
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				any_other_country = {
+					has_guaranteed = YUG
+				} # I have back-up
+			}
+			modifier = {
+				factor = 0
+				is_in_faction = yes # I have friends
+			}
+		}
+		
+		AUS = { country_event = { id = EYE_aus.72 hours = 6 } }
+	}
+}
+	country_event = { #YUG folds
+		id = EYE_aus.69
+		title = EYE_aus.69.t
+		desc = EYE_aus.69.desc 
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.69.a
+			
+			add_stability = 0.05
+			add_war_support = 0.05
+			
+			if = {
+				limit = { YUG = { owns_state = 102 } }
+				transfer_state = 102
+			}
+			if = {
+				limit = { YUG = { owns_state = 103 } }
+				transfer_state = 103
+			}
+			if = {
+				limit = { YUG = { owns_state = 104 } }
+				transfer_state = 104
+			}
+			if = {
+				limit = { YUG = { owns_state = 109 } }
+				transfer_state = 109
+			}
+			if = {
+				limit = { YUG = { owns_state = 45 } }
+				transfer_state = 45
+			}
+			if = {
+				limit = { YUG = { owns_state = 764 } }
+				transfer_state = 764
+			}
+			
+			hidden_effect = {
+				YUG = {
+					if = {
+						limit = { has_idea = YUG_idea_croatian_opposition }
+						remove_ideas = YUG_idea_croatian_opposition
+					}
+					if = {
+						limit = { has_idea = YUG_idea_croats_suppressed }
+						remove_ideas = YUG_idea_croats_suppressed
+					}
+					if = {
+						limit = { has_idea = YUG_idea_slovene_nationalism }
+						remove_ideas = YUG_idea_slovene_nationalism
+					}
+					if = {
+						limit = { has_idea = YUG_idea_slovene_nationalism_2 }
+						remove_ideas = YUG_idea_slovene_nationalism_2
+					}
+				}
+				news_event = { id = EYE_aus.105 hours = 24 }
+			}
+		}
+	}
+	country_event = { # Compromise?
+		id = EYE_aus.70
+		title = EYE_aus.70.t
+		desc = EYE_aus.70.desc 
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = { #Yes
+			name = EYE_aus.70.a
+			ai_chance = {
+				factor = 80
+			}
+			
+			if = {
+				limit = { YUG = { owns_state = 102 } }
+				transfer_state = 102
+			}
+			if = {
+				limit = { YUG = { owns_state = 103 } }
+				CRO = { transfer_state = 103 }
+			}
+			if = {
+				limit = { YUG = { owns_state = 109 } }
+				CRO = { transfer_state = 109 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						109 = {
+							free_building_slots = {
+								building = air_base
+								size > 9
+							}
+						}
+					}
+					109 = {
+						add_building_construction = {
+							type = air_base
+							level = 3
+							instant_build = yes
+						}
+					}
+				}
+				CRO = { 
+					set_cosmetic_tag = EYE_CRO_habsburg 
+					load_oob = AUS_croat_troops
+				}
+				YUG = {
+					if = {
+						limit = { has_idea = YUG_idea_croatian_opposition }
+						remove_ideas = YUG_idea_croatian_opposition
+					}
+					if = {
+						limit = { has_idea = YUG_idea_croats_suppressed }
+						remove_ideas = YUG_idea_croats_suppressed
+					}
+					if = {
+						limit = { has_idea = YUG_idea_slovene_nationalism }
+						remove_ideas = YUG_idea_slovene_nationalism
+					}
+					if = {
+						limit = { has_idea = YUG_idea_slovene_nationalism_2 }
+						remove_ideas = YUG_idea_slovene_nationalism_2
+					}
+				}
+			}
+			puppet = CRO
+			set_autonomy = { target = CRO autonomy_state = autonomy_dominion }
+			CRO = {
+				add_country_leader_role = {
+					character = CRO_leopold_habsburg
+					promote_leader = yes
+					country_leader = {
+						expire = "1965.1.1"
+						ideology = despotism
+						traits = { likes_austria }
+					}
+				}
+			}
+			hidden_effect = {
+				CRO = { set_party_name = { ideology = neutrality long_name = "Royalists" name = Royalists } }
+			}
+		}
+		option = { #No
+			name = EYE_aus.70.b
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 3
+					is_in_faction = yes
+				}
+				modifier = {
+					factor = 0
+					surrender_progress > 0.01
+				}
+			}
+			
+			hidden_effect = {
+				set_country_flag = AUS_refused_compromise_with_YUG
+			}			
+			YUG = { country_event = { id = EYE_aus.71 hours = 6 } }			
+		}
+	}
+		country_event = { #Austria Refuses Compromise
+			id = EYE_aus.71
+			title = EYE_aus.71.t
+			desc = EYE_aus.71.desc 
+			picture = GFX_report_event_generic_read_write
+			
+			is_triggered_only = yes
+			
+			option = { # Fold
+				name = EYE_aus.71.a
+				ai_chance = {
+					factor = 20
+					modifier = {
+						factor = 5
+						strength_ratio = { tag = AUS ratio < 1 }
+					}
+					modifier = {
+						factor = 10 #Better the Austrians than the Germans
+						GER = {
+							OR = {
+								focus_progress = { focus = GER_demand_slovenia progress > 0}
+								focus_progress = { focus = GER_first_ljubljana_award progress > 0}
+							}
+						}
+					}
+					modifier = {
+						factor = 0.5
+						any_other_country = {
+							has_guaranteed = YUG
+						} # I have back-up
+					}
+					modifier = {
+						factor = 0
+						is_in_faction = yes # I have friends
+					}
+				}
+				
+				custom_effect_tooltip = EYE_folding_YUG_tt
+				effect_tooltip = {
+					add_stability = -0.1
+					add_war_support = -0.05
+					
+					if = {
+						limit = { owns_state = 102 }
+						AUS = { transfer_state = 102 }
+					}
+					if = {
+						limit = { owns_state = 103 }
+						AUS = { transfer_state = 103 }
+					}
+					if = {
+						limit = { owns_state = 109 }
+						AUS = { transfer_state = 109 }
+					}
+					if = {
+						limit = { owns_state = 104 }
+						AUS = { transfer_state = 104 }
+					}
+					if = {
+						limit = { owns_state = 45 }
+						AUS = { transfer_state = 45 }
+					}
+					if = {
+						limit = { owns_state = 764 }
+						AUS = { transfer_state = 764 }
+					}
+					
+					
+					if = {
+						limit = { has_idea = YUG_idea_croatian_opposition }
+						remove_ideas = YUG_idea_croatian_opposition
+					}
+					if = {
+						limit = { has_idea = YUG_idea_croats_suppressed }
+						remove_ideas = YUG_idea_croats_suppressed
+					}
+					if = {
+						limit = { has_idea = YUG_idea_slovene_nationalism }
+						remove_ideas = YUG_idea_slovene_nationalism
+					}
+					if = {
+						limit = { has_idea = YUG_idea_slovene_nationalism_2 }
+						remove_ideas = YUG_idea_slovene_nationalism_2
+					}
+				}
+				
+				AUS = { country_event = { id = EYE_aus.69 } }
+			}
+			option = { # Stand Fast
+				name = EYE_aus.71.b
+				ai_chance = {
+					factor = 80
+					modifier = {
+						factor = 5
+						strength_ratio = { tag = AUS ratio > 1.2 }
+					}
+				}
+				
+				effect_tooltip = {
+					AUS = {
+						add_state_claim = 102
+						add_state_claim = 103
+						add_state_claim = 109
+						add_state_claim = 104
+						add_state_claim = 45
+						add_state_claim = 163
+						add_state_claim = 764
+					}
+				}
+				AUS = { country_event = { id = EYE_aus.72 hours = 6 } }
+			}
+			option = { # Mediate
+				name = EYE_aus.71.c
+				ai_chance = {
+					factor = 80
+					modifier = {
+						factor = 0.5
+						GER = {
+							OR = {
+								focus_progress = { focus = GER_demand_slovenia progress > 0}
+								focus_progress = { focus = GER_first_ljubljana_award progress > 0}
+							}
+						}
+					}
+					modifier = {
+						factor = 0.5
+						any_other_country = {
+							has_guaranteed = YUG
+						} # I have back-up
+					}
+					modifier = {
+						factor = 0
+						is_in_faction = yes # I have friends
+					}
+				}
+				
+				AUS = { country_event = { id = EYE_aus.73 hours = 6 } }
+			}			
+		}
+	country_event = { #Yugoslavia stands firm
+		id = EYE_aus.72
+		title = EYE_aus.72.t
+		desc = EYE_aus.72.desc 
+		picture = GFX_report_event_yugoslavia_partisans
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.72.a
+			
+			add_state_claim = 102
+			add_state_claim = 103
+			add_state_claim = 109
+			add_state_claim = 104
+			add_state_claim = 45
+			add_state_claim = 163
+			add_state_claim = 764
+		}
+	}
+	country_event = { # Mediation
+		id = EYE_aus.73
+		title = EYE_aus.73.t
+		desc = EYE_aus.73.desc 
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = { # Back down
+			name = EYE_aus.73.a
+			ai_chance = {
+				factor = 0 # It's worth a shot
+			}
+			
+			add_stability = -0.05
+			add_war_support = -0.05
+			
+			YUG = { country_event = { id = EYE_aus.74 hours = 6 } }
+			hidden_effect = {
+				clr_country_flag = AUS_refused_back_down_YUG_threat
+			}
+		}
+		option = { # Agree
+			name = EYE_aus.73.b
+			ai_chance = {
+				factor = 10
+			}
+			
+			AUS = { country_event = { id = EYE_aus.78 hours = 6 } }			
+		}
+		option = { # Refuse
+			name = EYE_aus.73.c
+			ai_chance = {
+				base = 1
+				modifier = {
+					factor = 5
+					has_country_flag = AUS_refused_compromise_with_YUG
+				}
+				modifier = {
+					factor = 0
+					has_war = yes # We cannot afford this
+				}
+			}
+			
+			add_named_threat = { threat = 2 name = AUS_refused_back_down_YUG_threat }
+			custom_effect_tooltip = AUS_others_may_meddle_tt
+			create_wargoal = {
+				target = YUG
+				type = take_state_focus
+				generator = { 102 103 109 104 45 163 764 }
+			}
+			hidden_effect = {
+				clr_country_flag = AUS_refused_compromise_with_YUG
+			}
+			YUG = { country_event = EYE_aus.75 }
+		}
+	}
+		country_event = { #Austria backs down, Yugoslavia wins
+			id = EYE_aus.74
+			title = EYE_aus.74.t
+			desc = EYE_aus.74.desc 
+			picture = GFX_report_event_generic_read_write
+			
+			is_triggered_only = yes
+			
+			option = {
+				name = EYE_aus.74.a
+				
+				add_stability = 0.05
+				add_war_support = 0.05
+			}
+		}
+		country_event = { #Austria refuses to mediate
+			id = EYE_aus.75
+			title = EYE_aus.75.t
+			desc = EYE_aus.75.desc 
+			picture = GFX_report_event_generic_read_write
+			
+			is_triggered_only = yes
+			
+			option = {
+				name = EYE_aus.75.a
+				
+				hidden_effect = {
+					if = {
+						limit = {
+							ENG = { is_faction_leader = yes }
+							ENG = { NOT = { is_in_faction_with = AUS } }
+							NOT = { has_war_with = YUG }
+						}
+						ENG = { country_event = EYE_aus.76 }
+					}
+					else_if = {
+						limit = {
+							FRA = { is_subject = no }
+							FRA = { NOT = { is_in_faction_with = ENG } }
+							FRA = { NOT = { is_in_faction_with = AUS } }
+							NOT = { has_war_with = YUG }
+						}
+						FRA = { country_event = EYE_aus.76 }
+					}
+					else_if = {
+						limit = {
+							ITA = { is_subject = no }
+							ITA = { NOT = { is_in_faction_with = AUS } }
+							NOT = { has_war_with = YUG }
+						}
+						ITA = { country_event = EYE_aus.76 }
+					}
+					else_if = {
+						limit = {
+							GER = { is_subject = no }
+							GER = { NOT = { is_in_faction_with = AUS } }
+							NOT = { has_war_with = YUG }
+						}
+						GER = { country_event = EYE_aus.76 }
+					}
+					else_if = {
+						limit = {
+							SOV = { is_subject = no }
+							SOV = { NOT = { is_in_faction_with = AUS } }
+							NOT = { has_war_with = YUG }
+							YUG = { communism > 0.33 }
+						}
+						SOV = { country_event = EYE_aus.76 }
+					}
+				}
+			}
+		}
+	country_event = { #Intervene?
+		id = EYE_aus.76
+		title = EYE_aus.76.t
+		desc = EYE_aus.76.desc 
+		picture = GFX_report_event_yugoslavia_partisans
+		
+		is_triggered_only = yes
+		
+		option = { # Yes
+			name = EYE_aus.76.a
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 0.1
+					has_war = yes
+				}
+				modifier = {
+					factor = 0.5
+					has_war_support < 0.4
+				}
+				modifier = {
+					factor = 0.5
+					has_stability < 0.5
+				}
+			}
+			
+			if = {
+				limit = {
+					YUG = { has_war_with = AUS }
+					is_faction_leader = yes
+				}
+				YUG = { country_event = generic.2 }
+			}
+			else_if = {
+				limit = {
+					YUG = { has_war_with = AUS }
+					is_faction_leader = no
+				}
+				declare_war_on = {
+					target = AUS
+					type = topple_government
+				}
+				AUS = { country_event = EYE_aus.77 }
+				YUG = { country_event = EYE_aus.77 }
+			}
+			else_if = {
+				limit = {
+					YUG = { NOT = { has_war_with = AUS } }
+				}
+				give_guarantee = YUG
+			}
+			hidden_effect = {
+				add_ai_strategy = {
+					type = alliance
+					id = "YUG"
+					value = 200
+				}
+			}		
+		}
+		
+		option = { # Perhaps someone else?
+			name = EYE_aus.76.b
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 3
+					has_opinion = { target = AUS value > 74 }
+				}					
+			}
+			
+			hidden_effect = {
+				set_country_flag = EYE_refused_intervention
+				if = {
+					limit = {
+						FRA = { is_subject = no }
+						FRA = { NOT = { is_in_faction_with = ENG } }
+						FRA = { NOT = { is_in_faction_with = AUS } }
+						NOT = { has_war_with = YUG }
+						NOT = { has_country_flag = EYE_refused_intervention }
+					}
+					FRA = { country_event = EYE_aus.76 }
+				}
+				else_if = {
+					limit = {
+						ITA = { is_subject = no }
+						ITA = { NOT = { is_in_faction_with = AUS } }
+						NOT = { has_war_with = YUG }
+						NOT = { has_country_flag = EYE_refused_intervention }
+					}
+					ITA = { country_event = EYE_aus.76 }
+				}
+				else_if = {
+					limit = {
+						GER = { is_subject = no }
+						GER = { NOT = { is_in_faction_with = AUS } }
+						NOT = { has_war_with = YUG }
+						NOT = { has_country_flag = EYE_refused_intervention }
+					}
+					GER = { country_event = EYE_aus.76 }
+				}
+				else_if = {
+					limit = {
+						SOV = { is_subject = no }
+						SOV = { NOT = { is_in_faction_with = AUS } }
+						NOT = { has_war_with = YUG }
+						YUG = { communism > 0.33 }
+						NOT = { has_country_flag = EYE_refused_intervention }
+					}
+					SOV = { country_event = EYE_aus.76 }
+				}
+			}
+		}
+	}
+		country_event = { # Great Power Intervenes
+			id = EYE_aus.77
+			title = EYE_aus.77.t
+			desc = {
+				text = EYE_aus.77.desc_AUS
+				trigger = { tag = AUS }
+			}
+			desc = {
+				text = EYE_aus.77.desc_YUG
+				trigger = { tag = YUG }
+			}
+			picture = GFX_report_event_yugoslavia_partisans
+			
+			is_triggered_only = yes
+			
+			option = {
+				name = EYE_aus.77.a
+				trigger = { tag = AUS }
+			}
+			option = {
+				name = EYE_aus.77.a
+				trigger = { tag = YUG }
+			}
+		}
+	country_event = { # Austria Chooses Mediator
+		id = EYE_aus.78
+		title = EYE_aus.78.t
+		desc = {
+			text = EYE_aus.78.desc_no_reject
+			trigger = { NOT = { has_country_flag = AUS_mediation_rejected } }
+		}
+		desc = {
+			text = EYE_aus.78.desc_reject
+			trigger = { has_country_flag = AUS_mediation_rejected }
+		}
+		picture = GFX_report_event_generic_read_write
+	
+		is_triggered_only = yes
+		
+		option = { # Great Britain
+			name = EYE_aus.78.a
+			ai_chance = {
+				factor = 10
+			}
+			trigger = {
+				ENG = {
+					NOT = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = YUG
+							has_country_flag = AUS_mediation_rejected
+						}
+					}
+				}
+			}
+			ENG = { 
+				country_event = { id = EYE_aus.80 } 
+				set_country_flag = AUS_mediation_accepted
+			}
+		}
+		option = { # France
+			name = EYE_aus.78.b
+			ai_chance = {
+				factor = 10
+			}
+			trigger = {
+				FRA = {
+					NOT = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = YUG
+							has_country_flag = AUS_mediation_rejected
+						}
+					}
+				}
+			}
+			FRA = { 
+				country_event = { id = EYE_aus.80 } 
+				set_country_flag = AUS_mediation_accepted
+			}
+		}
+		option = { # Italy
+			name = EYE_aus.78.c
+			ai_chance = {
+				factor = 10
+				modifier = {	
+					factor = 0.5
+					tag = YUG
+				}
+			}
+			trigger = {
+				ITA = {
+					NOT = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = YUG
+							has_country_flag = AUS_mediation_rejected
+						}
+					}
+				}
+			}
+			ITA = { 
+				country_event = { id = EYE_aus.80 } 
+				set_country_flag = AUS_mediation_accepted
+			}
+		}
+		option = { # Germany
+			name = EYE_aus.78.d
+			ai_chance = {
+				factor = 10
+				modifier = {	
+					factor = 0.5
+					tag = AUS
+				}
+			}
+			trigger = {
+				GER = {
+					NOT = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = YUG
+							has_country_flag = AUS_mediation_rejected
+						}
+					}
+				}
+			}
+			GER = { 
+				country_event = { id = EYE_aus.80 } 
+				set_country_flag = AUS_mediation_accepted
+			}
+		}
+		option = { # USSR
+			name = EYE_aus.78.e
+			ai_chance = {
+				factor = 5
+				modifier = {	
+					factor = 4
+					has_government = communism
+				}
+			}
+			trigger = {
+				communism > 0.33
+				SOV = {
+					NOT = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = YUG
+							has_country_flag = AUS_mediation_rejected
+						}
+					}
+				}
+			}
+			SOV = { 
+				country_event = { id = EYE_aus.80 } 
+				set_country_flag = AUS_mediation_accepted
+			}
+		}
+		option = { # None available
+			name = EYE_aus.78.f
+			trigger = {
+				AND = {
+					GER = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = YUG
+							has_country_flag = AUS_mediation_refused
+						}
+					}
+					ENG = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = YUG
+							has_country_flag = AUS_mediation_refused
+						}
+					}
+					FRA = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = YUG
+							has_country_flag = AUS_mediation_refused
+						}
+					}
+					ITA = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = YUG
+							has_country_flag = AUS_mediation_refused
+						}
+					}
+					OR = {
+						communism < 0.34
+						SOV = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = YUG
+								is_in_faction_with = YUG
+								has_country_flag = AUS_mediation_rejected
+							}
+						}
+					}
+				}
+			}
+			AUS = {
+				country_event = { id = EYE_aus.82 }
+			}
+		}
+	}
+	country_event = { # Yugoslavia Chooses Mediator
+		id = EYE_aus.79
+		title = EYE_aus.79.t
+		desc = {
+			text = EYE_aus.79.desc_no_reject
+			trigger = { NOT = { has_country_flag = YUG_mediation_rejected } }
+		}
+		desc = {
+			text = EYE_aus.79.desc_reject
+			trigger = { has_country_flag = YUG_mediation_rejected }
+		}
+		picture = GFX_report_event_generic_read_write
+	
+		is_triggered_only = yes
+		
+		option = { # Great Britain
+			name = EYE_aus.78.a
+			ai_chance = {
+				factor = 10
+			}
+			trigger = {
+				ENG = {
+					NOT = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = AUS
+							has_country_flag = YUG_mediation_rejected
+						}
+					}
+				}
+			}
+			ENG = { 
+				country_event = { id = EYE_aus.81 } 
+				set_country_flag = YUG_mediation_accepted
+			}
+		}
+		option = { # France
+			name = EYE_aus.78.b
+			ai_chance = {
+				factor = 10
+			}
+			trigger = {
+				FRA = {
+					NOT = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = AUS
+							has_country_flag = YUG_mediation_rejected
+						}
+					}
+				}
+			}
+			FRA = { 
+				country_event = { id = EYE_aus.81 } 
+				set_country_flag = YUG_mediation_accepted
+			}
+		}
+		option = { # Italy
+			name = EYE_aus.78.c
+			ai_chance = {
+				factor = 10
+				modifier = {	
+					factor = 0.5
+					tag = YUG
+				}
+			}
+			trigger = {
+				ITA = {
+					NOT = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = AUS
+							has_country_flag = YUG_mediation_rejected
+						}
+					}
+				}
+			}
+			ITA = { 
+				country_event = { id = EYE_aus.81 } 
+				set_country_flag = YUG_mediation_accepted
+			}
+		}
+		option = { # Germany
+			name = EYE_aus.78.d
+			ai_chance = {
+				factor = 10
+				modifier = {	
+					factor = 0.5
+					tag = AUS
+				}
+			}
+			trigger = {
+				GER = {
+					NOT = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = AUS
+							has_country_flag = YUG_mediation_rejected
+						}
+					}
+				}
+			}
+			GER = { 
+				country_event = { id = EYE_aus.81 } 
+				set_country_flag = YUG_mediation_accepted
+			}
+		}
+		option = { # USSR
+			name = EYE_aus.78.e
+			ai_chance = {
+				factor = 5
+				modifier = {	
+					factor = 4
+					has_government = communism
+				}
+			}
+			trigger = {
+				communism > 0.33
+				SOV = {
+					NOT = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = AUS
+							has_country_flag = YUG_mediation_rejected
+						}
+					}
+				}
+			}
+			SOV = { 
+				country_event = { id = EYE_aus.81 } 
+				set_country_flag = YUG_mediation_accepted
+			}
+		}
+		option = { # None available
+			name = EYE_aus.78.f
+			trigger = {
+				AND = {
+					GER = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = AUS
+							has_country_flag = YUG_mediation_rejected
+						}
+					}
+					ENG = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = AUS
+							has_country_flag = YUG_mediation_rejected
+						}
+					}
+					FRA = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = AUS
+							has_country_flag = YUG_mediation_rejected
+						}
+					}
+					ITA = {
+						OR = {
+							has_war_with = AUS
+							has_war_with = YUG
+							is_in_faction_with = AUS
+							has_country_flag = YUG_mediation_rejected
+						}
+					}
+					OR = {
+						communism < 0.34
+						SOV = {
+							OR = {
+								has_war_with = AUS
+								has_war_with = YUG
+								is_in_faction_with = AUS
+								has_country_flag = YUG_mediation_rejected
+							}
+						}
+					}
+				}
+			}
+			YUG = {
+				country_event = { id = EYE_aus.83 }
+			}
+		}
+	}
+	country_event = { # Austria asks for mediation
+		id = EYE_aus.80
+		title = EYE_aus.80.t
+		desc = EYE_aus.80.desc
+		picture = GFX_report_event_generic_read_write
+	
+		is_triggered_only = yes
+		
+		option = { #agree
+			name = EYE_aus.80.a
+			ai_chance = {
+				factor = 70
+				modifier = {
+					is_in_faction_with = AUS
+					factor = 100
+				}
+			}
+			AUS = { add_opinion_modifier = { target = PREV modifier = backed_our_cause } }
+			save_event_target_as = AUS_mediator2
+			YUG = { country_event = EYE_aus.79 }
+		}
+		option = { #refuse
+			name = EYE_aus.80.b
+			ai_chance = {
+				factor = 30
+			}
+			AUS = { add_opinion_modifier = { target = PREV modifier = betrayed_our_cause } }
+			if = {
+				limit = {
+					AUS = { has_country_flag = AUS_mediation_rejected }
+				}
+				AUS = { country_event = { id = EYE_aus.82 } }
+			}
+			if = {
+				limit = {
+					NOT = {
+						AUS = { has_country_flag = AUS_mediation_rejected }
+					}
+				}
+				AUS = { country_event = { id = EYE_aus.78 } }
+				AUS = { set_country_flag = AUS_mediation_rejected }
+			}
+			clr_country_flag = AUS_mediation_accepted
+			set_country_flag = AUS_mediation_rejected
+		}
+	}
+	country_event = { # Yugoslavia asks for mediation
+		id = EYE_aus.81
+		title = EYE_aus.81.t
+		desc = EYE_aus.81.desc
+		picture = GFX_report_event_generic_read_write
+	
+		is_triggered_only = yes
+		
+		option = { #agree
+			name = EYE_aus.81.a
+			ai_chance = {
+				factor = 70
+				modifier = {
+					is_in_faction_with = YUG
+					factor = 100
+				}
+			}
+			YUG = { add_opinion_modifier = { target = PREV modifier = backed_our_cause } }
+			save_event_target_as = YUG_mediator2
+			if = {
+				limit = {
+					has_country_flag = AUS_mediator2
+				}
+				country_event = EYE_aus.85 # Sole Party
+			}
+			else = {
+				event_target:AUS_mediator2 = { country_event = EYE_aus.88 }
+			}
+		}
+		option = { #refuse
+			name = EYE_aus.81.b
+			ai_chance = {
+				factor = 30
+			}
+			YUG = { add_opinion_modifier = { target = PREV modifier = betrayed_our_cause } }
+			if = {
+				limit = {
+					YUG = { has_country_flag = YUG_mediation_rejected }
+				}
+				YUG = { country_event = { id = EYE_aus.83 } }
+			}
+			if = {
+				limit = {
+					NOT = {
+						YUG = { has_country_flag = YUG_mediation_rejected }
+					}
+				}
+				YUG = { set_country_flag = YUG_mediation_rejected }
+				YUG = { country_event = { id = EYE_aus.79 } }
+				
+			}
+			clr_country_flag = YUG_mediation_accepted
+			set_country_flag = YUG_mediation_rejected
+		}
+	}
+#Austria has no mediator, lost mediation
+country_event = {
+	id = EYE_aus.82
+	title = EYE_aus.82.t
+	desc = {
+		text = EYE_aus.82.desc_no_support
+		trigger = {
+			NOT = { has_country_flag = AUS_lost_mediation }
+		}
+	}
+	desc = {
+		text = EYE_aus.82.desc_lost
+		trigger = {
+			has_country_flag = AUS_lost_mediation
+		}
+	}
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		clr_country_flag = AUS_lost_mediation
+	}
+	
+	option = {# fold
+		name = EYE_aus.82.a
+		ai_chance = {
+			factor = 70 #we tried
+		}
+		YUG = { country_event = { id = EYE_aus.74 } }
+	}
+
+	option = {# To war, anyway!
+		name = EYE_aus.82.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				strength_ratio = { tag = YUG ratio > 2.0 }# massively stronger than Yugoslavia, quick victorious war etc.
+				factor = 3
+			}
+			modifier = {
+				is_in_faction = yes
+				factor = 3
+			}
+		}
+		declare_war_on = {
+				target = YUG
+				type = take_state_focus
+				generator = { 76 83 84 } 
+			}
+		event_target:YUG_mediator2 = {
+			country_event = { id = EYE_aus.84 }
+		}
+	}
+}
+#Yugoslavia has no mediator, lost mediation
+country_event = {
+	id = EYE_aus.83
+	title = EYE_aus.83.t
+	desc = {
+		text = EYE_aus.83.desc_no_support
+		trigger = {
+			NOT = { has_country_flag = YUG_lost_mediation }
+		}
+	}
+	desc = {
+		text = EYE_aus.83.desc_lost
+		trigger = {
+			has_country_flag = YUG_lost_mediation
+		}
+	}
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		clr_country_flag = YUG_lost_mediation
+	}
+	
+	option = {# fold
+		name = EYE_aus.83.a
+		ai_chance = {
+			factor = 70 #we tried
+		}
+		AUS = { country_event = { id = EYE_aus.69 } }
+	}
+
+	option = {# Ignore
+		name = EYE_aus.83.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				strength_ratio = { tag = AUS ratio > 2.0 }# massively stronger than Austria, not afraid
+				factor = 3
+			}
+			modifier = {
+				is_in_faction = yes
+				factor = 3
+			}
+		}
+		event_target:AUS_mediator2 = {
+			country_event = { id = EYE_aus.84 }
+		}
+	}
+}
+	country_event = { #One Side Ignores The Other
+		id = EYE_aus.84
+		title = EYE_aus.84.t
+		desc = {
+			text = EYE_aus.84.desc_from_AUS
+			trigger = { FROM = { tag = AUS } }
+		}
+		desc = {
+			text = EYE_aus.84.desc_from_YUG
+			trigger = { FROM = { tag = YUG } }
+		}
+		picture = GFX_report_event_czech_soldiers_02
+		
+		is_triggered_only = yes
+		
+		option = { #Join
+			name = EYE_aus.84.a
+			ai_chance = {	
+				factor = 70
+			}
+			
+			if = {
+				limit = { FROM = { tag = YUG } }
+				give_guarantee = YUG
+				if = {
+					limit = { 
+						is_faction_leader = yes
+						YUG = { is_in_faction = no }
+					}
+					add_to_faction = YUG
+				}
+				hidden_effect = {
+					add_ai_strategy = {
+						type = alliance
+						id = "YUG"
+						value = 200
+					}
+				}
+			}
+			
+			if = {
+				limit = { FROM = { tag = AUS } }
+				give_guarantee = AUS
+				if = {
+					limit = { 
+						is_faction_leader = yes
+						AUS = { is_in_faction = no }
+					}
+					add_to_faction = AUS
+				}
+				hidden_effect = {
+					add_ai_strategy = {
+						type = alliance
+						id = "AUS"
+						value = 200
+					}
+				}
+				add_war_support = 0.05
+			}
+		}
+		
+		option = { # Back Off
+			name = EYE_aus.84.b
+			ai_chance = {
+				factor = 35
+				modifier = {
+					has_war = yes
+					factor = 2
+				}
+			}
+			AUS = { add_opinion_modifier = { target = PREV modifier = betrayed_our_cause } }
+			add_war_support = -0.05
+			AUS = { country_event = { id = EYE_aus.92 } }
+		}
+	}
+#Mediation - Sole
+country_event = {
+	id = EYE_aus.85
+	title = EYE_aus.85.t
+	desc = EYE_aus.85.desc
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+	
+	option = {# all for Austria
+		name = EYE_aus.85.a
+		ai_chance = {
+			factor = 25
+		}
+		YUG = { 
+			set_country_flag = YUG_lost_mediation
+			country_event = { id = EYE_aus.83 days = 1} 
+		}
+	}
+	option = {# compromise
+		name = EYE_aus.85.b
+		ai_chance = {
+			factor = 50
+		}
+		AUS = { country_event = { id = EYE_aus.86 days = 1} }
+	}
+	option = {# all for Romania
+		name = EYE_aus.85.68.c
+		ai_chance = {
+			factor = 25
+		}
+		AUS = { 
+			set_country_flag = AUS_lost_mediation
+			country_event = { id = EYE_aus.82 days = 1 } 
+		}
+		
+	}
+}
+	country_event = { # Zagreb Compromise
+		id = EYE_aus.86
+		title = EYE_aus.86.t
+		desc = EYE_aus.86.desc
+		picture = GFX_report_event_vienna_award_negotiations
+		
+		is_triggered_only = yes
+		
+		option = { # accept
+			name = EYE_aus.86.a
+			ai_chance = {
+				factor = 80
+			}
+			
+			if = {
+				limit = { has_idea = YUG_idea_croatian_opposition }
+				remove_ideas = YUG_idea_croatian_opposition
+			}
+			if = {
+				limit = { has_idea = YUG_idea_croats_suppressed }
+				remove_ideas = YUG_idea_croats_suppressed
+			}
+			if = {
+				limit = { has_idea = YUG_idea_slovene_nationalism }
+				remove_ideas = YUG_idea_slovene_nationalism
+			}
+			if = {
+				limit = { has_idea = YUG_idea_slovene_nationalism_2 }
+				remove_ideas = YUG_idea_slovene_nationalism_2
+			}
+			
+			AUS = { country_event = { id = EYE_aus.87 } }
+		}
+		
+		option = {# refuse
+			name = EYE_aus.86.b
+			ai_chance = {
+				factor = 20
+			}
+			add_stability = -0.05
+			event_target:AUS_mediator2 = {
+				country_event = { id = EYE_aus.84 }
+			}			
+		}
+	}
+	country_event = { # Zagreb Compromise Accepted
+		id = EYE_aus.87
+		title = EYE_aus.87.t
+		desc = EYE_aus.87.desc
+		picture = GFX_report_event_generic_peaceful_annexation
+		
+		is_triggered_only = yes
+		
+		option = { # accept
+			name = EYE_aus.87.a
+	
+			if = {
+				limit = { YUG = { owns_state = 102 } }
+				transfer_state = 102
+			}
+			if = {
+				limit = { YUG = { owns_state = 103 } }
+				CRO = { transfer_state = 103 }
+			}
+			if = {
+				limit = { YUG = { owns_state = 109 } }
+				CRO = { transfer_state = 109 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						109 = {
+							free_building_slots = {
+								building = air_base
+								size > 9
+							}
+						}
+					}
+					109 = {
+						add_building_construction = {
+							type = air_base
+							level = 3
+							instant_build = yes
+						}
+					}
+				}
+				CRO = { 
+					set_cosmetic_tag = EYE_CRO_habsburg 
+					set_party_name = { ideology = neutrality long_name = "Royalists" name = Royalists }
+					load_oob = AUS_croat_troops
+				}
+				news_event = { id = EYE_aus.106 hours = 24 }
+			}
+			puppet = CRO
+			set_autonomy = { target = CRO autonomy_state = autonomy_dominion }
+			CRO = {
+				add_country_leader_role = {
+					character = CRO_leopold_habsburg
+					promote_leader = yes
+					country_leader = {
+						expire = "1965.1.1"
+						ideology = despotism
+						traits = { likes_austria }
+					}
+				}
+			}
+		}
+	}
+
+#Yugoslavian Mediation - Austrian Mediator Makes First Offer
+country_event = {
+	id = EYE_aus.88
+	title = EYE_aus.88.t
+	desc = EYE_aus.88.desc
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+	
+	option = {# all for Austria
+		name = EYE_aus.88.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				is_in_faction_with = AUS
+				factor = 20
+			}
+		}
+		set_global_flag = AUS_mediation_AUS_all2
+		event_target:YUG_mediator2 = { country_event = { id = EYE_aus.89 hours = 24 } }
+	}
+	option = {# compromise
+		name = EYE_aus.88.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_in_faction_with = YUG
+				factor = 2
+			}
+			modifier = {
+				threat > 0.25
+				factor = 2
+			}
+		}
+		set_global_flag = AUS_mediation_compromise2
+		event_target:YUG_mediator2 = { country_event = { id = EYE_aus.89 hours = 24 } }
+	}
+	option = {# all for Yugoslavia
+		name = EYE_aus.88.c
+		ai_chance = {
+			factor = 25
+			modifier = {
+				is_in_faction_with = YUG
+				factor = 20
+			}
+		}
+		set_global_flag = AUS_mediation_AUS_nothing2
+		event_target:YUG_mediator2 = { country_event = { id = EYE_aus.89 hours = 24 } }
+		
+	}
+}
+#Yugoslavian Mediation - Yugoslavian Mediator Counters
+country_event = {
+	id = EYE_aus.89
+	title = EYE_aus.89.t
+	desc = {
+		text = EYE_aus.89.desc_AUS_all
+		trigger = { has_global_flag = AUS_mediation_AUS_all2 }
+	}
+	desc = {
+		text = EYE_aus.89.desc_compromise
+		trigger = { has_global_flag = AUS_mediation_compromise2 }
+	}
+	desc = {
+		text = EYE_aus.89.desc_AUS_nothing
+		trigger = { has_global_flag = AUS_mediation_AUS_nothing2 }
+	}
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+	
+	option = {# Agree
+		name = EYE_aus.89.a
+		ai_chance = {
+			factor = 60
+			modifier = {
+				OR = {
+					tag = FRA
+					tag = ENG
+				}
+				event_target:AUS_mediator2 = {
+					tag = GER
+				}
+				factor = 10
+			}
+			modifier = {
+				has_global_flag = AUS_mediation_AUS_nothing2
+				factor = 100
+			}
+		}
+		if = {
+			limit = { has_global_flag = AUS_mediation_AUS_all2 }
+			hidden_effect = {
+				YUG = { set_country_flag = YUG_lost_mediation }
+			}
+			YUG = { country_event = { id = EYE_aus.83 } }
+		}
+		if = {
+			limit = { has_global_flag = AUS_mediation_compromise2 }
+			YUG = { country_event = { id = EYE_aus.86 } }
+		}
+		if = {
+			limit = { has_global_flag = AUS_mediation_AUS_nothing2 }
+			hidden_effect = {
+				YUG = { set_country_flag = AUS_lost_mediation }
+			}
+			AUS = { country_event = { id = EYE_aus.82 } }
+		}
+	}
+	option = {# counteroffer
+		name = EYE_aus.89.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				tag = GER
+				event_target:AUS_mediator2 = {
+					tag = FRA
+				}
+				NOT = { has_global_flag = AUS_mediation_AUS_nothing2 }
+				factor = 100
+			}
+		}
+		country_event = { id = EYE_aus.90 hours = 24 } 
+	}
+}
+#Yugoslavian Mediation - Yugoslavian Mediator Makes Second Offer
+country_event = {
+	id = EYE_aus.90
+	title = EYE_aus.90.t
+	desc = EYE_aus.90.desc
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+	
+	option = {# all for Austria
+		name = EYE_aus.90.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				threat > 0.7
+				factor = 10
+			}
+		}
+		trigger = {
+			NOT = { has_global_flag = AUS_mediation_AUS_all2 }
+		}
+		set_global_flag = AUS_mediation_AUS_all2
+		if = {
+			limit = {
+				has_global_flag = AUS_mediation_compromise2
+			}
+			clr_global_flag = AUS_mediation_compromise2
+		}
+		if = {
+			limit = {
+				has_global_flag = AUS_mediation_AUS_nothing2
+			}
+			clr_global_flag = AUS_mediation_AUS_nothing2
+		}
+		event_target:AUS_mediator2 = { country_event = { id = EYE_aus.91 hours = 24 } }
+	}
+	option = {# compromise
+		name = EYE_aus.90.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				tag = FRA
+				factor = 2
+			}
+			modifier = {
+				tag = GER
+				factor = 2
+			}
+		}
+		set_global_flag = AUS_mediation_compromise2
+		if = {
+			limit = {
+				has_global_flag = AUS_mediation_AUS_all2
+			}
+			clr_global_flag = AUS_mediation_AUS_all2
+		}
+		if = {
+			limit = {
+				has_global_flag = AUS_mediation_AUS_nothing2
+			}
+			clr_global_flag = AUS_mediation_AUS_nothing2
+		}
+		event_target:AUS_mediator2 = { country_event = { id = EYE_aus.91 hours = 24 } }
+	}
+	option = {# all for Yugoslavia
+		name = EYE_aus.90.c
+		ai_chance = {
+			factor = 45
+		}
+		set_global_flag = AUS_mediation_AUS_nothing2
+		if = {
+			limit = {
+				has_global_flag = AUS_mediation_compromise2
+			}
+			clr_global_flag = AUS_mediation_compromise2
+		}
+		if = {
+			limit = {
+				has_global_flag = AUS_mediation_AUS_all2
+			}
+			clr_global_flag = AUS_mediation_AUS_all2
+		}
+		event_target:AUS_mediator2 = { country_event = { id = EYE_aus.91 hours = 24 } }
+		
+	}
+}
+#Yugoslavian Mediation - Austrian Mediator Counters
+country_event = {
+	id = EYE_aus.91
+	title = EYE_aus.91.t
+	desc = {
+		text = EYE_aus.91.desc_AUS_all
+		trigger = { has_global_flag = AUS_mediation_AUS_all2 }
+	}
+	desc = {
+		text = EYE_aus.91.desc_compromise
+		trigger = { has_global_flag = AUS_mediation_compromise2 }
+	}
+	desc = {
+		text = EYE_aus.91.desc_AUS_nothing
+		trigger = { has_global_flag = AUS_mediation_AUS_nothing2 }
+	}
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+	
+	option = {# Agree
+		name = EYE_aus.91.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				OR = {
+					tag = FRA
+					tag = ENG
+				}
+				event_target:AUS_mediator2 = {
+					tag = GER
+				}
+				factor = 10
+			}
+		}
+		if = {
+			limit = { has_global_flag = AUS_mediation_AUS_all2 }
+			hidden_effect = {
+				YUG = { set_country_flag = YUG_lost_mediation }
+			}
+			YUG = { country_event = { id = EYE_aus.83 } }
+		}
+		if = {
+			limit = { has_global_flag = AUS_mediation_compromise2 }
+			YUG = { country_event = { id = EYE_aus.86 } }
+		}
+		if = {
+			limit = { has_global_flag = AUS_mediation_AUS_nothing2 }
+			hidden_effect = {
+				YUG = { set_country_flag = AUS_lost_mediation }
+			}
+			AUS = { country_event = { id = EYE_aus.82 } }
+		}
+	}
+	option = {# Throw hands up and give it up
+		name = EYE_aus.91.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_global_flag = AUS_mediation_AUS_nothing2
+				factor = 5
+			}
+			modifier = {
+				has_global_flag = AUS_mediation_AUS_all2
+				factor = 0 #would be dumb as all hell
+			}
+		}
+		AUS = { country_event = { id = EYE_aus.92 hours = 24 } }
+		YUG = { country_event = EYE_aus.93 }
+		hidden_effect = {
+			news_event = { id = EYE_aus.107 hours = 12 }
+			event_target:AUS_mediator2 = {
+				add_ai_strategy = {
+					type = ignore
+					id = "AUS"
+					value = 100
+				}
+			}
+			event_target:YUG_mediator2 = {
+				add_ai_strategy = {
+					type = ignore
+					id = "YUG"
+					value = 100
+				}
+			}
+		}
+	}
+}
+#Negotiations Broke Down - Austria
+country_event = {
+	id = EYE_aus.92
+	title = EYE_aus.92.t
+	desc = EYE_aus.92.desc 
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+
+	option = {# fold
+		name = EYE_aus.92.a
+		ai_chance = {
+			factor = 20
+		}
+		AUS = { country_event = { id = EYE_aus.74 } }
+	}
+
+	option = {# Plan Next Move
+		name = EYE_aus.92.b
+		ai_chance = {
+			factor = 40
+		}
+		
+		add_state_claim = 102
+		add_state_claim = 103
+		add_state_claim = 109
+		add_state_claim = 104
+		add_state_claim = 45
+		add_state_claim = 163
+		add_state_claim = 764
+		
+		hidden_effect = {
+			YUG = { country_event = { id = EYE_aus.92 hours = 6 } }
+		}
+	}
+	
+	option = { # TO WAR!
+		name = EYE_aus.92.c
+		ai_chance = {
+			factor = 60
+		}
+		
+		YUG = { country_event = { id = EYE_aus.92 } }
+		
+		declare_war_on = {	
+			target = YUG
+			type = take_state_focus
+			generator = { 102 103 104 109 45 163 764 }
+		}
+	}
+}
+#Negotiations Broke Down - Yugoslavia
+country_event = {
+	id = EYE_aus.93
+	title = EYE_aus.93.t
+	desc = EYE_aus.93.desc 
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EYE_aus.93.a
+	}
+}
+
+
+#Austrian Claims On Poland
+country_event = {
+	id = EYE_aus.94
+	title = EYE_aus.94.t
+	desc = EYE_aus.94.desc 
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { # Fold
+		name = EYE_aus.94.a
+		trigger = {
+			is_subject = no
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 10
+				strength_ratio = { tag = AUS ratio < 0.75 } # Significantly weaker then
+			}
+			modifier = {
+				factor = 0
+				is_in_faction = yes
+			}
+		}
+		
+		add_stability = -0.1
+		add_war_support = -0.1
+		
+		AUS = {
+			transfer_state = 88
+			transfer_state = 89
+			transfer_state = 91
+			diplomatic_relation = { country = ROOT relation = non_aggression_pact }
+			country_event = EYE_aus.95
+		}		
+		hidden_effect = {
+			news_event = { id = EYE_aus.108 hours = 24 }
+		}
+	}
+	option = { # For Protection
+		name = EYE_aus.94.b
+		trigger = {
+			is_subject = no
+			is_in_faction = no
+		}
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = 5
+				strength_ratio = { tag = AUS ratio < 0.75 } # Significantly weaker then
+			}
+			modifier = {
+				factor = 10
+				GER = { focus_progress = { focus = GER_danzig_or_war progress > 0 } } #HELPHELPHELPHELP
+			}
+			modifier = {
+				factor = 0
+				is_in_faction = yes
+			}
+		}
+		
+		add_stability = -0.05
+		add_war_support = -0.05
+		
+		AUS = { country_event = { id = EYE_aus.96 hours = 6 } }
+		custom_effect_tooltip = EYE_should_AUS_accept_YUG_tt
+		effect_tooltip = {
+			AUS = {
+				transfer_state = 88
+				transfer_state = 89
+				transfer_state = 91
+				give_guarantee = POL
+			}
+		}
+	}
+	option = { # Perhaps an alternative solution?
+		name = EYE_aus.94.c
+		trigger = {
+			is_subject = no
+			NOT = { has_government = communism }
+			POL_karl_albrecht = { is_country_leader = no }
+		}
+		ai_chance = {
+			base = 4
+			modifier = {
+				factor = 5
+				strength_ratio = { tag = AUS ratio < 0.75 } # Significantly weaker than
+			}
+			modifier = {
+				factor = 10
+				GER = { focus_progress = { focus = GER_danzig_or_war progress > 0 } } #HELPHELPHELPHELP
+			}
+			modifier = {
+				factor = 0
+				is_in_faction = yes
+				is_faction_leader = no
+				has_war = yes
+			}
+			modifier = {
+				factor = 0.1
+				is_in_faction = yes
+				is_faction_leader = yes
+			}
+		}
+		
+		add_stability = -0.1
+		
+		AUS = { country_event = { id = EYE_aus.200 hours = 6 } }
+		custom_effect_tooltip = EYE_should_AUS_accept_YUG_tt
+		effect_tooltip = {
+			if = { 
+				limit = { has_cosmetic_tag = PLC_UNIFIED }
+				set_cosmetic_tag = PLC_UNIFIED_HABSBURG
+			}
+			else = {
+				set_cosmetic_tag = EYE_POL_habsburg
+			}
+			promote_character = POL_karl_albrecht
+			if = {
+				limit = { NOT = { has_government = neutrality } }
+				set_politics = {
+					ruling_party = neutrality
+				}
+			}
+			add_ideas = neutral_influence
+			if = {
+				limit = { AUS = { is_faction_leader = no } }
+				AUS = { create_faction = EYE_AUS_POL_alliance }
+			}
+			if = {
+				limit = { is_faction_leader = no }
+				AUS = { add_to_faction = ROOT }
+			}
+			else = {
+				every_country = {
+					limit = {
+						OR = {
+							tag = POL
+							is_in_faction_with = POL
+						}
+					}
+					AUS = { add_to_faction = PREV }
+				}
+			}
+		}		
+	}
+	option = { # We do not negotiate
+		name = EYE_aus.94.d
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 5
+				strength_ratio = { tag = AUS ratio > 1.25 } # Significantly stronger than
+			}
+			modifier = {
+				factor = 4
+				any_other_country = {
+					has_guaranteed = ROOT
+				}# We will be defended in case of war
+			}
+			modifier = {
+				factor = 10
+				is_in_faction = yes
+				is_faction_leader = no
+				# Is in another (likely strong) faction
+			}
+		}
+		
+		AUS = { country_event = { id = EYE_aus.99 hours = 6 } }
+		effect_tooltip = {
+			AUS = {
+				add_state_claim = 88
+				add_state_claim = 89
+				add_state_claim = 91
+				create_wargoal = {
+					target = POL
+					type = take_state_focus
+					generator = { 88 89 91 }
+				}
+			}
+		}
+	}
+	option = { # Karl is already on the throne
+		name = EYE_aus.94.c
+		ai_chance = {
+			base = 1000
+		}
+		trigger = {
+			is_subject = no
+			POL_karl_albrecht = { is_country_leader = yes }
+			OR = {
+				is_in_faction = no
+				AND = {
+					is_faction_leader = no
+					has_war = no
+				}
+			}
+		}
+		
+		effect_tooltip = {
+			add_ideas = neutral_influence
+			if = {
+				limit = { AUS = { is_faction_leader = no } }
+				AUS = { create_faction = EYE_AUS_POL_alliance }
+			}
+			if = {
+				limit = { 
+					is_faction_leader = no
+				}
+				AUS = { add_to_faction = ROOT }
+			}
+			else = {
+				every_country = {
+					limit = {
+						OR = {
+							tag = POL
+							is_in_faction_with = POL
+						}
+					}
+					AUS = { add_to_faction = PREV }
+				}
+			}
+		}
+	}
+}
+	country_event = { #Poland Folds
+		id = EYE_aus.95
+		title = EYE_aus.95.t
+		desc = EYE_aus.95.desc 
+		picture = GFX_report_event_generic_peaceful_annexation
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.95
+			
+			add_stability = 0.05
+			add_war_support = 0.05
+			
+			effect_tooltip = { diplomatic_relation = { country = FROM relation = non_aggression_pact } }
+		}
+	}
+	country_event = { # Poland Offers Land For Protection
+		id = EYE_aus.96
+		title = EYE_aus.96.t
+		desc = EYE_aus.96.desc 
+		picture = GFX_report_event_generic_read_write
+		
+		is_triggered_only = yes
+		
+		option = { # Accept
+			name = EYE_aus.96.a
+			ai_chance = {
+				base = 1
+			}
+			
+			transfer_state = 88
+			transfer_state = 89
+			transfer_state = 91
+			give_guarantee = POL
+			effect_tooltip = { diplomatic_relation = { country = FROM relation = non_aggression_pact } }
+			hidden_effect = {
+				add_ai_strategy = {
+					type = support
+					id = "POL"
+					value = 200
+				}
+			}
+			POL = { country_event = EYE_aus.97 }
+		}
+		option = { # Deny
+			name = EYE_aus.96.b
+			ai_chance = {
+				base = 0
+			}
+			
+			add_state_claim = 88
+			add_state_claim = 89
+			add_state_claim = 91
+			POL = { country_event = { id = EYE_aus.98 hours = 6 } }
+		}
+	}
+		country_event = { # Austria Accepts
+			id = EYE_aus.97
+			title = EYE_aus.97.t
+			desc = EYE_aus.97.desc 
+			picture = GFX_report_event_generic_sign_treaty1
+			
+			is_triggered_only = yes
+			
+			option = {
+				name = EYE_aus.97.a
+				
+			}
+		}
+		country_event = { #Austria Refuses
+			id = EYE_aus.98
+			title = EYE_aus.98.t
+			desc = EYE_aus.98.desc 
+			picture = GFX_report_event_polish_army
+			
+			is_triggered_only = yes
+			
+			option = {
+				name = EYE_aus.98.a
+				
+				add_stability = 0.05
+				add_war_support = 0.05
+			}
+		}
+	country_event = { #Poland Refutes Claims
+		id = EYE_aus.99
+		title = EYE_aus.99.t
+		desc = EYE_aus.99.desc 
+		picture = GFX_report_event_polish_army
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.99.a
+			
+			add_state_claim = 88
+			add_state_claim = 89
+			add_state_claim = 91
+			create_wargoal = {
+				target = POL
+				type = take_state_focus
+				generator = { 88 89 91 }
+			}
+		}
+	}
+#Polish King?
+country_event = {
+	id = EYE_aus.200
+	title = EYE_aus.200.t
+	desc = EYE_aus.200.desc 
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #Accept
+		name = EYE_aus.200.a
+		ai_chance = {
+			base = 1
+		}
+		
+		add_stability = 0.05
+		add_war_support = 0.05
+		
+		POL = {
+			if = { 
+				limit = { has_cosmetic_tag = PLC_UNIFIED }
+				set_cosmetic_tag = PLC_UNIFIED_HABSBURG
+			}
+			else = {
+				set_cosmetic_tag = EYE_POL_habsburg
+			}
+			promote_character = POL_karl_albrecht
+			if = {
+				limit = { NOT = { has_government = neutrality } }
+				set_politics = {
+					ruling_party = neutrality
+				}
+			}
+			add_ideas = neutral_influence
+			hidden_effect = {
+				add_ai_strategy = {
+					type = alliance
+					id = "AUS"
+					value = 200
+				}
+			}
+			country_event = EYE_aus.201
+		}
+		if = {
+			limit = { is_in_faction = no } 
+			set_rule = { can_create_factions = yes }
+			create_faction = EYE_AUS_POL_alliance
+		}
+		if = {
+			limit = { FROM = { NOT = { is_faction_leader = yes } } } # "is_faction_leader = no" doesn't work... BUT WHY THOUGH!?
+			every_country = {
+				limit = {
+					is_faction_leader = yes
+					OR = {
+						tag = FROM
+						is_in_faction_with = FROM
+					}
+				}
+				save_event_target_as = alliance_inviter
+			}
+			event_target:alliance_inviter = { add_to_faction = FROM }			
+		}
+		else = {
+			FROM = { country_event = EYE_aus.2 }
+			every_country = {
+				limit = {
+					is_faction_leader = yes
+					OR = {
+						tag = AUS
+						is_in_faction_with = AUS
+					}
+				}
+				save_event_target_as = alliance_inviter
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = POL
+						is_in_faction_with = POL
+					}
+				}
+				event_target:alliance_inviter = { add_to_faction = PREV }
+			}
+		}
+	}
+	option = {
+		name = EYE_aus.200.b
+		ai_chance = {
+			base = 0
+		}
+		
+		add_war_support = -0.1
+		
+		add_state_claim = 88
+		add_state_claim = 89
+		add_state_claim = 91
+		
+		POL = { 
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = AUS_refused_reasonable_request
+			}
+			country_event = { id = EYE_aus.202 hours = 6 }
+		}
+	}
+}
+	country_event = { #Austria Accepts Proposal
+		id = EYE_aus.201
+		title = EYE_aus.201.t
+		desc = EYE_aus.201.desc 
+		picture = GFX_report_event_generic_sign_treaty2
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.201.a
+			
+			hidden_effect = {
+				news_event = { id = EYE_aus.109 hours = 24 }
+			}
+		}
+	}
+	country_event = { #Austria Refuses Proposal
+		id = EYE_aus.202
+		title = EYE_aus.202.t
+		desc = EYE_aus.202.desc 
+		picture = GFX_report_event_polish_army
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.202.a
+			
+			add_stability = 0.15
+			add_war_support = 0.1
+		}
+	}
+	
+#Austria Claims the Bucovina
+country_event = {
+	id = EYE_aus.203
+	title = EYE_aus.203.t
+	desc = EYE_aus.203.desc 
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = { #Cede Bucovina
+		name = EYE_aus.203.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 3
+				num_of_controlled_states > 20 # Insignificant
+			}
+			modifier = {
+				factor = 10
+				strength_ratio = { tag = AUS ratio < 1.1 }
+			}
+			modifier = {
+				factor = 0
+				num_of_controlled_states < 2 # We will not be annexed
+			}
+		}
+		
+		AUS = { 
+			transfer_state = 80 
+			country_event = EYE_aus.204
+		}	
+	}
+	option = { #Refuse to cede Bucovina
+		name = EYE_aus.203.b
+		ai_chance = {
+			factor = 5
+		}
+		
+		AUS = { country_event = EYE_aus.205 }	
+	}
+}
+	country_event = { # Ceded
+		id = EYE_aus.204
+		title = EYE_aus.204.t
+		desc = EYE_aus.204.desc 
+		picture = GFX_report_event_generic_peaceful_annexation
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.204.a
+			
+		}
+	}
+	country_event = { # Not Ceded
+		id = EYE_aus.205
+		title = EYE_aus.205.t
+		desc = EYE_aus.205.desc 
+		picture = GFX_report_event_romanian_soldiers
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = EYE_aus.205.a
+			
+		}
+	}
+	
+#Phönix Scandal
+country_event = {
+	id = EYE_aus.206
+	title = EYE_aus.206.t
+	desc = EYE_aus.206.desc
+	picture = GFX_report_event_gathering_protest
+	
+	trigger = {
+		tag = AUS
+		has_war = no
+		date > 1936.3.1
+		date < 1937.1.1
+	}
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	fire_only_once = yes
+	
+	option = { # Reform
+		name = EYE_aus.206.a
+	
+		add_popularity = { ideology = fascism popularity = 0.05 }
+		add_popularity = { ideology = neutrality popularity = -0.05 }
+		add_timed_idea = { idea = AUS_reformed_phonix days = 360 }
+	}
+	
+	option = { # Let Collapse
+		name = EYE_aus.206.b
+		
+		add_popularity = { ideology = neutrality popularity = 0.05 }	
+		add_timed_idea = { idea = AUS_collapsed_phonix days = 360 }
+	}
+}
+
+### Suspended for now
+#Countering the Anschluss as Austria-Hungary
+#country_event = {
+#	id = EYE_aus.207
+#	title = EYE_aus.207.t
+#	desc = EYE_aus.207.desc
+#	picture = GFX_report_event_generic_peaceful_annexation
+#	
+#	fire_only_once = yes
+#	
+#	immediate = {
+#		complete_national_focus = GER_anschluss
+#	}
+#	
+#	trigger = {
+#		tag = GER
+#		NOT = { has_completed_focus = GER_anschluss }
+#		focus_progress = { focus = GER_anschluss progress > 0.5 }
+#		AUS = { has_cosmetic_tag = HUN_EMPIRE }
+#	}
+#	mean_time_to_happen = {
+#		days = 5
+#	}
+#	
+#	option = {
+#		name = EYE_aus.207.a
+#		
+#		153 = { add_core_of = ROOT }
+#		152 = { add_core_of = ROOT }
+#		4 = { add_core_of = ROOT }
+#	}
+#}
+#
+#Preventing Germany from doing Fate of while Austria controls CZE
+#country_event = {
+#	id = EYE_aus.208
+#	title = EYE_aus.208.t
+#	desc = EYE_aus.208.desc
+#	picture = GFX_report_event_generic_peaceful_annexation
+#	
+#	fire_only_once = yes
+#	
+#	immediate = {
+#		complete_national_focus = GER_end_of_czechoslovakia
+#	}
+#	
+#	trigger = {
+#		tag = GER
+#		NOT = { has_completed_focus = GER_end_of_czechoslovakia }
+#		focus_progress = { focus = GER_end_of_czechoslovakia progress > 0.25 }
+#		OR = {
+#			CZE = { is_subject_of = AUS }
+#			AUS = { owns_state = 9 } #Prague
+#		}
+#	}
+#	mean_time_to_happen = {
+#		days = 5
+#	}
+#	
+#	option = {
+#		name = EYE_aus.208.a
+#		
+#		add_state_claim = 9
+#		add_state_claim = 75
+#	}
+#}
+
+# Yugoslavia Loses Croats Suppressed if they don't control Croatia
+country_event = {
+	id = EYE_aus.209
+	title = EYE_aus.209.t
+	desc = EYE_aus.209.desc
+	picture = GFX_report_event_gathering_protest
+	
+	trigger = {
+		tag = YUG
+		CRO = { is_subject_of = AUS }
+		has_idea = YUG_idea_croats_suppressed
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	fire_only_once = yes
+	
+	option = {
+		name = EYE_aus.209.a
+		
+		remove_ideas = YUG_idea_croats_suppressed
+	}
+}
+#Yugoslavia loses Slovenes Helped if they don't control Slovenia
+country_event = {
+	id = EYE_aus.210
+	title = EYE_aus.210.t
+	desc = EYE_aus.210.desc
+	picture = GFX_report_event_gathering_protest
+	
+	trigger = {
+		tag = YUG
+		OR = {
+			102 = { is_owned_by = AUS }
+			102 = { OWNER = { is_subject_of = AUS } }
+		}
+		has_idea = YUG_idea_slovene_nationalism_2
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	fire_only_once = yes
+	
+	option = {
+		name = EYE_aus.210.a
+		
+		remove_ideas = YUG_idea_slovene_nationalism_2
+	}
+}
+
+
+## 100-199 reserved for news
+# Formation of Austria-Hungary
+news_event = {
+	id = EYE_aus.100
+	title = {
+		text = EYE_aus.100.t1
+		trigger = { AUS = { NOT = { has_cosmetic_tag = AUS_greater_germany } } }
+	}
+	title = {
+		text = EYE_aus.100.t2
+		trigger = { AUS = { has_cosmetic_tag = AUS_greater_germany } }
+	}
+	desc = {
+		text = EYE_aus.100.desc1
+		trigger = { AUS = { NOT = { has_cosmetic_tag = AUS_greater_germany } } }
+	}
+	desc = {
+		text = EYE_aus.100.desc2
+		trigger = { AUS = { has_cosmetic_tag = AUS_greater_germany } }
+	}
+	picture = GFX_news_event_generic_parliament
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = EYE_aus.100.a
+		trigger = {
+			TAG = AUS
+		}
+		
+		if = {
+			limit = { NOT = { has_cosmetic_tag = AUS_greater_germany } }
+			set_cosmetic_tag = HUN_EMPIRE
+		}		
+		set_global_flag = form_austria_hungary_flag
+		69 = { add_core_of = AUS }
+		9 = { add_core_of = AUS }
+		75 = { add_core_of = AUS }
+		74 = { add_core_of = AUS }
+		72 = { add_core_of = AUS }
+		70 = { add_core_of = AUS }
+		664 = { add_core_of = AUS }
+		71 = { add_core_of = AUS }
+		73 = { add_core_of = AUS }
+	}
+	option = {
+		name = EYE_aus.100.b
+		trigger = { 
+			TAG = GER
+		}
+	}
+	option = { 
+		name = EYE_aus.100.c
+		trigger = { 
+			NOT = {
+				TAG = AUS
+				TAG = GER
+				TAG = CZE
+				TAG = ROM
+				TAG = YUG
+				TAG = POL
+				TAG = ITA
+			}
+		}
+	}
+	option = { 
+		name = EYE_aus.100.d
+		trigger = { 
+			OR = {
+				TAG = CZE
+				TAG = ROM
+				TAG = YUG
+				TAG = POL
+				TAG = ITA
+			}
+		}
+	}
+}
+
+#Austrian Munich Conference
+news_event = {
+	id = EYE_aus.101
+	title = EYE_aus.101.t
+	desc = EYE_aus.101.desc
+	picture = GFX_news_event_016
+
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = EYE_aus.101.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	option = {
+		name = EYE_aus.101.b
+		trigger = {
+			tag = CZE
+		}
+	}
+	option = {
+		name = EYE_aus.101.c
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = EYE_aus.101.d
+		trigger = {
+			OR = {
+				tag = ENG
+				tag = FRA
+			}
+		}
+	}
+	option = {
+		name = EYE_aus.101.e
+		trigger = {
+			NOT = { 
+				tag = AUS
+				tag = CZE
+				tag = GER
+				tag = FRA
+				tag = ENG
+			}
+		}
+	}
+}
+
+#Austrian Anschluss
+news_event = {
+	id = EYE_aus.102
+	title = EYE_aus.102.t
+	desc = EYE_aus.102.desc
+	picture = GFX_news_event_german_speech
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = EYE_aus.102.a
+		trigger = {
+			OR = {
+				is_in_faction_with = GER
+				NOT = {
+					TAG = GER
+					TAG = ITA
+					TAG = FRA
+					TAG = ENG
+				}
+			}
+		}
+	}
+	option = {
+		name = EYE_aus.102.b
+		trigger = { TAG = GER }
+	}
+	option = {
+		name = EYE_aus.102.c
+		trigger = { 
+			TAG = ITA 
+			NOT = { is_in_faction_with = GER }
+		}
+	}
+	option = {
+		name = EYE_aus.102.d
+		trigger = {
+			NOT = { is_in_faction_with = GER }
+			OR = {
+				TAG = FRA
+				TAG = ENG
+			}
+		}
+	}
+}
+
+#Romania folds and gives up Transylvania
+news_event = {
+	id = EYE_aus.103
+	title = EYE_aus.103.t
+	desc = EYE_aus.103.desc
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.301.a
+		trigger = {
+			TAG = AUS
+		}
+	}
+	option = {
+		name = news.301.b
+		trigger = { 
+			TAG = ROM
+		}
+	}
+	option = {
+		name = news.301.c
+		trigger = { 
+			NOT = {
+				TAG = AUS
+				TAG = ROM
+			}
+		}
+	}
+}
+
+#Austria and Romania unable to find solution, war looms
+news_event = {
+	id = EYE_aus.104
+	title = EYE_aus.104.t
+	desc = EYE_aus.104.desc
+	picture = GFX_news_event_hungarian_soldiers
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.302.a
+		trigger = {
+			TAG = AUS
+		}
+	}
+	option = {
+		name = news.302.b
+		trigger = { 
+			TAG = ROM
+		}
+	}
+	option = {
+		name = news.302.c
+		trigger = { 
+			NOT = {
+				TAG = AUS
+				TAG = ROM
+			}
+		}
+	}
+}
+
+#Yugoslavia Folds
+news_event = {
+	id = EYE_aus.105
+	title = EYE_aus.105.t
+	desc = EYE_aus.105.desc
+	picture = GFX_news_event_generic_sign_treaty3
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = EYE_aus.105.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	option = {
+		name = EYE_aus.105.b
+		trigger = {
+			tag = YUG
+		}
+	}
+	option = {
+		name = EYE_aus.105.c
+		trigger = {
+			OR = {
+				tag = ENG
+				tag = FRA
+			}
+		}
+	}
+	option = {
+		name = EYE_aus.105.d
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = EYE_aus.105.e
+		trigger = {
+			NOT = {
+				tag = AUS
+				tag = ENG
+				tag = FRA
+				tag = YUG
+				tag = GER
+			}
+		}
+	}
+}
+	
+#Zagreb Compromise
+news_event = {
+	id = EYE_aus.106
+	title = EYE_aus.106.t
+	desc = EYE_aus.106.desc
+	picture = GFX_news_event_banovina_croatia
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = EYE_aus.106.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	option = {
+		name = EYE_aus.106.b
+		trigger = {
+			tag = YUG
+		}
+	}
+	option = {
+		name = EYE_aus.106.c
+		trigger = {
+			OR = {
+				tag = ENG
+				tag = FRA
+			}
+		}
+	}
+	option = {
+		name = EYE_aus.106.d
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = EYE_aus.106.e
+		trigger = {
+			tag = CRO
+		}
+	}
+	option = {
+		name = EYE_aus.106.f
+		trigger = {
+			NOT = {
+				tag = AUS
+				tag = ENG
+				tag = FRA
+				tag = YUG
+				tag = GER
+				tag = CRO
+			}
+		}
+	}
+}
+
+#Zagreb Conference Fails
+news_event = {
+	id = EYE_aus.107
+	title = EYE_aus.107.t
+	desc = EYE_aus.107.desc
+	picture = GFX_news_event_yugoslav_coup
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = EYE_aus.107.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	option = {
+		name = EYE_aus.107.b
+		trigger = {
+			tag = YUG
+		}
+	}
+	option = {
+		name = EYE_aus.107.c
+		trigger = {
+			OR = {
+				tag = AUS_mediator2
+				tag = YUG_mediator2
+			}
+		}
+	}
+	option = {
+		name = EYE_aus.107.d
+		trigger = {
+			NOT = {
+				tag = AUS_mediator2
+				tag = YUG_mediator2
+				tag = YUG
+				tag = AUS
+			}
+		}
+	}
+}
+
+#Poland Gives In To Austrian Demands
+news_event = {
+	id = EYE_aus.108
+	title = EYE_aus.108.t
+	desc = EYE_aus.108.desc
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = EYE_aus.108.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	option = {
+		name = EYE_aus.108.b
+		trigger = {
+			tag = POL
+		}
+	}
+	option = {
+		name = EYE_aus.108.c
+		trigger = {
+			is_in_faction_with = AUS
+			NOT = { tag = AUS }
+			NOT = { tag = POL }
+		}
+	}
+	option = {
+		name = EYE_aus.108.d
+		trigger = {
+			tag = GER
+			NOT = { is_in_faction_with = AUS }
+		}
+	}
+	option = {
+		name = EYE_aus.108.e
+		trigger = {
+			NOT = { tag = AUS }
+			NOT = { tag = POL }
+			NOT = { tag = GER }
+			NOT = { is_in_faction_with = AUS }
+		}
+	}
+}
+
+#Poland Becomes Kingdom
+news_event = {
+	id = EYE_aus.109
+	title = EYE_aus.109.t
+	desc = EYE_aus.109.desc
+	picture = GFX_news_event_royal_visit
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = EYE_aus.109.a
+		trigger = {
+			tag = AUS
+		}
+	}
+	option = {
+		name = EYE_aus.109.b
+		trigger = {
+			tag = POL
+		}
+	}
+	option = {
+		name = EYE_aus.109.c
+		trigger = {
+			is_in_faction_with = AUS
+			NOT = { tag = AUS }
+			NOT = { tag = POL }
+		}
+	}
+	option = {
+		name = EYE_aus.109.d
+		trigger = {
+			tag = GER
+			NOT = { is_in_faction_with = AUS }
+		}
+	}
+	option = {
+		name = EYE_aus.109.e
+		trigger = {
+			NOT = { tag = AUS }
+			NOT = { tag = POL }
+			NOT = { tag = GER }
+			NOT = { is_in_faction_with = AUS }
+		}
+	}
+}
+
+#The Empire Re-United
+country_event = { #3 options don't work on news events apparently
+	id = EYE_aus.110
+	title = EYE_aus.110.t
+	desc = EYE_aus.110.desc
+	picture = GFX_report_event_royal_parade
+	
+	major = no
+	is_triggered_only = yes
+	
+	option = { #The Tri-State Solution
+		name = EYE_aus.110.a
+		
+		custom_effect_tooltip = EYE_aus.110.a.tt
+		set_cosmetic_tag = EYE_TRI_EMPIRE
+	}
+	option = { #The Quad-State Solution
+		name = EYE_aus.110.b
+		
+		custom_effect_tooltip = EYE_aus.110.b.tt
+		set_cosmetic_tag = EYE_QUAD_EMPIRE
+	}
+	option = { #The Federal State Solution
+		name = EYE_aus.110.c
+		
+		custom_effect_tooltip = EYE_aus.110.c.tt
+		set_cosmetic_tag = EYE_FED_EMPIRE	
+	}
+}
+
+
+
+
+#Not Austrian, fixes bug with WST
+country_event = {
+	id = EYE_aus.11000
+	title = EYE_aus.110.t
+	desc = EYE_aus.110.desc
+	picture = GFX_report_event_royal_parade
+	hidden = yes
+	
+	major = no
+	is_triggered_only = yes
+	
+	option = {
+		name = EYE_aus.110.a
+		
+		FRA = { annex_country = { target = WST } }
+		FRA = { release_puppet_on_controlled = WST }
+		55 = { remove_core_of = PRE }
+		60 = { remove_core_of = PRE }
+	}
+}

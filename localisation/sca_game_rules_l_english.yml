@@ -1,0 +1,77 @@
+﻿l_english:
+ 
+ RULE_GROUP_WINTER_WARS:0 "Winter Wars"
+ 
+ SCA_DENMARK_AI_BEHAVIOR:0 "@DEN Denmark"
+    RULE_OPTION_SCA_DEN_DEFENCELESS:0 "Defenceless Neutrality - Historical"
+        RULE_OPTION_SCA_DEN_DEFENCELESS_AI_DESC:0 "The Danish AI will believe that not arming itself will save it from invasion by going down the relevant path in the national focus tree."
+    RULE_OPTION_SCA_DEN_DEFENCELESS_ALTERNATE:0 "Defenceless Neutrality - Alternate"
+        RULE_OPTION_SCA_DEN_DEFENCELESS_ALTERNATE_AI_DESC:0 "The Danish AI will mantain its belief in Defenceless Neutrality, but attempt to back that up a little with a faction by going down the relevant path in the national focus tree."
+    RULE_OPTION_SCA_DEN_ANARCHO_COMMUNIST:0 "Communist - Anarchist"
+        RULE_OPTION_SCA_DEN_ANARCHO_COMMUNIST_AI_DESC:0 "The Danish AI will attempt to spread a true stateless society by going down the relevant paths in the national focus tree."
+    RULE_OPTION_SCA_DEN_COMINTERN:0 "Communist - Comintern"
+        RULE_OPTION_SCA_DEN_COMINTERN_AI_DESC:0 "The Danish AI will attempt to join the Comintern by going down the relevant path in the national focus tree."
+    #Fascist
+        RULE_OPTION_SCA_DEN_FASCISM_AI_DESC:0 "The Danish AI will attempt to restore the power of the king and take back what is rightfully theirs by going down the relevant paths in the national focus tree."
+    #Democratic
+        RULE_OPTION_SCA_DEN_DEMOCRATIC_AI_DESC:0 "The Danish AI will attempt to re-arm themselves by going down the relevant path in the national focus tree."
+
+ SCA_ICELAND_AI_BEHAVIOR:0 "@ICE Iceland"
+    RULE_OPTION_SCA_ICE_DEMOCRATIC_HISTORICAL:0 "Democratic - Historical"
+        RULE_OPTION_SCA_ICE_DEMOCRATIC_AI_DESC:0 "The Icelandic AI will attempt to stay completely neutral and become an independant republic by going down the relevant path in the national focus tree."
+    #Democratic - Alternate
+        RULE_OPTION_SCA_ICE_DEMOCRATIC_ALTERNATE_AI_DESC:0 "The Icelandic AI will attempt to become an independant republic and join the fight by going down the relevant path in the national focus tree."
+    RULE_OPTION_SCA_ICE_GO_WITH_DEN:0 "Go With Denmark"
+        RULE_OPTION_SCA_ICE_GO_WITH_DEN_AI_DESC:0 "The Icelandic AI will attempt to follow in Denmark's footsteps by going down the relevant paths in the national focus tree."
+    #Communist
+        RULE_OPTION_SCA_ICE_COMMUNIST_AI_DESC:0 "The Icelandic AI will attempt to do their part in bringing about the global revolution by going down the relevant paths in the national focus tree."
+    #Fascist
+        RULE_OPTION_SCA_ICE_FASCIST_AI_DESC:0 "The Icelandic AI will attempt to reclaim their Norse heritage by going down the relevant paths in the national focus tree."
+  
+ SCA_NORWAY_AI_BEHAVIOR:0 "@NOR Norway"
+    RULE_OPTION_SCA_NOR_NEUTRAL_ALLIES:0 "Neutral - Allies"
+        RULE_OPTION_SCA_NOR_NEUTRAL_ALLIES_AI_DESC:0 "The Norwegian AI will attempt to stay out of the war, but will join the Allies in a pinch by going down the relevant path in the national focus tree."
+    RULE_OPTION_SCA_NOR_NEUTRAL_AXIS:0 "Neutral - Axis"
+        RULE_OPTION_SCA_NOR_NEUTRAL_AXIS_AI_DESC:0 "The Norwegian AI will attempt to stay out of the war, but will join the Axis in a pinch by going down the relevant path in the national focus tree."
+    RULE_OPTION_SCA_NOR_DEMOCRATIC_ALLIES:0 "Democratic - Allies"
+        RULE_OPTION_SCA_NOR_DEMOCRATIC_ALLIES_AI_DESC:0 "The Norwegian AI will attempt to join the Allies in their fight against tyranny by going down the relevant path in the national focus tree."
+    RULE_OPTION_SCA_NOR_DEMOCRATIC_OWN_FACTION:0 "Democratic - Northern Concord"
+        RULE_OPTION_SCA_NOR_DEMOCRATIC_OWN_FACTION_AI_DESC:0 "The Norwegian AI will attempt to form their own faction in order to fight against tyranny by going down the relevant path in the national focus tree."
+    RULE_OPTION_SCA_NOR_NORTHERN_REVOLUTION:0 "Communist - Northern Revolution"
+        RULE_OPTION_SCA_NOR_NORTHERN_REVOLUTION_AI_DESC:0 "The Norwegian AI will attempt to start a new communist revolution by going down the relevant path in the national focus tree."
+    RULE_OPTION_SCA_NOR_COMINTERN:0 "Communist - Comintern"
+        RULE_OPTION_SCA_NOR_COMINTERN_AI_DESC:0 "The Norwegian AI will attempt to join the Comintern by going down the relevant path in the national focus tree."
+    RULE_OPTION_SCA_NOR_FASCIST_HJORT:0 "Fascist - Hjort"
+        RULE_OPTION_SCA_NOR_FASCIST_HJORT_AI_DESC:0 "The Norwegian AI will attempt to back Johan Hjort's vision for Nasjonal Samling and Norway by going down the relevant paths in the national focus tree."
+    RULE_OPTION_SCA_NOR_FASCIST_FUGLESANG:0 "Fascist - Fuglesang"
+        RULE_OPTION_SCA_NOR_FASCIST_FUGLESANG_AI_DESC:0 "The Norwegian AI will attempt to back Rolf Fuglesang's vision for Nasjonal Samling and Norway by going down the relevant paths in the national focus tree."
+    
+ SCA_SWEDEN_AI_BEHAVIOR:0 "@SWE Sweden"
+    RULE_OPTION_SCA_SWE_NEUTRAL_HISTORICAL:0 "Neutral - Historical"
+        RULE_OPTION_SCA_SWE_NEUTRAL_HISTORICAL_AI_DESC:0 "The Swedish AI will attempt to keep itself out of the war through any means necessary by going down the relevant paths in the national focus tree."
+    RULE_OPTION_SCA_SWE_NEUTRAL_LEAGUE:0 "Neutral - Leauge of Armed Neutrality"
+        RULE_OPTION_SCA_SWE_NEUTRAL_LEAGUE_AI_DESC:0 "The Swedish AI will attempt to form the Third League of Armed Neutrality by going down the relevant path in the national focus tree."
+    RULE_OPTION_SCA_SWE_NEUTRAL_ALLIES:0 "Non-Aligned - Allies"
+        RULE_OPTION_SCA_SWE_NEUTRAL_ALLIES_AI_DESC:0 "The Swedish AI will attempt to join the Allies by going down the relevant paths in the national focus tree."
+    RULE_OPTION_SCA_SWE_NEUTRAL_AXIS:0 "Non-Aligned - Axis"
+        RULE_OPTION_SCA_SWE_NEUTRAL_AXIS_AI_DESC:0 "The Swedish AI will attempt to join the Axis by going down the relevant paths in the national focus tree."
+    RULE_OPTION_SCA_SWE_FOURTH_INTERNATIONAL:0 "Communist - Fourth International"
+        RULE_OPTION_SCA_SWE_FOURTH_INTERNATIONAL_AI_DESC:0 "The Swedish AI will attempt to join the Fourth International Movement by going down the relevant path in the national focus tree."
+    RULE_OPTION_SCA_SWE_COMINTERN:0 "Communist - Comintern"
+        RULE_OPTION_SCA_SWE_COMINTERN_AI_DESC:0 "The Swedish AI will attempt to join the Comintern by going down the relevant path in the national focus tree."
+    #Fascist
+        RULE_SCA_SWE_FASCIST_AI_DESC:0 "The Swedish AI will attempt to reform the Swedish Empire by going down the relevant paths in the national focus tree."
+        
+ SCA_FINLAND_AI_BEHAVIOR:0 "@FIN Finland"
+    RULE_OPTION_SCA_FIN_NEUTRAL_GER:0 "Non-Aligned - Germany"
+        RULE_OPTION_SCA_FIN_NEUTRAL_GER_AI_DESC:0 "The Finnish AI will attempt to cooperate with the Germans against their common foe(s) by going down the relevant paths in the national focus tree."
+    RULE_OPTION_SCA_FIN_NEUTRAL_JAP:0 "Non-Aligned - Japan"
+        RULE_OPTION_SCA_FIN_NEUTRAL_JAP_AI_DESC:0 "The Finnish AI will attempt to cooperate with the Japanese against their common foe(s) by going down the relevant paths in the national focus tree."
+    RULE_OPTION_SCA_FIN_NEUTRAL_ALLIES:0 "Non-Aligned - Allies"
+        RULE_OPTION_SCA_FIN_NEUTRAL_ALLIES_AI_DESC:0 "The Finnish AI will attempt to gain the guarantees of the West by going down the relevant paths in the national focus tree."
+    RULE_OPTION_SCA_FIN_NEUTRAL_OWN_WAY:0 "Neutral - Own Way"
+        RULE_OPTION_SCA_FIN_NEUTRAL_OWN_WAY_AI_DESC:0 "The Finnish AI will attempt to rush the creation of their own faction by going down the relevant paths in the national focus tree."
+    #Communist
+        RULE_OPTION_SCA_FIN_COMMUNIST_AI_DESC:0 "The Finnish AI will attempt to submit to the Soviets by going down the relevant path in the national focus tree."
+
+     

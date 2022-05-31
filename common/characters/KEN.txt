@@ -1,0 +1,666 @@
+characters={
+#Country Leaders
+	KEN_harry_thuku={
+		name=KEN_harry_thuku
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_2.dds"
+			}
+		}
+		country_leader={
+			ideology=centrism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	KEN_jomo_kenyatta={
+		name=KEN_jomo_kenyatta
+		portraits={
+			civilian={
+				large="gfx/leaders/DARK/Portrait_DARK_generic_african_2.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	KEN_stanley_mathenge={
+		name=KEN_stanley_mathenge
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_land_3.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	KEN_jaramogi_oginga_odinga={
+		name=KEN_jaramogi_oginga_odinga
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/portrait_africa_generic_land_7.dds"
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+#Generals and Admirals
+	KEN_dedan_kimathi = {
+		name=KEN_dedan_kimathi
+		portraits={
+			army={
+				large="gfx/leaders/Africa/portrait_africa_generic_land_6.dds"
+			}
+		}
+		field_marshal = {
+			traits = { brilliant_strategist trait_reckless harsh_leader offensive_doctrine fast_planner inspirational_leader desert_fox }
+			skill = 5
+			attack_skill = 7
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 5
+		}
+	}
+	KEN_kurito_ole_kisio = {
+		name=KEN_kurito_ole_kisio
+		portraits={
+			army={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_land_1.dds"
+			}
+		}
+		corps_commander = {
+			traits = { brilliant_strategist commando }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+
+#Chiefs of Staff
+	KEN_waruhiu_itote={ #One of the main organizers of the Mau Mau, nom de guerre General China
+		name=KEN_waruhiu_itote
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_4"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = KEN_waruhiu_itote
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { army_chief_organizational_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}	
+	KEN_koinange_mbiyu={ #Prominent Kenyan chief and pro-independance, helped the Mau Mau movement. Had 34 children
+		name=KEN_koinange_mbiyu
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_2"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = KEN_koinange_mbiyu
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { army_chief_planning_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	KEN_wilfred_hevelock={ #In the King's Rifles but had experience in the fishing/naval industry
+		name=KEN_wilfred_hevelock
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = KEN_wilfred_hevelock
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { navy_chief_commerce_raiding_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	KEN_eliud_mathu={ #Prominent Kenyan Politician
+		name=KEN_eliud_mathu
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_1"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = KEN_eliud_mathu
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { navy_chief_reform_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	KEN_ian_sargenson={ #First commander of the Kenyan AF, British in origin
+		name=KEN_ian_sargenson
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = KEN_ian_sargenson
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { air_air_combat_training_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#High Command
+	KEN_joseph_kang={ #One of the founders of the Kikuyu Central Association
+		name=KEN_joseph_kang
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_4"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = KEN_joseph_kang
+			ledger = army
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { army_chief_morale_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	KEN_mwangi_macharia={ #One of the 40 Group and a meber of the Mau Mau Rebellion
+		name=KEN_mwangi_macharia
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = KEN_mwangi_macharia
+			ledger = army
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { army_concealment_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	KEN_ewart_grogan={ #British explorer and WW1 vet, fought in WW2 and argued for greater African education
+		name=KEN_ewart_grogan
+		portraits={
+			army={
+				small="GFX_idea_generic_army_arab_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = KEN_ewart_grogan
+			ledger = army
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { army_chief_maneuver_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	KEN_mbiyu_koinange={ #Eldest son of Chief Koinange Wa Mbiyu and a prominent politician
+		name=KEN_mbiyu_koinange
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = KEN_mbiyu_koinange
+			ledger = army
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { army_regrouping_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	KEN_campbell={ #Head of the Union-Castle Line in Mombasa, fought for the establishment of the Kenya Royal Naval Volunteer Reserve (KRNVR)
+		name=KEN_campbell
+		portraits={
+			navy={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = KEN_campbell
+			ledger = navy
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { navy_anti_submarine_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	KEN_salim={ #Rep for Arab interests and funder of the KRNVR HQ in Mombasa
+		name=KEN_salim
+		portraits={
+			navy={
+				small="GFX_idea_generic_air_arab_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = KEN_salim
+			ledger = navy
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { navy_screen_2 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	KEN_charles_koinange={ #Son of Koinange Wa Mbiyu, prominent politician
+		name=KEN_charles_koinange
+		portraits={
+			navy={
+				small="GFX_idea_generic_navy_african_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = KEN_charles_koinange
+			ledger = navy
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { navy_fleet_logistics_1 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	KEN_florence_wilson={ #Founder of Wilson Airways
+		name = KEN_florence_wilson
+		gender=female
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_female_europe"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = KEN_florence_wilson
+			ledger = air
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { air_pilot_training_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	KEN_hugo_dunkerley={ #Editor of the Aeroken and Special Correspondent of the East African Standard
+		name = KEN_hugo_dunkerley
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = KEN_hugo_dunkerley
+			ledger = air
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { air_close_air_support_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	KEN_elizabeth_watkins={ #Cypher officer in the Women's Auxiliary Air Force and a later helper in anti-submarine warfare in Seychelles
+		name = KEN_elizabeth_watkins
+		gender=female
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_female_europe"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = KEN_elizabeth_watkins
+			ledger = air
+			allowed = {
+				original_tag = KEN
+			}
+			traits = { air_naval_strike_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}	
+	
+#Theorists
+	KEN_joseph_ndolo={ #First Kenyan head of the Armed Forces
+		name = KEN_joseph_ndolo
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_1"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = KEN_joseph_ndolo
+			ledger = army
+			allowed = {
+				original_tag = KEN
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	KEN_littledale={ #Lieutanent-Commander in the Kenyan Naval Forces (also Flag Officer East Africa and Zanzibar with acting rank of Commander) 
+		name = KEN_littledale
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = KEN_littledale
+			ledger = navy
+			allowed = {
+				original_tag = KEN
+			}				
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+		}
+	}
+	KEN_beryl_markham={ #Founder of the Somali Youth League
+		name = KEN_beryl_markham
+		gender=female
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_female_europe"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = KEN_beryl_markham
+			ledger = air
+			allowed = {
+				original_tag = KEN
+			}				
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+		}
+	}
+	
+#Advisors
+	KEN_bildad_kaggia={ #Militant Nationalist and Mau Mau member
+		name=KEN_bildad_kaggia
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = KEN_bildad_kaggia
+			allowed = {
+				original_tag = KEN
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	KEN_achieng_oneko={ #One of the Kapenguria Six and a later supporter of the KPU
+		name=KEN_achieng_oneko
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = KEN_achieng_oneko
+			allowed = {
+				original_tag = KEN
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	KEN_james_beauttah={ #Close friend of Jomo Kenyatta
+		name=KEN_james_beauttah
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = KEN_james_beauttah
+			allowed = {
+				original_tag = KEN
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	
+	KEN_fred_kubai={ #One of the Kapenguria Six and a Union Leader
+		name=KEN_fred_kubai
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = KEN_fred_kubai
+			allowed = {
+				original_tag = KEN
+			}
+			
+			traits = { silent_workhorse }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	KEN_kungu_karumba={ #One of the Kapenguria Six and a Business Leader
+		name=KEN_kungu_karumba
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = KEN_kungu_karumba
+			allowed = {
+				original_tag = KEN
+			}
+			
+			traits = { captain_of_industry }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	KEN_paul_ngei={ #One of the Kapenguria Six, known for stopping a jailer from beating Kenyatta
+		name=KEN_paul_ngei
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = KEN_paul_ngei
+			allowed = {
+				original_tag = KEN
+			}
+			
+			traits = { compassionate_gentleman }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	KEN_henry_muoria={ #Nationalistic journalist and pamphlateer
+		name=KEN_henry_muoria
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = KEN_henry_muoria
+			allowed = {
+				original_tag = KEN
+			}
+			
+			traits = { editor }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	KEN_r_c_cavendish={ #Kenyan Police Commissioner 1931-1941, would have also been in charge of the Criminal Investigations Division (which included the Special Branch which was colonial Kenya's intelligence division ) 
+		name=KEN_r_c_cavendish
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = KEN_r_c_cavendish
+			allowed = {
+				original_tag = KEN
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+}

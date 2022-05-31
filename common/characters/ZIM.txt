@@ -1,0 +1,738 @@
+characters={
+#Country Leaders
+	ZIM_godfrey_huggins={
+		name=ZIM_godfrey_huggins
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/portrait_europe_generic_8.dds"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1"
+			traits = { prince_of_terror }
+			id=-1
+		}
+	}
+	ZIM_garfield_todd={
+		name=ZIM_garfield_todd
+		portraits={
+			civilian={
+				large="gfx/leaders/FRA/Portrait_France_Edouard_Daladier.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	ZIM_edgar_whitehead={
+		name=ZIM_edgar_whitehead
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/portrait_europe_generic_operative_leader_male_18.dds"
+			}
+		}
+		country_leader={
+			ideology=centrism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	ZIM_joshua_nkomo={
+		name=ZIM_joshua_nkomo
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_land_2.dds"
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+
+#Generals and Admirals
+	ZIM_john_morris={ #Commandant 1936-1945
+		name=ZIM_john_morris
+		portraits={
+			civilian={
+				large="gfx/leaders/ENG/Portrait_Britain_George_Giffard.dds"
+			}
+		}
+		field_marshal={
+			traits = { career_officer organizer logistics_wizard  }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id=-1
+		}
+	}
+
+#Chiefs of Staff
+	ZIM_rekayi_tangwena={ #Chief who fiercly resisted white settlers. Helped Mugabe start ZANLA
+		name=ZIM_rekayi_tangwena
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_4"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = ZIM_rekayi_tangwena
+			allowed = {
+				original_tag = ZIM
+			}
+			available = {
+				NOT = { has_government = fascism }
+			}
+			traits = { army_chief_defensive_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZIM_storr_garlake={  #Commandant of the Southern Rhodesian Defence Force 1947-1959 (1953-1959 was renamed to Chief of the General Staff)
+		name=ZIM_storr_garlake
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = ZIM_storr_garlake
+			allowed = {
+				original_tag = ZIM
+			}
+			traits = { army_chief_planning_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ZIM_s_burn={ #Lt of the Southern Rhodesian Sea Cadets
+		name=ZIM_s_burn
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = ZIM_s_burn
+			allowed = {
+				original_tag = ZIM
+			}
+			traits = { navy_chief_reform_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ZIM_charles_meredith={ #Air Force Commander of the Rhodesian Air Training Group during WW2
+		name=ZIM_charles_meredith
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = ZIM_charles_meredith
+			allowed = {
+				original_tag = ZIM
+			}
+			traits = { air_pilot_training_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZIM_ted_jacklin={ #Commander of the Rhodesian Air Force 1949-1961
+		name=ZIM_ted_jacklin
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = ZIM_ted_jacklin
+			allowed = {
+				original_tag = ZIM
+			}
+			traits = { air_chief_all_weather_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#High Command
+	ZIM_george_parson={ #First Commandant of the Southern Rhodesian Defence Force
+		name=ZIM_george_parson
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZIM_george_parson
+			ledger = army
+			allowed = {
+				original_tag = ZIM
+			}
+			traits = { army_logistics_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZIM_henry_everard={ #Lt Col who served in both World Wars. Supporter of Ian Smith
+		name=ZIM_henry_everard
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor={
+			slot = ZIM_henry_everard
+			idea_token = ZAM_julia_chikamoneka
+			ledger = army
+			allowed = {
+				original_tag = ZIM
+			}
+			available = {
+				NOT = { has_government = communism }
+			}
+			traits = { army_infantry_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZIM_constantine_kar={ #Chief Constantine Karigamombe, grandfather of Robert Mugabe
+		name=ZIM_constantine_kar
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_6"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZIM_constantine_kar
+			ledger = army
+			allowed = {
+				original_tag = ZIM
+			}
+			available = {
+				NOT = { has_government = fascism }
+			}
+			traits = { army_regrouping_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZIM_albert_khumalo={ #Descendent of King Lobengula of the Ndebele people, likely had strongest claim to the throne in 1937 after the death of his older brother Rhodes
+		name=ZIM_albert_khumalo
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZIM_albert_khumalo
+			ledger = army
+			allowed = {
+				original_tag = ZIM
+			}
+			available = {
+				NOT = { has_government = fascism }
+				NOT = { is_subject_of = ENG }
+			}
+			traits = { army_chief_morale_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZIM_jairos_jiri={ #In the Rhodesian African Rifles and helped create programs for the disabled
+		name=ZIM_jairos_jiri
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZIM_jairos_jiri
+			ledger = army
+			allowed = {
+				original_tag = ZIM
+			}
+			available = {
+				NOT = { has_government = fascism }
+			}
+			traits = { army_chief_organizational_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ZIM_d_l_woods={ #Petty Officer
+		name=ZIM_d_l_woods
+		portraits={
+			navy={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZIM_d_l_woods
+			ledger = navy
+			allowed = {
+				original_tag = ZIM
+			}
+			traits = { navy_capital_ship_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}	
+	ZIM_ray_hignell={ #Helped run Sea Cadets (I think)
+		name = ZIM_ray_hignell
+		portraits={
+			navy={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZIM_ray_hignell
+			ledger = navy
+				allowed = {
+					original_tag = ZIM
+				}
+				traits = { navy_screen_1 }
+				cost = 50
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	
+	ZIM_ian_smith={ #More famous for being the first leader of Independent Rhodesia, he was first a fighter pilot in WW2
+		name=ZIM_ian_smith
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZIM_ian_smith
+			ledger = air
+			allowed = {
+				original_tag = ZIM
+			}
+			available = {
+				NOT = { has_government = communism }
+			}
+			traits = { air_air_combat_training_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZIM_j_s_morris={ #Colonel in charge of Southern Rhodesian Air Forces in 1937
+		name=ZIM_j_s_morris
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZIM_j_s_morris
+			ledger = air
+			allowed = {
+				original_tag = ZIM
+			}
+			traits = { air_chief_safety_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZIM_ernest_guest={ #Minister of Air, 1940-1946
+		name=ZIM_ernest_guest
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZIM_ian_smith
+			ledger = air
+			allowed = {
+				original_tag = ZIM
+			}
+			traits = { air_air_superiority_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZIM_jwa_hunnard={ #First Squadron Leader of the 266th
+		name=ZIM_jwa_hunnard
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZIM_jwa_hunnard
+			ledger = air
+			allowed = {
+				original_tag = ZIM
+			}
+			traits = { air_close_air_support_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZIM_john_nettleton={ #Squadron Leader of the 44th, Victoria Cross recipient
+		name=ZIM_john_nettleton
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZIM_john_nettleton
+			ledger = air
+			allowed = {
+				original_tag = ZIM
+			}
+			traits = { air_strategic_bombing_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#Theorists
+	ZIM_f_j_wane={ #First Commander of the Rhodesian African Rifles (RAR)
+		name = ZIM_f_j_wane
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = ZIM_f_j_wane
+			ledger = army
+			allowed = {
+				original_tag = ZIM
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ZIM_george_thomas={ #A commander of the Sea Cadets
+		name = ZIM_george_thomas
+		portraits={
+			navy={
+				small="GFX_idea_generic_political_advisor_african_3"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = ZIM_george_thomas
+			ledger = navy
+			allowed = {
+				original_tag = ZIM
+			}				
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+		}
+	}
+	ZIM_scott_robertson={ #First instructor of the 1st Battalion Rhodesia Regiment, air section
+		name = ZIM_scott_robertson
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = ZIM_scott_robertson
+			ledger = air
+			allowed = {
+				original_tag = ZIM
+			}				
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+		}
+	}
+	
+#Advisors
+	ZIM_gerald_clarke={ #Author of Rhodesia's unilateral declaration of Independence
+		name=ZIM_gerald_clarke
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZIM_gerald_clarke
+			allowed = {
+				original_tag = ZIM
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	ZIM_masotsha_ndlovu={ #Black labour union leader and early supporter of majority rule
+		name=ZIM_masotsha_ndlovu
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_6"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZIM_masotsha_ndlovu
+			allowed = {
+				original_tag = ZIM
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	ZIM_robert_tredgold={ #White liberal who opposed cracking down on black nationalists
+		name=ZIM_robert_tredgold
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZIM_robert_tredgold
+			allowed = {
+				original_tag = ZIM
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	
+	ZIM_humphrey_briggs={ #Last Governor of pre-UDI Rhodesia, famously refused to accept Rhodesian independence
+		name=ZIM_humphrey_briggs
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZIM_humphrey_briggs
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			traits = { popular_figurehead }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ZIM_n_h_wilson={ #White co-founder of the Capricorn Africa Society, editor for a few magazines
+		name=ZIM_n_h_wilson
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_western_european_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZIM_n_h_wilson
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			traits = { editor }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ZIM_ken_flowers={ #First head of the CIO, interestingly was head for both Rhodesia under Ian Smith AND for Mugabe after independence
+		name=ZIM_ken_flowers
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZIM_ken_flowers
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	###White Nationalist Only
+	ZIM_howard_moffat={ #Believed that Rhodesia would eventually join with South Africa, had over 2 million pounds investment in BSAC in Southern Rhodesia
+		name=ZIM_howard_moffat
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_western_european_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZIM_howard_moffat
+			allowed = {
+				original_tag = ZIM
+			}
+			available = {
+				NOT = { has_government = communism }
+			}
+			traits = { captain_of_industry }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ZIM_desmond_burke={ #Extremely racist member of Rhodesian government. Famous for banning all weapons and arresting anyone who dared suggest that perhaps Africans just might not be animals
+		name=ZIM_desmond_burke
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZIM_desmond_burke
+			allowed = {
+				original_tag = ZIM
+			}
+			available = {
+				has_government = fascism
+			}
+			traits = { prince_of_terror }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	###Black Nationalists
+	ZIM_benjamin_burombe={ #Founder of the African Workers Voice Association
+		name=ZIM_benjamin_burombe
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZIM_benjamin_burombe
+			allowed = {
+				original_tag = ZIM
+			}
+			available = {
+				NOT = { has_government = fascism }
+			}
+			traits = { silent_workhorse }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+}

@@ -1,0 +1,40 @@
+﻿division_template = {
+	name = "Infantry Brigade"  	# Standard formation for frontline divisions
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }  # US Hvy Field Arty consisted of 2 Bns, 155mm howitzers
+		engineer = { x = 0 y = 1 }   # US Eng Rgt consisted of 2 Bns
+		anti_tank = {x = 0 y = 2}
+		anti_air = {x = 0 y = 3}
+	}
+}
+
+units = {
+	##### Den Danske Brigade i Sverige #####
+	division = {
+		name = "Free Danish Brigade"
+		location = 12512  # Greenland
+		division_template = "Infantry Brigade"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+	}
+	fleet = {
+		name = "Free Danish Flotilla"			
+		naval_base = 12512  # Greenland
+		task_force = {
+			name = "Free Danish Flotilla"
+			location = 12512
+			
+			ship = { name = "HDMS Maagen" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Maagen Class" } } }
+			ship = { name = "HDMS Ternen" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = DEN version_name = "Ternen Class" } } }
+			
+			ship = { name = "HDMS Hekla" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = DEN version_name = "Hekla Class" } } }
+		}
+	}
+}

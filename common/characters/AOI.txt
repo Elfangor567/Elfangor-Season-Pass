@@ -1,0 +1,713 @@
+characters={
+#ITALIAN
+	NEW_ITA_roberto_daprigliano={
+		name=NEW_ITA_roberto_daprigliano
+		portraits={
+			civilian={
+				large="gfx/leaders/ITA/portrait_italy_italo_balbo.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+#Country Leaders
+	AOI_amedeo_di_savoia_aosta={
+		name=AOI_amedeo_di_savoia_aosta
+		portraits={
+			civilian={
+				large="gfx/leaders/ITA/Portrait_Italy_Generic_navy_2.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			traits = { DARK_good_duke }
+			id=-1
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1"
+			traits = { DARK_good_duke2 }
+			id=-1
+		}
+		field_marshal={
+			traits = { inflexible_strategist media_personality trait_cautious defensive_doctrine organizer }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 5			
+			legacy_id=30317
+			visible = {
+				NOT = { has_country_leader = { ruling_only = yes character = ITA_rodolfo_graziani } }
+			}
+		}
+	}
+	AOI_hamid_idris_awate={
+		name=AOI_hamid_idris_awate
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_1.dds"
+			}
+		}
+		country_leader={
+			ideology=anti_revisionism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	AOI_guglielmo_nasi={ #Commander of the North-East
+		name=AOI_guglielmo_nasi
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_navy_2.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			id=-1
+		}
+		corps_commander = {
+			traits = { brilliant_strategist trait_reckless cavalry_leader desert_fox }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
+	
+#Generals and Admirals
+	AOI_amedeo_guillet={ #The 'Devil Commander'
+		name=AOI_amedeo_guillet
+		portraits={
+			army={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_navy_1.dds"
+			}
+		}
+		corps_commander = {
+			traits = { brilliant_strategist career_officer cavalry_officer cavalry_leader cavalry_expert trickster guerilla_fighter commando skirmisher desert_fox }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 5
+		}
+	}
+	AOI_luigi_frusci={ #Commander of the North
+		name=AOI_luigi_frusci
+		portraits={
+			army={
+				large="gfx/leaders/ITA/Portrait_Italy_Generic_navy_3.dds"
+			}
+		}
+		corps_commander = {
+			traits = { inflexible_strategist politically_connected trait_cautious }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	AOI_pietro_gazzero={ #Commander of the South
+		name=AOI_pietro_gazzero
+		portraits={
+			army={
+				large="gfx/leaders/ITA/Portrait_Italy_Giuseppe_Fioravanzo.dds"
+			}
+		}
+		corps_commander = {
+			traits = { old_guard war_hero organizer skilled_staffer }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	AOI_carl_de_simone={ #Commander of the South-East (Giuba Sector)
+		name=AOI_carl_de_simone
+		portraits={
+			army={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_17.dds"
+			}
+		}
+		corps_commander = {
+			traits = { armor_officer cavalry_officer panzer_leader cavalry_leader }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	AOI_carlo_balsamo={ #Admiral of the Red Sea Fleet from 1939-1940
+		name=AOI_carlo_balsamo
+		portraits={
+			navy={
+				large="gfx/leaders/ITA/Portrait_Italy_Generic_navy_2.dds"
+			}
+		}
+		corps_commander = {
+			traits = { bold spotter fly_swatter }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			maneuvering_skill = 4
+			coordination_skill = 4
+		}
+	}
+#Chiefs of Staff
+	AOI_tissi={ #Generale Britata Antonio Tiss
+		name=AOI_tissi
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = AOI_tissi
+			allowed = {
+				original_tag = AOI
+			}
+			traits = { army_infantry_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	AOI_scala={ #Generale Ettore Scala
+		name=AOI_scala
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = AOI_scala
+			allowed = {
+				original_tag = AOI
+			}
+			traits = { army_chief_organizational_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	AOI_mario={ #Mario Bonetti, Admiral of the Red Sea Fleet 1940-1941
+		name=AOI_mario
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = AOI_mario
+			allowed = {
+				original_tag = AOI
+			}
+			traits = { navy_chief_maneuver_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	AOI_pinna={ #Comando Aeronautica Africa Orientale Italiana: Generale di Squadra Aerea Pietro Pinna
+		name=AOI_pinna
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = AOI_pinna
+			allowed = {
+				original_tag = AOI
+			}
+			traits = { air_chief_ground_support_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#High Command
+	AOI_liberati={ #General Amedeo Liberati, Leader of the Grenadier of Savoy
+		name=AOI_liberati
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AOI_liberati
+			ledger = army
+			allowed = {
+				original_tag = AOI
+			}
+			traits = { army_commando_1 }
+			cost = 75
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	AOI_fongoli={ #Brigade General Ugo Fongoli
+		name=AOI_fongoli
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AOI_fongoli
+			ledger = army
+			allowed = {
+				original_tag = AOI
+			}
+			traits = { army_logistics_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	AOI_angelo={ #Generale di Brigata Angelo Bergonzi
+		name=AOI_angelo
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AOI_angelo
+			ledger = army
+			allowed = {
+				original_tag = AOI
+			}	
+			traits = { army_entrenchment_1 }
+			cost = 75
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	AOI_nam={ #Brigade General Cesare Nam
+		name=AOI_nam
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_western_european_2d"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AOI_nam
+			ledger = army
+			allowed = {
+				original_tag = AOI
+			}	
+			traits = { army_chief_maneuver_1 }
+			cost = 75
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	AOI_pelosi={ #Salvatore Pelosi, Commander of the Torricelli (Submarine), included for being a badass who took on several british destroyers with his sub's guns
+		name=AOI_pelosi
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AOI_pelosi
+			ledger = navy
+			allowed = {
+				original_tag = AOI
+			}	
+			traits = { navy_submarine_3 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	AOI_feo={ #Vincenzo De Feo, Governor of Eritrea in 1937, technician in the Italian Marina
+		name=AOI_feo
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AOI_feo
+			ledger = navy
+			allowed = {
+				original_tag = AOI
+			}	
+			traits = { navy_chief_decisive_battle_3 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	AOI_branca={ #Tenente Colonnello Branca
+		name=AOI_branca
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AOI_branca
+			ledger = air
+			allowed = {
+				original_tag = AOI
+			}
+			traits = { air_air_superiority_2 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	AOI_porcelli={ #Tenente Colonnello Porcelli
+		name=AOI_porcelli
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AOI_porcelli
+			ledger = air
+			allowed = {
+				original_tag = AOI
+			}
+			traits = { air_tactical_bombing_2 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	AOI_cogangeli={ #Tenente Colonnello Cogangeli
+		name=AOI_cogangeli
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = AOI_cogangeli
+			ledger = air
+			allowed = {
+				original_tag = AOI
+			}
+			traits = { air_chief_safety_2 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#Theorists
+	AOI_varda={ #General Giovanni Varda, Leader of the "Hunters of Africa"
+		name = AOI_varda
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = AOI_varda
+			ledger = army
+			allowed = {
+				original_tag = AOI
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	AOI_aloiso={ #Frigate Captain Paolo Aloisi
+		name = AOI_aloiso
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = AOI_aloiso
+			ledger = navy
+			allowed = {
+				original_tag = AOI
+			}				
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	AOI_collati={ #Generale di Brigata Aerea Collati
+		name = AOI_collati
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = AOI_collati
+			ledger = air
+			allowed = {
+				original_tag = AOI
+			}		
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+#Advisors
+	AOI_geloso={ #Carlo Geloso, Governor of Addis Abba from 1936-1938, known for his brutal methods
+		name=AOI_geloso
+		portraits={
+			army={
+				small="GFX_idea_heinrich_himmler" #They look alike
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AOI_geloso
+			allowed = {
+				original_tag = AOI
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			traits = { fascist_demagogue }
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	AOI_cerulli={ #Enrico Cerulli, Italian Ethiopian Scholar, governor of Shewa and later Harer
+		name=AOI_cerulli
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AOI_cerulli
+			allowed = {
+				original_tag = AOI
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}	
+			traits = { democratic_reformer }
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	AOI_dohen={ #Associate of Awate's, Mohammed Al-Hassan Dohen
+		name=AOI_dohen
+		gender=female
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AOI_dohen
+			allowed = {
+				original_tag = AOI
+			}
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			traits = { communist_revolutionary }
+			ai_will_do = {
+				base = 0
+			}		
+		}
+	}	
+	AOI_medici={ #Francesco Canero Medici, Governor of Addis Ababa 1938-1939
+		name=AOI_medici
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AOI_medici
+			allowed = {
+				original_tag = AOI
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}	
+			traits = { staunch_monarchist }
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	
+	AOI_biroli={ #Alessandro Pirzio Biroli, known for his war crimes in Montenagro from 41-43. Was Governor of Amhara from 36-37.
+		name=AOI_biroli
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AOI_biroli
+			allowed = {
+				original_tag = AOI
+			}	
+			traits = { prince_of_terror }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	AOI_giuseppe={ #Giuseppe Daodice, Governor of Eritrea 1937-1940 and governor of Addis Ababa 1940-1941
+		name=AOI_giuseppe
+		portraits={
+			army={
+				small="GFX_idea_marcel_bucard"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AOI_giuseppe
+			allowed = {
+				original_tag = AOI
+			}	
+			traits = { captain_of_industry }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	AOI_frangipini={ #Agenore Frangipani, Final governor of Addis Ababa in 1941, Surrendering to the British before commiting suicide
+		name=AOI_frangipini
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AOI_frangipini
+			allowed = {
+				original_tag = AOI
+			}	
+			traits = { fortification_engineer }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	AOI_siniscalchi={ #Alfredo Siniscalchi, governor of Addis Ababa from 1936-1938
+		name=AOI_siniscalchi
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AOI_siniscalchi
+			allowed = {
+				original_tag = AOI
+			}	
+			traits = { armaments_organizer }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	AOI_marraffa={ #General Ricardo Maraffa, founder and head of PAI
+		name=AOI_marraffa
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_western_european_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AOI_marraffa
+			allowed = {
+				original_tag = AOI
+			}
+			traits = { head_of_intelligence }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+}

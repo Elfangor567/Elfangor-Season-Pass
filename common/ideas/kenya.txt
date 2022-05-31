@@ -1,0 +1,224 @@
+ideas = {
+	country = {
+		KEN_land_and_freedom = {
+			
+			picture = generic_flexible_foreign_policy
+			
+			allowed = {
+				original_tag = KEN
+			}
+			
+			modifier = {
+				production_lack_of_resource_penalty_factor = -0.5
+				equipment_conversion_speed = 0.5
+				refit_speed = 0.5
+				production_factory_start_efficiency_factor = 0.1				
+			}
+		}
+	}
+	
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		KEN_coast = { #Coast Bus, oldest Bus Company in Kenya, 1956 (Although based on other stuff in Kenya, probably had its origins earlier)
+			
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				original_tag = KEN
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { medium_tank_manufacturer }
+		}
+	}
+
+	naval_manufacturer = {
+		
+		designer = yes
+		
+		KEN_kurh = { #Kenya and Uganda Railways and Harbours
+			
+			picture = generic_naval_manufacturer_1
+
+			
+			allowed = {
+				original_tag = KEN
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { pacific_fleet_naval_manufacturer }
+		}
+		KEN_castle = { #Union-Castle Line Mombasa
+			
+			picture = generic_naval_manufacturer_2
+
+			available = {
+				OR = {
+					NOT = { country_exists = ENG }
+					is_in_faction_with = ENG
+					is_subject_of = ENG
+					has_subject = ENG
+				}
+			}
+			cancel_if_invalid = yes			
+			
+			allowed = {
+				original_tag = KEN
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { atlantic_fleet_naval_manufacturer }
+		}
+	}
+	
+	aircraft_manufacturer = {
+			
+		designer = yes		
+		
+		KEN_EAA = { #East African Airways Corporation
+			
+			picture = generic_air_manufacturer_3
+			
+			allowed = {
+				original_tag = KEN
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { fuel_efficient_aircraft_manufacturer }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		KEN_IA = { #Imperial Airways
+			
+			picture = generic_air_manufacturer_1
+			
+			allowed = {
+				original_tag = KEN
+			}
+			
+			available = {
+				OR = {
+					NOT = { country_exists = ENG }
+					is_in_faction_with = ENG
+					is_subject_of = ENG
+					has_subject = ENG
+				}
+			}
+			cancel_if_invalid = yes
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer_2 }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		KEN_wilson = { #Wilson Airways, historically disbanded in 1939 when its pilots were drafted for the war.
+			
+			picture = generic_air_manufacturer_2
+			
+			allowed = {
+				original_tag = KEN
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes
+		
+		KEN_nyari = { #British had a large garrison in Nyeri, stands to reason they produced at least some arms there (The lack of info on gun manufacturing in Kenya beyond the hilarious Mau Mau homemade weapons is depressing)
+			
+			picture = generic_infantry_equipment_manufacturer_2
+			
+			allowed = {
+				original_tag = KEN
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+		KEN_CMC = { #Cooper Motor Corporation
+			
+			picture = generic_motorized_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = KEN
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+	}
+	
+	industrial_concern = {
+	
+		KEN_EAPL = { #East African Power and Lighting Company
+		
+			picture = generic_electronics_concern_1
+
+			allowed = {
+				original_tag = KEN
+			}
+			
+			cost = 150
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
+		
+		KEN_blue = { #Blue Circle, a British cement company that was spread throughout the commonwealth
+		
+			picture =  generic_industrial_concern_1
+
+			allowed = {
+				original_tag = KEN
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}
+	}
+}

@@ -1,0 +1,204 @@
+ideas = {
+	
+	tank_manufacturer = {
+	
+		designer = yes
+		
+		CRO_DD = { #Đuro Đaković Grupa
+		
+			picture = generic_tank_manufacturer_2
+			
+			allowed = {
+				original_tag = CRO
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { medium_tank_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		CRO_TZV = { #TŽV Gredelj
+		
+			picture = tzv_gredelj
+			
+			allowed = {
+				original_tag = CRO
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { heavy_tank_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	aircraft_manufacturer = {
+	
+		designer = yes
+		
+		CRO_pleso = { #Veliko Gorico and Pleso Airfields in Zagreb, one of the main locations of the ZNDH
+			
+			picture = generic_air_manufacturer_1
+
+			allowed = {
+				original_tag = CRO
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
+			
+			equipment_bonus = {
+				
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		CRO_kraljevica = { #Oldest continuously operating shipyard in the world (1729-Present)
+			
+			picture = generic_naval_manufacturer_3
+			
+			allowed = {
+				original_tag = CRO
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { mediterranean_naval_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		CRO_split = { #Brodosplit, largest Croatian shipyard
+			
+			picture = brodosplit
+			
+			allowed = {
+				original_tag = CRO
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes
+		
+		CRO_TAZ = { #Tvornica Autobusa Zagreb, established in Zagreb in 1930 building busses
+		
+			picture = taz
+			
+			allowed = {
+				original_tag = CRO
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		CRO_slavonski = { #Slavonski Brod, a city in Eastern Croatia that produced grenades and shell casings for the war (Likely under Đuro Đaković, but I don't want to repeat the name)
+		
+			picture = generic_infantry_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = CRO
+			}
+			
+			research_bonus = {
+				infantry_equipment = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	industrial_concern = {
+	
+		designer = yes
+		
+		CRO_hrvatska = { #Hrvatska elektroprivreda, the national power company, operated since 1895
+		
+			picture = generic_electronics_concern_1
+			
+			allowed = {
+				original_tag = CRO
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		CRO_freud = { #Freudenreich & Deutsch, architecture and construction company, successor of Hönigsberg & Deutsch
+		
+			picture = generic_industrial_concern_2
+		
+			allowed = {
+				original_tag = CRO
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

@@ -1,0 +1,50 @@
+#Fascists
+30001 - Barduway-Jallah
+30100 = Haile Selassie Gugsa
+30103 = Haile Selassie (Fascist)
+
+#Communists
+30000 - Marcus Garvey
+30002 - Didwho Welleh Twe #MK.II
+
+#Non-Aligned
+30101 = Victor Emmanuel III
+30102 = Pietro Badoglio (Leader)
+
+#Military Leaders
+30010 = Moses Grant
+30011 = Alford Russ
+
+30110 = Haile Selassie (Marshal)
+30111 = Mulugeta Yeggazu
+30112 = Kassa Haile Darge
+30113 = Imru Haile Selassie
+30114 = Birru Wolde Gabriel
+30115 = Nasibu Zeamanuel
+
+30210 = Pietro Badoglio (Marshal)
+30211 = Emilio De Bono
+30212 = Ugo Cavallero
+30213 = Giovanni Messe
+30214 = Sebastiano Visconti Prasca
+30215 = Ubaldo Soddu
+30216 = Italo Balbo
+30217 = Rodolfo Graziani
+
+30310 = Omar Samanthar (Marshal)
+30311 = Olol Dinke (Marshal)
+
+30317 = Rodolfo Graziani (AOI Marshal)
+
+#Naval Leaders
+30218 = Inigo Campioni
+30219 = Alberto Da Zara
+30220 = Giuseppe Fioravanzo
+30221 = Carlo Bergamini
+30222 = Angelo Iachino
+
+
+
+
+
+

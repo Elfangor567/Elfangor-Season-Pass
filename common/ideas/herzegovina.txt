@@ -1,0 +1,83 @@
+ideas = {
+
+	# TECHNOLOGY
+	tank_manufacturer = { 
+		
+		designer = yes
+		
+		HRZ_bosnabahn = { #Bosnabahn, pre-Yugoslav Bosnian Rail Company
+
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				OR = {
+					original_tag = HRZ
+					has_cosmetic_tag = BOS_united
+				}
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { infantry_tank_manufacturer }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	naval_manufacturer = { 
+		
+		designer = yes
+		
+		HRZ_neum = { #Only Bosnian port
+			
+			picture = generic_naval_manufacturer_2
+			
+			allowed = {
+				OR = {
+					original_tag = HRZ
+					has_cosmetic_tag = BOS_united
+				}
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}			
+	}
+	
+	aircraft_manufacturer = { 
+			
+		designer = yes
+		
+		#BOS_soko = { #Soko, founded as a branch of Ikarus
+	}	
+	
+	materiel_manufacturer = {
+		
+		designer = yes
+		
+		#BOS_dasp = { #DASP, D ržavno and utomobilsko with aobraćajno p Firm, later changed to Autoprevoz
+		
+	}
+	
+	industrial_concern = {
+		
+		#BOS_ebih = { #Elektroprivreda Bosne i Hercegovine (Elektrobih in 1945)
+		
+		#BOS_unioninvest = { #Unioninvest
+		
+		#BOS_petrol = { #Bosna Petrol, one of the companies merged to form Energopetrol (Other being Jugopetrol Sarajevo)
+
+	}
+}

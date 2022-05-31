@@ -1,0 +1,250 @@
+ideas = {
+	# MILITARY
+	
+	tank_manufacturer = {
+	
+		designer = yes
+		
+		SER_railways = { #Serbian Railways, technically became Yugoslav Railways in the 1920's
+		
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				original_tag = SER
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { heavy_tank_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	aircraft_manufacturer = {
+	
+		designer = yes
+		
+		SER_ikarus = {
+			
+			picture = ikarus
+
+			allowed = {
+				original_tag = SER
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
+			
+			equipment_bonus = {
+				# produced under licence: Hawker Fury, Potez 25, Avia BH-33, own flying boats and recon aircrafts
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		SER_rogozarski = { #Aircraft manufacturer, used in Yugoslavia too
+			
+			picture = rogozarski
+
+			allowed = {
+				original_tag = SER
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+			
+			equipment_bonus = {
+				
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		SER_aeroput = { #Flag Carrier of Yugoslavia from 1927-1948
+			
+			picture = aeroput
+
+			allowed = {
+				original_tag = SER
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+			
+			equipment_bonus = {
+				
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		SER_rss = { #Royal Serbian Shipyard (Radionica Lađa Kraljevine Srbije), located in Čukarica it produced vessels for the Serbian River Flotilla
+			
+			picture = generic_naval_manufacturer_3
+			
+			allowed = {
+				original_tag = SER
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { raiding_fleet_naval_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		SER_novi = { #Novi Sad, where the Serbian River Flotilla HQ was located
+			
+			picture = generic_naval_manufacturer_2
+			
+			allowed = {
+				original_tag = SER
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes
+		
+		SER_zastava_auto = { #Zastava Automobiles
+		
+			picture = zastava #Rather use it here so that Zastava Arms is the same pic as in Yugoslavia
+			
+			allowed = {
+				original_tag = SER
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}		
+		SER_trayal = { #Trayal Corporation, also did autos, but I want them for their explosives
+		
+			picture = generic_artillery_manufacturer_2
+			
+			allowed = {
+				original_tag = SER
+			}
+			
+			research_bonus = {
+				artillery = 0.15
+			}
+			
+			traits = { artillery_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		SER_zastava = { #Zastava Arms, also used for Yugoslavia
+		
+			picture = generic_infantry_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = SER
+			}
+			
+			research_bonus = {
+				infantry_equipment = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+	
+	industrial_concern = {
+	
+		designer = yes
+		
+		SER_posta = { #Pošta Srbije, the national postal service of Serbia, also handled most telecommunications
+		
+			picture = generic_electronics_concern_1
+			
+			allowed = {
+				original_tag = SER
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		SER_nis = { #Mašinska Industrija Niš, founded in 1884 as Railways Workshop, expanded into everything from energy to agriculture
+		
+			picture = generic_refining_concern_1
+		
+			allowed = {
+				original_tag = SER
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

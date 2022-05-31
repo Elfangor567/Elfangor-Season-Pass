@@ -1,0 +1,327 @@
+﻿l_english:
+ #EYE
+ CRO_felix_habsburg:0 "Felix von Habsburg"
+ CRO_leopold_habsburg:0 "Leopold von Habsburg"
+ CZE_josef_habsburg:0 "Josef Franz Habsburg"
+ HUN_carl_v:0 "Carl V"
+ MEX_maria_josepha:0 "Maria Josepha"
+ SLO_maximilian_habsburg:0 "Maximilian Eugen von Habsburg"
+ SLV_johann_graf:0 "Johann Graf von Meran"
+    SLV_johann_graf_habsburg:0 "Johann Graf von Habsburg"
+ UKR_vasyl_vyshyvani_habsburg:0 "Vasyl Vyshyvani von Habsburg"
+
+ #Austria
+ AUS_otto_von_habsburg:0 "Otto von Habsburg"
+ 
+ AUS_wilhelm_zehner:0 "Wilhelm Zehner"
+ AUS_heinrich_stumpfl:0 "Heinrich Stümpfl"
+ AUS_theodor_haselmayr:0 "Heinrich Stümpfl"
+ AUS_valentin_feurstein:0 "Valentin Feurstein"
+ AUS_anton_kienbauer:0 "Anton Kienbauer"
+ AUS_rudolf_scheffarz:0 "Rudolf Scheffarz"
+ AUS_eugen_beyer:0 "Eugen Beyer"
+ AUS_eduard_barger:0 "Eduard Barger"
+ AUS_alfred_von_hubicki:0 "Alfred von Hubicki"
+    
+ AUS_sigismund_schilhawsky:0 "Sigismund Schilhawsky"
+ AUS_alfred_jansa:0 "Alfred Jansa"
+ AUS_friedrich_materna:0 "Friedrich Materna" 
+ AUS_julius_yllam:0 "Julius Yllam"
+ AUS_otto_schobel:0 "Otto Schöbel"
+ AUS_viktor_seebauer:0 "Victor Seebauer"
+ AUS_paul_von_hegedus:0 "Paul von Hegedus"
+ AUS_georg_trapp:0 "Georg von Trapp"
+ 
+ AUS_franz_bohme:0 "Franz Böhme"
+ AUS_camillo_bregant:0 "Camillo Bregant"
+ AUS_kurt_zborzil:0 "Kurt Zborzil"
+ AUS_benno_fernbrugg:0 "Benno Fiala von Fernbrugg"
+ AUS_julius_arigi:0 "Julius Arigi"
+ AUS_richard_ritter_von_barry:0 "Richard Ritter von Barry"
+ AUS_anton_willenik:0 "Anton Willenik"
+ 
+ AUS_otto_meixner_von_zweienstamm:0 "Otto Meixner von Zweienstamm"
+ AUS_alexander_lohr:0 "Alexander Löhr"
+ AUS_richard_florio:0 "Richard Florio"
+ 
+ AUS_ludwig_draxler:0 "Ludwig Draxler"
+ AUS_othmar_spann:0 "Othmar Spann"
+ AUS_franz_koritschoner:0 "Franz Koritschoner"
+ AUS_otto_bauer:0 "Otto Bauer"
+ AUS_edmund_horstenau:0 "Edmund Glaise-Horstenau"
+ AUS_theodor_innitzer:0 "Theodor Innitzer"
+ AUS_maximilian_ronge:0 "Maximilian Ronge"
+ AUS_leonhard_steinwender:0 "Leonhard Steinwender"
+ AUS_leopold_figl:0 "Leopold Figl"
+ AUS_julius_raab:0 "Julius Raab"
+ AUS_theodor_hornbostel:0 "Theodor Hornbostel"
+ AUS_ernst_kaltenbrunner:0 "Ernst Kaltenbrunner"
+ AUS_hans_fischbock:0 "Hans Fischböck"
+ 
+ #Switzerland
+ SWI_federal_council:0 "Federal Council"
+    SWI_federal_council_fascism:0 "Tagsatzung"
+ SWI_wilhelm_gustlaff:0 "Wilhelm Gustloff"
+ SWI_rolf_henne:0 "Rolf Henne"
+ SWI_fritz_platten:0 "Fritz Platten"
+ SWI_leon_nicole:0 "Léon Nicole"
+ SWI_workers_congress:0 "Workers' Congress"
+ 
+ SWI_renzo_lardelli:0 "Renzo Lardelli"
+ SWI_friedrich_prisi:0 "Friedrich Prisi"
+ SWI_rudolf_miescher:0 "Rudolf Miescher"
+ SWI_jakob_labhardt:0 "Jakob Labhardt"
+ 
+ SWI_jakob_huber:0 "Jakob Huber"
+ SWI_jules_borel:0 "Jules Borel"
+ SWI_ulriche_wille_jr:0 "Ulriche Wille Jr."
+    SWI_does_not_have_wille_tt:0 "Does not have §YUlriche Wille Jr.§! as a commander."
+ SWI_friedrich_rihner:0 "Friedrich Rihner"
+ SWI_hans_bandi:0 "Hans Bandi"
+ SWI_nicolas_jaquet:0 "Nicolas Jaquet"
+ SWI_heinrich_rengel:0 "Heinrich Rengel"
+ 
+ SWI_edouard_petitpierre:0 "Edouard Petitpierre"
+ SWI_jean_de_muralt:0 "Jean de Muralt"
+ SWI_alfred_struby:0 "Alfred Strüby"
+ SWI_etienne_primault:0 "Etienne Primault" 
+ SWI_august_haefeli:0 "August Haefeli"
+ SWI_oskar_meier:0 "Oskar Meier"
+ SWI_hans_oehler:0 "Hans Oehler"
+ 
+ SWI_eugen_bircher:0 "Eugen Bircher"
+ SWI_henry_pillichody:0 "Henry Pillichody"
+ SWI_gottlieb_duttweiler:0 "Gottlieb Duttweiler"
+ SWI_paul_scherrer:0 "Paul Scherrer"
+ 
+ SWI_dr_max:0 "Dr. Max Leo Keller"
+ SWI_hans_oprecht:0 "Hans Oprecht"
+ SWI_edgar_woog:0 "Edgar Woog"
+ SWI_claude_pasquier:0 "Claude du Pasquier" 
+ SWI_giuseppe_motta:0 "Giuseppe Motta"
+ SWI_johannes_baumann:0 "Johannes Baumann"
+ SWI_ernst_wetter:0 "Ernst Wetter" 
+ SWI_roger_masson:0 "Roger Masson"
+ 
+ #Bosnia
+ BOS_mehmed_handzic:0 "Mehmed Handžić"
+ BOS_dobroslav_jevdevic:0 "Dobroslav Jevđević"
+ BOS_mehmed_spaho:0 "Mehmed Spaho"
+ BOS_vojislav_kecmanovic:0 "Vojislav Kecmanović"
+ 
+ BOS_ademaga:0 "Ademaga Mešić"
+ BOS_vlado:0 "Vlado Šegrt"
+ BOS_miroslav:0 "Miroslav Navratil"
+ BOS_kluz:0 "Franjo Kluz"
+ BOS_srecko:0 "Srećko Manola"
+ 
+ BOS_bosko:0 "Boško Todorović"
+ BOS_jezdimir:0 "Jezdimir Dangić"
+ BOS_hadziefendic:0 "Muhamed Hadžiefendić"
+ BOS_savo:0 "Savo Božić"
+ BOS_drago:0 "Drago Djukic"
+ BOS_enver:0 "Enver Ćemalović"
+ BOS_rudi:0 "Rudi Čajavec"
+ BOS_alija:0 "Alija Šuljak"
+ BOS_slavisa:0 "Slaviša Vajner-Čiča"
+ BOS_muhamed:0 "Muhamed Hromić"
+ 
+ BOS_ismet:0 "Ismet Popovac"
+ BOS_dujic:0 "Momčilo Đujić"
+ BOS_pero:0 "Pero Djukanovic"
+ 
+ BOS_petar_bacovic:0 "Petar Baćović"
+ BOS_rocko:0 "Rodoljub "Roćko" Čolaković"
+ BOS_kasim:0 "Kasim Dobrača"
+ BOS_dzafer:0 "Džafer Kulenović"
+ BOS_avdo:0 "Avdo "Kulturni" Humo"
+ BOS_dzemal:0 "Džemal Bijedić"
+ BOS_hakija:0 "Hakija Pozderac"
+ BOS_blum:0 "Emerik Blum"
+ BOS_vahida_maglajlic:0 "Vahida Maglajlić"
+ 
+ #Croatia
+ CRO_ante_pavelic:0 "Ante Pavelic"
+ CRO_nikola_mandic:0 "Nikola Mandić"
+ CRO_pavle_gregoric:0 "Pavle Gregorić"
+ CRO_ivan_subasic:0 "Ivan Šubašić"
+ 
+ CRO_branimir_jelic:0 "Branimir Jelić" 
+ CRO_andrija_hebrang:0 "Andrija Hebrang" 
+ CRO_vladko_macek:0 "Vladko Maček"
+ CRO_eugen_dido_kvaternik:0 "Eugen Dido Kvaternik"
+ 
+ #Herzegovina
+ HRZ_ibrahim_fejic:0 "Ibrahim Fejić"
+ HRZ_smail_aga_cemalovic:0 "Smail-aga Ćemalović"
+ HRZ_andrija_artukovic:0 "Andrija Artuković"
+ HRZ_avdo_humo:0 "Avdo Humo"
+ 
+ #Macedonia
+ MAC_anastas_stephanoff:0 "Anastas Stephanoff"
+ MAC_spiro_kitinchev:0 "Spiro Kitinchev"
+ MAC_petar_atsev:0 "Petar Atsev"
+ MAC_dimitar_vlahov:0 "Dimitar Vlahov"
+ 
+ MAC_milivoje_trbic:0 "Milivoje Trbić"
+ MAC_stojan_krstic:0 "Stojan Krstić"
+ 
+ MAC_metodija_andonov:0 "Metodija Andonov-Čento"
+ MAC_mihailo_apostolski:0 "Mihailo Apostolski"
+ MAC_vasilije_trbic:0 "Vasilije Trbić"
+ MAC_kiro_gligorov:0 "Kiro Gligorov"
+ 
+ MAC_venko_markovski:0 "Venko Markovski"
+ MAC_metodi_shatorov:0 "Metodi Shatorov"
+ MAC_tane_nikolov:0 "Tane Nikolov"
+ MAC_mirce_acev:0 "Mirče Acev"
+ MAC_nikola_janjicijevic:0 "Nikola Janjićijević"
+ MAC_nikola_kirov:0 "Nikola Kirov"
+ MAC_veselinka_malinska:0 "Veselinka Malinska"
+ MAC_lazar_kolisevski:0 "Lazar Koliševski"
+ MAC_bane_andreev:0 "Bane Andreev"
+ 
+ MAC_vasil_eschoff:0 "Vasil Eshcoff"
+ MAC_kuzman_pitu:0 "Kuzman Pitu"
+ MAC_ivan_mihajlov:0 "Ivan Mihailov"
+ MAC_andjelko_krstic:0 "Andjelko Krstić"
+ MAC_pavel_shatev:0 "Pavel Shatev"
+ MAC_panko_brashnarov:0 "Panko Brashnarov"
+ MAC_dimitrija_cupovski:0 "Dimitrija Čupovski"
+ MAC_mencha_karnicheva:0 "Mencha Karnicheva"
+ 
+ #Montenegro
+ MNT_sekula_drljevic:0 "Sekula Drljević"
+ MNT_mihaijlo:0 "Mihaijlo I"
+ MNT_blazo_jovanovic:0 "Blažo Jovanović"
+ MNT_andrija_radovic:0 "Andrija Radović"
+ 
+ MNT_peko_dapcevic:0 "Peko Dapčević"
+ MNT_mitar_bakic:0 "Mitar Bakić"
+ 
+ MNT_ivan:0 "Ivan Milutinović"
+ MNT_pavle:0 "Pavle Đurišić" 
+ MNT_nikola:0 "Nikola Lekić"
+ MNT_ivo:0 "Ivo Đokić" 
+ MNT_jovan:0 "Jovan Plamenac"
+ MNT_bajo:0 "Bajo Stanišić"
+ MNT_lasic:0 "Đorđije Lašić"
+ MNT_arso:0 "Arso Jovanović"
+ MNT_bozo:0 "Božo Lazarević"
+ MNT_jakov:0 "Jakov Jovović"
+ MNT_dusan:0 "Dušan Vlahović"
+ 
+ MNT_peko:0 "Peko Dapčević"
+ MNT_radovan:0 "Radovan Daković"
+ MNT_rolovic:0 "Vladimir Rolović" 
+ 
+ MNT_krsto:0 "Krsto Popović"
+ MNT_janko:0 "Janko Spasojević"
+ MNT_dilas:0 "Milovan Đilas"
+ MNT_novica:0 "Novica Radović"
+ MNT_blazo:0 "Blažo Đukanović"
+ MNT_vlado:0 "Vladimir "Vlado" Dapčević"
+ MNT_vladimir:0 "Vladimir Popović"
+ MNT_svetozar:0 "Svetozar Vukmanović"
+ 
+ #Serbia (Odd due to sharing with Yugoslavia)
+ SER_zivorad_jovanovic:0 "Živorad Jovanović"
+ SER_george_karadordevic:0 "George Karađorđević"
+ 
+ SER_ilija_trifunovic_bircanin:0 "Ilija Trifunović-Birčanin"
+ SER_dragutin_keserovic:0 "Dragutin Keserović"
+ 
+ SER_kosta_pecanac:0 "Konstantin "Kosta" Pećanac"
+ SER_stevan_moljevic:0 "Stevan Moljevic"
+ SER_koca_popovic:0 "Koča Popović"
+ SER_kara_dimitrijevic:0 "Kara Dimitrijević"
+ SER_svetozar_milovanovic:0 "Svetozar Milovanović" 
+ 
+ SER_nikola_kalabic:0 "Nikola Kalabić"
+ SER_mladen_zujovic:0 "Mladen Žujović"
+ SER_ilija_bircanin:0 "Ilija Trifunović-Birčanin"
+ SER_zdenko_ulepic:0 "Zdenko Ulepič"
+ SER_viktor_bubanj:0 "Viktor Bubanj"
+ SER_aleksander_beric:0 "Aleksandar Berić"
+ SER_dragutin_iskra:0 "Dragutin Iskra"
+ SER_rada_prodanovic:0 "Rada Prodanović"
+ 
+ SER_milan_kalabic:0 "Milan Kalabić"
+ SER_miodrag_tomic:0 "Miodrag Tomić"
+ SER_milan_radojevic:0 "Milan Radojević"
+ 
+ SER_aca_stanojevic:0 "Aca Stanojević"
+ SER_dragojlo_dudic:0 "Dragojlo Dudić"
+ SER_milan_acimovic:0 "Milan Aćimović"
+ SER_svetozar_vujkovic:0 "Svetozar Vujković"
+ SER_petar_stambolic:0 "Petar Stambolić"
+ SER_dragomir_jovanovic:0 "Dragomir Jovanović"
+ SER_sreten_zujovic:0 "Sreten Žujović"
+ SER_mihailo_alas:0 "Mihailo Alas"
+ 
+ #Slovakia (Most names are vanilla)
+ SLO_jozef_tiso:0 "Jozef Tiso"
+ SLO_jozef_lettrich:0 "Jozef Lettrich"
+ SLO_karol_smidke:0 "Karol Šmidke"
+ 
+ SLO_otomar_kubala:0 "Otomar Kubala"
+ SLO_antonin_pulanich:0 "Antonin Pulanich"
+ SLO_alexander_cunderlik:0 "Alexandr Čunderlik"
+ SLO_augustin_malar:0 "Augustín Malár" 
+ 
+ #Slovenia
+ SLV_josip_vidmar:0 "Josip Vidmar"
+ SLV_anton_kokalj:0 "Anton Kokalj"
+ SLV_anton_korosec:0 "Anton Korošec"
+ SLV_franc_leskosek:0 "Franc Leskošek"
+ 
+ SLV_leon_rupnik:0 "Leon Rupnik"
+ SLV_janko_dobnikar:0 "Janko Dobnikar"
+ SLV_rupert_pivec:0 "Rupert Pivec"
+ 
+ SLV_ivan_milutinovic:0 "Ivan Milutinović"
+ SLV_franc_kenner:0 "Franc Krenner"
+ SLV_karel_destovnik:0 "Karel Destovnik"
+ SLV_ivan:0 "Ivan Dolničar"
+ SLV_viktor_mihelcic:0 "Viktor Mihelčić"
+ SLV_sava_poljanec:0 "Sava Poljanec"
+ SLV_milan_spasic:0 "Milan Spasić"
+ SLV_josip_cerni:0 "Josip Černi"
+ SLV_method_koch:0 "Method Koch"
+ 
+ SLV_joze_brilej:0 "Jože Brilej"
+ SLV_josip_krizaj:0 "Josip Križaj"
+ SLV_sergej_masera:0 "Sergej Mašera"
+ 
+ SLV_milovan_djilas:0 "Milovan Djilas"
+ SLV_edvard_kardelj:0 "Edvard Kardelj"
+ SLV_ernest_peterlin:0 "Ernest Peterlin"
+ SLV_franc_frakelj:0 "Franc Frakelj" 
+ SLV_gregorij_rozman:0 "Gregorij Rožman" 
+ SLV_boris_kidric:0 "Boris Kidrič"
+ SLV_tomo_brejc:0 "Tomo Brejc"
+ 
+ 
+ ##Deluge
+ #Bavaria
+ BAY_rupprecht:0 "Rupprecht I"
+ #Bohemia/Czechia
+ CZE_adolph_schwarzenberg:0 "Adolph I"
+ #Hanover
+ HAN_ernest_augustus:0 "Ernst Augustus III"
+ #Meklenburg
+ MEK_frederick_francis_iv:0 "Frederick Francis IV"
+ #Prussia
+ PRE_adalbart:0 "Adalbart I"
+ #Saxony
+ SAX_ernst_heinrich:0 "Ernst Heinrich I"
+ #Schleswig-Holstein
+ SHL_wilhelm_friedrich:0 "Wilhelm Friedrich I"
+ #Westphalia
+ WST_jerome_bonaparte:0 "Jérôme Napoleon III"
+ #Württemberg
+ WUR_pauline:0 "Pauline I"
+ 
+
+ 
+ 

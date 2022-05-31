@@ -1,0 +1,9 @@
+﻿l_english:
+
+ is_controlled_by_ROOT_or_subject:0 "Is controlled by [ROOT.GetNameWithFlag] or one of its subjects."
+
+ EXP_give_docking_rights_tt:0 "Give §Y[Prev.GetNameDef]§! docking rights.\n"
+ EXP_receive_docking_rights_tt:0 "Gain docking rights from §Y[Prev.GetNameDef]§!.\n"
+ 
+
+ 

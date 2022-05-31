@@ -1,0 +1,582 @@
+﻿capital = 111
+
+if = {
+	limit = { has_dlc = "No Step Back" }
+		set_oob = "FIN_1936_nsb"
+	else = {
+		set_oob = "FIN_1936"
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "FIN_1936_naval_mtg"
+	else = {
+		set_naval_oob = "FIN_1936_naval_legacy"
+	}
+}
+
+set_research_slots = 3
+
+recruit_character = FIN_kaarlo_juho_stahlberg
+recruit_character = FIN_kyosti_kallio
+recruit_character = FIN_pehr_evind_svinhufvud
+recruit_character = FIN_aimo_aaltonen
+recruit_character = FIN_vilho_annala
+recruit_character = FIN_risto_heikki_ryti
+recruit_character = FIN_edwin_linkomies
+recruit_character = FIN_juho_paasikivi
+recruit_character = FIN_karl_august_fagerholm
+recruit_character = FIN_vaino_ii
+
+recruit_character = FIN_carl_gustaf_mannerheim
+recruit_character = FIN_harald_ohquist
+recruit_character = FIN_axel_erik_heinrichs
+recruit_character = FIN_johan_woldemar_hagglund
+recruit_character = FIN_wiljo_einar_tuompo
+recruit_character = FIN_eero_rahola
+
+recruit_character = FIN_karl_wilkama
+recruit_character = FIN_hugo_osterman
+recruit_character = FIN_edvard_hanell
+recruit_character = FIN_fanni_luukonen
+recruit_character = FIN_jarl_lundqvist
+recruit_character = FIN_olavi_sarko
+recruit_character = FIN_jouko_arho
+recruit_character = FIN_vaino_valve
+
+recruit_character = FIN_karl_oesch
+recruit_character = FIN_vilho_nenonen
+recruit_character = FIN_aaro_pajari
+recruit_character = FIN_hjalmar_siilasvuo
+recruit_character = FIN_harry_alfthan
+recruit_character = FIN_t_asikainen
+recruit_character = FIN_svante_sundman
+recruit_character = FIN_valio_porvari
+recruit_character = FIN_frans_helminen
+
+recruit_character = FIN_akseli_anttila
+recruit_character = FIN_ragnar_hakola
+recruit_character = FIN_torsten_aminoff
+
+recruit_character = FIN_kaarlo_harvala
+recruit_character = FIN_bruno_salmiala
+recruit_character = FIN_onni_hiltunen
+recruit_character = FIN_otto_kuusinen
+recruit_character = FIN_ralf_torngren
+recruit_character = FIN_ake_henrik_gartz
+recruit_character = FIN_antti_hackzell
+recruit_character = FIN_aksel_airo
+
+add_ideas = {
+	limited_conscription
+	sisu
+	FIN_lotta_svard
+}
+
+if = {
+	limit = { has_dlc = "No Step Back" }
+		set_technology = {
+			gwtank_chassis = 1
+		}
+	else = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
+}
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	gw_artillery = 1
+	tech_support = 1		
+	tech_recon = 1
+	tech_engineers = 1
+	early_fighter = 1
+	naval_bomber1 = 1
+	CAS1 = 1
+	cv_naval_bomber1 = 1
+	early_bomber = 1
+	
+	force_rotation = 1
+	trench_warfare = 1
+	trade_interdiction = 1
+	
+	fuel_silos = 1
+	armored_car1 = 1
+	basic_train = 1
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_destroyer = 1
+		early_submarine = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		coastal_defense_ships = 1
+		SCA_gunboats = 1
+		
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+			basic_depth_charges = 1
+			smoke_generator = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_heavy = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1		
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+			basic_cruiser_armor_scheme = 1
+		basic_battery = 1
+			basic_light_battery = 1
+			basic_medium_battery = 1
+			basic_heavy_battery = 1
+		basic_secondary_battery = 1		
+		basic_torpedo = 1
+			improved_ship_torpedo_launcher = 1
+	}
+}
+
+1939.1.1 = {
+	add_political_power = 1198
+	
+	#focuses
+	complete_national_focus = FIN_diverse_econ #jan 1 - march 11 (1936)
+	complete_national_focus = FIN_government #march 11 - july 29
+	complete_national_focus = FIN_neutral_focus #july 29 - oct 7
+	complete_national_focus = FIN_sca_assurance #oct 7 - dec 16
+	complete_national_focus = FIN_mil #dec 16 - feb 24 (1937)
+	complete_national_focus = FIN_mann_line #feb 24 - may 5
+	complete_national_focus = FIN_ski #may 5 - july 14
+	complete_national_focus = FIN_af #july 14 - sep 22
+	complete_national_focus = FIN_lean_axis #sep 22 - dec 1
+	complete_national_focus = FIN_foreign_leases #dec 1 - feb 9 (1938)
+	complete_national_focus = FIN_lean_jap #feb 9 - apr 20
+	complete_national_focus = FIN_renew_drsrn #apr 20 - june 29		
+	complete_national_focus = FIN_mills #june 29 - sept 7
+	complete_national_focus = FIN_war_econ_prep #sept 7 - nov 16
+	
+	if = {
+		limit = { has_dlc = "No Step Back" }
+			set_technology = {
+				basic_light_tank_chassis = 1
+				engine_tech_1 = 1
+				armor_tech_1 = 1
+			}
+		else = {
+			set_technology = {
+				basic_light_tank = 1
+			}
+		}
+	}
+	set_technology = {
+		fighter1 = 1
+		early_bomber = 1
+		CAS1 = 1
+		scout_plane1 = 1
+		interwar_artillery = 1
+		interwar_antitank = 1
+		interwar_antiair = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+		support_weapons2 = 1
+		motorised_infantry = 1
+
+		#doctrines
+		fighter_baiting = 1
+		low_echelon_support = 1
+
+		grand_battle_plan = 1
+		prepared_defense = 1
+		
+		raider_patrols = 1
+		carrier_operations = 1
+		convoy_sailing_ti = 1
+		convoy_interdiction_ti = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_refining = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		dispersed_industry3 = 1
+	}
+	
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			set_technology = {
+				sonar = 1
+				improved_depth_charges = 1
+				basic_ship_hull_heavy = 1
+				basic_heavy_armor_scheme = 1
+				improved_secondary_battery = 1
+				damage_control_1 = 1
+				fire_control_methods_1 = 1
+				improved_naval_mines = 1
+			}
+			set_naval_oob = "FIN_1939_naval_mtg"
+		else = {
+			set_technology = {
+				basic_light_cruiser = 1
+			}
+			set_naval_oob = "FIN_1939_naval_legacy"
+		}
+	}
+	
+	if = {
+		limit = { has_dlc = "No Step Back" }
+			set_oob = "FIN_1939_nsb"
+		else = {
+			set_oob = "FIN_1939"
+		}
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1931.1.16"
+	election_frequency = 72
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 41.6
+	fascism = 9
+	communism = 1.5
+	neutrality = 47.9
+}
+
+1939.1.1 = {
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1937.1.16"
+		election_frequency = 72
+		elections_allowed = yes
+	}
+	set_popularities = {
+		democratic = 21
+		fascism = 10
+		communism = 1
+		neutrality = 68
+	}
+	
+	add_ideas = drsrn_signatory
+}
+
+set_convoys = 25
+set_stability = 0.75
+set_war_support = 0.7
+
+### VARIANTS ###
+# 1936 Start #
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+		###Tank Variants
+	}
+	#Light Tanks
+	create_equipment_variant = {
+		name = "Koiras"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = wet_ammo_storage
+			special_type_slot_2 = extra_ammo_storage
+		}
+		upgrades = {
+		}
+		icon = "gfx/interface/technologies/gwtank.dds"
+	}
+	create_equipment_variant = {
+		name = "Naaras"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = wet_ammo_storage
+			special_type_slot_2 = extra_ammo_storage
+		}
+		upgrades = {
+		}
+		icon = "gfx/interface/technologies/gwtank.dds"
+	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	### Ship Variants ###
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	# Submarines #
+	create_equipment_variant = {
+		name = "Vetehinen Class"								
+		type = ship_hull_submarine_1
+		name_group = FIN_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = ship_mine_layer_sub
+		}
+		
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Saukko Class"								
+		type = ship_hull_submarine_1
+		name_group = FIN_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_2
+			rear_1_custom_slot = ship_mine_layer_sub
+		}
+	}
+	create_equipment_variant = {
+		name = "Vesikko Class"								
+		type = ship_hull_submarine_2
+		name_group = FIN_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_2
+			fixed_ship_engine_slot = sub_ship_engine_2
+			rear_1_custom_slot = empty
+		}
+	}
+	#Gunboats#
+	create_equipment_variant = {
+		name = "Klas Horn Class"
+		type = SCA_ship_hull_gunboat
+		name_group = FIN_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			front_1_custom_slot = ship_light_battery_1
+			rear_1_custom_slot = ship_light_battery_1
+			fixed_ship_engine_slot = light_ship_engine_1
+		}
+		
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Karjala Class"
+		type = SCA_ship_hull_gunboat
+		name_group = FIN_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			front_1_custom_slot = ship_light_battery_1
+			rear_1_custom_slot = ship_mine_layer_1
+			fixed_ship_engine_slot = light_ship_engine_1
+		}
+		
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Louhi Class"
+		type = SCA_ship_hull_gunboat
+		name_group = FIN_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			front_1_custom_slot = ship_light_battery_1
+			rear_1_custom_slot = ship_mine_layer_1
+			fixed_ship_engine_slot = light_ship_engine_1
+		}
+		
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Vilppula Class"
+		type = SCA_ship_hull_gunboat
+		name_group = FIN_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			front_1_custom_slot = ship_anti_air_1
+			rear_1_custom_slot = ship_mine_sweeper_1
+			fixed_ship_engine_slot = light_ship_engine_1
+		}
+		
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Hämeenmaa Class"
+		type = SCA_ship_hull_gunboat
+		name_group = FIN_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			front_1_custom_slot = ship_light_battery_1
+			rear_1_custom_slot = ship_anti_air_2
+			fixed_ship_engine_slot = light_ship_engine_1
+		}
+		
+		obsolete = yes
+	}
+	#Icebreakers# (Here rendered as Light Cruisers for ease)
+	create_equipment_variant = {
+		name = "Icebreaker Class"				
+		type = ship_hull_cruiser_1
+		name_group = FIN_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_secondaries_slot = empty
+			fixed_ship_armor_slot = ship_armor_cruiser_2
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+	}
+	# Heavy Cruisers #
+	create_equipment_variant = {
+		name = "Väinämöinen Class"				
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = FIN_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_2
+			fixed_ship_armor_slot = ship_armor_cruiser_2
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = ship_medium_battery_1
+		}
+	}
+}
+# 1939 Start #
+1939.1.1 = {
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+			###Tank Variants
+		}
+		#Light Tanks
+		create_equipment_variant = {
+			name = "Vickers 6-ton Type E Alt B"
+			type = light_tank_chassis_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_high_velocity_cannon
+				turret_type_slot = tank_light_two_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = additional_machine_guns #Technically a mounted submachine gun, but eh, who's checking?
+			}
+			upgrades = {
+			}
+		}
+	}
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		# Ship variants #
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		#Gunboats#
+		create_equipment_variant = {
+			name = "Pukkio Class"
+			type = SCA_ship_hull_gunboat
+			name_group = FIN_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				front_1_custom_slot = ship_anti_air_2
+				rear_1_custom_slot = ship_mine_sweeper_1
+				fixed_ship_engine_slot = light_ship_engine_2
+			}
+		}
+		#Icebreakers#
+		create_equipment_variant = {
+			name = "Sisu-Icebreaker Class"				
+			type = ship_hull_cruiser_2
+			name_group = FIN_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_medium_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_2
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_cruiser_2
+				mid_1_custom_slot = empty
+				mid_2_custom_slot = empty
+				rear_1_custom_slot = empty
+			}
+		}
+	}
+}
+
+
+### STARTING EQUIPMENT ###
+#1936
+	if = {
+		limit = { has_dlc = "No Step Back" }
+			add_equipment_to_stockpile = { 
+				type = light_tank_chassis_0
+				amount = 14
+				producer = FIN
+				variant_name = "Koiras"
+			}
+			add_equipment_to_stockpile = { 
+				type = light_tank_chassis_0
+				amount = 18
+				producer = FIN
+				variant_name = "Naaras"
+			}
+		else = {
+			#Do nothing, handled by oob
+		}
+	}
+1939.1.1 = {
+	if = {
+		limit = { has_dlc = "No Step Back" }
+			add_equipment_to_stockpile = { 
+				type = light_tank_chassis_1
+				amount = 26
+				producer = FIN
+				variant_name = "Vickers 6-ton Type E Alt B"
+			}
+		else = {
+			add_equipment_to_stockpile = { 
+				type = light_tank_chassis_1
+				producer = "FIN"
+				amount = 26
+			}
+		}
+	}
+}

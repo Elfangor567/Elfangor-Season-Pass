@@ -1,0 +1,16 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Landhelgisgæslan"			
+		naval_base = 12674  # Iceland
+		task_force = {
+			name = "Landhelgisgæslan"
+			location = 12674 # Iceland		
+			ship = { name = "ICGV Óðinn II" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = ICE version_name = "Óðinn II Class" } } }
+			ship = { name = "ICGV Ægir" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ICE version_name = "Ægir Class" } } }
+			ship = { name = "ICGV Islands Falk" pride_of_the_fleet = yes definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = ICE version_name = "Islands Falk Class" } } }
+			ship = { name = "ICGV Þór II" definition = DEN_fishery_protection_ship equipment = { DEN_ship_hull_fishery_protection_ship = { amount = 1 owner = ICE version_name = "Þór Class" } } }
+		}
+	}
+}

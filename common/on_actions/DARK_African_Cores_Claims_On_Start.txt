@@ -1,0 +1,85 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+			178 = { add_claim_by = MOR }
+			268 = { 
+				add_core_of = SOM
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 8124
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 8124
+				}
+				add_building_construction = {
+					type = coastal_bunker 
+					level = 3
+					instant_build = yes
+					province = 8124
+				}				
+				
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 4985
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 4985
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					instant_build = yes
+					province = 4985
+				}
+			}
+			295 = { add_claim_by = ANG }
+			514 = { add_core_of = MOR }
+			515 = { add_claim_by = MRT }
+			542 = { add_claim_by = SAF }
+			545 = { add_claim_by = SAF }
+			549 = { add_claim_by = EGY }
+			550 = { add_core_of = ETH }
+			551 = { add_core_of = EGY }
+			559 = { 
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 12991
+				}
+			}
+			697 = { add_claim_by = MOR }
+			699 = { 
+				add_core_of = MOR
+				add_core_of = MRT
+			}
+			707 = { add_core_of = MAD }
+			767 = { 
+				add_core_of = EGY
+				add_claim_by = CHA
+			}
+			775 = { add_claim_by = SUD }
+			782 = { add_core_of = MRT }
+			775 = { add_claim_by = SUD }
+			775 = { add_claim_by = SUD }
+		}
+	}
+}
+		

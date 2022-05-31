@@ -1,0 +1,583 @@
+characters={
+
+#Country Leaders
+	SLV_josip_vidmar={
+		name=SLV_josip_vidmar
+		portraits={
+			civilian={
+				large="gfx/leaders/ITA/Portrait_Italy_Generic_3.dds"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			expire="1965.1.1"
+			id=-1
+		}
+	}	
+	SLV_anton_kokalj={
+		name=SLV_anton_kokalj
+		portraits={
+			civilian={
+				large="gfx/leaders/ITA/Portrait_Italy_Generic_land_5.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	SLV_anton_korosec={
+		name=SLV_anton_korosec
+		portraits={
+			civilian={
+				large="gfx/leaders/SAF/Portrait_South_Africa_Daniel_Malan.dds"
+			}
+		}
+		country_leader={
+			ideology=moderatism
+			expire="1965.1.1"
+			id=-1
+		}
+	}	
+	SLV_franc_leskosek={
+		name=SLV_franc_leskosek
+		portraits={
+			civilian={
+				large="gfx/leaders/EYE/Portrait_EYE_Franc_Leskosek_stand_in.dds"
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+#Generals and Admirals
+	
+#Chiefs of Staff
+	SLV_leon_rupnik={
+		name=SLV_leon_rupnik
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SLV_leon_rupnik
+			allowed = { 
+				original_tag = SLV
+			}
+			
+			traits = { army_chief_defensive_3 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	SLV_janko_dobnikar={
+		name=SLV_janko_dobnikar
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = SLV_janko_dobnikar
+			allowed = { 
+				original_tag = SLV
+			}
+			
+			traits = { air_air_superiority_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	SLV_rupert_pivec={
+		name=SLV_rupert_pivec
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = SLV_rupert_pivec
+			allowed = { 
+				original_tag = SLV
+			}
+			
+			traits = { navy_chief_decisive_battle_3 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+
+#High Command
+	SLV_ivan_milutinovic={
+		name=SLV_ivan_milutinovic
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SLV_ivan_milutinovic
+			ledger = army
+			allowed = {
+				original_tag = SLV
+			}
+			
+			traits = { army_commando_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SLV_franc_kenner={
+		name=SLV_franc_kenner
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_4"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SLV_franc_kenner
+			ledger = army
+			allowed = {
+				original_tag = SLV
+			}
+			
+			traits = { army_chief_organizational_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SLV_karel_destovnik={
+		name=SLV_karel_destovnik
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SLV_karel_destovnik
+			ledger = army
+			allowed = {
+				original_tag = SLV
+			}
+			
+			traits = { army_chief_morale_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	SLV_ivan={ #Ivan Dolničar, a Slovenian Pilot in WW2
+		name=SLV_ivan
+		portraits={
+			army={
+				small="GFX_idea_generic_air_south_america_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SLV_ivan
+			ledger = air
+			allowed = {
+				original_tag = SLV
+			}
+			
+			traits = { air_chief_all_weather_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}	
+	SLV_viktor_mihelcic={
+		name=SLV_viktor_mihelcic
+		portraits={
+			army={
+				small="GFX_idea_generic_air_south_america_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SLV_viktor_mihelcic
+			ledger = air
+			allowed = {
+				original_tag = SLV
+			}
+			
+			traits = { air_bomber_interception_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}	
+	SLV_sava_poljanec={ #Sava Poljanec, Slovenian pilot of the 117 Fighter Regiment
+		name=SLV_sava_poljanec
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SLV_sava_poljanec
+			ledger = air
+			allowed = {
+				original_tag = SLV
+			}
+			
+			traits = { air_air_combat_training_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}	
+	
+	SLV_milan_spasic={ 
+		name=SLV_milan_spasic
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SLV_milan_spasic
+			ledger = navy
+			allowed = {
+				original_tag = SLV
+			}
+			
+			traits = { navy_naval_air_defense_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SLV_josip_cerni={ #Josip Černi, a Slovenian admiral in WW2, specialized in Submarines and Mines
+		name=SLV_josip_cerni
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SLV_josip_cerni
+			ledger = navy
+			allowed = {
+				original_tag = SLV
+			}
+			
+			traits = { navy_submarine_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SLV_method_koch={ #Method Koch, a Slovenian Captain in Austria-Hungary who became an Admiral in Yugoslavia
+		name=SLV_method_koch
+		portraits={
+			army={
+				small="GFX_idea_generic_air_arab_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SLV_method_koch
+			ledger = navy
+			allowed = {
+				original_tag = SLV
+			}
+			
+			traits = { navy_screen_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}	
+	
+#Theorists
+	SLV_joze_brilej={
+		name = SLV_joze_brilej
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = SLV_joze_brilej
+			ledger = army
+			allowed = {
+				original_tag = SLV
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SLV_josip_krizaj={
+		name = SLV_josip_krizaj
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = SLV_josip_krizaj
+			ledger = air
+			allowed = {
+				original_tag = SLV
+			}
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	SLV_sergej_masera={
+		name = SLV_sergej_masera
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = SLV_sergej_masera
+			ledger = navy
+			allowed = {
+				original_tag = SLV
+			}
+			
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+#Advisors
+	SLV_milovan_djilas={
+		name=SLV_milovan_djilas
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLV_milovan_djilas
+			allowed = {
+				original_tag = SLV
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+			}
+		}
+	}
+	SLV_edvard_kardelj={
+		name=SLV_edvard_kardelj
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_western_european_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLV_edvard_kardelj
+			allowed = {
+				original_tag = SLV
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					is_subject = no
+					has_completed_focus = internationalism_focus
+				}
+			}
+		}
+	}
+	SLV_ernest_peterlin={
+		name=SLV_ernest_peterlin
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLV_ernest_peterlin
+			allowed = {
+				original_tag = SLV
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					is_subject = no
+					has_completed_focus = nationalism_focus
+				}
+			}
+		}
+	}	
+	
+	SLV_franc_frakelj={
+		name=SLV_franc_frakelj
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLV_franc_frakelj
+			allowed = {
+				original_tag = SLV
+			}
+			
+			traits = { prince_of_terror }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	SLV_gregorij_rozman={
+		name=SLV_gregorij_rozman
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLV_gregorij_rozman
+			allowed = {
+				original_tag = SLV
+			}
+			
+			traits = { propaganda_expert }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	SLV_boris_kidric={
+		name=SLV_boris_kidric
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLV_boris_kidric
+			allowed = {
+				original_tag = SLV
+			}
+			
+			traits = { silent_workhorse }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	SLV_tomo_brejc={ #Partisan and trade-unionist in WW2, father of first head of Slovenian Intelligence Agency (Mihael Brejc)
+		name=SLV_tomo_brejc
+		portraits={
+			army={
+				small="GFX_idea_FRA_pierre_pucheu"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLV_tomo_brejc
+			allowed = {
+				original_tag = SLV
+			}
+			
+			traits = { head_of_intelligence }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+}

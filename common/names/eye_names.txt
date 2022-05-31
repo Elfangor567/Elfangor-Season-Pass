@@ -1,0 +1,28 @@
+﻿SLV = {
+	male = {
+		names = { 
+			Luka Filip Jakob Nik Zan Mark Tim Jan Vid Jaka Lovro Lan Maks Nejc Anze David Liam Ziga Oskar 
+			Gal Patrik Aljaz Leon Anej Miha Matic Matija Maj Tian Aleks Erik Val Martin Bine Rok Tine Tilen 
+			Matevz Urban Bor Lukas Adam Jure Teo Svit Rene Gasper Domen Enej Izak Marcel Nace
+			#
+			Edvard Franc Milovan Gregorij Ivan Boris Ernest Josip Karel 
+			Janko Viktor Rupert Sergej Milan Jože
+		}
+	}
+	female = {
+		names = {
+			Zala Eva Ema Mia Lara Masa Sara Ana Julija Neza Nika Hana Ela Lana Zoja Klara Ajda Brina Kaja
+			Vita Sofija Lina Mila Zarja Iza Neja Lia Ula Nina Manca Tinkara Ziva Taja Alina Maja Sofia Tia
+			Lili Iva Laura Tara Gaja Lucija Katarina Naja Zara Lea Nusa Zana Pika
+		}
+	}
+	surnames = { 
+		Babic Brankovic Dragic Furlan Gasper Grbic Horvat Jakolin Jankovic Jez Kaluza Kaspar Klements Kokot 
+		Kolar Kopitar Korosec Kovac Kovacevic Kovacic Kozel Kriz Krizman Loncar Medved Mlakar Novak Perko
+		Plesec Plesko Resnik Strnad Struna Vlasic Zitnik Zupan
+		#
+		Kardelj Frakelj Rupnik Djilas Rožman Milutinović Kidrič Peterlin Krenner Križaj Destovnik 
+		Dobnikar Mihelčić Pivec Mašera Spasić Brilej
+	}
+	callsigns = { }
+}

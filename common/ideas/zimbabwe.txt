@@ -1,0 +1,245 @@
+ideas = {
+	country = {
+		ZIM_final_empire = {
+			
+			picture = vittoria_mutilata
+			
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			modifier = {
+				ai_focus_aggressive_factor = 1
+				
+				air_agility_factor = 0.3
+				army_org_regain = 0.2
+				generate_wargoal_tension = -1
+				justify_war_goal_time = -0.5
+				war_support_factor = 0.2
+				stability_factor = -0.2
+			}
+		}
+	}
+	
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		ZIM_rhodesian_railways = { #Large Railway Company that covered both Northern and Southern Rhodesia
+			
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { heavy_tank_manufacturer }
+		}
+		
+		ZIM_ford_rhodesia = { #Ford was in Rhodesia until 1965 when it declared independence from Britain
+		
+			picture = ford_motor_company
+			
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			available = {
+				NOT = { has_war_with = USA }
+			}
+			cancel_if_invalid = yes
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { medium_tank_manufacturer }
+		}
+		
+		ZIM_BMC_rhodesia = { #BMC was in Rhodesia until 1965 when it declared independence from Britain
+		
+			picture = generic_tank_manufacturer_3
+			
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			available = {
+				OR = {
+					NOT = { country_exists = ENG }
+					is_in_faction_with = ENG
+					is_subject_of = ENG
+					has_subject = ENG
+				}
+			}
+			cancel_if_invalid = yes
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { fast_tank_manufacturer }
+		}
+		
+	}
+	
+	aircraft_manufacturer = {
+			
+		designer = yes
+		
+		ZIM_IA = { #Imperial Airways
+			
+			picture = generic_air_manufacturer_1
+			
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			available = {
+				OR = {
+					NOT = { country_exists = ENG }
+					is_in_faction_with = ENG
+					is_subject_of = ENG
+					has_subject = ENG
+				}
+			}
+			cancel_if_invalid = yes
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer_2 }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		ZIM_SRAS = { #Southern Rhodesian Air Services
+			
+			picture = generic_air_manufacturer_3
+			
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	naval_manufacturer = {
+		
+		designer = yes
+		
+		ZIM_hunting = { #The Hunting Group was in Rhodesia (In 1946 they opened Hunting Air Travel (HAT))
+			
+			picture = generic_naval_manufacturer_1
+			
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+		}
+		
+		ZIM_costain = { #Company that created Kariba Lake, the largest man-made lake in the world
+			
+			picture = generic_naval_manufacturer_2
+			
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { atlantic_fleet_naval_manufacturer }
+		}
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes
+		
+		ZIM_duly = { #Duly & Co Ltd. Main dealer/assembler for Ford in Rhodesia
+			
+			picture = generic_motorized_equipment_manufacturer_3
+			
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+		ZIM_relay = { #Creator of the Mamba Pistol
+			
+			picture = generic_infantry_equipment_manufacturer_2
+			
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+	}
+	
+	industrial_concern = {
+		
+		ZIM_CABS = { #Central African Broadcasting System, based in Lusaka (Northern Rhodesia), but was also present in Salisbury
+					
+			picture = generic_electronics_concern_2
+				
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
+		
+		ZIM_riscom = { #Rhodesian Iron and Steel Commission, 1942 
+		
+			picture =  generic_industrial_concern_1
+
+			allowed = {
+				original_tag = ZIM
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}
+	}
+}

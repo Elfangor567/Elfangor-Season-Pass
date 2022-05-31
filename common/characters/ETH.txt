@@ -1,0 +1,1042 @@
+characters={
+#Country Leaders
+	ETH_haile_selassie={
+		name=ETH_haile_selassie
+		portraits={
+			civilian={
+				large="gfx/leaders/ETH/Portrait_Ethiopia_Haile_Selassie.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1"
+			traits = { DARK_lion_of_judah }
+			id=-1
+		}
+		field_marshal={
+			traits = { media_personality brilliant_strategist offensive_doctrine inspirational_leader }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id=30110
+			visible = {
+				OR = {
+					has_country_leader = { ruling_only = yes character = ETH_haile_selassie }
+					has_idea = ETH_haile_selassie_idea
+				}
+			}
+		}
+	}
+	ETH_makonnen_endelkachew={
+		name=ETH_makonnen_endelkachew
+		portraits={
+			civilian={
+				large="gfx/leaders/SAF/Portrait_South_Africa_Political_Leader_Generic_2.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	ETH_takele_wolde_hawariat={
+		name=ETH_takele_wolde_hawariat
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_1.dds"
+			}
+		}
+		country_leader={
+			ideology=anti_revisionism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	ETH_haile_selassie_gugsa={ #Most notable defector to Italy
+		name=ETH_haile_selassie_gugsa
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/portrait_africa_generic_land_6.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			id=30100
+		}
+	}
+	ETH_hailu_tekle_haimonot={
+		name=ETH_hailu_tekle_haimonot
+		portraits={
+			civilian={
+				large="gfx/leaders/SYR/Portrait_Arabia_Generic_navy_1.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			traits = { war_industrialist }
+			id=-1
+		}
+		country_leader={
+			ideology=oligarchism
+			expire="1965.1.1"
+			traits = { war_industrialist }
+			id=-1
+		}
+	}
+	
+#Generals and Admirals
+	ETH_mulugeta_yeggazu={ #Veteran of Adowa, Commander of the Mahel Sefari (Army of the Center), Imperial Fitaurari
+		name=ETH_mulugeta_yeggazu
+		portraits={
+			army={
+				large="gfx/leaders/DARK/Portrait_DARK_Mulugeta_Yeggazu.dds"
+				small="GFX_idea_generic_army_african_1"
+			}
+		}
+		corps_commander={
+			traits = { DARK_ethiopian_old_guard war_hero trait_reckless harsh_leader infantry_officer desert_fox trait_mountaineer }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id=30111
+			visible = {
+				OR = {
+					NOT = { has_global_flag = ETH_eth_lost_war }
+					has_game_rule = {
+						rule = africa_colonization_status
+						option = AFRICA_DECOLONIZED
+					}
+				}
+			}
+		}
+	}
+	ETH_kassa_haile_darge={ #Commander of the Army of the Right
+		name=ETH_kassa_haile_darge
+		portraits={
+			army={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_land_4.dds" #Pretty sure this is based off the man
+				small="GFX_idea_generic_army_african_4"
+			}
+		}
+		corps_commander={
+			traits = { trait_reckless infantry_officer trait_mountaineer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id=30112
+		}
+	}
+	ETH_imru_haile_selassie={ #Commander of the Army of the Left, only Ras who understood guerilla tactics in 1936
+		name=ETH_imru_haile_selassie
+		portraits={
+			army={
+				large="gfx/leaders/Africa/portrait_africa_generic_land_6.dds"
+				small="GFX_idea_generic_army_african_2"
+			}
+		}
+		corps_commander={
+			traits = { brilliant_strategist infantry_officer trickster skirmisher trait_mountaineer }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id=30113
+		}
+	}
+	ETH_birru_wolde_gabriel={ #Imperial Fitaurari after the death of Mulugeta Yeggazu (I assume he also commanded what was left of the Center Army at Mai Ceu?)
+		name=ETH_birru_wolde_gabriel
+		portraits={
+			army={
+				large="gfx/leaders/Africa/portrait_africa_generic_land_5.dds"
+				small="GFX_idea_generic_army_african_5"
+			}
+		}
+		corps_commander={
+			traits = { DARK_ethiopian_old_guard trait_reckless infantry_officer desert_fox }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id=30114
+		}
+	}
+	ETH_nasibu_zeamanuel={ #Commander of the Southern Front, died in late 1936, possibly from complications related to Mustard Gas
+		name=ETH_nasibu_zeamanuel
+		portraits={
+			army={
+				large="gfx/leaders/Africa/portrait_africa_generic_land_7.dds"
+				small="GFX_idea_generic_army_african_3"
+			}
+		}
+		corps_commander={
+			traits = { brilliant_strategist trait_reckless infantry_officer desert_fox }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id=30115
+			visible = {
+				NOT = { has_global_flag = ETH_eth_lost_war }
+			}
+		}
+	}
+	ETH_kifle_nasibu={ #Brigade Commander of the Oletta Cadets
+		name=ETH_kifle_nasibu
+		portraits={
+			army={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_land_3.dds"
+				small="GFX_idea_generic_army_african_3"
+			}
+		}
+		corps_commander={
+			traits = { brilliant_strategist career_officer trait_reckless infantry_leader trait_mountaineer }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id=-1
+			visible = {
+				has_completed_focus = ETH_oletta_school
+			}
+		}
+	}
+	
+#Chiefs of Staff
+	ETH_desta_damtew={
+		name=ETH_desta_damtew
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_3"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = ETH_desta_damtew
+			allowed = {
+				original_tag = ETH
+			}
+			traits = { army_regrouping_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ETH_viking_tamm={ #Captain Tamm, Swedish leader of the Oletta Cadet School, would later fight for Finland
+		name=ETH_viking_tamm
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_4"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = ETH_viking_tamm
+			allowed = {
+				original_tag = ETH
+			}
+			available = {
+				NOT = { has_war_with = SWE }
+				OR = {
+					is_subject = no
+					is_subject_of = SWE
+				}
+			}
+			traits = { army_chief_drill_3 }
+			cost = 75
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ETH_abebe_aregai={ #Chief of Police in Addis Ababa, Prominent Patriot Leader and later Minister of War, his shenanigans with Italy are almost unbelievable
+		name=ETH_abebe_aregai
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_2"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = ETH_abebe_aregai
+			allowed = {
+				original_tag = ETH
+			}
+			traits = { army_logistics_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ETH_adafrisau_yenadu={ #Veteran of Adowa, Commander of the Imperial Guard and strict Haile Selassie loyalist
+		name=ETH_abebe_aregai
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_6"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = ETH_abebe_aregai
+			allowed = {
+				original_tag = ETH
+			}
+			available = {
+				NOT = { has_government = communism }
+			}
+			traits = { army_infantry_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	#Ethiopia had no navy, so this is all conjecture based on who I think could possibly have been put into this kind of position
+	ETH_mangasha_yilma={ #Haile Selassie's Nephew and the Director-General of the Ministry of war
+		name=ETH_mangasha_yilma
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_arab_2"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = ETH_mangasha_yilma
+			allowed = {
+				original_tag = ETH
+			}
+			traits = { navy_chief_maneuver_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ETH_lij_johannes={ #Son of Lij Yasu and a powerful political player, often contemplated making a play for Emperor
+		name=ETH_lij_johannes
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_arab_3"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = ETH_lij_johannes
+			allowed = {
+				original_tag = ETH
+			}
+			traits = { navy_fleet_logistics_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ETH_paul_corriger={ #French Pilot in charge of the Air Force until its dissolution
+		name=ETH_paul_corriger
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = ETH_paul_corriger
+			allowed = {
+				original_tag = ETH
+				OR = {
+					is_subject = no
+					is_subject_of = FRA
+				}
+			}
+			traits = { air_air_combat_training_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ETH_mischa_babitchev={ #Half-Russian Pilot (Father was a white russian officer who escaped to Ethiopia)
+		name=ETH_mischa_babitchev
+		portraits={
+			army={
+				small="GFX_idea_generic_air_arab_3"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = ETH_mischa_babitchev
+			allowed = {
+				original_tag = ETH
+			}
+			traits = { air_air_superiority_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ETH_asfaw_ali={ #Second Ethiopian Pilot (Firt was Mischa)
+		name=ETH_asfaw_ali
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_1"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = ETH_asfaw_ali
+			allowed = {
+				original_tag = ETH
+			}
+			traits = { air_bomber_interception_1 }
+			cost = 50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#High Command
+	ETH_dothee={ #Belgian Major in charge of helping Ethiopia, especially with cavalry/motorized
+		name=ETH_dothee
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_african_2d"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ETH_dothee
+			ledger = army
+			allowed = {
+				original_tag = ETH
+			}			
+			available = {
+				NOT = { has_war_with = BEL }
+				OR = {
+					is_subject = no
+					is_subject_of = BEL
+				}
+			}
+			traits = { army_cavalry_3 }
+			cost = 75
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ETH_theodore_konovaloff={ #Former White Russian officer
+		name=ETH_theodore_konovaloff
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ETH_theodore_konovaloff
+			ledger = army
+			ledger = air
+			allowed = {
+				original_tag = ETH
+			}
+			available = {
+				NOT = { has_government = communism }
+			}
+			traits = { white_russian }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ETH_balcha_safo={ #Old-Fashioned general who opposed the rise of Haile Selassie, brought out of retirement for the war (Died in 1937 surrounded by enemies, fighting until the last)
+		name=ETH_balcha_safo
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ETH_balcha_safo
+			ledger = army
+			allowed = {
+				original_tag = ETH
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = ETH_allows_balcha_tt
+					NOT = { has_country_flag = ETH_balcha_dealt_with }
+				}
+			}			
+			on_add = {
+				custom_effect_tooltip = ETH_add_noble_influence_5
+				hidden_effect = {
+					add_to_variable = { ETH_noble_influence_value = 5 }
+				}
+			}			
+			modifier = {
+				army_infantry_defence_factor = 0.05
+			}			
+			traits = { army_chief_offensive_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ETH_haile_kebbede={ #Army leader of the Army of Wag, key patriot until his death via Italians
+		name=ETH_haile_kebbede
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ETH_haile_kebbede
+			ledger = army
+			allowed = {
+				original_tag = ETH
+			}
+			traits = { army_chief_morale_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ETH_seyum_mangasha={ #Ruler of Western Tigray, a military commander and a powerful noble
+		name=ETH_seyum_mangasha
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ETH_seyum_mangasha
+			ledger = army
+			allowed = {
+				original_tag = ETH
+			}
+			modifier = {
+				army_infantry_defence_factor = 0.05
+			}			
+			traits = { army_chief_defensive_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ETH_wondossen_kassa={ #First son of Kassa Haile Darge, died a resistance fighter with his two brothers
+		name=ETH_wondossen_kassa
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ETH_wondossen_kassa
+			ledger = navy
+			allowed = {
+				original_tag = ETH
+			}	
+			traits = { navy_chief_decisive_battle_1 }
+			cost =  50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ETH_aberra_kassa={ #Second son of Kassa Haile Darge, died a resistance fighter with his two brothers
+		name=ETH_aberra_kassa
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ETH_aberra_kassa
+			ledger = navy
+			allowed = {
+				original_tag = ETH
+			}	
+			traits = { navy_amphibious_assault_2 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ETH_asfawossen_kassa={ #Third son of Kassa Haile Darge, died a resistance fighter with his two brothers
+		name=ETH_asfawossen_kassa
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ETH_asfawossen_kassa
+			ledger = navy
+			allowed = {
+				original_tag = ETH
+			}	
+			traits = { navy_submarine_1 }
+			cost =  50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	ETH_hubert_julian={ #The Black Eagle
+		name=ETH_hubert_julian
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ETH_hubert_julian
+			ledger = air
+				allowed = {
+					original_tag = ETH
+				}
+				traits = { air_airborne_3 }
+				cost =  100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	ETH_bahru_kaba={ #Ethiopian Pilot
+		name=ETH_bahru_kaba
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ETH_bahru_kaba
+			ledger = air
+				allowed = {
+					original_tag = ETH
+				}
+				traits = { air_chief_ground_support_1 }
+				cost =  50
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	ETH_ludwig_weber={ #German Pilot, personal pilot of Haile Selassie and engineer of the Weber Meindl van Nes A.VII "Ethiopia I" 
+		name=ETH_ludwig_weber
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ETH_ludwig_weber
+			ledger = air
+			allowed = {
+				original_tag = ETH
+			}
+			traits = { DARK_foreign_air_expert }
+			cost =  50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#Theorists
+	ETH_mesfin_sileshi={
+		name = ETH_mesfin_sileshi
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = ETH_mesfin_sileshi
+			ledger = army
+			allowed = {
+				original_tag = ETH
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+	}
+	ETH_abiye_abebe={ #Shoan noblem. Haile Selassie's son-in-law (though he and his wife divorced). Later minister of defence
+		name = ETH_abiye_abebe
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_african_2d"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = ETH_abiye_abebe
+			ledger = navy
+			allowed = {
+				original_tag = ETH
+			}				
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	ETH_john_robinson={ #Father of the Tuskegee Airmen
+		name = ETH_john_robinson
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_1"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = ETH_john_robinson
+			ledger = air
+			allowed = {
+				original_tag = ETH
+			}
+			available = {
+				NOT = { has_war_with = USA }
+				OR = {
+					is_subject = no
+					is_subject_of = USA
+				}
+			}			
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+#Advisors
+	ETH_afevork_jesus={ #Pro-Italian writer
+		name=ETH_afevork_jesus
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ETH_afevork_jesus
+			allowed = {
+				original_tag = ETH
+			}			
+			available = {
+				NOT = {
+					custom_trigger_tooltip = {
+						tooltip = ETH_has_not_beaten_ita_tt
+						has_global_flag = DARK_end_of_ita_eth_war
+					}
+					custom_trigger_tooltip = {
+						tooltip = ETH_ita_refused_tt
+						has_country_flag = ETH_italy_refused_puppet
+					}
+				}
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			
+			
+			on_add = {
+				custom_effect_tooltip = ETH_beware_gugsa_tt
+			}			
+			modifier = {
+				neutrality_drift = -0.1
+			}			
+			traits = { fascist_demagogue }
+			cost = 50
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	ETH_abebe_damtew={
+		name=ETH_abebe_damtew
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ETH_abebe_damtew
+			allowed = {
+				original_tag = ETH
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}	
+			traits = { communist_revolutionary }
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	ETH_wubneh_amoraw={ #"The Hawk", a staunch loyalist who tried to hang Blatta Takele
+		name=ETH_wubneh_amoraw
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ETH_wubneh_amoraw
+			allowed = {
+				original_tag = ETH
+			}
+			available = {
+				OR = {
+					has_country_leader = { ruling_only = yes character = ETH_haile_selassie }
+					has_idea = ETH_haile_selassie_idea
+				}
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			on_add = {
+				if = {
+					limit = { has_government = fascism }
+					remove_trait = { 
+						trait = staunch_monarchist
+						slot = political_advisor
+					}
+				}
+				else = {
+					remove_trait = { 
+						trait = fascist_demagogue
+						slot = political_advisor
+					}
+				}
+			}
+			on_remove = {
+				add_political_power = 150
+				ETH_wubneh_amoraw = {
+					if = {
+						limit = { NOT = { has_trait = fascist_demagogue } }
+						add_trait = {
+							trait = fascist_demagogue
+							slot = political_advisor
+						}
+					}
+					else = {
+						add_trait = {
+							trait = staunch_monarchist
+							slot = political_advisor
+						}
+					}
+				}
+			}
+			traits = { staunch_monarchist fascist_demagogue }
+			ai_will_do = {
+				base = 1
+			}		
+		}
+	}
+	ETH_tekle_hawariat={ #Writer of the Ethiopian Constitution, sidelined for his anti-corruption stance and his desire to actually make a real democracy
+		name=ETH_tekle_hawariat
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ETH_tekle_hawariat
+			allowed = {
+				original_tag = ETH
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}	
+			traits = { democratic_reformer }
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	
+	ETH_herouy_wolde_selassie={ #Foreign Minister, reformer and prominent Young Japaniser
+		name=ETH_herouy_wolde_selassie
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ETH_herouy_wolde_selassie
+			allowed = {
+				original_tag = ETH
+			}	
+			traits = { ideological_crusader }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ETH_lorenzo_taezez={ #A young Eritrean sponsored by Dejaz Nasibu/Emperor Haile Selassie. Representative of the government-in-exile at the League of Nations.
+		name=ETH_lorenzo_taezez
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ETH_lorenzo_taezez
+			allowed = {
+				original_tag = ETH
+			}	
+			traits = { silent_workhorse }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ETH_yilma_deressa={ #Finance Minister for Ethiopia, secured loans from the US and generally restructured the Ethiopian economy post-war, ensuring that Ethiopia was not too reliant on Britain
+		name=ETH_yilma_deressa
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ETH_yilma_deressa
+			allowed = {
+				original_tag = ETH
+			}	
+			traits = { financial_expert }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ETH_tafere_worq={ #A commoner patronaged by Haile Selassie, deeply loyal and a close advisor. Brother of Aklili Haptewold and Akalework Haptewold.
+		name=ETH_tafere_worq
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ETH_tafere_worq
+			allowed = {
+				original_tag = ETH
+			}	
+			traits = { backroom_backstabber }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ETH_wehib_pasha={ #Chief Turkish advisor to Haile Selassie, helped organize the defences in the Ogaden
+		name=ETH_wehib_pasha
+		portraits={
+			army={
+				small="GFX_idea_generic_army_arab_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ETH_wehib_pasha
+			allowed = {
+				original_tag = ETH
+			}
+			available = {
+				NOT = { has_war_with = TUR }
+				OR = {
+					is_subject = no
+					is_subject_of = TUR
+				}
+			}
+			cost = 100
+			traits = { fortification_engineer }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	ETH_makonnen_haptewold={ #A commoner patronaged by Haile Selassie, deeply loyal and a close advisor. Brother of Aklili Haptewold and Akalework Haptewold. In charge of the Department of Public Security
+		name=ETH_makonnen_haptewold
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ETH_makonnen_haptewold
+			allowed = {
+				original_tag = ETH
+			}
+			traits = { head_of_intelligence }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	
+	#ETH_essayas_selassie = { #Oletta Cadet, Helped write letter promoting republicanism in order to draw french support, would later become a staunch supporter of Haile Selassie (I think)
+}

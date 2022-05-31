@@ -1,0 +1,684 @@
+﻿defined_text = {
+	name = GetDrsrnSignatories	#Avert your eyes all ye who know of string concatenation
+	
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			NOR = { has_country_flag = drsrn_renewed }
+			NOT = {
+				ICE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Denmark and Norway met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			ICE = { has_country_flag = drsrn_renewed }
+			NOT = {
+				NOR = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Denmark and Iceland met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			FIN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				ICE = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Denmark and Finland met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			SWE = { has_country_flag = drsrn_renewed }
+			NOT = {
+				ICE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Denmark and Sweden met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			ICE = { has_country_flag = drsrn_renewed }
+			NOR = { has_country_flag = drsrn_renewed }
+			NOT = {
+				DEN = { has_country_flag = drsrn_renewed }				
+				FIN = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+			}			
+		}
+		localization_key = "Today the governments of Norway and Iceland met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			ICE = { has_country_flag = drsrn_renewed }
+			FIN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				DEN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }				
+				SWE = { has_country_flag = drsrn_renewed }			}			
+			
+		}
+		localization_key = "Today the governments of Iceland and Finland met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			ICE = { has_country_flag = drsrn_renewed }
+			SWE = { has_country_flag = drsrn_renewed }
+			NOT = {
+				DEN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }				
+				FIN = { has_country_flag = drsrn_renewed }			}			
+			
+		}
+		localization_key = "Today the governments of Iceland and Swden met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {			
+			NOR = { has_country_flag = drsrn_renewed }
+			SWE = { has_country_flag = drsrn_renewed }
+			NOT = {
+				DEN = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }				
+				FIN = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Norway and Sweden met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {			
+			NOR = { has_country_flag = drsrn_renewed }
+			FIN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				DEN = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }				
+				SWE = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Norway and Finland met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {			
+			SWE = { has_country_flag = drsrn_renewed }
+			FIN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				DEN = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }				
+				NOR = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Sweden and Finland met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	
+	
+	
+	
+	
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			NOR = { has_country_flag = drsrn_renewed }
+			ICE = { has_country_flag = drsrn_renewed }
+			NOT = {
+				FIN = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Denmark, Iceland, and Norway met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			NOR = { has_country_flag = drsrn_renewed }
+			FIN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				ICE = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Denmark, Norway, and Finland met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			NOR = { has_country_flag = drsrn_renewed }
+			SWE = { has_country_flag = drsrn_renewed }
+			NOT = {
+				ICE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Denmark, Sweden, and Norway met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			SWE = { has_country_flag = drsrn_renewed }
+			FIN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				ICE = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Denmark, Sweden, and Finland met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			SWE = { has_country_flag = drsrn_renewed }
+			ICE = { has_country_flag = drsrn_renewed }
+			NOT = {
+				FIN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Denmark, Sweden, and Iceland met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			ICE = { has_country_flag = drsrn_renewed }
+			FIN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				SWE = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Denmark, Finland, and Iceland met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			ICE = { has_country_flag = drsrn_renewed }
+			FIN = { has_country_flag = drsrn_renewed }
+			SWE = { has_country_flag = drsrn_renewed }
+			NOT = {
+				DEN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }			
+			}						
+		}
+		localization_key = "Today the governments of Iceland, Finland, and Sweden met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			ICE = { has_country_flag = drsrn_renewed }
+			FIN = { has_country_flag = drsrn_renewed }
+			NOR = { has_country_flag = drsrn_renewed }
+			NOT = {
+				SWE = { has_country_flag = drsrn_renewed }
+				DEN = { has_country_flag = drsrn_renewed }			
+			}						
+		}
+		localization_key = "Today the governments of Iceland, Finland, and Norway met in order to craft a declaration outlining their rules of neutrality based upon those set in 1912 by Denmark, Norway, and Sweden. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			FIN = { has_country_flag = drsrn_renewed }
+			SWE = { has_country_flag = drsrn_renewed }
+			NOR = { has_country_flag = drsrn_renewed }
+			NOT = {
+				FIN = { has_country_flag = drsrn_renewed }
+				NOR = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Finland, Sweden, and Iceland met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	
+	
+	
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			NOR = { has_country_flag = drsrn_renewed }
+			ICE = { has_country_flag = drsrn_renewed }
+			FIN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				SWE = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Denmark, Iceland, Finland and Norway met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			SWE = { has_country_flag = drsrn_renewed }
+			NOR = { has_country_flag = drsrn_renewed }
+			ICE = { has_country_flag = drsrn_renewed }
+			FIN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				DEN = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Sweden, Iceland, Finland and Norway met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			SWE = { has_country_flag = drsrn_renewed }
+			ICE = { has_country_flag = drsrn_renewed }
+			FIN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				NOR = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Denmark, Iceland, Finland and Sweden met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			NOR = { has_country_flag = drsrn_renewed }
+			SWE = { has_country_flag = drsrn_renewed }
+			FIN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				ICE = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Denmark, Norway, Finland and Sweden met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			NOR = { has_country_flag = drsrn_renewed }
+			SWE = { has_country_flag = drsrn_renewed }
+			ICE = { has_country_flag = drsrn_renewed }
+			NOT = {
+				FIN = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Today the governments of Denmark, Norway, Iceland and Sweden met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			NOR = { has_country_flag = drsrn_renewed }
+			ICE = { has_country_flag = drsrn_renewed }
+			FIN = { has_country_flag = drsrn_renewed }
+			SWE = { has_country_flag = drsrn_renewed }
+		}
+		localization_key = "Today the governments of Denmark, Iceland, Finland, Norway and Sweden met in order to renew and update their rules of neutrality that were set in 1912. International critics noticed that while similar, none of the signatories' rules included any provisions for going to another's aid in case of aggression from a third party."
+	}
+
+	
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				NOR = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Denmark's government was hit with a nasty surprise today when every one of the other scandinavian countries refused to meet in order to renew the rules of similar neutrality that had been signed in 1912. What this means for the Scandinavian countries is yet unknown, but most political pundits agree that such a decision can only mean that war and strife are brewing in the north."
+	}
+	text = {
+		trigger = {
+			NOR = { has_country_flag = drsrn_renewed }
+			NOT = {
+				DEN = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Norway's government was hit with a nasty surprise today when every one of the other scandinavian countries refused to meet in order to renew the rules of similar neutrality that had been signed in 1912. What this means for the Scandinavian countries is yet unknown, but most political pundits agree that such a decision can only mean that war and strife are brewing in the north."
+	}
+	text = {
+		trigger = {
+			ICE = { has_country_flag = drsrn_renewed }
+			NOT = {
+				NOR = { has_country_flag = drsrn_renewed }
+				DEN = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Iceland's government was hit with a nasty surprise today when every one of the other scandinavian countries refused to meet in order to renew the rules of similar neutrality that had been signed in 1912. What this means for the Scandinavian countries is yet unknown, but most political pundits agree that such a decision can only mean that war and strife are brewing in the north."
+	}
+	text = {
+		trigger = {
+			FIN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				NOR = { has_country_flag = drsrn_renewed }
+				DEN = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }
+				SWE = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Finland's government was hit with a nasty surprise today when every one of the other scandinavian countries refused to meet in order to renew the rules of similar neutrality that had been signed in 1912. What this means for the Scandinavian countries is yet unknown, but most political pundits agree that such a decision can only mean that war and strife are brewing in the north."
+	}
+	text = {
+		trigger = {
+			SWE = { has_country_flag = drsrn_renewed }
+			NOT = {
+				NOR = { has_country_flag = drsrn_renewed }
+				DEN = { has_country_flag = drsrn_renewed }
+				ICE = { has_country_flag = drsrn_renewed }
+				FIN = { has_country_flag = drsrn_renewed }
+			}
+		}
+		localization_key = "Sweden's government was hit with a nasty surprise today when every one of the other scandinavian countries refused to meet in order to renew the rules of similar neutrality that had been signed in 1912. What this means for the Scandinavian countries is yet unknown, but most political pundits agree that such a decision can only mean that war and strife are brewing in the north."
+	}
+}
+
+defined_text = {
+	name = GetDrsrnResult
+	
+	text = { localization_key = "A great step forward!" }
+	
+	text = {
+		trigger = {
+			DEN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				AND = {
+					NOR = { has_country_flag = drsrn_renewed }
+					ICE = { has_country_flag = drsrn_renewed }
+					FIN = { has_country_flag = drsrn_renewed }
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		localization_key = "Are we the only sane ones left?"
+	}
+	text = {
+		trigger = {
+			NOR = { has_country_flag = drsrn_renewed }
+			NOT = {
+				AND = {
+					DEN = { has_country_flag = drsrn_renewed }
+					ICE = { has_country_flag = drsrn_renewed }
+					FIN = { has_country_flag = drsrn_renewed }
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		localization_key = "Are we the only sane ones left?"
+	}
+	text = {
+		trigger = {
+			ICE = { has_country_flag = drsrn_renewed }
+			NOT = {
+				AND = {
+					NOR = { has_country_flag = drsrn_renewed }
+					DEN = { has_country_flag = drsrn_renewed }
+					FIN = { has_country_flag = drsrn_renewed }
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		localization_key = "Are we the only sane ones left?"
+	}
+	text = {
+		trigger = {
+			FIN = { has_country_flag = drsrn_renewed }
+			NOT = {
+				AND = {
+					NOR = { has_country_flag = drsrn_renewed }
+					DEN = { has_country_flag = drsrn_renewed }
+					ICE = { has_country_flag = drsrn_renewed }
+					SWE = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		localization_key = "Are we the only sane ones left?"
+	}
+	text = {
+		trigger = {
+			SWE = { has_country_flag = drsrn_renewed }
+			NOT = {
+				AND = {
+					NOR = { has_country_flag = drsrn_renewed }
+					DEN = { has_country_flag = drsrn_renewed }
+					ICE = { has_country_flag = drsrn_renewed }
+					FIN = { has_country_flag = drsrn_renewed }
+				}
+			}
+		}
+		localization_key = "Are we the only sane ones left?"
+	}
+}
+
+# Tanks
+defined_text = {
+	name = DEN_german_tank
+	
+	text = { localization_key = "The German tank looks to be superior. (Choose Porsche)" }
+}
+defined_text = {
+	name = DEN_french_tank
+	
+	text = { localization_key = "The French tank looks the best. (Choose FCM)" }
+}
+defined_text = {
+	name = DEN_english_tank
+	
+	text = { localization_key = "The English tank looks fast and strong. (Choose Vickers)" }
+}
+defined_text = {
+	name = DEN_american_tank
+	
+	text = { localization_key = "The American tank looks reliable. (Choose Chrysler)" }
+}
+defined_text = {
+	name = DEN_italian_tank
+	
+	text = { localization_key = "The Italian tank looks like it will work. (Choose Fiat)" }
+}
+
+
+#### TO BE SAVED IN CASE FUTURE ALLOWS FOR USE
+#Special Forces
+#defined_text = {
+#	name = ICE_Paratroopers
+#	
+#	text = {
+#		trigger = { ICE = { has_idea = ICE_elite_forces } }
+#		localization_key = "Elite Infantry"
+#	}
+#	text = {
+#		trigger = { NOT = { ICE = { has_idea = ICE_elite_forces } } }
+#		localization_key = "Paratroopers"
+#	}
+#}
+#defined_text = {
+#	name = ICE_Paratroopers_desc
+#	
+#	text = {
+#		trigger = { ICE = { has_idea = ICE_elite_forces } }
+#		localization_key = "Our elite infantry are superior to those in every other country. They are prepared to fight and die on land, air, and sea for their country."
+#	}
+#	text = {
+#		trigger = { NOT = { ICE = { has_idea = ICE_elite_forces } } }
+#		localization_key = "By incorporating airborne forces into our army, we can make forced entries and position key troops in previously inaccessible areas, allowing for new tactical opportunities."
+#	}
+#}
+#defined_text = {
+#	name = ICE_Marines
+#	
+#	text = {
+#		trigger = { ICE = { has_idea = ICE_elite_forces } }
+#			localization_key = "Elite Infantry"
+#		}
+#	text = {
+#		trigger = { NOT = { ICE = { has_idea = ICE_elite_forces } } }
+#		localization_key = "Marines"
+#	}
+#}
+#defined_text = {
+#	name = ICE_Marines_desc
+#	
+#	text = {
+#		trigger = { ICE = { has_idea = ICE_elite_forces } }
+#		localization_key = "Our elite infantry are superior to those in every other country. They are prepared to fight and die on land, air, and sea for their country."
+#	}
+#	text = {
+#		trigger = { NOT = { ICE = { has_idea = ICE_elite_forces } } }
+#		localization_key = "Troops specializing in amphibious warfare are growing ever more indispensable. Improvised methods and equipment become things of the past as our naval infantry is supported by specialized landing craft and training."
+#	}
+#}
+#defined_text = {
+#	name = ICE_Mountaineer
+#	
+#	text = {
+#		trigger = { ICE = { has_tech = ICE_elite_forces } }
+#			localization_key = "Elite Infantry"
+#		}
+#	text = {
+#		trigger = { NOT = { ICE = { has_idea = ICE_elite_forces } } }
+#		localization_key = "Mountaineers"
+#	}
+#}
+#defined_text = {
+#	name = ICE_Mountaineer_desc
+#	
+#	text = {
+#		trigger = { ICE = { has_idea = ICE_elite_forces } }
+#		localization_key = "Our elite infantry are superior to those in every other country. They are prepared to fight and die on land, air, and sea for their country."
+#	}
+#	text = {
+#		trigger = { NOT = { ICE = { has_idea = ICE_elite_forces } } }
+#		localization_key = "Combat in mountain ranges exposes troops to many perils, but sometimes cannot be avoided. Providing our soldiers with specialized training for this environment, we can minimize these risks."		
+#	}
+#}
+
+#### Quisling or Hjort
+defined_text = {
+	name = NOR_fascist_leader
+	
+	text = {
+		trigger = { NOR = { has_country_flag = NOR.hjort } }
+		localization_key = "Johan Hjort"
+	}
+	text = {
+		trigger = { NOT = { NOR = { has_country_flag = NOR.hjort } } }
+		localization_key = "Vidkun Quisling"
+	}
+}
+defined_text = {
+	name = NOR_fascist_leader_last
+	
+	text = {
+		trigger = { NOR = { has_country_flag = NOR.hjort } }
+		localization_key = "Hjort"
+	}
+	text = {
+		trigger = { NOT = { NOR = { has_country_flag = NOR.hjort } } }
+		localization_key = "Quisling"
+	}
+}
+
+
+###Swedish Democratic Party Name
+defined_text = {
+	name = SWE_conservatives_long
+	
+	text = {
+		trigger = {
+			has_start_date > 1935.1.1
+			has_start_date < 1938.1.1
+		}
+		localization_key = "Allmänna Valmansförbundet"
+	}
+	text = {
+		trigger = {
+			has_start_date > 1938.1.1
+		}
+		localization_key = "Högerns Riksorganisation"
+	}
+}
+#defined_text = {
+#	name = SWE_conservatives
+#	
+#	text = {
+#		trigger = {
+#			has_start_date > 1935.1.1
+#			has_start_date < 1938.1.1
+#		}
+#		localization_key = "AVF"
+#	}
+#	text = {
+#		trigger = {
+#			has_start_date > 1938.1.1
+#		}
+#		localization_key = "HR"
+#	}
+#}
+
+###Kalmar/Scandinavia
+defined_text = {
+	name = SCA_scandy_or_kaly
+	
+	text = {
+		trigger = {
+			original_tag = DEN
+			NOT = { has_government = communism }
+		}
+		localization_key = form_scandinavia_category_original
+	}
+	text = {
+		trigger = {
+			OR = {
+				NOT = { original_tag = DEN }
+				has_government = communism
+			}
+		}
+		localization_key = form_nordic_league_category
+	}
+}
+defined_text = {
+	name = SCA_scandy_or_kaly_desc
+	
+	text = {
+		trigger = {
+			original_tag = DEN
+			NOT = { has_government = communism }
+		}
+		localization_key = form_scandinavia_category_original_desc
+	}
+	text = {
+		trigger = {
+			OR = {
+				NOT = { original_tag = DEN }
+				has_government = communism
+			}
+		}
+		localization_key = form_nordic_league_category_desc
+	}
+}
+defined_text = {
+	name = SCA_scandy_or_kaly_2
+	
+	text = {
+		trigger = {
+			original_tag = DEN
+			NOT = { has_government = communism }
+		}
+		localization_key = form_scandinavia_category_original
+	}
+	text = {
+		trigger = {
+			OR = {
+				NOT = { original_tag = DEN }
+				has_government = communism
+			}
+		}
+		localization_key = form_nordic_league
+	}
+}
+	
+	
+	
+	
+	
+	
+	

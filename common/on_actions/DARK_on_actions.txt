@@ -1,0 +1,1188 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+			#Removing generated characters
+			every_possible_country = {
+				limit = {
+					OR = {
+						original_tag = LIB original_tag = ALG original_tag = DJI original_tag = ERI original_tag = KEN original_tag = MLW original_tag = MTA original_tag = SOM original_tag = SUD original_tag = ZAM original_tag = ZIM
+					}
+				}
+				every_character = {
+					limit = {
+						NOT = { has_character_flag = DARK_original_gangster }
+					}
+					retire = yes
+				}
+			}
+		
+			LIB = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = DARK_liberia_ai_behavior
+							option = RANDOM
+						}
+					}
+					random_list = {
+						20 = { LIB = { set_country_flag = LIB_AI_RANDOM_DEMOCRATIC } }
+						20 = { LIB = { set_country_flag = LIB_AI_RANDOM_ALONE_FASCIST } }
+						20 = { LIB = { set_country_flag = LIB_AI_RANDOM_RECONNECT_FASCIST } }
+						20 = { LIB = { set_country_flag = LIB_AI_RANDOM_ALONE_COMMUNIST } }
+						20 = { LIB = { set_country_flag = LIB_AI_RANDOM_RECONNECT_COMMUNIST } }
+					}
+				}
+			}
+			ETH = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = DARK_ethiopia_win_lose_behavior
+							option = LOSE_WAR
+						}						
+					}
+					ETH = { add_ideas = ETH_lose_war_idea }
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = DARK_ethiopia_win_lose_behavior
+							option = WIN_WAR
+						}						
+					}
+					ETH = { add_ideas = ETH_win_war_idea }
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = DARK_ethiopia_ai_behavior
+							option = RANDOM
+						}
+					}
+					random_list = {
+						20 = { ETH = { set_country_flag = ETH_AI_RANDOM_NONALIGNED } }
+						20 = { ETH = { set_country_flag = ETH_AI_RANDOM_DEMOCRATIC } }
+						20 = { ETH = { set_country_flag = ETH_AI_RANDOM_COMMUNIST } }
+						20 = { ETH = { set_country_flag = ETH_AI_RANDOM_FASCIST_SURRENDER } }
+						20 = { ETH = { set_country_flag = ETH_AI_RANDOM_FASCIST_AFTER } }
+					}
+				}
+			}
+			
+			ITA = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = DARK_new_italy_ai_behavior
+							option = RANDOM
+						}
+					}
+					random_list = {
+						25 = { ITA = { set_country_flag = NEW_ITA_AI_RANDOM_NONALIGNED } }
+						25 = { ITA = { set_country_flag = NEW_ITA_AI_RANDOM_DEMOCRATIC } }
+						25 = { ITA = { set_country_flag = NEW_ITA_AI_RANDOM_COMMUNIST } }
+						25 = { ITA = { set_country_flag = NEW_ITA_AI_RANDOM_FASCIST } }
+					}
+				}
+				
+				if = {
+					limit = {
+						has_start_date > 1936.01.01
+					}
+					promote_character = NEW_ITA_roberto_daprigliano
+					every_unit_leader = {
+						limit = { 
+							OR = {
+								is_character = ITA_pietro_badoglio #Unfascist
+								is_character = ITA_giovanni_messe #Unfascist
+								is_character = ITA_sebastiano_visconti_prasca #Unfascist
+								is_character = ITA_italo_balbo #Okay, he was really fascist, but politically he would never head towards death for no reason, only prominent fascist to oppose alliance with Germany/anti-jewish laws in Italy
+								is_character = ITA_inigo_campioni #Unfascist
+								is_character = ITA_alberto_da_zara #Unfascist
+								is_character = ITA_carlo_bergamini #Unfascist
+								is_character = ITA_angelo_iachino #Unfascist
+							}
+						}
+						set_unit_leader_flag = DARK_unfascist_leader
+					}
+					every_unit_leader = {
+						limit = { 
+							OR = {
+								is_character = ITA_emilio_de_bono #Fascist
+								is_character = ITA_ugo_cavallero #Fascist
+								is_character = ITA_ubaldo_soddu #Fascist
+								is_character = ITA_rodolfo_graziani #Fascist
+								is_character = ITA_giuseppe_fioravanzo #Almost all admirals were more loyalist (not fascist), including Giuseppe, but I needed somebody, and he seemed the most likely out of an unlikely bunch
+							}
+						}
+						set_unit_leader_flag = DARK_fascist_leader
+					}
+				}
+			}
+			
+			##Decolonization fixes
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = africa_colonization_status
+						option = AFRICA_DECOLONIZED
+					}
+				}
+				SUD = {
+					transfer_state = 551
+					transfer_state = 767
+				}
+				WES = {
+					transfer_state = 699
+				}
+				ALG = {
+					transfer_state = 514
+				}
+				SAF = {
+					add_state_core = 541
+				}
+				if = {
+					limit = { has_start_date > 1939.01.01 }
+					ETH = {
+						transfer_state = 836
+						transfer_state = 271
+						transfer_state = 837
+						
+						set_global_flag = DARK_end_of_ita_eth_war
+						complete_national_focus = ETH_triumph_in_africa						
+					}
+				}
+			}
+		}
+	}
+	
+	on_civil_war_end = {
+		effect = {
+			#End of Liberian Civil War
+			if = {
+				limit = {
+					FROM = {
+						original_tag = LIB
+					}
+					ROOT = {
+						original_tag = LIB
+						NOT = { has_government = democratic }
+					}
+				}
+				country_event = { id = DARK_lib.28 hours = 24 }
+			}
+			#End of Italian Civil War
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = ITA
+						NOT = { tag = ITA }
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = DARK_will_give_up_e
+					}
+					ETH = { 
+						transfer_state = 550
+						country_event = DARK_eth.39
+					}
+					country_event = DARK_eth.40
+					clr_country_flag = DARK_will_give_up_e
+					set_global_flag = DARK_end_of_ita_eth_war
+					news_event = { id = DARK_eth.101 hours = 24 }
+				}
+				if = {
+					limit = {
+						has_country_flag = DARK_will_give_up_s
+					}
+					ETH = { transfer_state = 559 }
+					clr_country_flag = DARK_will_give_up_s
+				}
+			}
+		}
+	}
+	
+	#ROOT is the winner, FROM is the loser.
+	on_peaceconference_ended = {
+		effect = { #Treaty of Belgrade
+			if = {
+				limit = {
+					ROOT = {
+						tag = ITA
+						is_subject = no
+						is_faction_leader = yes
+						has_completed_focus = NEW_ITA_split_yug
+						OR = {
+							is_in_faction_with = ALB
+							is_in_faction_with = AUS
+							is_in_faction_with = BUL
+							is_in_faction_with = GRE
+							is_in_faction_with = HUN
+						}
+						NOT = {
+							any_country = {
+								original_tag = YUG
+								is_in_faction_with = ITA
+							}
+						}
+					}
+					FROM = {
+						original_tag = YUG
+					}
+				}
+				ITA = { country_event = DARK_eth.72 }
+			}
+		}
+		effect = { #Italy Wins
+			if = {
+				limit = {
+					NOT = { has_global_flag = DARK_end_of_ita_eth_war }
+					NOT = { has_global_flag = war_over_ETH }
+					ROOT = {
+						tag = ITA
+					}
+					FROM = {
+						tag = ETH
+					}
+				}
+				set_global_flag = ETH_eth_lost_war
+			}
+		}
+		effect = { #If Ethiopia somehow wins completely
+			if = {
+				limit = {
+					NOT = { has_global_flag = ETH_eth_lost_war }
+					ROOT = {
+						tag = ETH
+					}
+					FROM = {
+						tag = ITA
+					}
+				}
+				set_global_flag = DARK_end_of_ita_eth_war
+			}
+		}
+	}
+	
+	#ROOT = nation being released, FROM = overlord
+	on_release_as_puppet = {
+		effect = {
+			#Ensuring that Britain doesn't release Egypt as larger than it should be
+			if = {
+				limit = {
+					ROOT = { tag = EGY }
+					FROM = { original_tag = ENG }
+					NOT = { country_exists = SUD }
+				}
+				FROM = {
+					transfer_state = 551
+					transfer_state = 767
+				}
+			}
+			
+			#LET'S GET THEM FLAGS CORRECT!
+			if = {
+				limit = {
+					FROM = { original_tag = ITA }
+				}
+				if = {
+					limit = {
+						ROOT = { tag = ERI }
+					}
+					ROOT = {
+						set_cosmetic_tag = ERI_ITALY
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = SOM }
+					}
+					ROOT = {
+						set_cosmetic_tag = SOM_ITALY
+					}
+				}		
+				else_if = {
+					limit = {
+						ROOT = { tag = ETH }
+					}
+					ROOT = {
+						set_cosmetic_tag = ETH_ITALY
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = LBA }
+					}
+					ROOT = {
+						set_cosmetic_tag = LBA_ITALY
+					}
+				}
+			}
+			
+			else_if = {
+				limit = {
+					ROOT = { 
+						OR = {
+							tag = DJI 
+							tag = SOM
+						}
+					}
+					FROM = { original_tag = FRA }
+					NOT = {
+						any_country = {
+							has_cosmetic_tag = SOM_FRENCH
+							has_cosmetic_tag = DJI_FRENCH
+						}
+					}
+				}
+				ROOT = {
+					set_cosmetic_tag = SOM_FRENCH
+				}
+			}
+			
+			else_if = {
+				limit = {					
+					FROM = { original_tag = ENG }
+				}
+				if = {
+					limit = {
+						ROOT = { tag = SOM }
+					}
+					ROOT = {
+						set_cosmetic_tag = SOM_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = SUD }
+					}
+					ROOT = {
+						set_cosmetic_tag = SUD_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = KEN }
+					}
+					ROOT = {
+						set_cosmetic_tag = KEN_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = BOT }
+					}
+					ROOT = {
+						set_cosmetic_tag = BOT_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = GHA }
+					}
+					ROOT = {
+						set_cosmetic_tag = GHA_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = SIE }
+					}
+					ROOT = {
+						set_cosmetic_tag = SIE_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = MLW }
+					}
+					ROOT = {
+						set_cosmetic_tag = MLW_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = NGA }
+					}
+					ROOT = {
+						set_cosmetic_tag = NGA_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = TZN }
+					}
+					ROOT = {
+						set_cosmetic_tag = TZN_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = GAM }
+					}
+					ROOT = {
+						set_cosmetic_tag = GAM_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = UGA }
+					}
+					ROOT = {
+						set_cosmetic_tag = UGA_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = ZAM }
+					}
+					ROOT = {
+						set_cosmetic_tag = ZAM_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = ZIM }
+					}
+					ROOT = {
+						set_cosmetic_tag = ZIM_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = MAD }
+					}
+					ROOT = {
+						set_cosmetic_tag = MAD_UK
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = NMB } }
+					ROOT = {
+						set_cosmetic_tag = NMB_UK
+					}
+				}
+			}
+			
+			else_if = {
+				limit = { FROM = { original_tag = FRA } }
+				if = {
+					limit = { ROOT = { tag = ALG } }
+					ROOT = {
+						set_cosmetic_tag = ALG_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = CMR } }
+					ROOT = {
+						set_cosmetic_tag = CMR_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = CAR } }
+					ROOT = {
+						set_cosmetic_tag = CAR_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = CHA } }
+					ROOT = {
+						set_cosmetic_tag = CHA_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = RCG } }
+					ROOT = {
+						set_cosmetic_tag = RCG_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = IVO } }
+					ROOT = {
+						set_cosmetic_tag = IVO_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = DAH } }
+					ROOT = {
+						set_cosmetic_tag = DAH_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = GAB } }
+					ROOT = {
+						set_cosmetic_tag = GAB_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = GNA } }
+					ROOT = {
+						set_cosmetic_tag = GNA_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = MOR } }
+					ROOT = {
+						set_cosmetic_tag = MOR_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = MLI } }
+					ROOT = {
+						set_cosmetic_tag = MLI_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = MRT } }
+					ROOT = {
+						set_cosmetic_tag = MRT_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = NGR } }
+					ROOT = {
+						set_cosmetic_tag = NGR_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = SEN } }
+					ROOT = {
+						set_cosmetic_tag = SEN_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = TOG } }
+					ROOT = {
+						set_cosmetic_tag = TOG_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = TUN } }
+					ROOT = {
+						set_cosmetic_tag = TUN_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = VOL } }
+					ROOT = {
+						set_cosmetic_tag = VOL_FRENCH
+					}
+				}
+			}
+			
+			else_if = {
+				limit = { FROM = { original_tag = BEL } }
+				if = {
+					limit = { ROOT = { tag = BRD } }
+					ROOT = {
+						set_cosmetic_tag = BRD_BELGIAN
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = RWA } }
+					ROOT = {
+						set_cosmetic_tag = RWA_BELGIAN
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = COG } }
+					ROOT = {
+						set_cosmetic_tag = COG_BELGIAN
+					}
+				}
+			}
+			
+			else_if = {
+				limit = { FROM = { original_tag = POR } }
+				if = {
+					limit = { ROOT = { tag = ANG } }
+					ROOT = {
+						set_cosmetic_tag = ANG_PORT
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = GNB } }
+					ROOT = {
+						set_cosmetic_tag = GNB_PORT
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = MZB } }
+					ROOT = {
+						set_cosmetic_tag = MZB_PORT
+					}
+				}
+			}
+			
+			else_if = {
+				limit = { FROM = { original_tag = SPR } }
+				if = {
+					limit = { ROOT = { tag = EQG } }
+					ROOT = {
+						set_cosmetic_tag = EQG_SPAIN
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = WES } }
+					ROOT = {
+						set_cosmetic_tag = WES_SPAIN
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = MOR } }
+					ROOT = {
+						set_cosmetic_tag = MOR_SPAIN
+					}
+				}
+			}
+		}
+	}
+	#ROOT is free nation FROM is releaser
+	on_release_as_free = {
+		effect = {			
+			#Ensuring that Britain doesn't release Egypt as larger than it should be
+			if = {
+				limit = {
+					ROOT = { tag = EGY }
+					FROM = { original_tag = ENG }
+					NOT = { country_exists = SUD }
+				}
+				FROM = {
+					transfer_state = 551
+					transfer_state = 767
+				}
+			}
+			
+			if = {
+				limit = {
+					OR = { 
+						has_cosmetic_tag = ERI_ITALY
+						has_cosmetic_tag = ETH_ITALY
+						has_cosmetic_tag = SOM_ITALY
+						has_cosmetic_tag = LBA_ITALY
+						has_cosmetic_tag = SOM_UK
+						has_cosmetic_tag = SUD_UK
+						has_cosmetic_tag = KEN_UK
+						has_cosmetic_tag = BOT_UK
+						has_cosmetic_tag = GHA_UK
+						has_cosmetic_tag = SIE_UK
+						has_cosmetic_tag = MLW_UK
+						has_cosmetic_tag = NGA_UK
+						has_cosmetic_tag = TZN_UK
+						has_cosmetic_tag = GAM_UK
+						has_cosmetic_tag = UGA_UK
+						has_cosmetic_tag = ZAM_UK
+						has_cosmetic_tag = ZIM_UK
+						has_cosmetic_tag = MAD_UK
+						has_cosmetic_tag = NMB_UK
+						has_cosmetic_tag = SOM_FRENCH
+						has_cosmetic_tag = ALG_FRENCH
+						has_cosmetic_tag = CMR_FRENCH
+						has_cosmetic_tag = CAR_FRENCH
+						has_cosmetic_tag = CHA_FRENCH
+						has_cosmetic_tag = RCG_FRENCH
+						has_cosmetic_tag = IVO_FRENCH
+						has_cosmetic_tag = DAH_FRENCH
+						has_cosmetic_tag = GAB_FRENCH
+						has_cosmetic_tag = GNA_FRENCH
+						has_cosmetic_tag = MOR_FRENCH
+						has_cosmetic_tag = MLI_FRENCH
+						has_cosmetic_tag = MRT_FRENCH
+						has_cosmetic_tag = NGR_FRENCH
+						has_cosmetic_tag = SEN_FRENCH
+						has_cosmetic_tag = TOG_FRENCH
+						has_cosmetic_tag = TUN_FRENCH
+						has_cosmetic_tag = VOL_FRENCH
+						has_cosmetic_tag = BRD_BELGIAN
+						has_cosmetic_tag = RWA_BELGIAN
+						has_cosmetic_tag = COG_BELGIAN
+						has_cosmetic_tag = ANG_PORT
+						has_cosmetic_tag = GNB_PORT
+						has_cosmetic_tag = MZB_PORT
+						has_cosmetic_tag = EQG_SPAIN
+						has_cosmetic_tag = WES_SPAIN
+						has_cosmetic_tag = MOR_SPAIN
+					}
+				}
+				drop_cosmetic_tag = yes
+			}			
+		}
+	}	
+	
+	#ROOT is subject FROM is previous overlord
+	on_subject_free = {
+		effect = {
+			if = {
+				limit = {
+					OR = { 
+						has_cosmetic_tag = ERI_ITALY
+						has_cosmetic_tag = ETH_ITALY
+						has_cosmetic_tag = SOM_ITALY
+						has_cosmetic_tag = LBA_ITALY
+						has_cosmetic_tag = SOM_UK
+						has_cosmetic_tag = SUD_UK
+						has_cosmetic_tag = KEN_UK
+						has_cosmetic_tag = BOT_UK
+						has_cosmetic_tag = GHA_UK
+						has_cosmetic_tag = SIE_UK
+						has_cosmetic_tag = MLW_UK
+						has_cosmetic_tag = NGA_UK
+						has_cosmetic_tag = TZN_UK
+						has_cosmetic_tag = GAM_UK
+						has_cosmetic_tag = UGA_UK
+						has_cosmetic_tag = ZAM_UK
+						has_cosmetic_tag = ZIM_UK
+						has_cosmetic_tag = MAD_UK
+						has_cosmetic_tag = NMB_UK
+						has_cosmetic_tag = SOM_FRENCH
+						has_cosmetic_tag = ALG_FRENCH
+						has_cosmetic_tag = CMR_FRENCH
+						has_cosmetic_tag = CAR_FRENCH
+						has_cosmetic_tag = CHA_FRENCH
+						has_cosmetic_tag = RCG_FRENCH
+						has_cosmetic_tag = IVO_FRENCH
+						has_cosmetic_tag = DAH_FRENCH
+						has_cosmetic_tag = GAB_FRENCH
+						has_cosmetic_tag = GNA_FRENCH
+						has_cosmetic_tag = MOR_FRENCH
+						has_cosmetic_tag = MLI_FRENCH
+						has_cosmetic_tag = MRT_FRENCH
+						has_cosmetic_tag = NGR_FRENCH
+						has_cosmetic_tag = SEN_FRENCH
+						has_cosmetic_tag = TOG_FRENCH
+						has_cosmetic_tag = TUN_FRENCH
+						has_cosmetic_tag = VOL_FRENCH
+						has_cosmetic_tag = BRD_BELGIAN
+						has_cosmetic_tag = RWA_BELGIAN
+						has_cosmetic_tag = COG_BELGIAN
+						has_cosmetic_tag = ANG_PORT
+						has_cosmetic_tag = GNB_PORT
+						has_cosmetic_tag = MZB_PORT
+						has_cosmetic_tag = EQG_SPAIN
+						has_cosmetic_tag = WES_SPAIN
+						has_cosmetic_tag = MOR_SPAIN
+					}
+				}
+				drop_cosmetic_tag = yes
+			}
+		}
+	}
+	
+	#used when puppeting in a peace conference
+	#ROOT = nation being puppeted, FROM = overlord
+	on_puppet = {
+		effect = {
+			if = {
+				limit = {
+					FROM = { original_tag = ITA }
+				}
+				if = {
+					limit = {
+						ROOT = { tag = ERI }
+					}
+					ROOT = {
+						set_cosmetic_tag = ERI_ITALY
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = SOM }
+					}
+					ROOT = {
+						set_cosmetic_tag = SOM_ITALY
+					}
+				}		
+				else_if = {
+					limit = {
+						ROOT = { tag = ETH }
+					}
+					ROOT = {
+						set_cosmetic_tag = ETH_ITALY
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = LBA }
+					}
+					ROOT = {
+						set_cosmetic_tag = LBA_ITALY
+					}
+				}
+			}
+			
+			#Weird special case
+			else_if = {
+				limit = {
+					ROOT = { 
+						OR = {
+							tag = DJI 
+							tag = SOM
+						}
+					}
+					FROM = { original_tag = FRA }
+					NOT = {
+						any_country = {
+							has_cosmetic_tag = SOM_FRENCH
+							has_cosmetic_tag = DJI_FRENCH
+						}
+					}
+				}
+				ROOT = {
+					set_cosmetic_tag = SOM_FRENCH
+				}
+			}
+			
+			else_if = {
+				limit = {					
+					FROM = { original_tag = ENG }
+				}
+				if = {
+					limit = {
+						ROOT = { tag = SOM }
+					}
+					ROOT = {
+						set_cosmetic_tag = SOM_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = SUD }
+					}
+					ROOT = {
+						set_cosmetic_tag = SUD_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = KEN }
+					}
+					ROOT = {
+						set_cosmetic_tag = KEN_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = BOT }
+					}
+					ROOT = {
+						set_cosmetic_tag = BOT_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = GHA }
+					}
+					ROOT = {
+						set_cosmetic_tag = GHA_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = SIE }
+					}
+					ROOT = {
+						set_cosmetic_tag = SIE_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = MLW }
+					}
+					ROOT = {
+						set_cosmetic_tag = MLW_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = NGA }
+					}
+					ROOT = {
+						set_cosmetic_tag = NGA_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = TZN }
+					}
+					ROOT = {
+						set_cosmetic_tag = TZN_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = GAM }
+					}
+					ROOT = {
+						set_cosmetic_tag = GAM_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = UGA }
+					}
+					ROOT = {
+						set_cosmetic_tag = UGA_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = ZAM }
+					}
+					ROOT = {
+						set_cosmetic_tag = ZAM_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = ZIM }
+					}
+					ROOT = {
+						set_cosmetic_tag = ZIM_UK
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = MAD }
+					}
+					ROOT = {
+						set_cosmetic_tag = MAD_UK
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = NMB } }
+					ROOT = {
+						set_cosmetic_tag = NMB_UK
+					}
+				}
+			}
+			
+			else_if = {
+				limit = { FROM = { original_tag = FRA } }
+				if = {
+					limit = { ROOT = { tag = ALG } }
+					ROOT = {
+						set_cosmetic_tag = ALG_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = CMR } }
+					ROOT = {
+						set_cosmetic_tag = CMR_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = CAR } }
+					ROOT = {
+						set_cosmetic_tag = CAR_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = CHA } }
+					ROOT = {
+						set_cosmetic_tag = CHA_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = RCG } }
+					ROOT = {
+						set_cosmetic_tag = RCG_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = IVO } }
+					ROOT = {
+						set_cosmetic_tag = IVO_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = DAH } }
+					ROOT = {
+						set_cosmetic_tag = DAH_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = GAB } }
+					ROOT = {
+						set_cosmetic_tag = GAB_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = GNA } }
+					ROOT = {
+						set_cosmetic_tag = GNA_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = MOR } }
+					ROOT = {
+						set_cosmetic_tag = MOR_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = MLI } }
+					ROOT = {
+						set_cosmetic_tag = MLI_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = MRT } }
+					ROOT = {
+						set_cosmetic_tag = MRT_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = NGR } }
+					ROOT = {
+						set_cosmetic_tag = NGR_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = SEN } }
+					ROOT = {
+						set_cosmetic_tag = SEN_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = TOG } }
+					ROOT = {
+						set_cosmetic_tag = TOG_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = TUN } }
+					ROOT = {
+						set_cosmetic_tag = TUN_FRENCH
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = VOL } }
+					ROOT = {
+						set_cosmetic_tag = VOL_FRENCH
+					}
+				}
+			}
+			
+			else_if = {
+				limit = { FROM = { original_tag = BEL } }
+				if = {
+					limit = { ROOT = { tag = BRD } }
+					ROOT = {
+						set_cosmetic_tag = BRD_BELGIAN
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = RWA } }
+					ROOT = {
+						set_cosmetic_tag = RWA_BELGIAN
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = COG } }
+					ROOT = {
+						set_cosmetic_tag = COG_BELGIAN
+					}
+				}
+			}
+			
+			else_if = {
+				limit = { FROM = { original_tag = POR } }
+				if = {
+					limit = { ROOT = { tag = ANG } }
+					ROOT = {
+						set_cosmetic_tag = ANG_PORT
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = GNB } }
+					ROOT = {
+						set_cosmetic_tag = GNB_PORT
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = MZB } }
+					ROOT = {
+						set_cosmetic_tag = MZB_PORT
+					}
+				}
+			}
+			
+			else_if = {
+				limit = { FROM = { original_tag = SPR } }
+				if = {
+					limit = { ROOT = { tag = EQG } }
+					ROOT = {
+						set_cosmetic_tag = EQG_SPAIN
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = WES } }
+					ROOT = {
+						set_cosmetic_tag = WES_SPAIN
+					}
+				}
+				else_if = {
+					limit = { ROOT = { tag = MOR } }
+					ROOT = {
+						set_cosmetic_tag = MOR_SPAIN
+					}
+				}
+			}
+			
+		}
+	}
+
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = { tag = EGY }
+					FROM = { tag = ENG }
+					NOT = { EGY = { has_war_with = ENG } }
+					FROM.FROM = { state = 767 }
+					NOT = { country_exists = SUD }
+					ENG = { has_completed_focus = ENG_self_government_for_the_middle_east }
+					NOT = { ENG = { has_country_flag = DARK_freegypt2 } }
+				}
+				ENG = {
+					transfer_state = 767
+					
+					if = {
+						limit = { has_country_flag = DARK_freegypt }
+						set_country_flag = DARK_freegypt2
+						clr_country_flag = DARK_freegypt
+						
+						else = {
+							set_country_flag = DARK_freegypt
+						}
+					}					
+				}
+			}
+			else_if = {
+				limit = {
+					ROOT = { tag = EGY }
+					FROM = { tag = ENG }
+					NOT = { EGY = { has_war_with = ENG } }
+					FROM.FROM = { state = 551 }
+					NOT = { country_exists = SUD }
+					ENG = { has_completed_focus = ENG_self_government_for_the_middle_east }
+					NOT = { ENG = { has_country_flag = DARK_freegypt2 } }
+				}
+				ENG = {
+					transfer_state = 551
+					
+					if = {
+						limit = { has_country_flag = DARK_freegypt }
+						set_country_flag = DARK_freegypt2
+						clr_country_flag = DARK_freegypt
+						
+						else = {
+							set_country_flag = DARK_freegypt
+						}
+					}
+				}
+			}
+		}
+	}
+}

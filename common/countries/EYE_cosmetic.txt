@@ -1,0 +1,17 @@
+#EYE
+SWI_alamannia = {
+	color = rgb { 0 153 0 }
+	color_ui = rgb { 0 197 146 }
+}
+AUS_greater_germany = {
+	color = rgb { 75 130 135 }
+	color_ui = rgb { 17 16 203 }
+}
+PLC_UNIFIED_HABSBURG = {
+	color = rgb { 255 125 160 }
+	color_ui = rgb { 255 125 160 }
+}
+MAC_ALEX_EMPIRE = {
+	color = rgb { 12 97 92 }
+	color_ui = rgb { 12 97 92 }
+}

@@ -1,0 +1,57 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Kongelige Norske Marine"			
+		naval_base = 9296 # Kristiansand
+		task_force = {				
+			name = "1. Sjøforsvarsdistrikt"				
+			location =  9296 # Kristiansand
+			ship = { name = "HNoMS Harald Haarfagre" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = NOR } } }				
+			ship = { name = "HNoMS Tordenskjold" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = NOR } } }				
+			ship = { name = "HNoMS Olav Tryggvason" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = NOR } } }
+			# 1st Submarine Detachment
+			ship = { name = "HNoMS A2" definition = submarine equipment = { submarine_1 = { amount = 1 owner = NOR } } }
+			ship = { name = "HNoMS A3" definition = submarine equipment = { submarine_1 = { amount = 1 owner = NOR } } }
+			ship = { name = "HNoMS A4" definition = submarine equipment = { submarine_1 = { amount = 1 owner = NOR } } }
+			# 2nd Submarine Detachment
+			ship = { name = "HNoMS B2" definition = submarine equipment = { submarine_1 = { amount = 1 owner = NOR } } }
+			ship = { name = "HNoMS B4" definition = submarine equipment = { submarine_1 = { amount = 1 owner = NOR } } }
+			ship = { name = "HNoMS B5" definition = submarine equipment = { submarine_1 = { amount = 1 owner = NOR } } }
+		}					
+		task_force = {					
+			name = "2. Sjøforsvarsdistrikt"				
+			location =  122 # Bergen
+			ship = { name = "HNoMS Draug" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = NOR } } }
+			ship = { name = "HNoMS Troll" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = NOR } } }
+			ship = { name = "HNoMS Garm" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = NOR } } }
+		
+			ship = { name = "HNoMS Snøgg" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = NOR } } }
+			ship = { name = "HNoMS Stegg" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = NOR } } }
+		}					
+		task_force = {					
+			name = "3. Sjøforsvarsdistrikt"				
+			location =  11050 # Tromso
+			ship = { name = "HNoMS Eidsvold" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = NOR } } }				
+			ship = { name = "HNoMS Norge" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = NOR } } }				
+			ship = { name = "HNoMS Heimdal" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = NOR } } }
+			ship = { name = "HNoMS Trygg" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = NOR } } }
+			# Submarine Detachment
+			ship = { name = "HNoMS B1" definition = submarine equipment = { submarine_1 = { amount = 1 owner = NOR } } }
+			ship = { name = "HNoMS B3" definition = submarine equipment = { submarine_1 = { amount = 1 owner = NOR } } }
+			ship = { name = "HNoMS B6" definition = submarine equipment = { submarine_1 = { amount = 1 owner = NOR } } }
+		}					
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = destroyer_2
+			creator = "NOR"
+		}
+		requested_factories = 1
+		progress = 0.75
+		amount = 1
+	}
+}

@@ -1,0 +1,137 @@
+﻿##### SWEDEN NAME LISTS #####
+### REGULAR DESTROYER NAMES###
+SWE_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+
+	for_countries = { SWE }
+
+	type = ship
+	ship_types = { ship_hull_light destroyer DEN_ship_hull_fishery_protection SCA_ship_hull_gunboats }			
+
+	prefix = "HSwMS "
+	fallback_name = "Jagare %d"					
+
+	unique = {
+		"Örnen" "Jacob Bagge" "Klas Horn" "Klas Uggla" "Ehrensköld" "Nordenskjöld" "Göteborg" 
+		"Plisander" "Puke" "Romulus" "Remus" "Halland" "Småland" "Östergötland" "Södermanland" 
+		"Gästrikland" "Hälsingland" "Öland" "Uppland" "Visby" "Sundsvall" "Hälsingborg" "Kalmar" 
+		"Stockholm" "Malmö" "Karlskrona" "Gävle" "Wrangel" "Wachtmeister" "Mode" "Magne" "Mjölner" 
+		"Munin" "Ragnar" "Sigurd" "Vidar" "Hugin" "Wale" 
+	}
+}
+
+### LIGHT CRUISER NAMES###
+SWE_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+
+	for_countries = { SWE }
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	
+	prefix = "HSwMS "
+	fallback_name = "Lätt Kryśsare %d"
+
+	unique = {
+		"Gotland" "Fylgia" "Klas Horn" "Klas Uggla" "Psilander" "Göta Lejon" "Tre Kronor" 
+		"Clas Fleming" "Kalmar" "Västervik" "Gävle" "Malmö" "Halmstad" "Karlskrona" "Sundsvall" 
+		"Luleå" "Umeå" "Härnösand" "Hudiksvall" "Uddevalla" "Helsingborg" "Varberg" "Norrköping" 
+		"Söderköping" "Älg" "Älvsnabben"
+	}
+}
+
+### HEAVY CRUISER NAMES###
+SWE_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+
+	for_countries = { SWE }
+
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	prefix = "HSwMS "
+	fallback_name = "Tung Kryśsare %d"
+
+	unique = {
+		"Dristigheten" "Sverige" "Drottning Victoria" "Gustav V" "Äran" "Tapperheten" "Wasa" 
+		"Manligheten" "Oscar II" "Klas Fleming" "Hans Wachtmeister" "Älvsnabben" "Starkodder" 
+		"Styrbiörn" "Gotland" "Svealand" "Götaland" "Norrland" "Oden" "Thor" "Niord" "Svea" "Göta" 
+		"Thule" "Schwyz" "Svearike" "Ruotsi"
+	}
+}
+
+
+### BATTLESHIP NAMES ###
+SWE_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+
+	for_countries = { SWE }
+
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	
+	prefix = "HSwMS "
+	fallback_name = "Slagskepp %d"		
+
+	unique = {
+		"Oden" "Stockholm" "Freyr" "Karl XIV Johann" "Gustav II Adolf" "Fenrir" "Karl XII" "Karl XI" 
+		"Gustav III" "Thor"
+		"Jörmungandr" "Ragnarok" "Kraken" "Lindormen" #Previously SHBB only
+	}
+}
+
+### BATTLECRUISER NAMES ###
+SWE_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { SWE }
+
+	type = ship
+	ship_types = { ship_hull_heavy battle_cruiser }
+	
+	prefix = "HSwMS "
+	fallback_name = "Stridsskepp %d"		
+
+	unique = {
+		"Gustav II Adolf" "Karl XII" "Karl XI" "Gustav III" "Gustav Vasa" 
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+SWE_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+
+	for_countries = { SWE }
+
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	
+	prefix = "HSwMS "
+	fallback_name = "Hangarfartyg %d"	
+
+	unique = {
+		"Gustav II" "Riksäpplet" "Spiran" "Dristigheten" "Jacob Bagge" "Carolus XII" "Gustav I"
+		"Christina"
+	}
+}
+
+### SUBMARINES ###
+SWE_SS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SUBMARINES
+
+	for_countries = { SWE }
+
+	type = ship
+	ship_types = { ship_hull_submarine submarine SCA_ship_hull_gunboats }
+	
+	prefix = "HSwMS "
+	fallback_name = "Ubåt %d"
+	
+	unique = {
+		"Hajen" "Sälen" "Valrossen" "Bävern" "Illern" "Uttern" "Valen" "Draken" "Gripen" "Ulven" 
+		"Delfinen" "Nordkaparen" "Springaren" "Sjölejonet" "Sjöbjörnen" "Sjöhunden" "Svärdfisken" 
+		"Tumlaren" "Dykaren" "Sjöhästen" "Sjöormen" "Sjöborren" "Neptun" "Najad" "Näcken" "U1" "U2" 
+		"U3" "U4" "U5" "U6" "U7" "U8" "U9" "Vargen" "Forellen" "Aborren" "Siken" "Gäddan" "Laxen" 
+		"Makrillen" 
+	}
+}

@@ -1,0 +1,35 @@
+#Fascists
+20000 - Wilhelm Gustloff
+20001 - Rolf Henne
+
+#Communists
+21000 - Fritz Platten
+21001 - Leon Nicole
+21002 - Fritz Platten (Strongman)
+21003 - Leon Nicole (Strongman)
+
+#Non-Aligned
+21010 - Otto Von Hapsburg
+21011 - Otto Von Hapsburg (Restorative Kaiser)
+21012 - Carl V Wilhelm [Of Hungary]
+21013 - Kurt Schuschnigg (Dictator)
+21014 - Karol Olbracht Habsburg (Pole Lover)
+21015 - Vasyl Vyshyvani Habsburg (Red Prince)
+21016 - Johann Graf von Meran
+21017 - Johann Graf von Habsburg (Likes Austria)
+21018 - Josef Franz Habsburg
+21019 - Leopold von Habsburg
+21020 - María Josepha Sophia de Iturbide
+
+#Military Leaders
+22000 - Henry Guisan (Corps Commander)
+22001 - Jules Borel (Corps Commander)
+22002 - Henry Guisan (General)
+22003 - Jules Borel (General)
+22004 - Ulrich Wille Jr.
+
+22010 - Wilhelm Zehner
+22011 - Theodor Haselmayr
+22012 - Anton Kienbauer
+22013 - Rudolf Scheffarz
+22014 - Eduard Barger

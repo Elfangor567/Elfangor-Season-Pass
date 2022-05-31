@@ -1,0 +1,445 @@
+﻿add_namespace = SCA_iceland
+
+country_event = { # Invasion of Iceland
+	id = SCA_iceland.1
+	title = SCA_iceland.1.t
+	desc = SCA_iceland.1.desc
+	picture = GFX_report_event_britain_invades_iceland
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = fall_of_denmark
+		ENG = { has_war_with = GER }
+		ENG = { # No Sea Lion
+			controls_state = 127
+			controls_state = 123
+			controls_state = 126
+			controls_state = 338
+			controls_state = 125
+			controls_state = 129
+			controls_state = 128
+			controls_state = 122
+			controls_state = 132
+			controls_state = 130
+			controls_state = 131
+			controls_state = 121
+			controls_state = 133
+			controls_state = 136
+			controls_state = 120
+		}
+		ICE = { is_subject_of = DEN }
+		ICE = { owns_state = 100 controls_state = 100 }
+		ICE = { has_war = no }
+		tag = ENG
+	}
+	
+	option = {
+		name = SCA_iceland.1.a
+		ICE = { country_event = SCA_iceland.2 }
+	}
+	
+	option = {
+		name = SCA_iceland.1.b
+	}
+}
+	country_event = {
+		id = SCA_iceland.2
+		title = SCA_iceland.2.t
+		desc = SCA_iceland.2.desc
+		picture = GFX_report_event_britain_invades_iceland
+	
+		is_triggered_only = yes
+		
+		option = { # We comply
+			name = SCA_iceland.2.a
+			ai_chance = {
+				factor = 40 # We cannot fight Britain
+				modifier = {
+					factor = 0
+					has_army_manpower = { size > 100000 } # We can fight!
+				}
+			}
+			give_military_access = ENG
+			ENG = { EXP_receive_docking_rights = yes }
+			ENG = { give_guarantee = ICE }
+			diplomatic_relation = { country = ENG relation = non_aggression_pact }
+		}
+		
+		option = { # NEVER
+			name = SCA_iceland.2.b
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 10
+					OR = {
+						has_government = fascism
+						has_government = communism
+					}
+				}
+				modifier = {
+					factor = 0
+					is_historical_focus_on = yes
+				}
+			}
+			add_political_power = -250
+			if = {
+				limit = { is_subject_of = DEN }
+				set_autonomy = {
+					target = ICE
+					autonomy_state = autonomy_free
+				}
+			}	
+				
+			ENG = {
+				declare_war_on = {
+					target = ICE
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+	}
+	
+country_event = { # Guarantees
+	id = SCA_iceland.3
+	title = SCA_iceland.3.t
+	desc = SCA_iceland.3.desc
+	
+	picture = GFX_report_event_generic_parliament
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SCA_iceland.3.a
+		#custom_effect_tooltip = SCA_iceland.3.a.tt
+		set_party_name = { ideology = democratic long_name = "Sjálfstæðisflokkurinn" name = "Sjálfstæðisflokkurinn" }
+		promote_character = {
+			character = ICE_hermann_jonasson
+			ideology = socialism
+		}
+		
+		set_party_name = { ideology = neutrality long_name = "Bændaflokkur" name = "Bændaflokkur" }
+		promote_character = ICE_tryggvi_borhallsson
+		
+		effect_tooltip = {
+			set_politics = { 
+				ruling_party = neutrality
+				elections_allowed = yes
+			}
+		}
+		hidden_effect = {
+			set_politics = {
+				ruling_party = democratic
+				election_frequency = 48
+				elections_allowed = yes
+			}
+		}
+	}
+}
+
+country_event = { #USSR asked about volunteers for Iceland
+	id = SCA_iceland.4
+	title = SCA_iceland.4.t
+	desc = SCA_iceland.4.desc	
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	is_triggered_only = yes
+	
+	option = { # Send 'em all
+		name = SCA_iceland.4.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_manpower > 1000000 # Men to spare
+			}
+		}
+		effect_tooltip = { add_manpower = -300000 }
+		hidden_effect = {
+			SOV = {
+				add_manpower = -300000
+			}
+			ICE = {
+				add_manpower = 300000
+				country_event = SCA_iceland.5
+			}
+		}			
+	}
+	option = { # We can spare some
+		name = SCA_iceland.4.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				AND = {
+					has_manpower > 500000
+					has_manpower < 1000000
+				}
+			}
+		}
+		effect_tooltip = { add_manpower = -100000 }
+		hidden_effect = {
+			SOV = {
+				add_manpower = -100000
+			}
+			ICE = {
+				add_manpower = 100000
+				country_event = SCA_iceland.6
+			}
+		}
+	}
+	option = { # Sadly we cannot afford to at this time, some may go by choice but it won't be many
+		name = SCA_iceland.4.c
+		ai_chance = {
+			factor = 0
+			modifier = {
+				add = 10
+				has_manpower < 500000
+			}
+		}
+		effect_tooltip = { add_manpower = -10000 }
+		hidden_effect = {
+			SOV = {
+				add_manpower = -10000
+			}
+			ICE = {
+				add_manpower = 10000
+				country_event = SCA_iceland.7
+			}
+		}
+	}
+}
+	country_event = {
+		id = SCA_iceland.5
+		title = SCA_iceland.5.t
+		desc = SCA_iceland.5.desc
+		
+		picture = GFX_report_event_spain_civil_war_volunteers_02
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_iceland.5.a
+		}
+	}
+	country_event = {
+		id = SCA_iceland.6
+		title = SCA_iceland.6.t
+		desc = SCA_iceland.6.desc
+		
+		picture = GFX_report_event_spain_civil_war_volunteers_02
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_iceland.6.a
+		}
+	}
+	country_event = {
+		id = SCA_iceland.7
+		title = SCA_iceland.7.t
+		desc = SCA_iceland.7.desc
+		
+		picture = GFX_report_event_spain_civil_war_volunteers_02
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = SCA_iceland.7.a
+		}
+	}
+	
+country_event = {
+	id = SCA_iceland.81
+	title = SCA_iceland.8.t
+	desc = SCA_iceland.8.desc
+	
+	picture = GFX_report_event_generic_parliament
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ICE
+		has_government = fascism
+		NOT = { has_completed_focus = ICE_abolish_althing }
+	}
+	
+	option = {
+		name = SCA_iceland.8.a
+		add_popularity = { ideology = fascism popularity = 0.1 }
+		if = {
+			limit = { NOT = { has_government = fascism } }
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+		}
+		add_timed_idea = {
+			idea = ICE_internal_conflicts
+			days = 180
+		}
+	}
+}
+country_event = {
+	id = SCA_iceland.8
+	title = SCA_iceland.8.t
+	desc = SCA_iceland.8.desc
+	
+	picture = GFX_report_event_generic_parliament
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = SCA_iceland.8.a
+		add_popularity = { ideology = fascism popularity = 0.1 }
+		if = {
+			limit = { NOT = { has_government = fascism } }
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+		}
+		add_timed_idea = {
+			idea = ICE_internal_conflicts
+			days = 180
+		}
+	}
+}
+
+country_event = {
+	id = SCA_iceland.9
+	title SCA_iceland.9.t
+	desc = SCA_iceland.9.desc
+	
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	is_triggered_only = yes
+	
+	option = { #Mix Doctrine
+		name = SCA_iceland.9.a
+		add_doctrine_cost_reduction = {
+			name = ICE_combined_arms
+			cost_reduction = 0.5
+			uses = 2
+			category = naval_doctrine
+		}
+		add_doctrine_cost_reduction = {
+			name = ICE_combined_arms
+			cost_reduction = 0.5
+			uses = 2
+			category = air_doctrine
+		}
+	}
+	option = { #Naval Supremacy
+		name = SCA_iceland.9.a
+		add_doctrine_cost_reduction = {
+			name = ICE_naval_supremacy
+			cost_reduction = 0.5
+			uses = 4
+			category = naval_doctrine
+		}
+	}
+}
+
+
+### Icelandic Neutrality After the Fall of Denmark
+
+news_event = {
+	id = SCA_iceland.100
+	title = SCA_iceland.100.t
+	desc = SCA_iceland.100.desc
+	picture = GFX_news_event_german_soldiers
+	
+	fire_only_once = yes
+	major = no
+	
+	trigger = {
+		has_global_flag = fall_of_denmark
+		is_subject_of = DEN
+		tag = ICE
+		has_war = no
+	}
+	
+	option = { #Neutrality
+		name = SCA_iceland.100.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.01
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+		}
+	}
+	
+	option = { #To War
+		name = SCA_iceland.100.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				AND = {
+					is_historical_focus_on = yes
+				}
+			}
+		}
+		add_stability = -0.15
+		add_war_support = 0.05
+		remove_ideas = ICE_icelandic_neutrality
+		remove_ideas = ICE_icelandic_neutrality2
+	}
+}
+
+#Iceland Flips Sides to Join Germany
+news_event = {
+	id = SCA_iceland.101
+	title = SCA_iceland.101.t
+	desc = SCA_iceland.101.desc
+	picture = GFX_news_event_german_soldiers
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	option = { #German Allies
+		name = SCA_iceland.101.a
+		trigger = {
+			OR = {
+				is_in_faction_with = GER
+				AND = {
+					JAP = { has_government = fascism }
+					NOT = { JAP = { has_war_with = GER } }
+					is_in_faction_with = JAP
+				}
+			}
+		}
+	}
+	
+	option = { #German Enemies
+		name = SCA_iceland.101.b
+		trigger = {
+			has_war_with = GER
+		}
+	}
+	
+	option = { #Non-Combatents
+		name = SCA_iceland.101.c
+		trigger = {
+			NOT = { has_war_with = GER }
+			NOT = { is_in_faction_with = GER }
+			NOT = {
+				AND = {
+					JAP = { has_government = fascism }
+					NOT = { JAP = { has_war_with = GER } }
+					is_in_faction_with = JAP
+				}
+			}
+		}
+	}
+}
+					
+					
+		

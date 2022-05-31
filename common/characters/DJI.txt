@@ -1,0 +1,520 @@
+characters={
+#Country Leaders
+	DJI_mahmoud_harbi_farah={
+		name=DJI_mahmoud_harbi_farah
+		portraits={
+			civilian={
+				large="gfx/leaders/SAF/Portrait_South_Africa_Political_Leader_Generic.dds"
+			}
+		}
+		country_leader={
+			ideology=neutral_socialism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	DJI_mohamed_kamil_mohamed={
+		name=DJI_mohamed_kamil_mohamed
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/portrait_africa_generic_land_6.dds"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	DJI_hassan_gouled_aptidon={
+		name=DJI_hassan_gouled_aptidon
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_1.dds"
+			}
+		}
+		country_leader={
+			ideology=anti_revisionism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	DJI_hummad_bin_muhammad_bin_arbahim={
+		name=DJI_hummad_bin_muhammad_bin_arbahim
+		portraits={
+			civilian={
+				large="gfx/leaders/LEB/Portrait_Arabia_Generic_land_2.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+#Generals and Admirals
+	
+#Chiefs of Staff
+	DJI_osman_houffaneh={ #A leader of the FLCS (Liberation Front of the Somali Coast)
+		name=DJI_osman_houffaneh
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_4"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = DJI_osman_houffaneh
+			allowed = {
+				original_tag = DJI
+			}
+			traits = { army_chief_offensive_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	DJI_djama_moussa={ #Former Sailor, Djibouti representative/senator
+		name=DJI_djama_moussa
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_2"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = DJI_djama_moussa
+			allowed = {
+				original_tag = DJI
+			}
+			traits = { navy_chief_maneuver_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	DJI_hanfare_hassan={ #One of the founders of Club Somali et Dankali, violent anti-colonialist
+		name=DJI_hanfare_hassan
+		portraits={
+			army={
+				small="GFX_idea_generic_air_arab_1"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = DJI_hanfare_hassan
+			allowed = {
+				original_tag = DJI
+			}
+			traits = { air_chief_ground_support_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#High Command
+	DJI_william_syad={ #A Djiboutian poet, best known for "Khamsin". (Why yes, I am reaching hard for people, how'd you guess?)
+		name=DJI_william_syad
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_6"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = DJI_william_syad
+			ledger = army
+			allowed = {
+				original_tag = DJI
+			}
+			traits = { army_chief_morale_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	DJI_abdi_gouled={ #Another early Djiboutian Poet
+		name=DJI_abdi_gouled
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = DJI_abdi_gouled
+			ledger = army
+			allowed = {
+				original_tag = DJI
+			}
+			traits = { army_chief_organizational_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	DJI_iftin={ #The third of the 3 early Djiboutian poets, pen name was Iftin
+		name=DJI_iftin
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = DJI_iftin
+			ledger = army
+			allowed = {
+				original_tag = DJI
+			}		
+			traits = { army_concealment_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	DJI_abdillah_hared={ #Anti-Colonial Sheik, contemporary of Sheik Osman Waiss
+		name=DJI_abdillah_hared
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_arab_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = DJI_abdillah_hared
+			ledger = navy
+			allowed = {
+				original_tag = DJI
+			}	
+			traits = { navy_chief_commerce_raiding_2 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	DJI_ali_oudoum={ #Propaganda Broadcaster for the CFS
+		name=DJI_ali_oudoum
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_arab_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = DJI_ali_oudoum
+			ledger = navy
+			allowed = {
+				original_tag = DJI
+			}	
+			traits = { navy_screen_1 }
+			cost =  50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	DJI_ibrahim_sultan={ #Sailor in WW2 and friend of Mahmoud Harbi
+		name=DJI_ibrahim_sultan
+		portraits={
+			army={
+				small="GFX_idea_generic_air_arab_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = DJI_ibrahim_sultan
+			ledger = navy
+			allowed = {
+				original_tag = DJI
+			}	
+			traits = { navy_chief_decisive_battle_2 }
+			cost =  100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	DJI_hassan_gueldon={ #Early RPP member and anti-colonialist
+		name=DJI_hassan_gueldon
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = DJI_hassan_gueldon
+			ledger = air
+				allowed = {
+					original_tag = DJI
+				}
+				traits = { air_air_combat_training_1 }
+				cost =  75
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	
+#Theorists
+	DJI_robert_ferry={ #A French Officer who ended up immigrating to Djibouti
+		name = DJI_robert_ferry
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_3"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = DJI_robert_ferry
+			ledger = army
+			allowed = {
+				original_tag = DJI
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+	}
+	DJI_abd_el_hai={ #The adventurer Henry de Monfreid
+		name = DJI_abd_el_hai
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = DJI_abd_el_hai
+			ledger = navy
+			allowed = {
+				original_tag = DJI
+			}				
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	DJI_abdi_warfa={ #AKA "Abdi-Sinimo", a Djiboutian Poet and Innovator, drove trucks between Djibouti and Ethiopia
+		name = DJI_abdi_warfa
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_3"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = DJI_abdi_warfa
+			ledger = air
+			allowed = {
+				original_tag = DJI
+			}		
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+#Advisors
+	DJI_orbiss={ #Co-Founder of the Union Démocratique Afar
+		name=DJI_orbiss
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = DJI_orbiss
+			allowed = {
+				original_tag = DJI
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			traits = { democratic_reformer }
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	DJI_aicha={ #First Lady, wife of Hassan Gouled Aptidon and Women's Rights Advocate
+		name=DJI_aicha
+		gender=female
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_female_africa"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = DJI_aicha
+			allowed = {
+				original_tag = DJI
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}	
+			traits = { communist_revolutionary }
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	DJI_hamad_hummad={ #Sultan of Rahayto, 1936-1944
+		name=DJI_hamad_hummad
+		gender=female
+		portraits={
+			army={
+				small="GFX_idea_generic_army_arab_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = DJI_hamad_hummad
+			allowed = {
+				original_tag = DJI
+			}
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			traits = { fascist_demagogue }
+			ai_will_do = {
+				base = 0
+			}		
+		}
+	}
+	
+	DJI_osman_waiss={ #Sheik and spiritual leader. Early advocate for Djibutian Independance. Assassinated in 1966.
+		name=DJI_osman_waiss
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = DJI_osman_waiss
+			allowed = {
+				original_tag = DJI
+			}	
+			traits = { popular_figurehead }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	DJI_said_coubeche={ #Djibouti Politician, President of the Arab Youth Club 1939-1959, chaired the Djiboutian Chamber of Commerce from 1957 to 2003
+		name=DJI_said_coubeche
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = DJI_said_coubeche
+			allowed = {
+				original_tag = DJI
+			}	
+			traits = { economist }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	DJI_djama_hassan={ #Secretary-General of the ENA and editor-in-chief of its newspaper
+		name=DJI_djama_hassan
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = DJI_djama_hassan
+			allowed = {
+				original_tag = DJI
+			}	
+			traits = { smooth_talking_charmer }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	DJI_djama_mahamoud={ #Early Djiboutian teacher, helped develop the education system in Djibouti
+		name=DJI_djama_mahamoud
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = DJI_djama_mahamoud
+			allowed = {
+				original_tag = DJI
+			}	
+			traits = { silent_workhorse }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	DJI_omar_guelleh={ #Father of future president Ismail Omar Guelleh
+		name=DJI_omar_guelleh
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = DJI_omar_guelleh
+			allowed = {
+				original_tag = DJI
+			}
+			traits = { head_of_intelligence }
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+}

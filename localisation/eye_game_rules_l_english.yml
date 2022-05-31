@@ -1,0 +1,32 @@
+﻿l_english:
+ 
+ RULE_GROUP_EYE_OF_THE_HURRICANE:0 "Eye of the Hurricane"
+ 
+ EYE_SWI_AI_BEHAVIOR:0 "@SWI Switzerland"
+    #Neutral Historical, A.K.A - Drew Durnil Mode
+        RULE_OPTION_EYE_SWI_HISTORICAL_AI_DESC:0 "The Swiss AI will attempt to mantain their strict neutrality by going down the relevant paths in the national focus tree."
+    #Democratic
+        RULE_OPTION_EYE_SWI_DEMOCRATIC_AI_DESC:0 "The Swiss AI will attempt to abandon their neutrality and stand by the democracies of the world by going down the relevant paths in the national focus tree."
+    #Communist
+        RULE_OPTION_EYE_SWI_COMMUNIST_AI_DESC:0 "The Swiss AI will attempt to abandon their neutrality and join the worldwide revolution by going down the relevant paths in the national focus tree."
+    RULE_OPTION_FASCIST_CORPORATIST:0 "Fascist - New State Order"
+        RULE_OPTION_EYE_SWI_FASCIST_CORPORATIST_AI_DESC:0 "The Swiss AI will attempt to abandon their neutrality and form a corporatist state with a single great leader by going down the relevant paths in the national focus tree."
+    RULE_OPTION_FASCIST_OLD:0 "Fascist - Old Confederation"
+        RULE_OPTION_EYE_SWI_FASCIST_OLD_AI_DESC:0 "The Swiss AI will attempt to abandon their neutrality and revive the old Swiss Confederation by going down the relevant paths in the national focus tree."
+    
+ EYE_AUS_AI_BEHAVIOR:0 "@AUS Austria"
+    #Historical
+        RULE_OPTION_EYE_AUS_HISTORICAL_AI_DESC:0 "The Austrian AI will attempt to slowly restructure the country with hope in the west by going down the relevant paths in the national focus tree."
+    RULE_OPTION_RESTORE_OTTO:0 "Restore the Hapsburgs"
+        RULE_OPTION_EYE_AUS_RESTORE_OTTO_AI_DESC:0 "The Austrian AI will give up hope for international diplomacy and attempt to restore Otto von Hapsburg to the throne quickly by going down the relevant paths in the national focus tree."
+    RULE_OPTION_EYE_AUS_FASCIST:0 "German Unification"
+        RULE_OPTION_EYE_AUS_FASCIST_DESC:0 "The Austrian AI will attempt to have a "Black Revolution" in order to unite with their fellow Germans by going down the relevant path in the national focus tree."
+        
+
+        
+ ##Freed Slovakia
+ EYE_FREE_SLOVAKIA:0 "Slovakia Freedom Status"
+ RULE_OPTION_EYE_SLO_FREED:0 "Slovakia Freed"
+ RULE_OPTION_EYE_SLO_FREED_DESC:0 "§RApplies to 1936 start date only!§!\nSlovakia is released as a free and independent nation upon game start. Czechoslovakia will be renamed and lose its negative national spirit."
+     
+    

@@ -1,0 +1,3654 @@
+DARK_leave_league_effect = {
+	every_country = {
+		limit = {
+			OR = { #All League of Nations that did not leave prior to 1937
+				tag = ARG
+				AND = {
+					tag = BEL
+					NOT = { ROOT = { has_idea = ETH_belgian_mission2 } }
+				}
+				tag = BOL
+				tag = ENG
+				tag = AST
+				tag = CAN
+				tag = RAJ
+				tag = NZL
+				tag = CHL
+				tag = CHI
+				tag = COL
+				tag = CUB
+				tag = CZE
+				tag = DEN
+				tag = ELS
+				tag = FRA
+				tag = GRE
+				tag = HAI
+				tag = HOL
+				tag = NOR
+				tag = PAN
+				tag = PER
+				tag = PRU
+				tag = POL
+				tag = POR
+				tag = ROM
+				tag = SIA
+				original_tag = SPR
+				AND = {
+					tag = SWE
+					NOT = { ROOT = { has_idea = ETH_swedish_mission2 } }
+				}
+				tag = SWI
+				tag = URG
+				tag = VEN
+				tag = YUG
+				tag = AUS
+				tag = BUL
+				tag = FIN
+				tag = LUX
+				tag = ALB
+				tag = EST
+				tag = LAT
+				tag = LIT
+				tag = HUN
+				tag = IRE
+				tag = ETH
+				tag = DOM
+				AND = {
+					tag = TUR
+					NOT = { ROOT = { has_idea = ETH_turkish_mission } }
+				}
+				tag = TUR
+				tag = IRQ
+				tag = SOV
+				tag = AFG
+				tag = ECU
+				tag = EGY
+			}
+		}
+		if = {
+			limit = {
+				NOT = { tag = SWE }
+				OR = {
+					NOT = { tag = SWE }
+					AND = {
+						tag = SWE
+						
+					}
+				}
+				OR = {
+					NOT = { tag = BEL }
+					AND = {
+						tag = BEL
+						NOT = { ROOT = { has_idea = ETH_belgian_mission2 } }
+					}
+					
+				}
+				OR = {
+					NOT = { tag = TUR }
+					
+				}
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = DARK_left_league
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = embargo
+			}
+		}
+	}
+}
+DARK_revert_leave_league_effect = {
+	every_country = {
+		limit = {
+			OR = { #All League of Nations that did not leave prior to 1937
+				tag = ARG
+				tag = BEL
+				tag = BOL
+				tag = ENG
+				tag = AST
+				tag = CAN
+				tag = RAJ
+				tag = NZL
+				tag = CHL
+				tag = CHI
+				tag = COL
+				tag = CUB
+				tag = CZE
+				tag = DEN
+				tag = ELS
+				tag = FRA
+				tag = GRE
+				tag = HAI
+				tag = HOL
+				tag = NOR
+				tag = PAN
+				tag = PER
+				tag = PRU
+				tag = POL
+				tag = POR
+				tag = ROM
+				tag = SIA
+				original_tag = SPR
+				tag = SWE
+				tag = SWI
+				tag = URG
+				tag = VEN
+				tag = YUG
+				tag = AUS
+				tag = BUL
+				tag = FIN
+				tag = LUX
+				tag = ALB
+				tag = EST
+				tag = LAT
+				tag = LIT
+				tag = HUN
+				tag = IRE
+				tag = ETH
+				tag = DOM
+				tag = TUR
+				tag = TUR
+				tag = IRQ
+				tag = SOV
+				tag = AFG
+				tag = ECU
+				tag = EGY
+			}
+		}
+		remove_opinion_modifier = {
+			target = ROOT
+			modifier = DARK_left_league
+		}
+		remove_opinion_modifier = {
+			target = ROOT
+			modifier = embargo
+		}
+	}
+}
+
+DARK_lose_western_africa = {
+	##West Africa
+	514 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	557 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	272 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	701 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	296 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	556 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	700 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	298 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	274 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	558 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	515 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	539 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	297 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	705 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	660 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	538 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	295 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	718 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	273 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	538 = {
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+}
+DARK_lose_eastern_africa = {
+	##East Africa
+	552 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	456 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	457 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	551 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	550 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	549 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	271 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	268 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	269 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	559 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	547 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	548 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	718 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	546 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+}
+DARK_lose_northern_africa = {	
+	##Northern Africa
+	446 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	447 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	452 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	451 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	663 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	450 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	449 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	662 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	448 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	661 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	665 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	458 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	460 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	513 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	459 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	290 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	461 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	462 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	699 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+}
+DARK_lose_southern_africa = {
+	##Southern Africa
+	681 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	719 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	543 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	275 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	541 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	542 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	544 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	545 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	540 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+	295 = { 
+		remove_claim_by = ROOT
+		remove_core_of = ROOT
+		set_state_flag = DARK_gave_up
+	}
+}
+
+DARK_gain_egypt = {
+	448 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	661 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	449 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	662 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	450 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	451 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	663 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	452 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	447 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	446 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	552 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	456 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	457 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	551 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	549 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	550 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	271 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	268 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	269 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	559 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+	547 = {
+		set_state_flag = DARK_gained
+		add_claim_by = ROOT
+	}
+}
+
+DARK_set_italian_focus_flags = {
+	##Industrial
+	if = {
+		limit = { has_completed_focus = ITA_prospect_for_oil }
+		set_country_flag = ITA_has_completed_prospect_for_oil
+	}
+	else_if = {
+		limit = { has_completed_focus = ITA_italian_highways }
+		set_country_flag = ITA_has_completed_italian_highways
+	}
+	else_if = {
+		limit = { has_completed_focus = ITA_extra_tech_slot }
+		set_country_flag = ITA_has_completed_extra_tech_slot
+	}
+	if = {
+		limit = { has_completed_focus = ITA_fortification_effort }
+		set_country_flag = ITA_has_completed_fortification_effort
+	}
+	else_if = {
+		limit = { has_completed_focus = ITA_industrial_effort_2 }
+		set_country_flag = ITA_has_completed_industrial_effort_2
+	}
+	else_if = {
+		limit = { has_completed_focus = ITA_industrial_effort }
+		set_country_flag = ITA_has_completed_industrial_effort
+	}	
+	##Army/Navy
+	if = {
+		limit = { has_completed_focus = ITA_armored_effort }
+		set_country_flag = ITA_has_completed_armored_effort
+	}
+	else_if = {
+		limit = { has_completed_focus = ITA_special_forces }
+		set_country_flag = ITA_has_completed_special_forces
+	}
+	else_if = {
+		limit = { has_completed_focus = ITA_modernized_army }
+		set_country_flag = ITA_has_completed_modernized_army
+		if = {
+			limit = { has_country_flag = ITA_has_completed_industrial_effort }
+			clr_country_flag = ITA_has_completed_industrial_effort
+		}
+	}
+	else_if = {
+		limit = { has_completed_focus = ITA_modernized_artillery }
+		set_country_flag = ITA_has_completed_modernized_artillery
+	}
+	if = {
+		limit = { has_completed_focus = ITA_jet_engine_effort }
+		set_country_flag = ITA_has_completed_jet_engine_effort
+	}
+	else_if = {
+		limit = { has_completed_focus = ITA_air_innovation_2 }
+		set_country_flag = ITA_has_completed_air_innovation_2
+	}
+	if = {
+		limit = { has_completed_focus = ITA_bomber_effort }
+		set_country_flag = ITA_has_completed_bomber_effort
+	}
+	else_if = {
+		limit = { has_completed_focus = ITA_air_innovation }
+		set_country_flag = ITA_has_completed_air_innovation
+	}
+	if = {
+		limit = { has_completed_focus = ITA_naval_air_effort }
+		set_country_flag = ITA_has_completed_naval_air_effort
+	}
+	else_if = {
+		limit = { 
+			has_completed_focus = ITA_air_innovation 
+			NOT = { has_country_flag = ITA_has_completed_air_innovation }
+			NOT = { has_country_flag = ITA_has_completed_bomber_effort }
+		}
+		set_country_flag = ITA_has_completed_air_innovation
+	}
+	if = {
+		limit = { has_completed_focus = ITA_marines_and_landing_craft }
+		set_country_flag = ITA_has_completed_marines_and_landing_craft
+	}
+	else_if = {
+		limit = { has_completed_focus = ITA_atlantic_fleet }
+		set_country_flag = ITA_has_completed_atlantic_fleet
+	}
+	else_if = {
+		limit = { has_completed_focus = ITA_capital_ships }
+		set_country_flag = ITA_has_completed_capital_ships
+	}
+	if = {
+		limit = { 
+			has_completed_focus = ITA_carrier_effort
+			NOT = { has_country_flag = ITA_has_completed_atlantic_fleet }
+		}
+		set_country_flag = ITA_has_completed_carrier_effort
+	}
+	else_if = {
+		limit = { 
+			has_completed_focus = ITA_mare_nostrum 
+			NOT = { has_country_flag = ITA_has_completed_capital_ships }
+		}
+		set_country_flag = ITA_has_completed_mare_nostrum
+	}
+	if = {
+		limit = { 
+			has_completed_focus = ITA_army_primacy
+			NOT = { has_completed_focus = ITA_modernized_artillery }
+			NOT = { has_completed_focus= ITA_bomber_effort }
+		}
+		set_country_flag = ITA_has_completed_army_primacy
+	}
+	
+	##Secondary Navy
+	if = {
+		limit = { has_completed_focus = ITA_submarine_effort }
+		set_country_flag = ITA_has_completed_submarine_effort
+	}
+	if = {
+		limit = { has_completed_focus = ITA_escort_effort }
+		set_country_flag = ITA_has_completed_escort_effort
+	}
+	else_if = {
+		limit = { has_completed_focus = ITA_light_ship_effort }
+		set_country_flag = ITA_has_completed_light_ship_effort
+	}		
+}
+
+DARK_release_all_states = { #There has GOT to be a better way to do this... Maybe once MTG hits and we have arrays/loops...
+	every_state = {
+		limit = { NOT = { is_on_continent = europe } }
+		if = {
+			limit = { 
+				is_core_of = AFG
+				OR = {
+					AFG = { exists = no }
+					AFG = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = AFG
+					autonomy_state = autonomy_colony
+				}
+			}
+			AFG = { transfer_state = PREV }
+		}		
+		else_if = {
+			limit = { 
+				is_core_of = ANG
+				OR = {
+					ANG = { exists = no }
+					ANG = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = ANG
+					autonomy_state = autonomy_colony
+				}
+			}
+			ANG = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = ARG
+				OR = {
+					ARG = { exists = no }
+					ARG = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = ARG
+					autonomy_state = autonomy_colony
+				}
+			}
+			ARG = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = ARM
+				OR = {
+					ARM = { exists = no }
+					ARM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = ARM
+					autonomy_state = autonomy_colony
+				}
+			}
+			ARM = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = AST
+				OR = {
+					AST = { exists = no }
+					AST = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = AST
+					autonomy_state = autonomy_colony
+				}
+			}
+			AST = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = AZR
+				OR = {
+					AZR = { exists = no }
+					AZR = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = AZR
+					autonomy_state = autonomy_colony
+				}
+			}
+			AZR = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = BHU
+				OR = {
+					BHU = { exists = no }
+					BHU = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = BHU
+					autonomy_state = autonomy_colony
+				}
+			}
+			BHU = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = BOL
+				OR = {
+					BOL = { exists = no }
+					BOL = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = BOL
+					autonomy_state = autonomy_colony
+				}
+			}
+			BOL = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = BOT
+				OR = {
+					BOT = { exists = no }
+					BOT = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = BOT
+					autonomy_state = autonomy_colony
+				}
+			}
+			BOT = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = BRA
+				OR = {
+					BRA = { exists = no }
+					BRA = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = BRA
+					autonomy_state = autonomy_colony
+				}
+			}
+			BRA = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = CAM
+				OR = {
+					CAM = { exists = no }
+					CAM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = CAM
+					autonomy_state = autonomy_colony
+				}
+			}
+			CAM = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = CAN
+				OR = {
+					CAN = { exists = no }
+					CAN = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = CAN
+					autonomy_state = autonomy_colony
+				}
+			}
+			CAN = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = YUN
+				OR = {
+					YUN = { exists = no }
+					YUN = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = YUN
+					autonomy_state = autonomy_colony
+				}
+			}
+			YUN = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = SIK
+				OR = {
+					SIK = { exists = no }
+					SIK = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = SIK
+					autonomy_state = autonomy_colony
+				}
+			}
+			SIK = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = TIB
+				OR = {
+					TIB = { exists = no }
+					TIB = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = TIB
+					autonomy_state = autonomy_colony
+				}
+			}
+			TIB = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = XSM
+				OR = {
+					XSM = { exists = no }
+					XSM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = XSM
+					autonomy_state = autonomy_colony
+				}
+			}
+			XSM = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = SHX
+				OR = {
+					SHX = { exists = no }
+					SHX = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = SHX
+					autonomy_state = autonomy_colony
+				}
+			}
+			SHX = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = GXC
+				OR = {
+					GXC = { exists = no }
+					GXC = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = GXC
+					autonomy_state = autonomy_colony
+				}
+			}
+			GXC = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = MEN
+				OR = {
+					MEN = { exists = no }
+					MEN = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = MEN
+					autonomy_state = autonomy_colony
+				}
+			}
+			MEN = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = MAN
+				OR = {
+					MAN = { exists = no }
+					MAN = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = MAN
+					autonomy_state = autonomy_colony
+				}
+			}
+			MAN = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = PRC
+				NOT = { state = 524 }
+				OR = {
+					PRC = { exists = no }
+					PRC = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = PRC
+					autonomy_state = autonomy_colony
+				}
+			}
+			PRC = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = CHI
+				OR = {
+					CHI = { exists = no }
+					CHI = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = CHI
+					autonomy_state = autonomy_colony
+				}
+			}
+			CHI = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = CHL
+				OR = {
+					CHL = { exists = no }
+					CHL = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = CHL
+					autonomy_state = autonomy_colony
+				}
+			}
+			CHL = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = COG
+				OR = {
+					COG = { exists = no }
+					COG = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = COG
+					autonomy_state = autonomy_colony
+				}
+			}
+			COG = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = COL
+				OR = {
+					COL = { exists = no }
+					COL = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = COL
+					autonomy_state = autonomy_colony
+				}
+			}
+			COL = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = COS
+				OR = {
+					COS = { exists = no }
+					COS = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = COS
+					autonomy_state = autonomy_colony
+				}
+			}
+			COS = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = CUB
+				OR = {
+					CUB = { exists = no }
+					CUB = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = CUB
+					autonomy_state = autonomy_colony
+				}
+			}
+			CUB = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = DOM
+				OR = {
+					DOM = { exists = no }
+					DOM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = DOM
+					autonomy_state = autonomy_colony
+				}
+			}
+			DOM = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = ECU
+				OR = {
+					ECU = { exists = no }
+					ECU = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = ECU
+					autonomy_state = autonomy_colony
+				}
+			}
+			ECU = { transfer_state = PREV }
+		}		
+		else_if = {
+			limit = { 
+				is_core_of = ELS
+				OR = {
+					ELS = { exists = no }
+					ELS = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = ELS
+					autonomy_state = autonomy_colony
+				}
+			}
+			ELS = { transfer_state = PREV }
+		}		
+		else_if = {
+			limit = { 
+				is_core_of = GEO
+				OR = {
+					GEO = { exists = no }
+					GEO = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = GEO
+					autonomy_state = autonomy_colony
+				}
+			}
+			GEO = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = GUA
+				OR = {
+					GUA = { exists = no }
+					GUA = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = GUA
+					autonomy_state = autonomy_colony
+				}
+			}
+			GUA = { transfer_state = PREV }
+		}		
+		else_if = {
+			limit = { 
+				is_core_of = HAI
+				OR = {
+					HAI = { exists = no }
+					HAI = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = HAI
+					autonomy_state = autonomy_colony
+				}
+			}
+			HAI = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = HON
+				OR = {
+					HON = { exists = no }
+					HON = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = HON
+					autonomy_state = autonomy_colony
+				}
+			}
+			HON = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = INS
+				OR = {
+					INS = { exists = no }
+					INS = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = INS
+					autonomy_state = autonomy_colony
+				}
+			}
+			INS = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = IRQ
+				OR = {
+					IRQ = { exists = no }
+					IRQ = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = IRQ
+					autonomy_state = autonomy_colony
+				}
+			}
+			IRQ = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = ISR
+				OR = {
+					ISR = { exists = no }
+					ISR = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = ISR
+					autonomy_state = autonomy_colony
+				}
+			}
+			ISR = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = JAP
+				OR = {
+					JAP = { exists = no }
+					JAP = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = JAP
+					autonomy_state = autonomy_colony
+				}
+			}
+			JAP = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = JOR
+				OR = {
+					JOR = { exists = no }
+					JOR = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = JOR
+					autonomy_state = autonomy_colony
+				}
+			}
+			JOR = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = KAZ
+				OR = {
+					KAZ = { exists = no }
+					KAZ = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = KAZ
+					autonomy_state = autonomy_colony
+				}
+			}
+			KAZ = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = KEN
+				OR = {
+					KEN = { exists = no }
+					KEN = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = KEN
+					autonomy_state = autonomy_colony
+				}
+			}
+			KEN = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = KOR
+				OR = {
+					KOR = { exists = no }
+					KOR = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = KOR
+					autonomy_state = autonomy_colony
+				}
+			}
+			KOR = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = LAO
+				OR = {
+					LAO = { exists = no }
+					LAO = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = LAO
+					autonomy_state = autonomy_colony
+				}
+			}
+			LAO = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = LBA
+				OR = {
+					LBA = { exists = no }
+					LBA = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = LBA
+					autonomy_state = autonomy_colony
+				}
+			}
+			LBA = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = LEB
+				OR = {
+					LEB = { exists = no }
+					LEB = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = LEB
+					autonomy_state = autonomy_colony
+				}
+			}
+			LEB = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = LIB
+				OR = {
+					LIB = { exists = no }
+					LIB = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = LIB
+					autonomy_state = autonomy_colony
+				}
+			}
+			LIB = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = MAL
+				OR = {
+					MAL = { exists = no }
+					MAL = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = MAL
+					autonomy_state = autonomy_colony
+				}
+			}
+			MAL = { transfer_state = PREV }
+		}		
+		else_if = {
+			limit = { 
+				is_core_of = MON
+				OR = {
+					MON = { exists = no }
+					MON = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = MON
+					autonomy_state = autonomy_colony
+				}
+			}
+			MON = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = MZB
+				OR = {
+					MZB = { exists = no }
+					MZB = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = MZB
+					autonomy_state = autonomy_colony
+				}
+			}
+			MZB = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = NEP
+				OR = {
+					NEP = { exists = no }
+					NEP = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = NEP
+					autonomy_state = autonomy_colony
+				}
+			}
+			NEP = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = NIC
+				OR = {
+					NIC = { exists = no }
+					NIC = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = NIC
+					autonomy_state = autonomy_colony
+				}
+			}
+			NIC = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = NZL
+				OR = {
+					NZL = { exists = no }
+					NZL = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = NZL
+					autonomy_state = autonomy_colony
+				}
+			}
+			NZL = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = OMA
+				OR = {
+					OMA = { exists = no }
+					OMA = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = OMA
+					autonomy_state = autonomy_colony
+				}
+			}
+			OMA = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = PAK
+				OR = {
+					PAK = { exists = no }
+					PAK = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = PAK
+					autonomy_state = autonomy_colony
+				}
+			}
+			PAK = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = PAL
+				OR = {
+					PAL = { exists = no }
+					PAL = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = PAL
+					autonomy_state = autonomy_colony
+				}
+			}
+			PAL = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = "PAN"
+				OR = {
+					"PAN" = { exists = no }
+					"PAN" = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = "PAN"
+					autonomy_state = autonomy_colony
+				}
+			}
+			"PAN" = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = PAR
+				OR = {
+					PAR = { exists = no }
+					PAR = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = PAR
+					autonomy_state = autonomy_colony
+				}
+			}
+			PAR = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = PER
+				OR = {
+					PER = { exists = no }
+					PER = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = PER
+					autonomy_state = autonomy_colony
+				}
+			}
+			PER = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = "PHI"
+				OR = {
+					"PHI" = { exists = no }
+					"PHI" = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = "PHI"
+					autonomy_state = autonomy_colony
+				}
+			}
+			"PHI" = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = PRU
+				OR = {
+					PRU = { exists = no }
+					PRU = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = PRU
+					autonomy_state = autonomy_colony
+				}
+			}
+			PRU = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = BAN
+				OR = {
+					BAN = { exists = no }
+					BAN = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = BAN
+					autonomy_state = autonomy_colony
+				}
+			}
+			BAN = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = RAJ
+				NOT = { state = 430 }
+				OR = {
+					RAJ = { exists = no }
+					RAJ = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = RAJ
+					autonomy_state = autonomy_colony
+				}
+			}
+			RAJ = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = ROM
+				OR = {
+					ROM = { exists = no }
+					ROM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = ROM
+					autonomy_state = autonomy_colony
+				}
+			}
+			ROM = { transfer_state = PREV }
+		}		
+		else_if = {
+			limit = { 
+				is_core_of = SAU
+				OR = {
+					SAU = { exists = no }
+					SAU = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = SAU
+					autonomy_state = autonomy_colony
+				}
+			}
+			SAU = { transfer_state = PREV }
+		}		
+		else_if = {
+			limit = { 
+				is_core_of = SIA
+				OR = {
+					SIA = { exists = no }
+					SIA = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = SIA
+					autonomy_state = autonomy_colony
+				}
+			}
+			SIA = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = SYR
+				OR = {
+					SYR = { exists = no }
+					SYR = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = SYR
+					autonomy_state = autonomy_colony
+				}
+			}
+			SYR = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = TAN
+				OR = {
+					TAN = { exists = no }
+					TAN = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = TAN
+					autonomy_state = autonomy_colony
+				}
+			}
+			TAN = { transfer_state = PREV }
+		}		
+		else_if = {
+			limit = { 
+				is_core_of = TUR
+				NOT = { state = 341 } #Not Istanbul/Constantinople/Byzantium
+				OR = {
+					TUR = { exists = no }
+					TUR = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = TUR
+					autonomy_state = autonomy_colony
+				}
+			}
+			TUR = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = URG
+				OR = {
+					URG = { exists = no }
+					URG = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = URG
+					autonomy_state = autonomy_colony
+				}
+			}
+			URG = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = HAW
+				OR = {
+					HAW = { exists = no }
+					HAW = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = HAW
+					autonomy_state = autonomy_colony
+				}
+			}
+			HAW = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = PUE
+				OR = {
+					PUE = { exists = no }
+					PUE = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = PUE
+					autonomy_state = autonomy_colony
+				}
+			}
+			PUE = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = USA
+				OR = {
+					USA = { exists = no }
+					USA = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = USA
+					autonomy_state = autonomy_colony
+				}
+			}
+			USA = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = VEN
+				OR = {
+					VEN = { exists = no }
+					VEN = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = VEN
+					autonomy_state = autonomy_colony
+				}
+			}
+			VEN = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = VIN
+				OR = {
+					VIN = { exists = no }
+					VIN = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = VIN
+					autonomy_state = autonomy_colony
+				}
+			}
+			VIN = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = YEM
+				OR = {
+					YEM = { exists = no }
+					YEM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = YEM
+					autonomy_state = autonomy_colony
+				}
+			}
+			YEM = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = YUG
+				OR = {
+					YUG = { exists = no }
+					YUG = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = YUG
+					autonomy_state = autonomy_colony
+				}
+			}
+			YUG = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = ZIM
+				OR = {
+					ZIM = { exists = no }
+					ZIM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = ZIM
+					autonomy_state = autonomy_colony
+				}
+			}
+			ZIM = { transfer_state = PREV }
+		}
+		
+		### NEW TAGS ###
+		else_if = {
+			limit = { 
+				is_core_of = KAZ
+				OR = {
+					KAZ = { exists = no }
+					KAZ = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = KAZ
+					autonomy_state = autonomy_colony
+				}
+			}
+			KAZ = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = UZB
+				OR = {
+					UZB = { exists = no }
+					UZB = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = UZB
+					autonomy_state = autonomy_colony
+				}
+			}
+			UZB = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = TAJ
+				OR = {
+					TAJ = { exists = no }
+					TAJ = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = TAJ
+					autonomy_state = autonomy_colony
+				}
+			}
+			TAJ = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = KYR
+				OR = {
+					KYR = { exists = no }
+					KYR = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = KYR
+					autonomy_state = autonomy_colony
+				}
+			}
+			KYR = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = TMS
+				OR = {
+					TMS = { exists = no }
+					TMS = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = TMS
+					autonomy_state = autonomy_colony
+				}
+			}
+			TMS = { transfer_state = PREV }
+		}		
+		else_if = {
+			limit = { 
+				is_core_of = SRL
+				OR = {
+					SRL = { exists = no }
+					SRL = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = SRL
+					autonomy_state = autonomy_colony
+				}
+			}
+			SRL = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = BRM
+				OR = {
+					BRM = { exists = no }
+					BRM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = BRM
+					autonomy_state = autonomy_colony
+				}
+			}
+			BRM = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = PNG
+				OR = {
+					PNG = { exists = no }
+					PNG = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = PNG
+					autonomy_state = autonomy_colony
+				}
+			}
+			PNG = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = MLD
+				OR = {
+					MLD = { exists = no }
+					MLD = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = MLD
+					autonomy_state = autonomy_colony
+				}
+			}
+			MLD = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = FIJ
+				OR = {
+					FIJ = { exists = no }
+					FIJ = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = FIJ
+					autonomy_state = autonomy_colony
+				}
+			}
+			FIJ = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = KUW
+				OR = {
+					KUW = { exists = no }
+					KUW = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = KUW
+					autonomy_state = autonomy_colony
+				}
+			}
+			KUW = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = QAT
+				OR = {
+					QAT = { exists = no }
+					QAT = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = QAT
+					autonomy_state = autonomy_colony
+				}
+			}
+			QAT = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = UAE
+				OR = {
+					UAE = { exists = no }
+					UAE = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = UAE
+					autonomy_state = autonomy_colony
+				}
+			}
+			UAE = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = BLZ
+				OR = {
+					BLZ = { exists = no }
+					BLZ = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = BLZ
+					autonomy_state = autonomy_colony
+				}
+			}
+			BLZ = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = JAM
+				OR = {
+					JAM = { exists = no }
+					JAM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = JAM
+					autonomy_state = autonomy_colony
+				}
+			}
+			JAM = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = BAH
+				OR = {
+					BAH = { exists = no }
+					BAH = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = BAH
+					autonomy_state = autonomy_colony
+				}
+			}
+			BAH = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = GDL
+				OR = {
+					GDL = { exists = no }
+					GDL = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = GDL
+					autonomy_state = autonomy_colony
+				}
+			}
+			GDL = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = TRI
+				OR = {
+					TRI = { exists = no }
+					TRI = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = TRI
+					autonomy_state = autonomy_colony
+				}
+			}
+			TRI = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = GYA
+				OR = {
+					GYA = { exists = no }
+					GYA = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = GYA
+					autonomy_state = autonomy_colony
+				}
+			}
+			GYA = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = SUR
+				OR = {
+					SUR = { exists = no }
+					SUR = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = SUR
+					autonomy_state = autonomy_colony
+				}
+			}
+			SUR = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = CRC
+				OR = {
+					CRC = { exists = no }
+					CRC = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = CRC
+					autonomy_state = autonomy_colony
+				}
+			}
+			CRC = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = BAS
+				OR = {
+					BAS = { exists = no }
+					BAS = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = BAS
+					autonomy_state = autonomy_colony
+				}
+			}
+			BAS = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = GYA
+				OR = {
+					GYA = { exists = no }
+					GYA = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = GYA
+					autonomy_state = autonomy_colony
+				}
+			}
+			GYA = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = WES
+				OR = {
+					WES = { exists = no }
+					WES = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = WES
+					autonomy_state = autonomy_colony
+				}
+			}
+			WES = { transfer_state = PREV }
+		}		
+		else_if = {
+			limit = { 
+				is_core_of = MOR
+				NOT = { state = 514 }
+				NOT = { state = 699 }
+				OR = {
+					MOR = { exists = no }
+					MOR = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = MOR
+					autonomy_state = autonomy_colony
+				}
+			}
+			MOR = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = ALG
+				OR = {
+					ALG = { exists = no }
+					ALG = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = ALG
+					autonomy_state = autonomy_colony
+				}
+			}
+			ALG = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = TUN
+				OR = {
+					TUN = { exists = no }
+					TUN = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = TUN
+					autonomy_state = autonomy_colony
+				}
+			}
+			TUN = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = SUD
+				OR = {
+					SUD = { exists = no }
+					SUD = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = SUD
+					autonomy_state = autonomy_colony
+				}
+			}
+			SUD = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = EGY
+				OR = {
+					EGY = { exists = no }
+					EGY = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = EGY
+					autonomy_state = autonomy_colony
+				}
+			}
+			EGY = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = ERI
+				OR = {
+					ERI = { exists = no }
+					ERI = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = ERI
+					autonomy_state = autonomy_colony
+				}
+			}
+			ERI = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = DJI
+				OR = {
+					DJI = { exists = no }
+					DJI = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = DJI
+					autonomy_state = autonomy_colony
+				}
+			}
+			DJI = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = SOM
+				NOT = { state = 837 }
+				OR = {
+					SOM = { exists = no }
+					SOM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = SOM
+					autonomy_state = autonomy_colony
+				}
+			}
+			SOM = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = ETH
+				NOT = { state = 550 }
+				OR = {
+					ETH = { exists = no }
+					ETH = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = ETH
+					autonomy_state = autonomy_colony
+				}
+			}
+			ETH = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = UGA
+				OR = {
+					UGA = { exists = no }
+					UGA = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = UGA
+					autonomy_state = autonomy_colony
+				}
+			}
+			UGA = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = RWA
+				OR = {
+					RWA = { exists = no }
+					RWA = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = RWA
+					autonomy_state = autonomy_colony
+				}
+			}
+			RWA = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = BRD
+				OR = {
+					BRD = { exists = no }
+					BRD = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = BRD
+					autonomy_state = autonomy_colony
+				}
+			}
+			BRD = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = TZN
+				OR = {
+					TZN = { exists = no }
+					TZN = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = TZN
+					autonomy_state = autonomy_colony
+				}
+			}
+			TZN = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = MLW
+				OR = {
+					MLW = { exists = no }
+					MLW = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = MLW
+					autonomy_state = autonomy_colony
+				}
+			}
+			MLW = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = ZAM
+				OR = {
+					ZAM = { exists = no }
+					ZAM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = ZAM
+					autonomy_state = autonomy_colony
+				}
+			}
+			ZAM = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = RCG
+				OR = {
+					RCG = { exists = no }
+					RCG = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = RCG
+					autonomy_state = autonomy_colony
+				}
+			}
+			RCG = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = GAB
+				OR = {
+					GAB = { exists = no }
+					GAB = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = GAB
+					autonomy_state = autonomy_colony
+				}
+			}
+			GAB = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = EQG
+				OR = {
+					EQG = { exists = no }
+					EQG = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = EQG
+					autonomy_state = autonomy_colony
+				}
+			}
+			EQG = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = CMR
+				OR = {
+					CMR = { exists = no }
+					CMR = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = CMR
+					autonomy_state = autonomy_colony
+				}
+			}
+			CMR = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = CAR
+				OR = {
+					CAR = { exists = no }
+					CAR = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = CAR
+					autonomy_state = autonomy_colony
+				}
+			}
+			CAR = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = CHA
+				OR = {
+					CHA = { exists = no }
+					CHA = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = CHA
+					autonomy_state = autonomy_colony
+				}
+			}
+			CHA = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = NGA
+				OR = {
+					NGA = { exists = no }
+					NGA = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = NGA
+					autonomy_state = autonomy_colony
+				}
+			}
+			NGA = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = NGR
+				OR = {
+					NGR = { exists = no }
+					NGR = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = NGR
+					autonomy_state = autonomy_colony
+				}
+			}
+			NGR = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = DAH
+				OR = {
+					DAH = { exists = no }
+					DAH = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = DAH
+					autonomy_state = autonomy_colony
+				}
+			}
+			DAH = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = TOG
+				OR = {
+					TOG = { exists = no }
+					TOG = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = TOG
+					autonomy_state = autonomy_colony
+				}
+			}
+			TOG = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = VOL
+				OR = {
+					VOL = { exists = no }
+					VOL = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = VOL
+					autonomy_state = autonomy_colony
+				}
+			}
+			VOL = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = GHA
+				OR = {
+					GHA = { exists = no }
+					GHA = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = GHA
+					autonomy_state = autonomy_colony
+				}
+			}
+			GHA = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = IVO
+				OR = {
+					IVO = { exists = no }
+					IVO = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = IVO
+					autonomy_state = autonomy_colony
+				}
+			}
+			IVO = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = MLI
+				OR = {
+					MLI = { exists = no }
+					MLI = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = MLI
+					autonomy_state = autonomy_colony
+				}
+			}
+			MLI = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = SIE
+				OR = {
+					SIE = { exists = no }
+					SIE = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = SIE
+					autonomy_state = autonomy_colony
+				}
+			}
+			SIE = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = GNA
+				OR = {
+					GNA = { exists = no }
+					GNA = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = GNA
+					autonomy_state = autonomy_colony
+				}
+			}
+			GNA = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = GNB
+				OR = {
+					GNB = { exists = no }
+					GNB = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = GNB
+					autonomy_state = autonomy_colony
+				}
+			}
+			GNB = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = SEN
+				OR = {
+					SEN = { exists = no }
+					SEN = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = SEN
+					autonomy_state = autonomy_colony
+				}
+			}
+			SEN = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = GAM
+				OR = {
+					GAM = { exists = no }
+					GAM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = GAM
+					autonomy_state = autonomy_colony
+				}
+			}
+			GAM = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = MRT
+				OR = {
+					MRT = { exists = no }
+					MRT = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = MRT
+					autonomy_state = autonomy_colony
+				}
+			}
+			MRT = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = NMB
+				OR = {
+					NMB = { exists = no }
+					NMB = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = NMB
+					autonomy_state = autonomy_colony
+				}
+			}
+			NMB = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = SAF
+				NOT = { state = 541 }
+				OR = {
+					SAF = { exists = no }
+					SAF = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = SAF
+					autonomy_state = autonomy_colony
+				}
+			}
+			SAF = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = MEX
+				OR = {
+					MEX = { exists = no }
+					MEX = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = MEX
+					autonomy_state = autonomy_colony
+				}
+			}
+			MEX = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = CAY
+				OR = {
+					CAY = { exists = no }
+					CAY = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = CAY
+					autonomy_state = autonomy_colony
+				}
+			}
+			CAY = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = MAD
+				OR = {
+					MAD = { exists = no }
+					MAD = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = MAD
+					autonomy_state = autonomy_colony
+				}
+			}
+			MAD = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = FSM
+				OR = {
+					FSM = { exists = no }
+					FSM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = FSM
+					autonomy_state = autonomy_colony
+				}
+			}
+			FSM = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = SAM
+				OR = {
+					SAM = { exists = no }
+					SAM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = SAM
+					autonomy_state = autonomy_colony
+				}
+			}
+			SAM = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = GUM
+				OR = {
+					GUM = { exists = no }
+					GUM = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = GUM
+					autonomy_state = autonomy_colony
+				}
+			}
+			GUM = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = SOL
+				OR = {
+					SOL = { exists = no }
+					SOL = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = SOL
+					autonomy_state = autonomy_colony
+				}
+			}
+			SOL = { transfer_state = PREV }
+		}
+		else_if = {
+			limit = { 
+				is_core_of = TAH
+				OR = {
+					TAH = { exists = no }
+					TAH = { is_subject_of = ROOT }
+				}
+				is_owned_and_controlled_by = ROOT
+			}
+			ROOT = {
+				release_autonomy = {
+					target = TAH
+					autonomy_state = autonomy_colony
+				}
+			}
+			TAH = { transfer_state = PREV }
+		}
+	}
+	# Fixing map bugs
+	if = {
+		limit = {
+			NOT = { country_exists = CHI }
+			524 = { OWNER = { is_subject_of = ROOT } }
+		}
+		CHI = { transfer_state = 524 }
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			set_autonomy = { target = CHI autonomy_state = autonomy_dominion }
+			
+			else = {
+				puppet = CHI
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = WES }
+			699 = { OWNER = { is_subject_of = ROOT } }
+		}
+		WES = { transfer_state = 699 }
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			set_autonomy = { target = WES autonomy_state = autonomy_dominion }
+			
+			else = {
+				puppet = WES
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = ERI }
+			550 = { OWNER = { is_subject_of = ROOT } }
+		}
+		ERI = { transfer_state = 550 }
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			set_autonomy = { target = ERI autonomy_state = autonomy_dominion }
+			
+			else = {
+				puppet = ERI
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = NMB }
+			541 = { OWNER = { is_subject_of = ROOT } }
+		}
+		NMB = { transfer_state = 541 }
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			set_autonomy = { target = NMB autonomy_state = autonomy_dominion }
+			
+			else = {
+				puppet = NMB
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = BAN }
+			430 = { OWNER = { is_subject_of = ROOT } }
+		}
+		BAN = { transfer_state = 430 }
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			set_autonomy = { target = BAN autonomy_state = autonomy_dominion }
+			
+			else = {
+				puppet = BAN
+			}
+		}
+	}	
+	if = {
+		limit = {
+			NOT = { country_exists = SHX }
+			OR = {
+				621 = { OWNER = { is_subject_of = ROOT } }
+				746 = { OWNER = { is_subject_of = ROOT } }
+				615 = { OWNER = { is_subject_of = ROOT } }
+			}
+		}
+		if = {
+			limit = {
+				621 = { OWNER = { is_subject_of = ROOT } }
+			}
+			SHX = { transfer_state = 621 }
+		}
+		if = {
+			limit = {
+				746 = { OWNER = { is_subject_of = ROOT } }
+			}
+			SHX = { transfer_state = 746 }
+		}
+		if = {
+			limit = {
+				615 = { OWNER = { is_subject_of = ROOT } }
+			}
+			SHX = { transfer_state = 615 }
+		}
+		if = {
+			limit = {
+				PRC = { is_subject_of = ROOT }
+				PRC = { num_of_controlled_states > 1 }
+				622 = { OWNER = { tag = PRC } }
+			}
+			SHX = { transfer_state = 622 }
+			622 = { add_core_of = SHX }
+		}
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			set_autonomy = { target = SHX autonomy_state = autonomy_dominion }
+			
+			else = {
+				puppet = SHX
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = MAN }
+			OR = {
+				761 = { OWNER = { is_subject_of = ROOT } }
+				714 = { OWNER = { is_subject_of = ROOT } }
+				715 = { OWNER = { is_subject_of = ROOT } }
+				717 = { OWNER = { is_subject_of = ROOT } }
+				328 = { OWNER = { is_subject_of = ROOT } }
+				716 = { OWNER = { is_subject_of = ROOT } }
+				745 = { OWNER = { is_subject_of = ROOT } }
+				610 = { OWNER = { is_subject_of = ROOT } }
+				609 = { OWNER = { is_subject_of = ROOT } }
+				608 = { OWNER = { is_subject_of = ROOT } }
+			}
+		}
+		if = {
+			limit = {
+				761 = { OWNER = { is_subject_of = ROOT } }
+			}
+			MAN = { transfer_state = 761 }
+		}
+		if = {
+			limit = {
+				714 = { OWNER = { is_subject_of = ROOT } }
+			}
+			MAN = { transfer_state = 714 }
+		}
+		if = {
+			limit = {
+				715 = { OWNER = { is_subject_of = ROOT } }
+			}
+			MAN = { transfer_state = 715 }
+		}
+		if = {
+			limit = {
+				716 = { OWNER = { is_subject_of = ROOT } }
+			}
+			MAN = { transfer_state = 716 }
+		}
+		if = {
+			limit = {
+				717 = { OWNER = { is_subject_of = ROOT } }
+			}
+			MAN = { transfer_state = 717 }
+		}
+		if = {
+			limit = {
+				328 = { OWNER = { is_subject_of = ROOT } }
+			}
+			MAN = { transfer_state = 328 }
+		}
+		if = {
+			limit = {
+				745 = { OWNER = { is_subject_of = ROOT } }
+			}
+			MAN = { transfer_state = 745 }
+		}
+		if = {
+			limit = {
+				609 = { OWNER = { is_subject_of = ROOT } }
+			}
+			MAN = { transfer_state = 609 }
+		}
+		if = {
+			limit = {
+				610 = { OWNER = { is_subject_of = ROOT } }
+			}
+			MAN = { transfer_state = 610 }
+		}
+		if = {
+			limit = {
+				608 = { OWNER = { is_subject_of = ROOT } }
+			}
+			MAN = { transfer_state = 608 }
+			608 = { add_core_of = MAN }
+		}		
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			set_autonomy = { target = MAN autonomy_state = autonomy_dominion }
+			
+			else = {
+				puppet = MAN
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = GXC }
+			OR = {
+				591 = { OWNER = { is_subject_of = ROOT } }
+				592 = { OWNER = { is_subject_of = ROOT } }
+				593 = { OWNER = { is_subject_of = ROOT } }
+				594 = { OWNER = { is_subject_of = ROOT } }
+				599 = { OWNER = { is_subject_of = ROOT } }
+			}
+		}
+		if = {
+			limit = {
+				591 = { OWNER = { is_subject_of = ROOT } }
+			}
+			GXC = { transfer_state = 591 }
+		}
+		if = {
+			limit = {
+				592 = { OWNER = { is_subject_of = ROOT } }
+			}
+			GXC = { transfer_state = 592 }
+		}
+		if = {
+			limit = {
+				593 = { OWNER = { is_subject_of = ROOT } }
+			}
+			GXC = { transfer_state = 593 }
+		}
+		if = {
+			limit = {
+				594 = { OWNER = { is_subject_of = ROOT } }
+			}
+			GXC = { transfer_state = 594 }
+		}
+		if = {
+			limit = {
+				599 = { OWNER = { is_subject_of = ROOT } }
+			}
+			GXC = { transfer_state = 599 }
+		}
+		if = {
+			limit = {
+				326 = { OWNER = { is_subject_of = ROOT } }
+			}
+			GXC = { transfer_state = 326 }
+			326 = { add_core_of = GXC }
+		}
+		if = {
+			limit = {
+				728 = { OWNER = { is_subject_of = ROOT } }
+			}
+			GXC = { transfer_state = 728 }
+			728 = { add_core_of = GXC }
+		}
+		if = {
+			limit = {
+				729 = { OWNER = { is_subject_of = ROOT } }
+			}
+			GXC = { transfer_state = 729 }
+			729 = { add_core_of = GXC }
+		}
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			set_autonomy = { target = GXC autonomy_state = autonomy_dominion }
+			
+			else = {
+				puppet = GXC
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = MEN }
+			OR = {
+				611 = { OWNER = { is_subject_of = ROOT } }
+				612 = { OWNER = { is_subject_of = ROOT } }
+			}
+		}
+		if = {
+			limit = {
+				611 = { OWNER = { is_subject_of = ROOT } }
+			}
+			MEN = { transfer_state = 611 }
+		}
+		if = {
+			limit = {
+				612 = { OWNER = { is_subject_of = ROOT } }
+			}
+			MEN = { transfer_state = 612 }
+		}
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			set_autonomy = { target = MEN autonomy_state = autonomy_dominion }
+			
+			else = {
+				puppet = MEN
+			}
+		}
+	}
+	
+	if = {
+		limit = {
+			ALG = { is_subject_of = ROOT }
+			514 = { OWNER = { is_subject_of = ROOT } }
+		}
+		ALG = { transfer_state = 514 }
+	}	
+	if = {
+		limit = {
+			ETH = { is_subject_of = ROOT }
+			837 = { OWNER = { is_subject_of = ROOT } }
+		}
+		ETH = { transfer_state = 837 }
+	}
+	if = {
+		limit = {
+			TUR = { is_subject_of = ROOT }
+			341 = { OWNER = { tag = TUR } }
+		}
+		ROOT = { transfer_state = 341 }
+	}
+	
+	if = {
+		limit = {
+			SUD = { is_subject_of = ROOT }
+			OR = {
+				767 = { OWNER = { is_subject_of = ROOT } }
+				551 = { OWNER = { is_subject_of = ROOT } }
+			}
+		}
+		if = {
+			limit = {
+				767 = { OWNER = { is_subject_of = ROOT } }
+			}
+			SUD = { transfer_state = 767 }
+		}
+		if = {
+			limit = {
+				551 = { OWNER = { is_subject_of = ROOT } }
+			}
+			SUD = { transfer_state = 551 }
+		}
+	}
+	if = {
+		limit = {
+			PAK = { is_subject_of = ROOT }
+			OR = {
+				787 = { OWNER = { is_subject_of = ROOT } }
+				441 = { OWNER = { is_subject_of = ROOT } }
+			}
+		}
+		if = {
+			limit = {
+				787 = { OWNER = { is_subject_of = ROOT } }
+			}
+			PAK = { transfer_state = 787 }
+		}
+		if = {
+			limit = {
+				441 = { OWNER = { is_subject_of = ROOT } }
+			}
+			PAK = { transfer_state = 441 }
+		}
+	}
+	
+	if = {
+		limit = {
+			owns_state = 463
+			has_subject = CAN
+		}
+		CAN = { 
+			transfer_state = 463
+			463 = { add_core_of = CAN }
+		}
+	}
+	
+	if = {
+		limit = {
+			owns_state = 721
+			has_subject = INS
+		}
+		INS = {
+			transfer_state = 721
+			721 = { add_core_of = INS }
+		}
+	}
+	
+	if = {
+		limit = {
+			owns_state = 655
+			has_subject = JAP
+		}
+		JAP = { 
+			transfer_state = 655
+			721 = { add_core_of = JAP }
+		}
+	}
+	
+	if = {
+		limit = {
+			owns_state = 299 #The Falklands, Just to make it REALLY clear that they're British, not Argentinian
+			NOT = { country_exists = ENG }
+		}
+		ENG = { transfer_state = 299 }
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			set_autonomy = { target = ENG autonomy_state = autonomy_dominion }
+			
+			else = {
+				puppet = ENG
+			}
+		}
+		if = {
+			limit = { owns_state = 720 }
+			ENG = { transfer_state = 720 }
+		}
+		299 = { add_core_of = ENG }
+		720 = { add_core_of = ENG }
+	}
+}

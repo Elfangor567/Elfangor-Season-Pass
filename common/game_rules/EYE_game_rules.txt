@@ -1,0 +1,88 @@
+EYE_switzerland_ai_behavior = {
+	name = "EYE_SWI_AI_BEHAVIOR"
+	group = "RULE_GROUP_EYE_OF_THE_HURRICANE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = HISTORICAL
+		text = "RULE_OPTION_HISTORICAL"
+		desc = "RULE_OPTION_EYE_SWI_HISTORICAL_AI_DESC"
+		allow_achievements = yes #Entirely for the aesthetics of the historical one not having the X'd trophy
+	}
+	option = {
+		name = DEMOCRATIC
+		text = "RULE_OPTION_DEMOCRATIC"
+		desc = "RULE_OPTION_EYE_SWI_DEMOCRATIC_AI_DESC"
+	}
+	option = {
+		name = COMMUNIST
+		text = "RULE_OPTION_COMMUNIST"
+		desc = "RULE_OPTION_EYE_SWI_COMMUNIST_AI_DESC"
+	}
+	option = {
+		name = FASCIST_CORPORATIST
+		text = "RULE_OPTION_FASCIST_CORPORATIST"
+		desc = "RULE_OPTION_EYE_SWI_FASCIST_CORPORATIST_AI_DESC"
+	}
+	option = {
+		name = FASCIST_OLD
+		text = "RULE_OPTION_FASCIST_OLD"
+		desc = "RULE_OPTION_EYE_SWI_FASCIST_OLD_AI_DESC"
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+	}
+}
+EYE_austria_ai_behavior = {
+	name = "EYE_AUS_AI_BEHAVIOR"
+	group = "RULE_GROUP_EYE_OF_THE_HURRICANE"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = HISTORICAL
+		text = "RULE_OPTION_HISTORICAL"
+		desc = "RULE_OPTION_EYE_AUS_HISTORICAL_AI_DESC"
+		allow_achievements = yes #Entirely for the aesthetics of the historical one not having the X'd trophy
+	}
+	option = {
+		name = RESTORE_OTTO
+		text = "RULE_OPTION_RESTORE_OTTO"
+		desc = "RULE_OPTION_EYE_AUS_RESTORE_OTTO_AI_DESC"
+	}
+	option = {
+		name = FASCIST
+		text = "RULE_OPTION_EYE_AUS_FASCIST"
+		desc = "RULE_OPTION_EYE_AUS_FASCIST_DESC"
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+	}
+}
+
+EYE_free_slovakia = {
+	name = "EYE_FREE_SLOVAKIA"
+	required_dlc = "Man the Guns"
+	group = "RULE_GROUP_GAME_SETUP"
+	
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_FRAGMENTATION_DESC"
+	}
+	option = {
+		name = EYE_SLO_FREED
+		text = "RULE_OPTION_EYE_SLO_FREED"
+		desc = "RULE_OPTION_EYE_SLO_FREED_DESC"
+	}
+}
+	

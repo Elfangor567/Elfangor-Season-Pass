@@ -1,0 +1,27 @@
+state=
+{
+	id=835
+	name="STATE_835"
+	manpower = 268000
+	
+	state_category = rural
+	resources={
+		rubber = 6
+	}	
+	
+
+	history= {
+		owner = LIB
+		buildings = {
+			infrastructure = 1
+		}
+		victory_points = {
+			13236 1
+		}
+		add_core_of = LIB
+	}
+	provinces={
+		13236 13237 13238
+	}
+	local_supplies=0.0
+}

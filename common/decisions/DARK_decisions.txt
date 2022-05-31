@@ -1,0 +1,1268 @@
+DARK_create_aoi_category = {
+	
+	DARK_create_aoi_decision = {
+		
+		icon = generic_operation
+		
+		available = {
+			has_completed_focus = ITA_victoryinETH
+			550 = { 
+				is_controlled_by_ROOT_or_subject = yes
+				OWNER = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+			836 = {
+				is_controlled_by_ROOT_or_subject = yes
+				OWNER = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+			271 = {
+				is_controlled_by_ROOT_or_subject = yes
+				OWNER = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+			837 = { 
+				is_controlled_by_ROOT_or_subject = yes
+				OWNER = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+			559 = { 
+				is_controlled_by_ROOT_or_subject = yes
+				OWNER = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		
+		visible = {
+			NOT = { country_exists = AOI }
+		}
+		
+		cost = 5
+		
+		complete_effect = {
+			550 = { add_core_of = AOI }
+			559 = { add_core_of = AOI }
+			837 = { add_core_of = AOI }
+			ITA_rodolfo_graziani = {
+				set_nationality = AOI
+			}
+			AOI = {
+				add_country_leader_role = {
+					character = ITA_rodolfo_graziani
+					promote_leader = yes
+					country_leader = {
+						ideology = fascism_ideology
+						expire = "1965.1.1.1"
+						traits = { }
+					}
+				}
+				transfer_state = 550
+				transfer_state = 836
+				transfer_state = 271
+				transfer_state = 837
+				transfer_state = 559
+				if = {
+					limit = {
+						269 = {
+							is_controlled_by_ROOT_or_subject = yes
+							OWNER = {
+								OR = {
+									tag = ROOT
+									AND = {
+										is_subject_of = ROOT
+										is_ai = yes
+									}
+								}								
+							}
+						}
+					}
+					transfer_state = 269
+					hidden_effect = {
+						add_state_claim = 269
+					}
+				}
+				else = {
+					add_state_claim = 269
+				}
+				if = {
+					limit = {
+						268 = {
+							is_controlled_by_ROOT_or_subject = yes
+							OWNER = {
+								OR = {
+									tag = ROOT
+									AND = {
+										is_subject_of = ROOT
+										is_ai = yes
+									}
+								}								
+							}
+						}
+					}
+					transfer_state = 268
+					hidden_effect = {
+						add_state_claim = 268
+					}
+				}
+				else = {
+					add_state_claim = 268
+				}
+				hidden_effect = {
+					add_state_claim = 836
+					add_state_claim = 271
+					add_state_claim = 837
+					every_owned_state = { 
+						limit = { NOT = { is_core_of = AOI }} 
+						add_compliance = 15
+					}
+				}
+			}
+			custom_effect_tooltip = DARK_aoi_troops_tt
+			hidden_effect = {
+				AOI = { load_oob = AOI_created_troops }
+			}			
+			puppet = AOI
+			if = {
+				limit = { has_government = fascism }
+				set_autonomy = {
+					target = AOI
+					autonomy_state = autonomy_reichskommissariat
+					freedom_level = 0.75
+				}
+			}
+			else = {
+				set_autonomy = {
+					target = AOI
+					autonomy_state = autonomy_integrated_puppet
+					freedom_level = 0.75
+				}
+			}
+			if = {
+				limit = { is_ai = no }
+				country_event = DARK_eth.268
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				NOT = { has_government = fascism }
+			}
+		}
+	}
+}
+
+DARK_revive_ethiopia_category = {
+	
+	DARK_revive_ethiopia_decision = {
+		
+		icon = generic_form_nation
+		
+		target_trigger = {
+			FROM = {
+				has_war_with = ROOT
+				OR = {
+					836 = { OWNER = { tag = FROM } }
+					271 = { OWNER = { tag = FROM } }
+					837 = { OWNER = { tag = FROM } }
+				}
+			}
+		}
+		
+		available = {
+			is_faction_leader = yes
+			has_equipment = { infantry_equipment > 1000 }
+			OR = {
+				836 = { is_controlled_by_ROOT_or_subject = yes }
+				271 = { is_controlled_by_ROOT_or_subject = yes }
+				837 = { is_controlled_by_ROOT_or_subject = yes }
+			}
+		}
+		
+		visible = {
+			OR = {
+				836 = {
+					OWNER = { has_war_with = ROOT }
+				}
+				271 = {
+					OWNER = { has_war_with = ROOT }
+				}
+				837 = {
+					OWNER = { has_war_with = ROOT }
+				}
+			}
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		
+		complete_effect = {
+			if = {
+				limit = { NOT = { country_exists = ETH } }
+				if = {
+					limit = { 836 = { is_controlled_by_ROOT_or_subject = yes } }
+					ETH = { transfer_state = 836 }
+				}
+				if = {
+					limit = { 271 = { is_controlled_by_ROOT_or_subject = yes } }
+					ETH = { transfer_state = 271 }
+				}
+				if = {
+					limit = { 837 = { is_controlled_by_ROOT_or_subject = yes } }
+					ETH = { transfer_state = 837 }
+				}
+				send_equipment = {
+					type = infantry_equipment
+					target = ETH
+					amount = 1000
+				}
+				add_to_faction = ETH
+				ETH = {
+					add_to_war = {
+						targeted_alliance = ROOT
+						enemy = FROM
+						hostility_reason = war
+					}
+					hidden_effect = {
+						if = {
+							limit = { NOT = { has_cosmetic_tag = DARK_evil_ethiopia } }
+							set_cosmetic_tag = DARK_ethiopia_reborn
+						}
+						
+						division_template = {
+							name = "Freedom Force"
+							priority = 2
+							division_names_group = ETH_INF_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+								infantry = { x = 0 y = 3 }
+								infantry = { x = 0 y = 4 }
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+								infantry = { x = 1 y = 3 }
+								infantry = { x = 1 y = 4 }
+							}
+							support = {
+								recon = { x = 0 y = 0 }
+							}
+						}
+						random_owned_controlled_state = {
+								prioritize = { 271 }
+								create_unit = {
+									division = "name = \"Gideon Force\" division_template = \"Freedom Force\" start_experience_factor = 0.5" 
+									owner = PREV
+								}
+							}
+						division_template = {
+							name = "Arbegnoch" #Patriots, the various rebel groups in Ethiopia (Known as Shifta to Italy)
+							priority = 1
+							division_names_group = ETH_GAR_01
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+							}
+							support = {
+								recon = { x = 0 y = 0 }
+							}
+						}
+						random_owned_controlled_state = {
+							prioritize = { 271 }
+							create_unit = {
+								division = "name = \"Gojjam Arbegnoch\" division_template = \"Arbegnoch\" start_experience_factor = 0.5" 
+								owner = ETH
+							}
+						}
+						random_owned_controlled_state = {
+							prioritize = { 271 }
+							create_unit = {
+								division = "name = \"Gore Arbegnoch\" division_template = \"Arbegnoch\" start_experience_factor = 0.5" 
+								owner = ETH
+							}
+						}
+						random_owned_controlled_state = {
+							prioritize = { 271 }
+							create_unit = {
+								division = "name = \"Ogaden Arbegnoch\" division_template = \"Arbegnoch\" start_experience_factor = 0.5" 
+								owner = ETH
+							}
+						}
+					}
+				}
+			}
+			else = {
+				ETH = {
+					hidden_effect = {
+						if = {
+							limit = { 836 = { is_controlled_by_ROOT_or_subject = yes } }
+							ETH = { transfer_state = 836 }
+							836 = { set_state_flag = DARK_revolting_eth_state }
+						}
+						if = {
+							limit = { 271 = { is_controlled_by_ROOT_or_subject = yes } }
+							ETH = { transfer_state = 271 }
+							271 = { set_state_flag = DARK_revolting_eth_state }
+						}
+						if = {
+							limit = { 837 = { is_controlled_by_ROOT_or_subject = yes } }
+							ETH = { transfer_state = 837 }
+							837 = { set_state_flag = DARK_revolting_eth_state }
+						}
+						if = {
+							limit = { NOT = { has_cosmetic_tag = DARK_evil_ethiopia } }
+							set_cosmetic_tag = DARK_ethiopia_reborn
+						}
+					}
+					if = {
+						limit = { ETH = { has_government = fascism } }
+						start_civil_war = {
+							ruling_party = fascism
+							ideology = neutrality
+							size = 0.25
+							states_filter = {
+								has_state_flag = DARK_revolting_eth_state
+							}
+						}
+					}
+					else_if = {
+						limit = { ETH = { has_government = communism } }
+						start_civil_war = {
+							ruling_party = communism
+							ideology = neutrality
+							size = 0.25
+							states_filter = {
+								has_state_flag = DARK_revolting_eth_state
+							}
+						}
+					}
+					else_if = {
+						limit = { ETH = { has_government = democratic } }
+						start_civil_war = {
+							ruling_party = democratic
+							ideology = neutrality
+							size = 0.25
+							states_filter = {
+								has_state_flag = DARK_revolting_eth_state
+							}
+						}
+					}
+					random_other_country = {
+						limit = {
+							original_tag = ETH
+							NOT = { tag = ETH }
+						}						
+						send_equipment = {
+							type = infantry_equipment
+							amount = 1000
+						}
+						ROOT = { add_to_faction = PREV }
+						hidden_effect = {
+							save_event_target_as = DARK_revolting_eth_country
+							ETH = {
+								ETH_makonnen_endelkachew = {
+									set_nationality = DARK_revolting_eth_country
+									promote_character = yes
+								}
+								ETH_takele_wolde_hawariat = {
+									set_nationality = DARK_revolting_eth_country
+									promote_character = yes
+								}
+								ETH_hailu_tekle_haimonot = {
+									set_nationality = DARK_revolting_eth_country
+									promote_character = yes
+								}
+							}
+							every_unit_leader = {
+								set_nationality = ETH
+							}
+							ETH = {
+								every_character = {
+									limit = {
+										OR = {
+											is_character = ETH_haile_selassie
+											is_character = ETH_mulugeta_yeggazu
+											is_character = ETH_kassa_haile_darge
+											is_character = ETH_imru_haile_selassie
+											is_character = ETH_birru_wolde_gabriel
+											is_character = ETH_nasibu_zeamanuel
+										}
+									}
+									set_nationality = event_target:DARK_revolting_eth_country
+								}
+							}
+							division_template = {
+								name = "Freedom Force"
+								priority = 2
+								division_names_group = ETH_INF_01
+								regiments = {
+									infantry = { x = 0 y = 0 }
+									infantry = { x = 0 y = 1 }
+									infantry = { x = 0 y = 2 }
+									infantry = { x = 0 y = 3 }
+									infantry = { x = 0 y = 4 }
+									infantry = { x = 1 y = 0 }
+									infantry = { x = 1 y = 1 }
+									infantry = { x = 1 y = 2 }
+									infantry = { x = 1 y = 3 }
+									infantry = { x = 1 y = 4 }
+								}
+								support = {
+									recon = { x = 0 y = 0 }
+								}
+							}
+							random_owned_controlled_state = {
+								prioritize = { 271 }
+								create_unit = {
+									division = "name = \"Gideon Force\" division_template = \"Freedom Force\" start_experience_factor = 0.5" 
+									owner = PREV
+								}
+							}
+							division_template = {
+								name = "Arbegnoch" #Patriots, the various rebel groups in Ethiopia (Known as Shifta to Italy)
+								priority = 1
+								division_names_group = ETH_GAR_01
+								regiments = {
+									infantry = { x = 0 y = 0 }
+									infantry = { x = 0 y = 1 }
+									infantry = { x = 0 y = 2 }
+									infantry = { x = 1 y = 0 }
+									infantry = { x = 1 y = 1 }
+									infantry = { x = 1 y = 2 }
+								}
+								support = {
+									recon = { x = 0 y = 0 }
+								}
+							}
+							random_owned_controlled_state = {
+								prioritize = { 271 }
+								create_unit = {
+									division = "name = \"Gojjam Arbegnoch\" division_template = \"Arbegnoch\" start_experience_factor = 0.5" 
+									owner = PREV
+								}
+							}
+							random_owned_controlled_state = {
+								prioritize = { 271 }
+								create_unit = {
+									division = "name = \"Gore Arbegnoch\" division_template = \"Arbegnoch\" start_experience_factor = 0.5" 
+									owner = PREV
+								}
+							}
+							random_owned_controlled_state = {
+								prioritize = { 271 }
+								create_unit = {
+									division = "name = \"Ogaden Arbegnoch\" division_template = \"Arbegnoch\" start_experience_factor = 0.5" 
+									owner = PREV
+								}
+							}
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = DARK_eth_troops_tt
+		}
+		
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 0
+				has_government = communism
+				surrender_progress < 0.15
+			}
+		}
+	}
+}
+
+DARK_replace_graziani_category = {
+
+	DARK_replace_graziani_decision = {
+	
+		icon = generic_army_support
+		
+		available = {
+			AOI = { is_subject_of = ROOT }
+		}
+		
+		visible = {
+			AOI = { is_subject_of = ROOT }
+			AOI = {
+				has_country_flag = DARK_paranoid_flag
+			}
+		}
+		
+		cost = 25
+		
+		complete_effect = {
+			AOI = { 
+				set_politics = {
+					ruling_party = neutrality
+				}
+				add_popularity = { ideology = fascism popularity = -0.3 }
+				add_popularity = { ideology = neutrality popularity = 0.3 }
+				ITA_rodolfo_graziani = {
+					set_nationality = ITA
+				}
+				hidden_effect = {					
+					promote_character = AOI_guglielmo_nasi
+					country_event = DARK_eth.252
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}		
+	}
+}
+
+DARK_drop_superfluous_cosmetics_category = {
+	
+	DARK_drop_superfluous_cosmetics = {
+		
+		icon = generic_independence
+		
+		visible = {
+			is_subject = no
+			OR = {
+				has_cosmetic_tag = ERI_ITALY
+				has_cosmetic_tag = ETH_ITALY
+				has_cosmetic_tag = SOM_ITALY
+				has_cosmetic_tag = LBA_ITALY
+				has_cosmetic_tag = SOM_UK
+				has_cosmetic_tag = SUD_UK
+				has_cosmetic_tag = KEN_UK
+				has_cosmetic_tag = BOT_UK
+				has_cosmetic_tag = GHA_UK
+				has_cosmetic_tag = SIE_UK
+				has_cosmetic_tag = MLW_UK
+				has_cosmetic_tag = NGA_UK
+				has_cosmetic_tag = TZN_UK
+				has_cosmetic_tag = GAM_UK
+				has_cosmetic_tag = UGA_UK
+				has_cosmetic_tag = ZAM_UK
+				has_cosmetic_tag = ZIM_UK
+				has_cosmetic_tag = MAD_UK
+				has_cosmetic_tag = NMB_UK
+				has_cosmetic_tag = SOM_FRENCH
+				has_cosmetic_tag = ALG_FRENCH
+				has_cosmetic_tag = CMR_FRENCH
+				has_cosmetic_tag = CAR_FRENCH
+				has_cosmetic_tag = CHA_FRENCH
+				has_cosmetic_tag = RCG_FRENCH
+				has_cosmetic_tag = IVO_FRENCH
+				has_cosmetic_tag = DAH_FRENCH
+				has_cosmetic_tag = GAB_FRENCH
+				has_cosmetic_tag = GNA_FRENCH
+				has_cosmetic_tag = MOR_FRENCH
+				has_cosmetic_tag = MLI_FRENCH
+				has_cosmetic_tag = MRT_FRENCH
+				has_cosmetic_tag = NGR_FRENCH
+				has_cosmetic_tag = SEN_FRENCH
+				has_cosmetic_tag = TOG_FRENCH
+				has_cosmetic_tag = TUN_FRENCH
+				has_cosmetic_tag = VOL_FRENCH
+				has_cosmetic_tag = BRD_BELGIAN
+				has_cosmetic_tag = RWA_BELGIAN
+				has_cosmetic_tag = COG_BELGIAN
+				has_cosmetic_tag = ANG_PORT
+				has_cosmetic_tag = GNB_PORT
+				has_cosmetic_tag = MZB_PORT
+				has_cosmetic_tag = EQG_SPAIN
+				has_cosmetic_tag = WES_SPAIN
+				has_cosmetic_tag = MOR_SPAIN
+			}
+		}
+		
+		available = {
+			is_subject = no
+		}
+		
+		complete_effect = {
+			drop_cosmetic_tag = yes
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+}
+
+DARK_restore_sultan_category = {
+	
+	DARK_restore_sultan_decision = {
+		
+		icon = generic_form_nation
+		
+		available = {
+			is_subject = no
+		}
+		
+		visible = {
+			is_subject = no
+			OR = {
+				AND = {
+					has_government = neutrality
+					NOT = { has_country_leader = { ruling_only = yes character = SOM_ali_yusuf_kenadid } }
+				}
+				AND = {
+					has_government = fascism
+					NOT = { has_country_leader = { ruling_only = yes character = SOM_osman_mahamuud } }
+				}
+			}
+		}
+		
+		cost = 0
+		
+		complete_effect = {		
+			if = {
+				limit = { has_government = fascism }
+				promote_character = SOM_osman_mahamuud
+			}
+			else_if = {
+				limit = { has_government = neutrality }
+				promote_character = SOM_ali_yusuf_kenadid
+			}
+		}
+		
+		ai_will_do = {
+			base = 1000
+		}
+	}
+}
+
+SAF_anti_colonialist_crusade = {
+	
+	DARK_liberate_ethiopia = {
+
+		icon = generic_independence
+
+		available = {
+			tag = SAF
+			has_completed_focus = SAF_anti_colonialist_crusade
+			AND = {
+				SAF = {
+					controls_state = 271
+					controls_state = 836
+					controls_state = 275
+				}
+				ETH = { exists = no }
+			}
+		}
+		
+		visible = {
+			ETH = { exists = no }
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		complete_effect = {
+			country_event = { id = DARK_dark.100 }
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}		
+	}
+	DARK_liberate_liberia = {
+
+		icon = generic_independence
+
+		available = {
+			tag = SAF
+			has_completed_focus = SAF_anti_colonialist_crusade
+			AND = {
+				SAF = {
+					controls_state = 298
+					controls_state = 835
+				}
+				LIB = { exists = no }
+			}
+		}
+		
+		visible = {
+			LIB = { exists = no }
+		}
+
+		cost = 0
+		fire_only_once = yes
+		
+		complete_effect = {
+			country_event = { id = DARK_dark.1003 }
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}		
+	}
+	
+}
+
+DARK_join_somalia_category = {
+	
+	DARK_join_somalia_decision = {
+		
+		icon = eng_trade_unions_support
+		
+		available = {
+			OR = {
+				is_subject = no
+				is_subject_of = SOM
+			}
+			country_exists = SOM
+			NOT = { has_war_with = SOM }
+			OR = {
+				SOM = { is_subject = no }
+				any_other_country = {
+					has_subject = SOM
+					has_subject = DJI
+				}
+			}
+		}
+		
+		visible = {
+			original_tag = DJI
+			has_government = neutrality
+		}
+		
+		cost = 0
+		days_re_enable = 360
+		
+		complete_effect = {
+			if = {
+				limit = { SOM = { is_ai = no } }
+				custom_effect_tooltip = GAME_OVER_TT
+				else = { custom_effect_tooltip = DARK_become_som_tt }
+			}
+			SOM = { country_event = DARK_dark.10 }
+		}
+		
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 0
+				SOM = { has_civil_war = yes }
+			}
+			modifier = {
+				factor = 0
+				SOM = { surrender_progress > 0.5 }
+			}
+		}
+	}
+	DARK_integrate_somalia_decision = {
+		
+		icon = generic_nationalism
+		
+		available = {
+			if = {
+				limit = { original_tag = DJI }
+				has_subject = SOM
+			}
+			else_if = {
+				limit = { original_tag = SOM }
+				has_subject = DJI
+			}
+		}
+		
+		visible = {
+			if = {
+				limit = { original_tag = DJI }
+				country_exists = SOM
+				SOM = { is_ai = yes }
+			}
+			else_if = {
+				limit = { original_tag = SOM }
+				country_exists = DJI
+				DJI = { is_ai = yes }
+			}
+		}
+		
+		cost = 50
+		
+		complete_effect = {
+			if = {
+				limit = { original_tag = DJI }
+				hidden_effect = {
+					SOM = {
+						every_unit_leader = {
+							set_nationality = ROOT
+						}
+						every_navy_leader = {
+							set_nationality = ROOT
+						}
+					}
+				}
+				annex_country = {
+					target = SOM
+					transfer_troops = yes
+				}
+			}
+			else_if = {
+				limit = { original_tag = SOM }
+				hidden_effect = {
+					DJI = {
+						every_unit_leader = {
+							set_nationality = ROOT
+						}
+						every_navy_leader = {
+							set_nationality = ROOT
+						}
+					}
+				}
+				annex_country = {
+					target = DJI
+					transfer_troops = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+	}
+	DARK_integrate_somali_states_decision = {
+		
+		icon = hol_exchange_intelligence_data
+		
+		available = {
+			if = {
+				limit = { original_tag = DJI }
+				any_state = {
+					is_controlled_by = ROOT
+					is_core_of = SOM
+					NOT = { is_core_of = ROOT }
+				}
+			}
+			else_if = {
+				limit = { original_tag = SOM }
+				any_state = {
+					is_controlled_by = ROOT
+					is_core_of = DJI
+					NOT = { is_core_of = ROOT }
+				}
+			}
+		}
+		
+		visible = {
+			if = {
+				limit = { original_tag = DJI }
+				any_state = {
+					is_core_of = SOM
+					NOT = { is_core_of = ROOT }
+				}
+			}
+			else_if = {
+				limit = { original_tag = SOM }
+				any_state = {
+					is_core_of = DJI
+					NOT = { is_core_of = ROOT }
+				}
+			}			
+		}
+		
+		cost = 25
+		
+		complete_effect = {
+			if = {
+				limit = { original_tag = DJI }
+				every_state = {
+					limit = {
+						is_controlled_by = ROOT
+						is_core_of = SOM
+						NOT = { is_core_of = ROOT }
+					}
+					add_core_of = ROOT
+				}
+			}
+			else_if = {
+				limit = { original_tag = SOM }
+				every_state = {
+					limit = {
+						is_controlled_by = ROOT
+						is_core_of = DJI
+						NOT = { is_core_of = ROOT }
+					}
+					add_core_of = ROOT
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+	}
+}
+
+
+DARK_install_sudanese_monarchy_category = {
+	
+	DARK_install_sudanese_monarchy_decision = {
+		
+		icon = eng_ally_imperialist_coup
+		
+		available = {
+			neutrality > 0.65
+		}
+		
+		visible = {
+			has_idea = SUD_abd_al_rahman_al_mahdi
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_party_name = { ideology = neutrality name = "Neo-Mahdist" long_name = "Neo-Mahdist" }
+			promote_character = SUD_abd_al_rahman_al_mahdi
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			if = {
+				limit = { has_cosmetic_tag = DARK_sudan_and_egypt }
+				set_cosmetic_tag = DARK_sudan_and_egypt_monarchy
+				else = {
+					set_cosmetic_tag = DARK_sudan_monarchy
+				}
+			}
+			
+		}
+		
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				is_in_faction_with = ENG #Let's not piss off the allies (Historical reasons only)
+				NOT = { has_subject = ENG }
+			}				
+		}
+	}
+}
+
+DARK_create_mittelafrika_category = {
+	
+	DARK_create_mittelafrika_decision = {
+	
+		icon = ger_reichskommissariats
+		
+		available = {
+			OR = {
+				541 = { is_controlled_by_ROOT_or_subject = yes }
+				AND = {
+					546 = { is_controlled_by_ROOT_or_subject = yes }
+					768 = { is_controlled_by_ROOT_or_subject = yes }
+					769 = { is_controlled_by_ROOT_or_subject = yes }
+				}
+				AND = {
+					773 = { is_controlled_by_ROOT_or_subject = yes }
+					777 = { is_controlled_by_ROOT_or_subject = yes }
+				}
+			}
+		}
+		
+		visible = {
+			is_subject = no
+			NOT = { has_government = communism }
+			NOT = { country_exists = MTA }
+			any_state = {
+				is_on_continent = africa
+				is_controlled_by_ROOT_or_subject = yes
+			}
+		}
+		
+		cost = 0
+		fire_only_once = yes
+		
+		complete_effect = {
+			#Former German Africa
+			541 = { add_core_of = MTA }
+			546 = { add_core_of = MTA }			
+			768 = { add_core_of = MTA }
+			769 = { add_core_of = MTA }
+			773 = { add_core_of = MTA }
+			777 = { add_core_of = MTA }
+			
+			#Planned Mittelafrika in WW2
+			718 = { add_claim_by = MTA }
+			538 = { add_claim_by = MTA }
+			295 = { add_claim_by = MTA }
+			772 = { add_claim_by = MTA }
+			539 = { add_claim_by = MTA }
+			771 = { add_claim_by = MTA }
+			770 = { add_claim_by = MTA }
+			545 = { add_claim_by = MTA }
+			540 = { add_claim_by = MTA }
+			544 = { add_claim_by = MTA }
+			
+			#Planned Mittelafrika in WWI (Only if no Vichy)
+			if = {
+				limit = { 
+					NOT = {
+						any_other_country = {
+							original_tag = FRA
+							OR = {
+								is_in_faction_with = ROOT
+								is_subject_of = ROOT
+							}
+						}
+					}
+				}
+				557 = { add_claim_by = MTA }
+				272 = { add_claim_by = MTA }
+				701 = { add_claim_by = MTA }
+				296 = { add_claim_by = MTA }
+				780 = { add_claim_by = MTA }
+				556 = { add_claim_by = MTA }
+				778 = { add_claim_by = MTA }
+				779 = { add_claim_by = MTA }
+				if = {
+					limit = { has_war_with = LIB }
+					298 = { add_claim_by = MTA }
+					835 = { add_claim_by = MTA }
+				}
+				700 = { add_claim_by = MTA }
+				274 = { add_claim_by = MTA }
+				781 = { add_claim_by = MTA }
+				776 = { add_claim_by = MTA }
+				558 = { add_claim_by = MTA }
+				660 = { add_claim_by = MTA }
+				772 = { add_claim_by = MTA }
+				539 = { add_claim_by = MTA }
+				543 = { add_claim_by = MTA }
+				706 = { add_claim_by = MTA }
+				708 = { add_claim_by = MTA }
+				if = {
+					limit = { 
+						any_other_country = {
+							original_tag = SPR
+							NOT = { is_in_faction_with = ROOT }
+							NOT = { is_subject_of = ROOT }
+							OR = {
+								has_war_with = ROOT
+								has_government = communism
+							}
+						}
+					}
+					297 = { add_claim_by = MTA }
+				}
+			}
+			if = {
+				limit = {
+					546 = { is_controlled_by_ROOT_or_subject = yes }
+				}
+				MTA = { transfer_state = 546 }
+			}
+			else_if = {
+				limit = {
+					541 = { is_controlled_by_ROOT_or_subject = yes }
+				}
+				MTA = { transfer_state = 541 }
+			}
+			else_if = {
+				limit = {
+					773 = { is_controlled_by_ROOT_or_subject = yes }
+				}
+				MTA = { transfer_state = 773}
+			}
+			every_state = {
+				limit = {
+					is_controlled_by_ROOT_or_subject = yes						
+					OR = {
+						is_core_of = MTA
+						is_claimed_by = MTA
+					}
+				}
+				hidden_effect = {
+					OWNER = { save_event_target_as = DARK_MTA_state_owner_event }
+				}
+				if = {
+					limit = {
+						OWNER = {
+							is_subject_of = ROOT
+							NOT = { original_tag = MTA }
+							all_owned_state = {
+								OR = {
+									is_core_of = MTA
+									is_claimed_by = MTA
+								}
+							}
+						}
+					}
+					MTA = {
+						annex_country = {
+							target = event_target:DARK_MTA_state_owner_event
+							transfer_troops = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							is_owned_and_controlled_by = ROOT
+							any_other_country = {
+								PREV = { is_owned_and_controlled_by = THIS }
+								is_subject_of = GER
+							}
+						}
+					}
+					MTA = { transfer_state = PREV }
+				}
+				else_if = {
+					limit = {
+						OR = {
+							OWNER = { tag = ROOT }
+							OWNER = { is_subject_of = ROOT }
+						}
+					}
+					MTA = { set_state_owner = PREV }
+					
+					else = {
+						MTA = { set_state_controller = PREV }
+					}
+				}
+			}
+			ROOT = {
+				puppet = MTA
+				set_autonomy = { target = MTA autonomy_state = autonomy_reichsprotectorate }
+			}
+			hidden_effect = {
+				MTA = {
+					add_ideas = limited_conscription
+					add_ideas = war_economy
+				}
+			}
+			if = {
+				limit = { is_ai = no }
+				country_event = DARK_dark.13
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+}
+
+GER_reichskommissariats = {
+	
+	DARK_afrikaner_reichskommissariat = {
+		
+		icon = ger_reichskommissariats
+		
+		available = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			541 = { is_controlled_by_ROOT_or_subject = yes }
+			controls_state = 681
+			controls_state = 275
+			controls_state = 719
+		}
+
+		cost = 0
+
+		visible = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					country_exists = SAF
+					NOT = { SAF = { has_government = fascism } }
+				}
+				hidden_effect = {
+					SAF = {
+						set_state_controller = 681
+						set_state_controller = 275
+						set_state_controller = 719
+					}
+				}
+				SAF = {
+					start_civil_war = { ideology = fascism size = 1 }
+				}
+				random_country = {
+					limit= {
+						original_tag = SAF
+						has_government = fascism
+					}
+					transfer_state = 681
+					transfer_state = 275
+					transfer_state = 719
+					if = {
+						limit = { 542 = { is_controlled_by_ROOT_or_subject = yes } }
+						transfer_state = 542
+					}
+					if = {
+						limit = { 545 = { is_controlled_by_ROOT_or_subject = yes } }
+						transfer_state = 545
+					}
+					GER = {
+						puppet = PREV
+						set_autonomy = { target = PREV autonomy_state = autonomy_reichsprotectorate }
+					}
+					hidden_effect = {
+						add_ideas = limited_conscription
+						add_ideas = war_economy
+					}
+				}
+			}
+			else = {
+				SAF = {
+					transfer_state = 681
+					transfer_state = 275
+					transfer_state = 719
+					if = {
+						limit = { 542 = { is_controlled_by_ROOT_or_subject = yes } }
+						transfer_state = 542
+					}
+					if = {
+						limit = { 545 = { is_controlled_by_ROOT_or_subject = yes } }
+						transfer_state = 545
+					}
+				}
+				set_autonomy = { target = SAF autonomy_state = autonomy_reichsprotectorate }
+			}
+			if = {
+				limit = {
+					OR = {
+						has_subject = MTA
+						is_in_faction_with = MTA
+					}
+				}
+				MTA = {
+					set_state_controller = 541
+				}
+			}
+			542 = { add_core_of = SAF }
+			545 = { add_claim_by = SAF }
+		}		
+	}
+}
+
+
+

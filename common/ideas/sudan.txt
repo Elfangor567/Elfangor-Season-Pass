@@ -1,0 +1,166 @@
+ideas = {
+	country = {
+		SUD_two_lands = {
+			
+			picture = eng_imperial_conscription
+			
+			allowed = {
+				original_tag = SUD
+			}
+			
+			modifier = {
+				war_support_factor = 0.25
+				production_speed_buildings_factor = 0.1
+				compliance_gain = 0.1
+			}
+			targeted_modifier = {
+				tag = EGY
+				generate_wargoal_tension_against = -1
+			}
+			targeted_modifier = {
+				tag = CHA
+				generate_wargoal_tension_against = -1
+			}
+			targeted_modifier = {
+				tag = LBA
+				generate_wargoal_tension_against = -1
+			}
+		}
+	}
+	
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		SUD_tech_school = { #The Sudan Railways Technical School Club (If this seems like stretch, that's because it is)
+			
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				original_tag = SUD
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { fast_tank_manufacturer }
+		}
+	}
+
+	naval_manufacturer = {
+		
+		designer = yes
+		
+		SUD_ssl = { #Sudan Shipping Line
+			
+			picture = generic_naval_manufacturer_1
+
+			
+			allowed = {
+				original_tag = SUD
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+		}
+		
+		SUD_misr = { #Misr Navigation Company
+			
+			picture = generic_naval_manufacturer_2
+
+			
+			allowed = {
+				original_tag = SUD
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+		}
+	}
+	
+	aircraft_manufacturer = {
+			
+		designer = yes		
+		
+		SUD_air = { #Sudan Airways, backed by de Havilland
+			
+			picture = generic_air_manufacturer_3
+			
+			allowed = {
+				original_tag = SUD
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	materiel_manufacturer = {
+	
+		designer = yes
+		
+		SUD_shaggara = { #1960 ammunition plant built in Shaggara with help from West Germany
+			
+			picture = generic_infantry_equipment_manufacturer_2
+			
+			allowed = {
+				original_tag = SUD
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+	}
+	
+	industrial_concern = {
+	
+		SUD_NRC = { #National Radio Corporation, founded in the early 1940's
+		
+			picture = generic_electronics_concern_1
+
+			allowed = {
+				original_tag = SUD
+			}
+			
+			cost = 150
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
+		
+		SUD_gezira = { #Sudan Gezira Board, the Sudanese officiating body of the Gezira Scheme
+		
+			picture =  generic_industrial_concern_1
+
+			allowed = {
+				original_tag = SUD
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}
+	}
+}

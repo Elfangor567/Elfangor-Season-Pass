@@ -1,0 +1,37 @@
+# List of names and logos for intelligence agencies
+# available trigger will determine if the logo is in the list of available logos or not
+# names is a list of names. Can be a localization entry, or the name directly. A random name will be picked from them.
+
+intelligence_agency = { #Regular Austria
+
+	picture = GFX_intelligence_agency_logo_aus
+	names = { "ZEST" }
+	
+	default = { 
+		tag = AUS
+		NOT = { has_cosmetic_tag = HUN_EMPIRE }
+	}
+	available = { original_tag = AUS }
+}
+
+intelligence_agency = { #Austria-Hungary
+
+	picture = GFX_intelligence_agency_logo_ah
+	names = { "Evidenzbureau" }
+	
+	default = {
+		has_cosmetic_tag = HUN_EMPIRE
+	}
+	available = { 
+		has_cosmetic_tag = HUN_EMPIRE
+	}
+}
+
+intelligence_agency = {
+
+	picture = GFX_intelligence_agency_logo_swi
+	names = { "Geheimdienstes" }
+	
+	default = { tag = SWI }
+	available = { original_tag = SWI }
+}

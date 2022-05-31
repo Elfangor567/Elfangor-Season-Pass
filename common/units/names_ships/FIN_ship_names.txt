@@ -1,0 +1,121 @@
+﻿##### FINLAND NAME LISTS #####
+### REGULAR DESTROYER NAMES###
+FIN_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+
+	for_countries = { FIN }
+
+	type = ship
+	ship_types = { ship_hull_light destroyer DEN_ship_hull_fishery_protection SCA_ship_hull_gunboats }			
+
+	fallback_name = "Hävittäjä %d"					
+
+	unique = {
+		"Nicholas I" "Hämeenmaa" "Matti Kurki" "Uusimaa" "Karjala" "Turunmaa" "Sisu" "Hurja" "Isku" 
+		"Syöksy" "Nuoli" "Vinha" "Raju" "Vasama" "Vihuri" "Viima" "Riilahti" "Poltava" "Lesnaya"
+	}
+}
+
+### LIGHT CRUISER NAMES###
+FIN_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+
+	for_countries = { FIN }
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	
+	fallback_name = "Kevyt Risteilijä %d"
+
+	unique = {
+		"Sampo" "America" "Joukahainen" "Tapio" "Lemminkäinen" "Helsinki" "Rauma" "Turku" "Kemi" 
+		"Maarianhamina" "Vaasa" "Viipuri" "Kotka" "Oulu" "Rauma" "Väinämöinen" "Ilmarinen" "Sisu"
+		"Sauna" "Reilu Meininki" "Kalevala" "Apu"
+	}
+}
+
+### HEAVY CRUISER NAMES###
+FIN_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+
+	for_countries = { FIN }
+
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	fallback_name = "Raskas Risteilijä %d"
+
+	unique = {
+		"Väinämöinen" "Ilmarinen" "Joukahainen" "Tapio" "Ukko" "Lemminkäinen" "Helsinki" "Rauma" 
+		"Turku" "Kemi" "Maarianhamina" "Viipuri" "Kotka" "Oulu" "Rauma" "Sauna" "Marjatta" "Kalevala"
+	}
+}
+
+
+### BATTLESHIP NAMES ###
+FIN_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+
+	for_countries = { FIN }
+
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	
+	fallback_name = "Taistelulaiva %d"		
+
+	unique = {
+		"Stålhandske" "Uusimaa" "Karjala" "Pohjanmaa" "Carl-Olof" "Klaus Fleming" "Pietarsaari" 
+		"Aura" "Tampere" "Gustav Horn"
+		"Karhu" "Hiiden" "Kraken" "Lindormen" "Ragnarok" #Previously SHBB only
+	}
+}
+
+### BATTLECRUISER NAMES ###
+FIN_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { FIN }
+
+	type = ship
+	ship_types = { ship_hull_heavy battle_cruiser }
+	
+	fallback_name = "Taisteluristeilijä %d"		
+
+	unique = {
+		"Uusimaa" "Karjala" "Pohjanmaa" "Rauma" "Turku" "Viipuri" "Pietarsaari" "Vaasa" "Oulu" "Aura" "Kemi" "Tampere" 
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+FIN_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+
+	for_countries = { FIN }
+
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	
+	fallback_name = "Lentotukialus %d"	
+
+	unique = {
+		"Sprengtporten" "Suur-Suomi" "Karjala" "Nordström" "Gadolinite" "Armi Kuusela"
+		"Uusimaa" "Ahvenanmaa" "Mannerheim" 
+	}
+}
+
+### SUBMARINES ###
+FIN_SS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SUBMARINES
+
+	for_countries = { FIN }
+
+	type = ship
+	ship_types = { ship_hull_submarine submarine }
+	
+	fallback_name = "Sukellusvene %d"
+	
+	unique = {
+		"Vetehinen" "Vesihiisi" "Iku-Turso" "Vesikko" "AG 12" "AG 16" "Nymfi" "Iku-Turso" "Näkki"
+		"AG 14" "AG 18" "AG 20" "BG 2" "BG 4" "BG 6"
+	}
+}

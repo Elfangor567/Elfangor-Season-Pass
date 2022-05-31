@@ -1,0 +1,43 @@
+EXP_give_docking_rights = {
+	
+	custom_effect_tooltip = EXP_give_docking_rights_tt
+	hidden_effect = {
+		diplomatic_relation = {
+			country = PREV
+			relation = offer_docking_rights
+			active = yes
+		}
+	}
+}
+EXP_receive_docking_rights = {
+	
+	custom_effect_tooltip = EXP_receive_docking_rights_tt
+	hidden_effect = {
+		diplomatic_relation = {
+			country = PREV
+			relation = docking_rights
+			active = yes
+		}
+	}
+}
+
+EXP_set_temporary_party_popularity_variables = {	
+	hidden_effect = {
+		set_temp_variable = { temp_party_d_pop = party_popularity@democratic }
+			multiply_temp_variable = { temp_party_d_pop = 100 } 
+		set_temp_variable = { temp_party_n_pop = party_popularity@neutrality }
+			multiply_temp_variable = { temp_party_n_pop = 100 } 
+		set_temp_variable = { temp_party_f_pop = party_popularity@fascism }
+			multiply_temp_variable = { temp_party_f_pop = 100 } 
+		set_temp_variable = { temp_party_c_pop = party_popularity@communism }
+			multiply_temp_variable = { temp_party_c_pop = 100 }
+		
+		set_temp_variable = { temp_party_missing_pop = 100 } #For when you have that pesky missing 0.01%
+			subtract_from_temp_variable = { temp_party_missing_pop = temp_party_d_pop }
+			subtract_from_temp_variable = { temp_party_missing_pop = temp_party_n_pop }
+			subtract_from_temp_variable = { temp_party_missing_pop = temp_party_f_pop }
+			subtract_from_temp_variable = { temp_party_missing_pop = temp_party_c_pop }
+			
+		add_to_temp_variable = { temp_party_n_pop = temp_party_missing_pop }
+	}
+}

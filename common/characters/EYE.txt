@@ -1,0 +1,73 @@
+characters={
+#Country Leaders
+	HUN_carl_v={ #Can be given country leader roles later
+		name=HUN_carl_v
+		portraits={
+			civilian={
+				large="gfx/leaders/GER/Portrait_Germany_Generic_3.dds"
+			}
+		}
+	}
+	#CRO_felix_habsburg={ #Can be given country leader roles later
+	#	name=SLO_maximilian_habsburg
+	#	portraits={
+	#		civilian={
+	#			large="gfx/leaders/EYE/Portrait_EYE_Europe_Generic_land_new_1.dds" #Let's just pretend this is Felix
+	#		}
+	#	}
+	#}
+	CRO_leopold_habsburg={ #Can be given country leader roles later
+		name=CRO_leopold_habsburg
+		portraits={
+			civilian={
+				large="gfx/leaders/EYE/Portrait_EYE_Europe_Generic_land_new_1.dds"
+			}
+		}
+		#id = 21019
+	}
+	CZE_josef_habsburg={ #Can be given country leader roles later
+		name=CZE_josef_habsburg
+		portraits={
+			civilian={
+				large="gfx/leaders/HUN/Portrait_friedrich_franz.dds"
+			}
+		}
+		#id = 21018
+	}	
+	MEX_maria_josepha = { #Can be given country leader roles later
+		name = MEX_maria_josepha
+		gender = female
+		portraits={
+			civilian={
+				large="gfx/leaders/EYE/Portrait_EYE_Wilhelmia.dds" #Let's just pretend this is Maria
+			}
+		}
+		#id = 21020
+	}
+	SLO_maximilian_habsburg={ #Can be given country leader roles later
+		name=SLO_maximilian_habsburg
+		portraits={
+			civilian={
+				large="gfx/leaders/EYE/Portrait_EYE_Austria_Otto_I.dds" #Let's just pretend this is Maximilian
+			}
+		}
+	}
+	SLV_johann_graf={ #Can be given country leader roles later
+		name=SLV_johann_graf
+		portraits={
+			civilian={
+				large="gfx/leaders/MAL/portrait_mal_shenton_thomas.dds"
+			}
+		}
+		#id = 21016
+	}	
+	UKR_vasyl_vyshyvani_habsburg = { #Can be given country leader roles later
+		name=UKR_vasyl_vyshyvani_habsburg
+		portraits={
+			civilian={
+				large="gfx/leaders/EYE/Portrait_EYE_Vasyl_Habsburg.dds"
+			}
+		}
+		#id = 21015
+	}
+}

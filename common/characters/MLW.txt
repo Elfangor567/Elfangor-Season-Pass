@@ -1,0 +1,603 @@
+characters={
+#Country Leaders
+	MLW_hastings_banda={
+		name=MLW_hastings_banda
+		portraits={
+			civilian={
+				large="gfx/leaders/DARK/Portrait_DARK_Banda.dds"
+				small="GFX_idea_hastings_banda"
+			}
+		}
+		country_leader={
+			ideology=oligarchism
+			expire="1965.1.1"
+			traits = { anti_communist }
+			id=-1
+		}
+		advisor={ #He set up and ran a lot of intelligence related things, notably the Malawi Young Pioneers
+			slot = political_advisor
+			idea_token = MLW_hastings_banda
+			allowed = {
+				original_tag = MLW
+			}
+
+			traits = { head_of_intelligence }
+
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	MLW_james_chinyama={
+		name=MLW_james_chinyama
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_4.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1965.1.1"
+			traits = { }
+			id=-1
+		}
+	}
+	MLW_michael_blackwood={
+		name=MLW_michael_blackwood
+		portraits={
+			civilian={
+				large="gfx/leaders/GER/Portrait_Germany_Generic_3.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	MLW_thamar_dillon_thomas_banda={
+		name=MLW_thamar_dillon_thomas_banda
+		portraits={
+			civilian={
+				large="gfx/leaders/Africa/Portrait_Africa_Generic_1.dds"
+			}
+		}
+		country_leader={
+			ideology=anti_revisionism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+#Generals and Admirals
+	MLW_timothy_lewis={
+		name=MLW_timothy_lewis
+		portraits={
+			civilian={
+				large="gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+			}
+		}
+		field_marshal={
+			traits = { infantry_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=-1
+		}
+	}
+
+#Chiefs of Staff
+	MLW_flax_musopole={ #Anti-Colonial nationalist and leader of the 1959 Emergency Rebellion
+		name=MLW_flax_musopole
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_1"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = MLW_flax_musopole
+			allowed = {
+				original_tag = MLW
+			}
+			available = {
+				NOT = { has_government = fascism }
+				NOT = { is_subject_of = ENG }
+			}
+			traits = { army_chief_offensive_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MLW_juma_chimwere={ #A Sergeant-Major in the KAR, his exploits are famously portrayed in Distinguished Conduct: An African Life in Colonial Malawi
+		name=MLW_juma_chimwere
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_1"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = MLW_juma_chimwere
+			allowed = {
+				original_tag = MLW
+			}
+			traits = { army_chief_morale_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	MLW_john_brock={ #District Commissioner during the 1959 Emergency in Nkhata Bay
+		name=MLW_john_brock
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = MLW_john_brock
+			allowed = {
+				original_tag = MLW
+			}
+			traits = { navy_chief_commerce_raiding_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	MLW_mansel_bartlet={ #Chief Flying Instructor of the Luchenza Flying Club
+		name=MLW_mansel_bartlet
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = MLW_mansel_bartlet
+			allowed = {
+				original_tag = MLW
+			}
+			traits = { air_air_combat_training_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MLW_george_hodgson={ #Nyasaland Secretary Air (of Air?)
+		name=MLW_george_hodgson
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = MLW_george_hodgson
+			allowed = {
+				original_tag = MLW
+			}
+			traits = { air_air_superiority_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#High Command
+	MLW_peter_moxon={ #Former Army Major and early supporter of Malawi independence
+		name=MLW_peter_moxon
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MLW_peter_moxon
+			ledger = army
+			allowed = {
+				original_tag = MLW
+			}
+			traits = { army_chief_reform_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MLW_orton_chirwa={ #Early supporter of Hastings Banda, but became disillusioned and was exiled, created the Malawi Freedom Movement
+		name=MLW_orton_chirwa
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MLW_orton_chirwa
+			ledger = army
+			allowed = {
+				original_tag = MLW
+			}
+			traits = { army_regrouping_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MLW_james_phiri={ #Early independence advocate and activist, first Asst. Secretary General of NAC
+		name=MLW_james_phiri
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MLW_james_phiri
+			ledger = army
+			allowed = {
+				original_tag = MLW
+			}
+			traits = { army_logistics_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	MLW_frank_thorne={ #Anglican Bishop of Nyasaland, and as such the man in charge of the Chauncy Maple hospital ship on Lake Malawi
+		name=MLW_frank_thorne
+		portraits={
+			navy={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MLW_frank_thorne
+			ledger = navy
+				allowed = {
+					original_tag = MLW
+				}
+				traits = { navy_screen_1 }
+				cost =  50
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	
+	MLW_reg_bourley={ #Malawian Pilot
+		name = MLW_reg_bourley
+		portraits={
+			army={
+				small="GFX_idea_generic_air_south_america_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MLW_reg_bourley
+			ledger = air
+				allowed = {
+					original_tag = MLW
+				}
+				traits = { air_chief_all_weather_2 }
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+	MLW_dennis_markwick={ #Malawian Pilot and Airport Manager of Chileka
+		name = MLW_dennis_markwick
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MLW_dennis_markwick
+			ledger = air
+			allowed = {
+				original_tag = MLW
+			}
+			traits = { air_chief_night_operations_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MLW_peter_little={ #Malawian Pilot and Airport Manager of Chileka
+		name = MLW_peter_little
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MLW_peter_little
+			ledger = air
+			allowed = {
+				original_tag = MLW
+			}
+			traits = { air_bomber_interception_1 }
+			cost = 75
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MLW_keith_waddhams={ #RAF instructor who eventually became a Mulanje tea planter
+		name = MLW_keith_waddhams
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MLW_keith_waddhams
+			ledger = air
+			allowed = {
+				original_tag = MLW
+			}
+			traits = { air_pilot_training_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#Theorists
+	MLW_kaluli_chisiza={ #Father of both Dunduzu Chisiza and Yatuta Chisiza, a village headman
+		name = MLW_kaluli_chisiza
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_6"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = MLW_kaluli_chisiza
+			ledger = army
+			allowed = {
+				original_tag = MLW
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	MLW_edmund_rhoades={ #Commander of the SS Gwendolen in WWI (Lake Malawi)
+		name = MLW_edmund_rhoades
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_3"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = MLW_edmund_rhoades
+			ledger = navy
+			allowed = {
+				original_tag = MLW
+			}				
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+		}
+	}
+	MLW_c_j_christowitz={ #C.J. Christowitz, father of Malawi Avatiation and founder of the Short-Lived Christowitz Air Services which merged into RANA
+		name = MLW_c_j_christowitz
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+		advisor={		
+			slot = theorist
+			idea_token = MLW_c_j_christowitz
+			ledger = air
+			allowed = {
+				original_tag = MLW
+			}				
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+		}
+	}
+	
+#Advisors
+	MLW_george_mwase={ #Old guard of the NAC, author of "Strike a blow and die"
+		name=MLW_george_mwase
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MLW_george_mwase
+			allowed = {
+				original_tag = MLW
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	MLW_gilbert_pondeponde={ #Supporter of TDT Banda
+		name=MLW_gilbert_pondeponde
+		portraits={
+			army={
+				small="GFX_idea_generic_communist_revolutionary_african_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MLW_gilbert_pondeponde
+			allowed = {
+				original_tag = MLW
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	MLW_richard_kettlewell={ #White emigree to Nyasaland, KAR officer, worked in agriculture post-war and promoted controversial agricultural and land-use policies
+		name=MLW_richard_kettlewell
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_western_european_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MLW_richard_kettlewell
+			allowed = {
+				original_tag = MLW
+			}			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+			}		
+		}		
+	}
+	
+	MLW_levi_mumba={ #First president of the NAC and early independence fighter
+		name=MLW_levi_mumba
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_african_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MLW_levi_mumba
+			allowed = {
+				original_tag = MLW
+			}
+			
+			traits = { popular_figurehead }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	MLW_charles_mlanga={ #Editor of the Zo-Ona and first Secretary-General of the NAC
+		name=MLW_charles_mlanga
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MLW_charles_mlanga
+			allowed = {
+				original_tag = MLW
+			}
+			
+			traits = { editor }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	MLW_james_sangala={ #Early NAC leader known for his intensive behind the scenes work
+		name=MLW_james_sangala
+		portraits={
+			army={
+				small="GFX_idea_generic_air_african_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MLW_james_sangala
+			allowed = {
+				original_tag = MLW
+			}
+			
+			traits = { silent_workhorse }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+	MLW_charles_matinga={ #Early NAC leader, known for his somewhat shady dealings
+		name=MLW_charles_matinga
+		portraits={
+			army={
+				small="GFX_idea_generic_army_african_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MLW_charles_matinga
+			allowed = {
+				original_tag = MLW
+			}
+			
+			traits = { backroom_backstabber }
+	
+			ai_will_do = {
+				base = 1
+			}		
+		}		
+	}
+}

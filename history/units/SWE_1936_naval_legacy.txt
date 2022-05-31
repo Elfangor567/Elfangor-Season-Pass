@@ -1,0 +1,113 @@
+﻿units = {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Kungliga Svenska Marinen"			
+		naval_base = 6050 # Stockholm
+		task_force = { 
+			name = "Kustflottan"
+			location = 6050 # Stockholm
+			ship = { name = "HSwMS Dristigheten" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = SWE } } }				
+			ship = { name = "HSwMS Örnen" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } }		
+			ship = { name = "HSwMS Jacob Bagge" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } }		
+		}
+		task_force = { 
+			name = "1a Eskadern"
+			location = 11215 # Karlskrona
+			ship = { name = "HSwMS Sverige" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = SWE } } }				
+			ship = { name = "HSwMS Drottning Victoria" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = SWE } } }				
+			ship = { name = "HSwMS Gustaf V" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = SWE } } }				
+			ship = { name = "HSwMS Gotland" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = SWE } } }	
+			ship = { name = "HSwMS Psilander" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = SWE } } }	
+			ship = { name = "HSwMS Jacob Bagge" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = SWE } } }	
+			ship = { name = "HSwMS Örnen" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = SWE } } }	
+			# 1. Jagarflottiljen	
+			ship = { name = "HSwMS Magne" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } } #Technically a Mode (1) Class Destroyer
+			ship = { name = "HSwMS Mode" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } } #Technically a Mode (1) Class Destroyer
+			ship = { name = "HSwMS Wale" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } } #Technically a Wale Class Destroyer
+			ship = { name = "HSwMS Ragnar" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } } #Technically a Ragnar Class Destroyer
+			ship = { name = "HSwMS Sigurd" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } } #Technically a Ragnar Class Destroyer
+			ship = { name = "HSwMS Vidar" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } } #Technically a Ragnar Class Destroyer
+			ship = { name = "HSwMS Hugin" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } } #Technically a Hugin Class Destroyer
+			ship = { name = "HSwMS Munin" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } } #Technically a Hugin Class Destroyer
+			ship = { name = "HSwMS Wrangel" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } } #Technically a Wrangel Class Destroyer
+			ship = { name = "HSwMS Wachtmeister" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } } #Technically a Wrangel Class Destroyer
+			ship = { name = "HSwMS Klas Horn" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } }		
+			ship = { name = "HSwMS Klas Uggla" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } }		
+			ship = { name = "HSwMS Ehrensköld" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } }		
+			ship = { name = "HSwMS Nordenskjöld" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = SWE } } }
+			ship = { name = "HSwMS Göteborg" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = SWE } } }			
+		}
+		task_force = { 
+			name = "Ålandshavseskader" 
+			location = 408 # Gotland
+			ship = { name = "HSwMS Äran" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = SWE } } }				
+			ship = { name = "HSwMS Tapperheten" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = SWE } } }				
+		}
+		task_force = { 
+			name = "Karlskrona Avdelningen"
+			location = 11215 # Karlskrona
+			ship = { name = "HSwMS Wasa" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = SWE } } }				
+			ship = { name = "HSwMS Manligheten" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = SWE } } }
+			ship = { name = "HSwMS Oden" definition = battleship equipment = { battleship_1 = { amount = 1 owner = SWE } } }
+			ship = { name = "HSwMS Niord" definition = battleship equipment = { battleship_1 = { amount = 1 owner = SWE } } }
+			ship = { name = "HSwMS Thor" definition = battleship equipment = { battleship_1 = { amount = 1 owner = SWE } } }
+			# 1. Ubatsflottiljen				
+			ship = { name = "HSwMS Draken" definition = submarine equipment = { submarine_1 = { amount = 1 owner = SWE version_name = "Draken Class" } } }
+			ship = { name = "HSwMS Gripen" definition = submarine equipment = { submarine_1 = { amount = 1 owner = SWE version_name = "Draken Class" } } }
+			ship = { name = "HSwMS Ulven" definition = submarine equipment = { submarine_1 = { amount = 1 owner = SWE version_name = "Draken Class" } } }
+		}
+		task_force = { 
+			name = "Göteborgs Eskadern"
+			location = 383 # Göteborg
+			ship = { name = "HSwMS Oscar II" definition = battleship equipment = { battleship_1 = { amount = 1 owner = SWE } } }				
+			ship = { name = "HSwMS Fylgia" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = SWE } } }	
+			ship = { name = "HSwMS Clas Fleming" definition = light_cruiser equipment = { light_cruiser_2 = { amount = 1 owner = SWE } } }	
+			# 2. Ubatsflottiljen				
+			ship = { name = "HSwMS Hajen" definition = submarine equipment = { submarine_1 = { amount = 1 owner = SWE } } }
+			ship = { name = "HSwMS Sälen" definition = submarine equipment = { submarine_1 = { amount = 1 owner = SWE } } }
+			ship = { name = "HSwMS Valrossen" definition = submarine equipment = { submarine_1 = { amount = 1 owner = SWE } } }
+			# 3. Ubatsflottiljen				
+			ship = { name = "HSwMS Bävern" definition = submarine equipment = { submarine_1 = { amount = 1 owner = SWE } } }
+			ship = { name = "HSwMS Illern" definition = submarine equipment = { submarine_1 = { amount = 1 owner = SWE } } }
+			ship = { name = "HSwMS Uttern" definition = submarine equipment = { submarine_1 = { amount = 1 owner = SWE } } }
+			ship = { name = "HSwMS Valen" definition = submarine equipment = { submarine_1 = { amount = 1 owner = SWE } } }
+		}
+	}
+}
+
+### Starting Production ###
+instant_effect = {
+	### Under Construction Notes ###
+	# DD: Göteborg class (x1) ("HSwMS Stockholm")
+	add_equipment_production = {
+		equipment = {
+			type = destroyer_2
+			creator = "SWE"
+		}
+		requested_factories = 1
+		progress = 0.66
+		amount = 1
+	}
+	# SS: Draken variant (x3) ("HSwMS Delfinen" "HSwMS Nordkaparen" "HSwMS Springaren")
+	add_equipment_production = {
+		equipment = {
+			type = submarine_1
+			creator = "SWE"
+			version_name = "Draken Class"
+		}
+		requested_factories = 2
+		progress = 0.80
+		amount = 3
+	}
+	# SS: Sjölejonet (1st One)
+	add_equipment_production = {
+		equipment = {
+			type = submarine_2
+			creator = "SWE"
+		}
+		requested_factories = 2
+		progress = 0.33
+		amount = 1
+	}
+}

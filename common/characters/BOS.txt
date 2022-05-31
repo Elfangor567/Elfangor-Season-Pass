@@ -1,0 +1,774 @@
+characters={
+#Country Leaders
+	BOS_mehmed_handzic={
+		name=BOS_mehmed_handzic
+		portraits={
+			civilian={
+				large="gfx/leaders/COL/portrait_col_alfonso_lopez_pumarejo.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	BOS_dobroslav_jevdevic={
+		name=BOS_dobroslav_jevdevic
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/portrait_europe_generic_land_10.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	BOS_mehmed_spaho={
+		name=BOS_mehmed_spaho
+		portraits={
+			civilian={
+				large="gfx/leaders/Arabia/portrait_arabia_generic_land_6.dds"
+			}
+		}
+		country_leader={
+			ideology=centrism
+			expire="1965.1.1"
+			id=-1
+		}
+	}	
+	BOS_vojislav_kecmanovic={
+		name=BOS_vojislav_kecmanovic
+		portraits={
+			civilian={
+				large="gfx/leaders/AST/Portrait_Australia_Victor_Crutchley.dds"
+			}
+		}
+		country_leader={
+			ideology=leninism
+			expire="1965.1.1"
+			id=-1
+		}
+	}
+	
+#Generals and Admirals
+	
+
+#Chiefs of Staff
+	BOS_ademaga={ #Ademaga Mešić, Fought in both world wars and served Austria-Hungary and Croatia
+		name=BOS_ademaga
+		portraits={
+			army={
+				small="GFX_idea_generic_air_arab_1"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = BOS_ademaga
+			allowed = { 
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { army_chief_organizational_3 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	BOS_vlado={ #Vlado Šegrt, a WW2 Partisan fighter
+		name=BOS_vlado
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = BOS_vlado
+			allowed = { 
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { generic_army_europe_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	BOS_miroslav={  #Miroslav Navratil, Bosnian WW1 Ace
+		name=BOS_miroslav
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = BOS_miroslav
+			allowed = { 
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { air_chief_safety_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	BOS_kluz={ #Franjo Kluz, One of the first two Partisan Airmen
+		name=BOS_kluz
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_african_2"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = BOS_kluz
+			allowed = { 
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { air_air_superiority_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	BOS_srecko={ #Srećko Manola, Former Merhcant Mariner and Deputy Commander of the NOVJ Navy
+		name=BOS_srecko
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_europe_1"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = BOS_srecko
+			allowed = { 
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { navy_chief_commerce_raiding_2 }
+			
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+
+#High Command
+	BOS_bosko={ #Boško Todorović, commander of Eastern Bosnian Chetniks in WW2
+		name=BOS_bosko
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = BOS_bosko
+			ledger = army
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { army_commando_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	BOS_jezdimir={ #Jezdimir Dangić, commander of Eastern Bosnian Chetniks in WW2 (Senior to Boško)
+		name=BOS_jezdimir
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = BOS_jezdimir
+			ledger = army
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { army_concealment_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	BOS_hadziefendic={ #Muhamed Hadžiefendić, Bosnian Officer who sided with Croatia in WWII
+		name=BOS_hadziefendic
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = BOS_hadziefendic
+			ledger = army
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { army_regrouping_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	BOS_savo={ #Savo Božić, Orthodox priest and Chetnik commander
+		name=BOS_savo
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = BOS_savo
+			ledger = army
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { army_chief_morale_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	BOS_drago={ #Drago Djukic, Bosnian pilot in WW2
+		name=BOS_drago
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = BOS_drago
+			ledger = air
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { air_chief_night_operations_3 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	BOS_enver={ #Enver Ćemalović, Bosnian pilot in WW2
+		name=BOS_enver
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = BOS_enver
+			ledger = air
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { air_air_combat_training_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	BOS_rudi={ #Rudi Čajavec, Bosnian pilot in WW2, first Partisan Airman
+		name=BOS_rudi
+		portraits={
+			army={
+				small="GFX_idea_generic_air_arab_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = BOS_rudi
+			ledger = air
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { air_close_air_support_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	BOS_alija={ #Alija Šuljak, Croation-Bosnian and Croatian supporter in WW2 (Nothing to do with navy, just needed a guy)
+		name=BOS_alija
+		portraits={
+			army={
+				small="GFX_idea_generic_air_arab_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = BOS_alija
+			ledger = navy
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { navy_fleet_logistics_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	BOS_slavisa={ #Slaviša Vajner Čiča, a freedom fighter and brief member of the Yugoslav Navy
+		name=BOS_slavisa
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = BOS_slavisa
+			ledger = navy
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { navy_capital_ship_1 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	BOS_muhamed={ #Muhamed Hromić, Bosnian navy commander for Yugoslavia, former A-H army officer
+		name=BOS_muhamed
+		portraits={
+			army={
+				small="GFX_idea_generic_air_arab_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = BOS_muhamed
+			ledger = navy
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { navy_chief_decisive_battle_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+#Theorists
+	BOS_ismet={ #Ismet Popovac, High Level Chetnik Leader in WW2
+		name = BOS_ismet
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_3"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = BOS_ismet
+			ledger = army
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	BOS_dujic={ #Momčilo Đujić, Chetnik in WWII, both Bosnian and Serbian, Italian collaberationist
+		name = BOS_dujic
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = BOS_dujic
+			ledger = air
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	BOS_pero={ #Pero Djukanovic, Partisan in WWII with fighting and political experience
+		name = BOS_pero
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_western_european_2d"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = BOS_pero
+			ledger = navy
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+#Advisors
+	BOS_petar_bacovic={ #One of the leaders of the Chetniks
+		name=BOS_petar_bacovic
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BOS_petar_bacovic
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { fascist_demagogue }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					is_subject = no
+					has_completed_focus = nationalism_focus					
+				}
+			}
+		}
+	}
+	BOS_rocko={ #Rodoljub "Roćko" Čolaković, prominent member of Crvena Pravda (Red Justice), a left-wing terrorist organisation
+		name=BOS_rocko
+		portraits={
+			army={
+				small="GFX_idea_generic_democratic_reformer_western_european_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BOS_rocko
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { communist_revolutionary }
+	
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					is_subject = no
+					has_completed_focus = internationalism_focus					
+				}
+			}
+		}
+	}
+	BOS_kasim={ #Kasim Dobrača, Prominent member of El-Hidaje and Co-Drafter of The Sarajevo Resolution
+		name=BOS_kasim
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_arab_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BOS_kasim
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			available = {
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			
+			traits = { democratic_reformer }
+	
+			ai_will_do = {
+				base = 0
+			}
+		}
+	}
+	BOS_dzafer={ #Džafer Kulenović, leader of the Yugoslav Muslim Organization 1919-1939
+		name=BOS_dzafer
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BOS_dzafer
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { prince_of_terror }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	BOS_avdo={ #Avdo Humo, prominent Communist politician, well known for being well-read and polite
+		name=BOS_avdo
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BOS_avdo
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { editor }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	BOS_dzemal={ #Džemal Bijedić, prominent Bosnian communist in Yugoslavia
+		name=BOS_dzemal
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BOS_dzemal
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { smooth_talking_charmer }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	BOS_hakija={ #Hakija Pozderac, prominent Bosnian communist who infiltrated the King's Army to turn people towards communism
+		name=BOS_hakija
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BOS_hakija
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { backroom_backstabber }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	BOS_blum={ #Emerik Blum, Bosnian Jew, Successful Businessman and Minister of Industry and Mining for BiH
+		name=BOS_blum
+		portraits={
+			army={
+				small="GFX_idea_generic_fascist_demagogue_middle_eastern_2d"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BOS_blum
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			available = {
+				NOT = { has_government = fascism }
+			}
+			
+			traits = { captain_of_industry }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+	BOS_vahida_maglajlic={ #Bosniak partisan in WW2 whose house served as a focal point for much of the partisan activity in Bosnia
+		name=BOS_vahida_maglajlic
+		gender = female
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_female_arab"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BOS_vahida_maglajlic
+			allowed = {
+				OR = {
+					original_tag = BOS
+					original_tag = HRZ
+				}
+			}
+			
+			traits = { head_of_intelligence_female }
+	
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+}

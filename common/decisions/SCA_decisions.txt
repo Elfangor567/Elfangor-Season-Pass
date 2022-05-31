@@ -1,0 +1,352 @@
+#Extra Reichskommissariats
+GER_reichskommissariats = {
+	SCA_reichskommissariat_schweden = {
+
+		icon = ger_reichskommissariats
+
+		available = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			controls_state = 138
+			controls_state = 139
+			controls_state = 140
+			controls_state = 141
+			controls_state = 38
+			controls_state = 666
+			controls_state = 124
+		}
+
+		cost = 0
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				ENG = { has_capitulated = yes }
+			}
+		}
+
+		visible = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					country_exists = SWE
+				}
+				hidden_effect = {
+					SWE = {
+						set_state_controller = 138
+						set_state_controller = 139
+						set_state_controller = 140
+						set_state_controller = 141
+						set_state_controller = 38
+						set_state_controller = 666
+						set_state_controller = 124
+					}
+				}
+				SWE = {
+					start_civil_war = { ideology = fascism size = 1 }
+				}
+				random_country = {
+					limit= {
+						original_tag = SWE
+						has_government = fascism
+					}
+					transfer_state = 138
+					transfer_state = 139
+					transfer_state = 140
+					transfer_state = 141
+					transfer_state = 38
+					transfer_state = 666
+					transfer_state = 124
+					GER = {
+						puppet = PREV
+						set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+						SWE_nikolaus_falkenhorst = {
+							set_nationality = PREV.PREV
+						}
+					}
+					set_cosmetic_tag = SWE_reichskommissariat
+					promote_character = SWE_nikolaus_falkenhorst
+				}
+			}
+			else = {
+				SWE = {
+					transfer_state = 138
+					transfer_state = 139
+					transfer_state = 140
+					transfer_state = 141
+					transfer_state = 38
+					transfer_state = 666
+					transfer_state = 124
+					set_cosmetic_tag = SWE_reichskommissariat
+					
+					ROOT = {
+						SWE_nikolaus_falkenhorst = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = SWE_nikolaus_falkenhorst
+				}
+				set_autonomy = { target = SWE autonomy_state = autonomy_integrated_puppet }
+			}
+		}
+	}
+	SCA_reichskommissariat_danemark = {
+
+		icon = ger_reichskommissariats
+
+		available = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			controls_state = 99
+			controls_state = 37
+			controls_state = 337
+			controls_state = 101
+			controls_state = 100
+		}
+
+		cost = 0
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				ENG = { has_capitulated = yes }
+			}
+		}
+
+		visible = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					country_exists = DEN
+				}
+				hidden_effect = {
+					DEN = {
+						set_state_controller = 99
+						set_state_controller = 37
+						set_state_controller = 337
+						set_state_controller = 101
+					}
+				}
+				DEN = {
+					start_civil_war = { ideology = fascism size = 1 }
+				}
+				random_country = {
+					limit= {
+						original_tag = DEN
+						has_government = fascism
+					}
+					transfer_state = 99
+					transfer_state = 37
+					transfer_state = 337
+					transfer_state = 101
+					set_state_controller = 100
+					hidden_effect = {
+						add_state_core = 100
+					}
+					ROOT = {
+						puppet = PREV
+						set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+						DEN_hermann_hanneken = {
+							set_nationality = PREV.PREV
+						}
+					}
+					set_cosmetic_tag = DEN_reichskommissariat
+					promote_character = DEN_hermann_hanneken
+				}
+			}
+			else = {
+				DEN = {
+					transfer_state = 99
+					transfer_state = 37
+					transfer_state = 337
+					transfer_state = 101
+					transfer_state = 100
+					hidden_effect = {
+						add_state_core = 100
+					}
+					set_cosmetic_tag = DEN_reichskommissariat
+					
+					ROOT = {
+						DEN_hermann_hanneken = {
+							set_nationality = PREV.PREV
+						}
+					}
+					promote_character = DEN_hermann_hanneken
+				}
+				set_autonomy = { target = DEN autonomy_state = autonomy_integrated_puppet }
+			}
+		}
+	}
+	SCA_reichskommissariat_skandinavien = {
+
+		icon = ger_reichskommissariats
+
+		available = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			has_subject = NOR
+			has_subject = DEN
+			has_subject = SWE
+			100 = { is_controlled_by_ROOT_or_subject = yes }
+		}
+
+		cost = 0
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				ENG = { has_capitulated = yes }
+			}
+		}
+
+		visible = {
+			has_completed_focus = GER_form_the_reichskommissariats
+			has_government = fascism
+			any_other_country = { 
+				original_tag = NOR
+				has_cosmetic_tag = NOR_reichskommissariat 
+			}
+			any_other_country = { 
+				original_tag = SWE
+				has_cosmetic_tag = SWE_reichskommissariat
+			}
+			any_other_country = { 
+				original_tag = DEN
+				has_cosmetic_tag = DEN_reichskommissariat
+			}
+			OR = {
+				NOT = { country_exists = ICE }
+				has_subject = ICE
+			}
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = { country_exists = ICE }
+					set_country_flag = SCA_free_ice_reich
+				}
+				100 = { add_core_of = DEN }
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = NOR
+							is_core_of = SWE
+							is_core_of = DEN
+						}
+					}
+					add_core_of = ICE
+				}
+				every_other_country = {
+					limit = {
+						OR = {							
+							AND = {
+								original_tag = NOR
+								has_cosmetic_tag = NOR_reichskommissariat 
+							}
+							AND = {
+								original_tag = SWE
+								has_cosmetic_tag = SWE_reichskommissariat
+							}
+							AND = { 
+								original_tag = DEN
+								has_cosmetic_tag = DEN_reichskommissariat
+							}
+						}
+					}
+					every_unit_leader = {
+						set_unit_leader_flag = to_ice_reich
+						set_nationality = ICE
+					}
+					ICE = {
+						annex_country = {
+							target = PREV
+							transfer_troops = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = SCA_free_ice_reich } }
+				set_autonomy = { target = ICE autonomy_state = autonomy_integrated_puppet }
+			}
+			every_other_country = { 
+				limit = {
+					original_tag = FIN
+					is_subject_of = ROOT
+				}
+				every_unit_leader = {
+					set_unit_leader_flag = to_ice_reich
+					set_nationality = ICE
+				}
+				ICE = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
+			every_state = {
+				limit = {
+					is_controlled_by_ROOT_or_subject = yes
+					NOT = { 
+						OWNER = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+							}
+						}
+					}
+					is_core_of = FIN
+				}
+				ICE = {
+					set_state_controller = PREV
+				}
+			}
+			ICE = { set_cosmetic_tag = ICE_reichskommissariat }
+			ICE_wolfram_sievers = {
+				set_nationality = ICE
+			}
+			ICE = { promote_character = ICE_wolfram_sievers }
+			hidden_effect = {
+				clr_country_flag = SCA_free_ice_reich
+				FIN = {
+					add_state_core = 213
+					add_state_core = 215
+					add_state_core = 216
+					add_state_core = 195
+					add_state_core = 214
+					add_state_core = 262
+					add_state_core = 825
+				}
+				every_state = {
+					limit = { is_core_of = FIN }
+					add_core_of = ICE
+				}
+			}
+			every_state = {
+				limit = {
+					OWNER = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+					is_core_of = FIN
+					NOT = { state = 581 }
+				}
+				ICE = {
+					transfer_state = PREV
+				}
+			}			
+		}
+	}
+}

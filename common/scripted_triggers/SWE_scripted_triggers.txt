@@ -1,0 +1,105 @@
+#scripted trigger for Sweden
+
+is_available_strat_SWE = {
+	OR = {
+		AND = {
+			has_tech = strategic_bomber1
+			SWE = { 
+				NOT = { has_tech = strategic_bomber2 }
+			}
+		}
+		AND = {
+			has_tech = strategic_bomber2
+			SWE = { 
+				NOT = { has_tech = strategic_bomber2 }
+			}
+		}
+		AND = {
+			has_tech = strategic_bomber3
+			SWE = { 
+				NOT = { has_tech = strategic_bomber3 }
+			}
+		}
+	}
+	NOT = {
+		has_war_with = SWE
+	}
+}
+
+is_available_nav_bomber_SWE = {
+	OR = {
+		AND = {
+			has_tech = naval_bomber1
+			SWE = { 
+				NOT = { has_tech = naval_bomber1 }
+			}
+		}
+		AND = {
+			has_tech = naval_bomber2
+			SWE = { 
+				NOT = { has_tech = naval_bomber2 }
+			}
+		}
+		AND = {
+			has_tech = naval_bomber3
+			SWE = { 
+				NOT = { has_tech = naval_bomber3 }
+			}
+		}
+	}
+	NOT = {
+		has_war_with = SWE
+	}
+}
+
+is_available_cas_SWE = {
+	OR = {
+		AND = {
+			has_tech = CAS1
+			SWE = { 
+				NOT = { has_tech = CAS1}
+			}
+		}
+		AND = {
+			has_tech = CAS2
+			SWE = { 
+				NOT = { has_tech = CAS2}
+			}
+		}
+		AND = {
+			has_tech = CAS3
+			SWE = { 
+				NOT = { has_tech = CAS3}
+			}
+		}
+	}
+	NOT = {
+		has_war_with = SWE
+	}
+}
+
+is_available_tac_SWE = {
+	OR = {
+		AND = {
+			has_tech = tactical_bomber1
+			SWE = { 
+				NOT = { has_tech = tactical_bomber1}
+			}
+		}
+		AND = {
+			has_tech = tactical_bomber2
+			SWE = { 
+				NOT = { has_tech = tactical_bomber2}
+			}
+		}
+		AND = {
+			has_tech = tactical_bomber3
+			SWE = { 
+				NOT = { has_tech = tactical_bomber3}
+			}
+		}
+	}
+	NOT = {
+		has_war_with = SWE
+	}
+}

@@ -1,0 +1,144 @@
+﻿l_english:
+
+ #Generic
+ neutral_socialism:0 "Liberal Socialism"
+ neutral_socialism_desc:0 "Liberal socialism opposes laissez-faire economic liberalism and state socialism. It considers both liberty and equality as compatible with each other and mutually needed to achieve greater economic equality that is necessary to achieve greater economic liberty."
+ socialism:0 "Democratic Socialism"
+ socialism_desc:0 "Striving for equality and a socialist state by reformist means, democratic socialism aims to abolish or mitigate the effects of capitalism with public mandate."
+ 
+ #Liberia
+ LIB_communism_party:0 "CNPL"
+ LIB_communism_party_long:0 "Citizens' Non-Partisan League"
+ LIB_democratic_party:0 "Whigs"
+ LIB_democratic_party_long:0 "True Whig Party"
+ LIB_neutrality_party:0 "Unit Whigs"
+ LIB_neutrality_party_long:0 "Unit Whig Party"
+ LIB_fascism_party:0 "Poro"
+ LIB_fascism_party_long:0 "Poro Society"
+ 
+ #Ethiopia
+ ETH_communism_party:0 "Republicans"
+ ETH_communism_party_long:0 "Hawariat Republicans"
+ ETH_democratic_party:0 "Constitutionalists"
+ ETH_democratic_party_long:0 "Constitutionalists"
+ ETH_neutrality_party:0 "Solomonic Dynasty"
+ ETH_neutrality_party_long:0 "Solomonic Dynasty"
+ ETH_fascism_party:0 "Fascist Sympathizers"
+ ETH_fascism_party_long:0 "Fascist Sympathizers"
+ 
+ #Italy
+ ITA_neutrality_party:0  "PDI"
+ ITA_neutrality_party_long:0 "Partito Democratico Italiano"
+ 
+ #Africa Orientale Italiana
+ AOI_communism_party:0 "PDA"
+ AOI_communism_party_long:0 "Partito Di Autonomia"
+ AOI_democratic_party:0 "Moral Paternalists"
+ AOI_democratic_party_long:0 "Moral Paternalists"
+ AOI_neutrality_party:0 "Paternalists"
+ AOI_neutrality_party_long:0 "Paternalists"
+ AOI_fascism_party:0 "PNF"
+ AOI_fascism_party_long:0 "Partito Nazionale Fascista"
+ 
+ #Algeria
+ ALG_communism_party:0 "PPA"
+ ALG_communism_party_long:0 "Parti du Peuple Algerien"
+ ALG_democratic_party:0 "UDMA"
+ ALG_democratic_party_long:0 "Union Démocratique du Manifeste Algérien"
+ ALG_neutrality_party:0 "AOMA"
+ ALG_neutrality_party_long:0 "Association des Oulémas Musulmans Algériens"
+ ALG_fascism_party:0 "CARNA"
+ ALG_fascism_party_long:0 "Comité d'Action Révolutionnaire Nord-Africain"
+ 
+ #Djibouti
+ DJI_communism_party:0 "RPP"
+ DJI_communism_party_long:0 "Rassemblement Populaire pour le Progrès"
+ DJI_democratic_party:0 "UDA"
+ DJI_democratic_party_long:0 "Union Démocratique Afar"
+ DJI_neutrality_party:0 "UR"
+ DJI_neutrality_party_long:0 "Union Républicaine"
+ DJI_fascism_party:0 "Tadjoura Sultanate"
+ DJI_fascism_party_long:0 "Tadjoura Sultanate"
+ 
+ #Eritrea
+ ERI_communism_party:0 "EPLF"
+ ERI_communism_party_long:0 "Eritrean People's Liberation Front"
+ ERI_democratic_party:0 "IB"
+ ERI_democratic_party_long:0 "Independence Bloc"
+ ERI_neutrality_party:0 "ELF"
+ ERI_neutrality_party_long:0 "Eritrean Liberation Front"
+ ERI_fascism_party:0 "EIM"
+ ERI_fascism_party_long:0 "Eritrean Independence Movement"
+  
+ #Kenya
+ KEN_communism_party:0 "KPU"
+ KEN_communism_party_long:0 "Kenya People's Union"
+ KEN_democratic_party:0 "KANU"
+ KEN_democratic_party_long:0 "Kenya African National Union"
+ KEN_neutrality_party:0 "KPA"
+ KEN_neutrality_party_long:0 "Kikuyu Provincial Association"
+ KEN_fascism_party:0 "KLFA"
+ KEN_fascism_party_long:0 "Kenya Land and Freedom Army"
+ 
+ #Malawi
+ MLW_communism_party:0 "CLP"
+ MLW_communism_party_long:0 "Congress Liberation Party"
+ MLW_democratic_party:0 "CANU"
+ MLW_democratic_party_long:0 "Convention African National Union"
+ MLW_neutrality_party:0 "MCP"
+ MLW_neutrality_party_long:0 "Malawi Congress Party"
+ MLW_fascism_party:0 "NCP"
+ MLW_fascism_party_long:0 "Nyasaland Constitutional Party"
+ 
+ #Mittelafrika
+ MTA_communism_party:0 "KPD"
+ MTA_communism_party_long:0 "Kommunistische Partei Deutschlands"
+ MTA_democratic_party:0 "Zentrum"
+ MTA_democratic_party_long:0 "Deutsche Zentrumspartei"
+ MTA_neutrality_party:0 "DNVP"
+ MTA_neutrality_party_long:0 "Deutschnationale Volkspartei"
+ MTA_fascism_party:0 "NSDAP"
+ MTA_fascism_party_long:0 "Nationalsozialistische Deutsche Arbeiterpartei"
+ 
+ #Somalia
+ SOM_communism_party:0 "Somali Conference"
+ SOM_communism_party_long:0 "Somali Conference"
+ SOM_democratic_party:0 "UDS"
+ SOM_democratic_party_long:0 "Ururka Dhalinyarada Soomaaliyeed" #Somali Youth League
+ SOM_neutrality_party:0 "Mijurtin Clan"
+ SOM_neutrality_party_long:0 "Mijurtin Clan"
+ SOM_fascism_party:0 "Ajuran Clan"
+ SOM_fascism_party_long:0 "Ajuran Clan"
+ 
+ #Sudan
+ SUD_communism_party:0 "SMNL"
+ SUD_communism_party_long:0 "Sudanese Movement for National Liberation"
+ SUD_democratic_party:0 "DUP"
+ SUD_democratic_party_long:0 "Democratic Unionist Party"
+ SUD_neutrality_party:0 "NUP"
+ SUD_neutrality_party_long:0 "National Umma Party"
+ SUD_fascism_party:0 "Khatmiyya"
+ SUD_fascism_party_long:0 "Khatmiyya Sect"
+ 
+ #Zambia
+ ZAM_communism_party:0 "UNIP"
+ ZAM_communism_party_long:0 "United National Independence Party"
+ ZAM_democratic_party:0 "ZANC"
+ ZAM_democratic_party_long:0 "Zambian African National Congress"
+ ZAM_neutrality_party:0 "CP"
+ ZAM_neutrality_party_long:0 "Constitution Party" #Later would be the Liberal Party
+ ZAM_fascism_party:0 "NPP"
+ ZAM_fascism_party_long:0 "National Progressive Party"
+ 
+ #Zimbabwe
+ ZIM_communism_party:0 "NDP"
+ ZIM_communism_party_long:0 "National Democratic Party"
+ ZIM_democratic_party:0 "CAP"
+ ZIM_democratic_party_long:0 "Central Africa Party"
+ ZIM_neutrality_party:0 "RNP"
+ ZIM_neutrality_party_long:0 "Rhodesia National Party"
+ ZIM_fascism_party:0 "Rhodesian Front"
+ ZIM_fascism_party_long:0 "Rhodesian Front"
+ 
+ 
+ 

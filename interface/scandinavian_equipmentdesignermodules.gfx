@@ -1,0 +1,55 @@
+spriteTypes = {
+	#Naval
+	spriteType = {
+		name = "GFX_SM_light_hull_rear_airplane_launcher"
+		textureFile = "gfx/interface/equipmentdesigner/naval/topviews/light_hull/light_hull_rear_airplane_launcher.dds"
+	}
+	spriteType = {
+		name = "GFX_SM_light_hull_rear_airplane_launcher@highlight"
+		textureFile = "gfx/interface/equipmentdesigner/naval/topviews/light_hull/light_hull_rear_airplane_launcher@highlight.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_SM_light_hull_front_airplane_launcher"
+		textureFile = "gfx/interface/equipmentdesigner/naval/topviews/light_hull/light_hull_front_airplane_launcher.dds"
+	}
+	spriteType = {
+		name = "GFX_SM_light_hull_front_airplane_launcher@highlight"
+		textureFile = "gfx/interface/equipmentdesigner/naval/topviews/light_hull/light_hull_front_airplane_launcher@highlight.dds"
+	}
+	
+	
+	spriteType = {
+		name = "GFX_SM_light_hull_front_mine_layer"
+		textureFile = "gfx/interface/equipmentdesigner/naval/topviews/light_hull/light_hull_front_mine_rails.dds"
+	}
+	spriteType = {
+		name = "GFX_SM_light_hull_front_mine_layer@highlight"
+		textureFile = "gfx/interface/equipmentdesigner/naval/topviews/light_hull/light_hull_front_mine_rails@highlight.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_SM_light_hull_front_mine_sweeper"
+		textureFile = "gfx/interface/equipmentdesigner/naval/topviews/light_hull/light_hull_front_mine_sweeper.dds"
+	}
+	spriteType = {
+		name = "GFX_SM_light_hull_front_mine_sweeper@highlight"
+		textureFile = "gfx/interface/equipmentdesigner/naval/topviews/light_hull/light_hull_front_mine_sweeper@highlight.dds"
+	}
+	
+	
+	spriteType = {
+		name = "GFX_SM_light_hull_front_torpedo"
+		textureFile = "gfx/interface/equipmentdesigner/naval/topviews/light_hull/light_hull_front_torpedo.dds"
+	}
+	spriteType = {
+		name = "GFX_SM_light_hull_front_torpedo@highlight"
+		textureFile = "gfx/interface/equipmentdesigner/naval/topviews/light_hull/light_hull_front_torpedo@highlight.dds"
+	}
+	
+	#Tanks
+	spriteType = {
+		name = "GFX_tank_module_small_howitzer"
+		textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_medium_howitzer.dds"
+	}
+}
