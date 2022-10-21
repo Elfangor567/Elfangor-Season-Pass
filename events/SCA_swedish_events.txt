@@ -113,7 +113,7 @@ country_event = {
 			}
 		}
 		else = {
-			add_popularity = { ideology = neutrality popularity = 25 }
+			add_popularity = { ideology = neutrality popularity = 0.25 }
 		}
 		set_politics = {
 			ruling_party = neutrality
@@ -317,7 +317,13 @@ country_event = {
 				}
 			}
 		}
-		SWE = { country_event = SCA_sweden.9 }
+		SWE = {
+			country_event = SCA_sweden.9
+			create_wargoal = {
+				type = annex_everything
+				target = ROOT
+			}
+		}
 	}
 }
 	country_event = {
@@ -2757,7 +2763,7 @@ country_event = {
 		give_guarantee = FROM
 		FROM = { 
 			give_military_access = ROOT
-			country_event = SCA_sweden.38
+			country_event = SCA_sweden.39
 		}
 	}
 	option = {
@@ -2773,7 +2779,7 @@ country_event = {
 				target = ROOT
 				modifier = SWE_refused_permit
 			}
-			country_event = SCA_sweden.39
+			country_event = SCA_sweden.40
 		}
 	}
 }
