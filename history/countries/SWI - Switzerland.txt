@@ -19,7 +19,6 @@ recruit_character = SWI_jules_borel
 recruit_character = SWI_ulriche_wille_jr
 
 recruit_character = SWI_jakob_huber
-recruit_character = SWI_ulrich_wille
 recruit_character = SWI_friedrich_rihner
 recruit_character = SWI_hans_bandi
 recruit_character = SWI_nicolas_jaquet
