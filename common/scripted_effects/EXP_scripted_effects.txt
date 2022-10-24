@@ -41,3 +41,55 @@ EXP_set_temporary_party_popularity_variables = {
 		add_to_temp_variable = { temp_party_n_pop = temp_party_missing_pop }
 	}
 }
+
+EXP_upgrade_agency = {
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		
+		if = {
+			limit = { has_intelligence_agency = no }
+			create_intelligence_agency = yes
+		}
+		else_if = {
+			limit = { 
+				has_done_agency_upgrade = upgrade_army_department
+				NOT = { has_done_agency_upgrade = upgrade_airforce_department }
+			}
+			upgrade_intelligence_agency = upgrade_airforce_department
+		}
+		else_if = {
+			limit = { 
+				has_done_agency_upgrade = upgrade_army_department
+				NOT = { has_done_agency_upgrade = upgrade_naval_department }
+			}
+			upgrade_intelligence_agency = upgrade_naval_department
+		}
+		else_if = {
+			limit = { 
+				has_done_agency_upgrade = upgrade_army_department
+				NOT = { has_done_agency_upgrade = upgrade_economy_civilian }
+			}
+			upgrade_intelligence_agency = upgrade_economy_civilian
+		}
+		else = {
+			upgrade_intelligence_agency = upgrade_army_department
+		}
+		if = {
+			limit = { has_done_agency_upgrade = upgrade_form_department }
+			upgrade_intelligence_agency = upgrade_crypto_strength
+			upgrade_intelligence_agency = upgrade_decryption_boost
+		}
+		else = {
+			upgrade_intelligence_agency = upgrade_form_department
+		}
+	}
+	else = {			
+		add_tech_bonus = {
+			name = SWE_special_op_staff
+			bonus = 1.0
+			ahead_reduction = 2
+			uses = 2
+			category = electronics
+		}
+	}
+}

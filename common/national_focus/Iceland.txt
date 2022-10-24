@@ -141,14 +141,8 @@ focus_tree = {
 			army_experience = 10
 			add_war_support = 0.05
 			add_command_power = 40
-			if = {
-				limit = { has_dlc = "La Resistance" }
-				
-				if = {
-					limit = { has_intelligence_agency = no }
-					create_intelligence_agency = yes
-				}
-			}
+			
+			EXP_upgrade_agency = yes
 		}
 	}
 	focus = {
