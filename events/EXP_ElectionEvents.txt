@@ -180,7 +180,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 2
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}
 			modifier = {
 				add = 1
@@ -241,7 +241,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 2
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}
 			modifier = {
 				add = 1
@@ -325,7 +325,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 10
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}
 		}
 		add_popularity = {
@@ -341,7 +341,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 10
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}
 		}
 		add_popularity = {
@@ -357,7 +357,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 1
-				can_lose_democracy_support = no
+				can_lose_neutrality_support = no
 			}
 		}
 		add_popularity = {
@@ -402,7 +402,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 2
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}
 			modifier = {
 				add = 1
@@ -476,7 +476,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 2
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}
 			modifier = {
 				add = 1
@@ -622,7 +622,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 1
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}
 		}
 		add_popularity = {
@@ -637,7 +637,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 1
-				can_lose_democracy_support = no
+				can_lose_neutrality_support = no
 			}
 		}
 		add_popularity = {
@@ -687,7 +687,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 3
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}			
 			modifier = {
 				add = 1
@@ -736,7 +736,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 3
-				can_lose_democracy_support = no
+				can_lose_neutrality_support = no
 			}			
 		}
 		name = election.15.a
@@ -750,7 +750,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 10
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}			
 			modifier = {
 				add = 1

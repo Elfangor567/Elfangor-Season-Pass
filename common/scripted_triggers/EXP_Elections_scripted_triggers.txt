@@ -1,0 +1,5 @@
+can_lose_neutrality_support = {
+	communism < 0.18
+	fascism < 0.18
+	neutrality > 0.65
+}
