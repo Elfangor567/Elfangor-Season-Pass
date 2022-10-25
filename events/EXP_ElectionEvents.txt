@@ -295,7 +295,7 @@ country_event = {
 	}
 }
 
-# Democratic Parties in Minority
+# Neutral Parties in Minority
 country_event = {
 	id = neutral_election.6
 	title = election.6.t
@@ -314,7 +314,7 @@ country_event = {
 		OR = { NOT = { tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = neutrality
 		has_elections = yes
-		democratic < 0.5
+		neutrality < 0.5
 		fascism < 0.5
 		communism < 0.5
 	}
@@ -361,7 +361,7 @@ country_event = {
 			}
 		}
 		add_popularity = {
-			ideology = democratic
+			ideology = neutrality
 			popularity = 0.05
 		}
 		add_political_power = -80

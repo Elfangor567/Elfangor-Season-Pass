@@ -725,6 +725,11 @@
  SCA_sweden.2.a:0 "'Twas but a Holiday Cabinet"
  SCA_sweden.2.b:0 "Make whatever deals are necessary!"
  
+ SCA_sweden.41:0 "Minority Government Wins!"
+ SCA_sweden.41.t:0 "Minority Government Wins!"
+ SCA_sweden.41.desc:0 "Since forming a minority government this year, the non-socialist parties of Sweden have successfully created a large enough coalition to govern."
+ SCA_sweden.41.a:0 "'Tis but a Holiday Cabinet"
+ 
  SCA_sweden.3:0 "National Socialist Parties Merge"
  SCA_sweden.3.t:0 "National Socialist Parties Merge"
  SCA_sweden.3.desc:0 "There has been large National Socialist meeting in order to come to a merger agreement. All parties involved agree that the current situation is intolerable, too often they lose because they are simply too split to form a single front. However, the hard question remains, which party and which leader will become the united party's Riksledare, or "national leader"?"

@@ -75,6 +75,7 @@ country_event = {
 		has_country_flag = holiday_cabinet
 		has_government = democratic
 		date > 1936.9.18
+		democratic < 0.5
 	}
 	
 	mean_time_to_happen = {
@@ -138,6 +139,36 @@ country_event = {
 		
 		add_political_power = -100
 		add_popularity = { ideology = neutrality  popularity = -0.1 }
+	}
+}
+
+country_event = {
+	id = SCA_sweden.41
+	title = SCA_sweden.41.t
+	desc = SCA_sweden.41.desc
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SWE
+		has_country_flag = holiday_cabinet
+		has_government = democratic
+		date > 1936.9.18
+		NOT = { democratic < 0.5 }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { #Minority Government Wins!
+		name = SCA_sweden.41.a
+
+		add_political_power = 100
+		hidden_effect = {
+			clr_country_flag = holiday_cabinet
+		}
 	}
 }
 
