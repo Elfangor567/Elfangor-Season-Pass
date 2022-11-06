@@ -495,7 +495,7 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 10
-				has_country_leader = { id = 13002 ruling_only = yes name = "Martin Eugen Ekström" }
+				has_country_leader = { id = 13002 ruling_only = yes character = SWE_martin_ekstrom }
 			}
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -523,6 +523,14 @@ focus_tree = {
 			add_state_claim = 11
 			add_state_claim = 189
 			add_state_claim = 188
+			add_state_claim = 811
+			add_state_claim = 812
+			add_state_claim = 813
+			add_state_claim = 808
+			add_state_claim = 809
+			add_state_claim = 810
+			add_state_claim = 814
+			add_state_claim = 815
 			
 			effect_tooltip = {
 				create_wargoal = {
@@ -540,13 +548,13 @@ focus_tree = {
 			}
 			hidden_effect = {
 				if = {
-					limit = { has_country_leader = { id = 13002 ruling_only = yes name = "Martin Eugen Ekström" } }
+					limit = { has_country_leader = { id = 13002 ruling_only = yes character = SWE_martin_ekstrom } }
 					LIT = { country_event = SCA_sweden.7 }
 					LAT = { country_event = SCA_sweden.7 }
 					EST = { country_event = SCA_sweden.7 }
 				}
 				if = {
-					limit = { NOT = { has_country_leader = { id = 13002 ruling_only = yes name = "Martin Eugen Ekström" } } }
+					limit = { NOT = { has_country_leader = { id = 13002 ruling_only = yes character = SWE_martin_ekstrom } } }
 					create_wargoal = {
 						type = annex_everything
 						target = EST
@@ -997,7 +1005,7 @@ focus_tree = {
 				give_military_access = GER
 				GER = { give_guarantee = SWE }
 			}
-			GER = { country_event = { id = SCA_sweden.37 hours = 2 } }
+			GER = { country_event = { id = SCA_sweden.38 hours = 2 } }
 			custom_effect_tooltip = SWE_permittenttrafiken_tt
 		}
 	}

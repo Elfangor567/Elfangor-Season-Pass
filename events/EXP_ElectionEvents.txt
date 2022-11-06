@@ -166,6 +166,10 @@ country_event = {
 				tag = USA 
 				date < 1949.1.1
 			} 
+			AND = {
+				tag = GRE
+				#has_dlc = "Battle for the Bosporus"
+			}
 		}
 		OR = { NOT = { tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = neutrality
@@ -180,7 +184,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 2
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}
 			modifier = {
 				add = 1
@@ -205,7 +209,7 @@ country_event = {
 		}
 		add_stability = -0.05
 		add_popularity = {
-			ideology = democratic
+			ideology = neutrality
 			popularity = 0.03
 		}
 		set_country_flag = government_declined_fascists
@@ -227,6 +231,10 @@ country_event = {
 				tag = USA 
 				date < 1949.1.1
 			} 
+			AND = {
+				tag = GRE
+				#has_dlc = "Battle for the Bosporus"
+			}
 		}
 		OR = { NOT = { tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = neutrality
@@ -241,7 +249,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 2
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}
 			modifier = {
 				add = 1
@@ -288,14 +296,14 @@ country_event = {
 		}
 		add_stability = -0.05
 		add_popularity = {
-			ideology = democratic
+			ideology = neutrality
 			popularity = 0.03
 		}
 		set_country_flag = government_declined_communists
 	}
 }
 
-# Democratic Parties in Minority
+# Neutral Parties in Minority
 country_event = {
 	id = neutral_election.6
 	title = election.6.t
@@ -310,11 +318,15 @@ country_event = {
 				tag = USA 
 				date < 1949.1.1
 			} 
+			AND = {
+				tag = GRE
+				#has_dlc = "Battle for the Bosporus"
+			}
 		}
 		OR = { NOT = { tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = neutrality
 		has_elections = yes
-		democratic < 0.5
+		neutrality < 0.5
 		fascism < 0.5
 		communism < 0.5
 	}
@@ -325,7 +337,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 10
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}
 		}
 		add_popularity = {
@@ -341,7 +353,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 10
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}
 		}
 		add_popularity = {
@@ -357,11 +369,11 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 1
-				can_lose_democracy_support = no
+				can_lose_neutrality_support = no
 			}
 		}
 		add_popularity = {
-			ideology = democratic
+			ideology = neutrality
 			popularity = 0.05
 		}
 		add_political_power = -80
@@ -385,6 +397,10 @@ country_event = {
 				tag = USA 
 				date < 1949.1.1
 			} 
+			AND = {
+				tag = GRE
+				#has_dlc = "Battle for the Bosporus"
+			}
 		}
 		OR = { NOT = { tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = neutrality
@@ -402,7 +418,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 2
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}
 			modifier = {
 				add = 1
@@ -436,7 +452,7 @@ country_event = {
 		}
 		add_stability = -0.05
 		add_popularity = {
-			ideology = democratic
+			ideology = neutrality
 			popularity = 0.03
 		}
 	}
@@ -459,6 +475,10 @@ country_event = {
 				tag = USA 
 				date < 1949.1.1
 			} 
+			AND = {
+				tag = GRE
+				#has_dlc = "Battle for the Bosporus"
+			}
 		}
 		OR = { NOT = { tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = neutrality
@@ -476,7 +496,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 2
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}
 			modifier = {
 				add = 1
@@ -511,7 +531,7 @@ country_event = {
 		}
 		add_stability = -0.05
 		add_popularity = {
-			ideology = democratic
+			ideology = neutrality
 			popularity = 0.03
 		}
 	}
@@ -531,6 +551,20 @@ country_event = {
 		has_elections = yes
 		fascism > 0.5
 		is_puppet = no
+		NOT = {
+			AND = {
+				original_tag = SPR
+				has_dlc = "La Resistance"
+			}
+			AND = {
+				original_tag = GRE
+				has_dlc = "Battle for the Bosporus"
+			}
+			AND = {
+				original_tag = TUR
+				has_dlc = "Battle for the Bosporus"
+			}
+		}
 	}
 	
 	option = {	
@@ -570,6 +604,16 @@ country_event = {
 		has_elections = yes
 		communism > 0.5
 		is_puppet = no
+		NOT = {
+			AND = {
+				original_tag = GRE
+				has_dlc = "Battle for the Bosporus"
+			}
+			AND = {
+				original_tag = TUR
+				has_dlc = "Battle for the Bosporus"
+			}
+		}
 	}
 	
 	option = {
@@ -622,7 +666,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 1
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}
 		}
 		add_popularity = {
@@ -637,11 +681,11 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 1
-				can_lose_democracy_support = no
+				can_lose_neutrality_support = no
 			}
 		}
 		add_popularity = {
-			ideology = democratic
+			ideology = neutrality
 			popularity = 0.05
 		}
 		remove_ideas_with_trait = motorized_equipment_manufacturer
@@ -687,7 +731,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 3
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}			
 			modifier = {
 				add = 1
@@ -736,7 +780,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 3
-				can_lose_democracy_support = no
+				can_lose_neutrality_support = no
 			}			
 		}
 		name = election.15.a
@@ -750,7 +794,7 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 10
-				can_lose_democracy_support = yes
+				can_lose_neutrality_support = yes
 			}			
 			modifier = {
 				add = 1

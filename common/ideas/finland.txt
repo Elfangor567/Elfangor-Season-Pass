@@ -475,7 +475,7 @@ ideas = {
 			picture = HUN_hungarian_monarchy
 			
 			available = {
-				has_country_leader = { id = 15004 ruling_only = yes name = "Väinö II" }
+				has_country_leader = { id = 15004 ruling_only = yes character = FIN_vaino_ii }
 				has_government = neutrality
 			}
 			
