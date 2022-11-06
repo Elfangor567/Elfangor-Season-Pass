@@ -161,15 +161,11 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { 
+		NOT = {
 			AND = { 
 				tag = USA 
 				date < 1949.1.1
 			} 
-			AND = {
-				tag = GRE
-				#has_dlc = "Battle for the Bosporus"
-			}
 		}
 		OR = { NOT = { tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = neutrality
@@ -231,10 +227,6 @@ country_event = {
 				tag = USA 
 				date < 1949.1.1
 			} 
-			AND = {
-				tag = GRE
-				#has_dlc = "Battle for the Bosporus"
-			}
 		}
 		OR = { NOT = { tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = neutrality
@@ -318,10 +310,6 @@ country_event = {
 				tag = USA 
 				date < 1949.1.1
 			} 
-			AND = {
-				tag = GRE
-				#has_dlc = "Battle for the Bosporus"
-			}
 		}
 		OR = { NOT = { tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = neutrality
@@ -397,10 +385,6 @@ country_event = {
 				tag = USA 
 				date < 1949.1.1
 			} 
-			AND = {
-				tag = GRE
-				#has_dlc = "Battle for the Bosporus"
-			}
 		}
 		OR = { NOT = { tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = neutrality
@@ -475,10 +459,6 @@ country_event = {
 				tag = USA 
 				date < 1949.1.1
 			} 
-			AND = {
-				tag = GRE
-				#has_dlc = "Battle for the Bosporus"
-			}
 		}
 		OR = { NOT = { tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = neutrality
@@ -551,20 +531,6 @@ country_event = {
 		has_elections = yes
 		fascism > 0.5
 		is_puppet = no
-		NOT = {
-			AND = {
-				original_tag = SPR
-				has_dlc = "La Resistance"
-			}
-			AND = {
-				original_tag = GRE
-				has_dlc = "Battle for the Bosporus"
-			}
-			AND = {
-				original_tag = TUR
-				has_dlc = "Battle for the Bosporus"
-			}
-		}
 	}
 	
 	option = {	
@@ -604,16 +570,6 @@ country_event = {
 		has_elections = yes
 		communism > 0.5
 		is_puppet = no
-		NOT = {
-			AND = {
-				original_tag = GRE
-				has_dlc = "Battle for the Bosporus"
-			}
-			AND = {
-				original_tag = TUR
-				has_dlc = "Battle for the Bosporus"
-			}
-		}
 	}
 	
 	option = {
