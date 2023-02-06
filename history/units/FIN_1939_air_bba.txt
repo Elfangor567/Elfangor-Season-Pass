@@ -1,0 +1,77 @@
+﻿### No air units ###
+air_wings = {
+	111 = {
+		small_plane_airframe_0 =  {
+			owner = "FIN" 
+			amount = 15
+			creator = "FIN"
+			version_name = "Buzzard"
+		}
+		small_plane_airframe_0 =  {
+			owner = "FIN" 
+			amount = 15
+			creator = "FIN"
+			version_name = "Kukko"
+		}
+		small_plane_airframe_1 =  {
+			owner = "FIN" 
+			amount = 32
+			creator = "HOL"
+			version_name = "Fokker D.XXI"
+		}
+		small_plane_cas_airframe_0 =  {
+			owner = "FIN" 
+			amount = 8
+			creator = "FIN"
+			version_name = "Aero A.11"
+		}
+		small_plane_cas_airframe_0 =  {
+			owner = "FIN" 
+			amount = 17
+			creator = "FIN"
+			version_name = "Bulldog Mk.IVa"
+		}
+		small_plane_cas_airframe_0 =  {
+			owner = "FIN" 
+			amount = 58 # 2 Fokker C.V-D, 17 Fokker C.V-E, 39 Fokker C.X
+			creator = "HOL"
+			version_name = "Fokker C.X" #also represents Fokker C.V
+		}
+		small_plane_naval_bomber_airframe_0 =  {
+			owner = "FIN" 
+			amount = 6
+			creator = "FIN"
+			version_name = "Kotka"
+		}
+		small_plane_naval_bomber_airframe_0 =  {
+			owner = "FIN" 
+			amount = 26
+			creator = "FIN"
+			version_name = "Ripon IIF"
+		}
+		medium_plane_airframe_0 =  {
+			owner = "FIN" 
+			amount = 16
+			creator = "FIN"
+			version_name = "Aero A.32"
+		}
+		medium_plane_airframe_0 =  {
+			owner = "FIN" 
+			amount = 6
+			creator = "FIN"
+			version_name = "Junkers K43" # 1 W34, 5 K43
+		}
+		medium_plane_airframe_1 =  {
+			owner = "FIN" 
+			amount = 2
+			creator = "FIN"
+			version_name = "Anson"
+		}
+		medium_plane_tac_bomber_airframe_1 =  {
+			owner = "FIN" 
+			amount = 18
+			creator = "ENG"
+			version_name = "Bristol Blenheim"
+		}
+	}
+}

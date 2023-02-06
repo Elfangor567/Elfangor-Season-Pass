@@ -74,12 +74,12 @@ country_event = {
 		tag = SWE
 		has_country_flag = holiday_cabinet
 		has_government = democratic
-		date > 1936.9.18
-		democratic < 0.5
+		date > 1936.9.11
+		democratic < 0.51
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 7
 	}
 	
 	option = { #Form new Social Democratic Majority
@@ -142,30 +142,32 @@ country_event = {
 	}
 }
 
+#Holiday Cabinet Survives
 country_event = {
-	id = SCA_sweden.41
-	title = SCA_sweden.41.t
-	desc = SCA_sweden.41.desc
+	id = SCA_sweden.200
+	title = SCA_sweden.200.t
+	desc = SCA_sweden.200.desc
 	picture = GFX_report_event_election_vote
-
+	
 	fire_only_once = yes
-
+	
 	trigger = {
 		tag = SWE
 		has_country_flag = holiday_cabinet
 		has_government = democratic
-		date > 1936.9.18
-		NOT = { democratic < 0.5 }
+		date > 1937.1.1
+		democratic > 0.5
 	}
-
+	
 	mean_time_to_happen = {
-		days = 1
+		days = 7
 	}
-
+	
 	option = { #Minority Government Wins!
-		name = SCA_sweden.41.a
-
+		name = SCA_sweden.200.a
+		
 		add_political_power = 100
+		add_popularity = { ideology = democratic  popularity = 0.05 }
 		hidden_effect = {
 			clr_country_flag = holiday_cabinet
 		}
@@ -348,13 +350,7 @@ country_event = {
 				}
 			}
 		}
-		SWE = {
-			country_event = SCA_sweden.9
-			create_wargoal = {
-				type = annex_everything
-				target = ROOT
-			}
-		}
+		SWE = { country_event = SCA_sweden.9 }
 	}
 }
 	country_event = {
@@ -383,6 +379,10 @@ country_event = {
 		
 		option = {
 			name = SCA_sweden.9.a
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
 		}
 	}
 	
@@ -879,11 +879,11 @@ country_event = {
 			}
 		}
 		trigger = {
-			has_equipment = { fighter_equipment > 50 }
+			has_equipment = { small_plane_airframe > 50 }
 		}
 		send_equipment = {
 			target = SWE
-			type = fighter_equipment
+			type = small_plane_airframe
 			amount = 50
 		}
 		add_timed_idea = { idea = SWE_air_payment days = 180 }
@@ -900,7 +900,7 @@ country_event = {
 			}
 		}
 		trigger = {
-			NOT = { has_equipment = { fighter_equipment > 50 } }
+			NOT = { has_equipment = { small_plane_airframe > 50 } }
 		}
 		add_timed_idea = { idea = SWE_air_payment days = 180 }
 		add_timed_idea = { idea = YUG_fighter_production_diverted days = 120 }
@@ -958,7 +958,7 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 50 producer = GER } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						GER = { 
 							has_tech = fighter1 
@@ -967,7 +967,7 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 50 producer = GER } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						GER = { 
 							has_tech = fighter2 
@@ -976,13 +976,20 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 50 producer = GER } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						GER = { 
 							has_tech = fighter3 
 						} 
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_3 amount = 50 producer = GER } 
+				}
+				else_if = {
+					limit = {
+						has_dlc = "By Blood Alone"
+					}
+					set_variable = { fighter_buy_amount = 25 } 
+					bba_get_fighter_GER_effect = yes
 				}
 			} 
 			if = {
@@ -1000,7 +1007,7 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 50 producer = ITA } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						ITA = { 
 							has_tech = fighter1 
@@ -1009,7 +1016,7 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 50 producer = ITA } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						ITA = { 
 							has_tech = fighter2 
@@ -1018,13 +1025,20 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 50 producer = ITA } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						ITA = { 
 							has_tech = fighter3 
 						} 
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_3 amount = 50 producer = ITA } 
+				}
+				else_if = {
+					limit = {
+						has_dlc = "By Blood Alone"
+					}
+					set_variable = { fighter_buy_amount = 25 } 
+					bba_get_fighter_ITA_effect = yes
 				}
 			}
 
@@ -1043,7 +1057,7 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 50 producer = FRA } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						FRA = { 
 							has_tech = fighter1 
@@ -1052,7 +1066,7 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 50 producer = FRA } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						FRA = { 
 							has_tech = fighter2 
@@ -1061,13 +1075,20 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 50 producer = FRA } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						FRA = { 
 							has_tech = fighter3 
 						} 
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_3 amount = 50 producer = FRA } 
+				}
+				else_if = {
+					limit = {
+						has_dlc = "By Blood Alone"
+					}
+					set_variable = { fighter_buy_amount = 25 } 
+					bba_get_fighter_FRA_effect = yes
 				}
 			}
 			
@@ -1086,7 +1107,7 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 50 producer = FRA } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						USA = { 
 							has_tech = fighter1 
@@ -1095,7 +1116,7 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 50 producer = FRA } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						USA = { 
 							has_tech = fighter2 
@@ -1104,13 +1125,20 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 50 producer = FRA } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						USA = { 
 							has_tech = fighter3 
 						} 
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_3 amount = 50 producer = FRA } 
+				}
+				else_if = {
+					limit = {
+						has_dlc = "By Blood Alone"
+					}
+					set_variable = { fighter_buy_amount = 25 } 
+					bba_get_fighter_USA_effect = yes
 				}
 			}
 
@@ -1129,7 +1157,7 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 50 producer = ENG } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						ENG = { 
 							has_tech = fighter1 
@@ -1138,7 +1166,7 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 50 producer = ENG } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						ENG = { 
 							has_tech = fighter2 
@@ -1147,13 +1175,20 @@ country_event = {
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 50 producer = ENG } 
 				}
-				if = {
+				else_if = {
 					limit = { 
 						ENG = { 
 							has_tech = fighter3 
 						} 
 					}
 					add_equipment_to_stockpile = { type = fighter_equipment_3 amount = 50 producer = ENG } 
+				}
+				else_if = {
+					limit = {
+						has_dlc = "By Blood Alone"
+					}
+					set_variable = { fighter_buy_amount = 25 } 
+					bba_get_fighter_ENG_effect = yes
 				}
 			}
 			add_opinion_modifier = { target = FROM modifier = SWE_sold_planes}	

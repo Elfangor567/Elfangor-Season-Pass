@@ -1,0 +1,44 @@
+﻿air_wings = {
+	### Luftforsvaret -- Oslo
+	110 = {
+		# Had a handful of Fokker C-Vd bombers in both bomber and recon role, 
+		#   plus Tiger Moth trainers used in various roles. 
+		#   This represents what was active in a combat role
+		small_plane_airframe_0 = {
+			owner = "NOR" 
+			amount = 4
+			creator = "NOR"
+			version_name = "Scimitar"
+		}
+		small_plane_airframe_0 = {
+			owner = "NOR" 
+			amount = 1
+			creator = "ENG"
+			version_name = "Hawker Fury"
+		}
+		small_plane_cas_airframe_0 = {
+			owner = "NOR" 
+			amount = 7
+			creator = "NOR"
+			version_name = "Douglas DT"
+		}
+		small_plane_cas_airframe_0 = {
+			owner = "NOR" 
+			amount = 29
+			creator = "NOR"
+			version_name = "Høver M.F.11"
+		}
+		small_plane_cas_airframe_0 =  {
+			owner = "NOR" 
+			amount = 47 # ~27 Fokker C.V-D and 20 C.V-E's
+			creator = "HOL"
+			version_name = "Fokker C.X" #also represents Fokker C.V 
+		}
+		small_plane_cas_airframe_0 =  {
+			owner = "NOR" 
+			amount = 38
+			creator = "ENG"
+			version_name = "Tiger Moth"
+		}
+	}
+}

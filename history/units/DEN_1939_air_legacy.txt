@@ -1,0 +1,34 @@
+﻿air_wings = {
+	### Flyvevabnet -- Copenhagen
+	37 = {
+		# 1. Jagerafdeling
+		fighter_equipment_0 =  {
+			owner = "DEN" 
+			amount = 22 # Consisted of 18 Gloster Gauntlets, 4 Bristol Bulldogs
+		}
+		fighter_equipment_1 =  {
+			owner = "DEN" 
+			amount = 22# Consisted of 22 Fokker D.XXI's
+		}
+		nav_bomber_equipment_1 = {
+			owner = "DEN"
+			amount = 24 # Consisted of 22 He 8's, 2 Dantorps
+		}
+	}
+	# Søværnets Flyvetjeneste -- Jutland
+	99 = {
+		CAS_equipment_1 = {
+			owner = "DEN"
+			amount = 41 # Consisted of 41 Fokker C.V's
+		}
+		tac_bomber_equipment_0 = {
+			owner = "DEN"
+			amount = 15 # Consisted of 15 Tiger Moths
+		}
+		cv_fighter_equipment_0 = {
+			owner = "DEN" 
+			amount = 27 # Consisted of 12 Hawker Nimrods, 15 Dankoks, 
+		}
+		
+	}
+}
