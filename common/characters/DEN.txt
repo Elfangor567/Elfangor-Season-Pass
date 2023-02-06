@@ -468,7 +468,7 @@ characters={
 				original_tag = DEN
 			}
 			on_add = {
-				add_popularity = { ideology = fascism popularity = 0.05 }
+				ROOT = { add_popularity = { ideology = fascism popularity = 0.05 } }
 			}
 			traits = {
 				army_logistics_2

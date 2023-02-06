@@ -1,0 +1,82 @@
+﻿### Flygvapnet ###
+air_wings = {
+	141 = {
+		# 1. Bombflyggruppen -- Hawker Harts
+		small_plane_airframe_0 =  {
+			owner = "SWE" 
+			amount = 17
+			creator = "SWE"
+			version_name = "Svenska Jaktfalken"
+		}
+		small_plane_airframe_0 =  {
+			owner = "SWE" 
+			amount = 55
+			creator = "ENG"
+			version_name = "Gloster Gladiator"
+		}
+		small_plane_cas_airframe_0 =  {
+			owner = "SWE" 
+			amount = 42
+			creator = "SWE"
+			version_name = "Hart"
+		}
+		small_plane_cas_airframe_0 =  {
+			owner = "SWE" 
+			amount = 36
+			creator = "ENG"
+			version_name = "Tiger Moth"
+		}
+		small_plane_cas_airframe_0 = {
+			owner = "SWE" 
+			amount = 36
+			creator = "ENG"
+			version_name = "Fairey Gordon"
+		}
+		small_plane_cas_airframe_0 = { #Fokker C.V
+			owner = "SWE"
+			amount = 15
+			creator = "HOL"
+			version_name = "Fokker C.X" #Also represents Fokker C.V 
+		}
+		# 5. Jaktflyggruppen
+		small_plane_cas_airframe_0 =  {
+			owner = "SWE" 
+			amount = 13
+			creator = "ENG"
+			version_name = "Bulldog"
+		}
+		small_plane_cas_airframe_1 =  {
+			owner = "SWE" 
+			amount = 24 #94 built betwee 1938-1941
+			creator = "USA"
+			version_name = "A-17"
+		}		
+		medium_plane_airframe_0 = {
+			owner = "SWE"
+			amount = 36
+			creator = "GER"
+			version_name = "Ju 86" # 1. Bombflyggruppen -- Junkers 86K
+		}			
+	}
+	140 = {
+		# 2. Torpedflyggruppen -- Heinkel HD 16s
+		small_plane_naval_bomber_airframe_1 =  {
+			owner = "SWE" 
+			amount = 12
+			creator = "GER"
+			version_name = "Do 22"
+		}
+		small_plane_naval_bomber_airframe_1 =  {
+			owner = "SWE" 
+			amount = 40
+			creator = "SWE"
+			version_name = "Svenska"
+		}
+		cv_small_plane_naval_bomber_airframe_0 =  {
+			owner = "SWE" 
+			amount = 6
+			creator = "SWE"
+			version_name = "Osprey"
+		}
+	}
+}

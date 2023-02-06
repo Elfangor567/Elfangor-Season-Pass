@@ -280,18 +280,6 @@ units = {
 
 }
 
-air_wings = {
-	111 = { # Helsinki
-		CAS_equipment_1 = { owner = "FIN" amount = 39 }	# 1, 4 Bomber Groups -- Fokker C.Xs, Blenheim Is
-		fighter_equipment_0 = { owner = "FIN" amount = 51 } #Martinsyde F.4 Buzzard & Bristol Bulldogs & Kukko
-		tac_bomber_equipment_0 = { owner = "FIN" amount = 38 } #Aero A.11HS & Aero A.32GR & Fokker CV.D
-		cv_nav_bomber_equipment_1 = { owner = "FIN" amount = 27 } #Blackburn T.5 Ripon IIF
-		nav_bomber_equipment_1 = { owner = "FIN" amount = 6 } #VL E.30 Kotka (Eagle)
-		fighter_equipment_1 = { owner = "FIN" amount = 32 }	# Fokker D.XXIs
-	}
-}
-
-
 ### Starting Production ###
 instant_effect = {
 	add_equipment_production = {

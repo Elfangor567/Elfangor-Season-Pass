@@ -282,19 +282,6 @@ units = {
 	}
 
 }
-	
-### No air units ###
-air_wings = {
-	111 = {
-		fighter_equipment_0 = { owner = "FIN" amount = 36 } #Martinsyde F.4 Buzzard & Bristol Bulldogs
-		fighter_equipment_0 = { owner = "FIN" amount = 15 } #Kukko
-		tac_bomber_equipment_0 = { owner = "FIN" amount = 24 } #Aero A.11HS & Aero A.32GR
-		tac_bomber_equipment_0 = { owner = "FIN" amount = 14 } #Fokker CV.D
-		cv_nav_bomber_equipment_1 = { owner = "FIN" amount = 27 } #Blackburn T.5 Ripon IIF
-		nav_bomber_equipment_1 = { owner = "FIN" amount = 6 } #VL E.30 Kotka (Eagle)
-		CAS_equipment_1 = { owner = "FIN" amount = 28 }	# 1, 4 Bomber Groups -- Fokker C.Xs, Blenheim Is
-	}
-}
 		
 ### Starting Production ###
 instant_effect = {

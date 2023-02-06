@@ -2904,7 +2904,7 @@ focus_tree = {
 								fixed_ship_anti_air_slot = ship_anti_air_1
 								fixed_ship_radar_slot = ship_radar_1
 								fixed_ship_engine_slot = carrier_ship_engine_1
-								fixed_ship_secondaries_slot = dp_ship_secondaries
+								fixed_ship_secondaries_slot = dp_ship_secondaries_1
 								mid_1_custom_slot = ship_armor_carrier_deck
 							}
 						}
@@ -2946,7 +2946,7 @@ focus_tree = {
 								fixed_ship_anti_air_slot = ship_anti_air_2
 								fixed_ship_radar_slot = ship_radar_2
 								fixed_ship_engine_slot = carrier_ship_engine_2
-								fixed_ship_secondaries_slot = dp_ship_secondaries
+								fixed_ship_secondaries_slot = dp_ship_secondaries_2
 								front_1_custom_slot = ship_deck_space
 							}
 						}
@@ -2988,7 +2988,7 @@ focus_tree = {
 								fixed_ship_anti_air_slot = ship_anti_air_3
 								fixed_ship_radar_slot = ship_radar_3
 								fixed_ship_engine_slot = carrier_ship_engine_3
-								fixed_ship_secondaries_slot = dp_ship_secondaries
+								fixed_ship_secondaries_slot = dp_ship_secondaries_3
 								front_1_custom_slot = ship_armor_carrier_deck
 								mid_1_custom_slot = ship_deck_space
 							}
@@ -3023,7 +3023,7 @@ focus_tree = {
 								fixed_ship_anti_air_slot = ship_anti_air_4
 								fixed_ship_radar_slot = ship_radar_4
 								fixed_ship_engine_slot = carrier_ship_engine_4
-								fixed_ship_secondaries_slot = dp_ship_secondaries
+								fixed_ship_secondaries_slot = dp_ship_secondaries_4
 								front_1_custom_slot = ship_armor_carrier_deck
 								mid_1_custom_slot = ship_deck_space
 								mid_2_custom_slot = ship_armor_carrier_deck

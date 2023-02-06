@@ -22,8 +22,8 @@ units = {
 	}
 }
 
-air_wings = {
-}
+#air_wings = { Removed as BBA, but there's nothing so no point in creating files
+#}
 
 ### Starting Production ###
 instant_effect = {

@@ -1,0 +1,26 @@
+﻿### Flygvapnet ###
+air_wings = {
+	141 = {
+		# 1. Bombflyggruppen -- Hawker Harts
+		CAS_equipment_1 = {
+			owner = "SWE" 
+			amount = 36
+		}
+		tac_bomber_equipment_0 = { #Fokker C.V
+			owner = "SWE"
+			amount = 15
+		}
+		# 5. Jaktflyggruppen -- Bristol Bulldogs, Svenska Jaktfalks, Centrala Malmslatts
+		fighter_equipment_0 =  {
+			owner = "SWE" 
+			amount = 30
+		}
+	}
+	140 = {
+		# 2. Torpedflyggruppen -- 12 Heinkel HD 16s, 6 Swedish Ospreys, 40 Svenskas
+		nav_bomber_equipment_1 =  {
+			owner = "SWE" 
+			amount = 58
+		}
+	}
+}
